@@ -32,4 +32,5 @@ var value = PatchAccountingJournalQueryParamFields.Id;
 | `ExchangeRate`      | exchange_rate       |
 | `Status`            | status              |
 | `IsInclusiveOfTax`  | is_inclusive_of_tax |
+| `Metadata`          | metadata            |
 | `Raw`               | raw                 |

@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         RateId,
         [JsonProperty("service_code")]
         ServiceCode,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

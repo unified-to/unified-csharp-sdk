@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         ApproverUserId,
         [JsonProperty("approved_at")]
         ApprovedAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

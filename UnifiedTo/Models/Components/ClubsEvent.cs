@@ -100,6 +100,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_name")]
         public string? LocationName { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ClubsMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The event name (or a "Home vs Away" matchup label).
         /// </summary>

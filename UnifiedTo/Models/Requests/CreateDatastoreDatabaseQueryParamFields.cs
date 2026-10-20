@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         Password,
         [JsonProperty("region")]
         Region,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

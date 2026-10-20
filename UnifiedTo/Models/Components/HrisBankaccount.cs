@@ -76,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_primary")]
         public bool? IsPrimary { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// account nickname (e.g. "BoA Checking").
         /// </summary>

@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         IsPrivate,
         [JsonProperty("metrics")]
         Metrics,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

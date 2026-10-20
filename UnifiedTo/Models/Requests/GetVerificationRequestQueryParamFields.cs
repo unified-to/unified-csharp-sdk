@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         ResponseDetails,
         [JsonProperty("response_source")]
         ResponseSource,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

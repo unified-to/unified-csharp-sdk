@@ -34,6 +34,7 @@ Create a group
 <!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" example="ads_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -49,14 +50,15 @@ var res = await sdk.Group.CreateAdsGroupAsync(
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-23T02:02:57.267Z").ToUniversalTime(),
-        Id = "c5fcb7d2-e3e3-420e-9acb-e9104495f775",
+        EndAt = System.DateTime.Parse("2026-06-23T21:52:21.472Z").ToUniversalTime(),
+        Id = "66afa24f-ba44-48d9-8163-1a789393e926",
         LanguageLocale = "fr-FR",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-07T10:28:11.941Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-08T04:57:58.652Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-12T23:40:28.029Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T06:34:49.945Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -92,6 +94,7 @@ Create a group
 <!-- UsageSnippet language="csharp" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" example="hris_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -103,11 +106,12 @@ var res = await sdk.Group.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "da9edb14-006a-49d1-975b-12e3edc795cb",
+        Id = "9141ba1d-1155-46c4-b4cc-6ae2a117f7eb",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-20T04:39:28.896Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-20T22:30:33.995Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -515,6 +519,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -531,14 +536,15 @@ PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-23T02:02:57.434Z").ToUniversalTime(),
-        Id = "6624352c-2e08-4e9a-adf3-2d78db23eb51",
+        EndAt = System.DateTime.Parse("2026-06-23T21:52:21.627Z").ToUniversalTime(),
+        Id = "869bae61-f58e-4402-b994-a312769b2578",
         LanguageLocale = "fr-FR",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-07T10:28:12.097Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-08T04:57:58.798Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-12T23:40:28.087Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T06:34:50.000Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -574,6 +580,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -586,11 +593,12 @@ PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "497dbafd-f669-4d19-b864-52969246580b",
+        Id = "198fa14a-90e2-4cb1-86b0-72a0bc757ec4",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-20T04:39:28.907Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-20T22:30:34.006Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -790,6 +798,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -806,14 +815,15 @@ UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-23T02:02:57.434Z").ToUniversalTime(),
-        Id = "6624352c-2e08-4e9a-adf3-2d78db23eb51",
+        EndAt = System.DateTime.Parse("2026-06-23T21:52:21.627Z").ToUniversalTime(),
+        Id = "869bae61-f58e-4402-b994-a312769b2578",
         LanguageLocale = "fr-FR",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-07T10:28:12.097Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-08T04:57:58.798Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-12T23:40:28.087Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T06:34:50.000Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -849,6 +859,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -861,11 +872,12 @@ UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "497dbafd-f669-4d19-b864-52969246580b",
+        Id = "198fa14a-90e2-4cb1-86b0-72a0bc757ec4",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-20T04:39:28.907Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-20T22:30:34.006Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -33,4 +33,5 @@ var value = CreateLmsCourseQueryParamFields.Id;
 | `ProviderName`        | provider_name         |
 | `PublishedAt`         | published_at          |
 | `TimeEstimateMinutes` | time_estimate_minutes |
+| `Metadata`            | metadata              |
 | `Raw`                 | raw                   |

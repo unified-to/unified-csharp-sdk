@@ -35,4 +35,5 @@ var value = ListAnalyticsSessionsQueryParamFields.Id;
 | `City`            | city              |
 | `IsBounce`        | is_bounce         |
 | `IsConversion`    | is_conversion     |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

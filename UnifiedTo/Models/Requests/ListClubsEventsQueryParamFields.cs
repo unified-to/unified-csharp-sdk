@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         IsHome,
         [JsonProperty("url")]
         Url,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

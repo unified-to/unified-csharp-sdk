@@ -20,6 +20,7 @@ Create a label
 <!-- UsageSnippet language="csharp" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" example="shipping_label" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,16 +31,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Label.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "066b5afd-9445-4926-b72c-ab51936be79b",
+        Id = "48383374-4753-4aee-9411-320f7b6bf89d",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://optimal-meadow.net",
-        ServiceCode = "GIz",
+        LabelUrl = "https://labels.example.com/48383374-4753-4aee-9411-320f7b6bf89d.pdf",
+        Metadata = new List<ShippingMetadata>() {},
+        ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
-        TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T03:34:23.465Z").ToUniversalTime(),
+        TrackingNumber = "ZYV60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-28T11:12:55.432Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -158,6 +160,7 @@ Update a label
 <!-- UsageSnippet language="csharp" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -169,16 +172,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "a6d47f40-b42a-4078-af1c-cc1fd7bb0bf0",
+        Id = "bb30434d-bf4a-4b92-81c0-11e1fc3851de",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://optimal-meadow.net",
-        ServiceCode = "GIz",
+        LabelUrl = "https://labels.example.com/bb30434d-bf4a-4b92-81c0-11e1fc3851de.pdf",
+        Metadata = new List<ShippingMetadata>() {},
+        ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
-        TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T03:34:23.469Z").ToUniversalTime(),
+        TrackingNumber = "ZYV60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-28T11:12:55.440Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -254,6 +258,7 @@ Update a label
 <!-- UsageSnippet language="csharp" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -265,16 +270,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "a6d47f40-b42a-4078-af1c-cc1fd7bb0bf0",
+        Id = "bb30434d-bf4a-4b92-81c0-11e1fc3851de",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://optimal-meadow.net",
-        ServiceCode = "GIz",
+        LabelUrl = "https://labels.example.com/bb30434d-bf4a-4b92-81c0-11e1fc3851de.pdf",
+        Metadata = new List<ShippingMetadata>() {},
+        ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
-        TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T03:34:23.469Z").ToUniversalTime(),
+        TrackingNumber = "ZYV60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-28T11:12:55.440Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

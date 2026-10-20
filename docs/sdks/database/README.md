@@ -20,6 +20,7 @@ Create a database
 <!-- UsageSnippet language="csharp" operationID="createDatastoreDatabase" method="post" path="/datastore/{connection_id}/database" example="datastore_database" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,12 +32,13 @@ var res = await sdk.Database.CreateDatastoreDatabaseAsync(
     datastoreDatabase: new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "e19ef019-2241-4ab3-8bbe-261b440896db",
+        Id = "b2f0213b-b4f1-4b45-b87a-4d211e7c27c8",
         IsActive = true,
+        Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-29T15:36:57.060Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-30T03:22:31.348Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     connectionId: "<id>"
@@ -156,6 +158,7 @@ Update a database
 <!-- UsageSnippet language="csharp" operationID="patchDatastoreDatabase" method="patch" path="/datastore/{connection_id}/database/{id}" example="datastore_database" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -168,12 +171,13 @@ PatchDatastoreDatabaseRequest req = new PatchDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "44c9eb63-4484-41d3-9cbf-aa06eb072a6b",
+        Id = "e5a60894-e578-4412-b5c1-a0ab17900482",
         IsActive = true,
+        Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-29T15:36:57.069Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-30T03:22:31.355Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     ConnectionId = "<id>",
@@ -250,6 +254,7 @@ Update a database
 <!-- UsageSnippet language="csharp" operationID="updateDatastoreDatabase" method="put" path="/datastore/{connection_id}/database/{id}" example="datastore_database" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -262,12 +267,13 @@ UpdateDatastoreDatabaseRequest req = new UpdateDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "44c9eb63-4484-41d3-9cbf-aa06eb072a6b",
+        Id = "e5a60894-e578-4412-b5c1-a0ab17900482",
         IsActive = true,
+        Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-29T15:36:57.069Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-30T03:22:31.355Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     ConnectionId = "<id>",

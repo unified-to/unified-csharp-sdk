@@ -34,4 +34,5 @@ var value = CreateMessagingMessageQueryParamFields.Id;
 | `HasChildren`             | has_children              |
 | `IsUnread`                | is_unread                 |
 | `Buttons`                 | buttons                   |
+| `Metadata`                | metadata                  |
 | `Raw`                     | raw                       |

@@ -21,4 +21,5 @@ var value = GetCdpDestinationQueryParamFields.Id;
 | `Type`      | type        |
 | `Direction` | direction   |
 | `IsEnabled` | is_enabled  |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

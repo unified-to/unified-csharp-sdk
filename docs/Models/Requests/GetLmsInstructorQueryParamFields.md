@@ -23,4 +23,5 @@ var value = GetLmsInstructorQueryParamFields.Id;
 | `Title`      | title        |
 | `Telephones` | telephones   |
 | `ImageUrl`   | image_url    |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

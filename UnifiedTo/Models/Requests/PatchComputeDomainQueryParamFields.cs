@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         IsPrimary,
         [JsonProperty("redirect_url")]
         RedirectUrl,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

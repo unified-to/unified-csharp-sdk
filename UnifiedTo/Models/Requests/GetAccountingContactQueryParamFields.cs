@@ -69,6 +69,8 @@ namespace UnifiedTo.Models.Requests
         Website,
         [JsonProperty("notes")]
         Notes,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

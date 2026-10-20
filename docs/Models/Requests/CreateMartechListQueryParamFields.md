@@ -29,4 +29,5 @@ var value = CreateMartechListQueryParamFields.Id;
 | `Language`      | language        |
 | `SenderCompany` | sender_company  |
 | `SenderPhone`   | sender_phone    |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

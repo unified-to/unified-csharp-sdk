@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class LmsActivity
@@ -48,6 +49,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("is_completed")]
         public bool? IsCompleted { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<LmsMetadata>? Metadata { get; set; }
 
         [JsonProperty("progress_percentage")]
         public double? ProgressPercentage { get; set; }

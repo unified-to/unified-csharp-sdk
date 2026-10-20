@@ -41,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 

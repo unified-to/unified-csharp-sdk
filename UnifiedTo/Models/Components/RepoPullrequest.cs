@@ -40,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("labels")]
         public List<string>? Labels { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<RepoMetadata>? Metadata { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 

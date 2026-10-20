@@ -97,6 +97,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

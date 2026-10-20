@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         InfoUrl,
         [JsonProperty("valid_regions")]
         ValidRegions,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -43,11 +43,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "0b28bd7d-b9ea-4b26-9b18-03ca91b1adcf",
+        Id = "0052f999-8bd4-4636-a8e8-055776c2e50c",
         Name = "Gulgowski, Dibbert and Wilderman",
-        Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-30T18:36:33.201Z").ToUniversalTime(),
-        WebsiteUrl = "https://somber-substitution.com/",
+        Phone = "1-882-360-2010",
+        UpdatedAt = System.DateTime.Parse("2020-09-30T22:36:42.627Z").ToUniversalTime(),
+        WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>"
 );
@@ -94,43 +94,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.CreateCrmCompanyAsync(
     crmCompany: new CrmCompany() {
         Address = new PropertyCrmCompanyAddress() {
-            Address1 = "7261 Salisbury Road",
-            Address2 = "Apt. 778",
-            City = "Harrisburg",
+            Address1 = "3328 Wunsch Flat",
+            Address2 = "Suite 905",
+            City = "New Ryderfort",
             CountryCode = "US",
-            PostalCode = "56293-3678",
-            Region = "Pennsylvania",
-            RegionCode = "ID",
+            PostalCode = "04674",
+            Region = "Delaware",
+            RegionCode = "NY",
         },
         CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
-        Description = "Balbus crapula spiculum.",
+        Description = "Venustas cruentus votum patruus terebro.",
         Domains = new List<string>() {
-            "fussy-nerve.info",
-            "sturdy-lobster.org",
-            "greedy-offset.name",
+            "goodwinsons.com",
         },
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Sandrine_Jacobi@hotmail.com",
+                Email = "info@goodwinsons.com",
                 Type = CrmEmailType.Work,
             },
             new CrmEmail() {
-                Email = "Sandrine_Jacobi@gmail.com",
+                Email = "sales@goodwinsons.com",
                 Type = CrmEmailType.Work,
             },
             new CrmEmail() {
-                Email = "Sandrine.Jacobi@yahoo.com",
-                Type = CrmEmailType.Other,
+                Email = "support@goodwinsons.com",
+                Type = CrmEmailType.Work,
             },
         },
-        Employees = 967D,
-        Id = "858a4680-86a9-4158-b6a6-5614efa2c841",
-        Industry = "Infrastructure",
+        Employees = 4177D,
+        Id = "336c3fcd-902d-45fa-90f8-8df365343f61",
+        Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
-            "https://blue-license.org",
-            "https://minor-formation.com",
-            "https://ecstatic-hammock.com",
+            "https://www.linkedin.com/company/goodwin-and-sons",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -140,37 +136,30 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "89a855ee-dbfa-4297-a37b-4adf03080411",
+                Id = "bd33b3c2-c4f5-4a26-81e4-518100efbcc9",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "esse"
+                    "unde"
                 ),
             },
         },
         Name = "Goodwin and Sons",
         Tags = new List<string>() {
-            "quaerat",
-            "valeo",
+            "censura",
+            "abstergo",
+            "ipsam",
         },
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(432) 849-2690",
-                Type = CrmTelephoneType.Mobile,
-            },
-            new CrmTelephone() {
-                Telephone = "(606) 871-2046",
-                Type = CrmTelephoneType.Other,
-            },
-            new CrmTelephone() {
-                Telephone = "(842) 258-9395",
-                Type = CrmTelephoneType.Mobile,
+                Telephone = "(667) 607-5872",
+                Type = CrmTelephoneType.Home,
             },
         },
-        Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-03-01T14:35:04.805Z").ToUniversalTime(),
+        Timezone = "Atlantic/Azores",
+        UpdatedAt = System.DateTime.Parse("2025-03-02T06:04:50.216Z").ToUniversalTime(),
         Websites = new List<string>() {
-            "https://wise-possession.org",
+            "https://www.goodwinsons.com",
         },
     },
     connectionId: "<id>"
@@ -207,6 +196,7 @@ Create a company
 <!-- UsageSnippet language="csharp" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" example="hris_company" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -217,18 +207,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.CreateHrisCompanyAsync(
     hrisCompany: new HrisCompany() {
         Address = new PropertyHrisCompanyAddress() {
-            Address1 = "2549 Church Walk",
-            City = "Lake Nettiebury",
+            Address1 = "675 Lavinia Lights",
+            City = "Rocky Mount",
             CountryCode = "US",
-            PostalCode = "32877-4898",
-            Region = "Idaho",
-            RegionCode = "PA",
+            PostalCode = "67325",
+            Region = "Kentucky",
+            RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "04fd9c50-49b8-4613-b7b4-caa3ed667048",
-        LegalName = "Schultz LLC",
+        Id = "47784d40-7748-4310-b79c-18af4600e7c2",
+        LegalName = "Gottlieb Group LLC",
+        Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-06T14:54:26.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-07T11:32:27.729Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -562,11 +553,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "5af00de1-e77a-473b-a978-db65ff784689",
+        Id = "1f6c8b6c-4a0b-4a39-ae91-60aff5ba4bf2",
         Name = "Gulgowski, Dibbert and Wilderman",
-        Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-30T18:36:33.205Z").ToUniversalTime(),
-        WebsiteUrl = "https://somber-substitution.com/",
+        Phone = "1-882-360-2010",
+        UpdatedAt = System.DateTime.Parse("2020-09-30T22:36:42.629Z").ToUniversalTime(),
+        WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -614,43 +605,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
     CrmCompany = new CrmCompany() {
         Address = new PropertyCrmCompanyAddress() {
-            Address1 = "7261 Salisbury Road",
-            Address2 = "Apt. 778",
-            City = "Harrisburg",
+            Address1 = "3328 Wunsch Flat",
+            Address2 = "Suite 905",
+            City = "New Ryderfort",
             CountryCode = "US",
-            PostalCode = "56293-3678",
-            Region = "Pennsylvania",
-            RegionCode = "ID",
+            PostalCode = "04674",
+            Region = "Delaware",
+            RegionCode = "NY",
         },
         CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
-        Description = "Balbus crapula spiculum.",
+        Description = "Venustas cruentus votum patruus terebro.",
         Domains = new List<string>() {
-            "fussy-nerve.info",
-            "sturdy-lobster.org",
-            "greedy-offset.name",
+            "goodwinsons.com",
         },
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Sandrine_Jacobi@hotmail.com",
+                Email = "info@goodwinsons.com",
                 Type = CrmEmailType.Work,
             },
             new CrmEmail() {
-                Email = "Sandrine_Jacobi@gmail.com",
+                Email = "sales@goodwinsons.com",
                 Type = CrmEmailType.Work,
             },
             new CrmEmail() {
-                Email = "Sandrine.Jacobi@yahoo.com",
-                Type = CrmEmailType.Other,
+                Email = "support@goodwinsons.com",
+                Type = CrmEmailType.Work,
             },
         },
-        Employees = 967D,
-        Id = "9184eec4-532b-465e-88e0-5d0d4d525d1c",
-        Industry = "Infrastructure",
+        Employees = 4177D,
+        Id = "990fc194-d42e-4046-a9b9-cbddf78ecf7b",
+        Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
-            "https://blue-license.org",
-            "https://minor-formation.com",
-            "https://ecstatic-hammock.com",
+            "https://www.linkedin.com/company/goodwin-and-sons",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -660,37 +647,30 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "1fb5ae8e-f31c-4786-a8c8-daaaccf7921d",
+                Id = "7127d8eb-fc60-49d0-b798-b85e108a2dac",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "esse"
+                    "unde"
                 ),
             },
         },
         Name = "Goodwin and Sons",
         Tags = new List<string>() {
-            "quaerat",
-            "valeo",
+            "censura",
+            "abstergo",
+            "ipsam",
         },
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(432) 849-2690",
-                Type = CrmTelephoneType.Mobile,
-            },
-            new CrmTelephone() {
-                Telephone = "(606) 871-2046",
-                Type = CrmTelephoneType.Other,
-            },
-            new CrmTelephone() {
-                Telephone = "(842) 258-9395",
-                Type = CrmTelephoneType.Mobile,
+                Telephone = "(667) 607-5872",
+                Type = CrmTelephoneType.Home,
             },
         },
-        Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-03-01T14:35:04.828Z").ToUniversalTime(),
+        Timezone = "Atlantic/Azores",
+        UpdatedAt = System.DateTime.Parse("2025-03-02T06:04:50.249Z").ToUniversalTime(),
         Websites = new List<string>() {
-            "https://wise-possession.org",
+            "https://www.goodwinsons.com",
         },
     },
     ConnectionId = "<id>",
@@ -727,6 +707,7 @@ Update a company
 <!-- UsageSnippet language="csharp" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -738,18 +719,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
     HrisCompany = new HrisCompany() {
         Address = new PropertyHrisCompanyAddress() {
-            Address1 = "2549 Church Walk",
-            City = "Lake Nettiebury",
+            Address1 = "675 Lavinia Lights",
+            City = "Rocky Mount",
             CountryCode = "US",
-            PostalCode = "32877-4898",
-            Region = "Idaho",
-            RegionCode = "PA",
+            PostalCode = "67325",
+            Region = "Kentucky",
+            RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "be632fb8-331c-4036-bc50-bf8e4ff4a97d",
-        LegalName = "Schultz LLC",
+        Id = "0a42fa0f-6e39-4aa0-8793-a2e9ba9a37f0",
+        LegalName = "Gottlieb Group LLC",
+        Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-06T14:54:26.325Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-07T11:32:27.746Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -916,11 +898,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "5af00de1-e77a-473b-a978-db65ff784689",
+        Id = "1f6c8b6c-4a0b-4a39-ae91-60aff5ba4bf2",
         Name = "Gulgowski, Dibbert and Wilderman",
-        Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-30T18:36:33.205Z").ToUniversalTime(),
-        WebsiteUrl = "https://somber-substitution.com/",
+        Phone = "1-882-360-2010",
+        UpdatedAt = System.DateTime.Parse("2020-09-30T22:36:42.629Z").ToUniversalTime(),
+        WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -968,43 +950,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
     CrmCompany = new CrmCompany() {
         Address = new PropertyCrmCompanyAddress() {
-            Address1 = "7261 Salisbury Road",
-            Address2 = "Apt. 778",
-            City = "Harrisburg",
+            Address1 = "3328 Wunsch Flat",
+            Address2 = "Suite 905",
+            City = "New Ryderfort",
             CountryCode = "US",
-            PostalCode = "56293-3678",
-            Region = "Pennsylvania",
-            RegionCode = "ID",
+            PostalCode = "04674",
+            Region = "Delaware",
+            RegionCode = "NY",
         },
         CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
-        Description = "Balbus crapula spiculum.",
+        Description = "Venustas cruentus votum patruus terebro.",
         Domains = new List<string>() {
-            "fussy-nerve.info",
-            "sturdy-lobster.org",
-            "greedy-offset.name",
+            "goodwinsons.com",
         },
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Sandrine_Jacobi@hotmail.com",
+                Email = "info@goodwinsons.com",
                 Type = CrmEmailType.Work,
             },
             new CrmEmail() {
-                Email = "Sandrine_Jacobi@gmail.com",
+                Email = "sales@goodwinsons.com",
                 Type = CrmEmailType.Work,
             },
             new CrmEmail() {
-                Email = "Sandrine.Jacobi@yahoo.com",
-                Type = CrmEmailType.Other,
+                Email = "support@goodwinsons.com",
+                Type = CrmEmailType.Work,
             },
         },
-        Employees = 967D,
-        Id = "9184eec4-532b-465e-88e0-5d0d4d525d1c",
-        Industry = "Infrastructure",
+        Employees = 4177D,
+        Id = "990fc194-d42e-4046-a9b9-cbddf78ecf7b",
+        Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
-            "https://blue-license.org",
-            "https://minor-formation.com",
-            "https://ecstatic-hammock.com",
+            "https://www.linkedin.com/company/goodwin-and-sons",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -1014,37 +992,30 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "1fb5ae8e-f31c-4786-a8c8-daaaccf7921d",
+                Id = "7127d8eb-fc60-49d0-b798-b85e108a2dac",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "esse"
+                    "unde"
                 ),
             },
         },
         Name = "Goodwin and Sons",
         Tags = new List<string>() {
-            "quaerat",
-            "valeo",
+            "censura",
+            "abstergo",
+            "ipsam",
         },
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(432) 849-2690",
-                Type = CrmTelephoneType.Mobile,
-            },
-            new CrmTelephone() {
-                Telephone = "(606) 871-2046",
-                Type = CrmTelephoneType.Other,
-            },
-            new CrmTelephone() {
-                Telephone = "(842) 258-9395",
-                Type = CrmTelephoneType.Mobile,
+                Telephone = "(667) 607-5872",
+                Type = CrmTelephoneType.Home,
             },
         },
-        Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-03-01T14:35:04.828Z").ToUniversalTime(),
+        Timezone = "Atlantic/Azores",
+        UpdatedAt = System.DateTime.Parse("2025-03-02T06:04:50.249Z").ToUniversalTime(),
         Websites = new List<string>() {
-            "https://wise-possession.org",
+            "https://www.goodwinsons.com",
         },
     },
     ConnectionId = "<id>",
@@ -1081,6 +1052,7 @@ Update a company
 <!-- UsageSnippet language="csharp" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1092,18 +1064,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
     HrisCompany = new HrisCompany() {
         Address = new PropertyHrisCompanyAddress() {
-            Address1 = "2549 Church Walk",
-            City = "Lake Nettiebury",
+            Address1 = "675 Lavinia Lights",
+            City = "Rocky Mount",
             CountryCode = "US",
-            PostalCode = "32877-4898",
-            Region = "Idaho",
-            RegionCode = "PA",
+            PostalCode = "67325",
+            Region = "Kentucky",
+            RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "be632fb8-331c-4036-bc50-bf8e4ff4a97d",
-        LegalName = "Schultz LLC",
+        Id = "0a42fa0f-6e39-4aa0-8793-a2e9ba9a37f0",
+        LegalName = "Gottlieb Group LLC",
+        Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-06T14:54:26.325Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-07T11:32:27.746Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

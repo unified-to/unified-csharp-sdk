@@ -103,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// card/non-cash tips attributed to this attendance record.
         /// </summary>

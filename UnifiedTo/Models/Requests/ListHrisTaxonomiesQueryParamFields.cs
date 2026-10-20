@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         RoleIds,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

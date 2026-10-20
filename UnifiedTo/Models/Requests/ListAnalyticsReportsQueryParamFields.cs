@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         EndAt,
         [JsonProperty("metrics")]
         Metrics,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

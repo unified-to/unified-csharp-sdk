@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         LeadIds,
         [JsonProperty("user_id")]
         UserId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

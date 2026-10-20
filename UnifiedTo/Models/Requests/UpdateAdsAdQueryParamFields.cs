@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         Promoted,
         [JsonProperty("logo_creative_id")]
         LogoCreativeId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -93,6 +93,8 @@ namespace UnifiedTo.Models.Requests
         TrackingUrl,
         [JsonProperty("lineitems")]
         Lineitems,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

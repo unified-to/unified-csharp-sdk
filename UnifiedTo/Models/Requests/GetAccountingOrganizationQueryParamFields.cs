@@ -47,6 +47,8 @@ namespace UnifiedTo.Models.Requests
         IsElimination,
         [JsonProperty("books_close_at")]
         BooksCloseAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

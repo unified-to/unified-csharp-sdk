@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class HrisDevice
@@ -60,6 +61,9 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("manufacturer")]
         public string? Manufacturer { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
 
         /// <summary>
         /// device model.

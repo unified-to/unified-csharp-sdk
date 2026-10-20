@@ -1,0 +1,13 @@
+# SigningMetadata
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `ExtraData`                                                                     | [SigningMetadataExtraData](../../Models/Components/SigningMetadataExtraData.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Format`                                                                        | [SigningMetadataFormat](../../Models/Components/SigningMetadataFormat.md)       | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Id`                                                                            | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Namespace`                                                                     | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Slug`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Value`                                                                         | [SigningMetadataValue](../../Models/Components/SigningMetadataValue.md)         | :heavy_minus_sign:                                                              | N/A                                                                             |

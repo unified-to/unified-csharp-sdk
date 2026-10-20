@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class CalendarCalendar
@@ -30,6 +31,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("is_primary")]
         public bool? IsPrimary { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<CalendarMetadata>? Metadata { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("meeting_url")]
         public string? MeetingUrl { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AtsMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

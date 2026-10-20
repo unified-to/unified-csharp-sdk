@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         TotalCreditAmount,
         [JsonProperty("sub_items")]
         SubItems,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

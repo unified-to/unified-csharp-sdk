@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_enabled")]
         public bool? IsEnabled { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CdpMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The name of the outbound activation destination.
         /// </summary>

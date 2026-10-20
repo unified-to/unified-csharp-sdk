@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         AccountId,
         [JsonProperty("category_ids")]
         CategoryIds,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

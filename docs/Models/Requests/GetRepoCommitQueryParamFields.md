@@ -24,4 +24,5 @@ var value = GetRepoCommitQueryParamFields.Id;
 | `LinesAdded`     | lines_added      |
 | `LinesDeleted`   | lines_deleted    |
 | `LinesChanged`   | lines_changed    |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

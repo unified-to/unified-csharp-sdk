@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<SigningMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Document/envelope title.
         /// </summary>

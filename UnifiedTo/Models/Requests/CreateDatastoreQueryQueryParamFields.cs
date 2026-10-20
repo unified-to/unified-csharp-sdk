@@ -23,6 +23,8 @@ namespace UnifiedTo.Models.Requests
         Query,
         [JsonProperty("response")]
         Response,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

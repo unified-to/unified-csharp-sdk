@@ -28,4 +28,5 @@ var value = GetUcRecordingQueryParamFields.Id;
 | `UserPhone`              | user_phone               |
 | `Type`                   | type                     |
 | `ConversationIdentifier` | conversation_identifier  |
+| `Metadata`               | metadata                 |
 | `Raw`                    | raw                      |

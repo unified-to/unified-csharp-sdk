@@ -20,6 +20,7 @@ Create an inventory
 <!-- UsageSnippet language="csharp" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" example="commerce_inventory" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,7 +31,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-18T17:41:59.149Z").ToUniversalTime(),
+        Id = "d32eb598-f7dd-4844-8615-08f5503e2430",
+        Metadata = new List<CommerceMetadata>() {},
+        UpdatedAt = System.DateTime.Parse("2025-11-19T10:25:41.760Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -149,6 +152,7 @@ Update an inventory
 <!-- UsageSnippet language="csharp" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -160,7 +164,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-18T17:41:59.153Z").ToUniversalTime(),
+        Id = "a8045ec7-428d-4426-88df-36f691d1eee6",
+        Metadata = new List<CommerceMetadata>() {},
+        UpdatedAt = System.DateTime.Parse("2025-11-19T10:25:41.769Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -236,6 +242,7 @@ Update an inventory
 <!-- UsageSnippet language="csharp" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -247,7 +254,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-18T17:41:59.153Z").ToUniversalTime(),
+        Id = "a8045ec7-428d-4426-88df-36f691d1eee6",
+        Metadata = new List<CommerceMetadata>() {},
+        UpdatedAt = System.DateTime.Parse("2025-11-19T10:25:41.769Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

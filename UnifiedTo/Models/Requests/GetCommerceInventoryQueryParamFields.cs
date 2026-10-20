@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         LocationId,
         [JsonProperty("available")]
         Available,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

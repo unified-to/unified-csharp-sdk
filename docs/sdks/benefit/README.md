@@ -20,6 +20,7 @@ Create a benefit
 <!-- UsageSnippet language="csharp" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" example="hris_benefit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,18 +32,19 @@ var res = await sdk.Benefit.CreateHrisBenefitAsync(
     hrisBenefit: new HrisBenefit() {
         CoverageLevel = CoverageLevel.EmployeeSpouse,
         CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
-        Currency = "JOD",
+        Currency = "GBP",
         Description = "Vomito voluptas dolor sed.",
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "f0d47a1a-fa86-43e1-886a-f2fc62730d53",
+        Id = "2b78bd0f-c9b5-48cc-b206-6b981755117e",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-19T22:38:44.430Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-20T07:41:51.705Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -161,6 +163,7 @@ Update a benefit
 <!-- UsageSnippet language="csharp" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -173,18 +176,19 @@ PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
     HrisBenefit = new HrisBenefit() {
         CoverageLevel = CoverageLevel.EmployeeSpouse,
         CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
-        Currency = "JOD",
+        Currency = "GBP",
         Description = "Vomito voluptas dolor sed.",
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "55973a05-c207-4d9d-9035-4ccf8671b498",
+        Id = "1b213160-acda-43a2-aa6e-7c9a80a476b7",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-19T22:38:44.438Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-20T07:41:51.712Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -260,6 +264,7 @@ Update a benefit
 <!-- UsageSnippet language="csharp" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -272,18 +277,19 @@ UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
     HrisBenefit = new HrisBenefit() {
         CoverageLevel = CoverageLevel.EmployeeSpouse,
         CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
-        Currency = "JOD",
+        Currency = "GBP",
         Description = "Vomito voluptas dolor sed.",
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "55973a05-c207-4d9d-9035-4ccf8671b498",
+        Id = "1b213160-acda-43a2-aa6e-7c9a80a476b7",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-19T22:38:44.438Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-20T07:41:51.712Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

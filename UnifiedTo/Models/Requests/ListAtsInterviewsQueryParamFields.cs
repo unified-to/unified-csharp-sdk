@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         MeetingUrl,
         [JsonProperty("external_event_xref")]
         ExternalEventXref,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

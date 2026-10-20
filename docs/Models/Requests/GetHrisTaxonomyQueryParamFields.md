@@ -27,4 +27,5 @@ var value = GetHrisTaxonomyQueryParamFields.Id;
 | `Url`              | url                |
 | `RoleIds`          | role_ids           |
 | `IsActive`         | is_active          |
+| `Metadata`         | metadata           |
 | `Raw`              | raw                |

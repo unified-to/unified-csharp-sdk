@@ -25,4 +25,5 @@ var value = ListPaymentPayoutsQueryParamFields.Id;
 | `NetAmount`   | net_amount    |
 | `AccountId`   | account_id    |
 | `Lineitems`   | lineitems     |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

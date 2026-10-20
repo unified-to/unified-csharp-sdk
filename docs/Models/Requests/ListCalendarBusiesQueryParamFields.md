@@ -18,4 +18,5 @@ var value = ListCalendarBusiesQueryParamFields.Id;
 | `EndAt`       | end_at        |
 | `Timezone`    | timezone      |
 | `Description` | description   |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

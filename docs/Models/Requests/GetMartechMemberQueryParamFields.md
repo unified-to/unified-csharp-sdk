@@ -24,4 +24,5 @@ var value = GetMartechMemberQueryParamFields.Id;
 | `ListIds`   | list_ids    |
 | `Tags`      | tags        |
 | `Status`    | status      |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

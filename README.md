@@ -24,27 +24,23 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {
         Balance = 12092D,
         CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
-        Currency = "BOB",
-        CustomerDefinedCode = "quo",
-        Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "aa723d96-bafb-4b7f-8c1e-5b5d23e3f2e8",
-        IsPayable = true,
-        Name = "Electronic Aluminum Tuna",
+        Currency = "CAD",
+        CustomerDefinedCode = "6170",
+        Description = "Voluptatibus valde spoliatio.",
+        Id = "14ce1ea3-4081-4435-808e-073e20cc3a64",
+        IsPayable = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Auto Loan Account",
         Status = Status.Archived,
         Taxonomy = new List<AccountingAccountTaxonomy>() {
             new AccountingAccountTaxonomy() {
-                OriginalType = "vesper",
+                OriginalType = "vilitas",
                 Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "iste",
-            },
-            new AccountingAccountTaxonomy() {
-                OriginalType = "adamo",
-                Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "peccatus",
+                Value = "comedo",
             },
         },
-        Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T19:44:26.198Z").ToUniversalTime(),
+        Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
+        UpdatedAt = System.DateTime.Parse("2023-08-06T14:18:17.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1226,27 +1222,33 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 * [CreateGenaiAgent](docs/sdks/genai/README.md#creategenaiagent) - Create an agent
 * [CreateGenaiEmbedding](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
+* [CreateGenaiMemory](docs/sdks/genai/README.md#creategenaimemory) - Create a memory
 * [CreateGenaiOrganization](docs/sdks/genai/README.md#creategenaiorganization) - Create an organization
 * [CreateGenaiPrompt](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
 * [CreateGenaiTask](docs/sdks/genai/README.md#creategenaitask) - Create a task
 * [GetGenaiAgent](docs/sdks/genai/README.md#getgenaiagent) - Retrieve an agent
+* [GetGenaiMemory](docs/sdks/genai/README.md#getgenaimemory) - Retrieve a memory
 * [GetGenaiModel](docs/sdks/genai/README.md#getgenaimodel) - Retrieve a model
 * [GetGenaiOrganization](docs/sdks/genai/README.md#getgenaiorganization) - Retrieve an organization
 * [GetGenaiSkill](docs/sdks/genai/README.md#getgenaiskill) - Retrieve a skill
 * [GetGenaiTask](docs/sdks/genai/README.md#getgenaitask) - Retrieve a task
 * [ListGenaiAgents](docs/sdks/genai/README.md#listgenaiagents) - List all agents
+* [ListGenaiMemories](docs/sdks/genai/README.md#listgenaimemories) - List all memories
 * [ListGenaiModels](docs/sdks/genai/README.md#listgenaimodels) - List all models
 * [ListGenaiOrganizations](docs/sdks/genai/README.md#listgenaiorganizations) - List all organizations
 * [ListGenaiSkills](docs/sdks/genai/README.md#listgenaiskills) - List all skills
 * [ListGenaiTasks](docs/sdks/genai/README.md#listgenaitasks) - List all tasks
 * [PatchGenaiAgent](docs/sdks/genai/README.md#patchgenaiagent) - Update an agent
+* [PatchGenaiMemory](docs/sdks/genai/README.md#patchgenaimemory) - Update a memory
 * [PatchGenaiOrganization](docs/sdks/genai/README.md#patchgenaiorganization) - Update an organization
 * [PatchGenaiTask](docs/sdks/genai/README.md#patchgenaitask) - Update a task
 * [RemoveGenaiAgent](docs/sdks/genai/README.md#removegenaiagent) - Remove an agent
+* [RemoveGenaiMemory](docs/sdks/genai/README.md#removegenaimemory) - Remove a memory
 * [RemoveGenaiOrganization](docs/sdks/genai/README.md#removegenaiorganization) - Remove an organization
 * [RemoveGenaiSkill](docs/sdks/genai/README.md#removegenaiskill) - Remove a skill
 * [RemoveGenaiTask](docs/sdks/genai/README.md#removegenaitask) - Remove a task
 * [UpdateGenaiAgent](docs/sdks/genai/README.md#updategenaiagent) - Update an agent
+* [UpdateGenaiMemory](docs/sdks/genai/README.md#updategenaimemory) - Update a memory
 * [UpdateGenaiOrganization](docs/sdks/genai/README.md#updategenaiorganization) - Update an organization
 * [UpdateGenaiTask](docs/sdks/genai/README.md#updategenaitask) - Update a task
 
@@ -1746,6 +1748,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchMartechMember](docs/sdks/member/README.md#patchmartechmember) - Update a member
 * [RemoveMartechMember](docs/sdks/member/README.md#removemartechmember) - Remove a member
 * [UpdateMartechMember](docs/sdks/member/README.md#updatemartechmember) - Update a member
+
+### [Memory](docs/sdks/memory/README.md)
+
+* [CreateGenaiMemory](docs/sdks/memory/README.md#creategenaimemory) - Create a memory
+* [GetGenaiMemory](docs/sdks/memory/README.md#getgenaimemory) - Retrieve a memory
+* [ListGenaiMemories](docs/sdks/memory/README.md#listgenaimemories) - List all memories
+* [PatchGenaiMemory](docs/sdks/memory/README.md#patchgenaimemory) - Update a memory
+* [RemoveGenaiMemory](docs/sdks/memory/README.md#removegenaimemory) - Remove a memory
+* [UpdateGenaiMemory](docs/sdks/memory/README.md#updategenaimemory) - Update a memory
 
 ### [Message](docs/sdks/message/README.md)
 
@@ -2737,27 +2748,23 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {
         Balance = 12092D,
         CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
-        Currency = "BOB",
-        CustomerDefinedCode = "quo",
-        Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "aa723d96-bafb-4b7f-8c1e-5b5d23e3f2e8",
-        IsPayable = true,
-        Name = "Electronic Aluminum Tuna",
+        Currency = "CAD",
+        CustomerDefinedCode = "6170",
+        Description = "Voluptatibus valde spoliatio.",
+        Id = "14ce1ea3-4081-4435-808e-073e20cc3a64",
+        IsPayable = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Auto Loan Account",
         Status = Status.Archived,
         Taxonomy = new List<AccountingAccountTaxonomy>() {
             new AccountingAccountTaxonomy() {
-                OriginalType = "vesper",
+                OriginalType = "vilitas",
                 Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "iste",
-            },
-            new AccountingAccountTaxonomy() {
-                OriginalType = "adamo",
-                Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "peccatus",
+                Value = "comedo",
             },
         },
-        Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T19:44:26.198Z").ToUniversalTime(),
+        Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
+        UpdatedAt = System.DateTime.Parse("2023-08-06T14:18:17.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2785,27 +2792,23 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {
         Balance = 12092D,
         CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
-        Currency = "BOB",
-        CustomerDefinedCode = "quo",
-        Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "aa723d96-bafb-4b7f-8c1e-5b5d23e3f2e8",
-        IsPayable = true,
-        Name = "Electronic Aluminum Tuna",
+        Currency = "CAD",
+        CustomerDefinedCode = "6170",
+        Description = "Voluptatibus valde spoliatio.",
+        Id = "14ce1ea3-4081-4435-808e-073e20cc3a64",
+        IsPayable = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Auto Loan Account",
         Status = Status.Archived,
         Taxonomy = new List<AccountingAccountTaxonomy>() {
             new AccountingAccountTaxonomy() {
-                OriginalType = "vesper",
+                OriginalType = "vilitas",
                 Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "iste",
-            },
-            new AccountingAccountTaxonomy() {
-                OriginalType = "adamo",
-                Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "peccatus",
+                Value = "comedo",
             },
         },
-        Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T19:44:26.198Z").ToUniversalTime(),
+        Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
+        UpdatedAt = System.DateTime.Parse("2023-08-06T14:18:17.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2882,27 +2885,23 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {
         Balance = 12092D,
         CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
-        Currency = "BOB",
-        CustomerDefinedCode = "quo",
-        Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "aa723d96-bafb-4b7f-8c1e-5b5d23e3f2e8",
-        IsPayable = true,
-        Name = "Electronic Aluminum Tuna",
+        Currency = "CAD",
+        CustomerDefinedCode = "6170",
+        Description = "Voluptatibus valde spoliatio.",
+        Id = "14ce1ea3-4081-4435-808e-073e20cc3a64",
+        IsPayable = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Auto Loan Account",
         Status = Status.Archived,
         Taxonomy = new List<AccountingAccountTaxonomy>() {
             new AccountingAccountTaxonomy() {
-                OriginalType = "vesper",
+                OriginalType = "vilitas",
                 Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "iste",
-            },
-            new AccountingAccountTaxonomy() {
-                OriginalType = "adamo",
-                Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "peccatus",
+                Value = "comedo",
             },
         },
-        Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T19:44:26.198Z").ToUniversalTime(),
+        Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
+        UpdatedAt = System.DateTime.Parse("2023-08-06T14:18:17.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2944,27 +2943,23 @@ try
         accountingAccount: new AccountingAccount() {
             Balance = 12092D,
             CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
-            Currency = "BOB",
-            CustomerDefinedCode = "quo",
-            Description = "Spoliatio comedo vilitas harum cupiditate.",
-            Id = "aa723d96-bafb-4b7f-8c1e-5b5d23e3f2e8",
-            IsPayable = true,
-            Name = "Electronic Aluminum Tuna",
+            Currency = "CAD",
+            CustomerDefinedCode = "6170",
+            Description = "Voluptatibus valde spoliatio.",
+            Id = "14ce1ea3-4081-4435-808e-073e20cc3a64",
+            IsPayable = false,
+            Metadata = new List<AccountingMetadata>() {},
+            Name = "Auto Loan Account",
             Status = Status.Archived,
             Taxonomy = new List<AccountingAccountTaxonomy>() {
                 new AccountingAccountTaxonomy() {
-                    OriginalType = "vesper",
+                    OriginalType = "vilitas",
                     Type = AccountingAccountTaxonomyType.Subgroup,
-                    Value = "iste",
-                },
-                new AccountingAccountTaxonomy() {
-                    OriginalType = "adamo",
-                    Type = AccountingAccountTaxonomyType.Subgroup,
-                    Value = "peccatus",
+                    Value = "comedo",
                 },
             },
-            Type = UnifiedTo.Models.Components.Type.Bank,
-            UpdatedAt = System.DateTime.Parse("2023-01-06T19:44:26.198Z").ToUniversalTime(),
+            Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
+            UpdatedAt = System.DateTime.Parse("2023-08-06T14:18:17.172Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );

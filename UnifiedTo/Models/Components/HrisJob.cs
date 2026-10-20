@@ -67,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("locations")]
         public List<HrisLocation>? Locations { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// the job or position title.
         /// </summary>

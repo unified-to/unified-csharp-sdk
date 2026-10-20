@@ -28,4 +28,5 @@ var value = ListAccountingProfitlossesQueryParamFields.Id;
 | `IncomeSections`                | income_sections                 |
 | `ExpensesSections`              | expenses_sections               |
 | `CostOfGoodsSoldSections`       | cost_of_goods_sold_sections     |
+| `Metadata`                      | metadata                        |
 | `Raw`                           | raw                             |

@@ -20,6 +20,7 @@ Create a bankaccount
 <!-- UsageSnippet language="csharp" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" example="hris_bankaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -36,14 +37,15 @@ var res = await sdk.Bankaccount.CreateHrisBankaccountAsync(
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "5c7bb58b-2f4d-4653-8117-8c70c54b73b5",
-        IsPrimary = false,
-        Name = "Checking Account",
-        Priority = 3D,
+        Id = "d5591bc4-0557-4821-9081-abbc15ea43fa",
+        IsPrimary = true,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "Granville Schumm - Checking",
+        Priority = 2D,
         RoutingNumber = "448650724",
-        SplitAmount = 23D,
-        SplitType = SplitType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T13:57:11.141Z").ToUniversalTime(),
+        SplitAmount = 98D,
+        SplitType = SplitType.Percentage,
+        UpdatedAt = System.DateTime.Parse("2025-06-30T06:48:11.285Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -162,6 +164,7 @@ Update a bankaccount
 <!-- UsageSnippet language="csharp" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -179,14 +182,15 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "af029255-1722-4a63-b4c5-4cef1f1481e0",
-        IsPrimary = false,
-        Name = "Checking Account",
-        Priority = 3D,
+        Id = "aa03b113-36b3-45b9-871f-a3957ae90678",
+        IsPrimary = true,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "Granville Schumm - Checking",
+        Priority = 2D,
         RoutingNumber = "448650724",
-        SplitAmount = 23D,
-        SplitType = SplitType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T13:57:11.158Z").ToUniversalTime(),
+        SplitAmount = 98D,
+        SplitType = SplitType.Percentage,
+        UpdatedAt = System.DateTime.Parse("2025-06-30T06:48:11.300Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -262,6 +266,7 @@ Update a bankaccount
 <!-- UsageSnippet language="csharp" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -279,14 +284,15 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "af029255-1722-4a63-b4c5-4cef1f1481e0",
-        IsPrimary = false,
-        Name = "Checking Account",
-        Priority = 3D,
+        Id = "aa03b113-36b3-45b9-871f-a3957ae90678",
+        IsPrimary = true,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "Granville Schumm - Checking",
+        Priority = 2D,
         RoutingNumber = "448650724",
-        SplitAmount = 23D,
-        SplitType = SplitType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T13:57:11.158Z").ToUniversalTime(),
+        SplitAmount = 98D,
+        SplitType = SplitType.Percentage,
+        UpdatedAt = System.DateTime.Parse("2025-06-30T06:48:11.300Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

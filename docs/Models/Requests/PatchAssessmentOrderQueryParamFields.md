@@ -53,4 +53,5 @@ var value = PatchAssessmentOrderQueryParamFields.Id;
 | `ResponseDetails`           | response_details            |
 | `ResponseSource`            | response_source             |
 | `ResponseAttributes`        | response_attributes         |
+| `Metadata`                  | metadata                    |
 | `Raw`                       | raw                         |

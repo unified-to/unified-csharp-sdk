@@ -35,6 +35,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("metrics")]
         public List<AdsReportMetrics>? Metrics { get; set; }
 

@@ -20,6 +20,7 @@ Create a bankfeedaccount
 <!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" example="accounting_bankfeedaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,20 +30,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Bankfeedaccount.CreateAccountingBankfeedaccountAsync(
     accountingBankfeedaccount: new AccountingBankfeedaccount() {
-        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
         AccountNumber = "30369722",
         AccountNumberLast4 = "9722",
         AccountType = AccountType.Loan,
-        Balance = 90358D,
-        BankName = "Weissnat Inc",
+        Balance = 49437D,
+        BankName = "Wells Fargo",
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Currency = "SSP",
+        Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "923d504d-0461-4b3c-97d9-04eaf9a69c15",
-        Name = "Corwin, Donnelly and Connelly Savings",
-        RoutingNumber = "667753156",
+        Id = "954100f7-52fa-497e-9b8e-c8d29e794869",
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Corwin, Donnelly and Connelly Checking",
+        RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T01:23:57.148Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-23T09:07:53.499Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -161,6 +162,7 @@ Update a bankfeedaccount
 <!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -171,20 +173,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRequest() {
     AccountingBankfeedaccount = new AccountingBankfeedaccount() {
-        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
         AccountNumber = "30369722",
         AccountNumberLast4 = "9722",
         AccountType = AccountType.Loan,
-        Balance = 90358D,
-        BankName = "Weissnat Inc",
+        Balance = 49437D,
+        BankName = "Wells Fargo",
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Currency = "SSP",
+        Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "9295a12e-76ef-4be1-b602-90cf758a902e",
-        Name = "Corwin, Donnelly and Connelly Savings",
-        RoutingNumber = "667753156",
+        Id = "c2e29334-5bca-4fcf-aaba-93754dfc6228",
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Corwin, Donnelly and Connelly Checking",
+        RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T01:23:57.153Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-23T09:07:53.506Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -260,6 +262,7 @@ Update a bankfeedaccount
 <!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -270,20 +273,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccountRequest() {
     AccountingBankfeedaccount = new AccountingBankfeedaccount() {
-        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
         AccountNumber = "30369722",
         AccountNumberLast4 = "9722",
         AccountType = AccountType.Loan,
-        Balance = 90358D,
-        BankName = "Weissnat Inc",
+        Balance = 49437D,
+        BankName = "Wells Fargo",
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Currency = "SSP",
+        Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "9295a12e-76ef-4be1-b602-90cf758a902e",
-        Name = "Corwin, Donnelly and Connelly Savings",
-        RoutingNumber = "667753156",
+        Id = "c2e29334-5bca-4fcf-aaba-93754dfc6228",
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Corwin, Donnelly and Connelly Checking",
+        RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T01:23:57.153Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-23T09:07:53.506Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -36,4 +36,5 @@ var value = PatchAccountingTransactionQueryParamFields.Id;
 | `TransactionAt`   | transaction_at    |
 | `ExchangeRate`    | exchange_rate     |
 | `Status`          | status            |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

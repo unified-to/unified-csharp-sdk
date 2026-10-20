@@ -23,4 +23,5 @@ var value = CreateUcContactQueryParamFields.Id;
 | `Company`    | company      |
 | `Emails`     | emails       |
 | `Telephones` | telephones   |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

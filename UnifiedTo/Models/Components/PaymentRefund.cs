@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<PaymentMetadata>? Metadata { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 

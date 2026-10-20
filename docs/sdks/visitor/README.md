@@ -31,16 +31,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Visitor.CreateAnalyticsVisitorAsync(
     analyticsVisitor: new AnalyticsVisitor() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Email = "Dallas_Mitchell@yahoo.com",
+        Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "15ab1a8a-5e84-4e5f-a444-63119c440977",
-        LastSeenAt = System.DateTime.Parse("2021-12-12T15:05:19.347Z").ToUniversalTime(),
+        Id = "39fd37b9-e94a-4513-8f24-a25a8f8cbe53",
+        LastSeenAt = System.DateTime.Parse("2025-01-10T10:24:54.420Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
-        Name = "Desiree O'Hara",
-        TotalEvents = 3639D,
-        UpdatedAt = System.DateTime.Parse("2025-06-28T01:28:40.012Z").ToUniversalTime(),
+        TotalEvents = 2916D,
+        UpdatedAt = System.DateTime.Parse("2025-06-28T18:03:50.738Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -171,16 +170,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
     AnalyticsVisitor = new AnalyticsVisitor() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Email = "Dallas_Mitchell@yahoo.com",
+        Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "f400a03b-f4b5-456c-8e4c-6c26e96095b2",
-        LastSeenAt = System.DateTime.Parse("2021-12-12T15:05:19.351Z").ToUniversalTime(),
+        Id = "fc267bb0-921c-4a1b-ad76-4946bcc5b1b6",
+        LastSeenAt = System.DateTime.Parse("2025-01-10T10:24:54.430Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
-        Name = "Desiree O'Hara",
-        TotalEvents = 3639D,
-        UpdatedAt = System.DateTime.Parse("2025-06-28T01:28:40.023Z").ToUniversalTime(),
+        TotalEvents = 2916D,
+        UpdatedAt = System.DateTime.Parse("2025-06-28T18:03:50.749Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -268,16 +266,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
     AnalyticsVisitor = new AnalyticsVisitor() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Email = "Dallas_Mitchell@yahoo.com",
+        Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "f400a03b-f4b5-456c-8e4c-6c26e96095b2",
-        LastSeenAt = System.DateTime.Parse("2021-12-12T15:05:19.351Z").ToUniversalTime(),
+        Id = "fc267bb0-921c-4a1b-ad76-4946bcc5b1b6",
+        LastSeenAt = System.DateTime.Parse("2025-01-10T10:24:54.430Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
-        Name = "Desiree O'Hara",
-        TotalEvents = 3639D,
-        UpdatedAt = System.DateTime.Parse("2025-06-28T01:28:40.023Z").ToUniversalTime(),
+        TotalEvents = 2916D,
+        UpdatedAt = System.DateTime.Parse("2025-06-28T18:03:50.749Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

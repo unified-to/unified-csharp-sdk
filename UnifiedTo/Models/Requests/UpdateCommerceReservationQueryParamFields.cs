@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         UpdatedAt,
         [JsonProperty("url")]
         Url,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

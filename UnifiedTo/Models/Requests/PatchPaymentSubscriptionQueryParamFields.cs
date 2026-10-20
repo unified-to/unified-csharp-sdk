@@ -55,6 +55,8 @@ namespace UnifiedTo.Models.Requests
         Interval,
         [JsonProperty("lineitems")]
         Lineitems,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

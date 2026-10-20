@@ -20,6 +20,7 @@ Create a commit
 <!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" example="repo_commit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,13 +31,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commit.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "7d962e38-c661-4520-991c-b90f8c9c81e6",
+        Id = "4440c4b8-1113-4d82-80e4-7e10599a77e8",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
-        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
+        Message = "quantify bluetooth bandwidth",
+        Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-30T07:59:18.572Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-30T17:31:34.389Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -155,6 +157,7 @@ Update a commit
 <!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -166,13 +169,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "d4a3f21b-0be3-494f-9705-a454b9d5df97",
+        Id = "8d8621aa-4dc9-4dd0-9d8a-8393ef783df7",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
-        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
+        Message = "quantify bluetooth bandwidth",
+        Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-30T07:59:18.576Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-30T17:31:34.395Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -248,6 +252,7 @@ Update a commit
 <!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -259,13 +264,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "d4a3f21b-0be3-494f-9705-a454b9d5df97",
+        Id = "8d8621aa-4dc9-4dd0-9d8a-8393ef783df7",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
-        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
+        Message = "quantify bluetooth bandwidth",
+        Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-30T07:59:18.576Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-30T17:31:34.395Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

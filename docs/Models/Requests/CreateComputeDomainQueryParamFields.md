@@ -21,4 +21,5 @@ var value = CreateComputeDomainQueryParamFields.Id;
 | `Status`      | status        |
 | `IsPrimary`   | is_primary    |
 | `RedirectUrl` | redirect_url  |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

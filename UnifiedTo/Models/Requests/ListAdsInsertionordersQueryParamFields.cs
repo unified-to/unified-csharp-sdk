@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         BidStrategy,
         [JsonProperty("reference")]
         Reference,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

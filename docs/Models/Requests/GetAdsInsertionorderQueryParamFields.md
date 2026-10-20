@@ -27,4 +27,5 @@ var value = GetAdsInsertionorderQueryParamFields.Id;
 | `BudgetSegments` | budget_segments  |
 | `BidStrategy`    | bid_strategy     |
 | `Reference`      | reference        |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

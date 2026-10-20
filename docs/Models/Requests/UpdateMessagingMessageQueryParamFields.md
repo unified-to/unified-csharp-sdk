@@ -34,4 +34,5 @@ var value = UpdateMessagingMessageQueryParamFields.Id;
 | `HasChildren`             | has_children              |
 | `IsUnread`                | is_unread                 |
 | `Buttons`                 | buttons                   |
+| `Metadata`                | metadata                  |
 | `Raw`                     | raw                       |

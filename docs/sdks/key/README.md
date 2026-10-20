@@ -20,6 +20,7 @@ Create a key
 <!-- UsageSnippet language="csharp" operationID="createComputeKey" method="post" path="/compute/{connection_id}/key" example="compute_key" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,10 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Key.CreateComputeKeyAsync(
     computeKey: new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "7e71cfea-2d24-49a2-9e7b-3f793e007db0",
+        Id = "7fad7036-d614-4740-a04f-92b024c2f916",
+        Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T05:32:17.001Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.215Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -152,6 +154,7 @@ Update a key
 <!-- UsageSnippet language="csharp" operationID="patchComputeKey" method="patch" path="/compute/{connection_id}/key/{id}" example="compute_key" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -163,10 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeKeyRequest req = new PatchComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "d29a2380-5cf7-4506-a044-64a2a6913739",
+        Id = "fc38e3d1-6b9a-4aa7-a20e-c556533e2c31",
+        Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T05:32:17.005Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.223Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -242,6 +246,7 @@ Update a key
 <!-- UsageSnippet language="csharp" operationID="updateComputeKey" method="put" path="/compute/{connection_id}/key/{id}" example="compute_key" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -253,10 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeKeyRequest req = new UpdateComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "d29a2380-5cf7-4506-a044-64a2a6913739",
+        Id = "fc38e3d1-6b9a-4aa7-a20e-c556533e2c31",
+        Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T05:32:17.005Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.223Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

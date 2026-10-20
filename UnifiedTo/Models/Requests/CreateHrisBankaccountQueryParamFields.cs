@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         SplitAmount,
         [JsonProperty("priority")]
         Priority,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -86,13 +86,13 @@ var res = await sdk.Compute.CreateComputeDeploymentAsync(
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-28T02:19:38.049Z").ToUniversalTime(),
-        Id = "eaded581-f1c6-4d92-a4d5-d2a8d0eb149e",
+        FinishedAt = System.DateTime.Parse("2025-08-28T17:39:45.131Z").ToUniversalTime(),
+        Id = "1cef0911-d71a-4a18-96cc-b8c1741435be",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-08T23:08:19.167Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-09T12:38:11.684Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-26T23:34:27.624Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-27T17:17:26.110Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     connectionId: "<id>"
@@ -129,6 +129,7 @@ Create a domain
 <!-- UsageSnippet language="csharp" operationID="createComputeDomain" method="post" path="/compute/{connection_id}/domain" example="compute_domain" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -139,11 +140,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeDomainAsync(
     computeDomain: new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "b2268e7d-2de2-4049-97c9-f66f345fd7bd",
+        Id = "7fa27e4a-271e-4f9a-853d-fbb0b194f876",
         IsPrimary = false,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-02T10:45:38.765Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-02T22:37:13.419Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -193,10 +195,11 @@ var res = await sdk.Compute.CreateComputeEnvvarAsync(
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "6d2a175e-26b7-48ea-bd78-4b209184ad72",
+        Id = "99c995cb-eeb5-4bd0-80c9-2e3084572418",
         IsSecret = true,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-02T01:04:15.996Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T16:37:34.479Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -260,7 +263,7 @@ var res = await sdk.Compute.CreateComputeInstanceAsync(
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "8a83fbb8-b7eb-485b-9f40-bcd13d0cc7e0",
+        Id = "3557fd4a-f44b-43ee-9ba7-a9bb985cfe84",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -275,11 +278,11 @@ var res = await sdk.Compute.CreateComputeInstanceAsync(
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-22T16:58:12.296Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-23T05:37:14.180Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-14T19:40:07.556Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-15T09:30:19.414Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -315,6 +318,7 @@ Create a key
 <!-- UsageSnippet language="csharp" operationID="createComputeKey" method="post" path="/compute/{connection_id}/key" example="compute_key" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -325,10 +329,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeKeyAsync(
     computeKey: new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "7e71cfea-2d24-49a2-9e7b-3f793e007db0",
+        Id = "7fad7036-d614-4740-a04f-92b024c2f916",
+        Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T05:32:17.001Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.215Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -377,7 +382,7 @@ var res = await sdk.Compute.CreateComputeServiceAsync(
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "9b408fb6-6fc9-4d02-a54e-4ab1543cb17e",
+        Id = "adcc79b7-f9b8-4644-a69f-f25ebebeb598",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -388,7 +393,7 @@ var res = await sdk.Compute.CreateComputeServiceAsync(
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-03T15:58:03.912Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-04T02:12:07.860Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>"
@@ -436,13 +441,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeSnapshotAsync(
     computeSnapshot: new ComputeSnapshot() {
         CreatedAt = System.DateTime.Parse("2021-09-24T14:40:06.110Z").ToUniversalTime(),
-        Id = "6ce71478-11d4-40f2-9224-60ecf5451b24",
+        Id = "ee9f85a8-e40b-4cef-b1aa-db942c82de6c",
         Metadata = new List<ComputeMetadata>() {},
         Name = "snap-alius",
         SizeMb = 169984D,
         Status = ComputeSnapshotStatus.Deleting,
         Type = ComputeSnapshotType.Disk,
-        UpdatedAt = System.DateTime.Parse("2026-03-29T01:06:37.717Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T19:35:04.809Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -495,10 +500,10 @@ var res = await sdk.Compute.CreateComputeTemplateAsync(
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "7f2e01d6-dfed-420e-93ee-d79cd9eba7eb",
+        Id = "80b42d01-d399-4ca1-80c9-bea46c591e54",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-22T02:32:27.200Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-22T20:01:16.136Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -506,7 +511,7 @@ var res = await sdk.Compute.CreateComputeTemplateAsync(
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-11T15:47:32.616Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-12T02:59:32.975Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -553,14 +558,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeVolumeAsync(
     computeVolume: new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "845e79e1-1baf-447a-a3b6-e2921bd12fb1",
+        Id = "ab806b53-b985-45d2-8636-4836c71d7639",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T06:12:07.707Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-09T12:43:46.742Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     connectionId: "<id>"
@@ -1567,13 +1572,13 @@ PatchComputeDeploymentRequest req = new PatchComputeDeploymentRequest() {
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-28T02:19:38.058Z").ToUniversalTime(),
-        Id = "fac609dd-8d76-4b90-bff0-96edb8e0a53f",
+        FinishedAt = System.DateTime.Parse("2025-08-28T17:39:45.146Z").ToUniversalTime(),
+        Id = "80fcd5b5-abef-4428-9f42-896ef4d35179",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-08T23:08:19.175Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-09T12:38:11.697Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-26T23:34:27.635Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-27T17:17:26.127Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     ConnectionId = "<id>",
@@ -1610,6 +1615,7 @@ Update a domain
 <!-- UsageSnippet language="csharp" operationID="patchComputeDomain" method="patch" path="/compute/{connection_id}/domain/{id}" example="compute_domain" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1621,11 +1627,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeDomainRequest req = new PatchComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "31015fde-320c-441f-b8fb-caa1677e121d",
+        Id = "51b7b05e-2b44-4de8-b15b-f9d536eb646f",
         IsPrimary = false,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-02T10:45:38.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-02T22:37:13.427Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1676,10 +1683,11 @@ PatchComputeEnvvarRequest req = new PatchComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "31e731d2-fd17-4931-96c3-f5c2be8a7a5e",
+        Id = "227f7e08-afd4-4788-9b0b-75dc8c88e8d3",
         IsSecret = true,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-02T01:04:16.002Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T16:37:34.492Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1744,7 +1752,7 @@ PatchComputeInstanceRequest req = new PatchComputeInstanceRequest() {
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "78b534fc-1acf-41c2-8fea-3630e8a04a72",
+        Id = "f1aa13f9-af37-460b-9133-34144fe27dbf",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -1759,11 +1767,11 @@ PatchComputeInstanceRequest req = new PatchComputeInstanceRequest() {
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-22T16:58:12.329Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-23T05:37:14.198Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-14T19:40:07.592Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-15T09:30:19.434Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1799,6 +1807,7 @@ Update a key
 <!-- UsageSnippet language="csharp" operationID="patchComputeKey" method="patch" path="/compute/{connection_id}/key/{id}" example="compute_key" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1810,10 +1819,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeKeyRequest req = new PatchComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "d29a2380-5cf7-4506-a044-64a2a6913739",
+        Id = "fc38e3d1-6b9a-4aa7-a20e-c556533e2c31",
+        Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T05:32:17.005Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.223Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1863,7 +1873,7 @@ PatchComputeServiceRequest req = new PatchComputeServiceRequest() {
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "40c1fac3-5646-49dd-8294-537f62527d95",
+        Id = "ff0ccbef-6e94-4f77-967d-1987078fc64d",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -1874,7 +1884,7 @@ PatchComputeServiceRequest req = new PatchComputeServiceRequest() {
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-03T15:58:03.919Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-04T02:12:07.873Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     ConnectionId = "<id>",
@@ -1929,10 +1939,10 @@ PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "51dbce18-c95a-4939-adb5-a70a822549bc",
+        Id = "dc3e2a75-209b-40ae-949c-8e04b108598e",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-22T02:32:27.221Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-22T20:01:16.151Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -1940,7 +1950,7 @@ PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-11T15:47:32.630Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-12T02:59:32.985Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1988,14 +1998,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeVolumeRequest req = new PatchComputeVolumeRequest() {
     ComputeVolume = new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "e176517e-af32-4580-9bdb-f78e6d7cf508",
+        Id = "36960c49-d71a-4f30-8263-ddda29c332c3",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T06:12:07.712Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-09T12:43:46.748Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     ConnectionId = "<id>",
@@ -2408,13 +2418,13 @@ UpdateComputeDeploymentRequest req = new UpdateComputeDeploymentRequest() {
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-28T02:19:38.058Z").ToUniversalTime(),
-        Id = "fac609dd-8d76-4b90-bff0-96edb8e0a53f",
+        FinishedAt = System.DateTime.Parse("2025-08-28T17:39:45.146Z").ToUniversalTime(),
+        Id = "80fcd5b5-abef-4428-9f42-896ef4d35179",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-08T23:08:19.175Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-09T12:38:11.697Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-26T23:34:27.635Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-27T17:17:26.127Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     ConnectionId = "<id>",
@@ -2451,6 +2461,7 @@ Update a domain
 <!-- UsageSnippet language="csharp" operationID="updateComputeDomain" method="put" path="/compute/{connection_id}/domain/{id}" example="compute_domain" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2462,11 +2473,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeDomainRequest req = new UpdateComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "31015fde-320c-441f-b8fb-caa1677e121d",
+        Id = "51b7b05e-2b44-4de8-b15b-f9d536eb646f",
         IsPrimary = false,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-02T10:45:38.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-02T22:37:13.427Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2517,10 +2529,11 @@ UpdateComputeEnvvarRequest req = new UpdateComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "31e731d2-fd17-4931-96c3-f5c2be8a7a5e",
+        Id = "227f7e08-afd4-4788-9b0b-75dc8c88e8d3",
         IsSecret = true,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-02T01:04:16.002Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T16:37:34.492Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2585,7 +2598,7 @@ UpdateComputeInstanceRequest req = new UpdateComputeInstanceRequest() {
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "78b534fc-1acf-41c2-8fea-3630e8a04a72",
+        Id = "f1aa13f9-af37-460b-9133-34144fe27dbf",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -2600,11 +2613,11 @@ UpdateComputeInstanceRequest req = new UpdateComputeInstanceRequest() {
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-22T16:58:12.329Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-23T05:37:14.198Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-14T19:40:07.592Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-15T09:30:19.434Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2640,6 +2653,7 @@ Update a key
 <!-- UsageSnippet language="csharp" operationID="updateComputeKey" method="put" path="/compute/{connection_id}/key/{id}" example="compute_key" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2651,10 +2665,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeKeyRequest req = new UpdateComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "d29a2380-5cf7-4506-a044-64a2a6913739",
+        Id = "fc38e3d1-6b9a-4aa7-a20e-c556533e2c31",
+        Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T05:32:17.005Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.223Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2704,7 +2719,7 @@ UpdateComputeServiceRequest req = new UpdateComputeServiceRequest() {
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "40c1fac3-5646-49dd-8294-537f62527d95",
+        Id = "ff0ccbef-6e94-4f77-967d-1987078fc64d",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -2715,7 +2730,7 @@ UpdateComputeServiceRequest req = new UpdateComputeServiceRequest() {
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-03T15:58:03.919Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-04T02:12:07.873Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     ConnectionId = "<id>",
@@ -2770,10 +2785,10 @@ UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "51dbce18-c95a-4939-adb5-a70a822549bc",
+        Id = "dc3e2a75-209b-40ae-949c-8e04b108598e",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-22T02:32:27.221Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-22T20:01:16.151Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -2781,7 +2796,7 @@ UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-11T15:47:32.630Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-12T02:59:32.985Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2829,14 +2844,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeVolumeRequest req = new UpdateComputeVolumeRequest() {
     ComputeVolume = new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "e176517e-af32-4580-9bdb-f78e6d7cf508",
+        Id = "36960c49-d71a-4f30-8263-ddda29c332c3",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T06:12:07.712Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-09T12:43:46.748Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     ConnectionId = "<id>",

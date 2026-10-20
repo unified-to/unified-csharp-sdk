@@ -33,5 +33,6 @@ var value = ListCommerceLocationsQueryParamFields.Id;
 | `ImageUrl`       | image_url        |
 | `WebUrl`         | web_url          |
 | `Media`          | media            |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |
 | `Categories`     | categories       |

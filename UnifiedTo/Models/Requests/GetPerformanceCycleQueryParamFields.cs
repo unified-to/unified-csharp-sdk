@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         EndAt,
         [JsonProperty("due_at")]
         DueAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

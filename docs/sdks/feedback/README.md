@@ -28,15 +28,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Feedback.CreatePerformanceFeedbackAsync(
     performanceFeedback: new PerformanceFeedback() {
         CreatedAt = System.DateTime.Parse("2023-04-11T16:21:53.862Z").ToUniversalTime(),
-        Id = "f6852ad6-fc66-4938-a56a-05ba59ec4c0b",
+        Id = "31a9c10d-57f5-4d6b-ae37-80cd1ecb5468",
         IsVisible = true,
         Message = "Tabernus corpus voluptate aestus.",
+        Metadata = new List<PerformanceMetadata>() {},
         Tags = new List<string>() {
             "well-to-do",
             "hexagon",
         },
         Type = PerformanceFeedbackType.Praise,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T16:36:05.457Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T06:43:31.847Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"

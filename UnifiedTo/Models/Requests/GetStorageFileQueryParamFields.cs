@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         References,
         [JsonProperty("tags")]
         Tags,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

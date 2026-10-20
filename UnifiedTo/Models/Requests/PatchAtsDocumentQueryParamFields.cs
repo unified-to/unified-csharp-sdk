@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         JobId,
         [JsonProperty("user_id")]
         UserId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

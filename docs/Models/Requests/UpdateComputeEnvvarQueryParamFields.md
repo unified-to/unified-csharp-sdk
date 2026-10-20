@@ -21,4 +21,5 @@ var value = UpdateComputeEnvvarQueryParamFields.Id;
 | `Value`        | value          |
 | `Environments` | environments   |
 | `IsSecret`     | is_secret      |
+| `Metadata`     | metadata       |
 | `Raw`          | raw            |

@@ -30,4 +30,5 @@ var value = GetTicketingTicketQueryParamFields.Id;
 | `Url`           | url             |
 | `AttachmentIds` | attachment_ids  |
 | `DueAt`         | due_at          |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

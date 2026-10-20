@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         Comment,
         [JsonProperty("questions")]
         Questions,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

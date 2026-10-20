@@ -23,4 +23,5 @@ var value = GetClubsMemberQueryParamFields.Id;
 | `IsAdmin`          | is_admin           |
 | `IsOwner`          | is_owner           |
 | `MembershipStatus` | membership_status  |
+| `Metadata`         | metadata           |
 | `Raw`              | raw                |

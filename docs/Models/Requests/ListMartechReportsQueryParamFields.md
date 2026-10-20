@@ -40,4 +40,5 @@ var value = ListMartechReportsQueryParamFields.Id;
 | `HumanOpensTotal`        | human_opens_total        |
 | `HumanUniqueOpens`       | human_unique_opens       |
 | `HumanOpenRate`          | human_open_rate          |
+| `Metadata`               | metadata                 |
 | `Raw`                    | raw                      |

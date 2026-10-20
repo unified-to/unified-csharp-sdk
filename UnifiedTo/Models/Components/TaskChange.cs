@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("items")]
         public List<TaskChangeItem>? Items { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<TaskMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

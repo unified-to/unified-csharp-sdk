@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Requests
         Height,
         [JsonProperty("file_size")]
         FileSize,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

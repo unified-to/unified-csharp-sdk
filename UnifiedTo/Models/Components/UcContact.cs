@@ -50,6 +50,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<UcMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The name of the contact.
         /// </summary>

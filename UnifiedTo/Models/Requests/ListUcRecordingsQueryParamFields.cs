@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         Type,
         [JsonProperty("conversation_identifier")]
         ConversationIdentifier,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

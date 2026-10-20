@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Requests
         IsEmployer,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -56,6 +56,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

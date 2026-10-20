@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         WebUrl,
         [JsonProperty("media")]
         Media,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

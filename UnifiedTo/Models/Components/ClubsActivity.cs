@@ -202,6 +202,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("max_watts")]
         public double? MaxWatts { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ClubsMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The activity's moving time, in seconds.
         /// </summary>

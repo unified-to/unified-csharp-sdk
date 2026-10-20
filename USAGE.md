@@ -13,27 +13,23 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {
         Balance = 12092D,
         CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
-        Currency = "BOB",
-        CustomerDefinedCode = "quo",
-        Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "aa723d96-bafb-4b7f-8c1e-5b5d23e3f2e8",
-        IsPayable = true,
-        Name = "Electronic Aluminum Tuna",
+        Currency = "CAD",
+        CustomerDefinedCode = "6170",
+        Description = "Voluptatibus valde spoliatio.",
+        Id = "14ce1ea3-4081-4435-808e-073e20cc3a64",
+        IsPayable = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Auto Loan Account",
         Status = Status.Archived,
         Taxonomy = new List<AccountingAccountTaxonomy>() {
             new AccountingAccountTaxonomy() {
-                OriginalType = "vesper",
+                OriginalType = "vilitas",
                 Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "iste",
-            },
-            new AccountingAccountTaxonomy() {
-                OriginalType = "adamo",
-                Type = AccountingAccountTaxonomyType.Subgroup,
-                Value = "peccatus",
+                Value = "comedo",
             },
         },
-        Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T19:44:26.198Z").ToUniversalTime(),
+        Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
+        UpdatedAt = System.DateTime.Parse("2023-08-06T14:18:17.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );

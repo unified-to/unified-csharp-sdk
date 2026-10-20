@@ -20,6 +20,7 @@ Create an earning
 <!-- UsageSnippet language="csharp" operationID="createHrisEarning" method="post" path="/hris/{connection_id}/earning" example="hris_earning" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,13 +32,14 @@ var res = await sdk.Earning.CreateHrisEarningAsync(
     hrisEarning: new HrisEarning() {
         Amount = 4026D,
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
-        Currency = "PKR",
-        Frequency = HrisEarningFrequency.Biweekly,
-        Id = "82e5996c-f194-4ea0-84d9-8e7151a6fc72",
-        Notes = "Truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-24T13:19:27.504Z").ToUniversalTime(),
-        Status = HrisEarningStatus.Processed,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T13:52:47.276Z").ToUniversalTime(),
+        Currency = "USD",
+        Frequency = HrisEarningFrequency.Semimonthly,
+        Id = "438f0fb5-a277-4a05-a2e0-9fcabac17e45",
+        Metadata = new List<HrisMetadata>() {},
+        Notes = "Deporto truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-24T22:42:12.542Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Ended,
+        UpdatedAt = System.DateTime.Parse("2020-02-08T16:39:38.677Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -156,6 +158,7 @@ Update an earning
 <!-- UsageSnippet language="csharp" operationID="patchHrisEarning" method="patch" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -168,13 +171,14 @@ PatchHrisEarningRequest req = new PatchHrisEarningRequest() {
     HrisEarning = new HrisEarning() {
         Amount = 4026D,
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
-        Currency = "PKR",
-        Frequency = HrisEarningFrequency.Biweekly,
-        Id = "4513b75b-23b1-4fff-ad84-ff095ed744e2",
-        Notes = "Truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-24T13:19:27.511Z").ToUniversalTime(),
-        Status = HrisEarningStatus.Processed,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T13:52:47.278Z").ToUniversalTime(),
+        Currency = "USD",
+        Frequency = HrisEarningFrequency.Semimonthly,
+        Id = "54ccbae7-3570-4d1f-9c26-82e80ac02a61",
+        Metadata = new List<HrisMetadata>() {},
+        Notes = "Deporto truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-24T22:42:12.553Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Ended,
+        UpdatedAt = System.DateTime.Parse("2020-02-08T16:39:38.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -250,6 +254,7 @@ Update an earning
 <!-- UsageSnippet language="csharp" operationID="updateHrisEarning" method="put" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -262,13 +267,14 @@ UpdateHrisEarningRequest req = new UpdateHrisEarningRequest() {
     HrisEarning = new HrisEarning() {
         Amount = 4026D,
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
-        Currency = "PKR",
-        Frequency = HrisEarningFrequency.Biweekly,
-        Id = "4513b75b-23b1-4fff-ad84-ff095ed744e2",
-        Notes = "Truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-24T13:19:27.511Z").ToUniversalTime(),
-        Status = HrisEarningStatus.Processed,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T13:52:47.278Z").ToUniversalTime(),
+        Currency = "USD",
+        Frequency = HrisEarningFrequency.Semimonthly,
+        Id = "54ccbae7-3570-4d1f-9c26-82e80ac02a61",
+        Metadata = new List<HrisMetadata>() {},
+        Notes = "Deporto truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-24T22:42:12.553Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Ended,
+        UpdatedAt = System.DateTime.Parse("2020-02-08T16:39:38.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

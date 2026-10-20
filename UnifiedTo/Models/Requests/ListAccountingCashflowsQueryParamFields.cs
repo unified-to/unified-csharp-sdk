@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         InvestingSections,
         [JsonProperty("financing_sections")]
         FinancingSections,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

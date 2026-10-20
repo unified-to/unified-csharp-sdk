@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         AccountNumber,
         [JsonProperty("managers")]
         Managers,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

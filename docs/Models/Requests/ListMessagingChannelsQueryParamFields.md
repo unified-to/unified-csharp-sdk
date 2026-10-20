@@ -24,4 +24,5 @@ var value = ListMessagingChannelsQueryParamFields.Id;
 | `IsActive`       | is_active        |
 | `IsPrivate`      | is_private       |
 | `WebUrl`         | web_url          |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

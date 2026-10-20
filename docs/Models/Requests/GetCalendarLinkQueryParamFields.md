@@ -23,4 +23,5 @@ var value = GetCalendarLinkQueryParamFields.Id;
 | `IsActive`      | is_active       |
 | `PriceAmount`   | price_amount    |
 | `PriceCurrency` | price_currency  |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

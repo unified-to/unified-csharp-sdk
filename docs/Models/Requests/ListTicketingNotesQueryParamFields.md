@@ -20,4 +20,5 @@ var value = ListTicketingNotesQueryParamFields.Id;
 | `Description` | description   |
 | `TicketId`    | ticket_id     |
 | `UserId`      | user_id       |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

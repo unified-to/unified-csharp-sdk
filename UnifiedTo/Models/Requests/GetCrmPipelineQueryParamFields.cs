@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         DisplayOrder,
         [JsonProperty("stages")]
         Stages,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

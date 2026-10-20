@@ -20,6 +20,7 @@ Create an ad
 <!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" example="ads_ad" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -36,10 +37,11 @@ var res = await sdk.Ad.CreateAdsAdAsync(
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "5ce99610-80dd-4693-bed5-6088f318411f",
+        Id = "575c0f19-3b7c-4045-a65a-dd5d3e277d97",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-17T17:21:30.255Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T01:49:31.598Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -158,6 +160,7 @@ Update an ad
 <!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -175,10 +178,11 @@ PatchAdsAdRequest req = new PatchAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "cf15ec45-a04a-4af0-b933-85cfe8458cea",
+        Id = "c74c1abd-908d-4c98-81a1-ca265042f4f0",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-17T17:21:30.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T01:49:31.609Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -254,6 +258,7 @@ Update an ad
 <!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -271,10 +276,11 @@ UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "cf15ec45-a04a-4af0-b933-85cfe8458cea",
+        Id = "c74c1abd-908d-4c98-81a1-ca265042f4f0",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-17T17:21:30.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T01:49:31.609Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

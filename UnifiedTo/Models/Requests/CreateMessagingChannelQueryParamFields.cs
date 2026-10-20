@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         IsPrivate,
         [JsonProperty("web_url")]
         WebUrl,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

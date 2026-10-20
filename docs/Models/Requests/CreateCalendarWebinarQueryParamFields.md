@@ -46,4 +46,5 @@ var value = CreateCalendarWebinarQueryParamFields.Id;
 | `HasQa`              | has_qa               |
 | `HasPolls`           | has_polls            |
 | `HasRecording`       | has_recording        |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

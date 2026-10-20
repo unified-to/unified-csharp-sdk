@@ -128,6 +128,7 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType GenaiAgent = new WebhookObjectType("genai_agent");
         public static readonly WebhookObjectType GenaiOrganization = new WebhookObjectType("genai_organization");
         public static readonly WebhookObjectType GenaiSkill = new WebhookObjectType("genai_skill");
+        public static readonly WebhookObjectType GenaiMemory = new WebhookObjectType("genai_memory");
         public static readonly WebhookObjectType MessagingMessage = new WebhookObjectType("messaging_message");
         public static readonly WebhookObjectType MessagingChannel = new WebhookObjectType("messaging_channel");
         public static readonly WebhookObjectType MessagingEvent = new WebhookObjectType("messaging_event");
@@ -344,6 +345,7 @@ namespace UnifiedTo.Models.Components
                 ["genai_agent"] = GenaiAgent,
                 ["genai_organization"] = GenaiOrganization,
                 ["genai_skill"] = GenaiSkill,
+                ["genai_memory"] = GenaiMemory,
                 ["messaging_message"] = MessagingMessage,
                 ["messaging_channel"] = MessagingChannel,
                 ["messaging_event"] = MessagingEvent,

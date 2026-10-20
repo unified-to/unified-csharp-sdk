@@ -76,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         [JsonProperty("net_amount")]
         public double? NetAmount { get; set; }
 

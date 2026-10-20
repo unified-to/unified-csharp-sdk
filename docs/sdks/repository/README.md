@@ -20,6 +20,7 @@ Create a repository
 <!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" example="repo_repository" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,13 +31,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repository.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
-        Description = "Tribuo torqueo aetas ustulo illum.",
-        Id = "6dab57e8-6299-4bec-ab99-a9d412258619",
+        Description = "Sed somnus crastinus armarium.",
+        Id = "0c9525d4-9ac6-406c-bff2-ca4a64ed96bd",
         IsPrivate = false,
-        Name = "suggero",
-        Owner = "Marcella Kuhic",
-        UpdatedAt = System.DateTime.Parse("2024-02-29T15:25:25.678Z").ToUniversalTime(),
-        WebUrl = "https://brown-phrase.info",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "bah-bogus",
+        UpdatedAt = System.DateTime.Parse("2024-02-29T19:52:12.303Z").ToUniversalTime(),
+        WebUrl = "https://neat-birdbath.org",
     },
     connectionId: "<id>"
 );
@@ -155,6 +156,7 @@ Update a repository
 <!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -166,13 +168,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
-        Description = "Tribuo torqueo aetas ustulo illum.",
-        Id = "151a9e17-bad0-42c5-81bb-7b845ac7008b",
+        Description = "Sed somnus crastinus armarium.",
+        Id = "b3e0e0f2-027a-42d7-b984-2e06899d987c",
         IsPrivate = false,
-        Name = "suggero",
-        Owner = "Marcella Kuhic",
-        UpdatedAt = System.DateTime.Parse("2024-02-29T15:25:25.681Z").ToUniversalTime(),
-        WebUrl = "https://brown-phrase.info",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "bah-bogus",
+        UpdatedAt = System.DateTime.Parse("2024-02-29T19:52:12.307Z").ToUniversalTime(),
+        WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -248,6 +250,7 @@ Update a repository
 <!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -259,13 +262,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
-        Description = "Tribuo torqueo aetas ustulo illum.",
-        Id = "151a9e17-bad0-42c5-81bb-7b845ac7008b",
+        Description = "Sed somnus crastinus armarium.",
+        Id = "b3e0e0f2-027a-42d7-b984-2e06899d987c",
         IsPrivate = false,
-        Name = "suggero",
-        Owner = "Marcella Kuhic",
-        UpdatedAt = System.DateTime.Parse("2024-02-29T15:25:25.681Z").ToUniversalTime(),
-        WebUrl = "https://brown-phrase.info",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "bah-bogus",
+        UpdatedAt = System.DateTime.Parse("2024-02-29T19:52:12.307Z").ToUniversalTime(),
+        WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",
     Id = "<id>",

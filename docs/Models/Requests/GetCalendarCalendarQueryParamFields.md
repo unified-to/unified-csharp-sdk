@@ -20,4 +20,5 @@ var value = GetCalendarCalendarQueryParamFields.Id;
 | `Description` | description   |
 | `Timezone`    | timezone      |
 | `IsPrimary`   | is_primary    |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

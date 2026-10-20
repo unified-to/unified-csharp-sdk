@@ -38,43 +38,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Activity.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {
-        Bcc = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Mabel_Schuppe-Schowalter42@hotmail.com",
-                Name = "Rochelle Franey-Bechtelar",
-                Type = AtsEmailType.Home,
-            },
-        },
-        Cc = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Sasha24@hotmail.com",
-                Name = "Dr. Elbert Kuvalis",
-                Type = AtsEmailType.Home,
-            },
-            new AtsEmail() {
-                Email = "Rosetta_Donnelly@gmail.com",
-                Name = "Ramon Daniel",
-                Type = AtsEmailType.Other,
-            },
-            new AtsEmail() {
-                Email = "Kathryne_Jast@yahoo.com",
-                Name = "Christian Jacobson",
-                Type = AtsEmailType.Other,
-            },
-            new AtsEmail() {
-                Email = "Eldred95@yahoo.com",
-                Name = "Edna Bogan",
-                Type = AtsEmailType.Other,
-            },
-        },
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
-        Description = "Amplus.",
-        From = new PropertyAtsActivityFrom() {
-            Email = "Norwood.Wiza47@yahoo.com",
-            Name = "Toby Grant",
-            Type = PropertyAtsActivityFromType.Other,
-        },
-        Id = "35f46aab-f008-46f2-b543-94da7faabfca",
+        Description = "Sapiente.",
+        Id = "181b47f8-7fee-4b4b-b19d-7c9702d3148d",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -84,39 +50,18 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "6760612c-8219-4dde-83ac-f333118dd614",
+                Id = "0fe169ce-ce87-437b-b828-3880b0b87c3d",
                 Namespace = "activity",
-                Slug = "acer",
+                Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
-                    "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo."
-                ),
-            },
-            new AtsMetadata() {
-                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
-                    new Dictionary<string, object>() {
-
-                    }
-                ),
-                Format = AtsMetadataFormat.Text,
-                Id = "b1493e58-8a2e-4b07-adff-55446c2b399e",
-                Namespace = "activity",
-                Slug = "tremo",
-                Value = AtsMetadataValue.CreateStr(
-                    "Amita delectus dicta temptatio utroque ex."
+                    "Reprehenderit verto."
                 ),
             },
         },
         SubType = "TASK",
-        Title = "Senior Interactions Manager",
-        To = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Sister91@hotmail.com",
-                Name = "Eddie Nienow PhD",
-                Type = AtsEmailType.Work,
-            },
-        },
+        Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-02T11:19:44.734Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-03T05:23:27.798Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -152,6 +97,7 @@ Create an activity
 <!-- UsageSnippet language="csharp" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" example="lms_activity" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -162,14 +108,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Activity.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-27T14:39:31.691Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-05T08:32:25.567Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "9843e7ff-7b9d-4aba-87b9-63dfda63233f",
+        Id = "db383c48-7eed-432c-a050-73806344e093",
         IsCompleted = true,
+        Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T13:00:30.408Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T01:52:43.462Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-30T17:27:46.521Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -465,43 +412,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
-        Bcc = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Mabel_Schuppe-Schowalter42@hotmail.com",
-                Name = "Rochelle Franey-Bechtelar",
-                Type = AtsEmailType.Home,
-            },
-        },
-        Cc = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Sasha24@hotmail.com",
-                Name = "Dr. Elbert Kuvalis",
-                Type = AtsEmailType.Home,
-            },
-            new AtsEmail() {
-                Email = "Rosetta_Donnelly@gmail.com",
-                Name = "Ramon Daniel",
-                Type = AtsEmailType.Other,
-            },
-            new AtsEmail() {
-                Email = "Kathryne_Jast@yahoo.com",
-                Name = "Christian Jacobson",
-                Type = AtsEmailType.Other,
-            },
-            new AtsEmail() {
-                Email = "Eldred95@yahoo.com",
-                Name = "Edna Bogan",
-                Type = AtsEmailType.Other,
-            },
-        },
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
-        Description = "Amplus.",
-        From = new PropertyAtsActivityFrom() {
-            Email = "Norwood.Wiza47@yahoo.com",
-            Name = "Toby Grant",
-            Type = PropertyAtsActivityFromType.Other,
-        },
-        Id = "bf72023b-ddc5-4397-95ce-2a4713ad4ff1",
+        Description = "Sapiente.",
+        Id = "4bf692bc-a5fd-4795-b457-1f4cd6e8d88e",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -511,39 +424,18 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f695fdf7-286d-4cb5-a318-f700b52219b3",
+                Id = "05d37ef5-53a2-43bd-ac97-f5ba636e376d",
                 Namespace = "activity",
-                Slug = "acer",
+                Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
-                    "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo."
-                ),
-            },
-            new AtsMetadata() {
-                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
-                    new Dictionary<string, object>() {
-
-                    }
-                ),
-                Format = AtsMetadataFormat.Text,
-                Id = "7a927a35-0b3b-4db1-be3c-4a311331da4b",
-                Namespace = "activity",
-                Slug = "tremo",
-                Value = AtsMetadataValue.CreateStr(
-                    "Amita delectus dicta temptatio utroque ex."
+                    "Reprehenderit verto."
                 ),
             },
         },
         SubType = "TASK",
-        Title = "Senior Interactions Manager",
-        To = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Sister91@hotmail.com",
-                Name = "Eddie Nienow PhD",
-                Type = AtsEmailType.Work,
-            },
-        },
+        Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-02T11:19:44.760Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-03T05:23:27.833Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -579,6 +471,7 @@ Update an activity
 <!-- UsageSnippet language="csharp" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -590,14 +483,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-27T14:39:31.697Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-05T08:32:25.574Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "40e0cf0f-6f17-4ce2-b2e1-703569d5724e",
+        Id = "34616479-7892-4b46-b5f4-93d93eb2baa1",
         IsCompleted = true,
+        Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T13:00:30.411Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T01:52:43.463Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-30T17:27:46.523Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -724,43 +618,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
-        Bcc = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Mabel_Schuppe-Schowalter42@hotmail.com",
-                Name = "Rochelle Franey-Bechtelar",
-                Type = AtsEmailType.Home,
-            },
-        },
-        Cc = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Sasha24@hotmail.com",
-                Name = "Dr. Elbert Kuvalis",
-                Type = AtsEmailType.Home,
-            },
-            new AtsEmail() {
-                Email = "Rosetta_Donnelly@gmail.com",
-                Name = "Ramon Daniel",
-                Type = AtsEmailType.Other,
-            },
-            new AtsEmail() {
-                Email = "Kathryne_Jast@yahoo.com",
-                Name = "Christian Jacobson",
-                Type = AtsEmailType.Other,
-            },
-            new AtsEmail() {
-                Email = "Eldred95@yahoo.com",
-                Name = "Edna Bogan",
-                Type = AtsEmailType.Other,
-            },
-        },
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
-        Description = "Amplus.",
-        From = new PropertyAtsActivityFrom() {
-            Email = "Norwood.Wiza47@yahoo.com",
-            Name = "Toby Grant",
-            Type = PropertyAtsActivityFromType.Other,
-        },
-        Id = "bf72023b-ddc5-4397-95ce-2a4713ad4ff1",
+        Description = "Sapiente.",
+        Id = "4bf692bc-a5fd-4795-b457-1f4cd6e8d88e",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -770,39 +630,18 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f695fdf7-286d-4cb5-a318-f700b52219b3",
+                Id = "05d37ef5-53a2-43bd-ac97-f5ba636e376d",
                 Namespace = "activity",
-                Slug = "acer",
+                Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
-                    "Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo."
-                ),
-            },
-            new AtsMetadata() {
-                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
-                    new Dictionary<string, object>() {
-
-                    }
-                ),
-                Format = AtsMetadataFormat.Text,
-                Id = "7a927a35-0b3b-4db1-be3c-4a311331da4b",
-                Namespace = "activity",
-                Slug = "tremo",
-                Value = AtsMetadataValue.CreateStr(
-                    "Amita delectus dicta temptatio utroque ex."
+                    "Reprehenderit verto."
                 ),
             },
         },
         SubType = "TASK",
-        Title = "Senior Interactions Manager",
-        To = new List<AtsEmail>() {
-            new AtsEmail() {
-                Email = "Sister91@hotmail.com",
-                Name = "Eddie Nienow PhD",
-                Type = AtsEmailType.Work,
-            },
-        },
+        Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-02T11:19:44.760Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-03T05:23:27.833Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -838,6 +677,7 @@ Update an activity
 <!-- UsageSnippet language="csharp" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -849,14 +689,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-27T14:39:31.697Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-05T08:32:25.574Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "40e0cf0f-6f17-4ce2-b2e1-703569d5724e",
+        Id = "34616479-7892-4b46-b5f4-93d93eb2baa1",
         IsCompleted = true,
+        Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T13:00:30.411Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T01:52:43.463Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-30T17:27:46.523Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

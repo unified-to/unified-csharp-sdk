@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("matter_id")]
         public string? MatterId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CalendarMetadata>? Metadata { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 

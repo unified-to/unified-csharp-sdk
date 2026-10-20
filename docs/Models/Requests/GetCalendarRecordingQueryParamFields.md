@@ -22,4 +22,5 @@ var value = GetCalendarRecordingQueryParamFields.Id;
 | `EventId`   | event_id    |
 | `WebUrl`    | web_url     |
 | `Media`     | media       |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         ConfirmationMessage,
         [JsonProperty("confirmation_redirect_url")]
         ConfirmationRedirectUrl,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

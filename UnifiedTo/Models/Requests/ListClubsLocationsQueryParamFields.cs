@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Telephone,
         [JsonProperty("url")]
         Url,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

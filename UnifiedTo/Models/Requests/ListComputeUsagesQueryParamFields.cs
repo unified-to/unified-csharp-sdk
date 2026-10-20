@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         CostAmount,
         [JsonProperty("currency")]
         Currency,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -95,6 +95,8 @@ namespace UnifiedTo.Models.Requests
         ResponseSource,
         [JsonProperty("response_attributes")]
         ResponseAttributes,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

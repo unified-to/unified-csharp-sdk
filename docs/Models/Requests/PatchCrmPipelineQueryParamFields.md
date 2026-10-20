@@ -21,4 +21,5 @@ var value = PatchCrmPipelineQueryParamFields.Id;
 | `DealProbability` | deal_probability  |
 | `DisplayOrder`    | display_order     |
 | `Stages`          | stages            |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

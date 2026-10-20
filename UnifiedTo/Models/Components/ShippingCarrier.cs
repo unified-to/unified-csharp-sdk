@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class ShippingCarrier
@@ -45,6 +46,9 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("logo_url")]
         public string? LogoUrl { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<ShippingMetadata>? Metadata { get; set; }
 
         /// <summary>
         /// The name of the carrier.

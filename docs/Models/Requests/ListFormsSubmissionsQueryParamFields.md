@@ -20,4 +20,5 @@ var value = ListFormsSubmissionsQueryParamFields.Id;
 | `RespondentEmail` | respondent_email  |
 | `RespondentName`  | respondent_name   |
 | `Answers`         | answers           |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

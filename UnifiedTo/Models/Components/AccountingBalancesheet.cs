@@ -44,6 +44,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("liabilities")]
         public List<AccountingBalancesheetItem>? Liabilities { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

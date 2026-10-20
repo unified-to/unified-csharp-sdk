@@ -37,12 +37,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Category.CreateAccountingCategoryAsync(
     accountingCategory: new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
-        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "31b4b665-7ead-4d11-8105-8294c9b19ee8",
+        Description = "Textus ab thymum labore basium.",
+        Id = "8158b5bb-0686-4786-86ed-d89c5d040d0f",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
-        Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-09-10T02:38:51.834Z").ToUniversalTime(),
+        Name = "Beauty",
+        UpdatedAt = System.DateTime.Parse("2025-09-10T16:38:03.121Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -78,6 +78,7 @@ Create a category
 <!-- UsageSnippet language="csharp" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" example="ticketing_category" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -89,10 +90,11 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "fb214ad8-e6af-4786-b5c7-f47f3f400d7e",
+        Id = "13ea9a4a-e171-4222-9756-668a306a6727",
         IsActive = true,
+        Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T04:14:02.296Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.147Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -306,12 +308,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
-        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "6bc8726b-7ddc-4aef-8608-b73c142f7022",
+        Description = "Textus ab thymum labore basium.",
+        Id = "15180ea4-5b08-4f3d-91e2-9f134a26243a",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
-        Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-09-10T02:38:51.848Z").ToUniversalTime(),
+        Name = "Beauty",
+        UpdatedAt = System.DateTime.Parse("2025-09-10T16:38:03.132Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -347,6 +349,7 @@ Update a category
 <!-- UsageSnippet language="csharp" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -359,10 +362,11 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "48675e67-7972-49e1-af8a-12a00835e326",
+        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
         IsActive = true,
+        Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T04:14:02.302Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -490,12 +494,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
-        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "6bc8726b-7ddc-4aef-8608-b73c142f7022",
+        Description = "Textus ab thymum labore basium.",
+        Id = "15180ea4-5b08-4f3d-91e2-9f134a26243a",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
-        Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-09-10T02:38:51.848Z").ToUniversalTime(),
+        Name = "Beauty",
+        UpdatedAt = System.DateTime.Parse("2025-09-10T16:38:03.132Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -531,6 +535,7 @@ Update a category
 <!-- UsageSnippet language="csharp" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -543,10 +548,11 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "48675e67-7972-49e1-af8a-12a00835e326",
+        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
         IsActive = true,
+        Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T04:14:02.302Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

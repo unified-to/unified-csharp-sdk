@@ -1,0 +1,13 @@
+# StorageMetadata
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `ExtraData`                                                                     | [StorageMetadataExtraData](../../Models/Components/StorageMetadataExtraData.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Format`                                                                        | [StorageMetadataFormat](../../Models/Components/StorageMetadataFormat.md)       | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Id`                                                                            | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Namespace`                                                                     | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Slug`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Value`                                                                         | [StorageMetadataValue](../../Models/Components/StorageMetadataValue.md)         | :heavy_minus_sign:                                                              | N/A                                                                             |

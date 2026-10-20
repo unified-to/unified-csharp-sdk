@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("managers")]
         public List<AdsManager>? Managers { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

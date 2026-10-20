@@ -46,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<StorageMetadata>? Metadata { get; set; }
+
         [JsonProperty("mime_type")]
         public string? MimeType { get; set; }
 

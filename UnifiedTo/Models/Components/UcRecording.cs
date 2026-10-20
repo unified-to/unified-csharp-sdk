@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("media")]
         public List<UcRecordingMedia>? Media { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<UcMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

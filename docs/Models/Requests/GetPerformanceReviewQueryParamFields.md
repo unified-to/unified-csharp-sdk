@@ -30,4 +30,5 @@ var value = GetPerformanceReviewQueryParamFields.Id;
 | `IsAcknowledged`     | is_acknowledged      |
 | `SubmittedAt`        | submitted_at         |
 | `CompletedAt`        | completed_at         |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

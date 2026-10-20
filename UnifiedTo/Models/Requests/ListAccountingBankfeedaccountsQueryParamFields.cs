@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         FeedStartAt,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

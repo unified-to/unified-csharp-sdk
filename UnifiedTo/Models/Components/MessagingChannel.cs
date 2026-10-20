@@ -41,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("members")]
         public List<MessagingMember>? Members { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<MessagingMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

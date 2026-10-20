@@ -30,4 +30,5 @@ var value = GetCrmEventQueryParamFields.Id;
 | `ContactIds`     | contact_ids      |
 | `LeadIds`        | lead_ids         |
 | `UserId`         | user_id          |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

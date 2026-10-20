@@ -247,6 +247,8 @@ namespace UnifiedTo
 
         public IEmbedding Embedding { get; }
 
+        public IMemory Memory { get; }
+
         public IModel Model { get; }
 
         public IPrompt Prompt { get; }
@@ -901,6 +903,10 @@ namespace UnifiedTo
         /// </summary>
         public IEmbedding Embedding { get; private set; }
         /// <summary>
+        /// The Memory sub-SDK.
+        /// </summary>
+        public IMemory Memory { get; private set; }
+        /// <summary>
         /// The Model sub-SDK.
         /// </summary>
         public IModel Model { get; private set; }
@@ -1528,6 +1534,8 @@ namespace UnifiedTo
 
             Embedding = new Embedding(SDKConfiguration);
 
+            Memory = new Memory(SDKConfiguration);
+
             Model = new Model(SDKConfiguration);
 
             Prompt = new Prompt(SDKConfiguration);
@@ -2010,6 +2018,8 @@ namespace UnifiedTo
             Agent = new Agent(SDKConfiguration);
 
             Embedding = new Embedding(SDKConfiguration);
+
+            Memory = new Memory(SDKConfiguration);
 
             Model = new Model(SDKConfiguration);
 

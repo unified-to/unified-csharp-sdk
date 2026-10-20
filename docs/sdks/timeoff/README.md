@@ -20,6 +20,7 @@ Create a timeoff
 <!-- UsageSnippet language="csharp" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" example="hris_timeoff" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,20 +30,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T05:22:00.585Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T06:56:31.747Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-27T09:24:41.627Z").ToUniversalTime(),
-        Id = "9e35080b-546b-4205-aafe-e52f746685b7",
+        EndAt = System.DateTime.Parse("2024-12-27T22:42:46.021Z").ToUniversalTime(),
+        Id = "ae646603-aa50-43c8-80b1-711d7ac46661",
         IsPaid = true,
+        Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T00:31:20.559Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-04T08:23:52.492Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T12:09:02.771Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T15:17:57.340Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -162,6 +164,7 @@ Update a timeoff
 <!-- UsageSnippet language="csharp" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -172,20 +175,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T05:22:00.586Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T06:56:31.748Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-27T09:24:41.637Z").ToUniversalTime(),
-        Id = "b1531f36-519b-451c-8683-b748b44e066c",
+        EndAt = System.DateTime.Parse("2024-12-27T22:42:46.031Z").ToUniversalTime(),
+        Id = "6ea366a3-ca7a-444e-ab8a-9892b84c39d4",
         IsPaid = true,
+        Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T00:31:20.565Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-04T08:23:52.498Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T12:09:02.773Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T15:17:57.342Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -262,6 +266,7 @@ Update a timeoff
 <!-- UsageSnippet language="csharp" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -272,20 +277,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T05:22:00.586Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T06:56:31.748Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-27T09:24:41.637Z").ToUniversalTime(),
-        Id = "b1531f36-519b-451c-8683-b748b44e066c",
+        EndAt = System.DateTime.Parse("2024-12-27T22:42:46.031Z").ToUniversalTime(),
+        Id = "6ea366a3-ca7a-444e-ab8a-9892b84c39d4",
         IsPaid = true,
+        Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T00:31:20.565Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-04T08:23:52.498Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T12:09:02.773Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T15:17:57.342Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",

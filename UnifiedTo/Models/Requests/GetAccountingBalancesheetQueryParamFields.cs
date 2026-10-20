@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         Liabilities,
         [JsonProperty("equity")]
         Equity,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

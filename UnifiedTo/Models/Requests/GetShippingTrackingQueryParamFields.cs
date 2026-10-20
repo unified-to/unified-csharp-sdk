@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         CarrierStatusCode,
         [JsonProperty("carrier_status_description")]
         CarrierStatusDescription,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

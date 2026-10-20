@@ -20,6 +20,7 @@ Create a shipment
 <!-- UsageSnippet language="csharp" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" example="shipping_shipment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,18 +30,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Shipment.CreateShippingShipmentAsync(
     shippingShipment: new ShippingShipment() {
-        CarrierName = "Bogisich, Franey and Koelpin",
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "dda0ecf0-3ec8-46e4-b78d-af168acfdf40",
-        RateAmount = 8.86546263936907D,
+        Id = "2bd43d13-f0c6-4b60-814b-afb18e364ff6",
+        IsReturn = false,
+        Lineitems = new List<ShippingShipmentLineitem>() {},
+        Metadata = new List<ShippingMetadata>() {},
         RateCurrency = "USD",
-        RateEstimatedDays = 8D,
-        RateServiceName = "Fisher - Kilback",
-        ServiceCode = "F7U",
-        ShippedAt = System.DateTime.Parse("2025-09-16T11:39:43.229Z").ToUniversalTime(),
-        Status = ShippingShipmentStatus.Pending,
-        TrackingUrl = "https://shallow-secrecy.info/",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T16:47:25.535Z").ToUniversalTime(),
+        RateEstimatedDays = 4D,
+        RateServiceName = "2nd Day Air",
+        ServiceCode = "OVERNIGHT",
+        ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Delivered,
+        UpdatedAt = System.DateTime.Parse("2022-11-15T05:31:52.568Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -159,6 +160,7 @@ Update a shipment
 <!-- UsageSnippet language="csharp" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -169,18 +171,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
-        CarrierName = "Bogisich, Franey and Koelpin",
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "e571c658-0750-4c65-b33a-f19a58feb1ef",
-        RateAmount = 8.86546263936907D,
+        Id = "25d6e632-f8ea-4cb8-9dfb-be46020986cd",
+        IsReturn = false,
+        Lineitems = new List<ShippingShipmentLineitem>() {},
+        Metadata = new List<ShippingMetadata>() {},
         RateCurrency = "USD",
-        RateEstimatedDays = 8D,
-        RateServiceName = "Fisher - Kilback",
-        ServiceCode = "F7U",
-        ShippedAt = System.DateTime.Parse("2025-09-16T11:39:43.295Z").ToUniversalTime(),
-        Status = ShippingShipmentStatus.Pending,
-        TrackingUrl = "https://shallow-secrecy.info/",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T16:47:25.597Z").ToUniversalTime(),
+        RateEstimatedDays = 4D,
+        RateServiceName = "2nd Day Air",
+        ServiceCode = "OVERNIGHT",
+        ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Delivered,
+        UpdatedAt = System.DateTime.Parse("2022-11-15T05:31:52.574Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -256,6 +258,7 @@ Update a shipment
 <!-- UsageSnippet language="csharp" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -266,18 +269,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
-        CarrierName = "Bogisich, Franey and Koelpin",
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "e571c658-0750-4c65-b33a-f19a58feb1ef",
-        RateAmount = 8.86546263936907D,
+        Id = "25d6e632-f8ea-4cb8-9dfb-be46020986cd",
+        IsReturn = false,
+        Lineitems = new List<ShippingShipmentLineitem>() {},
+        Metadata = new List<ShippingMetadata>() {},
         RateCurrency = "USD",
-        RateEstimatedDays = 8D,
-        RateServiceName = "Fisher - Kilback",
-        ServiceCode = "F7U",
-        ShippedAt = System.DateTime.Parse("2025-09-16T11:39:43.295Z").ToUniversalTime(),
-        Status = ShippingShipmentStatus.Pending,
-        TrackingUrl = "https://shallow-secrecy.info/",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T16:47:25.597Z").ToUniversalTime(),
+        RateEstimatedDays = 4D,
+        RateServiceName = "2nd Day Air",
+        ServiceCode = "OVERNIGHT",
+        ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Delivered,
+        UpdatedAt = System.DateTime.Parse("2022-11-15T05:31:52.574Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

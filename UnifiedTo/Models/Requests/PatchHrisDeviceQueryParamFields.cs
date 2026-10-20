@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         HasScreenlock,
         [JsonProperty("is_missing")]
         IsMissing,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

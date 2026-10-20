@@ -57,6 +57,8 @@ namespace UnifiedTo.Models.Requests
         UserIds,
         [JsonProperty("payslip_ids")]
         PayslipIds,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

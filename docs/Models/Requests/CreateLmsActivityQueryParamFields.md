@@ -25,4 +25,5 @@ var value = CreateLmsActivityQueryParamFields.Id;
 | `ProgressPercentage` | progress_percentage  |
 | `StartedAt`          | started_at           |
 | `CompletedAt`        | completed_at         |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

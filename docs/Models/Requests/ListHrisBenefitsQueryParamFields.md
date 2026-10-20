@@ -28,4 +28,5 @@ var value = ListHrisBenefitsQueryParamFields.Id;
 | `EmployerContributionMaxAmount`  | employer_contribution_max_amount |
 | `CoverageLevel`                  | coverage_level                   |
 | `Currency`                       | currency                         |
+| `Metadata`                       | metadata                         |
 | `Raw`                            | raw                              |

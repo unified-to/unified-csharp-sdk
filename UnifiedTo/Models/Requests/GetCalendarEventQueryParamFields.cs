@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         SendNotifications,
         [JsonProperty("matter_id")]
         MatterId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -67,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ShippingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The raw data returned by the integration for this tracking.
         /// </summary>

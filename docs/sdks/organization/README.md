@@ -47,17 +47,13 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "b4ff0bd2-eb28-42ef-88a9-d99293233ae8",
-        Managers = new List<AdsManager>() {
-            new AdsManager() {
-                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
-                Name = "Parker, Leannon and Gibson",
-            },
-        },
+        Id = "1adcbb8a-1e72-4979-b69c-2a17bd219341",
+        Managers = new List<AdsManager>() {},
+        Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-27T05:47:33.383Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T00:40:47.349Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -104,10 +100,10 @@ var res = await sdk.Organization.CreateGenaiOrganizationAsync(
     genaiOrganization: new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "b6ce98cf-6ece-4d3b-bde9-ab9a5c514492",
+        Id = "25f875b9-9bf5-4b27-812b-47cd0f3e53ac",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T15:56:13.719Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-25T23:44:18.636Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -143,6 +139,7 @@ Create an organization
 <!-- UsageSnippet language="csharp" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" example="repo_organization" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -155,9 +152,10 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "b6b7a06b-b475-4e15-8143-1a2e201d1f58",
+        Id = "c6e1b4d9-6a67-4cf0-a000-e3b91d9639c2",
+        Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T02:05:36.958Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T07:32:02.746Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     connectionId: "<id>"
@@ -540,17 +538,13 @@ PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "31f3899b-c773-4568-b132-1180128b1a08",
-        Managers = new List<AdsManager>() {
-            new AdsManager() {
-                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
-                Name = "Parker, Leannon and Gibson",
-            },
-        },
+        Id = "c4087d92-30d0-452b-b23c-15cf3a3a2225",
+        Managers = new List<AdsManager>() {},
+        Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-27T05:47:33.394Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T00:40:47.368Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -598,10 +592,10 @@ PatchGenaiOrganizationRequest req = new PatchGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "2183a00e-cfe0-43f4-b5c9-dd6f4b91779f",
+        Id = "c82cf3bb-8fe3-46f6-b106-5852bc70beb5",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T15:56:13.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-25T23:44:18.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -637,6 +631,7 @@ Update an organization
 <!-- UsageSnippet language="csharp" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -650,9 +645,10 @@ PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "e9fe0aab-da73-4ff6-8be0-329f1b91b31c",
+        Id = "a4712dfb-bd64-4679-b41b-714fe492b69f",
+        Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T02:05:36.960Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T07:32:02.749Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -823,17 +819,13 @@ UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "31f3899b-c773-4568-b132-1180128b1a08",
-        Managers = new List<AdsManager>() {
-            new AdsManager() {
-                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
-                Name = "Parker, Leannon and Gibson",
-            },
-        },
+        Id = "c4087d92-30d0-452b-b23c-15cf3a3a2225",
+        Managers = new List<AdsManager>() {},
+        Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-27T05:47:33.394Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T00:40:47.368Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -881,10 +873,10 @@ UpdateGenaiOrganizationRequest req = new UpdateGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "2183a00e-cfe0-43f4-b5c9-dd6f4b91779f",
+        Id = "c82cf3bb-8fe3-46f6-b106-5852bc70beb5",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T15:56:13.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-25T23:44:18.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -920,6 +912,7 @@ Update an organization
 <!-- UsageSnippet language="csharp" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -933,9 +926,10 @@ UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "e9fe0aab-da73-4ff6-8be0-329f1b91b31c",
+        Id = "a4712dfb-bd64-4679-b41b-714fe492b69f",
+        Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T02:05:36.960Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T07:32:02.749Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",

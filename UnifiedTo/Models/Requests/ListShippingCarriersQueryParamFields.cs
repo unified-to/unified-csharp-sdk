@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         LogoUrl,
         [JsonProperty("website_url")]
         WebsiteUrl,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

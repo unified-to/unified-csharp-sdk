@@ -33,4 +33,5 @@ var value = GetPaymentSubscriptionQueryParamFields.Id;
 | `DayOfWeek`             | day_of_week             |
 | `Interval`              | interval                |
 | `Lineitems`             | lineitems               |
+| `Metadata`              | metadata                |
 | `Raw`                   | raw                     |

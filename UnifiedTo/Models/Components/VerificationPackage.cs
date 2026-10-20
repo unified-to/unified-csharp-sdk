@@ -76,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("max_score")]
         public double? MaxScore { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<VerificationMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Name of the verification type.
         /// </summary>

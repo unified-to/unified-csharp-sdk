@@ -17,6 +17,7 @@ Create an asset
 <!-- UsageSnippet language="csharp" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" example="ads_asset" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,11 +29,12 @@ var res = await sdk.Asset.CreateAdsAssetAsync(
     adsAsset: new AdsAsset() {
         CreatedAt = System.DateTime.Parse("2020-03-27T20:14:38.603Z").ToUniversalTime(),
         Height = 400D,
-        Id = "c21267d3-990a-4ec5-82dc-91c67545aa93",
+        Id = "d2f4b926-027c-48aa-bfef-645860b3b9dd",
+        Metadata = new List<AdsMetadata>() {},
         MimeType = "IMAGE_PNG",
         Name = "Lockman - DuBuque",
         Type = AdsAssetType.Image,
-        UpdatedAt = System.DateTime.Parse("2022-03-24T13:33:08.819Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-24T19:50:57.885Z").ToUniversalTime(),
         Url = "https://informal-perfection.com/",
         Width = 600D,
     },

@@ -6,27 +6,33 @@
 
 * [CreateGenaiAgent](#creategenaiagent) - Create an agent
 * [CreateGenaiEmbedding](#creategenaiembedding) - Create an embedding
+* [CreateGenaiMemory](#creategenaimemory) - Create a memory
 * [CreateGenaiOrganization](#creategenaiorganization) - Create an organization
 * [CreateGenaiPrompt](#creategenaiprompt) - Create a prompt
 * [CreateGenaiTask](#creategenaitask) - Create a task
 * [GetGenaiAgent](#getgenaiagent) - Retrieve an agent
+* [GetGenaiMemory](#getgenaimemory) - Retrieve a memory
 * [GetGenaiModel](#getgenaimodel) - Retrieve a model
 * [GetGenaiOrganization](#getgenaiorganization) - Retrieve an organization
 * [GetGenaiSkill](#getgenaiskill) - Retrieve a skill
 * [GetGenaiTask](#getgenaitask) - Retrieve a task
 * [ListGenaiAgents](#listgenaiagents) - List all agents
+* [ListGenaiMemories](#listgenaimemories) - List all memories
 * [ListGenaiModels](#listgenaimodels) - List all models
 * [ListGenaiOrganizations](#listgenaiorganizations) - List all organizations
 * [ListGenaiSkills](#listgenaiskills) - List all skills
 * [ListGenaiTasks](#listgenaitasks) - List all tasks
 * [PatchGenaiAgent](#patchgenaiagent) - Update an agent
+* [PatchGenaiMemory](#patchgenaimemory) - Update a memory
 * [PatchGenaiOrganization](#patchgenaiorganization) - Update an organization
 * [PatchGenaiTask](#patchgenaitask) - Update a task
 * [RemoveGenaiAgent](#removegenaiagent) - Remove an agent
+* [RemoveGenaiMemory](#removegenaimemory) - Remove a memory
 * [RemoveGenaiOrganization](#removegenaiorganization) - Remove an organization
 * [RemoveGenaiSkill](#removegenaiskill) - Remove a skill
 * [RemoveGenaiTask](#removegenaitask) - Remove a task
 * [UpdateGenaiAgent](#updategenaiagent) - Update an agent
+* [UpdateGenaiMemory](#updategenaimemory) - Update a memory
 * [UpdateGenaiOrganization](#updategenaiorganization) - Update an organization
 * [UpdateGenaiTask](#updategenaitask) - Update a task
 
@@ -50,11 +56,11 @@ var res = await sdk.Genai.CreateGenaiAgentAsync(
     genaiAgent: new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "3ad570c2-2ce0-41a0-b808-cbfe8c238fbe",
+        Id = "4ee42ddc-c1d9-4346-a771-a7a087f6d0c8",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-13T17:39:48.765Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-14T10:49:06.239Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -107,7 +113,7 @@ var res = await sdk.Genai.CreateGenaiEmbeddingAsync(
         Dimension = 423D,
         Embeddings = "Est.",
         EncondingFormat = EncondingFormat.Float,
-        Id = "4954881c-2ce0-416d-9440-01fecc865e3a",
+        Id = "afd3ced3-d8f9-47a5-9a88-f333637e3c63",
         MaxTokens = 223D,
         TokensUsed = 836D,
         Type = "classification",
@@ -137,6 +143,74 @@ var res = await sdk.Genai.CreateGenaiEmbeddingAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## CreateGenaiMemory
+
+Create a memory
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createGenaiMemory" method="post" path="/genai/{connection_id}/memory" example="genai_memory" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Genai.CreateGenaiMemoryAsync(
+    genaiMemory: new GenaiMemory() {
+        Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
+        CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
+        Id = "b8d72d2d-4793-417e-9295-3a912f831b9d",
+        Metadata = new List<GenaiMetadata>() {
+            new GenaiMetadata() {
+                ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = GenaiMetadataFormat.Text,
+                Id = "7a8ad62d-ba0e-4ce3-8330-56a2647b5b3e",
+                Namespace = "memory",
+                Slug = "cribro",
+                Value = GenaiMetadataValue.CreateStr(
+                    "aiunt"
+                ),
+            },
+        },
+        Name = "sponte.md",
+        Type = GenaiMemoryType.Memory,
+        UpdatedAt = System.DateTime.Parse("2023-04-25T12:43:28.198Z").ToUniversalTime(),
+        UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `GenaiMemory`                                                                                                                                    | [GenaiMemory](../../Models/Components/GenaiMemory.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateGenaiMemoryQueryParamFields](../../Models/Requests/CreateGenaiMemoryQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateGenaiMemoryResponse](../../Models/Requests/CreateGenaiMemoryResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## CreateGenaiOrganization
 
 Create an organization
@@ -157,10 +231,10 @@ var res = await sdk.Genai.CreateGenaiOrganizationAsync(
     genaiOrganization: new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "b6ce98cf-6ece-4d3b-bde9-ab9a5c514492",
+        Id = "25f875b9-9bf5-4b27-812b-47cd0f3e53ac",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T15:56:13.719Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-25T23:44:18.636Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -322,10 +396,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Genai.CreateGenaiTaskAsync(
     genaiTask: new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-09-29T13:39:04.706Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-09-30T06:45:33.960Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "38b3a2e9-4fa6-4b34-a3ee-8fb0e0790694",
+        Id = "6599ee62-f68d-4af4-9401-9a20fa767411",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -340,12 +414,12 @@ var res = await sdk.Genai.CreateGenaiTaskAsync(
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-20T04:48:50.166Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-20T17:11:38.714Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-25T11:49:07.453Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-25T19:55:26.296Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>"
@@ -408,6 +482,48 @@ var res = await sdk.Genai.GetGenaiAgentAsync(
 ### Response
 
 **[GetGenaiAgentResponse](../../Models/Requests/GetGenaiAgentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetGenaiMemory
+
+Retrieve a memory
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getGenaiMemory" method="get" path="/genai/{connection_id}/memory/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Genai.GetGenaiMemoryAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Memory                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetGenaiMemoryQueryParamFields](../../Models/Requests/GetGenaiMemoryQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetGenaiMemoryResponse](../../Models/Requests/GetGenaiMemoryResponse.md)**
 
 ### Errors
 
@@ -624,6 +740,47 @@ var res = await sdk.Genai.ListGenaiAgentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListGenaiMemories
+
+List all memories
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listGenaiMemories" method="get" path="/genai/{connection_id}/memory" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListGenaiMemoriesRequest req = new ListGenaiMemoriesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Genai.ListGenaiMemoriesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListGenaiMemoriesRequest](../../Models/Requests/ListGenaiMemoriesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListGenaiMemoriesResponse](../../Models/Requests/ListGenaiMemoriesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListGenaiModels
 
 List all models
@@ -809,11 +966,11 @@ PatchGenaiAgentRequest req = new PatchGenaiAgentRequest() {
     GenaiAgent = new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "a62eb869-8fa6-4ff1-bbbd-f0b6388b5996",
+        Id = "2a4b8b4d-0646-4c1f-aba0-b02af0aaad4f",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-13T17:39:48.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-14T10:49:06.254Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -833,6 +990,75 @@ var res = await sdk.Genai.PatchGenaiAgentAsync(req);
 ### Response
 
 **[PatchGenaiAgentResponse](../../Models/Requests/PatchGenaiAgentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchGenaiMemory
+
+Update a memory
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchGenaiMemory" method="patch" path="/genai/{connection_id}/memory/{id}" example="genai_memory" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchGenaiMemoryRequest req = new PatchGenaiMemoryRequest() {
+    GenaiMemory = new GenaiMemory() {
+        Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
+        CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
+        Id = "d619e504-17db-4cb6-a6b3-72ffea06738b",
+        Metadata = new List<GenaiMetadata>() {
+            new GenaiMetadata() {
+                ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = GenaiMetadataFormat.Text,
+                Id = "7a8ad62d-ba0e-4ce3-8330-56a2647b5b3e",
+                Namespace = "memory",
+                Slug = "cribro",
+                Value = GenaiMetadataValue.CreateStr(
+                    "aiunt"
+                ),
+            },
+        },
+        Name = "sponte.md",
+        Type = GenaiMemoryType.Memory,
+        UpdatedAt = System.DateTime.Parse("2023-04-25T12:43:28.202Z").ToUniversalTime(),
+        UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Genai.PatchGenaiMemoryAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchGenaiMemoryRequest](../../Models/Requests/PatchGenaiMemoryRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[PatchGenaiMemoryResponse](../../Models/Requests/PatchGenaiMemoryResponse.md)**
 
 ### Errors
 
@@ -861,10 +1087,10 @@ PatchGenaiOrganizationRequest req = new PatchGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "2183a00e-cfe0-43f4-b5c9-dd6f4b91779f",
+        Id = "c82cf3bb-8fe3-46f6-b106-5852bc70beb5",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T15:56:13.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-25T23:44:18.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -911,10 +1137,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchGenaiTaskRequest req = new PatchGenaiTaskRequest() {
     GenaiTask = new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-09-29T13:39:04.725Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-09-30T06:45:33.974Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "ea46be93-79be-4911-91cb-69ce337c44cf",
+        Id = "cebad502-b835-4187-9429-67df7a8dfee7",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -929,12 +1155,12 @@ PatchGenaiTaskRequest req = new PatchGenaiTaskRequest() {
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-20T04:48:50.180Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-20T17:11:38.722Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-25T11:49:07.463Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-25T19:55:26.303Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     ConnectionId = "<id>",
@@ -995,6 +1221,46 @@ var res = await sdk.Genai.RemoveGenaiAgentAsync(
 ### Response
 
 **[RemoveGenaiAgentResponse](../../Models/Requests/RemoveGenaiAgentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveGenaiMemory
+
+Remove a memory
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeGenaiMemory" method="delete" path="/genai/{connection_id}/memory/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Genai.RemoveGenaiMemoryAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Memory     |
+
+### Response
+
+**[RemoveGenaiMemoryResponse](../../Models/Requests/RemoveGenaiMemoryResponse.md)**
 
 ### Errors
 
@@ -1143,11 +1409,11 @@ UpdateGenaiAgentRequest req = new UpdateGenaiAgentRequest() {
     GenaiAgent = new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "a62eb869-8fa6-4ff1-bbbd-f0b6388b5996",
+        Id = "2a4b8b4d-0646-4c1f-aba0-b02af0aaad4f",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-13T17:39:48.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-14T10:49:06.254Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1167,6 +1433,75 @@ var res = await sdk.Genai.UpdateGenaiAgentAsync(req);
 ### Response
 
 **[UpdateGenaiAgentResponse](../../Models/Requests/UpdateGenaiAgentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateGenaiMemory
+
+Update a memory
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateGenaiMemory" method="put" path="/genai/{connection_id}/memory/{id}" example="genai_memory" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateGenaiMemoryRequest req = new UpdateGenaiMemoryRequest() {
+    GenaiMemory = new GenaiMemory() {
+        Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
+        CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
+        Id = "d619e504-17db-4cb6-a6b3-72ffea06738b",
+        Metadata = new List<GenaiMetadata>() {
+            new GenaiMetadata() {
+                ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = GenaiMetadataFormat.Text,
+                Id = "7a8ad62d-ba0e-4ce3-8330-56a2647b5b3e",
+                Namespace = "memory",
+                Slug = "cribro",
+                Value = GenaiMetadataValue.CreateStr(
+                    "aiunt"
+                ),
+            },
+        },
+        Name = "sponte.md",
+        Type = GenaiMemoryType.Memory,
+        UpdatedAt = System.DateTime.Parse("2023-04-25T12:43:28.202Z").ToUniversalTime(),
+        UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Genai.UpdateGenaiMemoryAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateGenaiMemoryRequest](../../Models/Requests/UpdateGenaiMemoryRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[UpdateGenaiMemoryResponse](../../Models/Requests/UpdateGenaiMemoryResponse.md)**
 
 ### Errors
 
@@ -1195,10 +1530,10 @@ UpdateGenaiOrganizationRequest req = new UpdateGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "2183a00e-cfe0-43f4-b5c9-dd6f4b91779f",
+        Id = "c82cf3bb-8fe3-46f6-b106-5852bc70beb5",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T15:56:13.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-25T23:44:18.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1245,10 +1580,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateGenaiTaskRequest req = new UpdateGenaiTaskRequest() {
     GenaiTask = new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-09-29T13:39:04.725Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-09-30T06:45:33.974Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "ea46be93-79be-4911-91cb-69ce337c44cf",
+        Id = "cebad502-b835-4187-9429-67df7a8dfee7",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -1263,12 +1598,12 @@ UpdateGenaiTaskRequest req = new UpdateGenaiTaskRequest() {
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-20T04:48:50.180Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-20T17:11:38.722Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-25T11:49:07.463Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-25T19:55:26.303Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     ConnectionId = "<id>",

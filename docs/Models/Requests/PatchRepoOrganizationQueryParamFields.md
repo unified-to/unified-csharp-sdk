@@ -21,4 +21,5 @@ var value = PatchRepoOrganizationQueryParamFields.Id;
 | `AvatarUrl`   | avatar_url    |
 | `WebUrl`      | web_url       |
 | `UserIds`     | user_ids      |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<TicketingMetadata>? Metadata { get; set; }
+
         [JsonProperty("priority")]
         public string? Priority { get; set; }
 

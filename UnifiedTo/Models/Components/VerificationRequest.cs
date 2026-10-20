@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<VerificationMetadata>? Metadata { get; set; }
+
         [JsonProperty("package_id")]
         public string? PackageId { get; set; }
 

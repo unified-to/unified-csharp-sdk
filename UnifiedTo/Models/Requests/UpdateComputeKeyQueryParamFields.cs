@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         InstanceId,
         [JsonProperty("expires_at")]
         ExpiresAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

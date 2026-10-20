@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         PayFrequency,
         [JsonProperty("next_paid_at")]
         NextPaidAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

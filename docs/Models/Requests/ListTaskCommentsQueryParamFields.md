@@ -22,4 +22,5 @@ var value = ListTaskCommentsQueryParamFields.Id;
 | `TaskId`      | task_id       |
 | `ParentId`    | parent_id     |
 | `HasChildren` | has_children  |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

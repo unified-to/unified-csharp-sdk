@@ -34,7 +34,8 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "d0dedc74-060e-433a-a4f5-9b89c50e3566",
+        Id = "aa5e9e50-96a6-4d35-adb2-80a7b04740a6",
+        Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -47,7 +48,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-04T23:56:07.437Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T05:39:45.318Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -262,7 +263,8 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "1979e5c3-0cce-468c-8aa5-14d9625682bd",
+        Id = "0004ae51-7297-4d57-84a6-805f105af550",
+        Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -275,7 +277,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-04T23:56:07.440Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T05:39:45.322Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -364,7 +366,8 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "1979e5c3-0cce-468c-8aa5-14d9625682bd",
+        Id = "0004ae51-7297-4d57-84a6-805f105af550",
+        Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -377,7 +380,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-04T23:56:07.440Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T05:39:45.322Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

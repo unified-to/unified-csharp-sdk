@@ -44,6 +44,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("media")]
         public List<LmsMedia>? Media { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<LmsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

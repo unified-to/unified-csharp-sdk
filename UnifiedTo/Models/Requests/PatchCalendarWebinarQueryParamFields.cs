@@ -81,6 +81,8 @@ namespace UnifiedTo.Models.Requests
         HasPolls,
         [JsonProperty("has_recording")]
         HasRecording,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         IsActive,
         [JsonProperty("parent_id")]
         ParentId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

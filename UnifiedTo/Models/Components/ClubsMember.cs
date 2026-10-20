@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("membership_status")]
         public ClubsMemberMembershipStatus? MembershipStatus { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ClubsMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The full name of the member (first name + last initial for Strava).
         /// </summary>

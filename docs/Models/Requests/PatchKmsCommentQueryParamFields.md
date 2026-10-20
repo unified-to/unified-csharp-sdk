@@ -22,4 +22,5 @@ var value = PatchKmsCommentQueryParamFields.Id;
 | `UserId`      | user_id       |
 | `PageId`      | page_id       |
 | `ParentId`    | parent_id     |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

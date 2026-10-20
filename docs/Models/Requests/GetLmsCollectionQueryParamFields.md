@@ -21,4 +21,5 @@ var value = GetLmsCollectionQueryParamFields.Id;
 | `Media`       | media         |
 | `IsActive`    | is_active     |
 | `ParentId`    | parent_id     |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

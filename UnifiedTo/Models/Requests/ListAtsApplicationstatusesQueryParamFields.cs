@@ -25,6 +25,8 @@ namespace UnifiedTo.Models.Requests
         OriginalStatus,
         [JsonProperty("description")]
         Description,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

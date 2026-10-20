@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class AnalyticsSession
@@ -81,6 +82,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("medium")]
         public string? Medium { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<AnalyticsMetadata>? Metadata { get; set; }
 
         [JsonProperty("os")]
         public string? Os { get; set; }

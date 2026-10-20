@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         Status,
         [JsonProperty("is_inclusive_of_tax")]
         IsInclusiveOfTax,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

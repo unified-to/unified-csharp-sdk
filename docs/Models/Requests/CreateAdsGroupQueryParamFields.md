@@ -44,4 +44,5 @@ var value = CreateAdsGroupQueryParamFields.Id;
 | `Promoted`             | promoted               |
 | `LanguageLocale`       | language_locale        |
 | `CreativeSelection`    | creative_selection     |
+| `Metadata`             | metadata               |
 | `Raw`                  | raw                    |

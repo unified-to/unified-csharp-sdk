@@ -79,6 +79,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("meeting")]
         public PropertyCrmEventMeeting? Meeting { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CrmMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The note object, when type = note.
         /// </summary>

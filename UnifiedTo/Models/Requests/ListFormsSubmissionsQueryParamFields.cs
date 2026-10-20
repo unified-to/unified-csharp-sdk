@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         RespondentName,
         [JsonProperty("answers")]
         Answers,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

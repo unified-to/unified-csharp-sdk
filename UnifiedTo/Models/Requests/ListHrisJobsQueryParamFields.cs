@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         Users,
         [JsonProperty("compensation")]
         Compensation,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

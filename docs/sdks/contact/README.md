@@ -42,74 +42,65 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateAccountingContactAsync(
     accountingContact: new AccountingContact() {
-        AssociatedContacts = new List<AccountingAssociatedContact>() {
-            new AccountingAssociatedContact() {
-                Id = "a0532065-c586-4433-abf6-6f065300586b",
-                Name = "Delores Reynolds",
-            },
-            new AccountingAssociatedContact() {
-                Id = "ac4a17f5-7302-46a6-aa6c-f51071d84348",
-                Name = "Delores Reynolds",
-            },
-        },
+        AssociatedContacts = new List<AccountingAssociatedContact>() {},
+        BalanceAmount = 55574D,
         BillingAddress = new PropertyAccountingContactBillingAddress() {
-            Address1 = "2633 Stoney Lane",
-            Address2 = "Suite 176",
-            City = "Ladariusboro",
+            Address1 = "4091 Tromp Coves",
+            City = "Lake Emmybury",
             CountryCode = "US",
-            PostalCode = "70131-2908",
-            Region = "Illinois",
-            RegionCode = "NV",
+            PostalCode = "50764-5226",
+            Region = "Washington",
+            RegionCode = "CA",
         },
-        CompanyName = "Marquardt Inc",
+        CompanyName = "Kertzmann Group",
         CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
-        Currency = "ISK",
+        Currency = "AUD",
         Emails = new List<AccountingEmail>() {
             new AccountingEmail() {
-                Email = "Delores.Reynolds10@hotmail.com",
-                Type = AccountingEmailType.Home,
+                Email = "delores.reynolds@kertzmanngroup.com",
+                Type = AccountingEmailType.Work,
+            },
+            new AccountingEmail() {
+                Email = "accounts@kertzmanngroup.com",
+                Type = AccountingEmailType.Other,
             },
         },
         FirstName = "Delores",
-        Id = "d52d7847-dc3a-4997-8415-69d0ac0167cd",
-        Identification = "amicitia",
+        Id = "94fca09f-48ac-4190-a9dd-fb32eb064626",
+        Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
         LastName = "Reynolds",
-        Name = "Delores Reynolds",
-        Notes = "Caput accusamus et videlicet.",
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Kertzmann Group",
+        Notes = "Et videlicet pauci.",
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "cceaae83-41c3-437f-90ac-0c80b7348d64",
-                Name = "Visa 1234",
+                Id = "dbf9cacc-d598-4321-a1e5-ac46f186e845",
+                Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
         },
-        PortalUrl = "https://scented-t-shirt.info/",
+        PortalUrl = "https://kertzmanngroup.com/billing",
         ShippingAddress = new PropertyAccountingContactShippingAddress() {
-            Address1 = "786 Renner Stream",
-            Address2 = "Apt. 555",
-            City = "Roanoke",
+            Address1 = "23129 Rebekah Mews",
+            City = "Mortimerhaven",
             CountryCode = "US",
-            PostalCode = "80686-7556",
-            Region = "Vermont",
-            RegionCode = "NE",
+            PostalCode = "55878-6806",
+            Region = "Florida",
+            RegionCode = "OK",
         },
-        TaxExemption = TaxExemption.Resale,
-        TaxNumber = "amplexus",
+        TaxExemption = TaxExemption.Foreign,
+        TaxNumber = "867556410",
         Telephones = new List<AccountingTelephone>() {
             new AccountingTelephone() {
-                Telephone = "(427) 701-7160",
-                Type = AccountingTelephoneType.Home,
-            },
-            new AccountingTelephone() {
-                Telephone = "(540) 913-9171",
+                Telephone = "(432) 760-1716",
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-18T22:19:55.431Z").ToUniversalTime(),
-        Website = "https://noxious-advertisement.org",
+        UpdatedAt = System.DateTime.Parse("2023-12-19T07:43:34.304Z").ToUniversalTime(),
+        Website = "https://kertzmanngroup.com",
     },
     connectionId: "<id>"
 );
@@ -156,38 +147,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.CreateCrmContactAsync(
     crmContact: new CrmContact() {
         Address = new PropertyCrmContactAddress() {
-            Address1 = "518 Brannon Burg",
-            City = "East Helenebury",
+            Address1 = "65838 College Avenue",
+            Address2 = "Apt. 335",
+            City = "Fort Alexandratown",
             CountryCode = "US",
-            PostalCode = "92622-2406",
-            Region = "Vermont",
-            RegionCode = "AZ",
+            PostalCode = "80888-6094",
+            Region = "Montana",
+            RegionCode = "NM",
         },
-        Company = "Lowe - Jakubowski",
         CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
-        Department = "systematic",
+        Department = "Beauty",
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Mohammad.Bartell45@hotmail.com",
+                Email = "mohammad.bartell@hotmail.com",
                 Type = CrmEmailType.Home,
-            },
-            new CrmEmail() {
-                Email = "Mohammad.Bartell90@hotmail.com",
-                Type = CrmEmailType.Home,
-            },
-            new CrmEmail() {
-                Email = "Mohammad_Bartell@hotmail.com",
-                Type = CrmEmailType.Work,
             },
         },
         FirstName = "Mohammad",
-        Id = "2bff57e2-f632-45b0-ba8c-bb21209f20a9",
-        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        Id = "876d8794-2c3a-44a4-b78b-a392b9c0a25b",
+        ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
-            "https://limited-parade.info",
-            "https://faint-papa.com/",
-            "https://windy-accountability.name",
+            "https://www.linkedin.com/in/mohammad-bartell",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -197,31 +178,27 @@ var res = await sdk.Contact.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e1d633ef-78e8-4fdc-84c2-ebed45fe2933",
+                Id = "e1603bb3-4898-4105-a1d1-4d37408a6a49",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "autem"
+                    "antiquus"
                 ),
             },
         },
         Name = "Mohammad Bartell",
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(975) 986-1658",
+                Telephone = "(254) 404-3529",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(469) 989-7588",
                 Type = CrmTelephoneType.Work,
-            },
-            new CrmTelephone() {
-                Telephone = "(489) 332-3509",
-                Type = CrmTelephoneType.Home,
-            },
-            new CrmTelephone() {
-                Telephone = "(205) 880-8886",
-                Type = CrmTelephoneType.Home,
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T03:51:32.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T04:22:48.848Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -276,8 +253,9 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "073273e2-a0f2-404c-89f7-17ef37cc3c8d",
+        Id = "6ef14c6c-9f0e-4767-8ebb-23b9ce106be9",
         LastName = "Rogahn",
+        Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
             new UcTelephone() {
@@ -294,7 +272,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T03:47:05.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.439Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -590,74 +568,65 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
     AccountingContact = new AccountingContact() {
-        AssociatedContacts = new List<AccountingAssociatedContact>() {
-            new AccountingAssociatedContact() {
-                Id = "be73f450-7e89-42f8-85d2-32cd2f3ed81f",
-                Name = "Delores Reynolds",
-            },
-            new AccountingAssociatedContact() {
-                Id = "94c6211e-ed4b-4b5f-b598-bafa2ef82fb5",
-                Name = "Delores Reynolds",
-            },
-        },
+        AssociatedContacts = new List<AccountingAssociatedContact>() {},
+        BalanceAmount = 55574D,
         BillingAddress = new PropertyAccountingContactBillingAddress() {
-            Address1 = "2633 Stoney Lane",
-            Address2 = "Suite 176",
-            City = "Ladariusboro",
+            Address1 = "4091 Tromp Coves",
+            City = "Lake Emmybury",
             CountryCode = "US",
-            PostalCode = "70131-2908",
-            Region = "Illinois",
-            RegionCode = "NV",
+            PostalCode = "50764-5226",
+            Region = "Washington",
+            RegionCode = "CA",
         },
-        CompanyName = "Marquardt Inc",
+        CompanyName = "Kertzmann Group",
         CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
-        Currency = "ISK",
+        Currency = "AUD",
         Emails = new List<AccountingEmail>() {
             new AccountingEmail() {
-                Email = "Delores.Reynolds10@hotmail.com",
-                Type = AccountingEmailType.Home,
+                Email = "delores.reynolds@kertzmanngroup.com",
+                Type = AccountingEmailType.Work,
+            },
+            new AccountingEmail() {
+                Email = "accounts@kertzmanngroup.com",
+                Type = AccountingEmailType.Other,
             },
         },
         FirstName = "Delores",
-        Id = "850f3f93-0302-48b0-9d6b-203e4a0dd496",
-        Identification = "amicitia",
+        Id = "fec579c9-37ff-4ef7-87a9-4d767a6b6b2a",
+        Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
         LastName = "Reynolds",
-        Name = "Delores Reynolds",
-        Notes = "Caput accusamus et videlicet.",
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Kertzmann Group",
+        Notes = "Et videlicet pauci.",
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "9c472a8e-26c5-4fcc-9b7d-f23fd3e0ba7a",
-                Name = "Visa 1234",
+                Id = "c0eaa2ff-e0ae-4828-afc4-4b57d7e06e94",
+                Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
         },
-        PortalUrl = "https://scented-t-shirt.info/",
+        PortalUrl = "https://kertzmanngroup.com/billing",
         ShippingAddress = new PropertyAccountingContactShippingAddress() {
-            Address1 = "786 Renner Stream",
-            Address2 = "Apt. 555",
-            City = "Roanoke",
+            Address1 = "23129 Rebekah Mews",
+            City = "Mortimerhaven",
             CountryCode = "US",
-            PostalCode = "80686-7556",
-            Region = "Vermont",
-            RegionCode = "NE",
+            PostalCode = "55878-6806",
+            Region = "Florida",
+            RegionCode = "OK",
         },
-        TaxExemption = TaxExemption.Resale,
-        TaxNumber = "amplexus",
+        TaxExemption = TaxExemption.Foreign,
+        TaxNumber = "867556410",
         Telephones = new List<AccountingTelephone>() {
             new AccountingTelephone() {
-                Telephone = "(427) 701-7160",
-                Type = AccountingTelephoneType.Home,
-            },
-            new AccountingTelephone() {
-                Telephone = "(540) 913-9171",
+                Telephone = "(432) 760-1716",
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-18T22:19:55.450Z").ToUniversalTime(),
-        Website = "https://noxious-advertisement.org",
+        UpdatedAt = System.DateTime.Parse("2023-12-19T07:43:34.330Z").ToUniversalTime(),
+        Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -705,38 +674,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmContactRequest req = new PatchCrmContactRequest() {
     CrmContact = new CrmContact() {
         Address = new PropertyCrmContactAddress() {
-            Address1 = "518 Brannon Burg",
-            City = "East Helenebury",
+            Address1 = "65838 College Avenue",
+            Address2 = "Apt. 335",
+            City = "Fort Alexandratown",
             CountryCode = "US",
-            PostalCode = "92622-2406",
-            Region = "Vermont",
-            RegionCode = "AZ",
+            PostalCode = "80888-6094",
+            Region = "Montana",
+            RegionCode = "NM",
         },
-        Company = "Lowe - Jakubowski",
         CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
-        Department = "systematic",
+        Department = "Beauty",
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Mohammad.Bartell45@hotmail.com",
+                Email = "mohammad.bartell@hotmail.com",
                 Type = CrmEmailType.Home,
-            },
-            new CrmEmail() {
-                Email = "Mohammad.Bartell90@hotmail.com",
-                Type = CrmEmailType.Home,
-            },
-            new CrmEmail() {
-                Email = "Mohammad_Bartell@hotmail.com",
-                Type = CrmEmailType.Work,
             },
         },
         FirstName = "Mohammad",
-        Id = "fad1475e-d83e-45db-8e8c-35d904e32c45",
-        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        Id = "e03138ca-2475-412c-943e-3e39c8cbdd98",
+        ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
-            "https://limited-parade.info",
-            "https://faint-papa.com/",
-            "https://windy-accountability.name",
+            "https://www.linkedin.com/in/mohammad-bartell",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -746,31 +705,27 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "17e6cede-9042-472d-9447-56d5cd31fef3",
+                Id = "3c9f7376-cbb5-4697-9fa6-38f8b8c07c0c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "autem"
+                    "antiquus"
                 ),
             },
         },
         Name = "Mohammad Bartell",
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(975) 986-1658",
+                Telephone = "(254) 404-3529",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(469) 989-7588",
                 Type = CrmTelephoneType.Work,
-            },
-            new CrmTelephone() {
-                Telephone = "(489) 332-3509",
-                Type = CrmTelephoneType.Home,
-            },
-            new CrmTelephone() {
-                Telephone = "(205) 880-8886",
-                Type = CrmTelephoneType.Home,
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T03:51:32.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T04:22:48.849Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -826,8 +781,9 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "4bfa49d7-2918-4d2c-a738-20d604812582",
+        Id = "c22b838c-803e-49c6-8960-00088cad5cd5",
         LastName = "Rogahn",
+        Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
             new UcTelephone() {
@@ -844,7 +800,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T03:47:05.247Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.449Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1011,74 +967,65 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
     AccountingContact = new AccountingContact() {
-        AssociatedContacts = new List<AccountingAssociatedContact>() {
-            new AccountingAssociatedContact() {
-                Id = "be73f450-7e89-42f8-85d2-32cd2f3ed81f",
-                Name = "Delores Reynolds",
-            },
-            new AccountingAssociatedContact() {
-                Id = "94c6211e-ed4b-4b5f-b598-bafa2ef82fb5",
-                Name = "Delores Reynolds",
-            },
-        },
+        AssociatedContacts = new List<AccountingAssociatedContact>() {},
+        BalanceAmount = 55574D,
         BillingAddress = new PropertyAccountingContactBillingAddress() {
-            Address1 = "2633 Stoney Lane",
-            Address2 = "Suite 176",
-            City = "Ladariusboro",
+            Address1 = "4091 Tromp Coves",
+            City = "Lake Emmybury",
             CountryCode = "US",
-            PostalCode = "70131-2908",
-            Region = "Illinois",
-            RegionCode = "NV",
+            PostalCode = "50764-5226",
+            Region = "Washington",
+            RegionCode = "CA",
         },
-        CompanyName = "Marquardt Inc",
+        CompanyName = "Kertzmann Group",
         CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
-        Currency = "ISK",
+        Currency = "AUD",
         Emails = new List<AccountingEmail>() {
             new AccountingEmail() {
-                Email = "Delores.Reynolds10@hotmail.com",
-                Type = AccountingEmailType.Home,
+                Email = "delores.reynolds@kertzmanngroup.com",
+                Type = AccountingEmailType.Work,
+            },
+            new AccountingEmail() {
+                Email = "accounts@kertzmanngroup.com",
+                Type = AccountingEmailType.Other,
             },
         },
         FirstName = "Delores",
-        Id = "850f3f93-0302-48b0-9d6b-203e4a0dd496",
-        Identification = "amicitia",
+        Id = "fec579c9-37ff-4ef7-87a9-4d767a6b6b2a",
+        Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
         LastName = "Reynolds",
-        Name = "Delores Reynolds",
-        Notes = "Caput accusamus et videlicet.",
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Kertzmann Group",
+        Notes = "Et videlicet pauci.",
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "9c472a8e-26c5-4fcc-9b7d-f23fd3e0ba7a",
-                Name = "Visa 1234",
+                Id = "c0eaa2ff-e0ae-4828-afc4-4b57d7e06e94",
+                Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
         },
-        PortalUrl = "https://scented-t-shirt.info/",
+        PortalUrl = "https://kertzmanngroup.com/billing",
         ShippingAddress = new PropertyAccountingContactShippingAddress() {
-            Address1 = "786 Renner Stream",
-            Address2 = "Apt. 555",
-            City = "Roanoke",
+            Address1 = "23129 Rebekah Mews",
+            City = "Mortimerhaven",
             CountryCode = "US",
-            PostalCode = "80686-7556",
-            Region = "Vermont",
-            RegionCode = "NE",
+            PostalCode = "55878-6806",
+            Region = "Florida",
+            RegionCode = "OK",
         },
-        TaxExemption = TaxExemption.Resale,
-        TaxNumber = "amplexus",
+        TaxExemption = TaxExemption.Foreign,
+        TaxNumber = "867556410",
         Telephones = new List<AccountingTelephone>() {
             new AccountingTelephone() {
-                Telephone = "(427) 701-7160",
-                Type = AccountingTelephoneType.Home,
-            },
-            new AccountingTelephone() {
-                Telephone = "(540) 913-9171",
+                Telephone = "(432) 760-1716",
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-18T22:19:55.450Z").ToUniversalTime(),
-        Website = "https://noxious-advertisement.org",
+        UpdatedAt = System.DateTime.Parse("2023-12-19T07:43:34.330Z").ToUniversalTime(),
+        Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1126,38 +1073,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
     CrmContact = new CrmContact() {
         Address = new PropertyCrmContactAddress() {
-            Address1 = "518 Brannon Burg",
-            City = "East Helenebury",
+            Address1 = "65838 College Avenue",
+            Address2 = "Apt. 335",
+            City = "Fort Alexandratown",
             CountryCode = "US",
-            PostalCode = "92622-2406",
-            Region = "Vermont",
-            RegionCode = "AZ",
+            PostalCode = "80888-6094",
+            Region = "Montana",
+            RegionCode = "NM",
         },
-        Company = "Lowe - Jakubowski",
         CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
-        Department = "systematic",
+        Department = "Beauty",
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Mohammad.Bartell45@hotmail.com",
+                Email = "mohammad.bartell@hotmail.com",
                 Type = CrmEmailType.Home,
-            },
-            new CrmEmail() {
-                Email = "Mohammad.Bartell90@hotmail.com",
-                Type = CrmEmailType.Home,
-            },
-            new CrmEmail() {
-                Email = "Mohammad_Bartell@hotmail.com",
-                Type = CrmEmailType.Work,
             },
         },
         FirstName = "Mohammad",
-        Id = "fad1475e-d83e-45db-8e8c-35d904e32c45",
-        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        Id = "e03138ca-2475-412c-943e-3e39c8cbdd98",
+        ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
-            "https://limited-parade.info",
-            "https://faint-papa.com/",
-            "https://windy-accountability.name",
+            "https://www.linkedin.com/in/mohammad-bartell",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -1167,31 +1104,27 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "17e6cede-9042-472d-9447-56d5cd31fef3",
+                Id = "3c9f7376-cbb5-4697-9fa6-38f8b8c07c0c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "autem"
+                    "antiquus"
                 ),
             },
         },
         Name = "Mohammad Bartell",
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(975) 986-1658",
+                Telephone = "(254) 404-3529",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(469) 989-7588",
                 Type = CrmTelephoneType.Work,
-            },
-            new CrmTelephone() {
-                Telephone = "(489) 332-3509",
-                Type = CrmTelephoneType.Home,
-            },
-            new CrmTelephone() {
-                Telephone = "(205) 880-8886",
-                Type = CrmTelephoneType.Home,
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T03:51:32.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T04:22:48.849Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1247,8 +1180,9 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "4bfa49d7-2918-4d2c-a738-20d604812582",
+        Id = "c22b838c-803e-49c6-8960-00088cad5cd5",
         LastName = "Rogahn",
+        Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
             new UcTelephone() {
@@ -1265,7 +1199,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T03:47:05.247Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.449Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

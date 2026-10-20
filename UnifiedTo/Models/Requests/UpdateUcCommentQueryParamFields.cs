@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("call_id")]
         CallId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

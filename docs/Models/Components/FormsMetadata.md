@@ -1,0 +1,13 @@
+# FormsMetadata
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ExtraData`                                                                 | [FormsMetadataExtraData](../../Models/Components/FormsMetadataExtraData.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Format`                                                                    | [FormsMetadataFormat](../../Models/Components/FormsMetadataFormat.md)       | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Id`                                                                        | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Namespace`                                                                 | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Slug`                                                                      | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Value`                                                                     | [FormsMetadataValue](../../Models/Components/FormsMetadataValue.md)         | :heavy_minus_sign:                                                          | N/A                                                                         |

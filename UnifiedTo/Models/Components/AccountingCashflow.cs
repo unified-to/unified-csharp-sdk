@@ -68,6 +68,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("investing_sections")]
         public List<AccountingCashflowSection>? InvestingSections { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// e.g. "Cash Flow Statement Q1 2020"
         /// </summary>

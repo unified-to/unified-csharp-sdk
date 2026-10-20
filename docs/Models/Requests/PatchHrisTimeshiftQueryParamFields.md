@@ -27,4 +27,5 @@ var value = PatchHrisTimeshiftQueryParamFields.Id;
 | `ApprovedAt`     | approved_at      |
 | `Hours`          | hours            |
 | `IsApproved`     | is_approved      |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

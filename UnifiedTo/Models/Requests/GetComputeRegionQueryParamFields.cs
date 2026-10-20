@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Country,
         [JsonProperty("gpu_models")]
         GpuModels,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -30,19 +30,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T08:11:30.604Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.897Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "5347ba03-7f8a-4376-9621-44dae4512352",
+        Id = "7fef24f0-bccc-4409-844f-02f287921fde",
         Labels = new List<string>() {
-            "adhuc",
-            "quaerat",
+            "creptio",
+            "tutamen",
         },
-        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
-        SourceBranchId = "microchip-navigate",
-        Status = RepoPullrequestStatus.Rejected,
-        TargetBranchId = "feed-reboot",
-        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2025-01-16T00:10:29.888Z").ToUniversalTime(),
+        Metadata = new List<RepoMetadata>() {},
+        Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
+        Status = RepoPullrequestStatus.Approved,
+        Title = "reboot mobile application",
+        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.552Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -172,19 +171,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T08:11:30.611Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.906Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "103f5c8e-e08e-44f8-b607-57c3fdffa02a",
+        Id = "3b399be7-3342-449e-986a-bd153fb57c3a",
         Labels = new List<string>() {
-            "adhuc",
-            "quaerat",
+            "creptio",
+            "tutamen",
         },
-        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
-        SourceBranchId = "microchip-navigate",
-        Status = RepoPullrequestStatus.Rejected,
-        TargetBranchId = "feed-reboot",
-        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2025-01-16T00:10:29.894Z").ToUniversalTime(),
+        Metadata = new List<RepoMetadata>() {},
+        Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
+        Status = RepoPullrequestStatus.Approved,
+        Title = "reboot mobile application",
+        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.564Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -271,19 +269,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T08:11:30.611Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.906Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "103f5c8e-e08e-44f8-b607-57c3fdffa02a",
+        Id = "3b399be7-3342-449e-986a-bd153fb57c3a",
         Labels = new List<string>() {
-            "adhuc",
-            "quaerat",
+            "creptio",
+            "tutamen",
         },
-        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
-        SourceBranchId = "microchip-navigate",
-        Status = RepoPullrequestStatus.Rejected,
-        TargetBranchId = "feed-reboot",
-        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2025-01-16T00:10:29.894Z").ToUniversalTime(),
+        Metadata = new List<RepoMetadata>() {},
+        Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
+        Status = RepoPullrequestStatus.Approved,
+        Title = "reboot mobile application",
+        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.564Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

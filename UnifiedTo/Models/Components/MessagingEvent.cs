@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("message")]
         public PropertyMessagingEventMessage? Message { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<MessagingMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

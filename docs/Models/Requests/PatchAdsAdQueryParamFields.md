@@ -35,4 +35,5 @@ var value = PatchAdsAdQueryParamFields.Id;
 | `Path2`            | path2              |
 | `Promoted`         | promoted           |
 | `LogoCreativeId`   | logo_creative_id   |
+| `Metadata`         | metadata           |
 | `Raw`              | raw                |

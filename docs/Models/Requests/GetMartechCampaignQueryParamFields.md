@@ -26,4 +26,5 @@ var value = GetMartechCampaignQueryParamFields.Id;
 | `FromEmail`    | from_email     |
 | `ReplyToEmail` | reply_to_email |
 | `SendAt`       | send_at        |
+| `Metadata`     | metadata       |
 | `Raw`          | raw            |

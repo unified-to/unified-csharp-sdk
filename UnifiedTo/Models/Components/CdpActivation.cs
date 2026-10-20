@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("last_run_at")]
         public DateTime? LastRunAt { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CdpMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The name of the activation/sync job.
         /// </summary>

@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         IsActive,
         [JsonProperty("collections")]
         Collections,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

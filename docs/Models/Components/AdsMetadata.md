@@ -1,0 +1,13 @@
+# AdsMetadata
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `ExtraData`                                                             | [AdsMetadataExtraData](../../Models/Components/AdsMetadataExtraData.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Format`                                                                | [AdsMetadataFormat](../../Models/Components/AdsMetadataFormat.md)       | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Id`                                                                    | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Namespace`                                                             | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Slug`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Value`                                                                 | [AdsMetadataValue](../../Models/Components/AdsMetadataValue.md)         | :heavy_minus_sign:                                                      | N/A                                                                     |

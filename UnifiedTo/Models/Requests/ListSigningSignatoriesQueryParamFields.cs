@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Requests
         DeclineReason,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("metadata")]
+        Metadata,
     }
 
     public static class ListSigningSignatoriesQueryParamFieldsExtension

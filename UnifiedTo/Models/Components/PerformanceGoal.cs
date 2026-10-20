@@ -52,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<PerformanceMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// milestones or key results for this goal.
         /// </summary>

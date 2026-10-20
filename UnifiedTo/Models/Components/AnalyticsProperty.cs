@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class AnalyticsProperty
@@ -30,6 +31,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("industry")]
         public string? Industry { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<AnalyticsMetadata>? Metadata { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

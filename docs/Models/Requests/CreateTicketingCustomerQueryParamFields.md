@@ -20,4 +20,5 @@ var value = CreateTicketingCustomerQueryParamFields.Id;
 | `Emails`     | emails       |
 | `Telephones` | telephones   |
 | `Tags`       | tags         |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

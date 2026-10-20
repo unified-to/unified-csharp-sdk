@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         Metric,
         [JsonProperty("value")]
         Value,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

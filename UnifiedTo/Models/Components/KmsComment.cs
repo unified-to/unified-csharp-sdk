@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<KmsPageMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// (reference to KmsPage).
         /// </summary>

@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         WebUrl,
         [JsonProperty("org_id")]
         OrgId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

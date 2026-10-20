@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         Direction,
         [JsonProperty("is_enabled")]
         IsEnabled,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

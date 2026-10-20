@@ -57,6 +57,8 @@ namespace UnifiedTo.Models.Requests
         CoverImageUrl,
         [JsonProperty("activity_types")]
         ActivityTypes,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

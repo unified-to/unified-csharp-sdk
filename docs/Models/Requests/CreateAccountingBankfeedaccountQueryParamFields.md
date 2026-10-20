@@ -28,4 +28,5 @@ var value = CreateAccountingBankfeedaccountQueryParamFields.Id;
 | `Balance`            | balance              |
 | `FeedStartAt`        | feed_start_at        |
 | `Status`             | status               |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

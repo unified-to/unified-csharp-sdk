@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         ReplyToEmail,
         [JsonProperty("send_at")]
         SendAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

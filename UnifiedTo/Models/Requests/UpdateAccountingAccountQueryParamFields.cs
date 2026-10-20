@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         Taxonomy,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

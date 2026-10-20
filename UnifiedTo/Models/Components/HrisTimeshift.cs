@@ -77,6 +77,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

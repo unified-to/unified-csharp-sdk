@@ -25,4 +25,5 @@ var value = ListAdsAssetsQueryParamFields.Id;
 | `Width`          | width            |
 | `Height`         | height           |
 | `FileSize`       | file_size        |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

@@ -212,6 +212,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions GenaiOrganizationWrite = new PropertyConnectionPermissions("genai_organization_write");
         public static readonly PropertyConnectionPermissions GenaiSkillRead = new PropertyConnectionPermissions("genai_skill_read");
         public static readonly PropertyConnectionPermissions GenaiSkillWrite = new PropertyConnectionPermissions("genai_skill_write");
+        public static readonly PropertyConnectionPermissions GenaiMemoryRead = new PropertyConnectionPermissions("genai_memory_read");
+        public static readonly PropertyConnectionPermissions GenaiMemoryWrite = new PropertyConnectionPermissions("genai_memory_write");
         public static readonly PropertyConnectionPermissions MessagingMessageRead = new PropertyConnectionPermissions("messaging_message_read");
         public static readonly PropertyConnectionPermissions MessagingMessageWrite = new PropertyConnectionPermissions("messaging_message_write");
         public static readonly PropertyConnectionPermissions MessagingChannelRead = new PropertyConnectionPermissions("messaging_channel_read");
@@ -610,6 +612,8 @@ namespace UnifiedTo.Models.Components
                 ["genai_organization_write"] = GenaiOrganizationWrite,
                 ["genai_skill_read"] = GenaiSkillRead,
                 ["genai_skill_write"] = GenaiSkillWrite,
+                ["genai_memory_read"] = GenaiMemoryRead,
+                ["genai_memory_write"] = GenaiMemoryWrite,
                 ["messaging_message_read"] = MessagingMessageRead,
                 ["messaging_message_write"] = MessagingMessageWrite,
                 ["messaging_channel_read"] = MessagingChannelRead,

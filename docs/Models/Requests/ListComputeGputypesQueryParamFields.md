@@ -28,4 +28,5 @@ var value = ListComputeGputypesQueryParamFields.Id;
 | `Architecture`    | architecture      |
 | `Prices`          | prices            |
 | `Availability`    | availability      |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

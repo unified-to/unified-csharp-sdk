@@ -26,3 +26,4 @@ var value = CreateSigningDocumentQueryParamFields.Id;
 | `DownloadUrl` | download_url  |
 | `CreatorId`   | creator_id    |
 | `Raw`         | raw           |
+| `Metadata`    | metadata      |

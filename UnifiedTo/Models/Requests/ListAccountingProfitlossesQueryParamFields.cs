@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         ExpensesSections,
         [JsonProperty("cost_of_goods_sold_sections")]
         CostOfGoodsSoldSections,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

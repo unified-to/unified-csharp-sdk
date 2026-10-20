@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         AudienceCountMin,
         [JsonProperty("audience_count_max")]
         AudienceCountMax,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

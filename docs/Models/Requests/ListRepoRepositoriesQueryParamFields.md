@@ -22,4 +22,5 @@ var value = ListRepoRepositoriesQueryParamFields.Id;
 | `IsPrivate`   | is_private    |
 | `WebUrl`      | web_url       |
 | `OrgId`       | org_id        |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Telephones,
         [JsonProperty("tags")]
         Tags,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

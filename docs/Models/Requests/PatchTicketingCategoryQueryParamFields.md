@@ -20,4 +20,5 @@ var value = PatchTicketingCategoryQueryParamFields.Id;
 | `Description` | description   |
 | `IsActive`    | is_active     |
 | `ParentId`    | parent_id     |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

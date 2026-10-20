@@ -1,0 +1,13 @@
+# GenaiMetadata
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ExtraData`                                                                 | [GenaiMetadataExtraData](../../Models/Components/GenaiMetadataExtraData.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Format`                                                                    | [GenaiMetadataFormat](../../Models/Components/GenaiMetadataFormat.md)       | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Id`                                                                        | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Namespace`                                                                 | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Slug`                                                                      | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Value`                                                                     | [GenaiMetadataValue](../../Models/Components/GenaiMetadataValue.md)         | :heavy_minus_sign:                                                          | N/A                                                                         |

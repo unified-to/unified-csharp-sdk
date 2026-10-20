@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         Id,
         [JsonProperty("rates")]
         Rates,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -26,4 +26,5 @@ var value = CreateHrisGroupQueryParamFields.Id;
 | `CompanyId`    | company_id     |
 | `PayFrequency` | pay_frequency  |
 | `NextPaidAt`   | next_paid_at   |
+| `Metadata`     | metadata       |
 | `Raw`          | raw            |

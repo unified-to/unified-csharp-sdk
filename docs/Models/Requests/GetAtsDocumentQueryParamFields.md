@@ -24,4 +24,5 @@ var value = GetAtsDocumentQueryParamFields.Id;
 | `ApplicationId` | application_id  |
 | `JobId`         | job_id          |
 | `UserId`        | user_id         |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

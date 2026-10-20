@@ -41,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<LmsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

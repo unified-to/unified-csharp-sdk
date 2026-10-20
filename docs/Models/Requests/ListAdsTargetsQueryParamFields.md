@@ -20,4 +20,5 @@ var value = ListAdsTargetsQueryParamFields.Id;
 | `ParentId`         | parent_id          |
 | `AudienceCountMin` | audience_count_min |
 | `AudienceCountMax` | audience_count_max |
+| `Metadata`         | metadata           |
 | `Raw`              | raw                |

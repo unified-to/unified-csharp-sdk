@@ -103,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<ShippingShipmentLineitem>? Lineitems { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ShippingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Reference to commerce_order or accounting_order.
         /// </summary>

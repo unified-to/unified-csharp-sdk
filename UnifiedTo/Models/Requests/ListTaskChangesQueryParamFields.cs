@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("items")]
         Items,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

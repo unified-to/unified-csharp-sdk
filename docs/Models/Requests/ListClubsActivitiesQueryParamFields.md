@@ -55,4 +55,5 @@ var value = ListClubsActivitiesQueryParamFields.Id;
 | `WorkoutType`          | workout_type           |
 | `SufferScore`          | suffer_score           |
 | `PrCount`              | pr_count               |
+| `Metadata`             | metadata               |
 | `Raw`                  | raw                    |

@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         WebUrl,
         [JsonProperty("user_ids")]
         UserIds,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

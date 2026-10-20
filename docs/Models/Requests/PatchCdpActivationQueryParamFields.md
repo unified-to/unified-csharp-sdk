@@ -24,4 +24,5 @@ var value = PatchCdpActivationQueryParamFields.Id;
 | `Status`        | status          |
 | `LastRunAt`     | last_run_at     |
 | `IsEnabled`     | is_enabled      |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

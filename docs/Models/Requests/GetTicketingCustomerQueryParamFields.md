@@ -20,4 +20,5 @@ var value = GetTicketingCustomerQueryParamFields.Id;
 | `Emails`     | emails       |
 | `Telephones` | telephones   |
 | `Tags`       | tags         |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

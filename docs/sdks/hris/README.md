@@ -125,31 +125,32 @@ var res = await sdk.Hris.CreateHrisAttendanceAsync(
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-08-13T11:38:38.286Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T13:30:00.800Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
-                DurationMinutes = 12D,
-                EndAt = System.DateTime.Parse("2023-11-05T00:04:01.038Z").ToUniversalTime(),
-                Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
-                IsPaid = true,
+                DurationMinutes = 51D,
+                EndAt = System.DateTime.Parse("2024-02-13T23:13:43.290Z").ToUniversalTime(),
+                Id = "39602a29-deaa-4297-98e3-6b3be818b9b8",
+                IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T01:47:31.237Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-29T10:39:28.011Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
-        Currency = "UGX",
-        DeclaredTipsAmount = 161D,
+        Currency = "EUR",
+        DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-22T05:55:02.511Z").ToUniversalTime(),
-        HourlyRate = 53D,
+        EndAt = System.DateTime.Parse("2024-04-22T16:42:47.469Z").ToUniversalTime(),
+        HourlyRate = 16D,
         Hours = 10D,
-        Id = "5aa66b08-3056-4e4d-b84c-7f56bcfc38dd",
-        JobName = "Global Creative Supervisor",
-        NonCashTipsAmount = 54D,
-        StartAt = System.DateTime.Parse("2021-11-10T22:30:50.606Z").ToUniversalTime(),
-        Status = HrisAttendanceStatus.Closed,
+        Id = "dde200c6-8e6e-4b32-ba10-b3d4f0acae49",
+        JobName = "Human Accountability Administrator",
+        Metadata = new List<HrisMetadata>() {},
+        NonCashTipsAmount = 167D,
+        StartAt = System.DateTime.Parse("2021-11-10T23:31:23.656Z").ToUniversalTime(),
+        Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T16:49:26.264Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T18:35:50.750Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -185,6 +186,7 @@ Create a bankaccount
 <!-- UsageSnippet language="csharp" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" example="hris_bankaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -201,14 +203,15 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "5c7bb58b-2f4d-4653-8117-8c70c54b73b5",
-        IsPrimary = false,
-        Name = "Checking Account",
-        Priority = 3D,
+        Id = "d5591bc4-0557-4821-9081-abbc15ea43fa",
+        IsPrimary = true,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "Granville Schumm - Checking",
+        Priority = 2D,
         RoutingNumber = "448650724",
-        SplitAmount = 23D,
-        SplitType = SplitType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T13:57:11.141Z").ToUniversalTime(),
+        SplitAmount = 98D,
+        SplitType = SplitType.Percentage,
+        UpdatedAt = System.DateTime.Parse("2025-06-30T06:48:11.285Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -244,6 +247,7 @@ Create a benefit
 <!-- UsageSnippet language="csharp" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" example="hris_benefit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -255,18 +259,19 @@ var res = await sdk.Hris.CreateHrisBenefitAsync(
     hrisBenefit: new HrisBenefit() {
         CoverageLevel = CoverageLevel.EmployeeSpouse,
         CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
-        Currency = "JOD",
+        Currency = "GBP",
         Description = "Vomito voluptas dolor sed.",
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "f0d47a1a-fa86-43e1-886a-f2fc62730d53",
+        Id = "2b78bd0f-c9b5-48cc-b206-6b981755117e",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-19T22:38:44.430Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-20T07:41:51.705Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -302,6 +307,7 @@ Create a company
 <!-- UsageSnippet language="csharp" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" example="hris_company" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -312,18 +318,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.CreateHrisCompanyAsync(
     hrisCompany: new HrisCompany() {
         Address = new PropertyHrisCompanyAddress() {
-            Address1 = "2549 Church Walk",
-            City = "Lake Nettiebury",
+            Address1 = "675 Lavinia Lights",
+            City = "Rocky Mount",
             CountryCode = "US",
-            PostalCode = "32877-4898",
-            Region = "Idaho",
-            RegionCode = "PA",
+            PostalCode = "67325",
+            Region = "Kentucky",
+            RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "04fd9c50-49b8-4613-b7b4-caa3ed667048",
-        LegalName = "Schultz LLC",
+        Id = "47784d40-7748-4310-b79c-18af4600e7c2",
+        LegalName = "Gottlieb Group LLC",
+        Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-06T14:54:26.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-07T11:32:27.729Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -359,6 +366,7 @@ Create a deduction
 <!-- UsageSnippet language="csharp" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" example="hris_deduction" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -368,20 +376,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisDeductionAsync(
     hrisDeduction: new HrisDeduction() {
-        Amount = 139655D,
-        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        Amount = 564D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeChild,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EmployerAmount = 22611D,
-        EmployerType = EmployerType.Fixed,
-        EndAt = System.DateTime.Parse("2026-06-21T08:54:34.205Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Biweekly,
-        GarnishmentType = GarnishmentType.Other,
-        Id = "ac4c58ee-88af-4599-9089-5cd886bc7044",
-        IsActive = false,
+        EmployerAmount = 80510D,
+        EmployerType = EmployerType.Percentage,
+        Frequency = HrisDeductionFrequency.OneTime,
+        GarnishmentType = GarnishmentType.ChildSupport,
+        Id = "bcfbe17f-496d-45bd-a172-182bdd098e0a",
+        IsActive = true,
+        MaxAmount = 21794D,
+        Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-13T17:46:42.298Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-14T09:35:07.259Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-21T00:21:58.193Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-21T13:08:20.410Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -428,22 +437,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.CreateHrisDeviceAsync(
     hrisDevice: new HrisDevice() {
         AdminUserIds = new List<string>() {},
-        AssetTag = "dpho9OuFNG",
+        AssetTag = "fJNacaaoWi",
         CreatedAt = System.DateTime.Parse("2019-04-04T17:11:40.322Z").ToUniversalTime(),
-        HasAntivirus = false,
+        HasAntivirus = true,
         HasFirewall = true,
         HasHdEncrypted = true,
         HasPasswordManager = true,
-        HasScreenlock = true,
-        Id = "5e11f79e-8a84-4eab-93b9-a03c7bf46f1d",
+        HasScreenlock = false,
+        Id = "7f24877c-6b79-411b-a3a3-ace66d00ac20",
         IsMissing = false,
-        Manufacturer = "Sanford - Hamill",
-        Model = "Refined",
-        Name = "cross_contamination_if.rar",
-        Os = "monitor",
-        OsVersion = "1.12.16",
-        UpdatedAt = System.DateTime.Parse("2023-06-07T03:47:43.099Z").ToUniversalTime(),
-        Version = "2.20.17",
+        Manufacturer = "Hackett Inc",
+        Metadata = new List<HrisMetadata>() {},
+        Model = "Fantastic",
+        Name = "august-laptop",
+        Os = "transmitter",
+        OsVersion = "8.4.8",
+        UpdatedAt = System.DateTime.Parse("2023-06-07T15:17:12.630Z").ToUniversalTime(),
+        Version = "4.15.7",
     },
     connectionId: "<id>"
 );
@@ -479,6 +489,7 @@ Create a document
 <!-- UsageSnippet language="csharp" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" example="hris_document" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -491,9 +502,10 @@ var res = await sdk.Hris.CreateHrisDocumentAsync(
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "04e5e21e-7d2b-4112-aff6-9db923785bb5",
+        Id = "e78a52b0-b0ef-474d-b28a-a175f51451f3",
+        Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-10T01:08:02.475Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-10T16:33:05.270Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -529,6 +541,7 @@ Create an earning
 <!-- UsageSnippet language="csharp" operationID="createHrisEarning" method="post" path="/hris/{connection_id}/earning" example="hris_earning" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -540,13 +553,14 @@ var res = await sdk.Hris.CreateHrisEarningAsync(
     hrisEarning: new HrisEarning() {
         Amount = 4026D,
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
-        Currency = "PKR",
-        Frequency = HrisEarningFrequency.Biweekly,
-        Id = "82e5996c-f194-4ea0-84d9-8e7151a6fc72",
-        Notes = "Truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-24T13:19:27.504Z").ToUniversalTime(),
-        Status = HrisEarningStatus.Processed,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T13:52:47.276Z").ToUniversalTime(),
+        Currency = "USD",
+        Frequency = HrisEarningFrequency.Semimonthly,
+        Id = "438f0fb5-a277-4a05-a2e0-9fcabac17e45",
+        Metadata = new List<HrisMetadata>() {},
+        Notes = "Deporto truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-24T22:42:12.542Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Ended,
+        UpdatedAt = System.DateTime.Parse("2020-02-08T16:39:38.677Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -593,44 +607,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
     hrisEmployee: new HrisEmployee() {
         Address = new PropertyHrisEmployeeAddress() {
-            Address1 = "52008 Lansdowne Road",
-            Address2 = "Apt. 101",
-            City = "Connellyberg",
+            Address1 = "7431 Hintz Parkway",
+            Address2 = "Apt. 520",
+            City = "Port Rogerview",
             CountryCode = "US",
-            PostalCode = "18978",
-            Region = "South Dakota",
-            RegionCode = "NM",
+            PostalCode = "01711",
+            Region = "Missouri",
+            RegionCode = "TN",
         },
-        Bio = "sushi devotee, singer",
+        Bio = "fun advocate  🇱🇻",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 60136D,
-                Currency = "CRC",
-                Frequency = HrisCompensationFrequency.Quarter,
-                Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.StockOptions,
+                Amount = 95000D,
+                Currency = "USD",
+                Frequency = HrisCompensationFrequency.Year,
+                Notes = "Eius.",
+                Type = HrisCompensationType.Other,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Currency = "IDR",
+        Currency = "USD",
         DateOfBirth = System.DateTime.Parse("2001-04-22").ToUniversalTime(),
         Emails = new List<HrisEmail>() {
             new HrisEmail() {
-                Email = "Zetta_Prohaska67@hotmail.com",
-                Type = HrisEmailType.Home,
+                Email = "zetta.prohaska@insidious-stump.net",
+                Type = HrisEmailType.Work,
             },
         },
-        EmployeeNumber = "YuOt169CGu",
+        EmployeeNumber = "uCk3qaL1ei",
         EmploymentStatus = EmploymentStatus.Active,
-        EmploymentType = HrisEmployeeEmploymentType.Volunteer,
+        EmploymentType = HrisEmployeeEmploymentType.PartTime,
         FirstName = "Zetta",
-        FlsaStatus = FlsaStatus.SalariedNonexempt,
-        Gender = HrisEmployeeGender.Intersex,
-        HasMfa = false,
-        HiredAt = System.DateTime.Parse("2023-05-26T18:43:44.559Z").ToUniversalTime(),
-        Id = "9f8cd59b-abf4-4f09-b95b-507bb2da756a",
-        ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
-        LanguageLocale = "es",
+        FlsaStatus = FlsaStatus.Exempt,
+        Gender = HrisEmployeeGender.Male,
+        HasMfa = true,
+        HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
+        Id = "81481fd9-702e-41f3-99ce-39881f2eabca",
+        ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
+        LanguageLocale = "in",
         LastName = "Prohaska",
         Locations = new List<HrisLocation>() {},
         MaritalStatus = MaritalStatus.Married,
@@ -642,72 +656,57 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "9dd5b98e-1d7c-44d0-8e99-32aa677959d5",
+                Id = "abc65a9d-823c-4514-b063-ac9625c9b41e",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "appono"
+                    "tutis"
                 ),
             },
         },
         Name = "Zetta Prohaska",
-        PayFrequency = PayFrequency.Biweekly,
+        PayFrequency = PayFrequency.Week,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Deshaun.Sanford24@yahoo.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Rebeca.Dibbert11@hotmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Hester80@gmail.com",
+                        Email = "keith.prohaska@gmail.com",
                     },
                 },
-                Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Friend,
-            },
-            new HrisEmployeerelationship() {
-                Emails = new List<HrisEmail>() {
-                    new HrisEmail() {
-                        Email = "Benedict_Wisozk83@hotmail.com",
-                    },
-                },
-                Name = "Music",
+                Name = "Keith Prohaska",
                 Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Margot11@yahoo.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Jaden_Miller@gmail.com",
+                        Email = "keely.prohaska@icloud.com",
                     },
                 },
-                Name = "Electronics",
+                Name = "Keely Prohaska",
                 Type = HrisEmployeerelationshipType.Other,
             },
         },
-        Salutation = "Miss",
-        SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 7748057D,
-        StorageQuotaAvailable = 1590710D,
-        StorageQuotaUsed = 730343D,
+        Salutation = "Ms.",
+        SsnSin = "284-82-8167",
+        StorageQuotaAllocated = 3653713D,
+        StorageQuotaAvailable = 3017275D,
+        StorageQuotaUsed = 367449D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
-                Telephone = "(409) 801-3705",
+                Telephone = "(320) 980-1370",
+                Type = HrisTelephoneType.Home,
+            },
+            new HrisTelephone() {
+                Telephone = "(694) 840-0166",
                 Type = HrisTelephoneType.Fax,
             },
         },
-        TerminationReason = "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
-        TimeoffDaysTotal = 12D,
-        TimeoffDaysUsed = 6D,
-        Timezone = "Africa/Harare",
-        Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-03-02T00:17:30.452Z").ToUniversalTime(),
+        TimeoffDaysTotal = 17D,
+        TimeoffDaysUsed = 9D,
+        Timezone = "Europe/Ljubljana",
+        Title = "District Branding Specialist",
+        UpdatedAt = System.DateTime.Parse("2020-07-19T00:46:45.046Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -743,6 +742,7 @@ Create a group
 <!-- UsageSnippet language="csharp" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" example="hris_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -754,11 +754,12 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "da9edb14-006a-49d1-975b-12e3edc795cb",
+        Id = "9141ba1d-1155-46c4-b4cc-6ae2a117f7eb",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-20T04:39:28.896Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-20T22:30:33.995Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -794,6 +795,7 @@ Create a job
 <!-- UsageSnippet language="csharp" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" example="hris_job" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -807,10 +809,11 @@ var res = await sdk.Hris.CreateHrisJobAsync(
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "e52379cb-ce83-4c11-8da8-daabbb9dfe56",
+        Id = "8f48608d-59ed-444f-b906-57cc80ff5fbc",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T10:31:29.133Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.120Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -857,39 +860,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.CreateHrisLocationAsync(
     hrisLocation: new HrisLocation() {
         Address = new PropertyHrisLocationAddress() {
-            Address1 = "2743 Connelly Summit",
-            Address2 = "Apt. 350",
-            City = "Titusville",
+            Address1 = "4418 Daniella Mall",
+            Address2 = "Apt. 997",
+            City = "Burke",
             CountryCode = "US",
-            PostalCode = "16154-1095",
-            Region = "Oregon",
-            RegionCode = "AL",
+            PostalCode = "54109",
+            Region = "Ohio",
+            RegionCode = "OR",
         },
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
-        Currency = "MUR",
-        Description = "Acervus caries.",
-        ExternalIdentifier = "e44b45d4-f861-4262-a4dc-c813acd996c9",
-        Id = "ca0fe527-6f0e-45a3-9cfb-22fe68fa7e96",
-        IsActive = true,
-        IsHq = false,
-        LanguageLocale = "fr",
-        Name = "adhuc",
+        Currency = "MNT",
+        Description = "Commemoro acervus.",
+        Id = "c9667c3e-8512-4e4f-aeaa-8ba2e9206411",
+        IsActive = false,
+        IsHq = true,
+        LanguageLocale = "it",
+        Metadata = new List<HrisMetadata>() {},
+        Name = "North Kimberlyland Office",
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
-                Telephone = "(710) 550-6997",
+                Telephone = "(371) 245-0699",
                 Type = HrisTelephoneType.Fax,
             },
             new HrisTelephone() {
-                Telephone = "(208) 555-8542",
+                Telephone = "(700) 845-5854",
+                Type = HrisTelephoneType.Fax,
+            },
+            new HrisTelephone() {
+                Telephone = "(461) 437-3548",
                 Type = HrisTelephoneType.Home,
             },
-            new HrisTelephone() {
-                Telephone = "(712) 473-5482",
-                Type = HrisTelephoneType.Fax,
-            },
         },
-        Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-20T08:14:46.571Z").ToUniversalTime(),
+        Timezone = "Asia/Jerusalem",
+        UpdatedAt = System.DateTime.Parse("2023-06-20T15:50:32.115Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -935,20 +938,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTaxonomyAsync(
     hrisTaxonomy: new HrisTaxonomy() {
-        CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
-        Description = "Apto demonstro audacia adstringo cursim tristis solio careo.",
-        Domain = "Electronics",
-        Id = "ede085db-5709-4d53-a490-746f3de5be17",
-        IsActive = false,
-        Name = "International Functionality Architect",
-        ParentId = "6524b2a7-6520-4e15-8c4e-1aa6793db837",
-        RoleIds = new List<string>() {
-            "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+        AlternativeNames = new List<string>() {
+            "Facilitator",
+            "National",
         },
-        Subcategory = "Bamboo",
+        CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
+        Description = "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+        Domain = "Health",
+        Id = "30babc47-15c6-4230-81ba-799d531e0d89",
+        IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "International Functionality Architect",
+        Subcategory = "Marble",
         Type = HrisTaxonomyType.Knowledge,
-        UpdatedAt = System.DateTime.Parse("2023-05-28T20:42:15.494Z").ToUniversalTime(),
-        Url = "https://our-polarisation.name",
+        UpdatedAt = System.DateTime.Parse("2023-05-29T01:10:20.439Z").ToUniversalTime(),
+        Url = "https://fixed-membership.biz/",
     },
     connectionId: "<id>"
 );
@@ -984,6 +988,7 @@ Create a timeoff
 <!-- UsageSnippet language="csharp" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" example="hris_timeoff" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -993,20 +998,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T05:22:00.585Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T06:56:31.747Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-27T09:24:41.627Z").ToUniversalTime(),
-        Id = "9e35080b-546b-4205-aafe-e52f746685b7",
+        EndAt = System.DateTime.Parse("2024-12-27T22:42:46.021Z").ToUniversalTime(),
+        Id = "ae646603-aa50-43c8-80b1-711d7ac46661",
         IsPaid = true,
+        Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T00:31:20.559Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-04T08:23:52.492Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T12:09:02.771Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T15:17:57.340Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -1053,24 +1059,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-22T10:40:08.553Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-17T13:45:19.950Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
-                Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Week,
-                Notes = "Annus adficio suasoria architecto aggero.",
+                Currency = "GBP",
+                Frequency = HrisCompensationFrequency.Semimonthly,
+                Notes = "Vehemens annus adficio.",
                 Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-25T00:06:40.854Z").ToUniversalTime(),
-        Hours = 8D,
-        Id = "a4b531f9-1d26-4a62-9445-96938a51df1d",
-        IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-07-11T21:02:37.389Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T08:14:44.004Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-25T20:41:12.567Z").ToUniversalTime(),
+        Hours = 6D,
+        Id = "b611fc3a-b5cb-4c40-a191-6ea3ea726b02",
+        IsApproved = false,
+        Metadata = new List<HrisMetadata>() {},
+        StartAt = System.DateTime.Parse("2023-07-12T08:29:55.212Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-01T13:56:00.141Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2619,31 +2626,32 @@ PatchHrisAttendanceRequest req = new PatchHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-08-13T11:38:38.286Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T13:30:00.800Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
-                DurationMinutes = 12D,
-                EndAt = System.DateTime.Parse("2023-11-05T00:04:01.050Z").ToUniversalTime(),
-                Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
-                IsPaid = true,
+                DurationMinutes = 51D,
+                EndAt = System.DateTime.Parse("2024-02-13T23:13:43.301Z").ToUniversalTime(),
+                Id = "4e91765c-ab0d-46cf-8ad2-a8de27909ce5",
+                IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T01:47:31.249Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-29T10:39:28.021Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
-        Currency = "UGX",
-        DeclaredTipsAmount = 161D,
+        Currency = "EUR",
+        DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-22T05:55:02.526Z").ToUniversalTime(),
-        HourlyRate = 53D,
+        EndAt = System.DateTime.Parse("2024-04-22T16:42:47.481Z").ToUniversalTime(),
+        HourlyRate = 16D,
         Hours = 10D,
-        Id = "e627f856-4b0a-4bf7-8dfe-c04894eb1dae",
-        JobName = "Global Creative Supervisor",
-        NonCashTipsAmount = 54D,
-        StartAt = System.DateTime.Parse("2021-11-10T22:30:50.607Z").ToUniversalTime(),
-        Status = HrisAttendanceStatus.Closed,
+        Id = "764bc9f8-af37-417d-acd8-49db7c2b0efe",
+        JobName = "Human Accountability Administrator",
+        Metadata = new List<HrisMetadata>() {},
+        NonCashTipsAmount = 167D,
+        StartAt = System.DateTime.Parse("2021-11-10T23:31:23.657Z").ToUniversalTime(),
+        Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T16:49:26.267Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T18:35:50.752Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2679,6 +2687,7 @@ Update a bankaccount
 <!-- UsageSnippet language="csharp" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2696,14 +2705,15 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "af029255-1722-4a63-b4c5-4cef1f1481e0",
-        IsPrimary = false,
-        Name = "Checking Account",
-        Priority = 3D,
+        Id = "aa03b113-36b3-45b9-871f-a3957ae90678",
+        IsPrimary = true,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "Granville Schumm - Checking",
+        Priority = 2D,
         RoutingNumber = "448650724",
-        SplitAmount = 23D,
-        SplitType = SplitType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T13:57:11.158Z").ToUniversalTime(),
+        SplitAmount = 98D,
+        SplitType = SplitType.Percentage,
+        UpdatedAt = System.DateTime.Parse("2025-06-30T06:48:11.300Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2739,6 +2749,7 @@ Update a benefit
 <!-- UsageSnippet language="csharp" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2751,18 +2762,19 @@ PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
     HrisBenefit = new HrisBenefit() {
         CoverageLevel = CoverageLevel.EmployeeSpouse,
         CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
-        Currency = "JOD",
+        Currency = "GBP",
         Description = "Vomito voluptas dolor sed.",
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "55973a05-c207-4d9d-9035-4ccf8671b498",
+        Id = "1b213160-acda-43a2-aa6e-7c9a80a476b7",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-19T22:38:44.438Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-20T07:41:51.712Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2798,6 +2810,7 @@ Update a company
 <!-- UsageSnippet language="csharp" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2809,18 +2822,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
     HrisCompany = new HrisCompany() {
         Address = new PropertyHrisCompanyAddress() {
-            Address1 = "2549 Church Walk",
-            City = "Lake Nettiebury",
+            Address1 = "675 Lavinia Lights",
+            City = "Rocky Mount",
             CountryCode = "US",
-            PostalCode = "32877-4898",
-            Region = "Idaho",
-            RegionCode = "PA",
+            PostalCode = "67325",
+            Region = "Kentucky",
+            RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "be632fb8-331c-4036-bc50-bf8e4ff4a97d",
-        LegalName = "Schultz LLC",
+        Id = "0a42fa0f-6e39-4aa0-8793-a2e9ba9a37f0",
+        LegalName = "Gottlieb Group LLC",
+        Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-06T14:54:26.325Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-07T11:32:27.746Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2856,6 +2870,7 @@ Update a deduction
 <!-- UsageSnippet language="csharp" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2866,20 +2881,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
     HrisDeduction = new HrisDeduction() {
-        Amount = 139655D,
-        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        Amount = 564D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeChild,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EmployerAmount = 22611D,
-        EmployerType = EmployerType.Fixed,
-        EndAt = System.DateTime.Parse("2026-06-21T08:54:34.221Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Biweekly,
-        GarnishmentType = GarnishmentType.Other,
-        Id = "d898a4d2-ecec-43c6-9589-9770eb9503f5",
-        IsActive = false,
+        EmployerAmount = 80510D,
+        EmployerType = EmployerType.Percentage,
+        Frequency = HrisDeductionFrequency.OneTime,
+        GarnishmentType = GarnishmentType.ChildSupport,
+        Id = "162562d9-52ee-48e3-9fe6-c308f36aa54a",
+        IsActive = true,
+        MaxAmount = 21794D,
+        Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-13T17:46:42.311Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-14T09:35:07.270Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-21T00:21:58.203Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-21T13:08:20.418Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2927,22 +2943,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
     HrisDevice = new HrisDevice() {
         AdminUserIds = new List<string>() {},
-        AssetTag = "dpho9OuFNG",
+        AssetTag = "fJNacaaoWi",
         CreatedAt = System.DateTime.Parse("2019-04-04T17:11:40.322Z").ToUniversalTime(),
-        HasAntivirus = false,
+        HasAntivirus = true,
         HasFirewall = true,
         HasHdEncrypted = true,
         HasPasswordManager = true,
-        HasScreenlock = true,
-        Id = "19a9c2a2-3e0b-4e3e-a3af-995ba06e532e",
+        HasScreenlock = false,
+        Id = "01e2646a-508e-4079-afad-1db4ea16da1d",
         IsMissing = false,
-        Manufacturer = "Sanford - Hamill",
-        Model = "Refined",
-        Name = "cross_contamination_if.rar",
-        Os = "monitor",
-        OsVersion = "1.12.16",
-        UpdatedAt = System.DateTime.Parse("2023-06-07T03:47:43.107Z").ToUniversalTime(),
-        Version = "2.20.17",
+        Manufacturer = "Hackett Inc",
+        Metadata = new List<HrisMetadata>() {},
+        Model = "Fantastic",
+        Name = "august-laptop",
+        Os = "transmitter",
+        OsVersion = "8.4.8",
+        UpdatedAt = System.DateTime.Parse("2023-06-07T15:17:12.641Z").ToUniversalTime(),
+        Version = "4.15.7",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2978,6 +2995,7 @@ Update a document
 <!-- UsageSnippet language="csharp" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" example="hris_document" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2991,9 +3009,10 @@ PatchHrisDocumentRequest req = new PatchHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "03fe3fc7-a6bc-40ae-896f-61b72f11dcf9",
+        Id = "280e0bfa-2cc9-43e0-b278-6301912522d1",
+        Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-10T01:08:02.481Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-10T16:33:05.278Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3029,6 +3048,7 @@ Update an earning
 <!-- UsageSnippet language="csharp" operationID="patchHrisEarning" method="patch" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3041,13 +3061,14 @@ PatchHrisEarningRequest req = new PatchHrisEarningRequest() {
     HrisEarning = new HrisEarning() {
         Amount = 4026D,
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
-        Currency = "PKR",
-        Frequency = HrisEarningFrequency.Biweekly,
-        Id = "4513b75b-23b1-4fff-ad84-ff095ed744e2",
-        Notes = "Truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-24T13:19:27.511Z").ToUniversalTime(),
-        Status = HrisEarningStatus.Processed,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T13:52:47.278Z").ToUniversalTime(),
+        Currency = "USD",
+        Frequency = HrisEarningFrequency.Semimonthly,
+        Id = "54ccbae7-3570-4d1f-9c26-82e80ac02a61",
+        Metadata = new List<HrisMetadata>() {},
+        Notes = "Deporto truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-24T22:42:12.553Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Ended,
+        UpdatedAt = System.DateTime.Parse("2020-02-08T16:39:38.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3095,44 +3116,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
     HrisEmployee = new HrisEmployee() {
         Address = new PropertyHrisEmployeeAddress() {
-            Address1 = "52008 Lansdowne Road",
-            Address2 = "Apt. 101",
-            City = "Connellyberg",
+            Address1 = "7431 Hintz Parkway",
+            Address2 = "Apt. 520",
+            City = "Port Rogerview",
             CountryCode = "US",
-            PostalCode = "18978",
-            Region = "South Dakota",
-            RegionCode = "NM",
+            PostalCode = "01711",
+            Region = "Missouri",
+            RegionCode = "TN",
         },
-        Bio = "sushi devotee, singer",
+        Bio = "fun advocate  🇱🇻",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 60136D,
-                Currency = "CRC",
-                Frequency = HrisCompensationFrequency.Quarter,
-                Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.StockOptions,
+                Amount = 95000D,
+                Currency = "USD",
+                Frequency = HrisCompensationFrequency.Year,
+                Notes = "Eius.",
+                Type = HrisCompensationType.Other,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Currency = "IDR",
+        Currency = "USD",
         DateOfBirth = System.DateTime.Parse("2001-04-22").ToUniversalTime(),
         Emails = new List<HrisEmail>() {
             new HrisEmail() {
-                Email = "Zetta_Prohaska67@hotmail.com",
-                Type = HrisEmailType.Home,
+                Email = "zetta.prohaska@insidious-stump.net",
+                Type = HrisEmailType.Work,
             },
         },
-        EmployeeNumber = "YuOt169CGu",
+        EmployeeNumber = "uCk3qaL1ei",
         EmploymentStatus = EmploymentStatus.Active,
-        EmploymentType = HrisEmployeeEmploymentType.Volunteer,
+        EmploymentType = HrisEmployeeEmploymentType.PartTime,
         FirstName = "Zetta",
-        FlsaStatus = FlsaStatus.SalariedNonexempt,
-        Gender = HrisEmployeeGender.Intersex,
-        HasMfa = false,
-        HiredAt = System.DateTime.Parse("2023-05-26T18:43:44.613Z").ToUniversalTime(),
-        Id = "845abdde-87d4-4c1a-9b59-e644a3086261",
-        ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
-        LanguageLocale = "es",
+        FlsaStatus = FlsaStatus.Exempt,
+        Gender = HrisEmployeeGender.Male,
+        HasMfa = true,
+        HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
+        Id = "52e2d3bd-02a1-4614-99a7-1d26c3d7a743",
+        ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
+        LanguageLocale = "in",
         LastName = "Prohaska",
         Locations = new List<HrisLocation>() {},
         MaritalStatus = MaritalStatus.Married,
@@ -3144,72 +3165,57 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "c1f3d49e-50e5-445a-9bc7-83bf0e33fb4d",
+                Id = "c72de71d-aa92-41ef-938a-5cfa4a92586d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "appono"
+                    "tutis"
                 ),
             },
         },
         Name = "Zetta Prohaska",
-        PayFrequency = PayFrequency.Biweekly,
+        PayFrequency = PayFrequency.Week,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Deshaun.Sanford24@yahoo.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Rebeca.Dibbert11@hotmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Hester80@gmail.com",
+                        Email = "keith.prohaska@gmail.com",
                     },
                 },
-                Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Friend,
-            },
-            new HrisEmployeerelationship() {
-                Emails = new List<HrisEmail>() {
-                    new HrisEmail() {
-                        Email = "Benedict_Wisozk83@hotmail.com",
-                    },
-                },
-                Name = "Music",
+                Name = "Keith Prohaska",
                 Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Margot11@yahoo.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Jaden_Miller@gmail.com",
+                        Email = "keely.prohaska@icloud.com",
                     },
                 },
-                Name = "Electronics",
+                Name = "Keely Prohaska",
                 Type = HrisEmployeerelationshipType.Other,
             },
         },
-        Salutation = "Miss",
-        SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 7748057D,
-        StorageQuotaAvailable = 1590710D,
-        StorageQuotaUsed = 730343D,
+        Salutation = "Ms.",
+        SsnSin = "284-82-8167",
+        StorageQuotaAllocated = 3653713D,
+        StorageQuotaAvailable = 3017275D,
+        StorageQuotaUsed = 367449D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
-                Telephone = "(409) 801-3705",
+                Telephone = "(320) 980-1370",
+                Type = HrisTelephoneType.Home,
+            },
+            new HrisTelephone() {
+                Telephone = "(694) 840-0166",
                 Type = HrisTelephoneType.Fax,
             },
         },
-        TerminationReason = "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
-        TimeoffDaysTotal = 12D,
-        TimeoffDaysUsed = 6D,
-        Timezone = "Africa/Harare",
-        Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-03-02T00:17:30.489Z").ToUniversalTime(),
+        TimeoffDaysTotal = 17D,
+        TimeoffDaysUsed = 9D,
+        Timezone = "Europe/Ljubljana",
+        Title = "District Branding Specialist",
+        UpdatedAt = System.DateTime.Parse("2020-07-19T00:46:45.055Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3245,6 +3251,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3257,11 +3264,12 @@ PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "497dbafd-f669-4d19-b864-52969246580b",
+        Id = "198fa14a-90e2-4cb1-86b0-72a0bc757ec4",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-20T04:39:28.907Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-20T22:30:34.006Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3297,6 +3305,7 @@ Update a job
 <!-- UsageSnippet language="csharp" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3311,10 +3320,11 @@ PatchHrisJobRequest req = new PatchHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "5738adf3-161a-46a4-bbaf-fc1924cb3051",
+        Id = "4fcbf9ed-afc0-46ee-aee8-ed4f2f5787c6",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T10:31:29.175Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.186Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3362,39 +3372,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
     HrisLocation = new HrisLocation() {
         Address = new PropertyHrisLocationAddress() {
-            Address1 = "2743 Connelly Summit",
-            Address2 = "Apt. 350",
-            City = "Titusville",
+            Address1 = "4418 Daniella Mall",
+            Address2 = "Apt. 997",
+            City = "Burke",
             CountryCode = "US",
-            PostalCode = "16154-1095",
-            Region = "Oregon",
-            RegionCode = "AL",
+            PostalCode = "54109",
+            Region = "Ohio",
+            RegionCode = "OR",
         },
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
-        Currency = "MUR",
-        Description = "Acervus caries.",
-        ExternalIdentifier = "1a12fd62-f0d9-48bf-b111-dec3f11637ae",
-        Id = "033ec95c-df09-4cae-86c5-98e4390f85dc",
-        IsActive = true,
-        IsHq = false,
-        LanguageLocale = "fr",
-        Name = "adhuc",
+        Currency = "MNT",
+        Description = "Commemoro acervus.",
+        Id = "52221078-bcf4-4d42-bd71-57b73ad30ff3",
+        IsActive = false,
+        IsHq = true,
+        LanguageLocale = "it",
+        Metadata = new List<HrisMetadata>() {},
+        Name = "North Kimberlyland Office",
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
-                Telephone = "(710) 550-6997",
+                Telephone = "(371) 245-0699",
                 Type = HrisTelephoneType.Fax,
             },
             new HrisTelephone() {
-                Telephone = "(208) 555-8542",
+                Telephone = "(700) 845-5854",
+                Type = HrisTelephoneType.Fax,
+            },
+            new HrisTelephone() {
+                Telephone = "(461) 437-3548",
                 Type = HrisTelephoneType.Home,
             },
-            new HrisTelephone() {
-                Telephone = "(712) 473-5482",
-                Type = HrisTelephoneType.Fax,
-            },
         },
-        Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-20T08:14:46.579Z").ToUniversalTime(),
+        Timezone = "Asia/Jerusalem",
+        UpdatedAt = System.DateTime.Parse("2023-06-20T15:50:32.123Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3430,6 +3440,7 @@ Update a timeoff
 <!-- UsageSnippet language="csharp" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3440,20 +3451,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T05:22:00.586Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T06:56:31.748Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-27T09:24:41.637Z").ToUniversalTime(),
-        Id = "b1531f36-519b-451c-8683-b748b44e066c",
+        EndAt = System.DateTime.Parse("2024-12-27T22:42:46.031Z").ToUniversalTime(),
+        Id = "6ea366a3-ca7a-444e-ab8a-9892b84c39d4",
         IsPaid = true,
+        Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T00:31:20.565Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-04T08:23:52.498Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T12:09:02.773Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T15:17:57.342Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -3501,24 +3513,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-22T10:40:08.561Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-17T13:45:19.956Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
-                Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Week,
-                Notes = "Annus adficio suasoria architecto aggero.",
+                Currency = "GBP",
+                Frequency = HrisCompensationFrequency.Semimonthly,
+                Notes = "Vehemens annus adficio.",
                 Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-25T00:06:40.870Z").ToUniversalTime(),
-        Hours = 8D,
-        Id = "375f3d93-7568-4887-b1a4-c6f825a28a05",
-        IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-07-11T21:02:37.398Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T08:14:44.008Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-25T20:41:12.582Z").ToUniversalTime(),
+        Hours = 6D,
+        Id = "11c7b377-3a28-4b8e-9a51-01e059ec3bad",
+        IsApproved = false,
+        Metadata = new List<HrisMetadata>() {},
+        StartAt = System.DateTime.Parse("2023-07-12T08:29:55.220Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-01T13:56:00.145Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4133,31 +4146,32 @@ UpdateHrisAttendanceRequest req = new UpdateHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-08-13T11:38:38.286Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T13:30:00.800Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
-                DurationMinutes = 12D,
-                EndAt = System.DateTime.Parse("2023-11-05T00:04:01.050Z").ToUniversalTime(),
-                Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
-                IsPaid = true,
+                DurationMinutes = 51D,
+                EndAt = System.DateTime.Parse("2024-02-13T23:13:43.301Z").ToUniversalTime(),
+                Id = "4e91765c-ab0d-46cf-8ad2-a8de27909ce5",
+                IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T01:47:31.249Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-29T10:39:28.021Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
-        Currency = "UGX",
-        DeclaredTipsAmount = 161D,
+        Currency = "EUR",
+        DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-22T05:55:02.526Z").ToUniversalTime(),
-        HourlyRate = 53D,
+        EndAt = System.DateTime.Parse("2024-04-22T16:42:47.481Z").ToUniversalTime(),
+        HourlyRate = 16D,
         Hours = 10D,
-        Id = "e627f856-4b0a-4bf7-8dfe-c04894eb1dae",
-        JobName = "Global Creative Supervisor",
-        NonCashTipsAmount = 54D,
-        StartAt = System.DateTime.Parse("2021-11-10T22:30:50.607Z").ToUniversalTime(),
-        Status = HrisAttendanceStatus.Closed,
+        Id = "764bc9f8-af37-417d-acd8-49db7c2b0efe",
+        JobName = "Human Accountability Administrator",
+        Metadata = new List<HrisMetadata>() {},
+        NonCashTipsAmount = 167D,
+        StartAt = System.DateTime.Parse("2021-11-10T23:31:23.657Z").ToUniversalTime(),
+        Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T16:49:26.267Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T18:35:50.752Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4193,6 +4207,7 @@ Update a bankaccount
 <!-- UsageSnippet language="csharp" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4210,14 +4225,15 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "af029255-1722-4a63-b4c5-4cef1f1481e0",
-        IsPrimary = false,
-        Name = "Checking Account",
-        Priority = 3D,
+        Id = "aa03b113-36b3-45b9-871f-a3957ae90678",
+        IsPrimary = true,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "Granville Schumm - Checking",
+        Priority = 2D,
         RoutingNumber = "448650724",
-        SplitAmount = 23D,
-        SplitType = SplitType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T13:57:11.158Z").ToUniversalTime(),
+        SplitAmount = 98D,
+        SplitType = SplitType.Percentage,
+        UpdatedAt = System.DateTime.Parse("2025-06-30T06:48:11.300Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4253,6 +4269,7 @@ Update a benefit
 <!-- UsageSnippet language="csharp" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4265,18 +4282,19 @@ UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
     HrisBenefit = new HrisBenefit() {
         CoverageLevel = CoverageLevel.EmployeeSpouse,
         CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
-        Currency = "JOD",
+        Currency = "GBP",
         Description = "Vomito voluptas dolor sed.",
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "55973a05-c207-4d9d-9035-4ccf8671b498",
+        Id = "1b213160-acda-43a2-aa6e-7c9a80a476b7",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-19T22:38:44.438Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-20T07:41:51.712Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4312,6 +4330,7 @@ Update a company
 <!-- UsageSnippet language="csharp" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4323,18 +4342,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
     HrisCompany = new HrisCompany() {
         Address = new PropertyHrisCompanyAddress() {
-            Address1 = "2549 Church Walk",
-            City = "Lake Nettiebury",
+            Address1 = "675 Lavinia Lights",
+            City = "Rocky Mount",
             CountryCode = "US",
-            PostalCode = "32877-4898",
-            Region = "Idaho",
-            RegionCode = "PA",
+            PostalCode = "67325",
+            Region = "Kentucky",
+            RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "be632fb8-331c-4036-bc50-bf8e4ff4a97d",
-        LegalName = "Schultz LLC",
+        Id = "0a42fa0f-6e39-4aa0-8793-a2e9ba9a37f0",
+        LegalName = "Gottlieb Group LLC",
+        Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-06T14:54:26.325Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-07T11:32:27.746Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4370,6 +4390,7 @@ Update a deduction
 <!-- UsageSnippet language="csharp" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4380,20 +4401,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
     HrisDeduction = new HrisDeduction() {
-        Amount = 139655D,
-        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        Amount = 564D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeChild,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EmployerAmount = 22611D,
-        EmployerType = EmployerType.Fixed,
-        EndAt = System.DateTime.Parse("2026-06-21T08:54:34.221Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Biweekly,
-        GarnishmentType = GarnishmentType.Other,
-        Id = "d898a4d2-ecec-43c6-9589-9770eb9503f5",
-        IsActive = false,
+        EmployerAmount = 80510D,
+        EmployerType = EmployerType.Percentage,
+        Frequency = HrisDeductionFrequency.OneTime,
+        GarnishmentType = GarnishmentType.ChildSupport,
+        Id = "162562d9-52ee-48e3-9fe6-c308f36aa54a",
+        IsActive = true,
+        MaxAmount = 21794D,
+        Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-13T17:46:42.311Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-14T09:35:07.270Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-21T00:21:58.203Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-21T13:08:20.418Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4441,22 +4463,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
     HrisDevice = new HrisDevice() {
         AdminUserIds = new List<string>() {},
-        AssetTag = "dpho9OuFNG",
+        AssetTag = "fJNacaaoWi",
         CreatedAt = System.DateTime.Parse("2019-04-04T17:11:40.322Z").ToUniversalTime(),
-        HasAntivirus = false,
+        HasAntivirus = true,
         HasFirewall = true,
         HasHdEncrypted = true,
         HasPasswordManager = true,
-        HasScreenlock = true,
-        Id = "19a9c2a2-3e0b-4e3e-a3af-995ba06e532e",
+        HasScreenlock = false,
+        Id = "01e2646a-508e-4079-afad-1db4ea16da1d",
         IsMissing = false,
-        Manufacturer = "Sanford - Hamill",
-        Model = "Refined",
-        Name = "cross_contamination_if.rar",
-        Os = "monitor",
-        OsVersion = "1.12.16",
-        UpdatedAt = System.DateTime.Parse("2023-06-07T03:47:43.107Z").ToUniversalTime(),
-        Version = "2.20.17",
+        Manufacturer = "Hackett Inc",
+        Metadata = new List<HrisMetadata>() {},
+        Model = "Fantastic",
+        Name = "august-laptop",
+        Os = "transmitter",
+        OsVersion = "8.4.8",
+        UpdatedAt = System.DateTime.Parse("2023-06-07T15:17:12.641Z").ToUniversalTime(),
+        Version = "4.15.7",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4492,6 +4515,7 @@ Update a document
 <!-- UsageSnippet language="csharp" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" example="hris_document" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4505,9 +4529,10 @@ UpdateHrisDocumentRequest req = new UpdateHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "03fe3fc7-a6bc-40ae-896f-61b72f11dcf9",
+        Id = "280e0bfa-2cc9-43e0-b278-6301912522d1",
+        Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-10T01:08:02.481Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-10T16:33:05.278Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4543,6 +4568,7 @@ Update an earning
 <!-- UsageSnippet language="csharp" operationID="updateHrisEarning" method="put" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4555,13 +4581,14 @@ UpdateHrisEarningRequest req = new UpdateHrisEarningRequest() {
     HrisEarning = new HrisEarning() {
         Amount = 4026D,
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
-        Currency = "PKR",
-        Frequency = HrisEarningFrequency.Biweekly,
-        Id = "4513b75b-23b1-4fff-ad84-ff095ed744e2",
-        Notes = "Truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-24T13:19:27.511Z").ToUniversalTime(),
-        Status = HrisEarningStatus.Processed,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T13:52:47.278Z").ToUniversalTime(),
+        Currency = "USD",
+        Frequency = HrisEarningFrequency.Semimonthly,
+        Id = "54ccbae7-3570-4d1f-9c26-82e80ac02a61",
+        Metadata = new List<HrisMetadata>() {},
+        Notes = "Deporto truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-24T22:42:12.553Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Ended,
+        UpdatedAt = System.DateTime.Parse("2020-02-08T16:39:38.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4609,44 +4636,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
     HrisEmployee = new HrisEmployee() {
         Address = new PropertyHrisEmployeeAddress() {
-            Address1 = "52008 Lansdowne Road",
-            Address2 = "Apt. 101",
-            City = "Connellyberg",
+            Address1 = "7431 Hintz Parkway",
+            Address2 = "Apt. 520",
+            City = "Port Rogerview",
             CountryCode = "US",
-            PostalCode = "18978",
-            Region = "South Dakota",
-            RegionCode = "NM",
+            PostalCode = "01711",
+            Region = "Missouri",
+            RegionCode = "TN",
         },
-        Bio = "sushi devotee, singer",
+        Bio = "fun advocate  🇱🇻",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 60136D,
-                Currency = "CRC",
-                Frequency = HrisCompensationFrequency.Quarter,
-                Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.StockOptions,
+                Amount = 95000D,
+                Currency = "USD",
+                Frequency = HrisCompensationFrequency.Year,
+                Notes = "Eius.",
+                Type = HrisCompensationType.Other,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Currency = "IDR",
+        Currency = "USD",
         DateOfBirth = System.DateTime.Parse("2001-04-22").ToUniversalTime(),
         Emails = new List<HrisEmail>() {
             new HrisEmail() {
-                Email = "Zetta_Prohaska67@hotmail.com",
-                Type = HrisEmailType.Home,
+                Email = "zetta.prohaska@insidious-stump.net",
+                Type = HrisEmailType.Work,
             },
         },
-        EmployeeNumber = "YuOt169CGu",
+        EmployeeNumber = "uCk3qaL1ei",
         EmploymentStatus = EmploymentStatus.Active,
-        EmploymentType = HrisEmployeeEmploymentType.Volunteer,
+        EmploymentType = HrisEmployeeEmploymentType.PartTime,
         FirstName = "Zetta",
-        FlsaStatus = FlsaStatus.SalariedNonexempt,
-        Gender = HrisEmployeeGender.Intersex,
-        HasMfa = false,
-        HiredAt = System.DateTime.Parse("2023-05-26T18:43:44.613Z").ToUniversalTime(),
-        Id = "845abdde-87d4-4c1a-9b59-e644a3086261",
-        ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
-        LanguageLocale = "es",
+        FlsaStatus = FlsaStatus.Exempt,
+        Gender = HrisEmployeeGender.Male,
+        HasMfa = true,
+        HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
+        Id = "52e2d3bd-02a1-4614-99a7-1d26c3d7a743",
+        ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
+        LanguageLocale = "in",
         LastName = "Prohaska",
         Locations = new List<HrisLocation>() {},
         MaritalStatus = MaritalStatus.Married,
@@ -4658,72 +4685,57 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "c1f3d49e-50e5-445a-9bc7-83bf0e33fb4d",
+                Id = "c72de71d-aa92-41ef-938a-5cfa4a92586d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "appono"
+                    "tutis"
                 ),
             },
         },
         Name = "Zetta Prohaska",
-        PayFrequency = PayFrequency.Biweekly,
+        PayFrequency = PayFrequency.Week,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Deshaun.Sanford24@yahoo.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Rebeca.Dibbert11@hotmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Hester80@gmail.com",
+                        Email = "keith.prohaska@gmail.com",
                     },
                 },
-                Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Friend,
-            },
-            new HrisEmployeerelationship() {
-                Emails = new List<HrisEmail>() {
-                    new HrisEmail() {
-                        Email = "Benedict_Wisozk83@hotmail.com",
-                    },
-                },
-                Name = "Music",
+                Name = "Keith Prohaska",
                 Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Margot11@yahoo.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Jaden_Miller@gmail.com",
+                        Email = "keely.prohaska@icloud.com",
                     },
                 },
-                Name = "Electronics",
+                Name = "Keely Prohaska",
                 Type = HrisEmployeerelationshipType.Other,
             },
         },
-        Salutation = "Miss",
-        SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 7748057D,
-        StorageQuotaAvailable = 1590710D,
-        StorageQuotaUsed = 730343D,
+        Salutation = "Ms.",
+        SsnSin = "284-82-8167",
+        StorageQuotaAllocated = 3653713D,
+        StorageQuotaAvailable = 3017275D,
+        StorageQuotaUsed = 367449D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
-                Telephone = "(409) 801-3705",
+                Telephone = "(320) 980-1370",
+                Type = HrisTelephoneType.Home,
+            },
+            new HrisTelephone() {
+                Telephone = "(694) 840-0166",
                 Type = HrisTelephoneType.Fax,
             },
         },
-        TerminationReason = "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
-        TimeoffDaysTotal = 12D,
-        TimeoffDaysUsed = 6D,
-        Timezone = "Africa/Harare",
-        Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-03-02T00:17:30.489Z").ToUniversalTime(),
+        TimeoffDaysTotal = 17D,
+        TimeoffDaysUsed = 9D,
+        Timezone = "Europe/Ljubljana",
+        Title = "District Branding Specialist",
+        UpdatedAt = System.DateTime.Parse("2020-07-19T00:46:45.055Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4759,6 +4771,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4771,11 +4784,12 @@ UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "497dbafd-f669-4d19-b864-52969246580b",
+        Id = "198fa14a-90e2-4cb1-86b0-72a0bc757ec4",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-20T04:39:28.907Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-20T22:30:34.006Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4811,6 +4825,7 @@ Update a job
 <!-- UsageSnippet language="csharp" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4825,10 +4840,11 @@ UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "5738adf3-161a-46a4-bbaf-fc1924cb3051",
+        Id = "4fcbf9ed-afc0-46ee-aee8-ed4f2f5787c6",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T10:31:29.175Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.186Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4876,39 +4892,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
     HrisLocation = new HrisLocation() {
         Address = new PropertyHrisLocationAddress() {
-            Address1 = "2743 Connelly Summit",
-            Address2 = "Apt. 350",
-            City = "Titusville",
+            Address1 = "4418 Daniella Mall",
+            Address2 = "Apt. 997",
+            City = "Burke",
             CountryCode = "US",
-            PostalCode = "16154-1095",
-            Region = "Oregon",
-            RegionCode = "AL",
+            PostalCode = "54109",
+            Region = "Ohio",
+            RegionCode = "OR",
         },
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
-        Currency = "MUR",
-        Description = "Acervus caries.",
-        ExternalIdentifier = "1a12fd62-f0d9-48bf-b111-dec3f11637ae",
-        Id = "033ec95c-df09-4cae-86c5-98e4390f85dc",
-        IsActive = true,
-        IsHq = false,
-        LanguageLocale = "fr",
-        Name = "adhuc",
+        Currency = "MNT",
+        Description = "Commemoro acervus.",
+        Id = "52221078-bcf4-4d42-bd71-57b73ad30ff3",
+        IsActive = false,
+        IsHq = true,
+        LanguageLocale = "it",
+        Metadata = new List<HrisMetadata>() {},
+        Name = "North Kimberlyland Office",
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
-                Telephone = "(710) 550-6997",
+                Telephone = "(371) 245-0699",
                 Type = HrisTelephoneType.Fax,
             },
             new HrisTelephone() {
-                Telephone = "(208) 555-8542",
+                Telephone = "(700) 845-5854",
+                Type = HrisTelephoneType.Fax,
+            },
+            new HrisTelephone() {
+                Telephone = "(461) 437-3548",
                 Type = HrisTelephoneType.Home,
             },
-            new HrisTelephone() {
-                Telephone = "(712) 473-5482",
-                Type = HrisTelephoneType.Fax,
-            },
         },
-        Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-20T08:14:46.579Z").ToUniversalTime(),
+        Timezone = "Asia/Jerusalem",
+        UpdatedAt = System.DateTime.Parse("2023-06-20T15:50:32.123Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4944,6 +4960,7 @@ Update a timeoff
 <!-- UsageSnippet language="csharp" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4954,20 +4971,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T05:22:00.586Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T06:56:31.748Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-27T09:24:41.637Z").ToUniversalTime(),
-        Id = "b1531f36-519b-451c-8683-b748b44e066c",
+        EndAt = System.DateTime.Parse("2024-12-27T22:42:46.031Z").ToUniversalTime(),
+        Id = "6ea366a3-ca7a-444e-ab8a-9892b84c39d4",
         IsPaid = true,
+        Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T00:31:20.565Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-04T08:23:52.498Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T12:09:02.773Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T15:17:57.342Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -5015,24 +5033,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-22T10:40:08.561Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-17T13:45:19.956Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
-                Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Week,
-                Notes = "Annus adficio suasoria architecto aggero.",
+                Currency = "GBP",
+                Frequency = HrisCompensationFrequency.Semimonthly,
+                Notes = "Vehemens annus adficio.",
                 Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-25T00:06:40.870Z").ToUniversalTime(),
-        Hours = 8D,
-        Id = "375f3d93-7568-4887-b1a4-c6f825a28a05",
-        IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-07-11T21:02:37.398Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T08:14:44.008Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-25T20:41:12.582Z").ToUniversalTime(),
+        Hours = 6D,
+        Id = "11c7b377-3a28-4b8e-9a51-01e059ec3bad",
+        IsApproved = false,
+        Metadata = new List<HrisMetadata>() {},
+        StartAt = System.DateTime.Parse("2023-07-12T08:29:55.220Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-01T13:56:00.145Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

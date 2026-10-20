@@ -53,6 +53,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("longitude")]
         public double? Longitude { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ClubsMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The location name.
         /// </summary>

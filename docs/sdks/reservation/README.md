@@ -20,6 +20,7 @@ Create a reservation
 <!-- UsageSnippet language="csharp" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" example="commerce_reservation" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,18 +32,17 @@ var res = await sdk.Reservation.CreateCommerceReservationAsync(
     commerceReservation: new CommerceReservation() {
         CreatedAt = System.DateTime.Parse("2021-12-14T19:50:31.151Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2022-01-01T22:00:17.868Z").ToUniversalTime(),
-        GuestEmail = "Sunny.Strosin77@yahoo.com",
-        GuestName = "Annette Franecki",
-        GuestPhone = "(990) 317-6213",
-        Id = "5b60aba8-c336-44e8-b3af-c44f5c406a0c",
-        ItemName = "Practical Ceramic Shoes",
+        GuestEmail = "julien.bartoletti@icloud.com",
+        GuestName = "Julien Bartoletti",
+        GuestPhone = "(728) 596-2620",
+        Id = "a7f84786-a9c2-4a23-b14c-0ac02bc14295",
+        Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
-        StaffName = "Vickie Fahey",
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T10:34:27.439Z").ToUniversalTime(),
-        Url = "https://cluttered-pine.info/",
+        UpdatedAt = System.DateTime.Parse("2023-01-03T15:05:16.985Z").ToUniversalTime(),
+        Url = "https://expensive-gift.org",
     },
     connectionId: "<id>"
 );
@@ -161,6 +161,7 @@ Update a reservation
 <!-- UsageSnippet language="csharp" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" example="commerce_reservation" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -173,18 +174,17 @@ PatchCommerceReservationRequest req = new PatchCommerceReservationRequest() {
     CommerceReservation = new CommerceReservation() {
         CreatedAt = System.DateTime.Parse("2021-12-14T19:50:31.151Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2022-01-01T22:00:17.868Z").ToUniversalTime(),
-        GuestEmail = "Sunny.Strosin77@yahoo.com",
-        GuestName = "Annette Franecki",
-        GuestPhone = "(990) 317-6213",
-        Id = "9ff51763-73f5-4a23-b1ab-933bb52f36ca",
-        ItemName = "Practical Ceramic Shoes",
+        GuestEmail = "julien.bartoletti@icloud.com",
+        GuestName = "Julien Bartoletti",
+        GuestPhone = "(728) 596-2620",
+        Id = "c4391c9d-bf46-45ec-a7bb-9db017019db9",
+        Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
-        StaffName = "Vickie Fahey",
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T10:34:27.441Z").ToUniversalTime(),
-        Url = "https://cluttered-pine.info/",
+        UpdatedAt = System.DateTime.Parse("2023-01-03T15:05:16.990Z").ToUniversalTime(),
+        Url = "https://expensive-gift.org",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -260,6 +260,7 @@ Update a reservation
 <!-- UsageSnippet language="csharp" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" example="commerce_reservation" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -272,18 +273,17 @@ UpdateCommerceReservationRequest req = new UpdateCommerceReservationRequest() {
     CommerceReservation = new CommerceReservation() {
         CreatedAt = System.DateTime.Parse("2021-12-14T19:50:31.151Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2022-01-01T22:00:17.868Z").ToUniversalTime(),
-        GuestEmail = "Sunny.Strosin77@yahoo.com",
-        GuestName = "Annette Franecki",
-        GuestPhone = "(990) 317-6213",
-        Id = "9ff51763-73f5-4a23-b1ab-933bb52f36ca",
-        ItemName = "Practical Ceramic Shoes",
+        GuestEmail = "julien.bartoletti@icloud.com",
+        GuestName = "Julien Bartoletti",
+        GuestPhone = "(728) 596-2620",
+        Id = "c4391c9d-bf46-45ec-a7bb-9db017019db9",
+        Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
-        StaffName = "Vickie Fahey",
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T10:34:27.441Z").ToUniversalTime(),
-        Url = "https://cluttered-pine.info/",
+        UpdatedAt = System.DateTime.Parse("2023-01-03T15:05:16.990Z").ToUniversalTime(),
+        Url = "https://expensive-gift.org",
     },
     ConnectionId = "<id>",
     Id = "<id>",

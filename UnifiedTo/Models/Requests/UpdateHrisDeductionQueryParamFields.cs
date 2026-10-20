@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         PaycodeId,
         [JsonProperty("garnishment_type")]
         GarnishmentType,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

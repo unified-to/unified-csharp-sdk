@@ -1,0 +1,13 @@
+# CalendarMetadata
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `ExtraData`                                                                       | [CalendarMetadataExtraData](../../Models/Components/CalendarMetadataExtraData.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Format`                                                                          | [CalendarMetadataFormat](../../Models/Components/CalendarMetadataFormat.md)       | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Id`                                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Namespace`                                                                       | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Slug`                                                                            | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Value`                                                                           | [CalendarMetadataValue](../../Models/Components/CalendarMetadataValue.md)         | :heavy_minus_sign:                                                                | N/A                                                                               |

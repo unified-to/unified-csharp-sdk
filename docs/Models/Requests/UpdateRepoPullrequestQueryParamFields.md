@@ -26,4 +26,5 @@ var value = UpdateRepoPullrequestQueryParamFields.Id;
 | `Labels`         | labels           |
 | `ClosedAt`       | closed_at        |
 | `CommitIds`      | commit_ids       |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

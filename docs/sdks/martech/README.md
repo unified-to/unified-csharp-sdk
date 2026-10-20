@@ -43,21 +43,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Martech.CreateMartechCampaignAsync(
     marketingCampaign: new MarketingCampaign() {
-        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
-        FromEmail = "Nick.Beahan@hotmail.com",
-        FromName = "Javier Rempel",
-        Id = "2730328c-300f-46c6-a453-7b3369965ff3",
-        ListIds = new List<string>() {
-            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
-        },
+        CreatedAt = System.DateTime.Parse("2019-05-19T11:18:15.589Z").ToUniversalTime(),
+        FromEmail = "graham.mertz@gmail.com",
+        FromName = "Graham Mertz",
+        Id = "a7dfef4e-54d2-4390-92a9-558a53a98130",
+        Metadata = new List<MarketingMetadata>() {},
         Name = "Consequatur atqui sustineo.",
-        PreviewText = "Bellicus tener cinis causa cavus toties.",
-        ReplyToEmail = "Antwan.Abshire@hotmail.com",
-        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
-        Status = MarketingCampaignStatus.Sent,
-        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
-        Type = "plaintext",
-        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+        PreviewText = "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
+        ReplyToEmail = "graham.mertz@icloud.com",
+        SendAt = System.DateTime.Parse("2024-01-23T21:19:26.708Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Scheduled,
+        SubjectLine = "Trepide utpote conculco tibi solio supplanto peior tibi.",
+        Type = "absplit",
+        UpdatedAt = System.DateTime.Parse("2022-06-21T14:44:59.366Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -93,6 +91,7 @@ Create a list
 <!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" example="martech_list" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -103,25 +102,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Martech.CreateMartechListAsync(
     marketingList: new MarketingList() {
         Address = new PropertyMarketingListAddress() {
-            Address1 = "922 Elmore Manor",
-            Address2 = "Suite 925",
-            City = "Deerfield Beach",
-            Country = "Bahrain",
-            PostalCode = "30765-6471",
-            Region = "FL",
+            Address1 = "76564 Coronation Road",
+            Address2 = "Suite 922",
+            City = "West Jordon",
+            Country = "Mexico",
+            PostalCode = "04183",
+            Region = "NC",
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
-        Description = "Currus.",
-        Id = "127a5688-e5ac-4fd9-a743-60f4d139e6a6",
+        Description = "Vilis.",
+        Id = "3291f8e8-ada9-4a05-88ee-e4517225bc4d",
         IsActive = true,
-        Language = "it",
-        Name = "Annette Nolan",
-        SenderCompany = "Hickle - Homenick",
-        SenderEmail = "Matt_Steuber@hotmail.com",
-        SenderName = "Salvatore Roob",
-        SenderPhone = "896-328-1153 x4957",
-        Subject = "Tenetur thymum circumvenio triumphus celo.",
-        UpdatedAt = System.DateTime.Parse("2022-09-12T13:10:05.727Z").ToUniversalTime(),
+        Language = "ru",
+        Metadata = new List<MarketingMetadata>() {},
+        Name = "Electronics Newsletter",
+        SenderCompany = "Koepp and Sons",
+        SenderEmail = "blake.kuhn@hotmail.com",
+        SenderName = "Blake Kuhn",
+        SenderPhone = "359.305.7962 x28115",
+        Subject = "Theca caecus copia crebro valeo ulciscor.",
+        UpdatedAt = System.DateTime.Parse("2022-09-12T21:55:00.550Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -171,28 +171,21 @@ var res = await sdk.Martech.CreateMartechMemberAsync(
         CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
         Emails = new List<MarketingEmail>() {
             new MarketingEmail() {
-                Email = "Thalia.Abernathy61@gmail.com",
+                Email = "jude.leffler@hotmail.com",
                 Type = MarketingEmailType.Home,
-            },
-            new MarketingEmail() {
-                Email = "Maymie59@hotmail.com",
-                Type = MarketingEmailType.Home,
-            },
-            new MarketingEmail() {
-                Email = "Coty27@hotmail.com",
-                Type = MarketingEmailType.Work,
             },
         },
         FirstName = "Jude",
-        Id = "136535a1-bdb1-4471-931f-808c1a249416",
+        Id = "1b064799-9e4f-49e3-adc0-5d312f115a94",
         LastName = "Leffler",
+        Metadata = new List<MarketingMetadata>() {},
         Name = "Jude Leffler",
         Status = MarketingMemberStatus.Unsubscribed,
         Tags = new List<string>() {
-            "vinco",
-            "ceno",
+            "adnuo",
+            "verumtamen",
         },
-        UpdatedAt = System.DateTime.Parse("2025-07-07T08:15:11.684Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-07T23:06:32.961Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -529,21 +522,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
     MarketingCampaign = new MarketingCampaign() {
-        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
-        FromEmail = "Nick.Beahan@hotmail.com",
-        FromName = "Javier Rempel",
-        Id = "b4b2a19d-cc95-45d5-ade3-bf283ac0346e",
-        ListIds = new List<string>() {
-            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
-        },
+        CreatedAt = System.DateTime.Parse("2019-05-19T11:18:15.589Z").ToUniversalTime(),
+        FromEmail = "graham.mertz@gmail.com",
+        FromName = "Graham Mertz",
+        Id = "3dfb5ccd-053a-426b-ae99-c5355e2fa690",
+        Metadata = new List<MarketingMetadata>() {},
         Name = "Consequatur atqui sustineo.",
-        PreviewText = "Bellicus tener cinis causa cavus toties.",
-        ReplyToEmail = "Antwan.Abshire@hotmail.com",
-        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
-        Status = MarketingCampaignStatus.Sent,
-        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
-        Type = "plaintext",
-        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+        PreviewText = "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
+        ReplyToEmail = "graham.mertz@icloud.com",
+        SendAt = System.DateTime.Parse("2024-01-23T21:19:26.708Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Scheduled,
+        SubjectLine = "Trepide utpote conculco tibi solio supplanto peior tibi.",
+        Type = "absplit",
+        UpdatedAt = System.DateTime.Parse("2022-06-21T14:44:59.377Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -579,6 +570,7 @@ Update a list
 <!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -590,25 +582,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchMartechListRequest req = new PatchMartechListRequest() {
     MarketingList = new MarketingList() {
         Address = new PropertyMarketingListAddress() {
-            Address1 = "922 Elmore Manor",
-            Address2 = "Suite 925",
-            City = "Deerfield Beach",
-            Country = "Bahrain",
-            PostalCode = "30765-6471",
-            Region = "FL",
+            Address1 = "76564 Coronation Road",
+            Address2 = "Suite 922",
+            City = "West Jordon",
+            Country = "Mexico",
+            PostalCode = "04183",
+            Region = "NC",
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
-        Description = "Currus.",
-        Id = "c040d714-310d-471a-807b-25fee11c63c5",
+        Description = "Vilis.",
+        Id = "05137f1d-df5e-4078-bfe1-619cfa69b25b",
         IsActive = true,
-        Language = "it",
-        Name = "Annette Nolan",
-        SenderCompany = "Hickle - Homenick",
-        SenderEmail = "Matt_Steuber@hotmail.com",
-        SenderName = "Salvatore Roob",
-        SenderPhone = "896-328-1153 x4957",
-        Subject = "Tenetur thymum circumvenio triumphus celo.",
-        UpdatedAt = System.DateTime.Parse("2022-09-12T13:10:05.737Z").ToUniversalTime(),
+        Language = "ru",
+        Metadata = new List<MarketingMetadata>() {},
+        Name = "Electronics Newsletter",
+        SenderCompany = "Koepp and Sons",
+        SenderEmail = "blake.kuhn@hotmail.com",
+        SenderName = "Blake Kuhn",
+        SenderPhone = "359.305.7962 x28115",
+        Subject = "Theca caecus copia crebro valeo ulciscor.",
+        UpdatedAt = System.DateTime.Parse("2022-09-12T21:55:00.563Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -659,28 +652,21 @@ PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
         CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
         Emails = new List<MarketingEmail>() {
             new MarketingEmail() {
-                Email = "Thalia.Abernathy61@gmail.com",
+                Email = "jude.leffler@hotmail.com",
                 Type = MarketingEmailType.Home,
-            },
-            new MarketingEmail() {
-                Email = "Maymie59@hotmail.com",
-                Type = MarketingEmailType.Home,
-            },
-            new MarketingEmail() {
-                Email = "Coty27@hotmail.com",
-                Type = MarketingEmailType.Work,
             },
         },
         FirstName = "Jude",
-        Id = "4820ee75-a38d-4b06-91f7-cbda553224ee",
+        Id = "57c44751-e1d9-43ce-8702-e105e5ef3fc4",
         LastName = "Leffler",
+        Metadata = new List<MarketingMetadata>() {},
         Name = "Jude Leffler",
         Status = MarketingMemberStatus.Unsubscribed,
         Tags = new List<string>() {
-            "vinco",
-            "ceno",
+            "adnuo",
+            "verumtamen",
         },
-        UpdatedAt = System.DateTime.Parse("2025-07-07T08:15:11.694Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-07T23:06:32.973Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -847,21 +833,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
     MarketingCampaign = new MarketingCampaign() {
-        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
-        FromEmail = "Nick.Beahan@hotmail.com",
-        FromName = "Javier Rempel",
-        Id = "b4b2a19d-cc95-45d5-ade3-bf283ac0346e",
-        ListIds = new List<string>() {
-            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
-        },
+        CreatedAt = System.DateTime.Parse("2019-05-19T11:18:15.589Z").ToUniversalTime(),
+        FromEmail = "graham.mertz@gmail.com",
+        FromName = "Graham Mertz",
+        Id = "3dfb5ccd-053a-426b-ae99-c5355e2fa690",
+        Metadata = new List<MarketingMetadata>() {},
         Name = "Consequatur atqui sustineo.",
-        PreviewText = "Bellicus tener cinis causa cavus toties.",
-        ReplyToEmail = "Antwan.Abshire@hotmail.com",
-        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
-        Status = MarketingCampaignStatus.Sent,
-        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
-        Type = "plaintext",
-        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+        PreviewText = "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
+        ReplyToEmail = "graham.mertz@icloud.com",
+        SendAt = System.DateTime.Parse("2024-01-23T21:19:26.708Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Scheduled,
+        SubjectLine = "Trepide utpote conculco tibi solio supplanto peior tibi.",
+        Type = "absplit",
+        UpdatedAt = System.DateTime.Parse("2022-06-21T14:44:59.377Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -897,6 +881,7 @@ Update a list
 <!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -908,25 +893,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateMartechListRequest req = new UpdateMartechListRequest() {
     MarketingList = new MarketingList() {
         Address = new PropertyMarketingListAddress() {
-            Address1 = "922 Elmore Manor",
-            Address2 = "Suite 925",
-            City = "Deerfield Beach",
-            Country = "Bahrain",
-            PostalCode = "30765-6471",
-            Region = "FL",
+            Address1 = "76564 Coronation Road",
+            Address2 = "Suite 922",
+            City = "West Jordon",
+            Country = "Mexico",
+            PostalCode = "04183",
+            Region = "NC",
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
-        Description = "Currus.",
-        Id = "c040d714-310d-471a-807b-25fee11c63c5",
+        Description = "Vilis.",
+        Id = "05137f1d-df5e-4078-bfe1-619cfa69b25b",
         IsActive = true,
-        Language = "it",
-        Name = "Annette Nolan",
-        SenderCompany = "Hickle - Homenick",
-        SenderEmail = "Matt_Steuber@hotmail.com",
-        SenderName = "Salvatore Roob",
-        SenderPhone = "896-328-1153 x4957",
-        Subject = "Tenetur thymum circumvenio triumphus celo.",
-        UpdatedAt = System.DateTime.Parse("2022-09-12T13:10:05.737Z").ToUniversalTime(),
+        Language = "ru",
+        Metadata = new List<MarketingMetadata>() {},
+        Name = "Electronics Newsletter",
+        SenderCompany = "Koepp and Sons",
+        SenderEmail = "blake.kuhn@hotmail.com",
+        SenderName = "Blake Kuhn",
+        SenderPhone = "359.305.7962 x28115",
+        Subject = "Theca caecus copia crebro valeo ulciscor.",
+        UpdatedAt = System.DateTime.Parse("2022-09-12T21:55:00.563Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -977,28 +963,21 @@ UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
         CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
         Emails = new List<MarketingEmail>() {
             new MarketingEmail() {
-                Email = "Thalia.Abernathy61@gmail.com",
+                Email = "jude.leffler@hotmail.com",
                 Type = MarketingEmailType.Home,
-            },
-            new MarketingEmail() {
-                Email = "Maymie59@hotmail.com",
-                Type = MarketingEmailType.Home,
-            },
-            new MarketingEmail() {
-                Email = "Coty27@hotmail.com",
-                Type = MarketingEmailType.Work,
             },
         },
         FirstName = "Jude",
-        Id = "4820ee75-a38d-4b06-91f7-cbda553224ee",
+        Id = "57c44751-e1d9-43ce-8702-e105e5ef3fc4",
         LastName = "Leffler",
+        Metadata = new List<MarketingMetadata>() {},
         Name = "Jude Leffler",
         Status = MarketingMemberStatus.Unsubscribed,
         Tags = new List<string>() {
-            "vinco",
-            "ceno",
+            "adnuo",
+            "verumtamen",
         },
-        UpdatedAt = System.DateTime.Parse("2025-07-07T08:15:11.694Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-07T23:06:32.973Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

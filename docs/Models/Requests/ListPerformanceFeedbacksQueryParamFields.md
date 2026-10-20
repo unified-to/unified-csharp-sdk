@@ -22,4 +22,5 @@ var value = ListPerformanceFeedbacksQueryParamFields.Id;
 | `Message`      | message        |
 | `Tags`         | tags           |
 | `IsVisible`    | is_visible     |
+| `Metadata`     | metadata       |
 | `Raw`          | raw            |

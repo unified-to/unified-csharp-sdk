@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("instance_id")]
         public string? InstanceId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ComputeMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Display name of the key.
         /// </summary>

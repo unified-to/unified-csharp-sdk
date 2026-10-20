@@ -27,4 +27,5 @@ var value = PatchHrisJobQueryParamFields.Id;
 | `ParentId`       | parent_id        |
 | `Users`          | users            |
 | `Compensation`   | compensation     |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Requests
         LegalName,
         [JsonProperty("address")]
         Address,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

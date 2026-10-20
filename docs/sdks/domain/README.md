@@ -20,6 +20,7 @@ Create a domain
 <!-- UsageSnippet language="csharp" operationID="createComputeDomain" method="post" path="/compute/{connection_id}/domain" example="compute_domain" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,11 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Domain.CreateComputeDomainAsync(
     computeDomain: new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "b2268e7d-2de2-4049-97c9-f66f345fd7bd",
+        Id = "7fa27e4a-271e-4f9a-853d-fbb0b194f876",
         IsPrimary = false,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-02T10:45:38.765Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-02T22:37:13.419Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -153,6 +155,7 @@ Update a domain
 <!-- UsageSnippet language="csharp" operationID="patchComputeDomain" method="patch" path="/compute/{connection_id}/domain/{id}" example="compute_domain" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -164,11 +167,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeDomainRequest req = new PatchComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "31015fde-320c-441f-b8fb-caa1677e121d",
+        Id = "51b7b05e-2b44-4de8-b15b-f9d536eb646f",
         IsPrimary = false,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-02T10:45:38.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-02T22:37:13.427Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -244,6 +248,7 @@ Update a domain
 <!-- UsageSnippet language="csharp" operationID="updateComputeDomain" method="put" path="/compute/{connection_id}/domain/{id}" example="compute_domain" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -255,11 +260,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeDomainRequest req = new UpdateComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "31015fde-320c-441f-b8fb-caa1677e121d",
+        Id = "51b7b05e-2b44-4de8-b15b-f9d536eb646f",
         IsPrimary = false,
+        Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-02T10:45:38.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-02T22:37:13.427Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

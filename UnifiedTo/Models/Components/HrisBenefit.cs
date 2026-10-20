@@ -73,6 +73,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// e.g. "401(k) Plan"
         /// </summary>

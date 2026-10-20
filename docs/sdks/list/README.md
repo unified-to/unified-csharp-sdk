@@ -20,6 +20,7 @@ Create a list
 <!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" example="martech_list" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,25 +31,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.List.CreateMartechListAsync(
     marketingList: new MarketingList() {
         Address = new PropertyMarketingListAddress() {
-            Address1 = "922 Elmore Manor",
-            Address2 = "Suite 925",
-            City = "Deerfield Beach",
-            Country = "Bahrain",
-            PostalCode = "30765-6471",
-            Region = "FL",
+            Address1 = "76564 Coronation Road",
+            Address2 = "Suite 922",
+            City = "West Jordon",
+            Country = "Mexico",
+            PostalCode = "04183",
+            Region = "NC",
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
-        Description = "Currus.",
-        Id = "127a5688-e5ac-4fd9-a743-60f4d139e6a6",
+        Description = "Vilis.",
+        Id = "3291f8e8-ada9-4a05-88ee-e4517225bc4d",
         IsActive = true,
-        Language = "it",
-        Name = "Annette Nolan",
-        SenderCompany = "Hickle - Homenick",
-        SenderEmail = "Matt_Steuber@hotmail.com",
-        SenderName = "Salvatore Roob",
-        SenderPhone = "896-328-1153 x4957",
-        Subject = "Tenetur thymum circumvenio triumphus celo.",
-        UpdatedAt = System.DateTime.Parse("2022-09-12T13:10:05.727Z").ToUniversalTime(),
+        Language = "ru",
+        Metadata = new List<MarketingMetadata>() {},
+        Name = "Electronics Newsletter",
+        SenderCompany = "Koepp and Sons",
+        SenderEmail = "blake.kuhn@hotmail.com",
+        SenderName = "Blake Kuhn",
+        SenderPhone = "359.305.7962 x28115",
+        Subject = "Theca caecus copia crebro valeo ulciscor.",
+        UpdatedAt = System.DateTime.Parse("2022-09-12T21:55:00.550Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -167,6 +169,7 @@ Update a list
 <!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -178,25 +181,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchMartechListRequest req = new PatchMartechListRequest() {
     MarketingList = new MarketingList() {
         Address = new PropertyMarketingListAddress() {
-            Address1 = "922 Elmore Manor",
-            Address2 = "Suite 925",
-            City = "Deerfield Beach",
-            Country = "Bahrain",
-            PostalCode = "30765-6471",
-            Region = "FL",
+            Address1 = "76564 Coronation Road",
+            Address2 = "Suite 922",
+            City = "West Jordon",
+            Country = "Mexico",
+            PostalCode = "04183",
+            Region = "NC",
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
-        Description = "Currus.",
-        Id = "c040d714-310d-471a-807b-25fee11c63c5",
+        Description = "Vilis.",
+        Id = "05137f1d-df5e-4078-bfe1-619cfa69b25b",
         IsActive = true,
-        Language = "it",
-        Name = "Annette Nolan",
-        SenderCompany = "Hickle - Homenick",
-        SenderEmail = "Matt_Steuber@hotmail.com",
-        SenderName = "Salvatore Roob",
-        SenderPhone = "896-328-1153 x4957",
-        Subject = "Tenetur thymum circumvenio triumphus celo.",
-        UpdatedAt = System.DateTime.Parse("2022-09-12T13:10:05.737Z").ToUniversalTime(),
+        Language = "ru",
+        Metadata = new List<MarketingMetadata>() {},
+        Name = "Electronics Newsletter",
+        SenderCompany = "Koepp and Sons",
+        SenderEmail = "blake.kuhn@hotmail.com",
+        SenderName = "Blake Kuhn",
+        SenderPhone = "359.305.7962 x28115",
+        Subject = "Theca caecus copia crebro valeo ulciscor.",
+        UpdatedAt = System.DateTime.Parse("2022-09-12T21:55:00.563Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -272,6 +276,7 @@ Update a list
 <!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -283,25 +288,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateMartechListRequest req = new UpdateMartechListRequest() {
     MarketingList = new MarketingList() {
         Address = new PropertyMarketingListAddress() {
-            Address1 = "922 Elmore Manor",
-            Address2 = "Suite 925",
-            City = "Deerfield Beach",
-            Country = "Bahrain",
-            PostalCode = "30765-6471",
-            Region = "FL",
+            Address1 = "76564 Coronation Road",
+            Address2 = "Suite 922",
+            City = "West Jordon",
+            Country = "Mexico",
+            PostalCode = "04183",
+            Region = "NC",
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
-        Description = "Currus.",
-        Id = "c040d714-310d-471a-807b-25fee11c63c5",
+        Description = "Vilis.",
+        Id = "05137f1d-df5e-4078-bfe1-619cfa69b25b",
         IsActive = true,
-        Language = "it",
-        Name = "Annette Nolan",
-        SenderCompany = "Hickle - Homenick",
-        SenderEmail = "Matt_Steuber@hotmail.com",
-        SenderName = "Salvatore Roob",
-        SenderPhone = "896-328-1153 x4957",
-        Subject = "Tenetur thymum circumvenio triumphus celo.",
-        UpdatedAt = System.DateTime.Parse("2022-09-12T13:10:05.737Z").ToUniversalTime(),
+        Language = "ru",
+        Metadata = new List<MarketingMetadata>() {},
+        Name = "Electronics Newsletter",
+        SenderCompany = "Koepp and Sons",
+        SenderEmail = "blake.kuhn@hotmail.com",
+        SenderName = "Blake Kuhn",
+        SenderPhone = "359.305.7962 x28115",
+        Subject = "Theca caecus copia crebro valeo ulciscor.",
+        UpdatedAt = System.DateTime.Parse("2022-09-12T21:55:00.563Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

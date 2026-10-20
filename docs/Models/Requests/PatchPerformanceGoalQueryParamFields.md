@@ -30,4 +30,5 @@ var value = PatchPerformanceGoalQueryParamFields.Id;
 | `DueAt`       | due_at        |
 | `CompletedAt` | completed_at  |
 | `Milestones`  | milestones    |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

@@ -32,6 +32,7 @@ Create a comment
 <!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" example="kms_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -44,9 +45,10 @@ var res = await sdk.Comment.CreateKmsCommentAsync(
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "4ae9af2d-08b4-4cc0-b34a-0b7bf435778c",
+        Id = "4153820f-2e15-49d2-96f2-3434d2e3494e",
+        Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-25T15:48:07.736Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-25T22:03:17.064Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -82,6 +84,7 @@ Create a comment
 <!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" example="task_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -93,10 +96,10 @@ var res = await sdk.Comment.CreateTaskCommentAsync(
     taskComment: new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "1736a94c-cb85-4fc7-85b1-0145462f2ca0",
+        Id = "ecc84e47-8776-4c9e-a58e-6bfaa0a2250b",
+        Metadata = new List<TaskMetadata>() {},
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-10-02T17:59:29.222Z").ToUniversalTime(),
-        UserName = "Santina Abbott",
+        UpdatedAt = System.DateTime.Parse("2021-10-02T23:49:51.413Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -131,6 +134,7 @@ Create a comment
 
 <!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" example="uc_comment" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -142,8 +146,9 @@ var res = await sdk.Comment.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "44d7f918-3acc-4570-b0f3-37e04749157f",
-        UpdatedAt = "2024-02-09T06:29:44.679Z",
+        Id = "b082308e-9c72-4bda-84c5-d50989550336",
+        Metadata = new List<UcMetadata>() {},
+        UpdatedAt = "2024-02-09T11:30:09.364Z",
     },
     connectionId: "<id>"
 );
@@ -428,6 +433,7 @@ Update a comment
 <!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -441,9 +447,10 @@ PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "57e7425d-7712-4b3d-b8e3-1d32a0d86ff3",
+        Id = "87532c36-2b29-4e63-92a2-2904d3482d9f",
+        Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-25T15:48:07.739Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-25T22:03:17.067Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -479,6 +486,7 @@ Update a comment
 <!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -491,10 +499,10 @@ PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
     TaskComment = new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "d9dd4f33-d71e-4a8d-8767-88bfbd20d4cd",
+        Id = "1a5cbd95-43ee-4bf6-bbe1-99303f86baa8",
+        Metadata = new List<TaskMetadata>() {},
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-10-02T17:59:29.226Z").ToUniversalTime(),
-        UserName = "Santina Abbott",
+        UpdatedAt = System.DateTime.Parse("2021-10-02T23:49:51.417Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -529,6 +537,7 @@ Update a comment
 
 <!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -541,8 +550,9 @@ PatchUcCommentRequest req = new PatchUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "5e8e3c63-b77d-4057-bf77-e3aff822411e",
-        UpdatedAt = "2024-02-09T06:29:44.680Z",
+        Id = "8bdad788-affd-4e26-a1e1-1b8c9206df51",
+        Metadata = new List<UcMetadata>() {},
+        UpdatedAt = "2024-02-09T11:30:09.366Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -698,6 +708,7 @@ Update a comment
 <!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -711,9 +722,10 @@ UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "57e7425d-7712-4b3d-b8e3-1d32a0d86ff3",
+        Id = "87532c36-2b29-4e63-92a2-2904d3482d9f",
+        Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-25T15:48:07.739Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-25T22:03:17.067Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -749,6 +761,7 @@ Update a comment
 <!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -761,10 +774,10 @@ UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
     TaskComment = new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "d9dd4f33-d71e-4a8d-8767-88bfbd20d4cd",
+        Id = "1a5cbd95-43ee-4bf6-bbe1-99303f86baa8",
+        Metadata = new List<TaskMetadata>() {},
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-10-02T17:59:29.226Z").ToUniversalTime(),
-        UserName = "Santina Abbott",
+        UpdatedAt = System.DateTime.Parse("2021-10-02T23:49:51.417Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -799,6 +812,7 @@ Update a comment
 
 <!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -811,8 +825,9 @@ UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "5e8e3c63-b77d-4057-bf77-e3aff822411e",
-        UpdatedAt = "2024-02-09T06:29:44.680Z",
+        Id = "8bdad788-affd-4e26-a1e1-1b8c9206df51",
+        Metadata = new List<UcMetadata>() {},
+        UpdatedAt = "2024-02-09T11:30:09.366Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",

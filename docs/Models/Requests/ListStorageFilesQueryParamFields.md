@@ -31,4 +31,5 @@ var value = ListStorageFilesQueryParamFields.Id;
 | `WebUrl`      | web_url       |
 | `References`  | references    |
 | `Tags`        | tags          |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

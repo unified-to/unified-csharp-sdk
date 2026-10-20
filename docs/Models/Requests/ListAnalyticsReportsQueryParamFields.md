@@ -20,4 +20,5 @@ var value = ListAnalyticsReportsQueryParamFields.Id;
 | `StartAt`    | start_at     |
 | `EndAt`      | end_at       |
 | `Metrics`    | metrics      |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

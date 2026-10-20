@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Address,
         [JsonProperty("image_url")]
         ImageUrl,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -30,4 +30,5 @@ var value = UpdateCommerceReservationQueryParamFields.Id;
 | `CreatedAt`   | created_at    |
 | `UpdatedAt`   | updated_at    |
 | `Url`         | url           |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

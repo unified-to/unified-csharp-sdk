@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         IsOwner,
         [JsonProperty("membership_status")]
         MembershipStatus,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

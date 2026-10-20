@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Requests
         Reason,
         [JsonProperty("tender_type")]
         TenderType,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

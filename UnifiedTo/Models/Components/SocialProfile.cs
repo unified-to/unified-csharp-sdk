@@ -71,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location")]
         public string? Location { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<SocialMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Audience metrics for the profile.
         /// </summary>

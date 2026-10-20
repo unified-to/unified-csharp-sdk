@@ -38,6 +38,7 @@ Create a category
 <!-- UsageSnippet language="csharp" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" example="ticketing_category" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -49,10 +50,11 @@ var res = await sdk.Ticketing.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "fb214ad8-e6af-4786-b5c7-f47f3f400d7e",
+        Id = "13ea9a4a-e171-4222-9756-668a306a6727",
         IsActive = true,
+        Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T04:14:02.296Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.147Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -101,31 +103,32 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
         CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
         Emails = new List<TicketingEmail>() {
             new TicketingEmail() {
-                Email = "Christian_Windler@gmail.com",
+                Email = "christian.windler@gmail.com",
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "0ec7dc6c-0026-48b0-9670-ee930cbf597d",
+        Id = "6b5c2430-55ae-4c38-9d58-715809cd7d23",
+        Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
-            "casso",
-            "peccatus",
+            "quidem",
+            "una",
         },
         Telephones = new List<TicketingTelephone>() {
             new TicketingTelephone() {
-                Telephone = "(532) 242-0482",
+                Telephone = "(299) 843-2042",
                 Type = TicketingTelephoneType.Other,
             },
             new TicketingTelephone() {
-                Telephone = "(826) 283-7431",
+                Telephone = "(248) 482-6083",
                 Type = TicketingTelephoneType.Mobile,
             },
             new TicketingTelephone() {
-                Telephone = "(483) 314-6826",
+                Telephone = "(743) 328-3214",
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T03:32:13.732Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.873Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -161,6 +164,7 @@ Create a note
 <!-- UsageSnippet language="csharp" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" example="ticketing_note" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -172,8 +176,9 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "34012741-72d4-40a0-883e-ab31e02852f4",
-        UpdatedAt = System.DateTime.Parse("2024-09-27T19:04:53.276Z").ToUniversalTime(),
+        Id = "884848a1-52e3-4e95-ae2b-d3f1fa00af96",
+        Metadata = new List<TicketingMetadata>() {},
+        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.442Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -219,27 +224,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingTicketAsync(
     ticketingTicket: new TicketingTicket() {
-        AttachmentIds = new List<string>() {
-            "53731b7f-5cd5-4cdf-b3ef-0e22b706d06a",
-            "c0cb0922-af4c-4317-ac1c-234788a97c49",
-        },
-        CategoryId = "vilicus",
+        AttachmentIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-13T05:09:44.040Z").ToUniversalTime(),
-        Id = "35a6fc95-e578-4ded-a6b6-c96e710358ed",
-        Priority = "LOW",
-        Source = "atavus",
-        SourceRef = "193313de-ec71-42d0-b120-379356b06013",
+        DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
+        Id = "a2d1c30f-cb23-49f0-9981-5b3ead19ba32",
+        Metadata = new List<TicketingMetadata>() {},
+        Priority = "MEDIUM",
+        Source = "email",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
-            "tamen",
-            "vitae",
-            "torrens",
+            "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-08T16:01:39.077Z").ToUniversalTime(),
-        Url = "https://yellowish-testimonial.biz",
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:21:48.538Z").ToUniversalTime(),
+        Url = "https://similar-velocity.net/",
     },
     connectionId: "<id>"
 );
@@ -607,6 +606,7 @@ Update a category
 <!-- UsageSnippet language="csharp" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -619,10 +619,11 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "48675e67-7972-49e1-af8a-12a00835e326",
+        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
         IsActive = true,
+        Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T04:14:02.302Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -672,31 +673,32 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
         CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
         Emails = new List<TicketingEmail>() {
             new TicketingEmail() {
-                Email = "Christian_Windler@gmail.com",
+                Email = "christian.windler@gmail.com",
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "df988f06-429e-4172-af2d-69b744bd4986",
+        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
-            "casso",
-            "peccatus",
+            "quidem",
+            "una",
         },
         Telephones = new List<TicketingTelephone>() {
             new TicketingTelephone() {
-                Telephone = "(532) 242-0482",
+                Telephone = "(299) 843-2042",
                 Type = TicketingTelephoneType.Other,
             },
             new TicketingTelephone() {
-                Telephone = "(826) 283-7431",
+                Telephone = "(248) 482-6083",
                 Type = TicketingTelephoneType.Mobile,
             },
             new TicketingTelephone() {
-                Telephone = "(483) 314-6826",
+                Telephone = "(743) 328-3214",
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T03:32:13.743Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -732,6 +734,7 @@ Update a note
 <!-- UsageSnippet language="csharp" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -744,8 +747,9 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "8449706c-fb08-4043-a9c7-a0f1fc34b9bc",
-        UpdatedAt = System.DateTime.Parse("2024-09-27T19:04:53.281Z").ToUniversalTime(),
+        Id = "ded6dbe0-cdd4-4876-a0e0-17c4021cc0b3",
+        Metadata = new List<TicketingMetadata>() {},
+        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.451Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -792,27 +796,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
     TicketingTicket = new TicketingTicket() {
-        AttachmentIds = new List<string>() {
-            "247564b4-7a9e-4dc6-bbf5-dccba80fb8f1",
-            "a4734e9b-dc5a-4240-8092-d50df45f83f4",
-        },
-        CategoryId = "vilicus",
+        AttachmentIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-13T05:09:44.051Z").ToUniversalTime(),
-        Id = "fbd67b47-24ea-4777-88a0-093e4be3f104",
-        Priority = "LOW",
-        Source = "atavus",
-        SourceRef = "43eece15-ec91-4b85-aae4-b25993553ca6",
+        DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
+        Id = "5eaab953-24c3-42e3-b5bf-8c4e985d1345",
+        Metadata = new List<TicketingMetadata>() {},
+        Priority = "MEDIUM",
+        Source = "email",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
-            "tamen",
-            "vitae",
-            "torrens",
+            "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-08T16:01:39.082Z").ToUniversalTime(),
-        Url = "https://yellowish-testimonial.biz",
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:21:48.538Z").ToUniversalTime(),
+        Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1008,6 +1006,7 @@ Update a category
 <!-- UsageSnippet language="csharp" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1020,10 +1019,11 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "48675e67-7972-49e1-af8a-12a00835e326",
+        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
         IsActive = true,
+        Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T04:14:02.302Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1073,31 +1073,32 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
         CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
         Emails = new List<TicketingEmail>() {
             new TicketingEmail() {
-                Email = "Christian_Windler@gmail.com",
+                Email = "christian.windler@gmail.com",
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "df988f06-429e-4172-af2d-69b744bd4986",
+        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
-            "casso",
-            "peccatus",
+            "quidem",
+            "una",
         },
         Telephones = new List<TicketingTelephone>() {
             new TicketingTelephone() {
-                Telephone = "(532) 242-0482",
+                Telephone = "(299) 843-2042",
                 Type = TicketingTelephoneType.Other,
             },
             new TicketingTelephone() {
-                Telephone = "(826) 283-7431",
+                Telephone = "(248) 482-6083",
                 Type = TicketingTelephoneType.Mobile,
             },
             new TicketingTelephone() {
-                Telephone = "(483) 314-6826",
+                Telephone = "(743) 328-3214",
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T03:32:13.743Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1133,6 +1134,7 @@ Update a note
 <!-- UsageSnippet language="csharp" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1145,8 +1147,9 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "8449706c-fb08-4043-a9c7-a0f1fc34b9bc",
-        UpdatedAt = System.DateTime.Parse("2024-09-27T19:04:53.281Z").ToUniversalTime(),
+        Id = "ded6dbe0-cdd4-4876-a0e0-17c4021cc0b3",
+        Metadata = new List<TicketingMetadata>() {},
+        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.451Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1193,27 +1196,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
     TicketingTicket = new TicketingTicket() {
-        AttachmentIds = new List<string>() {
-            "247564b4-7a9e-4dc6-bbf5-dccba80fb8f1",
-            "a4734e9b-dc5a-4240-8092-d50df45f83f4",
-        },
-        CategoryId = "vilicus",
+        AttachmentIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-13T05:09:44.051Z").ToUniversalTime(),
-        Id = "fbd67b47-24ea-4777-88a0-093e4be3f104",
-        Priority = "LOW",
-        Source = "atavus",
-        SourceRef = "43eece15-ec91-4b85-aae4-b25993553ca6",
+        DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
+        Id = "5eaab953-24c3-42e3-b5bf-8c4e985d1345",
+        Metadata = new List<TicketingMetadata>() {},
+        Priority = "MEDIUM",
+        Source = "email",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
-            "tamen",
-            "vitae",
-            "torrens",
+            "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-08T16:01:39.082Z").ToUniversalTime(),
-        Url = "https://yellowish-testimonial.biz",
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:21:48.538Z").ToUniversalTime(),
+        Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",
     Id = "<id>",

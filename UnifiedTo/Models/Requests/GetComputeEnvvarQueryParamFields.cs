@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         Environments,
         [JsonProperty("is_secret")]
         IsSecret,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

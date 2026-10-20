@@ -99,6 +99,8 @@ namespace UnifiedTo.Models.Requests
         SufferScore,
         [JsonProperty("pr_count")]
         PrCount,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

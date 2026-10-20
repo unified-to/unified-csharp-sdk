@@ -1,0 +1,13 @@
+# LmsMetadata
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `ExtraData`                                                             | [LmsMetadataExtraData](../../Models/Components/LmsMetadataExtraData.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Format`                                                                | [LmsMetadataFormat](../../Models/Components/LmsMetadataFormat.md)       | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Id`                                                                    | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Namespace`                                                             | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Slug`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Value`                                                                 | [LmsMetadataValue](../../Models/Components/LmsMetadataValue.md)         | :heavy_minus_sign:                                                      | N/A                                                                     |

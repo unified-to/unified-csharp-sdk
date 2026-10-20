@@ -47,6 +47,8 @@ namespace UnifiedTo.Models.Requests
         SenderCompany,
         [JsonProperty("sender_phone")]
         SenderPhone,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

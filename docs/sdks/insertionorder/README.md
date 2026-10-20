@@ -20,6 +20,7 @@ Create an insertionorder
 <!-- UsageSnippet language="csharp" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" example="ads_insertionorder" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,10 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
     adsInsertionorder: new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "022bad7f-a042-4af4-a4e2-74612a59e5db",
+        Id = "ef8286ea-f81a-44c3-86af-fec2c65ead27",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:20:04.992Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:31:30.896Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -152,6 +154,7 @@ Update an insertionorder
 <!-- UsageSnippet language="csharp" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -163,10 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "a73dc412-5ed8-471f-8513-4b7c60523e4f",
+        Id = "ab83c275-c439-4b76-98be-ffc1cc57fa6d",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:20:04.993Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:31:30.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -242,6 +246,7 @@ Update an insertionorder
 <!-- UsageSnippet language="csharp" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -253,10 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "a73dc412-5ed8-471f-8513-4b7c60523e4f",
+        Id = "ab83c275-c439-4b76-98be-ffc1cc57fa6d",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:20:04.993Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:31:30.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

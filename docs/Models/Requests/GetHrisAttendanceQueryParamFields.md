@@ -35,4 +35,5 @@ var value = GetHrisAttendanceQueryParamFields.Id;
 | `HourlyRate`         | hourly_rate          |
 | `ApproverUserId`     | approver_user_id     |
 | `ApprovedAt`         | approved_at          |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

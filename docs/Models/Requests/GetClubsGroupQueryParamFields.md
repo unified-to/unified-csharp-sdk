@@ -34,4 +34,5 @@ var value = GetClubsGroupQueryParamFields.Id;
 | `ProfileImageUrl`  | profile_image_url  |
 | `CoverImageUrl`    | cover_image_url    |
 | `ActivityTypes`    | activity_types     |
+| `Metadata`         | metadata           |
 | `Raw`              | raw                |

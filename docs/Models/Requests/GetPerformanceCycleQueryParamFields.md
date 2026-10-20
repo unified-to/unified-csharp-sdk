@@ -23,4 +23,5 @@ var value = GetPerformanceCycleQueryParamFields.Id;
 | `StartAt`     | start_at      |
 | `EndAt`       | end_at        |
 | `DueAt`       | due_at        |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         PageId,
         [JsonProperty("parent_id")]
         ParentId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

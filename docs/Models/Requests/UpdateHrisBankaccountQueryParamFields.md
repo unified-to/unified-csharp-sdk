@@ -32,4 +32,5 @@ var value = UpdateHrisBankaccountQueryParamFields.Id;
 | `SplitType`          | split_type           |
 | `SplitAmount`        | split_amount         |
 | `Priority`           | priority             |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

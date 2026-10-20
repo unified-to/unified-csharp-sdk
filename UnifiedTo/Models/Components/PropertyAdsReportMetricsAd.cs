@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("logo_creative_id")]
         public string? LogoCreativeId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

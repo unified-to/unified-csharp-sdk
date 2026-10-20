@@ -61,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         Instructors,
         [JsonProperty("published_at")]
         PublishedAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -23,4 +23,5 @@ var value = ListAccountingTrialbalancesQueryParamFields.Id;
 | `TotalDebitAmount`  | total_debit_amount  |
 | `TotalCreditAmount` | total_credit_amount |
 | `SubItems`          | sub_items           |
+| `Metadata`          | metadata            |
 | `Raw`               | raw                 |

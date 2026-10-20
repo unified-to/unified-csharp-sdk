@@ -31,4 +31,5 @@ var value = GetVerificationPackageQueryParamFields.Id;
 | `MaxScore`               | max_score                |
 | `InfoUrl`                | info_url                 |
 | `ValidRegions`           | valid_regions            |
+| `Metadata`               | metadata                 |
 | `Raw`                    | raw                      |

@@ -1,0 +1,13 @@
+# RepoMetadata
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ExtraData`                                                               | [RepoMetadataExtraData](../../Models/Components/RepoMetadataExtraData.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Format`                                                                  | [RepoMetadataFormat](../../Models/Components/RepoMetadataFormat.md)       | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Id`                                                                      | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Namespace`                                                               | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Slug`                                                                    | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Value`                                                                   | [RepoMetadataValue](../../Models/Components/RepoMetadataValue.md)         | :heavy_minus_sign:                                                        | N/A                                                                       |

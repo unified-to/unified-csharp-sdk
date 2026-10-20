@@ -36,82 +36,64 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Review.CreateCommerceReviewAsync(
     commerceReview: new CommerceReview() {
-        AuthorAvatarUrl = "https://picsum.photos/seed/ix4Br3LA/2245/1245",
-        AuthorEmail = "Cleve_Yundt@hotmail.com",
-        AuthorLocation = "ipsum",
-        AuthorName = "Marsha Krajcik",
+        AuthorAvatarUrl = "https://loremflickr.com/7/2660?lock=4279109054086693",
+        AuthorEmail = "nyasia.macgyver@hotmail.com",
+        AuthorLocation = "denique",
+        AuthorName = "Nyasia MacGyver",
         Comments = new List<CommerceReviewComment>() {},
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
-        HelpfulVotes = 26D,
-        Id = "a3a8627e-6fff-4a60-a0a2-2a60c86c90de",
-        IsFeatured = true,
+        HelpfulVotes = 66D,
+        Id = "f2cd8f08-04d5-44ab-9901-9fd053ad0953",
+        IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
         Media = new List<CommerceItemMedia>() {
             new CommerceItemMedia() {
-                Alt = "Adulescens.",
-                Height = 519D,
-                Id = "279dbc48-b710-40b4-b9e4-1344a22b9810",
+                Alt = "Desipio carpo sol laudantium colo.",
+                Height = 749D,
+                Id = "5aa7cc68-3f72-48a4-af69-836d71ed474c",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "ab9c3901-43ca-4b55-a0f6-b4e7a0c99efe",
-                        Slug = "aggero",
+                        Id = "63481cde-9ec5-46c5-8bab-d80a2346e369",
+                        Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
-                            "tero"
+                            "quos"
                         ),
                     },
                 },
-                Position = 72D,
+                Position = 29D,
                 Type = CommerceItemMediaType.Video,
-                Url = "https://loremflickr.com/882/1004?lock=7448492654002422",
-                Width = 75D,
+                Url = "https://loremflickr.com/196/2041?lock=5845524773114807",
+                Width = 72D,
             },
             new CommerceItemMedia() {
-                Alt = "Pauci timidus sol comburo thema.",
-                Height = 297D,
-                Id = "a1aedf71-4b34-4d89-bbbc-e3a846218768",
+                Alt = "Adopto teneo numquam.",
+                Height = 957D,
+                Id = "d2b31334-5cbe-4aa3-bef7-461d8990ddf4",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "fcc6518e-5d86-4f52-8d77-2e577d27a6f6",
-                        Slug = "vito",
+                        Id = "68430e66-d3ef-4573-97f7-71425e9bc2be",
+                        Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
-                            "cuppedia"
+                            "casso"
                         ),
                     },
                 },
-                Position = 61D,
+                Position = 69D,
                 Type = CommerceItemMediaType.Image,
-                Url = "https://picsum.photos/seed/3QDZ8/1208/2171",
-                Width = 96D,
-            },
-            new CommerceItemMedia() {
-                Alt = "Cuppedia vestrum patruus.",
-                Height = 6D,
-                Id = "fc1c3c4b-b404-4fb2-a209-4674a9f9381a",
-                Metadata = new List<CommerceMetadata>() {
-                    new CommerceMetadata() {
-                        Id = "4301cbc5-9765-40f9-b34e-ea184384ed76",
-                        Slug = "arbitro",
-                        Value = CommerceMetadataValue.CreateStr(
-                            "villa"
-                        ),
-                    },
-                },
-                Position = 60D,
-                Type = CommerceItemMediaType.Video,
-                Url = "https://picsum.photos/seed/ytybC/2616/710",
-                Width = 74D,
+                Url = "https://loremflickr.com/1178/2175?lock=5466640101053206",
+                Width = 61D,
             },
         },
         Metadata = new List<CommerceMetadata>() {},
         Rating = 3D,
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
-        UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-19T15:23:21.988Z").ToUniversalTime(),
-        Url = "https://excitable-underneath.com",
-        VerifiedPurchase = false,
+        UnhelpfulVotes = 88D,
+        UpdatedAt = System.DateTime.Parse("2025-08-20T08:37:20.752Z").ToUniversalTime(),
+        Url = "https://diligent-bandwidth.biz",
+        VerifiedPurchase = true,
     },
     connectionId: "<id>"
 );
@@ -407,82 +389,64 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
     CommerceReview = new CommerceReview() {
-        AuthorAvatarUrl = "https://picsum.photos/seed/ix4Br3LA/2245/1245",
-        AuthorEmail = "Cleve_Yundt@hotmail.com",
-        AuthorLocation = "ipsum",
-        AuthorName = "Marsha Krajcik",
+        AuthorAvatarUrl = "https://loremflickr.com/7/2660?lock=4279109054086693",
+        AuthorEmail = "nyasia.macgyver@hotmail.com",
+        AuthorLocation = "denique",
+        AuthorName = "Nyasia MacGyver",
         Comments = new List<CommerceReviewComment>() {},
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
-        HelpfulVotes = 26D,
-        Id = "065c7835-3966-4d05-8900-2b0d2b3404a9",
-        IsFeatured = true,
+        HelpfulVotes = 66D,
+        Id = "99c7b848-209f-46bd-b8b9-0ad32f51d700",
+        IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
         Media = new List<CommerceItemMedia>() {
             new CommerceItemMedia() {
-                Alt = "Adulescens.",
-                Height = 519D,
-                Id = "eed1ea22-b4b4-494f-85bc-be077bf9052c",
+                Alt = "Desipio carpo sol laudantium colo.",
+                Height = 749D,
+                Id = "82a049c6-fffc-4411-ba54-0d75e29d9391",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "aa2bbb4d-93b2-4977-880c-12a0dfc9a974",
-                        Slug = "aggero",
+                        Id = "759e0251-7693-45e2-b596-3d5b9285f570",
+                        Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
-                            "tero"
+                            "quos"
                         ),
                     },
                 },
-                Position = 72D,
+                Position = 29D,
                 Type = CommerceItemMediaType.Video,
-                Url = "https://loremflickr.com/882/1004?lock=7448492654002422",
-                Width = 75D,
+                Url = "https://loremflickr.com/196/2041?lock=5845524773114807",
+                Width = 72D,
             },
             new CommerceItemMedia() {
-                Alt = "Pauci timidus sol comburo thema.",
-                Height = 297D,
-                Id = "b9170e4c-5352-4a47-8835-f05c502c95cb",
+                Alt = "Adopto teneo numquam.",
+                Height = 957D,
+                Id = "beaa5fb1-a98f-4d57-af84-857414f647f1",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "19504dcd-c14a-4358-9745-7d5b51b05b08",
-                        Slug = "vito",
+                        Id = "f6f68355-427a-43ee-a58e-eb47aa7ea4b0",
+                        Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
-                            "cuppedia"
+                            "casso"
                         ),
                     },
                 },
-                Position = 61D,
+                Position = 69D,
                 Type = CommerceItemMediaType.Image,
-                Url = "https://picsum.photos/seed/3QDZ8/1208/2171",
-                Width = 96D,
-            },
-            new CommerceItemMedia() {
-                Alt = "Cuppedia vestrum patruus.",
-                Height = 6D,
-                Id = "d98120f7-a1b6-4045-8b8c-b1a560a2e45a",
-                Metadata = new List<CommerceMetadata>() {
-                    new CommerceMetadata() {
-                        Id = "0a44fdbf-b9a4-4df2-8ea0-7d14970973f3",
-                        Slug = "arbitro",
-                        Value = CommerceMetadataValue.CreateStr(
-                            "villa"
-                        ),
-                    },
-                },
-                Position = 60D,
-                Type = CommerceItemMediaType.Video,
-                Url = "https://picsum.photos/seed/ytybC/2616/710",
-                Width = 74D,
+                Url = "https://loremflickr.com/1178/2175?lock=5466640101053206",
+                Width = 61D,
             },
         },
         Metadata = new List<CommerceMetadata>() {},
         Rating = 3D,
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
-        UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-19T15:23:22.019Z").ToUniversalTime(),
-        Url = "https://excitable-underneath.com",
-        VerifiedPurchase = false,
+        UnhelpfulVotes = 88D,
+        UpdatedAt = System.DateTime.Parse("2025-08-20T08:37:20.778Z").ToUniversalTime(),
+        Url = "https://diligent-bandwidth.biz",
+        VerifiedPurchase = true,
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -612,82 +576,64 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
     CommerceReview = new CommerceReview() {
-        AuthorAvatarUrl = "https://picsum.photos/seed/ix4Br3LA/2245/1245",
-        AuthorEmail = "Cleve_Yundt@hotmail.com",
-        AuthorLocation = "ipsum",
-        AuthorName = "Marsha Krajcik",
+        AuthorAvatarUrl = "https://loremflickr.com/7/2660?lock=4279109054086693",
+        AuthorEmail = "nyasia.macgyver@hotmail.com",
+        AuthorLocation = "denique",
+        AuthorName = "Nyasia MacGyver",
         Comments = new List<CommerceReviewComment>() {},
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
-        HelpfulVotes = 26D,
-        Id = "065c7835-3966-4d05-8900-2b0d2b3404a9",
-        IsFeatured = true,
+        HelpfulVotes = 66D,
+        Id = "99c7b848-209f-46bd-b8b9-0ad32f51d700",
+        IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
         Media = new List<CommerceItemMedia>() {
             new CommerceItemMedia() {
-                Alt = "Adulescens.",
-                Height = 519D,
-                Id = "eed1ea22-b4b4-494f-85bc-be077bf9052c",
+                Alt = "Desipio carpo sol laudantium colo.",
+                Height = 749D,
+                Id = "82a049c6-fffc-4411-ba54-0d75e29d9391",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "aa2bbb4d-93b2-4977-880c-12a0dfc9a974",
-                        Slug = "aggero",
+                        Id = "759e0251-7693-45e2-b596-3d5b9285f570",
+                        Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
-                            "tero"
+                            "quos"
                         ),
                     },
                 },
-                Position = 72D,
+                Position = 29D,
                 Type = CommerceItemMediaType.Video,
-                Url = "https://loremflickr.com/882/1004?lock=7448492654002422",
-                Width = 75D,
+                Url = "https://loremflickr.com/196/2041?lock=5845524773114807",
+                Width = 72D,
             },
             new CommerceItemMedia() {
-                Alt = "Pauci timidus sol comburo thema.",
-                Height = 297D,
-                Id = "b9170e4c-5352-4a47-8835-f05c502c95cb",
+                Alt = "Adopto teneo numquam.",
+                Height = 957D,
+                Id = "beaa5fb1-a98f-4d57-af84-857414f647f1",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "19504dcd-c14a-4358-9745-7d5b51b05b08",
-                        Slug = "vito",
+                        Id = "f6f68355-427a-43ee-a58e-eb47aa7ea4b0",
+                        Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
-                            "cuppedia"
+                            "casso"
                         ),
                     },
                 },
-                Position = 61D,
+                Position = 69D,
                 Type = CommerceItemMediaType.Image,
-                Url = "https://picsum.photos/seed/3QDZ8/1208/2171",
-                Width = 96D,
-            },
-            new CommerceItemMedia() {
-                Alt = "Cuppedia vestrum patruus.",
-                Height = 6D,
-                Id = "d98120f7-a1b6-4045-8b8c-b1a560a2e45a",
-                Metadata = new List<CommerceMetadata>() {
-                    new CommerceMetadata() {
-                        Id = "0a44fdbf-b9a4-4df2-8ea0-7d14970973f3",
-                        Slug = "arbitro",
-                        Value = CommerceMetadataValue.CreateStr(
-                            "villa"
-                        ),
-                    },
-                },
-                Position = 60D,
-                Type = CommerceItemMediaType.Video,
-                Url = "https://picsum.photos/seed/ytybC/2616/710",
-                Width = 74D,
+                Url = "https://loremflickr.com/1178/2175?lock=5466640101053206",
+                Width = 61D,
             },
         },
         Metadata = new List<CommerceMetadata>() {},
         Rating = 3D,
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
-        UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-19T15:23:22.019Z").ToUniversalTime(),
-        Url = "https://excitable-underneath.com",
-        VerifiedPurchase = false,
+        UnhelpfulVotes = 88D,
+        UpdatedAt = System.DateTime.Parse("2025-08-20T08:37:20.778Z").ToUniversalTime(),
+        Url = "https://diligent-bandwidth.biz",
+        VerifiedPurchase = true,
     },
     ConnectionId = "<id>",
     Id = "<id>",

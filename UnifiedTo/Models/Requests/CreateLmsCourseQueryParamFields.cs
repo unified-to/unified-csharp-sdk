@@ -55,6 +55,8 @@ namespace UnifiedTo.Models.Requests
         PublishedAt,
         [JsonProperty("time_estimate_minutes")]
         TimeEstimateMinutes,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

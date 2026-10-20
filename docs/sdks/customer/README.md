@@ -33,31 +33,32 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
         CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
         Emails = new List<TicketingEmail>() {
             new TicketingEmail() {
-                Email = "Christian_Windler@gmail.com",
+                Email = "christian.windler@gmail.com",
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "0ec7dc6c-0026-48b0-9670-ee930cbf597d",
+        Id = "6b5c2430-55ae-4c38-9d58-715809cd7d23",
+        Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
-            "casso",
-            "peccatus",
+            "quidem",
+            "una",
         },
         Telephones = new List<TicketingTelephone>() {
             new TicketingTelephone() {
-                Telephone = "(532) 242-0482",
+                Telephone = "(299) 843-2042",
                 Type = TicketingTelephoneType.Other,
             },
             new TicketingTelephone() {
-                Telephone = "(826) 283-7431",
+                Telephone = "(248) 482-6083",
                 Type = TicketingTelephoneType.Mobile,
             },
             new TicketingTelephone() {
-                Telephone = "(483) 314-6826",
+                Telephone = "(743) 328-3214",
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T03:32:13.732Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.873Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -190,31 +191,32 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
         CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
         Emails = new List<TicketingEmail>() {
             new TicketingEmail() {
-                Email = "Christian_Windler@gmail.com",
+                Email = "christian.windler@gmail.com",
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "df988f06-429e-4172-af2d-69b744bd4986",
+        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
-            "casso",
-            "peccatus",
+            "quidem",
+            "una",
         },
         Telephones = new List<TicketingTelephone>() {
             new TicketingTelephone() {
-                Telephone = "(532) 242-0482",
+                Telephone = "(299) 843-2042",
                 Type = TicketingTelephoneType.Other,
             },
             new TicketingTelephone() {
-                Telephone = "(826) 283-7431",
+                Telephone = "(248) 482-6083",
                 Type = TicketingTelephoneType.Mobile,
             },
             new TicketingTelephone() {
-                Telephone = "(483) 314-6826",
+                Telephone = "(743) 328-3214",
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T03:32:13.743Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -304,31 +306,32 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
         CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
         Emails = new List<TicketingEmail>() {
             new TicketingEmail() {
-                Email = "Christian_Windler@gmail.com",
+                Email = "christian.windler@gmail.com",
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "df988f06-429e-4172-af2d-69b744bd4986",
+        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
-            "casso",
-            "peccatus",
+            "quidem",
+            "una",
         },
         Telephones = new List<TicketingTelephone>() {
             new TicketingTelephone() {
-                Telephone = "(532) 242-0482",
+                Telephone = "(299) 843-2042",
                 Type = TicketingTelephoneType.Other,
             },
             new TicketingTelephone() {
-                Telephone = "(826) 283-7431",
+                Telephone = "(248) 482-6083",
                 Type = TicketingTelephoneType.Mobile,
             },
             new TicketingTelephone() {
-                Telephone = "(483) 314-6826",
+                Telephone = "(743) 328-3214",
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T03:32:13.743Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

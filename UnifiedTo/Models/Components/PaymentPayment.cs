@@ -100,6 +100,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<PaymentMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// total_amount minus fee_amount.
         /// </summary>

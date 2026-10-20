@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CommerceMetadata>? Metadata { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 

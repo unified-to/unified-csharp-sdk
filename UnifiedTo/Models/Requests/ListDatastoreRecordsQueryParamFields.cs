@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Fields,
         [JsonProperty("row_number")]
         RowNumber,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

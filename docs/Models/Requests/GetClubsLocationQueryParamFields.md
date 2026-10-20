@@ -23,4 +23,5 @@ var value = GetClubsLocationQueryParamFields.Id;
 | `Longitude` | longitude   |
 | `Telephone` | telephone   |
 | `Url`       | url         |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

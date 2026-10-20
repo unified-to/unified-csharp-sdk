@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         IsChargeableNow,
         [JsonProperty("success_url")]
         SuccessUrl,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

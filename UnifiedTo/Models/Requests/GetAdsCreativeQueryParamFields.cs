@@ -73,6 +73,8 @@ namespace UnifiedTo.Models.Requests
         Data,
         [JsonProperty("labels")]
         Labels,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("database_id")]
         public string? DatabaseId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<DatastoreMetadata>? Metadata { get; set; }
+
         [JsonProperty("query")]
         public PropertyDatastoreQueryQuery? Query { get; set; }
 

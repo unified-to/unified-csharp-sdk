@@ -1,0 +1,13 @@
+# ShippingMetadata
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `ExtraData`                                                                       | [ShippingMetadataExtraData](../../Models/Components/ShippingMetadataExtraData.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Format`                                                                          | [ShippingMetadataFormat](../../Models/Components/ShippingMetadataFormat.md)       | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Id`                                                                              | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Namespace`                                                                       | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Slug`                                                                            | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Value`                                                                           | [ShippingMetadataValue](../../Models/Components/ShippingMetadataValue.md)         | :heavy_minus_sign:                                                                | N/A                                                                               |

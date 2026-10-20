@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Timezone,
         [JsonProperty("is_primary")]
         IsPrimary,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

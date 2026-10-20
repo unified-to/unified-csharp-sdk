@@ -20,4 +20,5 @@ var value = UpdateDatastoreRecordQueryParamFields.Id;
 | `TableId`    | table_id     |
 | `Fields`     | fields       |
 | `RowNumber`  | row_number   |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

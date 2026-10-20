@@ -73,6 +73,8 @@ namespace UnifiedTo.Models.Requests
         CategoryIds,
         [JsonProperty("net_amount")]
         NetAmount,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

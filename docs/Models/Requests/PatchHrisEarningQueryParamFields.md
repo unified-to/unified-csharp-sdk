@@ -30,4 +30,5 @@ var value = PatchHrisEarningQueryParamFields.Id;
 | `PayrollId`  | payroll_id   |
 | `PayslipId`  | payslip_id   |
 | `Notes`      | notes        |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

@@ -23,4 +23,5 @@ var value = UpdateAdsOrganizationQueryParamFields.Id;
 | `Status`        | status          |
 | `AccountNumber` | account_number  |
 | `Managers`      | managers        |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

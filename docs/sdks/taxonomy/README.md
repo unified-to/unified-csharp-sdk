@@ -28,20 +28,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Taxonomy.CreateHrisTaxonomyAsync(
     hrisTaxonomy: new HrisTaxonomy() {
-        CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
-        Description = "Apto demonstro audacia adstringo cursim tristis solio careo.",
-        Domain = "Electronics",
-        Id = "ede085db-5709-4d53-a490-746f3de5be17",
-        IsActive = false,
-        Name = "International Functionality Architect",
-        ParentId = "6524b2a7-6520-4e15-8c4e-1aa6793db837",
-        RoleIds = new List<string>() {
-            "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+        AlternativeNames = new List<string>() {
+            "Facilitator",
+            "National",
         },
-        Subcategory = "Bamboo",
+        CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
+        Description = "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+        Domain = "Health",
+        Id = "30babc47-15c6-4230-81ba-799d531e0d89",
+        IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
+        Name = "International Functionality Architect",
+        Subcategory = "Marble",
         Type = HrisTaxonomyType.Knowledge,
-        UpdatedAt = System.DateTime.Parse("2023-05-28T20:42:15.494Z").ToUniversalTime(),
-        Url = "https://our-polarisation.name",
+        UpdatedAt = System.DateTime.Parse("2023-05-29T01:10:20.439Z").ToUniversalTime(),
+        Url = "https://fixed-membership.biz/",
     },
     connectionId: "<id>"
 );

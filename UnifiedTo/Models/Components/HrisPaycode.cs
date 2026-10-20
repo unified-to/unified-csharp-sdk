@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_pre_tax")]
         public bool? IsPreTax { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

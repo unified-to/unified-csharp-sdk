@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         Hours,
         [JsonProperty("is_approved")]
         IsApproved,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

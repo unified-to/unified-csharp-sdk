@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         CreatorId,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("metadata")]
+        Metadata,
     }
 
     public static class ListSigningTemplatesQueryParamFieldsExtension

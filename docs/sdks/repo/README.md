@@ -44,6 +44,7 @@ Create a branch
 <!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" example="repo_branch" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -54,10 +55,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "444c1bd7-acdc-41ca-a793-8bdfa3edc225",
-        Name = "voluptas",
+        Id = "f153941e-906c-47bc-ac31-f20cf8653968",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T02:24:18.420Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T04:45:31.955Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -93,6 +95,7 @@ Create a commit
 <!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" example="repo_commit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -103,13 +106,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "7d962e38-c661-4520-991c-b90f8c9c81e6",
+        Id = "4440c4b8-1113-4d82-80e4-7e10599a77e8",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
-        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
+        Message = "quantify bluetooth bandwidth",
+        Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-30T07:59:18.572Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-30T17:31:34.389Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -145,6 +149,7 @@ Create an organization
 <!-- UsageSnippet language="csharp" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" example="repo_organization" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -157,9 +162,10 @@ var res = await sdk.Repo.CreateRepoOrganizationAsync(
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "b6b7a06b-b475-4e15-8143-1a2e201d1f58",
+        Id = "c6e1b4d9-6a67-4cf0-a000-e3b91d9639c2",
+        Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T02:05:36.958Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T07:32:02.746Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     connectionId: "<id>"
@@ -206,19 +212,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T08:11:30.604Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.897Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "5347ba03-7f8a-4376-9621-44dae4512352",
+        Id = "7fef24f0-bccc-4409-844f-02f287921fde",
         Labels = new List<string>() {
-            "adhuc",
-            "quaerat",
+            "creptio",
+            "tutamen",
         },
-        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
-        SourceBranchId = "microchip-navigate",
-        Status = RepoPullrequestStatus.Rejected,
-        TargetBranchId = "feed-reboot",
-        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2025-01-16T00:10:29.888Z").ToUniversalTime(),
+        Metadata = new List<RepoMetadata>() {},
+        Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
+        Status = RepoPullrequestStatus.Approved,
+        Title = "reboot mobile application",
+        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.552Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -254,6 +259,7 @@ Create a repository
 <!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" example="repo_repository" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -264,13 +270,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
-        Description = "Tribuo torqueo aetas ustulo illum.",
-        Id = "6dab57e8-6299-4bec-ab99-a9d412258619",
+        Description = "Sed somnus crastinus armarium.",
+        Id = "0c9525d4-9ac6-406c-bff2-ca4a64ed96bd",
         IsPrivate = false,
-        Name = "suggero",
-        Owner = "Marcella Kuhic",
-        UpdatedAt = System.DateTime.Parse("2024-02-29T15:25:25.678Z").ToUniversalTime(),
-        WebUrl = "https://brown-phrase.info",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "bah-bogus",
+        UpdatedAt = System.DateTime.Parse("2024-02-29T19:52:12.303Z").ToUniversalTime(),
+        WebUrl = "https://neat-birdbath.org",
     },
     connectionId: "<id>"
 );
@@ -721,6 +727,7 @@ Update a branch
 <!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -732,10 +739,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "a056cb26-2176-48ec-af7e-96275f891762",
-        Name = "voluptas",
+        Id = "94846ca8-eb7d-4c38-82f9-30df682f7701",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T02:24:18.420Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T04:45:31.956Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -771,6 +779,7 @@ Update a commit
 <!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -782,13 +791,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "d4a3f21b-0be3-494f-9705-a454b9d5df97",
+        Id = "8d8621aa-4dc9-4dd0-9d8a-8393ef783df7",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
-        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
+        Message = "quantify bluetooth bandwidth",
+        Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-30T07:59:18.576Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-30T17:31:34.395Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -824,6 +834,7 @@ Update an organization
 <!-- UsageSnippet language="csharp" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -837,9 +848,10 @@ PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "e9fe0aab-da73-4ff6-8be0-329f1b91b31c",
+        Id = "a4712dfb-bd64-4679-b41b-714fe492b69f",
+        Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T02:05:36.960Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T07:32:02.749Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -887,19 +899,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T08:11:30.611Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.906Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "103f5c8e-e08e-44f8-b607-57c3fdffa02a",
+        Id = "3b399be7-3342-449e-986a-bd153fb57c3a",
         Labels = new List<string>() {
-            "adhuc",
-            "quaerat",
+            "creptio",
+            "tutamen",
         },
-        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
-        SourceBranchId = "microchip-navigate",
-        Status = RepoPullrequestStatus.Rejected,
-        TargetBranchId = "feed-reboot",
-        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2025-01-16T00:10:29.894Z").ToUniversalTime(),
+        Metadata = new List<RepoMetadata>() {},
+        Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
+        Status = RepoPullrequestStatus.Approved,
+        Title = "reboot mobile application",
+        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.564Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -935,6 +946,7 @@ Update a repository
 <!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -946,13 +958,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
-        Description = "Tribuo torqueo aetas ustulo illum.",
-        Id = "151a9e17-bad0-42c5-81bb-7b845ac7008b",
+        Description = "Sed somnus crastinus armarium.",
+        Id = "b3e0e0f2-027a-42d7-b984-2e06899d987c",
         IsPrivate = false,
-        Name = "suggero",
-        Owner = "Marcella Kuhic",
-        UpdatedAt = System.DateTime.Parse("2024-02-29T15:25:25.681Z").ToUniversalTime(),
-        WebUrl = "https://brown-phrase.info",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "bah-bogus",
+        UpdatedAt = System.DateTime.Parse("2024-02-29T19:52:12.307Z").ToUniversalTime(),
+        WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1188,6 +1200,7 @@ Update a branch
 <!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1199,10 +1212,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "a056cb26-2176-48ec-af7e-96275f891762",
-        Name = "voluptas",
+        Id = "94846ca8-eb7d-4c38-82f9-30df682f7701",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T02:24:18.420Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T04:45:31.956Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1238,6 +1252,7 @@ Update a commit
 <!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1249,13 +1264,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "d4a3f21b-0be3-494f-9705-a454b9d5df97",
+        Id = "8d8621aa-4dc9-4dd0-9d8a-8393ef783df7",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
-        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
+        Message = "quantify bluetooth bandwidth",
+        Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-30T07:59:18.576Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-30T17:31:34.395Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1291,6 +1307,7 @@ Update an organization
 <!-- UsageSnippet language="csharp" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1304,9 +1321,10 @@ UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "e9fe0aab-da73-4ff6-8be0-329f1b91b31c",
+        Id = "a4712dfb-bd64-4679-b41b-714fe492b69f",
+        Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T02:05:36.960Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T07:32:02.749Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -1354,19 +1372,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T08:11:30.611Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.906Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "103f5c8e-e08e-44f8-b607-57c3fdffa02a",
+        Id = "3b399be7-3342-449e-986a-bd153fb57c3a",
         Labels = new List<string>() {
-            "adhuc",
-            "quaerat",
+            "creptio",
+            "tutamen",
         },
-        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
-        SourceBranchId = "microchip-navigate",
-        Status = RepoPullrequestStatus.Rejected,
-        TargetBranchId = "feed-reboot",
-        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2025-01-16T00:10:29.894Z").ToUniversalTime(),
+        Metadata = new List<RepoMetadata>() {},
+        Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
+        Status = RepoPullrequestStatus.Approved,
+        Title = "reboot mobile application",
+        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.564Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1402,6 +1419,7 @@ Update a repository
 <!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1413,13 +1431,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
-        Description = "Tribuo torqueo aetas ustulo illum.",
-        Id = "151a9e17-bad0-42c5-81bb-7b845ac7008b",
+        Description = "Sed somnus crastinus armarium.",
+        Id = "b3e0e0f2-027a-42d7-b984-2e06899d987c",
         IsPrivate = false,
-        Name = "suggero",
-        Owner = "Marcella Kuhic",
-        UpdatedAt = System.DateTime.Parse("2024-02-29T15:25:25.681Z").ToUniversalTime(),
-        WebUrl = "https://brown-phrase.info",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "bah-bogus",
+        UpdatedAt = System.DateTime.Parse("2024-02-29T19:52:12.307Z").ToUniversalTime(),
+        WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",
     Id = "<id>",

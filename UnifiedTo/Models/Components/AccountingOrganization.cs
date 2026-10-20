@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("legal_name")]
         public string? LegalName { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

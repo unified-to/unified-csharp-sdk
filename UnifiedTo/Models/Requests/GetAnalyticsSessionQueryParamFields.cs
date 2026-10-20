@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         IsBounce,
         [JsonProperty("is_conversion")]
         IsConversion,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

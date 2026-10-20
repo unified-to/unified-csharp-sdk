@@ -22,4 +22,5 @@ var value = PatchDatastoreDatabaseQueryParamFields.Id;
 | `IsActive`    | is_active     |
 | `Password`    | password      |
 | `Region`      | region        |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

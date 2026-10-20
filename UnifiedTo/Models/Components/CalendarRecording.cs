@@ -47,6 +47,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("media")]
         public List<CalendarRecordingMedia>? Media { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CalendarMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

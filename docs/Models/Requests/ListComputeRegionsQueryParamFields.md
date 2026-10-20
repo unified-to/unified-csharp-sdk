@@ -20,4 +20,5 @@ var value = ListComputeRegionsQueryParamFields.Id;
 | `Location`  | location    |
 | `Country`   | country     |
 | `GpuModels` | gpu_models  |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

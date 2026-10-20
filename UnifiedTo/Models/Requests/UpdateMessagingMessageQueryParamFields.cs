@@ -57,6 +57,8 @@ namespace UnifiedTo.Models.Requests
         IsUnread,
         [JsonProperty("buttons")]
         Buttons,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -32,6 +32,7 @@ Create a comment
 <!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" example="kms_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -44,9 +45,10 @@ var res = await sdk.Kms.CreateKmsCommentAsync(
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "4ae9af2d-08b4-4cc0-b34a-0b7bf435778c",
+        Id = "4153820f-2e15-49d2-96f2-3434d2e3494e",
+        Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-25T15:48:07.736Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-25T22:03:17.064Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -95,12 +97,12 @@ var res = await sdk.Kms.CreateKmsPageAsync(
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "4fe2f66b-fc0a-40da-b0d0-dde9dd748e9f",
+        Id = "f3a595e0-7633-4d14-8a06-3a76dd2e25ef",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-07T09:30:58.799Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-08T03:23:29.489Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     connectionId: "<id>"
@@ -137,6 +139,7 @@ Create a space
 <!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" example="kms_space" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -148,10 +151,11 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "ce9d60de-03aa-475b-af90-dd6c1e14a95e",
+        Id = "fc81a7d6-fdf3-4075-b681-fd53eae19c64",
         IsActive = false,
+        Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-28T07:12:59.910Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-28T23:45:24.073Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -436,6 +440,7 @@ Update a comment
 <!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -449,9 +454,10 @@ PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "57e7425d-7712-4b3d-b8e3-1d32a0d86ff3",
+        Id = "87532c36-2b29-4e63-92a2-2904d3482d9f",
+        Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-25T15:48:07.739Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-25T22:03:17.067Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -501,12 +507,12 @@ PatchKmsPageRequest req = new PatchKmsPageRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "3f472552-7713-478f-9589-f257f5f4718f",
+        Id = "757f3387-4d05-480e-9dc6-20c2b38475e6",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-07T09:30:58.813Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-08T03:23:29.499Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
@@ -543,6 +549,7 @@ Update a space
 <!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -555,10 +562,11 @@ PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "f5b6024f-5334-4fa7-b5b8-89dcea591599",
+        Id = "92e9573b-1e68-48c5-8df2-d66625a1ef9e",
         IsActive = false,
+        Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-28T07:12:59.917Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-28T23:45:24.080Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -714,6 +722,7 @@ Update a comment
 <!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -727,9 +736,10 @@ UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "57e7425d-7712-4b3d-b8e3-1d32a0d86ff3",
+        Id = "87532c36-2b29-4e63-92a2-2904d3482d9f",
+        Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-25T15:48:07.739Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-25T22:03:17.067Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -779,12 +789,12 @@ UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "3f472552-7713-478f-9589-f257f5f4718f",
+        Id = "757f3387-4d05-480e-9dc6-20c2b38475e6",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-07T09:30:58.813Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-08T03:23:29.499Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
@@ -821,6 +831,7 @@ Update a space
 <!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -833,10 +844,11 @@ UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "f5b6024f-5334-4fa7-b5b8-89dcea591599",
+        Id = "92e9573b-1e68-48c5-8df2-d66625a1ef9e",
         IsActive = false,
+        Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-28T07:12:59.917Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-28T23:45:24.080Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -1,0 +1,13 @@
+# PaymentMetadata
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `ExtraData`                                                                     | [PaymentMetadataExtraData](../../Models/Components/PaymentMetadataExtraData.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Format`                                                                        | [PaymentMetadataFormat](../../Models/Components/PaymentMetadataFormat.md)       | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Id`                                                                            | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Namespace`                                                                     | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Slug`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Value`                                                                         | [PaymentMetadataValue](../../Models/Components/PaymentMetadataValue.md)         | :heavy_minus_sign:                                                              | N/A                                                                             |

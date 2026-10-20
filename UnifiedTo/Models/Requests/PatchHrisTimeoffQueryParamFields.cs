@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         Duration,
         [JsonProperty("duration_type")]
         DurationType,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

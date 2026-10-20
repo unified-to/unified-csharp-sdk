@@ -23,4 +23,5 @@ var value = PatchLmsStudentQueryParamFields.Id;
 | `Telephones` | telephones   |
 | `Address`    | address      |
 | `ImageUrl`   | image_url    |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

@@ -58,6 +58,7 @@ Create an ad
 <!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" example="ads_ad" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -74,10 +75,11 @@ var res = await sdk.Ads.CreateAdsAdAsync(
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "5ce99610-80dd-4693-bed5-6088f318411f",
+        Id = "575c0f19-3b7c-4045-a65a-dd5d3e277d97",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-17T17:21:30.255Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T01:49:31.598Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -113,6 +115,7 @@ Create an asset
 <!-- UsageSnippet language="csharp" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" example="ads_asset" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -124,11 +127,12 @@ var res = await sdk.Ads.CreateAdsAssetAsync(
     adsAsset: new AdsAsset() {
         CreatedAt = System.DateTime.Parse("2020-03-27T20:14:38.603Z").ToUniversalTime(),
         Height = 400D,
-        Id = "c21267d3-990a-4ec5-82dc-91c67545aa93",
+        Id = "d2f4b926-027c-48aa-bfef-645860b3b9dd",
+        Metadata = new List<AdsMetadata>() {},
         MimeType = "IMAGE_PNG",
         Name = "Lockman - DuBuque",
         Type = AdsAssetType.Image,
-        UpdatedAt = System.DateTime.Parse("2022-03-24T13:33:08.819Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-24T19:50:57.885Z").ToUniversalTime(),
         Url = "https://informal-perfection.com/",
         Width = 600D,
     },
@@ -182,17 +186,18 @@ var res = await sdk.Ads.CreateAdsCampaignAsync(
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-30T13:21:59.516Z").ToUniversalTime(),
-        Id = "3f51c1a7-8204-415b-8fea-fc6e4106b384",
+        EndAt = System.DateTime.Parse("2025-05-31T03:36:17.257Z").ToUniversalTime(),
+        Id = "2e8a6397-bc44-4ecf-a6e2-d31eb9966054",
         Labels = new List<string>() {
             "comedo",
         },
+        Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T08:57:17.305Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T09:44:26.617Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2025-12-30T21:22:10.482Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-31T14:22:08.841Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -239,15 +244,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ads.CreateAdsCreativeAsync(
     adsCreative: new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "4ebfeb8b-53e1-43f4-a6bb-8335a970c5ff",
+        Id = "6e244bba-8e9d-4712-83a5-e647756dac5a",
         Labels = new List<string>() {
             "coma",
             "accedo",
             "termes",
         },
+        Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T08:09:23.780Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T12:23:01.549Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -283,6 +289,7 @@ Create a group
 <!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" example="ads_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -298,14 +305,15 @@ var res = await sdk.Ads.CreateAdsGroupAsync(
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-23T02:02:57.267Z").ToUniversalTime(),
-        Id = "c5fcb7d2-e3e3-420e-9acb-e9104495f775",
+        EndAt = System.DateTime.Parse("2026-06-23T21:52:21.472Z").ToUniversalTime(),
+        Id = "66afa24f-ba44-48d9-8163-1a789393e926",
         LanguageLocale = "fr-FR",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-07T10:28:11.941Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-08T04:57:58.652Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-12T23:40:28.029Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T06:34:49.945Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -341,6 +349,7 @@ Create an insertionorder
 <!-- UsageSnippet language="csharp" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" example="ads_insertionorder" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -351,10 +360,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ads.CreateAdsInsertionorderAsync(
     adsInsertionorder: new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "022bad7f-a042-4af4-a4e2-74612a59e5db",
+        Id = "ef8286ea-f81a-44c3-86af-fec2c65ead27",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:20:04.992Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:31:30.896Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -403,17 +413,13 @@ var res = await sdk.Ads.CreateAdsOrganizationAsync(
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "b4ff0bd2-eb28-42ef-88a9-d99293233ae8",
-        Managers = new List<AdsManager>() {
-            new AdsManager() {
-                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
-                Name = "Parker, Leannon and Gibson",
-            },
-        },
+        Id = "1adcbb8a-1e72-4979-b69c-2a17bd219341",
+        Managers = new List<AdsManager>() {},
+        Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-27T05:47:33.383Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T00:40:47.349Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1237,6 +1243,7 @@ Update an ad
 <!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1254,10 +1261,11 @@ PatchAdsAdRequest req = new PatchAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "cf15ec45-a04a-4af0-b933-85cfe8458cea",
+        Id = "c74c1abd-908d-4c98-81a1-ca265042f4f0",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-17T17:21:30.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T01:49:31.609Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1310,17 +1318,18 @@ PatchAdsCampaignRequest req = new PatchAdsCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-30T13:21:59.621Z").ToUniversalTime(),
-        Id = "d1a7a215-eea1-4fb1-899d-342f3d1cfc72",
+        EndAt = System.DateTime.Parse("2025-05-31T03:36:17.344Z").ToUniversalTime(),
+        Id = "26c27c05-ebde-4d55-b9f6-cb7398a33b0b",
         Labels = new List<string>() {
             "comedo",
         },
+        Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T08:57:17.311Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T09:44:26.622Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2025-12-30T21:22:10.606Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-31T14:22:08.945Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1368,15 +1377,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "74d98fb8-9e4a-4d47-85bd-2535faeb2eda",
+        Id = "d3b608e0-44e2-4d2e-85f2-c1ad480ff726",
         Labels = new List<string>() {
             "coma",
             "accedo",
             "termes",
         },
+        Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T08:09:23.785Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T12:23:01.557Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1412,6 +1422,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1428,14 +1439,15 @@ PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-23T02:02:57.434Z").ToUniversalTime(),
-        Id = "6624352c-2e08-4e9a-adf3-2d78db23eb51",
+        EndAt = System.DateTime.Parse("2026-06-23T21:52:21.627Z").ToUniversalTime(),
+        Id = "869bae61-f58e-4402-b994-a312769b2578",
         LanguageLocale = "fr-FR",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-07T10:28:12.097Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-08T04:57:58.798Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-12T23:40:28.087Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T06:34:50.000Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1471,6 +1483,7 @@ Update an insertionorder
 <!-- UsageSnippet language="csharp" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1482,10 +1495,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "a73dc412-5ed8-471f-8513-4b7c60523e4f",
+        Id = "ab83c275-c439-4b76-98be-ffc1cc57fa6d",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:20:04.993Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:31:30.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1535,17 +1549,13 @@ PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "31f3899b-c773-4568-b132-1180128b1a08",
-        Managers = new List<AdsManager>() {
-            new AdsManager() {
-                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
-                Name = "Parker, Leannon and Gibson",
-            },
-        },
+        Id = "c4087d92-30d0-452b-b23c-15cf3a3a2225",
+        Managers = new List<AdsManager>() {},
+        Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-27T05:47:33.394Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T00:40:47.368Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1821,6 +1831,7 @@ Update an ad
 <!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1838,10 +1849,11 @@ UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "cf15ec45-a04a-4af0-b933-85cfe8458cea",
+        Id = "c74c1abd-908d-4c98-81a1-ca265042f4f0",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-17T17:21:30.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T01:49:31.609Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1894,17 +1906,18 @@ UpdateAdsCampaignRequest req = new UpdateAdsCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-30T13:21:59.621Z").ToUniversalTime(),
-        Id = "d1a7a215-eea1-4fb1-899d-342f3d1cfc72",
+        EndAt = System.DateTime.Parse("2025-05-31T03:36:17.344Z").ToUniversalTime(),
+        Id = "26c27c05-ebde-4d55-b9f6-cb7398a33b0b",
         Labels = new List<string>() {
             "comedo",
         },
+        Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T08:57:17.311Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T09:44:26.622Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2025-12-30T21:22:10.606Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-31T14:22:08.945Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1952,15 +1965,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "74d98fb8-9e4a-4d47-85bd-2535faeb2eda",
+        Id = "d3b608e0-44e2-4d2e-85f2-c1ad480ff726",
         Labels = new List<string>() {
             "coma",
             "accedo",
             "termes",
         },
+        Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T08:09:23.785Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T12:23:01.557Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1996,6 +2010,7 @@ Update a group
 <!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2012,14 +2027,15 @@ UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-23T02:02:57.434Z").ToUniversalTime(),
-        Id = "6624352c-2e08-4e9a-adf3-2d78db23eb51",
+        EndAt = System.DateTime.Parse("2026-06-23T21:52:21.627Z").ToUniversalTime(),
+        Id = "869bae61-f58e-4402-b994-a312769b2578",
         LanguageLocale = "fr-FR",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-07T10:28:12.097Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-08T04:57:58.798Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-12T23:40:28.087Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T06:34:50.000Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2055,6 +2071,7 @@ Update an insertionorder
 <!-- UsageSnippet language="csharp" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2066,10 +2083,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "a73dc412-5ed8-471f-8513-4b7c60523e4f",
+        Id = "ab83c275-c439-4b76-98be-ffc1cc57fa6d",
+        Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:20:04.993Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:31:30.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2119,17 +2137,13 @@ UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "31f3899b-c773-4568-b132-1180128b1a08",
-        Managers = new List<AdsManager>() {
-            new AdsManager() {
-                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
-                Name = "Parker, Leannon and Gibson",
-            },
-        },
+        Id = "c4087d92-30d0-452b-b23c-15cf3a3a2225",
+        Managers = new List<AdsManager>() {},
+        Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-27T05:47:33.394Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T00:40:47.368Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

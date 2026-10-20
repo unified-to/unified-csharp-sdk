@@ -52,4 +52,5 @@ var value = CreateShippingShipmentQueryParamFields.Id;
 | `CarrierName`               | carrier_name                |
 | `TrackingUrl`               | tracking_url                |
 | `Lineitems`                 | lineitems                   |
+| `Metadata`                  | metadata                    |
 | `Raw`                       | raw                         |

@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Requests
         AccountId,
         [JsonProperty("lineitems")]
         Lineitems,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

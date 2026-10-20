@@ -24,4 +24,5 @@ var value = GetAccountingBalancesheetQueryParamFields.Id;
 | `Assets`          | assets            |
 | `Liabilities`     | liabilities       |
 | `Equity`          | equity            |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

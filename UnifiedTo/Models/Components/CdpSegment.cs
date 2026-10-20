@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CdpMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The name of the segment/audience.
         /// </summary>

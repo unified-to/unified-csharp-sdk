@@ -31,32 +31,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Lead.CreateCrmLeadAsync(
     crmLead: new CrmLead() {
         Address = new PropertyCrmLeadAddress() {
-            Address1 = "528 Forest Road",
-            Address2 = "Apt. 643",
-            City = "Palm Springs",
+            Address1 = "87206 Hudson Street",
+            City = "Leslieboro",
             CountryCode = "US",
-            PostalCode = "55624-6499",
-            Region = "New Jersey",
-            RegionCode = "LA",
+            PostalCode = "49909-1183",
+            Region = "Michigan",
+            RegionCode = "MO",
         },
         CompanyName = "Tillman - Wiegand",
         CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Velda.Sporer16@yahoo.com",
-                Type = CrmEmailType.Other,
-            },
-            new CrmEmail() {
-                Email = "Velda.Sporer@yahoo.com",
-                Type = CrmEmailType.Home,
+                Email = "velda.sporer@icloud.com",
+                Type = CrmEmailType.Work,
             },
         },
         FirstName = "Velda",
-        Id = "6eb0f4f5-0b31-4449-b5ad-5bf45815d47f",
+        Id = "d3466dda-7c51-471e-8884-b433dfcd5eb2",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
-            "https://ruddy-unblinking.info/",
+            "https://www.linkedin.com/in/velda-sporer",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -66,7 +61,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "41a6d19a-27cd-4f7a-b482-5413f1e3616d",
+                Id = "eed32765-2330-4461-97e8-4f8322fb5c72",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -75,20 +70,24 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         Name = "Velda Sporer",
-        Source = "aetas",
-        Status = "vesco",
+        Source = "Advertisement",
+        Status = "New",
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(955) 643-9849",
-                Type = CrmTelephoneType.Other,
+                Telephone = "(841) 271-0595",
+                Type = CrmTelephoneType.Fax,
             },
             new CrmTelephone() {
-                Telephone = "(621) 811-8800",
-                Type = CrmTelephoneType.Work,
+                Telephone = "(664) 498-4952",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(281) 288-0037",
+                Type = CrmTelephoneType.Other,
             },
         },
-        Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T17:20:32.275Z").ToUniversalTime(),
+        Title = "International Factors Administrator",
+        UpdatedAt = System.DateTime.Parse("2020-05-17T19:06:35.607Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -219,32 +218,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
     CrmLead = new CrmLead() {
         Address = new PropertyCrmLeadAddress() {
-            Address1 = "528 Forest Road",
-            Address2 = "Apt. 643",
-            City = "Palm Springs",
+            Address1 = "87206 Hudson Street",
+            City = "Leslieboro",
             CountryCode = "US",
-            PostalCode = "55624-6499",
-            Region = "New Jersey",
-            RegionCode = "LA",
+            PostalCode = "49909-1183",
+            Region = "Michigan",
+            RegionCode = "MO",
         },
         CompanyName = "Tillman - Wiegand",
         CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Velda.Sporer16@yahoo.com",
-                Type = CrmEmailType.Other,
-            },
-            new CrmEmail() {
-                Email = "Velda.Sporer@yahoo.com",
-                Type = CrmEmailType.Home,
+                Email = "velda.sporer@icloud.com",
+                Type = CrmEmailType.Work,
             },
         },
         FirstName = "Velda",
-        Id = "4de294d7-e6bb-4f80-bd73-f653a29dd617",
+        Id = "fe571748-f6f5-47e6-8efc-374dfab63d27",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
-            "https://ruddy-unblinking.info/",
+            "https://www.linkedin.com/in/velda-sporer",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -254,7 +248,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "4cdd845a-0eab-4b3d-810a-f572ae342d2f",
+                Id = "bbdd7d6b-e833-40f5-863c-5dcc04d14a4d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -263,20 +257,24 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Name = "Velda Sporer",
-        Source = "aetas",
-        Status = "vesco",
+        Source = "Advertisement",
+        Status = "New",
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(955) 643-9849",
-                Type = CrmTelephoneType.Other,
+                Telephone = "(841) 271-0595",
+                Type = CrmTelephoneType.Fax,
             },
             new CrmTelephone() {
-                Telephone = "(621) 811-8800",
-                Type = CrmTelephoneType.Work,
+                Telephone = "(664) 498-4952",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(281) 288-0037",
+                Type = CrmTelephoneType.Other,
             },
         },
-        Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T17:20:32.277Z").ToUniversalTime(),
+        Title = "International Factors Administrator",
+        UpdatedAt = System.DateTime.Parse("2020-05-17T19:06:35.611Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -364,32 +362,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
     CrmLead = new CrmLead() {
         Address = new PropertyCrmLeadAddress() {
-            Address1 = "528 Forest Road",
-            Address2 = "Apt. 643",
-            City = "Palm Springs",
+            Address1 = "87206 Hudson Street",
+            City = "Leslieboro",
             CountryCode = "US",
-            PostalCode = "55624-6499",
-            Region = "New Jersey",
-            RegionCode = "LA",
+            PostalCode = "49909-1183",
+            Region = "Michigan",
+            RegionCode = "MO",
         },
         CompanyName = "Tillman - Wiegand",
         CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
         Emails = new List<CrmEmail>() {
             new CrmEmail() {
-                Email = "Velda.Sporer16@yahoo.com",
-                Type = CrmEmailType.Other,
-            },
-            new CrmEmail() {
-                Email = "Velda.Sporer@yahoo.com",
-                Type = CrmEmailType.Home,
+                Email = "velda.sporer@icloud.com",
+                Type = CrmEmailType.Work,
             },
         },
         FirstName = "Velda",
-        Id = "4de294d7-e6bb-4f80-bd73-f653a29dd617",
+        Id = "fe571748-f6f5-47e6-8efc-374dfab63d27",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
-            "https://ruddy-unblinking.info/",
+            "https://www.linkedin.com/in/velda-sporer",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -399,7 +392,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "4cdd845a-0eab-4b3d-810a-f572ae342d2f",
+                Id = "bbdd7d6b-e833-40f5-863c-5dcc04d14a4d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -408,20 +401,24 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Name = "Velda Sporer",
-        Source = "aetas",
-        Status = "vesco",
+        Source = "Advertisement",
+        Status = "New",
         Telephones = new List<CrmTelephone>() {
             new CrmTelephone() {
-                Telephone = "(955) 643-9849",
-                Type = CrmTelephoneType.Other,
+                Telephone = "(841) 271-0595",
+                Type = CrmTelephoneType.Fax,
             },
             new CrmTelephone() {
-                Telephone = "(621) 811-8800",
-                Type = CrmTelephoneType.Work,
+                Telephone = "(664) 498-4952",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(281) 288-0037",
+                Type = CrmTelephoneType.Other,
             },
         },
-        Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T17:20:32.277Z").ToUniversalTime(),
+        Title = "International Factors Administrator",
+        UpdatedAt = System.DateTime.Parse("2020-05-17T19:06:35.611Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

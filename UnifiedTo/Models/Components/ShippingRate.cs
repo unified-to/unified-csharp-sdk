@@ -38,6 +38,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ShippingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Multiple packages (alternative to package).
         /// </summary>

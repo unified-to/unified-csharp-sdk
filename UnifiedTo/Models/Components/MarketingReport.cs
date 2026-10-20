@@ -119,6 +119,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_id")]
         public string? ListId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<MarketingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Open rate (decimal).
         /// </summary>

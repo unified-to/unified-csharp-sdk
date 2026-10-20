@@ -20,6 +20,7 @@ Create a deduction
 <!-- UsageSnippet language="csharp" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" example="hris_deduction" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,20 +30,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Deduction.CreateHrisDeductionAsync(
     hrisDeduction: new HrisDeduction() {
-        Amount = 139655D,
-        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        Amount = 564D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeChild,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EmployerAmount = 22611D,
-        EmployerType = EmployerType.Fixed,
-        EndAt = System.DateTime.Parse("2026-06-21T08:54:34.205Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Biweekly,
-        GarnishmentType = GarnishmentType.Other,
-        Id = "ac4c58ee-88af-4599-9089-5cd886bc7044",
-        IsActive = false,
+        EmployerAmount = 80510D,
+        EmployerType = EmployerType.Percentage,
+        Frequency = HrisDeductionFrequency.OneTime,
+        GarnishmentType = GarnishmentType.ChildSupport,
+        Id = "bcfbe17f-496d-45bd-a172-182bdd098e0a",
+        IsActive = true,
+        MaxAmount = 21794D,
+        Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-13T17:46:42.298Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-14T09:35:07.259Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-21T00:21:58.193Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-21T13:08:20.410Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -161,6 +163,7 @@ Update a deduction
 <!-- UsageSnippet language="csharp" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -171,20 +174,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
     HrisDeduction = new HrisDeduction() {
-        Amount = 139655D,
-        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        Amount = 564D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeChild,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EmployerAmount = 22611D,
-        EmployerType = EmployerType.Fixed,
-        EndAt = System.DateTime.Parse("2026-06-21T08:54:34.221Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Biweekly,
-        GarnishmentType = GarnishmentType.Other,
-        Id = "d898a4d2-ecec-43c6-9589-9770eb9503f5",
-        IsActive = false,
+        EmployerAmount = 80510D,
+        EmployerType = EmployerType.Percentage,
+        Frequency = HrisDeductionFrequency.OneTime,
+        GarnishmentType = GarnishmentType.ChildSupport,
+        Id = "162562d9-52ee-48e3-9fe6-c308f36aa54a",
+        IsActive = true,
+        MaxAmount = 21794D,
+        Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-13T17:46:42.311Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-14T09:35:07.270Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-21T00:21:58.203Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-21T13:08:20.418Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -260,6 +264,7 @@ Update a deduction
 <!-- UsageSnippet language="csharp" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -270,20 +275,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
     HrisDeduction = new HrisDeduction() {
-        Amount = 139655D,
-        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        Amount = 564D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeChild,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EmployerAmount = 22611D,
-        EmployerType = EmployerType.Fixed,
-        EndAt = System.DateTime.Parse("2026-06-21T08:54:34.221Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Biweekly,
-        GarnishmentType = GarnishmentType.Other,
-        Id = "d898a4d2-ecec-43c6-9589-9770eb9503f5",
-        IsActive = false,
+        EmployerAmount = 80510D,
+        EmployerType = EmployerType.Percentage,
+        Frequency = HrisDeductionFrequency.OneTime,
+        GarnishmentType = GarnishmentType.ChildSupport,
+        Id = "162562d9-52ee-48e3-9fe6-c308f36aa54a",
+        IsActive = true,
+        MaxAmount = 21794D,
+        Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-13T17:46:42.311Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-14T09:35:07.270Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-21T00:21:58.203Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-21T13:08:20.418Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

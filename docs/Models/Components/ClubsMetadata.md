@@ -1,0 +1,13 @@
+# ClubsMetadata
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ExtraData`                                                                 | [ClubsMetadataExtraData](../../Models/Components/ClubsMetadataExtraData.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Format`                                                                    | [ClubsMetadataFormat](../../Models/Components/ClubsMetadataFormat.md)       | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Id`                                                                        | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Namespace`                                                                 | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Slug`                                                                      | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Value`                                                                     | [ClubsMetadataValue](../../Models/Components/ClubsMetadataValue.md)         | :heavy_minus_sign:                                                          | N/A                                                                         |

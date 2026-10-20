@@ -28,4 +28,5 @@ var value = ListAccountingCashflowsQueryParamFields.Id;
 | `OperatingSections`       | operating_sections        |
 | `InvestingSections`       | investing_sections        |
 | `FinancingSections`       | financing_sections        |
+| `Metadata`                | metadata                  |
 | `Raw`                     | raw                       |

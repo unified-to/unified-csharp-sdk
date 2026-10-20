@@ -21,6 +21,8 @@ namespace UnifiedTo.Models.Requests
         Name,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

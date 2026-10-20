@@ -50,6 +50,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("language")]
         public string? Language { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<MarketingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The list's name.
         /// </summary>

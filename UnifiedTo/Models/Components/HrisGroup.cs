@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("manager_ids")]
         public List<string>? ManagerIds { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

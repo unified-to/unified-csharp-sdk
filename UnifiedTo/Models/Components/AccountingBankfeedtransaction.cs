@@ -88,6 +88,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("merchant_name")]
         public string? MerchantName { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// ref -&gt; accounting Organization this record belongs to.
         /// </summary>

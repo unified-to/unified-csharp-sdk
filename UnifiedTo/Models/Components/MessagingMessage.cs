@@ -83,6 +83,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("message_thread_identifier")]
         public string? MessageThreadIdentifier { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<MessagingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Represents the ID of the immediate predecessor message in the thread. Identifies a specific message to which the current message directly replies.
         /// </summary>

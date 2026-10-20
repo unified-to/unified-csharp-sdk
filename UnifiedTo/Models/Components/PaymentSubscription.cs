@@ -94,6 +94,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<PaymentLineitem>? Lineitems { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<PaymentMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// the month on which to charge a customer (1-12). Only applies when the interval_unit is YEAR.
         /// </summary>

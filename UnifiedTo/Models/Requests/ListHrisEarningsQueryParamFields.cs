@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         PayslipId,
         [JsonProperty("notes")]
         Notes,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

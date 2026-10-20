@@ -40,4 +40,5 @@ var value = GetAccountingContactQueryParamFields.Id;
 | `BalanceAmount`      | balance_amount       |
 | `Website`            | website              |
 | `Notes`              | notes                |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

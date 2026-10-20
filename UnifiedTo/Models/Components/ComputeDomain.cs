@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_primary")]
         public bool? IsPrimary { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ComputeMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The hostname (eg. app.example.com).
         /// </summary>

@@ -61,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         ExchangeRate,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

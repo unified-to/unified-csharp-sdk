@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         CoverageLevel,
         [JsonProperty("currency")]
         Currency,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

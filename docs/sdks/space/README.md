@@ -20,6 +20,7 @@ Create a space
 <!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" example="kms_space" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,10 +32,11 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "ce9d60de-03aa-475b-af90-dd6c1e14a95e",
+        Id = "fc81a7d6-fdf3-4075-b681-fd53eae19c64",
         IsActive = false,
+        Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-28T07:12:59.910Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-28T23:45:24.073Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -153,6 +155,7 @@ Update a space
 <!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -165,10 +168,11 @@ PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "f5b6024f-5334-4fa7-b5b8-89dcea591599",
+        Id = "92e9573b-1e68-48c5-8df2-d66625a1ef9e",
         IsActive = false,
+        Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-28T07:12:59.917Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-28T23:45:24.080Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -244,6 +248,7 @@ Update a space
 <!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -256,10 +261,11 @@ UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "f5b6024f-5334-4fa7-b5b8-89dcea591599",
+        Id = "92e9573b-1e68-48c5-8df2-d66625a1ef9e",
         IsActive = false,
+        Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-28T07:12:59.917Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-28T23:45:24.080Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

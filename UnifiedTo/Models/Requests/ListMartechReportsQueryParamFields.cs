@@ -69,6 +69,8 @@ namespace UnifiedTo.Models.Requests
         HumanUniqueOpens,
         [JsonProperty("human_open_rate")]
         HumanOpenRate,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

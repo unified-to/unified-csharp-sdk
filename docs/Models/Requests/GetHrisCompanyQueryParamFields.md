@@ -19,4 +19,5 @@ var value = GetHrisCompanyQueryParamFields.Id;
 | `Name`      | name        |
 | `LegalName` | legal_name  |
 | `Address`   | address     |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         WebUrl,
         [JsonProperty("parent_id")]
         ParentId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

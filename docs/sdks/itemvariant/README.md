@@ -30,51 +30,33 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
     commerceItemvariant: new CommerceItemvariant() {
-        AvailableAt = System.DateTime.Parse("2022-02-02T16:10:33.503Z").ToUniversalTime(),
+        AvailableAt = System.DateTime.Parse("2022-02-06T18:14:41.644Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
-        Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
-        Height = 52D,
-        Id = "01b74347-b259-4cd6-978a-29e043a2d60d",
-        IsActive = false,
+        Description = "Stylish Salad designed to make you stand out with little looks",
+        Height = 54D,
+        Id = "d6b8a624-5e07-4e61-a905-1c364a9aa45a",
+        IsActive = true,
         IsFeatured = false,
         IsVisible = false,
-        Length = 94D,
+        Length = 92D,
         Media = new List<CommerceItemMedia>() {
             new CommerceItemMedia() {
-                Alt = "Calcar delibero cursim summisse.",
-                Height = 394D,
-                Id = "298793f0-9e6e-4f46-8ad7-94fb85412f0b",
+                Alt = "Hic desipio thorax.",
+                Height = 961D,
+                Id = "bae594e0-bec6-4ae3-be76-53ec9eb52487",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "681cfc4d-9e3a-4353-8403-e9f85ab9a973",
-                        Slug = "illo",
+                        Id = "26d04584-4936-41d5-9f5a-d336150f78c2",
+                        Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
-                            "quia"
+                            "textus"
                         ),
                     },
                 },
-                Position = 92D,
+                Position = 72D,
                 Type = CommerceItemMediaType.Image,
-                Url = "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
-                Width = 54D,
-            },
-            new CommerceItemMedia() {
-                Alt = "Civitas acies substantia tergo.",
-                Height = 351D,
-                Id = "56b8fcfd-e09a-4b60-b921-83e8a6639043",
-                Metadata = new List<CommerceMetadata>() {
-                    new CommerceMetadata() {
-                        Id = "3a1bd105-ab9a-4998-8254-cc33eb6641ab",
-                        Slug = "libero",
-                        Value = CommerceMetadataValue.CreateStr(
-                            "capitulus"
-                        ),
-                    },
-                },
-                Position = 44D,
-                Type = CommerceItemMediaType.Image,
-                Url = "https://loremflickr.com/2230/1237?lock=8628070842159966",
-                Width = 55D,
+                Url = "https://loremflickr.com/2126/721?lock=8820088623807162",
+                Width = 35D,
             },
         },
         Metadata = new List<CommerceMetadata>() {
@@ -85,57 +67,52 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "06aab4da-b604-44ee-9561-4c2532394d35",
+                Id = "5f56402d-f4bc-4347-90dd-0c4045252973",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
-                    "nihil"
+                    "absens"
                 ),
             },
         },
-        Name = "Keyboard",
+        Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "9d179cdb-b3c0-4d54-a087-821d811a5882",
-                Name = "Steel",
-                Position = 97D,
+                Id = "81b6a33c-5179-4c8a-99b2-ef762b7f5ca1",
+                Name = "Color",
+                Position = 1D,
                 Values = new List<string>() {
-                    "Granite",
-                    "Plastic",
+                    "olive",
+                },
+            },
+            new CommerceItemOption() {
+                Id = "c48119e3-b65b-46ea-9ddb-d4eaf76520c7",
+                Name = "Size",
+                Position = 2D,
+                Values = new List<string>() {
+                    "S",
                 },
             },
         },
         Prices = new List<CommerceItemPrice>() {
             new CommerceItemPrice() {
-                CompareAtPrice = 3745D,
-                Currency = "COP",
-                Price = 4913D,
-            },
-            new CommerceItemPrice() {
-                CompareAtPrice = 438D,
-                Currency = "PHP",
-                Price = 1378D,
-            },
-            new CommerceItemPrice() {
-                CompareAtPrice = 1614D,
-                Currency = "PHP",
-                Price = 8702D,
+                Currency = "USD",
+                Price = 382.23D,
             },
         },
-        PublicDescription = "Stylish Soap designed to make you stand out with insistent looks",
-        PublicName = "Keyboard",
+        PublicDescription = "Stylish Cheese designed to make you stand out with grave looks",
+        PublicName = "Chair",
         RequiresShipping = false,
         SizeUnit = SizeUnit.Cm,
-        Sku = "978-0-7051-0955-0",
+        Sku = "978-1-368-44270-1",
         Tags = new List<string>() {
-            "vomito",
-            "custodia",
+            "deserunt",
         },
-        TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-15T13:55:20.190Z").ToUniversalTime(),
-        Weight = 61D,
+        TotalStock = 436D,
+        UpdatedAt = System.DateTime.Parse("2026-03-08T15:05:43.163Z").ToUniversalTime(),
+        Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
-        Width = 26D,
+        Width = 40D,
     },
     connectionId: "<id>"
 );
@@ -265,51 +242,33 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
     CommerceItemvariant = new CommerceItemvariant() {
-        AvailableAt = System.DateTime.Parse("2022-02-02T16:10:33.503Z").ToUniversalTime(),
+        AvailableAt = System.DateTime.Parse("2022-02-06T18:14:41.644Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
-        Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
-        Height = 52D,
-        Id = "4d887027-2de7-46d1-9e73-4ac9443cbc37",
-        IsActive = false,
+        Description = "Stylish Salad designed to make you stand out with little looks",
+        Height = 54D,
+        Id = "fa00b208-aa54-4ca4-ab5e-2ca2c0deca32",
+        IsActive = true,
         IsFeatured = false,
         IsVisible = false,
-        Length = 94D,
+        Length = 92D,
         Media = new List<CommerceItemMedia>() {
             new CommerceItemMedia() {
-                Alt = "Calcar delibero cursim summisse.",
-                Height = 394D,
-                Id = "3fa772dc-71cc-477d-a290-5db8c375c715",
+                Alt = "Hic desipio thorax.",
+                Height = 961D,
+                Id = "c2020763-5ad8-42bd-8d60-d60319607acc",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "08588754-dc85-4fb7-a3dd-7f33c3d9dbec",
-                        Slug = "illo",
+                        Id = "c858dfa3-505f-4f36-bcd1-8b8a88ef9b70",
+                        Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
-                            "quia"
+                            "textus"
                         ),
                     },
                 },
-                Position = 92D,
+                Position = 72D,
                 Type = CommerceItemMediaType.Image,
-                Url = "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
-                Width = 54D,
-            },
-            new CommerceItemMedia() {
-                Alt = "Civitas acies substantia tergo.",
-                Height = 351D,
-                Id = "a52d675e-8808-4e77-b06f-1817144fe9b6",
-                Metadata = new List<CommerceMetadata>() {
-                    new CommerceMetadata() {
-                        Id = "f2ab4835-68c9-45d0-beff-e3f34ff449f0",
-                        Slug = "libero",
-                        Value = CommerceMetadataValue.CreateStr(
-                            "capitulus"
-                        ),
-                    },
-                },
-                Position = 44D,
-                Type = CommerceItemMediaType.Image,
-                Url = "https://loremflickr.com/2230/1237?lock=8628070842159966",
-                Width = 55D,
+                Url = "https://loremflickr.com/2126/721?lock=8820088623807162",
+                Width = 35D,
             },
         },
         Metadata = new List<CommerceMetadata>() {
@@ -320,57 +279,52 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "305e9867-8d9f-46c3-a8e5-7cbf159c6b79",
+                Id = "d5e4799b-d5e0-4592-b168-9b4842312013",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
-                    "nihil"
+                    "absens"
                 ),
             },
         },
-        Name = "Keyboard",
+        Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "d937821f-b18f-40c9-ad4d-9f7005edcdf8",
-                Name = "Steel",
-                Position = 97D,
+                Id = "b8264f78-b2e4-472a-b890-a267376376ad",
+                Name = "Color",
+                Position = 1D,
                 Values = new List<string>() {
-                    "Granite",
-                    "Plastic",
+                    "olive",
+                },
+            },
+            new CommerceItemOption() {
+                Id = "70bedc6c-cf77-4704-af4c-c38664543911",
+                Name = "Size",
+                Position = 2D,
+                Values = new List<string>() {
+                    "S",
                 },
             },
         },
         Prices = new List<CommerceItemPrice>() {
             new CommerceItemPrice() {
-                CompareAtPrice = 3745D,
-                Currency = "COP",
-                Price = 4913D,
-            },
-            new CommerceItemPrice() {
-                CompareAtPrice = 438D,
-                Currency = "PHP",
-                Price = 1378D,
-            },
-            new CommerceItemPrice() {
-                CompareAtPrice = 1614D,
-                Currency = "PHP",
-                Price = 8702D,
+                Currency = "USD",
+                Price = 382.23D,
             },
         },
-        PublicDescription = "Stylish Soap designed to make you stand out with insistent looks",
-        PublicName = "Keyboard",
+        PublicDescription = "Stylish Cheese designed to make you stand out with grave looks",
+        PublicName = "Chair",
         RequiresShipping = false,
         SizeUnit = SizeUnit.Cm,
-        Sku = "978-0-7051-0955-0",
+        Sku = "978-1-368-44270-1",
         Tags = new List<string>() {
-            "vomito",
-            "custodia",
+            "deserunt",
         },
-        TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-15T13:55:20.215Z").ToUniversalTime(),
-        Weight = 61D,
+        TotalStock = 436D,
+        UpdatedAt = System.DateTime.Parse("2026-03-08T15:05:43.193Z").ToUniversalTime(),
+        Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
-        Width = 26D,
+        Width = 40D,
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -457,51 +411,33 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
     CommerceItemvariant = new CommerceItemvariant() {
-        AvailableAt = System.DateTime.Parse("2022-02-02T16:10:33.503Z").ToUniversalTime(),
+        AvailableAt = System.DateTime.Parse("2022-02-06T18:14:41.644Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
-        Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
-        Height = 52D,
-        Id = "4d887027-2de7-46d1-9e73-4ac9443cbc37",
-        IsActive = false,
+        Description = "Stylish Salad designed to make you stand out with little looks",
+        Height = 54D,
+        Id = "fa00b208-aa54-4ca4-ab5e-2ca2c0deca32",
+        IsActive = true,
         IsFeatured = false,
         IsVisible = false,
-        Length = 94D,
+        Length = 92D,
         Media = new List<CommerceItemMedia>() {
             new CommerceItemMedia() {
-                Alt = "Calcar delibero cursim summisse.",
-                Height = 394D,
-                Id = "3fa772dc-71cc-477d-a290-5db8c375c715",
+                Alt = "Hic desipio thorax.",
+                Height = 961D,
+                Id = "c2020763-5ad8-42bd-8d60-d60319607acc",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "08588754-dc85-4fb7-a3dd-7f33c3d9dbec",
-                        Slug = "illo",
+                        Id = "c858dfa3-505f-4f36-bcd1-8b8a88ef9b70",
+                        Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
-                            "quia"
+                            "textus"
                         ),
                     },
                 },
-                Position = 92D,
+                Position = 72D,
                 Type = CommerceItemMediaType.Image,
-                Url = "https://picsum.photos/seed/u0YdHqlRu/2007/3208",
-                Width = 54D,
-            },
-            new CommerceItemMedia() {
-                Alt = "Civitas acies substantia tergo.",
-                Height = 351D,
-                Id = "a52d675e-8808-4e77-b06f-1817144fe9b6",
-                Metadata = new List<CommerceMetadata>() {
-                    new CommerceMetadata() {
-                        Id = "f2ab4835-68c9-45d0-beff-e3f34ff449f0",
-                        Slug = "libero",
-                        Value = CommerceMetadataValue.CreateStr(
-                            "capitulus"
-                        ),
-                    },
-                },
-                Position = 44D,
-                Type = CommerceItemMediaType.Image,
-                Url = "https://loremflickr.com/2230/1237?lock=8628070842159966",
-                Width = 55D,
+                Url = "https://loremflickr.com/2126/721?lock=8820088623807162",
+                Width = 35D,
             },
         },
         Metadata = new List<CommerceMetadata>() {
@@ -512,57 +448,52 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "305e9867-8d9f-46c3-a8e5-7cbf159c6b79",
+                Id = "d5e4799b-d5e0-4592-b168-9b4842312013",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
-                    "nihil"
+                    "absens"
                 ),
             },
         },
-        Name = "Keyboard",
+        Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "d937821f-b18f-40c9-ad4d-9f7005edcdf8",
-                Name = "Steel",
-                Position = 97D,
+                Id = "b8264f78-b2e4-472a-b890-a267376376ad",
+                Name = "Color",
+                Position = 1D,
                 Values = new List<string>() {
-                    "Granite",
-                    "Plastic",
+                    "olive",
+                },
+            },
+            new CommerceItemOption() {
+                Id = "70bedc6c-cf77-4704-af4c-c38664543911",
+                Name = "Size",
+                Position = 2D,
+                Values = new List<string>() {
+                    "S",
                 },
             },
         },
         Prices = new List<CommerceItemPrice>() {
             new CommerceItemPrice() {
-                CompareAtPrice = 3745D,
-                Currency = "COP",
-                Price = 4913D,
-            },
-            new CommerceItemPrice() {
-                CompareAtPrice = 438D,
-                Currency = "PHP",
-                Price = 1378D,
-            },
-            new CommerceItemPrice() {
-                CompareAtPrice = 1614D,
-                Currency = "PHP",
-                Price = 8702D,
+                Currency = "USD",
+                Price = 382.23D,
             },
         },
-        PublicDescription = "Stylish Soap designed to make you stand out with insistent looks",
-        PublicName = "Keyboard",
+        PublicDescription = "Stylish Cheese designed to make you stand out with grave looks",
+        PublicName = "Chair",
         RequiresShipping = false,
         SizeUnit = SizeUnit.Cm,
-        Sku = "978-0-7051-0955-0",
+        Sku = "978-1-368-44270-1",
         Tags = new List<string>() {
-            "vomito",
-            "custodia",
+            "deserunt",
         },
-        TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-15T13:55:20.215Z").ToUniversalTime(),
-        Weight = 61D,
+        TotalStock = 436D,
+        UpdatedAt = System.DateTime.Parse("2026-03-08T15:05:43.193Z").ToUniversalTime(),
+        Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
-        Width = 26D,
+        Width = 40D,
     },
     ConnectionId = "<id>",
     Id = "<id>",

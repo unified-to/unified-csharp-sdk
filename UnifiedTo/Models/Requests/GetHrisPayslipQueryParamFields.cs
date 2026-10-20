@@ -65,6 +65,8 @@ namespace UnifiedTo.Models.Requests
         GrossYtdAmount,
         [JsonProperty("net_ytd_amount")]
         NetYtdAmount,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

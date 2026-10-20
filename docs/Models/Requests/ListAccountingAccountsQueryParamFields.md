@@ -27,4 +27,5 @@ var value = ListAccountingAccountsQueryParamFields.Id;
 | `ParentId`            | parent_id             |
 | `Taxonomy`            | taxonomy              |
 | `OrganizationId`      | organization_id       |
+| `Metadata`            | metadata              |
 | `Raw`                 | raw                   |

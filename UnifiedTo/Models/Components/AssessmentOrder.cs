@@ -64,6 +64,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AssessmentMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Assessment package ID.
         /// </summary>

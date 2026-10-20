@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<PaymentPayoutLineitem>? Lineitems { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<PaymentMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// total_amount minus fee_amount.
         /// </summary>

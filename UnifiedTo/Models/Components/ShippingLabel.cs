@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("label_url")]
         public string? LabelUrl { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ShippingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Rate used for this label; points to ShippingRate.
         /// </summary>

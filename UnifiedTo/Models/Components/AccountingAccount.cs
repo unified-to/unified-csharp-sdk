@@ -64,6 +64,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_payable")]
         public bool? IsPayable { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Account name.
         /// </summary>

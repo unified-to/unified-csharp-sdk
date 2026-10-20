@@ -24,4 +24,5 @@ var value = ListComputeUsagesQueryParamFields.Id;
 | `Unit`       | unit         |
 | `CostAmount` | cost_amount  |
 | `Currency`   | currency     |
+| `Metadata`   | metadata     |
 | `Raw`        | raw          |

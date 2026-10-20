@@ -42,4 +42,5 @@ var value = ListAdsCreativesQueryParamFields.Id;
 | `Path2`                      | path2                        |
 | `Data`                       | data                         |
 | `Labels`                     | labels                       |
+| `Metadata`                   | metadata                     |
 | `Raw`                        | raw                          |

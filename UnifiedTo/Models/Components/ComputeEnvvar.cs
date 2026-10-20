@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_secret")]
         public bool? IsSecret { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ComputeMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Variable name.
         /// </summary>

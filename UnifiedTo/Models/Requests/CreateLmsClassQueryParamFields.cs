@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Instructors,
         [JsonProperty("students")]
         Students,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

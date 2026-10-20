@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location")]
         public string? Location { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ComputeMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Display name of the region.
         /// </summary>

@@ -19,4 +19,5 @@ var value = ListTaskChangesQueryParamFields.Id;
 | `TaskId`    | task_id     |
 | `UserId`    | user_id     |
 | `Items`     | items       |
+| `Metadata`  | metadata    |
 | `Raw`       | raw         |

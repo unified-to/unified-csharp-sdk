@@ -32,7 +32,7 @@ var res = await sdk.Class.CreateLmsClassAsync(
     lmsClass: new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "f8914801-5d94-4d1b-94fd-82277f330d17",
+        Id = "b407555e-028a-479b-aa8a-56b3dc0fa6b2",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -51,9 +51,10 @@ var res = await sdk.Class.CreateLmsClassAsync(
                 Url = "https://loremflickr.com/487/921?lock=5127962071241632",
             },
         },
+        Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-02T04:47:29.986Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-02T21:46:27.892Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -185,7 +186,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "64e9f979-7b46-4c38-81e9-39d4d17b939c",
+        Id = "9120c9fd-d152-43aa-b5ae-732078cef7b4",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -204,9 +205,10 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
                 Url = "https://loremflickr.com/487/921?lock=5127962071241632",
             },
         },
+        Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-02T04:47:30.000Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-02T21:46:27.904Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -295,7 +297,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "64e9f979-7b46-4c38-81e9-39d4d17b939c",
+        Id = "9120c9fd-d152-43aa-b5ae-732078cef7b4",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -314,9 +316,10 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
                 Url = "https://loremflickr.com/487/921?lock=5127962071241632",
             },
         },
+        Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-02T04:47:30.000Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-02T21:46:27.904Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

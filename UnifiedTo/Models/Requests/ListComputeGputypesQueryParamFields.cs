@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         Prices,
         [JsonProperty("availability")]
         Availability,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -64,6 +64,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_paid")]
         public bool? IsPaid { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// integration leave-type label before normalization.
         /// </summary>

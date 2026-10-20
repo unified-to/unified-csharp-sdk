@@ -52,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_acknowledged")]
         public bool? IsAcknowledged { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<PerformanceMetadata>? Metadata { get; set; }
+
         [JsonProperty("questions")]
         public List<PerformanceReviewQuestion>? Questions { get; set; }
 

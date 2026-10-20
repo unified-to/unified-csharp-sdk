@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Emails,
         [JsonProperty("telephones")]
         Telephones,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

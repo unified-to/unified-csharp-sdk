@@ -20,6 +20,7 @@ Create an interview
 <!-- UsageSnippet language="csharp" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" example="ats_interview" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,14 +31,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Interview.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-17T22:27:43.931Z").ToUniversalTime(),
-        ExternalEventXref = "a6629a2a-77be-4f80-a229-3bfcaf737864",
-        Id = "c240b5d5-cf78-4a6d-90e5-9028e763e349",
+        EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
+        Id = "86cc90bb-76c4-4409-a110-df09521d57d8",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
-        StartAt = System.DateTime.Parse("2025-06-10T14:50:33.357Z").ToUniversalTime(),
+        Metadata = new List<AtsMetadata>() {},
+        StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-03-02T23:19:53.973Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-23T05:51:58.569Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -156,6 +157,7 @@ Update an interview
 <!-- UsageSnippet language="csharp" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" example="ats_interview" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -167,14 +169,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-17T22:27:43.945Z").ToUniversalTime(),
-        ExternalEventXref = "98bd02e5-2a41-4874-a9ab-ad2d37813702",
-        Id = "3d646bb7-cb7e-41f9-bce3-b1e413f3da21",
+        EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
+        Id = "1c103830-0bd9-4159-8705-021ecdbb52bb",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
-        StartAt = System.DateTime.Parse("2025-06-10T14:50:33.370Z").ToUniversalTime(),
+        Metadata = new List<AtsMetadata>() {},
+        StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-03-02T23:19:53.989Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-23T05:51:58.574Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -250,6 +252,7 @@ Update an interview
 <!-- UsageSnippet language="csharp" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" example="ats_interview" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -261,14 +264,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-17T22:27:43.945Z").ToUniversalTime(),
-        ExternalEventXref = "98bd02e5-2a41-4874-a9ab-ad2d37813702",
-        Id = "3d646bb7-cb7e-41f9-bce3-b1e413f3da21",
+        EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
+        Id = "1c103830-0bd9-4159-8705-021ecdbb52bb",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
-        StartAt = System.DateTime.Parse("2025-06-10T14:50:33.370Z").ToUniversalTime(),
+        Metadata = new List<AtsMetadata>() {},
+        StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-03-02T23:19:53.989Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-23T05:51:58.574Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

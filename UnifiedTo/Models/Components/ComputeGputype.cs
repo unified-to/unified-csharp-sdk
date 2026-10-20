@@ -85,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("memory_mb")]
         public double? MemoryMb { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ComputeMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Display name of the type.
         /// </summary>

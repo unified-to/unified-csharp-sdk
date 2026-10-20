@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         TicketId,
         [JsonProperty("user_id")]
         UserId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

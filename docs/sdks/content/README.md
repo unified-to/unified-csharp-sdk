@@ -37,14 +37,8 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "f7224f95-ce1f-49aa-a41c-f293a1760d5d",
-        Instructors = new List<LmsReference>() {
-            new LmsReference() {
-                Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
-                Name = "Winston Ferry",
-            },
-        },
+        Id = "045d27ee-367e-4046-b2a4-d08f80e83e66",
+        Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
             "despecto",
@@ -52,14 +46,14 @@ var res = await sdk.Content.CreateLmsContentAsync(
         },
         Localizations = new List<LmsContentLocalization>() {
             new LmsContentLocalization() {
-                Description = "Numquam.",
+                Description = "Acervus.",
                 Language = "es",
-                Name = "validus",
+                Name = "talis",
             },
             new LmsContentLocalization() {
-                Description = "Callide.",
-                Language = "fr",
-                Name = "crux",
+                Description = "Ratione.",
+                Language = "es",
+                Name = "sint",
             },
         },
         Media = new List<LmsMedia>() {
@@ -100,10 +94,11 @@ var res = await sdk.Content.CreateLmsContentAsync(
                 Url = "https://loremflickr.com/3927/2086?lock=5199784913821481",
             },
         },
+        Metadata = new List<LmsMetadata>() {},
         Name = "ut",
-        ProviderName = "Berge LLC",
-        PublishedAt = System.DateTime.Parse("2023-11-08T11:32:09.080Z").ToUniversalTime(),
-        ShortDescription = "Commemoro.",
+        ProviderName = "Bins LLC",
+        PublishedAt = System.DateTime.Parse("2022-09-02T21:17:26.168Z").ToUniversalTime(),
+        ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
         },
@@ -117,7 +112,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-03T12:24:24.519Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-03T19:09:09.258Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -254,14 +249,8 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "31af44ba-0efe-4868-b5ad-2cc0feb5b131",
-        Instructors = new List<LmsReference>() {
-            new LmsReference() {
-                Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
-                Name = "Winston Ferry",
-            },
-        },
+        Id = "dec36b0c-cd07-4daf-96a6-5eeea92243c2",
+        Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
             "despecto",
@@ -269,14 +258,14 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         },
         Localizations = new List<LmsContentLocalization>() {
             new LmsContentLocalization() {
-                Description = "Numquam.",
+                Description = "Acervus.",
                 Language = "es",
-                Name = "validus",
+                Name = "talis",
             },
             new LmsContentLocalization() {
-                Description = "Callide.",
-                Language = "fr",
-                Name = "crux",
+                Description = "Ratione.",
+                Language = "es",
+                Name = "sint",
             },
         },
         Media = new List<LmsMedia>() {
@@ -317,10 +306,11 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
                 Url = "https://loremflickr.com/3927/2086?lock=5199784913821481",
             },
         },
+        Metadata = new List<LmsMetadata>() {},
         Name = "ut",
-        ProviderName = "Berge LLC",
-        PublishedAt = System.DateTime.Parse("2023-11-08T11:32:09.080Z").ToUniversalTime(),
-        ShortDescription = "Commemoro.",
+        ProviderName = "Bins LLC",
+        PublishedAt = System.DateTime.Parse("2022-09-02T21:17:26.177Z").ToUniversalTime(),
+        ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
         },
@@ -334,7 +324,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-03T12:24:24.528Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-03T19:09:09.268Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -428,14 +418,8 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "31af44ba-0efe-4868-b5ad-2cc0feb5b131",
-        Instructors = new List<LmsReference>() {
-            new LmsReference() {
-                Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
-                Name = "Winston Ferry",
-            },
-        },
+        Id = "dec36b0c-cd07-4daf-96a6-5eeea92243c2",
+        Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
             "despecto",
@@ -443,14 +427,14 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         },
         Localizations = new List<LmsContentLocalization>() {
             new LmsContentLocalization() {
-                Description = "Numquam.",
+                Description = "Acervus.",
                 Language = "es",
-                Name = "validus",
+                Name = "talis",
             },
             new LmsContentLocalization() {
-                Description = "Callide.",
-                Language = "fr",
-                Name = "crux",
+                Description = "Ratione.",
+                Language = "es",
+                Name = "sint",
             },
         },
         Media = new List<LmsMedia>() {
@@ -491,10 +475,11 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
                 Url = "https://loremflickr.com/3927/2086?lock=5199784913821481",
             },
         },
+        Metadata = new List<LmsMetadata>() {},
         Name = "ut",
-        ProviderName = "Berge LLC",
-        PublishedAt = System.DateTime.Parse("2023-11-08T11:32:09.080Z").ToUniversalTime(),
-        ShortDescription = "Commemoro.",
+        ProviderName = "Bins LLC",
+        PublishedAt = System.DateTime.Parse("2022-09-02T21:17:26.177Z").ToUniversalTime(),
+        ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
         },
@@ -508,7 +493,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-03T12:24:24.528Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-03T19:09:09.268Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -20,6 +20,7 @@ Create a branch
 <!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" example="repo_branch" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,10 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Branch.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "444c1bd7-acdc-41ca-a793-8bdfa3edc225",
-        Name = "voluptas",
+        Id = "f153941e-906c-47bc-ac31-f20cf8653968",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T02:24:18.420Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T04:45:31.955Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -152,6 +154,7 @@ Update a branch
 <!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -163,10 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "a056cb26-2176-48ec-af7e-96275f891762",
-        Name = "voluptas",
+        Id = "94846ca8-eb7d-4c38-82f9-30df682f7701",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T02:24:18.420Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T04:45:31.956Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -242,6 +246,7 @@ Update a branch
 <!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -253,10 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "a056cb26-2176-48ec-af7e-96275f891762",
-        Name = "voluptas",
+        Id = "94846ca8-eb7d-4c38-82f9-30df682f7701",
+        Metadata = new List<RepoMetadata>() {},
+        Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T02:24:18.420Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T04:45:31.956Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_ids")]
         public List<string>? ListIds { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<MarketingMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Campaign nametitle.
         /// </summary>

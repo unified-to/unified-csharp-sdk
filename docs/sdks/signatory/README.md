@@ -20,6 +20,7 @@ Create a signatory
 <!-- UsageSnippet language="csharp" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" example="signing_signatory" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,12 +31,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Signatory.CreateSigningSignatoryAsync(
     signingSignatory: new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
-        Email = "Hardy.Wehner@gmail.com",
-        Id = "a1d15883-af40-43c6-9b68-54a8d93bc74d",
-        Order = 5D,
+        Email = "anais.lakin@icloud.com",
+        Id = "c7ecbb94-a6a1-42fe-a577-48381c6494ca",
+        Metadata = new List<SigningMetadata>() {},
+        Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
-        Status = SigningSignatoryStatus.Signed,
-        UpdatedAt = System.DateTime.Parse("2026-09-09T23:47:30.211Z").ToUniversalTime(),
+        Status = SigningSignatoryStatus.Error,
+        UpdatedAt = System.DateTime.Parse("2024-05-17T06:32:47.209Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -154,6 +156,7 @@ Update a signatory
 <!-- UsageSnippet language="csharp" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" example="signing_signatory" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -165,12 +168,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchSigningSignatoryRequest req = new PatchSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
-        Email = "Hardy.Wehner@gmail.com",
-        Id = "f59e99b3-ac36-4754-b437-ab7555bd13c5",
-        Order = 5D,
+        Email = "anais.lakin@icloud.com",
+        Id = "7996751b-99f6-460f-9fad-052bad50d6f3",
+        Metadata = new List<SigningMetadata>() {},
+        Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
-        Status = SigningSignatoryStatus.Signed,
-        UpdatedAt = System.DateTime.Parse("2026-09-09T23:47:30.220Z").ToUniversalTime(),
+        Status = SigningSignatoryStatus.Error,
+        UpdatedAt = System.DateTime.Parse("2024-05-17T06:32:47.217Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -246,6 +250,7 @@ Update a signatory
 <!-- UsageSnippet language="csharp" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" example="signing_signatory" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -257,12 +262,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateSigningSignatoryRequest req = new UpdateSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
-        Email = "Hardy.Wehner@gmail.com",
-        Id = "f59e99b3-ac36-4754-b437-ab7555bd13c5",
-        Order = 5D,
+        Email = "anais.lakin@icloud.com",
+        Id = "7996751b-99f6-460f-9fad-052bad50d6f3",
+        Metadata = new List<SigningMetadata>() {},
+        Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
-        Status = SigningSignatoryStatus.Signed,
-        UpdatedAt = System.DateTime.Parse("2026-09-09T23:47:30.220Z").ToUniversalTime(),
+        Status = SigningSignatoryStatus.Error,
+        UpdatedAt = System.DateTime.Parse("2024-05-17T06:32:47.217Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

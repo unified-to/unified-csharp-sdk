@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         Tags,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

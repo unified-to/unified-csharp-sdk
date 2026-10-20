@@ -82,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("max_score")]
         public double? MaxScore { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AssessmentMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Name of the assessment package.
         /// </summary>

@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         CallToAction,
         [JsonProperty("metrics")]
         Metrics,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

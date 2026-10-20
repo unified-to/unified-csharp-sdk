@@ -24,6 +24,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Query.CreateDatastoreQueryAsync(
     datastoreQuery: new DatastoreQuery() {
+        Metadata = new List<DatastoreMetadata>() {},
         Query = new PropertyDatastoreQueryQuery() {
             Filter = new PropertyDatastoreQueryQueryFilter() {
                 Type = PropertyDatastoreQueryQueryFilterType.Or,

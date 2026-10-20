@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         Labels,
         [JsonProperty("kpi")]
         Kpi,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

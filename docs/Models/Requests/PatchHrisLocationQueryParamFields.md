@@ -28,4 +28,5 @@ var value = PatchHrisLocationQueryParamFields.Id;
 | `IsActive`           | is_active            |
 | `IsHq`               | is_hq                |
 | `CompanyId`          | company_id           |
+| `Metadata`           | metadata             |
 | `Raw`                | raw                  |

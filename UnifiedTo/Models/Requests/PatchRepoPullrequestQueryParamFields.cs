@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         ClosedAt,
         [JsonProperty("commit_ids")]
         CommitIds,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

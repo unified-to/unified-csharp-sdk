@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         LinesDeleted,
         [JsonProperty("lines_changed")]
         LinesChanged,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("media")]
         public List<SocialMedia>? Media { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<SocialMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// Engagement metrics for the post.
         /// </summary>

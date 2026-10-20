@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

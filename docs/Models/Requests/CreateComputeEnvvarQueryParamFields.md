@@ -21,4 +21,5 @@ var value = CreateComputeEnvvarQueryParamFields.Id;
 | `Value`        | value          |
 | `Environments` | environments   |
 | `IsSecret`     | is_secret      |
+| `Metadata`     | metadata       |
 | `Raw`          | raw            |

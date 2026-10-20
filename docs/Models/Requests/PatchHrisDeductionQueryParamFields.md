@@ -32,4 +32,5 @@ var value = PatchHrisDeductionQueryParamFields.Id;
 | `MaxAmount`       | max_amount        |
 | `PaycodeId`       | paycode_id        |
 | `GarnishmentType` | garnishment_type  |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

@@ -77,6 +77,8 @@ namespace UnifiedTo.Models.Requests
         LanguageLocale,
         [JsonProperty("creative_selection")]
         CreativeSelection,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -85,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("link_url")]
         public string? LinkUrl { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

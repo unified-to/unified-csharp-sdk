@@ -112,6 +112,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("membership_status")]
         public MembershipStatus? MembershipStatus { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<ClubsMetadata>? Metadata { get; set; }
+
         /// <summary>
         /// The group's name.
         /// </summary>

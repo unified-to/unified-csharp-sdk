@@ -1,0 +1,13 @@
+# SocialMetadata
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `ExtraData`                                                                   | [SocialMetadataExtraData](../../Models/Components/SocialMetadataExtraData.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `Format`                                                                      | [SocialMetadataFormat](../../Models/Components/SocialMetadataFormat.md)       | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `Id`                                                                          | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `Namespace`                                                                   | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `Slug`                                                                        | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `Value`                                                                       | [SocialMetadataValue](../../Models/Components/SocialMetadataValue.md)         | :heavy_minus_sign:                                                            | N/A                                                                           |

@@ -65,14 +65,9 @@ var res = await sdk.Job.CreateAtsJobAsync(
         CreatedAt = System.DateTime.Parse("2023-06-16T12:51:44.518Z").ToUniversalTime(),
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
-        HiringManagers = new List<AtsReference>() {
-            new AtsReference() {
-                Id = "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
-                Name = "Troy Greenholt",
-            },
-        },
-        Id = "49b8174b-873a-4b06-8497-8bce338a978b",
-        Industry = "Modern Granite Gloves",
+        HiringManagers = new List<AtsReference>() {},
+        Id = "342641ed-49e8-4524-9eb1-8fb32ff6efcb",
+        Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -82,11 +77,11 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "92ee9a85-eae0-40a1-b42c-c95ad04c2950",
+                Id = "fad399d2-f3c8-4dde-b0d6-a8dcb92dfb4f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
-                    "vomica"
+                    "desolo"
                 ),
             },
         },
@@ -97,28 +92,28 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-06T01:11:18.494Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-06T19:39:20.799Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
         Postings = new List<AtsJobPosting>() {
             new AtsJobPosting() {
                 Address = new PropertyAtsJobPostingAddress() {
-                    Address1 = "51372 Kshlerin Creek",
-                    City = "Logancester",
+                    Address1 = "75008 Medhurst Road",
+                    City = "Madelynnshire",
                     CountryCode = "US",
-                    PostalCode = "85013-9865",
-                    Region = "Vermont",
-                    RegionCode = "MO",
+                    PostalCode = "98754",
+                    Region = "Wisconsin",
+                    RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-31T01:57:55.221Z").ToUniversalTime(),
-                Description = "Provident turbo cunabula spoliatio agnitio.",
-                Id = "372178cd-2056-4388-870e-e7c199761c7c",
+                CreatedAt = System.DateTime.Parse("2026-07-31T21:22:07.985Z").ToUniversalTime(),
+                Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
+                Id = "c9717b92-4baf-4889-bd14-8e4a20b37ffb",
                 IsActive = false,
-                Location = "2925 Connie Green",
-                Name = "Lead Intranet Developer",
-                PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-26T08:16:37.977Z").ToUniversalTime(),
+                Location = "1725 Hessel Keys",
+                Name = "International Identity Manager",
+                PostingUrl = "https://obedient-yak.com",
+                UpdatedAt = System.DateTime.Parse("2026-08-27T04:07:39.219Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -127,52 +122,52 @@ var res = await sdk.Job.CreateAtsJobAsync(
         },
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
-                Description = "Trepide provident taceo rem.",
-                Id = "289f27c0-311c-41e5-ad9d-cbe2097332c2",
-                MaxLength = 387D,
+                Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
+                Id = "9d9edeba-64fc-402b-8ed5-1c57bc28c402",
+                MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "censura",
-                    "tum",
+                    "tactus",
+                    "vehemens",
                 },
-                Prompt = "Spectaculum mollitia arcus compello.",
-                Question = "Sodalitas nemo natus attonbitus reprehenderit voro depono constans vehemens ante.",
+                Prompt = "Totam maxime tres tergiversatio.",
+                Question = "Doloribus mollitia.",
                 Required = true,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
-                MaxLength = 430D,
+                Id = "96981708-ae65-40b9-b4ac-5b730b679dea",
+                MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "aetas",
+                    "constans",
                 },
-                Prompt = "Contra damno desolo suadeo utrimque cresco.",
-                Question = "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
+                Prompt = "Veritatis sodalitas nemo natus attonbitus reprehenderit voro depono.",
+                Question = "Nam.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Description = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-                Id = "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
-                MaxLength = 381D,
+                Description = "Taceo rem compello spectaculum mollitia arcus compello.",
+                Id = "bfff098b-bd96-4ab5-b134-5e4890c29216",
+                MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "utroque",
+                    "repellendus",
                 },
-                Prompt = "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
-                Question = "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
+                Prompt = "Tum tamisium autus.",
+                Question = "Confero trepide.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
         },
         Skills = new List<string>() {
-            "coaegresco",
-            "appello",
+            "suadeo",
+            "utrimque",
         },
         Status = AtsJobStatus.Archived,
-        Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-25T17:36:00.319Z").ToUniversalTime(),
+        Summary = "Crepusculum adsuesco vere.",
+        UpdatedAt = System.DateTime.Parse("2026-02-26T10:21:38.758Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -208,6 +203,7 @@ Create a job
 <!-- UsageSnippet language="csharp" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" example="hris_job" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -221,10 +217,11 @@ var res = await sdk.Job.CreateHrisJobAsync(
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "e52379cb-ce83-4c11-8da8-daabbb9dfe56",
+        Id = "8f48608d-59ed-444f-b906-57cc80ff5fbc",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T10:31:29.133Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.120Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -466,14 +463,9 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         CreatedAt = System.DateTime.Parse("2023-06-16T12:51:44.518Z").ToUniversalTime(),
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
-        HiringManagers = new List<AtsReference>() {
-            new AtsReference() {
-                Id = "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
-                Name = "Troy Greenholt",
-            },
-        },
-        Id = "dce7632a-e2dd-4a2f-a657-411043958a5a",
-        Industry = "Modern Granite Gloves",
+        HiringManagers = new List<AtsReference>() {},
+        Id = "6ab75b1e-dacb-4ecd-aa81-c1ddfa778183",
+        Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -483,11 +475,11 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "251bc578-472f-4e35-ab48-d41b6519f204",
+                Id = "92e2c3f6-8f16-4cc6-9dd8-7f8b2813544f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
-                    "vomica"
+                    "desolo"
                 ),
             },
         },
@@ -498,28 +490,28 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-06T01:11:18.542Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-06T19:39:20.863Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
         Postings = new List<AtsJobPosting>() {
             new AtsJobPosting() {
                 Address = new PropertyAtsJobPostingAddress() {
-                    Address1 = "51372 Kshlerin Creek",
-                    City = "Logancester",
+                    Address1 = "75008 Medhurst Road",
+                    City = "Madelynnshire",
                     CountryCode = "US",
-                    PostalCode = "85013-9865",
-                    Region = "Vermont",
-                    RegionCode = "MO",
+                    PostalCode = "98754",
+                    Region = "Wisconsin",
+                    RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-31T01:57:55.272Z").ToUniversalTime(),
-                Description = "Provident turbo cunabula spoliatio agnitio.",
-                Id = "372178cd-2056-4388-870e-e7c199761c7c",
+                CreatedAt = System.DateTime.Parse("2026-07-31T21:22:08.053Z").ToUniversalTime(),
+                Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
+                Id = "db679e44-7a87-4848-983a-6cc4b6ee529d",
                 IsActive = false,
-                Location = "2925 Connie Green",
-                Name = "Lead Intranet Developer",
-                PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-26T08:16:38.029Z").ToUniversalTime(),
+                Location = "1725 Hessel Keys",
+                Name = "International Identity Manager",
+                PostingUrl = "https://obedient-yak.com",
+                UpdatedAt = System.DateTime.Parse("2026-08-27T04:07:39.288Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -528,52 +520,52 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
-                Description = "Trepide provident taceo rem.",
-                Id = "289f27c0-311c-41e5-ad9d-cbe2097332c2",
-                MaxLength = 387D,
+                Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
+                Id = "15049eac-98d8-4f64-adb8-45f72f8ca200",
+                MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "censura",
-                    "tum",
+                    "tactus",
+                    "vehemens",
                 },
-                Prompt = "Spectaculum mollitia arcus compello.",
-                Question = "Sodalitas nemo natus attonbitus reprehenderit voro depono constans vehemens ante.",
+                Prompt = "Totam maxime tres tergiversatio.",
+                Question = "Doloribus mollitia.",
                 Required = true,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
-                MaxLength = 430D,
+                Id = "065dada3-da98-4e37-81e8-49ac69108fbc",
+                MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "aetas",
+                    "constans",
                 },
-                Prompt = "Contra damno desolo suadeo utrimque cresco.",
-                Question = "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
+                Prompt = "Veritatis sodalitas nemo natus attonbitus reprehenderit voro depono.",
+                Question = "Nam.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Description = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-                Id = "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
-                MaxLength = 381D,
+                Description = "Taceo rem compello spectaculum mollitia arcus compello.",
+                Id = "7dd9b0eb-36ef-4909-b656-fd8c04e95bcc",
+                MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "utroque",
+                    "repellendus",
                 },
-                Prompt = "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
-                Question = "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
+                Prompt = "Tum tamisium autus.",
+                Question = "Confero trepide.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
         },
         Skills = new List<string>() {
-            "coaegresco",
-            "appello",
+            "suadeo",
+            "utrimque",
         },
         Status = AtsJobStatus.Archived,
-        Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-25T17:36:00.363Z").ToUniversalTime(),
+        Summary = "Crepusculum adsuesco vere.",
+        UpdatedAt = System.DateTime.Parse("2026-02-26T10:21:38.816Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -609,6 +601,7 @@ Update a job
 <!-- UsageSnippet language="csharp" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -623,10 +616,11 @@ PatchHrisJobRequest req = new PatchHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "5738adf3-161a-46a4-bbaf-fc1924cb3051",
+        Id = "4fcbf9ed-afc0-46ee-aee8-ed4f2f5787c6",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T10:31:29.175Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.186Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -782,14 +776,9 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         CreatedAt = System.DateTime.Parse("2023-06-16T12:51:44.518Z").ToUniversalTime(),
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
-        HiringManagers = new List<AtsReference>() {
-            new AtsReference() {
-                Id = "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
-                Name = "Troy Greenholt",
-            },
-        },
-        Id = "dce7632a-e2dd-4a2f-a657-411043958a5a",
-        Industry = "Modern Granite Gloves",
+        HiringManagers = new List<AtsReference>() {},
+        Id = "6ab75b1e-dacb-4ecd-aa81-c1ddfa778183",
+        Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -799,11 +788,11 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "251bc578-472f-4e35-ab48-d41b6519f204",
+                Id = "92e2c3f6-8f16-4cc6-9dd8-7f8b2813544f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
-                    "vomica"
+                    "desolo"
                 ),
             },
         },
@@ -814,28 +803,28 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-06T01:11:18.542Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-06T19:39:20.863Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
         Postings = new List<AtsJobPosting>() {
             new AtsJobPosting() {
                 Address = new PropertyAtsJobPostingAddress() {
-                    Address1 = "51372 Kshlerin Creek",
-                    City = "Logancester",
+                    Address1 = "75008 Medhurst Road",
+                    City = "Madelynnshire",
                     CountryCode = "US",
-                    PostalCode = "85013-9865",
-                    Region = "Vermont",
-                    RegionCode = "MO",
+                    PostalCode = "98754",
+                    Region = "Wisconsin",
+                    RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-31T01:57:55.272Z").ToUniversalTime(),
-                Description = "Provident turbo cunabula spoliatio agnitio.",
-                Id = "372178cd-2056-4388-870e-e7c199761c7c",
+                CreatedAt = System.DateTime.Parse("2026-07-31T21:22:08.053Z").ToUniversalTime(),
+                Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
+                Id = "db679e44-7a87-4848-983a-6cc4b6ee529d",
                 IsActive = false,
-                Location = "2925 Connie Green",
-                Name = "Lead Intranet Developer",
-                PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-26T08:16:38.029Z").ToUniversalTime(),
+                Location = "1725 Hessel Keys",
+                Name = "International Identity Manager",
+                PostingUrl = "https://obedient-yak.com",
+                UpdatedAt = System.DateTime.Parse("2026-08-27T04:07:39.288Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -844,52 +833,52 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
-                Description = "Trepide provident taceo rem.",
-                Id = "289f27c0-311c-41e5-ad9d-cbe2097332c2",
-                MaxLength = 387D,
+                Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
+                Id = "15049eac-98d8-4f64-adb8-45f72f8ca200",
+                MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "censura",
-                    "tum",
+                    "tactus",
+                    "vehemens",
                 },
-                Prompt = "Spectaculum mollitia arcus compello.",
-                Question = "Sodalitas nemo natus attonbitus reprehenderit voro depono constans vehemens ante.",
+                Prompt = "Totam maxime tres tergiversatio.",
+                Question = "Doloribus mollitia.",
                 Required = true,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
-                MaxLength = 430D,
+                Id = "065dada3-da98-4e37-81e8-49ac69108fbc",
+                MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "aetas",
+                    "constans",
                 },
-                Prompt = "Contra damno desolo suadeo utrimque cresco.",
-                Question = "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
+                Prompt = "Veritatis sodalitas nemo natus attonbitus reprehenderit voro depono.",
+                Question = "Nam.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Description = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-                Id = "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
-                MaxLength = 381D,
+                Description = "Taceo rem compello spectaculum mollitia arcus compello.",
+                Id = "7dd9b0eb-36ef-4909-b656-fd8c04e95bcc",
+                MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
-                    "utroque",
+                    "repellendus",
                 },
-                Prompt = "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
-                Question = "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
+                Prompt = "Tum tamisium autus.",
+                Question = "Confero trepide.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
         },
         Skills = new List<string>() {
-            "coaegresco",
-            "appello",
+            "suadeo",
+            "utrimque",
         },
         Status = AtsJobStatus.Archived,
-        Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-25T17:36:00.363Z").ToUniversalTime(),
+        Summary = "Crepusculum adsuesco vere.",
+        UpdatedAt = System.DateTime.Parse("2026-02-26T10:21:38.816Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -925,6 +914,7 @@ Update a job
 <!-- UsageSnippet language="csharp" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -939,10 +929,11 @@ UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "5738adf3-161a-46a4-bbaf-fc1924cb3051",
+        Id = "4fcbf9ed-afc0-46ee-aee8-ed4f2f5787c6",
         IsActive = false,
+        Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T10:31:29.175Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.186Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

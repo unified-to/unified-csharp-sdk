@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         Tags,
         [JsonProperty("is_visible")]
         IsVisible,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

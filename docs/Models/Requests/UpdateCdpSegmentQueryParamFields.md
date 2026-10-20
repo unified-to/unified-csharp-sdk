@@ -25,4 +25,5 @@ var value = UpdateCdpSegmentQueryParamFields.Id;
 | `Size`        | size          |
 | `IsActive`    | is_active     |
 | `SourceId`    | source_id     |
+| `Metadata`    | metadata      |
 | `Raw`         | raw           |

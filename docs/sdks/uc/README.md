@@ -37,6 +37,7 @@ Create a comment
 
 <!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" example="uc_comment" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -48,8 +49,9 @@ var res = await sdk.Uc.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "44d7f918-3acc-4570-b0f3-37e04749157f",
-        UpdatedAt = "2024-02-09T06:29:44.679Z",
+        Id = "b082308e-9c72-4bda-84c5-d50989550336",
+        Metadata = new List<UcMetadata>() {},
+        UpdatedAt = "2024-02-09T11:30:09.364Z",
     },
     connectionId: "<id>"
 );
@@ -104,8 +106,9 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "073273e2-a0f2-404c-89f7-17ef37cc3c8d",
+        Id = "6ef14c6c-9f0e-4767-8ebb-23b9ce106be9",
         LastName = "Rogahn",
+        Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
             new UcTelephone() {
@@ -122,7 +125,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T03:47:05.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.439Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -169,36 +172,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Uc.CreateUcRecordingAsync(
     ucRecording: new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "f6fcfada-3515-4870-b434-105ca18ad5a6",
+        ConversationIdentifier = "2f8181c3-2e87-450d-a029-31d0ec69f8a5",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-04T04:06:00.058Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-24T22:36:12.541Z").ToUniversalTime(),
-        Id = "f6fcfada-3515-4870-b434-105ca18ad5a6",
+        EndAt = System.DateTime.Parse("2024-05-04T12:22:12.260Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-25T16:54:09.620Z").ToUniversalTime(),
+        Id = "2f8181c3-2e87-450d-a029-31d0ec69f8a5",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-01T00:52:25.645Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-01T08:40:58.077Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-13T14:02:47.550Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-14T08:36:18.518Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-22T18:28:00.226Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-01T09:18:04.217Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-23T11:54:53.058Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-01T17:57:49.852Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-11T12:01:49.835Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-07-31T21:58:44.337Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-11T22:31:53.312Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-01T17:38:29.131Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
-        StartAt = System.DateTime.Parse("2023-04-27T10:40:39.102Z").ToUniversalTime(),
+        Metadata = new List<UcMetadata>() {},
+        StartAt = System.DateTime.Parse("2023-04-27T13:45:40.708Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-15T04:47:54.885Z").ToUniversalTime(),
-        UserName = "Melyna Larson",
+        UpdatedAt = System.DateTime.Parse("2025-03-15T17:27:07.532Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },
@@ -733,6 +736,7 @@ Update a comment
 
 <!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -745,8 +749,9 @@ PatchUcCommentRequest req = new PatchUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "5e8e3c63-b77d-4057-bf77-e3aff822411e",
-        UpdatedAt = "2024-02-09T06:29:44.680Z",
+        Id = "8bdad788-affd-4e26-a1e1-1b8c9206df51",
+        Metadata = new List<UcMetadata>() {},
+        UpdatedAt = "2024-02-09T11:30:09.366Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -802,8 +807,9 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "4bfa49d7-2918-4d2c-a738-20d604812582",
+        Id = "c22b838c-803e-49c6-8960-00088cad5cd5",
         LastName = "Rogahn",
+        Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
             new UcTelephone() {
@@ -820,7 +826,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T03:47:05.247Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.449Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -868,36 +874,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "d48c29bd-648b-4f41-a933-c254f1967d79",
+        ConversationIdentifier = "7756fb8b-ef33-4e99-905a-fa877679d38f",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-04T04:06:00.069Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-24T22:36:12.565Z").ToUniversalTime(),
-        Id = "d48c29bd-648b-4f41-a933-c254f1967d79",
+        EndAt = System.DateTime.Parse("2024-05-04T12:22:12.281Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-25T16:54:09.665Z").ToUniversalTime(),
+        Id = "7756fb8b-ef33-4e99-905a-fa877679d38f",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-01T00:52:25.655Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-01T08:40:58.096Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-13T14:02:47.574Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-14T08:36:18.563Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-22T18:28:00.250Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-01T09:18:04.229Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-23T11:54:53.101Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-01T17:57:49.873Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-11T12:01:49.848Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-07-31T21:58:44.363Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-11T22:31:53.338Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-01T17:38:29.179Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
-        StartAt = System.DateTime.Parse("2023-04-27T10:40:39.106Z").ToUniversalTime(),
+        Metadata = new List<UcMetadata>() {},
+        StartAt = System.DateTime.Parse("2023-04-27T13:45:40.715Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-15T04:47:54.902Z").ToUniversalTime(),
-        UserName = "Melyna Larson",
+        UpdatedAt = System.DateTime.Parse("2025-03-15T17:27:07.563Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },
@@ -1054,6 +1060,7 @@ Update a comment
 
 <!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1066,8 +1073,9 @@ UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "5e8e3c63-b77d-4057-bf77-e3aff822411e",
-        UpdatedAt = "2024-02-09T06:29:44.680Z",
+        Id = "8bdad788-affd-4e26-a1e1-1b8c9206df51",
+        Metadata = new List<UcMetadata>() {},
+        UpdatedAt = "2024-02-09T11:30:09.366Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1123,8 +1131,9 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "4bfa49d7-2918-4d2c-a738-20d604812582",
+        Id = "c22b838c-803e-49c6-8960-00088cad5cd5",
         LastName = "Rogahn",
+        Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
             new UcTelephone() {
@@ -1141,7 +1150,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T03:47:05.247Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.449Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1189,36 +1198,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "d48c29bd-648b-4f41-a933-c254f1967d79",
+        ConversationIdentifier = "7756fb8b-ef33-4e99-905a-fa877679d38f",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-04T04:06:00.069Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-24T22:36:12.565Z").ToUniversalTime(),
-        Id = "d48c29bd-648b-4f41-a933-c254f1967d79",
+        EndAt = System.DateTime.Parse("2024-05-04T12:22:12.281Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-25T16:54:09.665Z").ToUniversalTime(),
+        Id = "7756fb8b-ef33-4e99-905a-fa877679d38f",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-01T00:52:25.655Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-01T08:40:58.096Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-13T14:02:47.574Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-14T08:36:18.563Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-22T18:28:00.250Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-01T09:18:04.229Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-23T11:54:53.101Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-01T17:57:49.873Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-11T12:01:49.848Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-07-31T21:58:44.363Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-11T22:31:53.338Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-01T17:38:29.179Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
-        StartAt = System.DateTime.Parse("2023-04-27T10:40:39.106Z").ToUniversalTime(),
+        Metadata = new List<UcMetadata>() {},
+        StartAt = System.DateTime.Parse("2023-04-27T13:45:40.715Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-15T04:47:54.902Z").ToUniversalTime(),
-        UserName = "Melyna Larson",
+        UpdatedAt = System.DateTime.Parse("2025-03-15T17:27:07.563Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },

@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("label")]
         public string? Label { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CrmMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

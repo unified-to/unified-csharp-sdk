@@ -42,4 +42,5 @@ var value = GetPaymentPaymentQueryParamFields.Id;
 | `ExchangeRate`   | exchange_rate    |
 | `CategoryIds`    | category_ids     |
 | `NetAmount`      | net_amount       |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

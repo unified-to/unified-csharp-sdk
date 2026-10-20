@@ -20,5 +20,6 @@ var value = PatchMessagingEventQueryParamFields.Id;
 | `Message`             | message               |
 | `Button`              | button                |
 | `User`                | user                  |
+| `Metadata`            | metadata              |
 | `Raw`                 | raw                   |
 | `IsReplacingOriginal` | is_replacing_original |

@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         SubmittedAt,
         [JsonProperty("completed_at")]
         CompletedAt,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

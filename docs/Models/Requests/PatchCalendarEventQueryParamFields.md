@@ -37,4 +37,5 @@ var value = PatchCalendarEventQueryParamFields.Id;
 | `Attachments`       | attachments         |
 | `SendNotifications` | send_notifications  |
 | `MatterId`          | matter_id           |
+| `Metadata`          | metadata            |
 | `Raw`               | raw                 |
