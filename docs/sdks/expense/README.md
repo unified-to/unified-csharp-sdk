@@ -39,13 +39,13 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "733e175b-8fad-48c4-9a14-d49590a20531",
+                Id = "6bfcf576-add7-458b-b613-19d5d6cd35cc",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "52783d22-1d2b-4145-8976-97555a670037",
+                Id = "292d1c7f-b917-4bf6-8cf6-50dd87b58abd",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -54,10 +54,10 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "966379e4-4fc0-4b96-b3e1-faad6e7ebb8c",
+        Id = "a029e98e-b8c5-4cf6-acb0-d8b8a558da1c",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "50d250c0-9820-4bff-aa14-6fdd1066bcbf",
+                Id = "c78595fd-a880-4d5a-beb7-d5a883cf778b",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -65,7 +65,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "ea709a5d-3fef-4582-9bb1-cb8d4dc115d4",
+                Id = "9d7f8487-c0fe-4dfe-92a0-1de1eb0afe4a",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -73,7 +73,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "44ec2962-b019-48c3-a2aa-04902c3acdb2",
+                Id = "6cb1d4be-ce47-4944-ad2f-f0232cbc0b64",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -82,7 +82,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a603a781-f95f-4faf-a93e-441ef1bfc0b5",
+                Id = "00b18a0c-7338-4861-98c3-c560b1fbffce",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -90,7 +90,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "32d61e31-7a8e-48d3-a93d-93e30f231488",
+                Id = "0580d0b1-5320-4b56-8927-edb50f7597df",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -106,7 +106,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T06:14:52.316Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.342Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -156,7 +156,7 @@ var res = await sdk.Expense.CreateLegalExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "20a8ff35-a72d-46c4-841f-06445c4480e1",
+        Id = "97aef49d-e6ae-4f42-b72f-0f4640914372",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -164,7 +164,7 @@ var res = await sdk.Expense.CreateLegalExpenseAsync(
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T06:48:26.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.179Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -380,13 +380,13 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "93a1294d-d109-4be9-a624-70a4f3e4f965",
+                Id = "f4777b7a-4b23-4c2e-acdf-f7f8251f8575",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "44361e28-da1e-4f63-8b34-2d8d2df7204d",
+                Id = "724ceb69-0018-4d7b-80c7-41fed5941d97",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -395,10 +395,10 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "5f9d2be3-1575-430f-8105-b9cfae5ddbd9",
+        Id = "3fded96f-7b44-45db-907c-71d797647361",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "d755d810-4868-4732-b04f-47a9887d04e9",
+                Id = "1bd6c341-8dd4-4a91-976a-5575888b82fc",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -406,7 +406,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "fb532c69-c6b2-492f-b471-1660fd126d4b",
+                Id = "718f3795-b0b0-455a-832c-ab6856a0e478",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -414,7 +414,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "b792180e-ea71-4a58-a1f2-7be72d0c8802",
+                Id = "96a5ec63-7756-4361-b496-1c8eff2c0fa8",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -423,7 +423,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a178a1e4-9e66-40f9-bb44-95787d143a9b",
+                Id = "c64853b3-6bdc-41c6-a22b-31238ebc78b1",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -431,7 +431,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "c32280fe-8a15-4f22-9b2a-ff9e3432d4bf",
+                Id = "3ecac429-4a0f-4147-891b-21d4242a32c0",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -447,7 +447,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T06:14:52.317Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.343Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -498,7 +498,7 @@ PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "ef0c3692-f0b7-4e43-ba9f-a00cb483e8c8",
+        Id = "c4beccdb-3c40-4539-9db2-e9bd2eb61f84",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -506,7 +506,7 @@ PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T06:48:26.731Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.185Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -636,13 +636,13 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "93a1294d-d109-4be9-a624-70a4f3e4f965",
+                Id = "f4777b7a-4b23-4c2e-acdf-f7f8251f8575",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "44361e28-da1e-4f63-8b34-2d8d2df7204d",
+                Id = "724ceb69-0018-4d7b-80c7-41fed5941d97",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -651,10 +651,10 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "5f9d2be3-1575-430f-8105-b9cfae5ddbd9",
+        Id = "3fded96f-7b44-45db-907c-71d797647361",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "d755d810-4868-4732-b04f-47a9887d04e9",
+                Id = "1bd6c341-8dd4-4a91-976a-5575888b82fc",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -662,7 +662,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "fb532c69-c6b2-492f-b471-1660fd126d4b",
+                Id = "718f3795-b0b0-455a-832c-ab6856a0e478",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -670,7 +670,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "b792180e-ea71-4a58-a1f2-7be72d0c8802",
+                Id = "96a5ec63-7756-4361-b496-1c8eff2c0fa8",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -679,7 +679,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a178a1e4-9e66-40f9-bb44-95787d143a9b",
+                Id = "c64853b3-6bdc-41c6-a22b-31238ebc78b1",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -687,7 +687,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "c32280fe-8a15-4f22-9b2a-ff9e3432d4bf",
+                Id = "3ecac429-4a0f-4147-891b-21d4242a32c0",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -703,7 +703,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T06:14:52.317Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.343Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -754,7 +754,7 @@ UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "ef0c3692-f0b7-4e43-ba9f-a00cb483e8c8",
+        Id = "c4beccdb-3c40-4539-9db2-e9bd2eb61f84",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -762,7 +762,7 @@ UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T06:48:26.731Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.185Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

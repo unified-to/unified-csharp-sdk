@@ -38,11 +38,11 @@ var res = await sdk.Category.CreateAccountingCategoryAsync(
     accountingCategory: new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "8158b5bb-0686-4786-86ed-d89c5d040d0f",
+        Id = "32c13c1f-94c1-4883-979d-41ff9c6cb35d",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-10T16:38:03.121Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.177Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -90,11 +90,11 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "13ea9a4a-e171-4222-9756-668a306a6727",
+        Id = "bea4c1e5-83f1-4c91-b5f1-eeeb2852b53d",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.147Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.407Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -309,11 +309,11 @@ PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "15180ea4-5b08-4f3d-91e2-9f134a26243a",
+        Id = "30d6bf76-1c33-427c-812f-661c4e743880",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-10T16:38:03.132Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.184Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -362,11 +362,11 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
+        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -495,11 +495,11 @@ UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "15180ea4-5b08-4f3d-91e2-9f134a26243a",
+        Id = "30d6bf76-1c33-427c-812f-661c4e743880",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-10T16:38:03.132Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.184Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -548,11 +548,11 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
+        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

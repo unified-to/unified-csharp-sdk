@@ -32,9 +32,9 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "884848a1-52e3-4e95-ae2b-d3f1fa00af96",
+        Id = "17918410-082d-4632-b70f-1fe026837c2b",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.442Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.888Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,9 +166,9 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "ded6dbe0-cdd4-4876-a0e0-17c4021cc0b3",
+        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.451Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -257,9 +257,9 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "ded6dbe0-cdd4-4876-a0e0-17c4021cc0b3",
+        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.451Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

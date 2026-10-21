@@ -27,6 +27,10 @@ namespace UnifiedTo.Models.Requests
         Email,
         [JsonProperty("name")]
         Name,
+        [JsonProperty("first_name")]
+        FirstName,
+        [JsonProperty("last_name")]
+        LastName,
         [JsonProperty("age")]
         Age,
         [JsonProperty("gender")]

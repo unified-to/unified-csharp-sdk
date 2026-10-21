@@ -30,9 +30,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.897Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.823Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "7fef24f0-bccc-4409-844f-02f287921fde",
+        Id = "f3617f0c-7c55-4781-b6b4-7c3573c07bc8",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -41,7 +41,7 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.552Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.007Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -171,9 +171,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.906Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.830Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "3b399be7-3342-449e-986a-bd153fb57c3a",
+        Id = "0b2547a8-d217-4ebf-a3c8-83c9530b5815",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -182,7 +182,7 @@ PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.564Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.015Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -269,9 +269,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-30T20:34:27.906Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.830Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "3b399be7-3342-449e-986a-bd153fb57c3a",
+        Id = "0b2547a8-d217-4ebf-a3c8-83c9530b5815",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -280,7 +280,7 @@ UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-16T08:06:40.564Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.015Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

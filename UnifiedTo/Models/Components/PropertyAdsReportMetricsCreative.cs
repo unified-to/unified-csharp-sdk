@@ -32,6 +32,12 @@ namespace UnifiedTo.Models.Components
         public string? CampaignId { get; set; }
 
         /// <summary>
+        /// Carousel cards, in display order.
+        /// </summary>
+        [JsonProperty("cards")]
+        public List<AdsCreativeCard>? Cards { get; set; }
+
+        /// <summary>
         /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]

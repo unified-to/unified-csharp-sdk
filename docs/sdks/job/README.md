@@ -66,7 +66,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "342641ed-49e8-4524-9eb1-8fb32ff6efcb",
+        Id = "7d5507c4-9cd4-4da1-a6be-36327afcaf93",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -77,7 +77,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "fad399d2-f3c8-4dde-b0d6-a8dcb92dfb4f",
+                Id = "f98bfe1a-7776-49f4-b6c9-be9936ad7936",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -92,7 +92,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-06T19:39:20.799Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.441Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -106,14 +106,14 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-31T21:22:07.985Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.147Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "c9717b92-4baf-4889-bd14-8e4a20b37ffb",
+                Id = "7ad7e889-0e0c-446b-bbb2-f95c3311c0d3",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-27T04:07:39.219Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.849Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -123,7 +123,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "9d9edeba-64fc-402b-8ed5-1c57bc28c402",
+                Id = "deb78b33-474c-4454-a21b-377f33beb75e",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -136,7 +136,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "96981708-ae65-40b9-b4ac-5b730b679dea",
+                Id = "5847fb89-c2e7-416c-9145-4032c16775f5",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -149,7 +149,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "bfff098b-bd96-4ab5-b134-5e4890c29216",
+                Id = "4492b258-d53a-4f07-a0ce-6c99cb70981f",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -167,7 +167,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-26T10:21:38.758Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.763Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -217,11 +217,11 @@ var res = await sdk.Job.CreateHrisJobAsync(
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "8f48608d-59ed-444f-b906-57cc80ff5fbc",
+        Id = "caa7bb67-8e85-4ec3-9795-cc42af2c21c6",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.120Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.108Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -464,7 +464,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "6ab75b1e-dacb-4ecd-aa81-c1ddfa778183",
+        Id = "6eeaab25-327e-4de2-8235-66e5cc2f076c",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -475,7 +475,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "92e2c3f6-8f16-4cc6-9dd8-7f8b2813544f",
+                Id = "38255357-d7f9-4850-a69a-439b8511c5e3",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -490,7 +490,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-06T19:39:20.863Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.478Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -504,14 +504,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-31T21:22:08.053Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.186Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "db679e44-7a87-4848-983a-6cc4b6ee529d",
+                Id = "079379ff-1a12-48ce-b29a-9b93f6400e6e",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-27T04:07:39.288Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.889Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -521,7 +521,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "15049eac-98d8-4f64-adb8-45f72f8ca200",
+                Id = "0f6b8cdf-a2be-45f5-906c-d2469d8d5493",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -534,7 +534,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "065dada3-da98-4e37-81e8-49ac69108fbc",
+                Id = "dc06afd1-71bd-4286-8140-f358a0b71982",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -547,7 +547,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "7dd9b0eb-36ef-4909-b656-fd8c04e95bcc",
+                Id = "136b91f4-21df-44e8-9ecd-79ff7be1950d",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -565,7 +565,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-26T10:21:38.816Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.797Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -616,11 +616,11 @@ PatchHrisJobRequest req = new PatchHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "4fcbf9ed-afc0-46ee-aee8-ed4f2f5787c6",
+        Id = "cc9b894a-a561-420c-974c-85c030f2340c",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.186Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.146Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -777,7 +777,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "6ab75b1e-dacb-4ecd-aa81-c1ddfa778183",
+        Id = "6eeaab25-327e-4de2-8235-66e5cc2f076c",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -788,7 +788,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "92e2c3f6-8f16-4cc6-9dd8-7f8b2813544f",
+                Id = "38255357-d7f9-4850-a69a-439b8511c5e3",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -803,7 +803,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-06T19:39:20.863Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.478Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -817,14 +817,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-31T21:22:08.053Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.186Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "db679e44-7a87-4848-983a-6cc4b6ee529d",
+                Id = "079379ff-1a12-48ce-b29a-9b93f6400e6e",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-27T04:07:39.288Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.889Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -834,7 +834,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "15049eac-98d8-4f64-adb8-45f72f8ca200",
+                Id = "0f6b8cdf-a2be-45f5-906c-d2469d8d5493",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -847,7 +847,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "065dada3-da98-4e37-81e8-49ac69108fbc",
+                Id = "dc06afd1-71bd-4286-8140-f358a0b71982",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -860,7 +860,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "7dd9b0eb-36ef-4909-b656-fd8c04e95bcc",
+                Id = "136b91f4-21df-44e8-9ecd-79ff7be1950d",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -878,7 +878,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-26T10:21:38.816Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.797Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -929,11 +929,11 @@ UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "4fcbf9ed-afc0-46ee-aee8-ed4f2f5787c6",
+        Id = "cc9b894a-a561-420c-974c-85c030f2340c",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-29T18:21:35.186Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.146Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

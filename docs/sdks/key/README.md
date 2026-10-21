@@ -31,11 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Key.CreateComputeKeyAsync(
     computeKey: new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "7fad7036-d614-4740-a04f-92b024c2f916",
+        Id = "9ebb4465-b6cc-4c3f-a0af-f79ebd46f2c3",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.215Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.588Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,11 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeKeyRequest req = new PatchComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "fc38e3d1-6b9a-4aa7-a20e-c556533e2c31",
+        Id = "88766066-7c0a-46f8-a094-d43f8a531555",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.223Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.591Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -258,11 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeKeyRequest req = new UpdateComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "fc38e3d1-6b9a-4aa7-a20e-c556533e2c31",
+        Id = "88766066-7c0a-46f8-a094-d43f8a531555",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T12:57:53.223Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.591Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

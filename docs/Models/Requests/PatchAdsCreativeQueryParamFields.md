@@ -27,6 +27,7 @@ var value = PatchAdsCreativeQueryParamFields.Id;
 | `Width`                      | width                        |
 | `Height`                     | height                       |
 | `AssetUrls`                  | asset_urls                   |
+| `Cards`                      | cards                        |
 | `LinkUrl`                    | link_url                     |
 | `UrlTags`                    | url_tags                     |
 | `Body`                       | body                         |

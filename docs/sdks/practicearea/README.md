@@ -32,11 +32,11 @@ var res = await sdk.Practicearea.CreateLegalPracticeareaAsync(
     legalPracticearea: new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "b022d6a0-d73e-49e5-a502-b7d3874bd776",
+        Id = "a3ed62e9-f276-492d-b3e4-9dadd80eb986",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-26T21:03:52.675Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.352Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -168,11 +168,11 @@ PatchLegalPracticeareaRequest req = new PatchLegalPracticeareaRequest() {
     LegalPracticearea = new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "c2662352-903b-4fcf-945b-194d6225f2bb",
+        Id = "f3f674d1-4502-40ad-b68a-63a2a30f9d4d",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-26T21:03:52.690Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.363Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -261,11 +261,11 @@ UpdateLegalPracticeareaRequest req = new UpdateLegalPracticeareaRequest() {
     LegalPracticearea = new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "c2662352-903b-4fcf-945b-194d6225f2bb",
+        Id = "f3f674d1-4502-40ad-b68a-63a2a30f9d4d",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-26T21:03:52.690Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.363Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

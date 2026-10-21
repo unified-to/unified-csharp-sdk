@@ -37,7 +37,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "6b5c2430-55ae-4c38-9d58-715809cd7d23",
+        Id = "670ab99c-0cdb-45f0-acf7-7d58b1812baf",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -58,7 +58,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.873Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.194Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -195,7 +195,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -216,7 +216,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -310,7 +310,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -331,7 +331,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

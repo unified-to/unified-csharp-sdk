@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         Height,
         [JsonProperty("asset_urls")]
         AssetUrls,
+        [JsonProperty("cards")]
+        Cards,
         [JsonProperty("link_url")]
         LinkUrl,
         [JsonProperty("url_tags")]

@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// When true, this metadata slug is required for create for this integration.
+        /// </summary>
         [JsonProperty("is_required")]
         public bool? IsRequired { get; set; }
 
@@ -38,13 +41,13 @@ namespace UnifiedTo.Models.Components
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// This is the unified object type that this metadata is associated with. eg. crm_contact or coomerce_item.
+        /// This is the unified object type that this metadata is associated with. eg. crm_contact or commerce_item.
         /// </summary>
         [JsonProperty("object_type")]
         public string ObjectType { get; set; } = default!;
 
         [JsonProperty("objects")]
-        public Dictionary<string, object>? Objects { get; set; }
+        public Dictionary<string, string>? Objects { get; set; }
 
         [JsonProperty("options")]
         public List<string>? Options { get; set; }

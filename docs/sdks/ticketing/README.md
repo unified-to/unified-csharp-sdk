@@ -50,11 +50,11 @@ var res = await sdk.Ticketing.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "13ea9a4a-e171-4222-9756-668a306a6727",
+        Id = "bea4c1e5-83f1-4c91-b5f1-eeeb2852b53d",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.147Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.407Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -107,7 +107,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "6b5c2430-55ae-4c38-9d58-715809cd7d23",
+        Id = "670ab99c-0cdb-45f0-acf7-7d58b1812baf",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -128,7 +128,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.873Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.194Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -176,9 +176,9 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "884848a1-52e3-4e95-ae2b-d3f1fa00af96",
+        Id = "17918410-082d-4632-b70f-1fe026837c2b",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.442Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.888Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -228,7 +228,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "a2d1c30f-cb23-49f0-9981-5b3ead19ba32",
+        Id = "11a00073-02ad-4647-ac25-66e79939f36e",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -237,7 +237,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:21:48.538Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:29:00.794Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     connectionId: "<id>"
@@ -619,11 +619,11 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
+        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -677,7 +677,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -698,7 +698,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -747,9 +747,9 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "ded6dbe0-cdd4-4876-a0e0-17c4021cc0b3",
+        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.451Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -800,7 +800,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "5eaab953-24c3-42e3-b5bf-8c4e985d1345",
+        Id = "b3ef7c37-5bde-491f-b33a-2cdfd5b21b32",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -809,7 +809,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:21:48.538Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:29:00.794Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",
@@ -1019,11 +1019,11 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "2a4d4372-20e5-4c64-8dc3-c99dbfce23b6",
+        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-12T22:43:24.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1077,7 +1077,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "d04203f1-d846-4df1-b44a-8ca9b01e880c",
+        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -1098,7 +1098,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-02T22:53:19.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1147,9 +1147,9 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "ded6dbe0-cdd4-4876-a0e0-17c4021cc0b3",
+        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-28T09:56:44.451Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1200,7 +1200,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "5eaab953-24c3-42e3-b5bf-8c4e985d1345",
+        Id = "b3ef7c37-5bde-491f-b33a-2cdfd5b21b32",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -1209,7 +1209,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:21:48.538Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:29:00.794Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",

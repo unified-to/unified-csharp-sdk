@@ -81,7 +81,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "b58b17a4-1a99-42f2-9ea5-528098e41dc3",
+        Id = "bdac5f0e-4cbe-48a3-a02c-a8804c61de52",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -96,7 +96,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "d2926d67-77d0-473c-93f9-39e182d7238a",
+                Id = "8b35a3b4-338f-4bed-9372-83f9326a3fea",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -125,7 +125,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T12:38:17.192Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.273Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     connectionId: "<id>"
@@ -307,7 +307,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "6a571ea4-9d85-4e5f-a098-f42daf453801",
+        Id = "6c0d5ef8-c731-4a0a-a92b-3aeceebfc011",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -322,7 +322,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "aa2c1921-9889-4c1d-8d8b-9fb9b467e32d",
+                Id = "3d6cb52c-8627-4039-a4c8-1d3d2c40c5d6",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -351,7 +351,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T12:38:17.202Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.278Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",
@@ -490,7 +490,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "6a571ea4-9d85-4e5f-a098-f42daf453801",
+        Id = "6c0d5ef8-c731-4a0a-a92b-3aeceebfc011",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -505,7 +505,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "aa2c1921-9889-4c1d-8d8b-9fb9b467e32d",
+                Id = "3d6cb52c-8627-4039-a4c8-1d3d2c40c5d6",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -534,7 +534,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T12:38:17.202Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.278Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",

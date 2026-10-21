@@ -66,7 +66,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
             },
         },
         FirstName = "Delores",
-        Id = "94fca09f-48ac-4190-a9dd-fb32eb064626",
+        Id = "31fa4845-3227-4e9f-9036-be38557b7807",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -77,7 +77,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "dbf9cacc-d598-4321-a1e5-ac46f186e845",
+                Id = "7aa1a708-304c-4970-928f-8489ea7c5f5b",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -99,7 +99,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T07:43:34.304Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.513Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     connectionId: "<id>"
@@ -164,7 +164,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
             },
         },
         FirstName = "Mohammad",
-        Id = "876d8794-2c3a-44a4-b78b-a392b9c0a25b",
+        Id = "2a17266a-ae35-4620-9775-fd254091c73f",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -178,7 +178,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e1603bb3-4898-4105-a1d1-4d37408a6a49",
+                Id = "2e81c79b-9557-45ad-82d7-bad66dfb4a5e",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -198,7 +198,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T04:22:48.848Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.977Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -253,7 +253,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "6ef14c6c-9f0e-4767-8ebb-23b9ce106be9",
+        Id = "fa772c3b-4f74-4e50-9912-7937c0aeb895",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -272,7 +272,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.439Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.688Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -592,7 +592,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "fec579c9-37ff-4ef7-87a9-4d767a6b6b2a",
+        Id = "4d9d12a6-5a51-4cc1-a10e-0e68fd48bff6",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -603,7 +603,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "c0eaa2ff-e0ae-4828-afc4-4b57d7e06e94",
+                Id = "c0231a80-4c39-4c9e-8ac8-24b26bfce8be",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -625,7 +625,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T07:43:34.330Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.530Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
@@ -691,7 +691,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "e03138ca-2475-412c-943e-3e39c8cbdd98",
+        Id = "840e33b2-a05c-483e-8e30-53d1434ffaa0",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -705,7 +705,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "3c9f7376-cbb5-4697-9fa6-38f8b8c07c0c",
+                Id = "fb6e0969-a00b-4511-aff5-50e9b75f4664",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -725,7 +725,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T04:22:48.849Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.978Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -781,7 +781,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "c22b838c-803e-49c6-8960-00088cad5cd5",
+        Id = "31eb2471-3e3c-4948-808c-32e639e3714a",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -800,7 +800,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.449Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.695Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -991,7 +991,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "fec579c9-37ff-4ef7-87a9-4d767a6b6b2a",
+        Id = "4d9d12a6-5a51-4cc1-a10e-0e68fd48bff6",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -1002,7 +1002,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "c0eaa2ff-e0ae-4828-afc4-4b57d7e06e94",
+                Id = "c0231a80-4c39-4c9e-8ac8-24b26bfce8be",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -1024,7 +1024,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T07:43:34.330Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.530Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
@@ -1090,7 +1090,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "e03138ca-2475-412c-943e-3e39c8cbdd98",
+        Id = "840e33b2-a05c-483e-8e30-53d1434ffaa0",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -1104,7 +1104,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "3c9f7376-cbb5-4697-9fa6-38f8b8c07c0c",
+                Id = "fb6e0969-a00b-4511-aff5-50e9b75f4664",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1124,7 +1124,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T04:22:48.849Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.978Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1180,7 +1180,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "c22b838c-803e-49c6-8960-00088cad5cd5",
+        Id = "31eb2471-3e3c-4948-808c-32e639e3714a",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -1199,7 +1199,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-07T16:00:55.449Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.695Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
