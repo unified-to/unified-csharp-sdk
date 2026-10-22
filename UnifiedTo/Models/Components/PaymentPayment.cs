@@ -151,6 +151,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tip_amount")]
         public double? TipAmount { get; set; }
 
+        /// <summary>
+        /// The amount paid, in the payment's currency.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 

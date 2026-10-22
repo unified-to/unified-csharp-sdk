@@ -25,7 +25,7 @@
 
 ## CreateKmsComment
 
-Create a comment
+Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
 
 ### Example Usage
 
@@ -45,10 +45,10 @@ var res = await sdk.Comment.CreateKmsCommentAsync(
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "9bb0fa6b-6078-40ca-bf4d-1b087575348f",
+        Id = "595dc521-ff38-4c5a-b9f6-ac2ddaa83a5c",
         Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-26T06:52:36.014Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-26T13:23:15.891Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Comment.CreateKmsCommentAsync(
 
 ## CreateTaskComment
 
-Create a comment
+Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
 
 ### Example Usage
 
@@ -96,10 +96,10 @@ var res = await sdk.Comment.CreateTaskCommentAsync(
     taskComment: new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "5a5efab5-321d-4e85-aac2-f01e97981478",
+        Id = "f097e434-0650-4a62-920d-8206a90e0c57",
         Metadata = new List<TaskMetadata>() {},
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-10-03T08:04:12.117Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-10-03T14:09:03.392Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -128,7 +128,7 @@ var res = await sdk.Comment.CreateTaskCommentAsync(
 
 ## CreateUcComment
 
-Create a comment
+Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
 
 ### Example Usage
 
@@ -146,9 +146,9 @@ var res = await sdk.Comment.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "023de2d0-4000-485b-a2b9-f5519a942c7e",
+        Id = "7ed3fa47-fe1b-4c27-b5f3-5e8ff285e426",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-09T18:34:01.215Z",
+        UpdatedAt = "2024-02-09T23:46:50.856Z",
     },
     connectionId: "<id>"
 );
@@ -177,7 +177,7 @@ var res = await sdk.Comment.CreateUcCommentAsync(
 
 ## GetKmsComment
 
-Retrieve a comment
+Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -219,7 +219,7 @@ var res = await sdk.Comment.GetKmsCommentAsync(
 
 ## GetTaskComment
 
-Retrieve a comment
+Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -261,7 +261,7 @@ var res = await sdk.Comment.GetTaskCommentAsync(
 
 ## GetUcComment
 
-Retrieve a comment
+Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -303,7 +303,7 @@ var res = await sdk.Comment.GetUcCommentAsync(
 
 ## ListKmsComments
 
-List all comments
+Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -344,7 +344,7 @@ var res = await sdk.Comment.ListKmsCommentsAsync(req);
 
 ## ListTaskComments
 
-List all comments
+Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -385,7 +385,7 @@ var res = await sdk.Comment.ListTaskCommentsAsync(req);
 
 ## ListUcComments
 
-List all comments
+Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -426,7 +426,7 @@ var res = await sdk.Comment.ListUcCommentsAsync(req);
 
 ## PatchKmsComment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -447,10 +447,10 @@ PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "48f1999b-2001-44a8-8609-383ce75a5f50",
+        Id = "f1e66f64-e50b-4323-94e0-82d5f2269c3a",
         Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-26T06:52:36.016Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-26T13:23:15.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -479,7 +479,7 @@ var res = await sdk.Comment.PatchKmsCommentAsync(req);
 
 ## PatchTaskComment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -499,10 +499,10 @@ PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
     TaskComment = new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "d0ddd781-6334-4891-99be-3e9fc8a30d67",
+        Id = "d41dadfa-566a-4f00-abd7-66f3d63dcfd3",
         Metadata = new List<TaskMetadata>() {},
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-10-03T08:04:12.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-10-03T14:09:03.396Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -531,7 +531,7 @@ var res = await sdk.Comment.PatchTaskCommentAsync(req);
 
 ## PatchUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -550,9 +550,9 @@ PatchUcCommentRequest req = new PatchUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "1a562fdd-c2f1-45af-a457-aa2cd760eae2",
+        Id = "05024e86-b7ef-4fac-a5af-3c8b7e35ff8d",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-09T18:34:01.216Z",
+        UpdatedAt = "2024-02-09T23:46:50.859Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -581,7 +581,7 @@ var res = await sdk.Comment.PatchUcCommentAsync(req);
 
 ## RemoveKmsComment
 
-Remove a comment
+Deletes the KmsComment identified by `id`.
 
 ### Example Usage
 
@@ -621,7 +621,7 @@ var res = await sdk.Comment.RemoveKmsCommentAsync(
 
 ## RemoveTaskComment
 
-Remove a comment
+Deletes the TaskComment identified by `id`.
 
 ### Example Usage
 
@@ -661,7 +661,7 @@ var res = await sdk.Comment.RemoveTaskCommentAsync(
 
 ## RemoveUcComment
 
-Remove a comment
+Deletes the UcComment identified by `id`.
 
 ### Example Usage
 
@@ -701,7 +701,7 @@ var res = await sdk.Comment.RemoveUcCommentAsync(
 
 ## UpdateKmsComment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -722,10 +722,10 @@ UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "48f1999b-2001-44a8-8609-383ce75a5f50",
+        Id = "f1e66f64-e50b-4323-94e0-82d5f2269c3a",
         Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-26T06:52:36.016Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-26T13:23:15.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -754,7 +754,7 @@ var res = await sdk.Comment.UpdateKmsCommentAsync(req);
 
 ## UpdateTaskComment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -774,10 +774,10 @@ UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
     TaskComment = new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "d0ddd781-6334-4891-99be-3e9fc8a30d67",
+        Id = "d41dadfa-566a-4f00-abd7-66f3d63dcfd3",
         Metadata = new List<TaskMetadata>() {},
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-10-03T08:04:12.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-10-03T14:09:03.396Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -806,7 +806,7 @@ var res = await sdk.Comment.UpdateTaskCommentAsync(req);
 
 ## UpdateUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -825,9 +825,9 @@ UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "1a562fdd-c2f1-45af-a457-aa2cd760eae2",
+        Id = "05024e86-b7ef-4fac-a5af-3c8b7e35ff8d",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-09T18:34:01.216Z",
+        UpdatedAt = "2024-02-09T23:46:50.859Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",

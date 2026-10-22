@@ -13,7 +13,7 @@
 
 ## CreateKmsPage
 
-Create a page
+Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider's API. Returns the created KmsPage.
 
 ### Example Usage
 
@@ -33,12 +33,12 @@ var res = await sdk.Page.CreateKmsPageAsync(
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "4e230536-7861-4c26-83b7-34f25af3b4a8",
+        Id = "83cc8743-e0ce-4492-ba8f-3aa7d4b1cb67",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-09T04:36:43.399Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-09T23:13:34.363Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     connectionId: "<id>"
@@ -68,7 +68,7 @@ var res = await sdk.Page.CreateKmsPageAsync(
 
 ## GetKmsPage
 
-Retrieve a page
+Retrieves a single KmsPage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +110,7 @@ var res = await sdk.Page.GetKmsPageAsync(
 
 ## ListKmsPages
 
-List all pages
+Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -151,7 +151,7 @@ var res = await sdk.Page.ListKmsPagesAsync(req);
 
 ## PatchKmsPage
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -172,12 +172,12 @@ PatchKmsPageRequest req = new PatchKmsPageRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "ff481899-5d1f-471b-92d3-31bfacd50a69",
+        Id = "896ec9ed-c773-45b1-b2b0-8fd372f7a610",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-09T04:36:43.410Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-09T23:13:34.378Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
@@ -207,7 +207,7 @@ var res = await sdk.Page.PatchKmsPageAsync(req);
 
 ## RemoveKmsPage
 
-Remove a page
+Deletes the KmsPage identified by `id`.
 
 ### Example Usage
 
@@ -247,7 +247,7 @@ var res = await sdk.Page.RemoveKmsPageAsync(
 
 ## UpdateKmsPage
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -268,12 +268,12 @@ UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "ff481899-5d1f-471b-92d3-31bfacd50a69",
+        Id = "896ec9ed-c773-45b1-b2b0-8fd372f7a610",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-09T04:36:43.410Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-09T23:13:34.378Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",

@@ -193,6 +193,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("response_url")]
         public string? ResponseUrl { get; set; }
 
+        /// <summary>
+        /// The current state of the assessment order.
+        /// </summary>
         [JsonProperty("status")]
         public AssessmentOrderStatus? Status { get; set; }
 

@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
+        /// </remarks>
         /// <param name="kmsComment">A <see cref="KmsComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
+        /// </remarks>
         /// <param name="taskComment">A <see cref="TaskComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
+        /// </remarks>
         /// <param name="ucComment">A <see cref="UcComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListKmsCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListKmsCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -152,6 +173,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -163,6 +187,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -174,6 +201,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchKmsCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchKmsCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -185,6 +215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -196,6 +229,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -207,6 +243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the KmsComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveKmsCommentResponse"/> response envelope when completed.</returns>
@@ -218,6 +257,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskCommentResponse"/> response envelope when completed.</returns>
@@ -229,6 +271,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcCommentResponse"/> response envelope when completed.</returns>
@@ -240,6 +285,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateKmsCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateKmsCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -251,6 +299,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -262,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -287,6 +341,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
+        /// </remarks>
         /// <param name="kmsComment">A <see cref="KmsComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -415,6 +472,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
+        /// </remarks>
         /// <param name="taskComment">A <see cref="TaskComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -543,6 +603,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
+        /// </remarks>
         /// <param name="ucComment">A <see cref="UcComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -671,6 +734,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -793,6 +859,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -915,6 +984,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1037,6 +1109,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListKmsCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListKmsCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1142,6 +1217,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1247,6 +1325,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1352,6 +1433,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchKmsCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchKmsCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1463,6 +1547,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1574,6 +1661,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1685,6 +1775,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the KmsComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveKmsCommentResponse"/> response envelope when completed.</returns>
@@ -1788,6 +1881,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskCommentResponse"/> response envelope when completed.</returns>
@@ -1891,6 +1987,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcCommentResponse"/> response envelope when completed.</returns>
@@ -1994,6 +2093,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateKmsCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateKmsCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2105,6 +2207,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2216,6 +2321,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

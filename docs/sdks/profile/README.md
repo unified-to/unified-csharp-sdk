@@ -15,7 +15,7 @@
 
 ## CreateCdpProfile
 
-Create a profile
+Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
 
 ### Example Usage
 
@@ -57,7 +57,7 @@ var res = await sdk.Profile.CreateCdpProfileAsync(
 
 ## GetCdpProfile
 
-Retrieve a profile
+Retrieves a single CdpProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -99,7 +99,7 @@ var res = await sdk.Profile.GetCdpProfileAsync(
 
 ## GetSocialProfile
 
-Retrieve a profile
+Retrieves a single SocialProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -141,7 +141,7 @@ var res = await sdk.Profile.GetSocialProfileAsync(
 
 ## ListCdpProfiles
 
-List all profiles
+Returns a list of CdpProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ var res = await sdk.Profile.ListCdpProfilesAsync(req);
 
 ## ListSocialProfiles
 
-List all profiles
+Returns a list of SocialProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -223,7 +223,7 @@ var res = await sdk.Profile.ListSocialProfilesAsync(req);
 
 ## PatchCdpProfile
 
-Update a profile
+Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
 
 ### Example Usage
 
@@ -266,7 +266,7 @@ var res = await sdk.Profile.PatchCdpProfileAsync(req);
 
 ## RemoveCdpProfile
 
-Remove a profile
+Deletes the CdpProfile identified by `id`.
 
 ### Example Usage
 
@@ -306,7 +306,7 @@ var res = await sdk.Profile.RemoveCdpProfileAsync(
 
 ## UpdateCdpProfile
 
-Update a profile
+Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
 
 ### Example Usage
 

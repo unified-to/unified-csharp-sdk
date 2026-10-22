@@ -13,7 +13,7 @@
 
 ## CreatePaymentSubscription
 
-Create a subscription
+Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
 
 ### Example Usage
 
@@ -36,7 +36,7 @@ var res = await sdk.Subscription.CreatePaymentSubscriptionAsync(
         CurrentPeriodStartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         DayOfMonth = 8D,
         Description = "Innovative Mouse featuring important technology and Bamboo construction",
-        Id = "f14da343-454d-46a9-bb8c-00f75a48a8a3",
+        Id = "4fc45c43-ef87-4046-8ab0-4b05393b2772",
         Interval = 1D,
         IntervalUnit = IntervalUnit.Year,
         Lineitems = new List<PaymentLineitem>() {},
@@ -45,7 +45,7 @@ var res = await sdk.Subscription.CreatePaymentSubscriptionAsync(
         StartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         Status = PaymentSubscriptionStatus.Active,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-04T12:54:49.598Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-04T15:28:09.065Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -74,7 +74,7 @@ var res = await sdk.Subscription.CreatePaymentSubscriptionAsync(
 
 ## GetPaymentSubscription
 
-Retrieve a subscription
+Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +116,7 @@ var res = await sdk.Subscription.GetPaymentSubscriptionAsync(
 
 ## ListPaymentSubscriptions
 
-List all subscriptions
+Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -157,7 +157,7 @@ var res = await sdk.Subscription.ListPaymentSubscriptionsAsync(req);
 
 ## PatchPaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
         CurrentPeriodStartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         DayOfMonth = 8D,
         Description = "Innovative Mouse featuring important technology and Bamboo construction",
-        Id = "1d5f56eb-9d66-494d-b53f-22c2103a9147",
+        Id = "ed4db1ee-810e-4ac7-8b4b-bbbe6f5af84b",
         Interval = 1D,
         IntervalUnit = IntervalUnit.Year,
         Lineitems = new List<PaymentLineitem>() {},
@@ -190,7 +190,7 @@ PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
         StartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         Status = PaymentSubscriptionStatus.Active,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-04T12:54:49.601Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-04T15:28:09.068Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -219,7 +219,7 @@ var res = await sdk.Subscription.PatchPaymentSubscriptionAsync(req);
 
 ## RemovePaymentSubscription
 
-Remove a subscription
+Deletes the PaymentSubscription identified by `id`.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ var res = await sdk.Subscription.RemovePaymentSubscriptionAsync(
 
 ## UpdatePaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -283,7 +283,7 @@ UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
         CurrentPeriodStartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         DayOfMonth = 8D,
         Description = "Innovative Mouse featuring important technology and Bamboo construction",
-        Id = "1d5f56eb-9d66-494d-b53f-22c2103a9147",
+        Id = "ed4db1ee-810e-4ac7-8b4b-bbbe6f5af84b",
         Interval = 1D,
         IntervalUnit = IntervalUnit.Year,
         Lineitems = new List<PaymentLineitem>() {},
@@ -292,7 +292,7 @@ UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
         StartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         Status = PaymentSubscriptionStatus.Active,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-04T12:54:49.601Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-04T15:28:09.068Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

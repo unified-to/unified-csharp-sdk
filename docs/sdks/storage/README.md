@@ -13,7 +13,7 @@
 
 ## CreateStorageFile
 
-Create a file
+Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
 
 ### Example Usage
 
@@ -34,7 +34,7 @@ var res = await sdk.Storage.CreateStorageFileAsync(
         Description = "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
         DownloadUrl = "https://clueless-laughter.biz",
         Hash = "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-        Id = "fe02df2e-9d53-4467-9885-bc37c4c1a5f5",
+        Id = "799a3df9-23d1-4942-a2f1-34b72ef23160",
         Metadata = new List<StorageMetadata>() {},
         MimeType = "application/pdf",
         Name = "softly.pdf",
@@ -43,7 +43,7 @@ var res = await sdk.Storage.CreateStorageFileAsync(
             "suasoria",
         },
         Type = StorageFileType.Folder,
-        UpdatedAt = System.DateTime.Parse("2023-02-05T13:04:48.362Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-05T19:00:15.352Z").ToUniversalTime(),
         Version = "1",
         WebUrl = "https://faraway-inspection.org",
     },
@@ -74,7 +74,7 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 
 ## GetStorageFile
 
-Retrieve a file
+Retrieves a single StorageFile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +116,7 @@ var res = await sdk.Storage.GetStorageFileAsync(
 
 ## ListStorageFiles
 
-List all files
+Returns a list of StorageFiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -157,7 +157,7 @@ var res = await sdk.Storage.ListStorageFilesAsync(req);
 
 ## PatchStorageFile
 
-Update a file
+Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
 
 ### Example Usage
 
@@ -179,7 +179,7 @@ PatchStorageFileRequest req = new PatchStorageFileRequest() {
         Description = "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
         DownloadUrl = "https://clueless-laughter.biz",
         Hash = "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-        Id = "5ef20e04-0a49-41b2-92ff-8c56a29688cf",
+        Id = "e412a0ae-b75b-4a33-963e-7f03cc3e884a",
         Metadata = new List<StorageMetadata>() {},
         MimeType = "application/pdf",
         Name = "softly.pdf",
@@ -188,7 +188,7 @@ PatchStorageFileRequest req = new PatchStorageFileRequest() {
             "suasoria",
         },
         Type = StorageFileType.Folder,
-        UpdatedAt = System.DateTime.Parse("2023-02-05T13:04:48.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-05T19:00:15.359Z").ToUniversalTime(),
         Version = "1",
         WebUrl = "https://faraway-inspection.org",
     },
@@ -219,7 +219,7 @@ var res = await sdk.Storage.PatchStorageFileAsync(req);
 
 ## RemoveStorageFile
 
-Remove a file
+Deletes the StorageFile identified by `id`.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 
 ## UpdateStorageFile
 
-Update a file
+Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
 
 ### Example Usage
 
@@ -281,7 +281,7 @@ UpdateStorageFileRequest req = new UpdateStorageFileRequest() {
         Description = "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
         DownloadUrl = "https://clueless-laughter.biz",
         Hash = "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-        Id = "5ef20e04-0a49-41b2-92ff-8c56a29688cf",
+        Id = "e412a0ae-b75b-4a33-963e-7f03cc3e884a",
         Metadata = new List<StorageMetadata>() {},
         MimeType = "application/pdf",
         Name = "softly.pdf",
@@ -290,7 +290,7 @@ UpdateStorageFileRequest req = new UpdateStorageFileRequest() {
             "suasoria",
         },
         Type = StorageFileType.Folder,
-        UpdatedAt = System.DateTime.Parse("2023-02-05T13:04:48.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-05T19:00:15.359Z").ToUniversalTime(),
         Version = "1",
         WebUrl = "https://faraway-inspection.org",
     },

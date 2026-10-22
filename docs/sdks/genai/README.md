@@ -38,7 +38,7 @@
 
 ## CreateGenaiAgent
 
-Create an agent
+Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
 
 ### Example Usage
 
@@ -56,11 +56,11 @@ var res = await sdk.Genai.CreateGenaiAgentAsync(
     genaiAgent: new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "fc7c691c-2fd4-433e-b26f-fd06566f983b",
+        Id = "0e3ca257-886d-4cac-b2f9-958cd8dd7e49",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-15T11:01:21.381Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-16T04:53:11.922Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -89,7 +89,7 @@ var res = await sdk.Genai.CreateGenaiAgentAsync(
 
 ## CreateGenaiEmbedding
 
-Create an embedding
+Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
 
 ### Example Usage
 
@@ -113,7 +113,7 @@ var res = await sdk.Genai.CreateGenaiEmbeddingAsync(
         Dimension = 423D,
         Embeddings = "Est.",
         EncondingFormat = EncondingFormat.Float,
-        Id = "85a5163c-b4f7-4c83-9e2e-285020ff3323",
+        Id = "bca20b8c-ed43-48ea-90b0-2e8deb8cdcc7",
         MaxTokens = 223D,
         TokensUsed = 836D,
         Type = "classification",
@@ -145,7 +145,7 @@ var res = await sdk.Genai.CreateGenaiEmbeddingAsync(
 
 ## CreateGenaiMemory
 
-Create a memory
+Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
 
 ### Example Usage
 
@@ -164,7 +164,7 @@ var res = await sdk.Genai.CreateGenaiMemoryAsync(
     genaiMemory: new GenaiMemory() {
         Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
         CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
-        Id = "b556731c-2a30-40bd-8c47-a8994576300a",
+        Id = "a8d0bd49-60a7-4db1-b5b0-bffe1c5da1b4",
         Metadata = new List<GenaiMetadata>() {
             new GenaiMetadata() {
                 ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
@@ -183,7 +183,7 @@ var res = await sdk.Genai.CreateGenaiMemoryAsync(
         },
         Name = "sponte.md",
         Type = GenaiMemoryType.Memory,
-        UpdatedAt = System.DateTime.Parse("2023-04-25T21:33:54.103Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-04-26T04:05:23.385Z").ToUniversalTime(),
         UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>"
@@ -213,7 +213,7 @@ var res = await sdk.Genai.CreateGenaiMemoryAsync(
 
 ## CreateGenaiOrganization
 
-Create an organization
+Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
 
 ### Example Usage
 
@@ -231,10 +231,10 @@ var res = await sdk.Genai.CreateGenaiOrganizationAsync(
     genaiOrganization: new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "c5cc3acf-9a6d-4488-ae39-423b5f14be62",
+        Id = "0db969ee-5975-4deb-8e0a-f365afb65a00",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:44:44.329Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:52:10.280Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -263,7 +263,7 @@ var res = await sdk.Genai.CreateGenaiOrganizationAsync(
 
 ## CreateGenaiPrompt
 
-Create a prompt
+Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
 
 ### Example Usage
 
@@ -379,7 +379,7 @@ var res = await sdk.Genai.CreateGenaiPromptAsync(
 
 ## CreateGenaiTask
 
-Create a task
+Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
 
 ### Example Usage
 
@@ -396,10 +396,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Genai.CreateGenaiTaskAsync(
     genaiTask: new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-10-01T06:53:51.751Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-10-02T00:42:47.102Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "2efb0db1-8567-4f2d-bc70-e43b7076fb90",
+        Id = "ce9fed59-a41f-4475-80a9-44bc0c6a2f38",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -414,12 +414,12 @@ var res = await sdk.Genai.CreateGenaiTaskAsync(
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-21T10:39:41.572Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-21T23:33:12.581Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-26T07:21:35.442Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-26T15:48:00.537Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>"
@@ -449,7 +449,7 @@ var res = await sdk.Genai.CreateGenaiTaskAsync(
 
 ## GetGenaiAgent
 
-Retrieve an agent
+Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -491,7 +491,7 @@ var res = await sdk.Genai.GetGenaiAgentAsync(
 
 ## GetGenaiMemory
 
-Retrieve a memory
+Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -533,7 +533,7 @@ var res = await sdk.Genai.GetGenaiMemoryAsync(
 
 ## GetGenaiModel
 
-Retrieve a model
+Retrieves a single GenaiModel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -575,7 +575,7 @@ var res = await sdk.Genai.GetGenaiModelAsync(
 
 ## GetGenaiOrganization
 
-Retrieve an organization
+Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -617,7 +617,7 @@ var res = await sdk.Genai.GetGenaiOrganizationAsync(
 
 ## GetGenaiSkill
 
-Retrieve a skill
+Retrieves a single GenaiSkill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -659,7 +659,7 @@ var res = await sdk.Genai.GetGenaiSkillAsync(
 
 ## GetGenaiTask
 
-Retrieve a task
+Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -701,7 +701,7 @@ var res = await sdk.Genai.GetGenaiTaskAsync(
 
 ## ListGenaiAgents
 
-List all agents
+Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -742,7 +742,7 @@ var res = await sdk.Genai.ListGenaiAgentsAsync(req);
 
 ## ListGenaiMemories
 
-List all memories
+Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -783,7 +783,7 @@ var res = await sdk.Genai.ListGenaiMemoriesAsync(req);
 
 ## ListGenaiModels
 
-List all models
+Returns a list of GenaiModels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -824,7 +824,7 @@ var res = await sdk.Genai.ListGenaiModelsAsync(req);
 
 ## ListGenaiOrganizations
 
-List all organizations
+Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -865,7 +865,7 @@ var res = await sdk.Genai.ListGenaiOrganizationsAsync(req);
 
 ## ListGenaiSkills
 
-List all skills
+Returns a list of GenaiSkills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -906,7 +906,7 @@ var res = await sdk.Genai.ListGenaiSkillsAsync(req);
 
 ## ListGenaiTasks
 
-List all tasks
+Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -947,7 +947,7 @@ var res = await sdk.Genai.ListGenaiTasksAsync(req);
 
 ## PatchGenaiAgent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -966,11 +966,11 @@ PatchGenaiAgentRequest req = new PatchGenaiAgentRequest() {
     GenaiAgent = new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "1dc5df92-f5fc-4e83-a1e1-c749e2525224",
+        Id = "6e397907-a112-46a5-976c-d8c4a4267fba",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-15T11:01:21.387Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-16T04:53:11.929Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -999,7 +999,7 @@ var res = await sdk.Genai.PatchGenaiAgentAsync(req);
 
 ## PatchGenaiMemory
 
-Update a memory
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
 
 ### Example Usage
 
@@ -1019,7 +1019,7 @@ PatchGenaiMemoryRequest req = new PatchGenaiMemoryRequest() {
     GenaiMemory = new GenaiMemory() {
         Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
         CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
-        Id = "8282ed9b-283b-4e98-8696-07d930e31d35",
+        Id = "49be32c7-36a3-4f23-b53c-a04c6cc220a8",
         Metadata = new List<GenaiMetadata>() {
             new GenaiMetadata() {
                 ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
@@ -1038,7 +1038,7 @@ PatchGenaiMemoryRequest req = new PatchGenaiMemoryRequest() {
         },
         Name = "sponte.md",
         Type = GenaiMemoryType.Memory,
-        UpdatedAt = System.DateTime.Parse("2023-04-25T21:33:54.105Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-04-26T04:05:23.389Z").ToUniversalTime(),
         UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     ConnectionId = "<id>",
@@ -1068,7 +1068,7 @@ var res = await sdk.Genai.PatchGenaiMemoryAsync(req);
 
 ## PatchGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1087,10 +1087,10 @@ PatchGenaiOrganizationRequest req = new PatchGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "e881cf2c-ad2e-4719-81e9-eaaae51f7bd6",
+        Id = "17e87277-6bb2-4ad4-a19e-a14f3777b078",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:44:44.330Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:52:10.282Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1119,7 +1119,7 @@ var res = await sdk.Genai.PatchGenaiOrganizationAsync(req);
 
 ## PatchGenaiTask
 
-Update a task
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
 
 ### Example Usage
 
@@ -1137,10 +1137,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchGenaiTaskRequest req = new PatchGenaiTaskRequest() {
     GenaiTask = new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-10-01T06:53:51.764Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-10-02T00:42:47.118Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "9fa1e85a-d847-463a-907b-103e9e06ac3c",
+        Id = "a3e5bda5-a37c-4523-b4f1-601f703b129c",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -1155,12 +1155,12 @@ PatchGenaiTaskRequest req = new PatchGenaiTaskRequest() {
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-21T10:39:41.582Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-21T23:33:12.593Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-26T07:21:35.448Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-26T15:48:00.545Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     ConnectionId = "<id>",
@@ -1190,7 +1190,7 @@ var res = await sdk.Genai.PatchGenaiTaskAsync(req);
 
 ## RemoveGenaiAgent
 
-Remove an agent
+Deletes the GenaiAgent identified by `id`.
 
 ### Example Usage
 
@@ -1230,7 +1230,7 @@ var res = await sdk.Genai.RemoveGenaiAgentAsync(
 
 ## RemoveGenaiMemory
 
-Remove a memory
+Deletes the GenaiMemory identified by `id`.
 
 ### Example Usage
 
@@ -1270,7 +1270,7 @@ var res = await sdk.Genai.RemoveGenaiMemoryAsync(
 
 ## RemoveGenaiOrganization
 
-Remove an organization
+Deletes the GenaiOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1310,7 +1310,7 @@ var res = await sdk.Genai.RemoveGenaiOrganizationAsync(
 
 ## RemoveGenaiSkill
 
-Remove a skill
+Deletes the GenaiSkill identified by `id`.
 
 ### Example Usage
 
@@ -1350,7 +1350,7 @@ var res = await sdk.Genai.RemoveGenaiSkillAsync(
 
 ## RemoveGenaiTask
 
-Remove a task
+Deletes the GenaiTask identified by `id`.
 
 ### Example Usage
 
@@ -1390,7 +1390,7 @@ var res = await sdk.Genai.RemoveGenaiTaskAsync(
 
 ## UpdateGenaiAgent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -1409,11 +1409,11 @@ UpdateGenaiAgentRequest req = new UpdateGenaiAgentRequest() {
     GenaiAgent = new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "1dc5df92-f5fc-4e83-a1e1-c749e2525224",
+        Id = "6e397907-a112-46a5-976c-d8c4a4267fba",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-15T11:01:21.387Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-16T04:53:11.929Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1442,7 +1442,7 @@ var res = await sdk.Genai.UpdateGenaiAgentAsync(req);
 
 ## UpdateGenaiMemory
 
-Update a memory
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
 
 ### Example Usage
 
@@ -1462,7 +1462,7 @@ UpdateGenaiMemoryRequest req = new UpdateGenaiMemoryRequest() {
     GenaiMemory = new GenaiMemory() {
         Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
         CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
-        Id = "8282ed9b-283b-4e98-8696-07d930e31d35",
+        Id = "49be32c7-36a3-4f23-b53c-a04c6cc220a8",
         Metadata = new List<GenaiMetadata>() {
             new GenaiMetadata() {
                 ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
@@ -1481,7 +1481,7 @@ UpdateGenaiMemoryRequest req = new UpdateGenaiMemoryRequest() {
         },
         Name = "sponte.md",
         Type = GenaiMemoryType.Memory,
-        UpdatedAt = System.DateTime.Parse("2023-04-25T21:33:54.105Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-04-26T04:05:23.389Z").ToUniversalTime(),
         UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     ConnectionId = "<id>",
@@ -1511,7 +1511,7 @@ var res = await sdk.Genai.UpdateGenaiMemoryAsync(req);
 
 ## UpdateGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1530,10 +1530,10 @@ UpdateGenaiOrganizationRequest req = new UpdateGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "e881cf2c-ad2e-4719-81e9-eaaae51f7bd6",
+        Id = "17e87277-6bb2-4ad4-a19e-a14f3777b078",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:44:44.330Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:52:10.282Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1562,7 +1562,7 @@ var res = await sdk.Genai.UpdateGenaiOrganizationAsync(req);
 
 ## UpdateGenaiTask
 
-Update a task
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
 
 ### Example Usage
 
@@ -1580,10 +1580,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateGenaiTaskRequest req = new UpdateGenaiTaskRequest() {
     GenaiTask = new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-10-01T06:53:51.764Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-10-02T00:42:47.118Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "9fa1e85a-d847-463a-907b-103e9e06ac3c",
+        Id = "a3e5bda5-a37c-4523-b4f1-601f703b129c",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -1598,12 +1598,12 @@ UpdateGenaiTaskRequest req = new UpdateGenaiTaskRequest() {
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-21T10:39:41.582Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-21T23:33:12.593Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-26T07:21:35.448Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-26T15:48:00.545Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     ConnectionId = "<id>",

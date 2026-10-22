@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+        /// </remarks>
         /// <param name="accountingOrder">@deprecated; use AccountingSalesorder or AccountingPurchaseorder.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -36,6 +39,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(
             AccountingOrder accountingOrder,
             string connectionId,
@@ -46,6 +50,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
+        /// </remarks>
         /// <param name="assessmentOrder">A <see cref="AssessmentOrder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +72,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -74,6 +84,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<GetAccountingOrderResponse> GetAccountingOrderAsync(
             string connectionId,
             string id,
@@ -84,6 +95,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,28 +117,39 @@ namespace UnifiedTo
         /// <summary>
         /// List all orders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrdersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrdersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<ListAccountingOrdersResponse> ListAccountingOrdersAsync(ListAccountingOrdersRequest request);
 
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(PatchAccountingOrderRequest request);
 
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,28 +161,39 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an order.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingOrder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<RemoveAccountingOrderResponse> RemoveAccountingOrderAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(UpdateAccountingOrderRequest request);
 
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -183,6 +219,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+        /// </remarks>
         /// <param name="accountingOrder">@deprecated; use AccountingSalesorder or AccountingPurchaseorder.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -192,6 +231,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(
             AccountingOrder accountingOrder,
             string connectionId,
@@ -311,6 +351,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
+        /// </remarks>
         /// <param name="assessmentOrder">A <see cref="AssessmentOrder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -439,6 +482,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -448,6 +494,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<GetAccountingOrderResponse> GetAccountingOrderAsync(
             string connectionId,
             string id,
@@ -561,6 +608,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -683,12 +733,16 @@ namespace UnifiedTo
         /// <summary>
         /// List all orders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrdersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrdersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<ListAccountingOrdersResponse> ListAccountingOrdersAsync(ListAccountingOrdersRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -788,12 +842,16 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(PatchAccountingOrderRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -899,6 +957,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1010,12 +1071,16 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an order.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingOrder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<RemoveAccountingOrderResponse> RemoveAccountingOrderAsync(string connectionId, string id)
         {
             if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
@@ -1113,12 +1178,16 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(
             UpdateAccountingOrderRequest request
         )
@@ -1226,6 +1295,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

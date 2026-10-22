@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("count")]
         public double? Count { get; set; }
 
+        /// <summary>
+        /// Each item is one group row: a map of field name to value.
+        /// </summary>
         [JsonProperty("groups")]
         public List<Dictionary<string, DatastoreFieldValue>>? Groups { get; set; }
 

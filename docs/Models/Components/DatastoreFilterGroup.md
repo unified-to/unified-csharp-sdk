@@ -1,0 +1,11 @@
+# DatastoreFilterGroup
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `And`                                                                           | List<[DatastoreFilterGroup](../../Models/Components/DatastoreFilterGroup.md)>   | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Filters`                                                                       | List<[DatastoreFilter](../../Models/Components/DatastoreFilter.md)>             | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Or`                                                                            | List<[DatastoreFilterGroup](../../Models/Components/DatastoreFilterGroup.md)>   | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Type`                                                                          | [DatastoreFilterGroupType](../../Models/Components/DatastoreFilterGroupType.md) | :heavy_check_mark:                                                              | N/A                                                                             |

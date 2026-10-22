@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activation.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
+        /// </remarks>
         /// <param name="cdpActivation">A <see cref="CdpActivation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a destination.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
+        /// </remarks>
         /// <param name="cdpDestination">A <see cref="CdpDestination"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
+        /// </remarks>
         /// <param name="cdpEvent">A <see cref="CdpEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a profile.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
+        /// </remarks>
         /// <param name="cdpProfile">A <see cref="CdpProfile"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a segment.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
+        /// </remarks>
         /// <param name="cdpSegment">A <see cref="CdpSegment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a source.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
+        /// </remarks>
         /// <param name="cdpSource">A <see cref="CdpSource"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a destination.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Destination.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a profile.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Profile.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a segment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpSegment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Segment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a source.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpSource by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Source.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpActivationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpActivationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -266,6 +305,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all destinations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpDestinationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpDestinationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -277,6 +319,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -288,6 +333,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all profiles.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpProfilesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpProfilesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -299,6 +347,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all segments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpSegments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpSegmentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpSegmentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -310,6 +361,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all sources.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpSources. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpSourcesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpSourcesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -321,6 +375,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpActivationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpActivationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -332,6 +389,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a destination.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpDestinationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpDestinationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -343,6 +403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -354,6 +417,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a profile.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpProfileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpProfileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -365,6 +431,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a segment.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpSegmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpSegmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -376,6 +445,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a source.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpSourceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpSourceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -387,6 +459,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activation.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpActivation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activation.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpActivationResponse"/> response envelope when completed.</returns>
@@ -398,6 +473,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a destination.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpDestination identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Destination.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpDestinationResponse"/> response envelope when completed.</returns>
@@ -409,6 +487,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpEventResponse"/> response envelope when completed.</returns>
@@ -420,6 +501,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a profile.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpProfile identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Profile.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpProfileResponse"/> response envelope when completed.</returns>
@@ -431,6 +515,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a segment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpSegment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Segment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpSegmentResponse"/> response envelope when completed.</returns>
@@ -442,6 +529,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a source.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpSource identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Source.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpSourceResponse"/> response envelope when completed.</returns>
@@ -453,6 +543,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpActivationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpActivationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -464,6 +557,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a destination.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpDestinationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpDestinationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -475,6 +571,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -486,6 +585,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a profile.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpProfileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpProfileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -497,6 +599,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a segment.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpSegmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpSegmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -508,6 +613,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a source.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpSourceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpSourceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -533,6 +641,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activation.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
+        /// </remarks>
         /// <param name="cdpActivation">A <see cref="CdpActivation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -661,6 +772,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a destination.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
+        /// </remarks>
         /// <param name="cdpDestination">A <see cref="CdpDestination"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -789,6 +903,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
+        /// </remarks>
         /// <param name="cdpEvent">A <see cref="CdpEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -917,6 +1034,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a profile.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
+        /// </remarks>
         /// <param name="cdpProfile">A <see cref="CdpProfile"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1045,6 +1165,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a segment.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
+        /// </remarks>
         /// <param name="cdpSegment">A <see cref="CdpSegment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1173,6 +1296,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a source.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
+        /// </remarks>
         /// <param name="cdpSource">A <see cref="CdpSource"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1301,6 +1427,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1423,6 +1552,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a destination.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Destination.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1545,6 +1677,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1667,6 +1802,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a profile.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Profile.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1789,6 +1927,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a segment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpSegment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Segment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1911,6 +2052,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a source.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpSource by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Source.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2033,6 +2177,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpActivationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpActivationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2138,6 +2285,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all destinations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpDestinationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpDestinationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2243,6 +2393,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2348,6 +2501,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all profiles.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpProfilesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpProfilesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2453,6 +2609,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all segments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpSegments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpSegmentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpSegmentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2558,6 +2717,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all sources.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpSources. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpSourcesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpSourcesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2663,6 +2825,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpActivationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpActivationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2774,6 +2939,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a destination.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpDestinationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpDestinationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2885,6 +3053,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2996,6 +3167,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a profile.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpProfileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpProfileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3107,6 +3281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a segment.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpSegmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpSegmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3218,6 +3395,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a source.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpSourceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpSourceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3329,6 +3509,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activation.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpActivation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activation.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpActivationResponse"/> response envelope when completed.</returns>
@@ -3432,6 +3615,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a destination.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpDestination identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Destination.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpDestinationResponse"/> response envelope when completed.</returns>
@@ -3535,6 +3721,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpEventResponse"/> response envelope when completed.</returns>
@@ -3638,6 +3827,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a profile.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpProfile identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Profile.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpProfileResponse"/> response envelope when completed.</returns>
@@ -3741,6 +3933,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a segment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpSegment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Segment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpSegmentResponse"/> response envelope when completed.</returns>
@@ -3844,6 +4039,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a source.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpSource identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Source.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpSourceResponse"/> response envelope when completed.</returns>
@@ -3947,6 +4145,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpActivationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpActivationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4058,6 +4259,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a destination.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpDestinationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpDestinationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4169,6 +4373,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4280,6 +4487,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a profile.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpProfileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpProfileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4391,6 +4601,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a segment.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpSegmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpSegmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4502,6 +4715,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a source.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpSourceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpSourceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

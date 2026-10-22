@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a file.
         /// </summary>
+        /// <remarks>
+        /// Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
+        /// </remarks>
         /// <param name="storageFile">A <see cref="StorageFile"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a file.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single StorageFile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the File.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all files.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of StorageFiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListStorageFilesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListStorageFilesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a file.
         /// </summary>
+        /// <remarks>
+        /// Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchStorageFileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchStorageFileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a file.
         /// </summary>
+        /// <remarks>
+        /// Deletes the StorageFile identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the File.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveStorageFileResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a file.
         /// </summary>
+        /// <remarks>
+        /// Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateStorageFileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateStorageFileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a file.
         /// </summary>
+        /// <remarks>
+        /// Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
+        /// </remarks>
         /// <param name="storageFile">A <see cref="StorageFile"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -251,6 +272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a file.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single StorageFile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the File.</param>
         /// <param name="fields">Fields to return.</param>
@@ -373,6 +397,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all files.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of StorageFiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListStorageFilesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListStorageFilesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -478,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a file.
         /// </summary>
+        /// <remarks>
+        /// Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchStorageFileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchStorageFileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -589,6 +619,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a file.
         /// </summary>
+        /// <remarks>
+        /// Deletes the StorageFile identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the File.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveStorageFileResponse"/> response envelope when completed.</returns>
@@ -692,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a file.
         /// </summary>
+        /// <remarks>
+        /// Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateStorageFileRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateStorageFileResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -85,9 +85,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AdsMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The campaign's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The ID of the ad account the campaign belongs to (an AdsOrganization ID).
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 

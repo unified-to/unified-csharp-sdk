@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("budget_unit")]
         public PropertyAdsReportMetricsGroupBudgetUnit? BudgetUnit { get; set; }
 
+        /// <summary>
+        /// The ID of the campaign the ad group belongs to (an AdsCampaign ID).
+        /// </summary>
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
@@ -100,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AdsMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The ad group's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

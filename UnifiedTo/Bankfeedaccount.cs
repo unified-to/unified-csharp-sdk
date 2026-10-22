@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
+        /// </remarks>
         /// <param name="accountingBankfeedaccount">A <see cref="AccountingBankfeedaccount"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankfeedaccounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBankfeedaccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedaccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -78,6 +87,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -91,6 +103,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBankfeedaccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
@@ -105,6 +120,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -132,6 +150,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
+        /// </remarks>
         /// <param name="accountingBankfeedaccount">A <see cref="AccountingBankfeedaccount"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -260,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <param name="fields">Fields to return.</param>
@@ -382,6 +406,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankfeedaccounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBankfeedaccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedaccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -489,6 +516,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -602,6 +632,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBankfeedaccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
@@ -708,6 +741,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

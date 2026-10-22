@@ -13,7 +13,7 @@
 
 ## CreateHrisDevice
 
-Create a device
+Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ var res = await sdk.Device.CreateHrisDeviceAsync(
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = false,
-        Id = "8d8f451f-10cf-4ff3-933a-210f70aa7ba9",
+        Id = "fb078e8b-e01a-452a-a844-479e38fe39cb",
         IsMissing = false,
         Manufacturer = "Hackett Inc",
         Metadata = new List<HrisMetadata>() {},
@@ -46,7 +46,7 @@ var res = await sdk.Device.CreateHrisDeviceAsync(
         Name = "august-laptop",
         Os = "transmitter",
         OsVersion = "8.4.8",
-        UpdatedAt = System.DateTime.Parse("2023-06-08T07:30:02.461Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T19:28:01.779Z").ToUniversalTime(),
         Version = "4.15.7",
     },
     connectionId: "<id>"
@@ -76,7 +76,7 @@ var res = await sdk.Device.CreateHrisDeviceAsync(
 
 ## GetHrisDevice
 
-Retrieve a device
+Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -118,7 +118,7 @@ var res = await sdk.Device.GetHrisDeviceAsync(
 
 ## ListHrisDevices
 
-List all devices
+Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -159,7 +159,7 @@ var res = await sdk.Device.ListHrisDevicesAsync(req);
 
 ## PatchHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = false,
-        Id = "d0344a75-80dd-4f3c-b501-369f3552b0ca",
+        Id = "706c2aee-0d80-490b-bef8-2ef083d3594d",
         IsMissing = false,
         Manufacturer = "Hackett Inc",
         Metadata = new List<HrisMetadata>() {},
@@ -193,7 +193,7 @@ PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
         Name = "august-laptop",
         Os = "transmitter",
         OsVersion = "8.4.8",
-        UpdatedAt = System.DateTime.Parse("2023-06-08T07:30:02.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T19:28:01.785Z").ToUniversalTime(),
         Version = "4.15.7",
     },
     ConnectionId = "<id>",
@@ -223,7 +223,7 @@ var res = await sdk.Device.PatchHrisDeviceAsync(req);
 
 ## RemoveHrisDevice
 
-Remove a device
+Deletes the HrisDevice identified by `id`.
 
 ### Example Usage
 
@@ -263,7 +263,7 @@ var res = await sdk.Device.RemoveHrisDeviceAsync(
 
 ## UpdateHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -289,7 +289,7 @@ UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = false,
-        Id = "d0344a75-80dd-4f3c-b501-369f3552b0ca",
+        Id = "706c2aee-0d80-490b-bef8-2ef083d3594d",
         IsMissing = false,
         Manufacturer = "Hackett Inc",
         Metadata = new List<HrisMetadata>() {},
@@ -297,7 +297,7 @@ UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
         Name = "august-laptop",
         Os = "transmitter",
         OsVersion = "8.4.8",
-        UpdatedAt = System.DateTime.Parse("2023-06-08T07:30:02.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T19:28:01.785Z").ToUniversalTime(),
         Version = "4.15.7",
     },
     ConnectionId = "<id>",

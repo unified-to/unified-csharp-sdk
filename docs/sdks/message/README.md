@@ -13,7 +13,7 @@
 
 ## CreateMessagingMessage
 
-Create a message
+Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
 
 ### Example Usage
 
@@ -32,17 +32,17 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
     messagingMessage: new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "fe38048e-9a9b-4ab2-a664-5c2a96682d66",
+                ContentIdentifier = "7abd8ad4-d875-4dc9-b650-775e2a39bb28",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "c2804ce6-2984-479c-9b39-c053bab62dbb",
+                MessageId = "845d1693-bdcc-4926-88c5-be145bf17fac",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "02489d0a-587f-4e25-a8bc-53c6a26f7d76",
+                Id = "d43e6d5d-183a-4a65-b3cc-94cc3052a706",
                 Text = "comparo",
             },
         },
@@ -50,7 +50,7 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "c2804ce6-2984-479c-9b39-c053bab62dbb",
+        Id = "845d1693-bdcc-4926-88c5-be145bf17fac",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -59,7 +59,7 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
         Metadata = new List<MessagingMetadata>() {},
         Reactions = new List<MessagingReaction>() {},
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-17T12:02:04.285Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T19:15:36.345Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     connectionId: "<id>"
@@ -89,7 +89,7 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
 
 ## GetMessagingMessage
 
-Retrieve a message
+Retrieves a single MessagingMessage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -131,7 +131,7 @@ var res = await sdk.Message.GetMessagingMessageAsync(
 
 ## ListMessagingMessages
 
-List all messages
+Returns a list of MessagingMessages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -172,7 +172,7 @@ var res = await sdk.Message.ListMessagingMessagesAsync(req);
 
 ## PatchMessagingMessage
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -192,17 +192,17 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "f40b36ad-0dbc-4d00-97de-52b0ba4f53c1",
+                ContentIdentifier = "241408e6-43f9-4b24-af6e-3965429185c1",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+                MessageId = "15edee8d-451e-4064-86ec-1b65dac5edfe",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "23ec18af-dbb6-4ba5-8e5f-dc6d713e3ffe",
+                Id = "191ae686-e2a5-4e5c-bf5c-fd7ef0d4e02d",
                 Text = "comparo",
             },
         },
@@ -210,7 +210,7 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+        Id = "15edee8d-451e-4064-86ec-1b65dac5edfe",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -219,7 +219,7 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
         Metadata = new List<MessagingMetadata>() {},
         Reactions = new List<MessagingReaction>() {},
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-17T12:02:04.295Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T19:15:36.353Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     ConnectionId = "<id>",
@@ -249,7 +249,7 @@ var res = await sdk.Message.PatchMessagingMessageAsync(req);
 
 ## RemoveMessagingMessage
 
-Remove a message
+Deletes the MessagingMessage identified by `id`.
 
 ### Example Usage
 
@@ -289,7 +289,7 @@ var res = await sdk.Message.RemoveMessagingMessageAsync(
 
 ## UpdateMessagingMessage
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -309,17 +309,17 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "f40b36ad-0dbc-4d00-97de-52b0ba4f53c1",
+                ContentIdentifier = "241408e6-43f9-4b24-af6e-3965429185c1",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+                MessageId = "15edee8d-451e-4064-86ec-1b65dac5edfe",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "23ec18af-dbb6-4ba5-8e5f-dc6d713e3ffe",
+                Id = "191ae686-e2a5-4e5c-bf5c-fd7ef0d4e02d",
                 Text = "comparo",
             },
         },
@@ -327,7 +327,7 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+        Id = "15edee8d-451e-4064-86ec-1b65dac5edfe",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -336,7 +336,7 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
         Metadata = new List<MessagingMetadata>() {},
         Reactions = new List<MessagingReaction>() {},
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-17T12:02:04.295Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T19:15:36.353Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     ConnectionId = "<id>",

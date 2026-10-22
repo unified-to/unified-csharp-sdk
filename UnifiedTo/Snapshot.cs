@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
+        /// </remarks>
         /// <param name="computeSnapshot">A <see cref="ComputeSnapshot"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all snapshots.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeSnapshotsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeSnapshotsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeSnapshot identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeSnapshotResponse"/> response envelope when completed.</returns>
@@ -101,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
+        /// </remarks>
         /// <param name="computeSnapshot">A <see cref="ComputeSnapshot"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -229,6 +244,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <param name="fields">Fields to return.</param>
@@ -351,6 +369,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all snapshots.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeSnapshotsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeSnapshotsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -456,6 +477,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeSnapshot identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeSnapshotResponse"/> response envelope when completed.</returns>

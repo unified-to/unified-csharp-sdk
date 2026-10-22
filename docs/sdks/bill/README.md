@@ -13,7 +13,7 @@
 
 ## CreateAccountingBill
 
-Create a bill
+Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ var res = await sdk.Bill.CreateAccountingBillAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://puny-foodstuffs.name",
-                Id = "c1605439-f179-4b3b-a6d9-8587613faf73",
+                Id = "f802252a-cf6e-427a-97e9-899e07aca370",
                 MimeType = "application/pdf",
                 Name = "BILL-2466.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://grimy-characterization.net",
-                Id = "290d1f1a-3fa9-4564-be9d-4502bd742b86",
+                Id = "b3cd1be2-0f9d-47b4-b971-a611b8927761",
                 MimeType = "application/pdf",
                 Name = "BILL-2466-1.pdf",
             },
@@ -52,7 +52,7 @@ var res = await sdk.Bill.CreateAccountingBillAsync(
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-09-07T23:03:14.104Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "d9cb1af0-bd77-4c74-b2a5-f03af0568090",
+        Id = "369ae9d6-6832-4c41-92b0-e9e775afd9f0",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -68,7 +68,7 @@ var res = await sdk.Bill.CreateAccountingBillAsync(
         TaxAmount = 0D,
         Term = Term.Net90,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2020-06-01T05:49:59.569Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-06-01T08:13:39.080Z").ToUniversalTime(),
         Url = "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>"
@@ -98,7 +98,7 @@ var res = await sdk.Bill.CreateAccountingBillAsync(
 
 ## GetAccountingBill
 
-Retrieve a bill
+Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -140,7 +140,7 @@ var res = await sdk.Bill.GetAccountingBillAsync(
 
 ## ListAccountingBills
 
-List all bills
+Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ var res = await sdk.Bill.ListAccountingBillsAsync(req);
 
 ## PatchAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -202,13 +202,13 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://puny-foodstuffs.name",
-                Id = "51a75033-e2d6-49dd-ace9-a977d4ffdc6e",
+                Id = "79fcaedb-ee8a-401b-af3f-49176c6f898d",
                 MimeType = "application/pdf",
                 Name = "BILL-2466.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://grimy-characterization.net",
-                Id = "e8f20ea6-5f59-4ba1-b28e-d2fe679e3bc0",
+                Id = "27d90a56-bfa5-47f0-8da1-2485fc743410",
                 MimeType = "application/pdf",
                 Name = "BILL-2466-1.pdf",
             },
@@ -221,7 +221,7 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-09-07T23:03:14.104Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "08832535-f5cd-4ae9-bca0-79b5152b1867",
+        Id = "5a77846c-b08f-4b77-b8fa-25b124783ea4",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -237,7 +237,7 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         TaxAmount = 0D,
         Term = Term.Net90,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2020-06-01T05:49:59.573Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-06-01T08:13:39.086Z").ToUniversalTime(),
         Url = "https://cluttered-importance.org/bills/BILL-2466",
     },
     ConnectionId = "<id>",
@@ -267,7 +267,7 @@ var res = await sdk.Bill.PatchAccountingBillAsync(req);
 
 ## RemoveAccountingBill
 
-Remove a bill
+Deletes the AccountingBill identified by `id`.
 
 ### Example Usage
 
@@ -307,7 +307,7 @@ var res = await sdk.Bill.RemoveAccountingBillAsync(
 
 ## UpdateAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -328,13 +328,13 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://puny-foodstuffs.name",
-                Id = "51a75033-e2d6-49dd-ace9-a977d4ffdc6e",
+                Id = "79fcaedb-ee8a-401b-af3f-49176c6f898d",
                 MimeType = "application/pdf",
                 Name = "BILL-2466.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://grimy-characterization.net",
-                Id = "e8f20ea6-5f59-4ba1-b28e-d2fe679e3bc0",
+                Id = "27d90a56-bfa5-47f0-8da1-2485fc743410",
                 MimeType = "application/pdf",
                 Name = "BILL-2466-1.pdf",
             },
@@ -347,7 +347,7 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-09-07T23:03:14.104Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "08832535-f5cd-4ae9-bca0-79b5152b1867",
+        Id = "5a77846c-b08f-4b77-b8fa-25b124783ea4",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -363,7 +363,7 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         TaxAmount = 0D,
         Term = Term.Net90,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2020-06-01T05:49:59.573Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-06-01T08:13:39.086Z").ToUniversalTime(),
         Url = "https://cluttered-importance.org/bills/BILL-2466",
     },
     ConnectionId = "<id>",

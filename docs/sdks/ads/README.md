@@ -51,7 +51,7 @@
 
 ## CreateAdsAd
 
-Create an ad
+Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
 
 ### Example Usage
 
@@ -75,11 +75,11 @@ var res = await sdk.Ads.CreateAdsAdAsync(
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "7525b64f-40b3-4b93-b1d6-c85e180edefc",
+        Id = "12f5bea1-b21e-48c5-a5ae-13656c010dcb",
         Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-18T13:46:18.349Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T22:35:19.870Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -108,7 +108,7 @@ var res = await sdk.Ads.CreateAdsAdAsync(
 
 ## CreateAdsAsset
 
-Create an asset
+Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
 
 ### Example Usage
 
@@ -127,12 +127,12 @@ var res = await sdk.Ads.CreateAdsAssetAsync(
     adsAsset: new AdsAsset() {
         CreatedAt = System.DateTime.Parse("2020-03-27T20:14:38.603Z").ToUniversalTime(),
         Height = 400D,
-        Id = "0359a7cc-44b7-49e1-8158-5c18ca2a5559",
+        Id = "073dd353-3ed3-464b-aa3e-00440173ad1b",
         Metadata = new List<AdsMetadata>() {},
         MimeType = "IMAGE_PNG",
         Name = "Lockman - DuBuque",
         Type = AdsAssetType.Image,
-        UpdatedAt = System.DateTime.Parse("2022-03-25T04:44:02.174Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-25T11:17:28.447Z").ToUniversalTime(),
         Url = "https://informal-perfection.com/",
         Width = 600D,
     },
@@ -163,7 +163,7 @@ var res = await sdk.Ads.CreateAdsAssetAsync(
 
 ## CreateAdsCampaign
 
-Create a campaign
+Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
 
 ### Example Usage
 
@@ -186,18 +186,18 @@ var res = await sdk.Ads.CreateAdsCampaignAsync(
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-31T23:41:37.927Z").ToUniversalTime(),
-        Id = "3e5792ba-b86d-4b10-8f7f-abcfa7cf13b4",
+        EndAt = System.DateTime.Parse("2025-06-01T14:31:14.816Z").ToUniversalTime(),
+        Id = "9a53704d-76a7-4631-bc48-31d8416e1548",
         Labels = new List<string>() {
             "comedo",
         },
         Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T10:50:58.556Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T11:40:04.840Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2026-01-01T14:21:14.947Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T08:03:23.429Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -226,7 +226,7 @@ var res = await sdk.Ads.CreateAdsCampaignAsync(
 
 ## CreateAdsCreative
 
-Create a creative
+Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
 
 ### Example Usage
 
@@ -244,7 +244,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ads.CreateAdsCreativeAsync(
     adsCreative: new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "cfd0b41a-d828-4267-8c65-fa01961f36f3",
+        Id = "bcd16e0d-e681-45ac-8ad4-fa33dca697d6",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -253,7 +253,7 @@ var res = await sdk.Ads.CreateAdsCreativeAsync(
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T18:20:52.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T22:44:59.563Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -282,7 +282,7 @@ var res = await sdk.Ads.CreateAdsCreativeAsync(
 
 ## CreateAdsGroup
 
-Create a group
+Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
 
 ### Example Usage
 
@@ -305,15 +305,15 @@ var res = await sdk.Ads.CreateAdsGroupAsync(
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-25T01:50:30.766Z").ToUniversalTime(),
-        Id = "8cf8d7ad-5e77-40b0-9676-ae8fc045c67b",
+        EndAt = System.DateTime.Parse("2026-06-25T22:29:05.372Z").ToUniversalTime(),
+        Id = "aed25c3c-3092-4020-9760-2fb3969218b2",
         LanguageLocale = "fr-FR",
         Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-09T07:03:47.280Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-10T02:19:26.878Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-13T16:19:28.159Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T23:30:57.939Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -342,7 +342,7 @@ var res = await sdk.Ads.CreateAdsGroupAsync(
 
 ## CreateAdsInsertionorder
 
-Create an insertionorder
+Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
 
 ### Example Usage
 
@@ -360,11 +360,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ads.CreateAdsInsertionorderAsync(
     adsInsertionorder: new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "d52aa3e7-a87a-42dc-9cdf-09b7c85c4731",
+        Id = "48e5948c-2844-479b-ae6b-f1f454d257e0",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:47:38.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:59:32.914Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -393,7 +393,7 @@ var res = await sdk.Ads.CreateAdsInsertionorderAsync(
 
 ## CreateAdsOrganization
 
-Create an organization
+Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
 
 ### Example Usage
 
@@ -413,13 +413,13 @@ var res = await sdk.Ads.CreateAdsOrganizationAsync(
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "b675e8b5-7a45-428d-aca9-b477c8335175",
+        Id = "5601cef8-1525-4dfe-a994-d5035a5a6059",
         Managers = new List<AdsManager>() {},
         Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-29T03:19:41.548Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T22:59:46.570Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -448,7 +448,7 @@ var res = await sdk.Ads.CreateAdsOrganizationAsync(
 
 ## GetAdsAd
 
-Retrieve an ad
+Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -490,7 +490,7 @@ var res = await sdk.Ads.GetAdsAdAsync(
 
 ## GetAdsAsset
 
-Retrieve an asset
+Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -532,7 +532,7 @@ var res = await sdk.Ads.GetAdsAssetAsync(
 
 ## GetAdsCampaign
 
-Retrieve a campaign
+Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -574,7 +574,7 @@ var res = await sdk.Ads.GetAdsCampaignAsync(
 
 ## GetAdsCreative
 
-Retrieve a creative
+Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -616,7 +616,7 @@ var res = await sdk.Ads.GetAdsCreativeAsync(
 
 ## GetAdsGroup
 
-Retrieve a group
+Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -658,7 +658,7 @@ var res = await sdk.Ads.GetAdsGroupAsync(
 
 ## GetAdsInsertionorder
 
-Retrieve an insertionorder
+Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -700,7 +700,7 @@ var res = await sdk.Ads.GetAdsInsertionorderAsync(
 
 ## GetAdsOrganization
 
-Retrieve an organization
+Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -742,7 +742,7 @@ var res = await sdk.Ads.GetAdsOrganizationAsync(
 
 ## GetAdsPromoted
 
-Retrieve a promoted
+Retrieves a single AdsPromoted by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -784,7 +784,7 @@ var res = await sdk.Ads.GetAdsPromotedAsync(
 
 ## GetAdsTarget
 
-Retrieve a target
+Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -826,7 +826,7 @@ var res = await sdk.Ads.GetAdsTargetAsync(
 
 ## ListAdsAds
 
-List all ads
+Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -867,7 +867,7 @@ var res = await sdk.Ads.ListAdsAdsAsync(req);
 
 ## ListAdsAssets
 
-List all assets
+Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -908,7 +908,7 @@ var res = await sdk.Ads.ListAdsAssetsAsync(req);
 
 ## ListAdsCampaigns
 
-List all campaigns
+Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -949,7 +949,7 @@ var res = await sdk.Ads.ListAdsCampaignsAsync(req);
 
 ## ListAdsCreatives
 
-List all creatives
+Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -990,7 +990,7 @@ var res = await sdk.Ads.ListAdsCreativesAsync(req);
 
 ## ListAdsGroups
 
-List all groups
+Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1031,7 +1031,7 @@ var res = await sdk.Ads.ListAdsGroupsAsync(req);
 
 ## ListAdsInsertionorders
 
-List all insertionorders
+Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1072,7 +1072,7 @@ var res = await sdk.Ads.ListAdsInsertionordersAsync(req);
 
 ## ListAdsOrganizations
 
-List all organizations
+Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1113,7 +1113,7 @@ var res = await sdk.Ads.ListAdsOrganizationsAsync(req);
 
 ## ListAdsPromoteds
 
-List all promoteds
+Returns a list of AdsPromoteds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1154,7 +1154,7 @@ var res = await sdk.Ads.ListAdsPromotedsAsync(req);
 
 ## ListAdsReports
 
-List all reports
+Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1195,7 +1195,7 @@ var res = await sdk.Ads.ListAdsReportsAsync(req);
 
 ## ListAdsTargets
 
-List all targets
+Returns a list of AdsTargets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1236,7 +1236,7 @@ var res = await sdk.Ads.ListAdsTargetsAsync(req);
 
 ## PatchAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -1261,11 +1261,11 @@ PatchAdsAdRequest req = new PatchAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "da1abf34-12f6-4545-bcfd-d92130a0fc54",
+        Id = "b502c75b-8bd1-4e88-9343-0cca29b47e24",
         Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-18T13:46:18.359Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T22:35:19.879Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1294,7 +1294,7 @@ var res = await sdk.Ads.PatchAdsAdAsync(req);
 
 ## PatchAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -1318,18 +1318,18 @@ PatchAdsCampaignRequest req = new PatchAdsCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-31T23:41:38.001Z").ToUniversalTime(),
-        Id = "731ecdbf-911c-4113-8b75-8deaee63e0b7",
+        EndAt = System.DateTime.Parse("2025-06-01T14:31:14.878Z").ToUniversalTime(),
+        Id = "8199bf22-b3fa-44c2-b508-74de6c5530cd",
         Labels = new List<string>() {
             "comedo",
         },
         Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T10:50:58.560Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T11:40:04.844Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2026-01-01T14:21:15.035Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T08:03:23.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1358,7 +1358,7 @@ var res = await sdk.Ads.PatchAdsCampaignAsync(req);
 
 ## PatchAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -1377,7 +1377,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "ba61ed48-a10a-4f54-b5e7-7f748471a3a2",
+        Id = "b5b501af-f891-49a8-9f63-6e23612c9ab9",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -1386,7 +1386,7 @@ PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T18:20:52.647Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T22:44:59.568Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1415,7 +1415,7 @@ var res = await sdk.Ads.PatchAdsCreativeAsync(req);
 
 ## PatchAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -1439,15 +1439,15 @@ PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-25T01:50:30.881Z").ToUniversalTime(),
-        Id = "ebb44678-7607-4ee1-a7e4-55ace1b34f59",
+        EndAt = System.DateTime.Parse("2026-06-25T22:29:05.476Z").ToUniversalTime(),
+        Id = "00bee325-3171-407e-b7c1-47ec3f84c30a",
         LanguageLocale = "fr-FR",
         Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-09T07:03:47.387Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-10T02:19:26.975Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-13T16:19:28.199Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T23:30:57.975Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1476,7 +1476,7 @@ var res = await sdk.Ads.PatchAdsGroupAsync(req);
 
 ## PatchAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -1495,11 +1495,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "ca4df6b6-3b9e-41b1-ad45-dae8218fefbb",
+        Id = "548a169a-f97d-452f-99e7-346c58f9ccb5",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:47:38.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:59:32.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1528,7 +1528,7 @@ var res = await sdk.Ads.PatchAdsInsertionorderAsync(req);
 
 ## PatchAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1549,13 +1549,13 @@ PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "350893bc-0ea6-4868-a9a5-146e332b8520",
+        Id = "b88f23ba-5e1b-4e73-bb08-eb4fa80aed3f",
         Managers = new List<AdsManager>() {},
         Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-29T03:19:41.558Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T22:59:46.586Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1584,7 +1584,7 @@ var res = await sdk.Ads.PatchAdsOrganizationAsync(req);
 
 ## RemoveAdsAd
 
-Remove an ad
+Deletes the AdsAd identified by `id`.
 
 ### Example Usage
 
@@ -1624,7 +1624,7 @@ var res = await sdk.Ads.RemoveAdsAdAsync(
 
 ## RemoveAdsCampaign
 
-Remove a campaign
+Deletes the AdsCampaign identified by `id`.
 
 ### Example Usage
 
@@ -1664,7 +1664,7 @@ var res = await sdk.Ads.RemoveAdsCampaignAsync(
 
 ## RemoveAdsCreative
 
-Remove a creative
+Deletes the AdsCreative identified by `id`.
 
 ### Example Usage
 
@@ -1704,7 +1704,7 @@ var res = await sdk.Ads.RemoveAdsCreativeAsync(
 
 ## RemoveAdsGroup
 
-Remove a group
+Deletes the AdsGroup identified by `id`.
 
 ### Example Usage
 
@@ -1744,7 +1744,7 @@ var res = await sdk.Ads.RemoveAdsGroupAsync(
 
 ## RemoveAdsInsertionorder
 
-Remove an insertionorder
+Deletes the AdsInsertionorder identified by `id`.
 
 ### Example Usage
 
@@ -1784,7 +1784,7 @@ var res = await sdk.Ads.RemoveAdsInsertionorderAsync(
 
 ## RemoveAdsOrganization
 
-Remove an organization
+Deletes the AdsOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1824,7 +1824,7 @@ var res = await sdk.Ads.RemoveAdsOrganizationAsync(
 
 ## UpdateAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -1849,11 +1849,11 @@ UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "da1abf34-12f6-4545-bcfd-d92130a0fc54",
+        Id = "b502c75b-8bd1-4e88-9343-0cca29b47e24",
         Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-18T13:46:18.359Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T22:35:19.879Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1882,7 +1882,7 @@ var res = await sdk.Ads.UpdateAdsAdAsync(req);
 
 ## UpdateAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -1906,18 +1906,18 @@ UpdateAdsCampaignRequest req = new UpdateAdsCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-31T23:41:38.001Z").ToUniversalTime(),
-        Id = "731ecdbf-911c-4113-8b75-8deaee63e0b7",
+        EndAt = System.DateTime.Parse("2025-06-01T14:31:14.878Z").ToUniversalTime(),
+        Id = "8199bf22-b3fa-44c2-b508-74de6c5530cd",
         Labels = new List<string>() {
             "comedo",
         },
         Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T10:50:58.560Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T11:40:04.844Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2026-01-01T14:21:15.035Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T08:03:23.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1946,7 +1946,7 @@ var res = await sdk.Ads.UpdateAdsCampaignAsync(req);
 
 ## UpdateAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -1965,7 +1965,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "ba61ed48-a10a-4f54-b5e7-7f748471a3a2",
+        Id = "b5b501af-f891-49a8-9f63-6e23612c9ab9",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -1974,7 +1974,7 @@ UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T18:20:52.647Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T22:44:59.568Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2003,7 +2003,7 @@ var res = await sdk.Ads.UpdateAdsCreativeAsync(req);
 
 ## UpdateAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -2027,15 +2027,15 @@ UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-25T01:50:30.881Z").ToUniversalTime(),
-        Id = "ebb44678-7607-4ee1-a7e4-55ace1b34f59",
+        EndAt = System.DateTime.Parse("2026-06-25T22:29:05.476Z").ToUniversalTime(),
+        Id = "00bee325-3171-407e-b7c1-47ec3f84c30a",
         LanguageLocale = "fr-FR",
         Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-09T07:03:47.387Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-10T02:19:26.975Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-13T16:19:28.199Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T23:30:57.975Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2064,7 +2064,7 @@ var res = await sdk.Ads.UpdateAdsGroupAsync(req);
 
 ## UpdateAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -2083,11 +2083,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "ca4df6b6-3b9e-41b1-ad45-dae8218fefbb",
+        Id = "548a169a-f97d-452f-99e7-346c58f9ccb5",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:47:38.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:59:32.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2116,7 +2116,7 @@ var res = await sdk.Ads.UpdateAdsInsertionorderAsync(req);
 
 ## UpdateAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -2137,13 +2137,13 @@ UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "350893bc-0ea6-4868-a9a5-146e332b8520",
+        Id = "b88f23ba-5e1b-4e73-bb08-eb4fa80aed3f",
         Managers = new List<AdsManager>() {},
         Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-29T03:19:41.558Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T22:59:46.586Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

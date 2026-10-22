@@ -13,7 +13,7 @@
 
 ## CreateAccountingTaxrate
 
-Create a taxrate
+Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
 
 ### Example Usage
 
@@ -41,7 +41,7 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Exempt (0%)",
         EffectiveRate = 0D,
-        Id = "15af537c-fdf9-4d0e-8178-506d15986d91",
+        Id = "c850e4cb-a32c-47b0-9143-45d3c6f6be29",
         IsActive = false,
         IsCompound = false,
         Metadata = new List<AccountingMetadata>() {},
@@ -50,7 +50,7 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
         Region = "KS",
         TotalRate = 0D,
         Type = AccountingTaxrateType.Sales,
-        UpdatedAt = System.DateTime.Parse("2020-02-13T05:10:06.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-13T05:30:54.354Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -79,7 +79,7 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 
 ## GetAccountingTaxrate
 
-Retrieve a taxrate
+Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -121,7 +121,7 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 
 ## ListAccountingTaxrates
 
-List all taxrates
+Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +162,7 @@ var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
 
 ## PatchAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -191,7 +191,7 @@ PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Exempt (0%)",
         EffectiveRate = 0D,
-        Id = "153638a2-a0b9-451a-99ee-9020af19c25c",
+        Id = "fbee78d2-8dd9-49f5-b2b0-6c386af356af",
         IsActive = false,
         IsCompound = false,
         Metadata = new List<AccountingMetadata>() {},
@@ -200,7 +200,7 @@ PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
         Region = "KS",
         TotalRate = 0D,
         Type = AccountingTaxrateType.Sales,
-        UpdatedAt = System.DateTime.Parse("2020-02-13T05:10:06.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-13T05:30:54.354Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -229,7 +229,7 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(req);
 
 ## RemoveAccountingTaxrate
 
-Remove a taxrate
+Deletes the AccountingTaxrate identified by `id`.
 
 ### Example Usage
 
@@ -269,7 +269,7 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 
 ## UpdateAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -298,7 +298,7 @@ UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Exempt (0%)",
         EffectiveRate = 0D,
-        Id = "153638a2-a0b9-451a-99ee-9020af19c25c",
+        Id = "fbee78d2-8dd9-49f5-b2b0-6c386af356af",
         IsActive = false,
         IsCompound = false,
         Metadata = new List<AccountingMetadata>() {},
@@ -307,7 +307,7 @@ UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
         Region = "KS",
         TotalRate = 0D,
         Type = AccountingTaxrateType.Sales,
-        UpdatedAt = System.DateTime.Parse("2020-02-13T05:10:06.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-13T05:30:54.354Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

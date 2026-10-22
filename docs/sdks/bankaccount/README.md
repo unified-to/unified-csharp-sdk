@@ -13,7 +13,7 @@
 
 ## CreateHrisBankaccount
 
-Create a bankaccount
+Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ var res = await sdk.Bankaccount.CreateHrisBankaccountAsync(
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "79305c3d-7a09-4a29-8ce4-4d0f9973aab1",
+        Id = "7da860c1-5b11-43ab-b95d-596efed977cb",
         IsPrimary = true,
         Metadata = new List<HrisMetadata>() {},
         Name = "Granville Schumm - Checking",
@@ -45,7 +45,7 @@ var res = await sdk.Bankaccount.CreateHrisBankaccountAsync(
         RoutingNumber = "448650724",
         SplitAmount = 98D,
         SplitType = SplitType.Percentage,
-        UpdatedAt = System.DateTime.Parse("2025-07-01T06:34:38.935Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T00:07:26.147Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -74,7 +74,7 @@ var res = await sdk.Bankaccount.CreateHrisBankaccountAsync(
 
 ## GetHrisBankaccount
 
-Retrieve a bankaccount
+Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +116,7 @@ var res = await sdk.Bankaccount.GetHrisBankaccountAsync(
 
 ## ListHrisBankaccounts
 
-List all bankaccounts
+Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -157,7 +157,7 @@ var res = await sdk.Bankaccount.ListHrisBankaccountsAsync(req);
 
 ## PatchHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "22cf284b-b698-4ccb-8622-1d6d5e725bad",
+        Id = "82159742-fdc2-4d55-b973-7a8a0ae7ff56",
         IsPrimary = true,
         Metadata = new List<HrisMetadata>() {},
         Name = "Granville Schumm - Checking",
@@ -190,7 +190,7 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         RoutingNumber = "448650724",
         SplitAmount = 98D,
         SplitType = SplitType.Percentage,
-        UpdatedAt = System.DateTime.Parse("2025-07-01T06:34:38.949Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T00:07:26.157Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -219,7 +219,7 @@ var res = await sdk.Bankaccount.PatchHrisBankaccountAsync(req);
 
 ## RemoveHrisBankaccount
 
-Remove a bankaccount
+Deletes the HrisBankaccount identified by `id`.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ var res = await sdk.Bankaccount.RemoveHrisBankaccountAsync(
 
 ## UpdateHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -284,7 +284,7 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "22cf284b-b698-4ccb-8622-1d6d5e725bad",
+        Id = "82159742-fdc2-4d55-b973-7a8a0ae7ff56",
         IsPrimary = true,
         Metadata = new List<HrisMetadata>() {},
         Name = "Granville Schumm - Checking",
@@ -292,7 +292,7 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         RoutingNumber = "448650724",
         SplitAmount = 98D,
         SplitType = SplitType.Percentage,
-        UpdatedAt = System.DateTime.Parse("2025-07-01T06:34:38.949Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T00:07:26.157Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

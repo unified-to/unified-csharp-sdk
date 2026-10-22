@@ -13,7 +13,7 @@
 
 ## CreateRepoCommit
 
-Create a commit
+Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
 
 ### Example Usage
 
@@ -31,14 +31,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commit.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "79c86208-adc2-482a-836e-4a3856032cb9",
+        Id = "aafa3271-3e03-411c-84a1-3824f1ec1021",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-31T06:58:59.441Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-31T16:54:54.849Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -67,7 +67,7 @@ var res = await sdk.Commit.CreateRepoCommitAsync(
 
 ## GetRepoCommit
 
-Retrieve a commit
+Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -109,7 +109,7 @@ var res = await sdk.Commit.GetRepoCommitAsync(
 
 ## ListRepoCommits
 
-List all commits
+Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -150,7 +150,7 @@ var res = await sdk.Commit.ListRepoCommitsAsync(req);
 
 ## PatchRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -169,14 +169,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "f998ef5b-6cd0-453b-add3-d115d44f8357",
+        Id = "6185b032-6d09-4b17-af74-5539ac1f77ea",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-31T06:58:59.445Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-31T16:54:54.853Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -205,7 +205,7 @@ var res = await sdk.Commit.PatchRepoCommitAsync(req);
 
 ## RemoveRepoCommit
 
-Remove a commit
+Deletes the RepoCommit identified by `id`.
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ var res = await sdk.Commit.RemoveRepoCommitAsync(
 
 ## UpdateRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -264,14 +264,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "f998ef5b-6cd0-453b-add3-d115d44f8357",
+        Id = "6185b032-6d09-4b17-af74-5539ac1f77ea",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-31T06:58:59.445Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-31T16:54:54.853Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

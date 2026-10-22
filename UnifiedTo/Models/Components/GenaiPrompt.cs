@@ -43,9 +43,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("mcp_url")]
         public string? McpUrl { get; set; }
 
+        /// <summary>
+        /// The conversation to send to the model, in order; each message has a role and its content.
+        /// </summary>
         [JsonProperty("messages")]
         public List<GenaiContent>? Messages { get; set; }
 
+        /// <summary>
+        /// The ID of the model to use (a GenaiModel ID).
+        /// </summary>
         [JsonProperty("model_id")]
         public string? ModelId { get; set; }
 

@@ -13,7 +13,7 @@
 
 ## CreateHrisAttendance
 
-Create an attendance
+Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
 
 ### Example Usage
 
@@ -38,32 +38,32 @@ var res = await sdk.Attendance.CreateHrisAttendanceAsync(
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-09-19T14:06:51.248Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T14:34:02.650Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 51D,
-                EndAt = System.DateTime.Parse("2024-02-14T13:23:56.511Z").ToUniversalTime(),
-                Id = "d165eaae-9fd5-461a-95a0-93c3cf23a66c",
+                EndAt = System.DateTime.Parse("2024-02-14T23:51:26.362Z").ToUniversalTime(),
+                Id = "199c5898-aa8e-4fd6-a827-ca1a6261e8dd",
                 IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T23:10:00.577Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-30T08:23:56.459Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "EUR",
         DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-23T07:56:43.487Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-23T19:11:14.719Z").ToUniversalTime(),
         HourlyRate = 16D,
         Hours = 10D,
-        Id = "060ca073-ae6c-45a3-a0e5-e853f40bd85c",
+        Id = "d008e6e9-7742-467f-8059-62ad2ab80640",
         JobName = "Human Accountability Administrator",
         Metadata = new List<HrisMetadata>() {},
         NonCashTipsAmount = 167D,
-        StartAt = System.DateTime.Parse("2021-11-11T00:56:49.662Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-11T01:59:52.865Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T21:05:58.859Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T22:56:47.213Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -92,7 +92,7 @@ var res = await sdk.Attendance.CreateHrisAttendanceAsync(
 
 ## GetHrisAttendance
 
-Retrieve an attendance
+Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -134,7 +134,7 @@ var res = await sdk.Attendance.GetHrisAttendanceAsync(
 
 ## ListHrisAttendances
 
-List all attendances
+Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -175,7 +175,7 @@ var res = await sdk.Attendance.ListHrisAttendancesAsync(req);
 
 ## PatchHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -201,32 +201,32 @@ PatchHrisAttendanceRequest req = new PatchHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-09-19T14:06:51.249Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T14:34:02.651Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 51D,
-                EndAt = System.DateTime.Parse("2024-02-14T13:23:56.519Z").ToUniversalTime(),
-                Id = "45757800-6e4e-4c42-af1d-9aa34203f259",
+                EndAt = System.DateTime.Parse("2024-02-14T23:51:26.371Z").ToUniversalTime(),
+                Id = "34b08779-a872-4609-9397-f70b4a6d7fd7",
                 IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T23:10:00.584Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-30T08:23:56.467Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "EUR",
         DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-23T07:56:43.496Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-23T19:11:14.729Z").ToUniversalTime(),
         HourlyRate = 16D,
         Hours = 10D,
-        Id = "378e6e19-e1d1-4d41-954f-df34d6c0edbc",
+        Id = "462021ff-5dfb-46ab-bd17-9ebf7cac4273",
         JobName = "Human Accountability Administrator",
         Metadata = new List<HrisMetadata>() {},
         NonCashTipsAmount = 167D,
-        StartAt = System.DateTime.Parse("2021-11-11T00:56:49.663Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-11T01:59:52.866Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T21:05:58.860Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T22:56:47.214Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -255,7 +255,7 @@ var res = await sdk.Attendance.PatchHrisAttendanceAsync(req);
 
 ## RemoveHrisAttendance
 
-Remove an attendance
+Deletes the HrisAttendance identified by `id`.
 
 ### Example Usage
 
@@ -295,7 +295,7 @@ var res = await sdk.Attendance.RemoveHrisAttendanceAsync(
 
 ## UpdateHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -321,32 +321,32 @@ UpdateHrisAttendanceRequest req = new UpdateHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-09-19T14:06:51.249Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T14:34:02.651Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 51D,
-                EndAt = System.DateTime.Parse("2024-02-14T13:23:56.519Z").ToUniversalTime(),
-                Id = "45757800-6e4e-4c42-af1d-9aa34203f259",
+                EndAt = System.DateTime.Parse("2024-02-14T23:51:26.371Z").ToUniversalTime(),
+                Id = "34b08779-a872-4609-9397-f70b4a6d7fd7",
                 IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T23:10:00.584Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-30T08:23:56.467Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "EUR",
         DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-23T07:56:43.496Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-23T19:11:14.729Z").ToUniversalTime(),
         HourlyRate = 16D,
         Hours = 10D,
-        Id = "378e6e19-e1d1-4d41-954f-df34d6c0edbc",
+        Id = "462021ff-5dfb-46ab-bd17-9ebf7cac4273",
         JobName = "Human Accountability Administrator",
         Metadata = new List<HrisMetadata>() {},
         NonCashTipsAmount = 167D,
-        StartAt = System.DateTime.Parse("2021-11-11T00:56:49.663Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-11T01:59:52.866Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T21:05:58.860Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T22:56:47.214Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

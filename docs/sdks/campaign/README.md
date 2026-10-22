@@ -19,7 +19,7 @@
 
 ## CreateAdsCampaign
 
-Create a campaign
+Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
 
 ### Example Usage
 
@@ -42,18 +42,18 @@ var res = await sdk.Campaign.CreateAdsCampaignAsync(
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-31T23:41:37.927Z").ToUniversalTime(),
-        Id = "3e5792ba-b86d-4b10-8f7f-abcfa7cf13b4",
+        EndAt = System.DateTime.Parse("2025-06-01T14:31:14.816Z").ToUniversalTime(),
+        Id = "9a53704d-76a7-4631-bc48-31d8416e1548",
         Labels = new List<string>() {
             "comedo",
         },
         Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T10:50:58.556Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T11:40:04.840Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2026-01-01T14:21:14.947Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T08:03:23.429Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -82,7 +82,7 @@ var res = await sdk.Campaign.CreateAdsCampaignAsync(
 
 ## CreateMartechCampaign
 
-Create a campaign
+Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
 
 ### Example Usage
 
@@ -102,7 +102,7 @@ var res = await sdk.Campaign.CreateMartechCampaignAsync(
         CreatedAt = System.DateTime.Parse("2019-05-19T11:18:15.589Z").ToUniversalTime(),
         FromEmail = "graham.mertz@gmail.com",
         FromName = "Graham Mertz",
-        Id = "47536f6d-a31a-463a-a0da-cad60dfe6c44",
+        Id = "c78f588b-361a-4436-9d03-bf39cb600cc8",
         Metadata = new List<MarketingMetadata>() {},
         Name = "Consequatur atqui sustineo.",
         PreviewText = "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -111,7 +111,7 @@ var res = await sdk.Campaign.CreateMartechCampaignAsync(
         Status = MarketingCampaignStatus.Scheduled,
         SubjectLine = "Trepide utpote conculco tibi solio supplanto peior tibi.",
         Type = "absplit",
-        UpdatedAt = System.DateTime.Parse("2022-06-22T02:57:13.855Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-22T11:57:39.083Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -140,7 +140,7 @@ var res = await sdk.Campaign.CreateMartechCampaignAsync(
 
 ## GetAdsCampaign
 
-Retrieve a campaign
+Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ var res = await sdk.Campaign.GetAdsCampaignAsync(
 
 ## GetMartechCampaign
 
-Retrieve a campaign
+Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -224,7 +224,7 @@ var res = await sdk.Campaign.GetMartechCampaignAsync(
 
 ## ListAdsCampaigns
 
-List all campaigns
+Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -265,7 +265,7 @@ var res = await sdk.Campaign.ListAdsCampaignsAsync(req);
 
 ## ListMartechCampaigns
 
-List all campaigns
+Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -306,7 +306,7 @@ var res = await sdk.Campaign.ListMartechCampaignsAsync(req);
 
 ## PatchAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -330,18 +330,18 @@ PatchAdsCampaignRequest req = new PatchAdsCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-31T23:41:38.001Z").ToUniversalTime(),
-        Id = "731ecdbf-911c-4113-8b75-8deaee63e0b7",
+        EndAt = System.DateTime.Parse("2025-06-01T14:31:14.878Z").ToUniversalTime(),
+        Id = "8199bf22-b3fa-44c2-b508-74de6c5530cd",
         Labels = new List<string>() {
             "comedo",
         },
         Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T10:50:58.560Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T11:40:04.844Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2026-01-01T14:21:15.035Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T08:03:23.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -370,7 +370,7 @@ var res = await sdk.Campaign.PatchAdsCampaignAsync(req);
 
 ## PatchMartechCampaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -391,7 +391,7 @@ PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-19T11:18:15.589Z").ToUniversalTime(),
         FromEmail = "graham.mertz@gmail.com",
         FromName = "Graham Mertz",
-        Id = "56e211af-d7f4-43ca-be32-bd70013a0064",
+        Id = "b38593fa-18bc-4a6b-b51a-1f3eafde0b12",
         Metadata = new List<MarketingMetadata>() {},
         Name = "Consequatur atqui sustineo.",
         PreviewText = "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -400,7 +400,7 @@ PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
         Status = MarketingCampaignStatus.Scheduled,
         SubjectLine = "Trepide utpote conculco tibi solio supplanto peior tibi.",
         Type = "absplit",
-        UpdatedAt = System.DateTime.Parse("2022-06-22T02:57:13.859Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-22T11:57:39.090Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -429,7 +429,7 @@ var res = await sdk.Campaign.PatchMartechCampaignAsync(req);
 
 ## RemoveAdsCampaign
 
-Remove a campaign
+Deletes the AdsCampaign identified by `id`.
 
 ### Example Usage
 
@@ -469,7 +469,7 @@ var res = await sdk.Campaign.RemoveAdsCampaignAsync(
 
 ## RemoveMartechCampaign
 
-Remove a campaign
+Deletes the MarketingCampaign identified by `id`.
 
 ### Example Usage
 
@@ -509,7 +509,7 @@ var res = await sdk.Campaign.RemoveMartechCampaignAsync(
 
 ## UpdateAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -533,18 +533,18 @@ UpdateAdsCampaignRequest req = new UpdateAdsCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = EffectiveStatus.NotEligible,
-        EndAt = System.DateTime.Parse("2025-05-31T23:41:38.001Z").ToUniversalTime(),
-        Id = "731ecdbf-911c-4113-8b75-8deaee63e0b7",
+        EndAt = System.DateTime.Parse("2025-06-01T14:31:14.878Z").ToUniversalTime(),
+        Id = "8199bf22-b3fa-44c2-b508-74de6c5530cd",
         Labels = new List<string>() {
             "comedo",
         },
         Metadata = new List<AdsMetadata>() {},
         Name = "Emard Inc",
-        StartAt = System.DateTime.Parse("2022-07-21T10:50:58.560Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-21T11:40:04.844Z").ToUniversalTime(),
         Status = AdsCampaignStatus.ProcessingFailed,
         Targeting = new PropertyAdsCampaignTargeting() {},
         TotalSpendAmount = 2349.8642875347286D,
-        UpdatedAt = System.DateTime.Parse("2026-01-01T14:21:15.035Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T08:03:23.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -573,7 +573,7 @@ var res = await sdk.Campaign.UpdateAdsCampaignAsync(req);
 
 ## UpdateMartechCampaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -594,7 +594,7 @@ UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-19T11:18:15.589Z").ToUniversalTime(),
         FromEmail = "graham.mertz@gmail.com",
         FromName = "Graham Mertz",
-        Id = "56e211af-d7f4-43ca-be32-bd70013a0064",
+        Id = "b38593fa-18bc-4a6b-b51a-1f3eafde0b12",
         Metadata = new List<MarketingMetadata>() {},
         Name = "Consequatur atqui sustineo.",
         PreviewText = "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -603,7 +603,7 @@ UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
         Status = MarketingCampaignStatus.Scheduled,
         SubjectLine = "Trepide utpote conculco tibi solio supplanto peior tibi.",
         Type = "absplit",
-        UpdatedAt = System.DateTime.Parse("2022-06-22T02:57:13.859Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-22T11:57:39.090Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

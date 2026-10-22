@@ -10,7 +10,7 @@
 
 ## CreatePerformanceFeedback
 
-Create a feedback
+Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
 
 ### Example Usage
 
@@ -28,7 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Feedback.CreatePerformanceFeedbackAsync(
     performanceFeedback: new PerformanceFeedback() {
         CreatedAt = System.DateTime.Parse("2023-04-11T16:21:53.862Z").ToUniversalTime(),
-        Id = "2f080bee-49af-4da7-9cf0-c50bf9055f5e",
+        Id = "2d668079-900e-4a7b-85bf-ac6fe302b210",
         IsVisible = true,
         Message = "Tabernus corpus voluptate aestus.",
         Metadata = new List<PerformanceMetadata>() {},
@@ -37,7 +37,7 @@ var res = await sdk.Feedback.CreatePerformanceFeedbackAsync(
             "hexagon",
         },
         Type = PerformanceFeedbackType.Praise,
-        UpdatedAt = System.DateTime.Parse("2025-09-04T02:39:11.591Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-04T17:21:40.282Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -67,7 +67,7 @@ var res = await sdk.Feedback.CreatePerformanceFeedbackAsync(
 
 ## GetPerformanceFeedback
 
-Retrieve a feedback
+Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -109,7 +109,7 @@ var res = await sdk.Feedback.GetPerformanceFeedbackAsync(
 
 ## ListPerformanceFeedbacks
 
-List all feedbacks
+Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

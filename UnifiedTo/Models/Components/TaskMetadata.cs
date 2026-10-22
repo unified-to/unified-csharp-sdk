@@ -22,18 +22,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
         public TaskMetadataExtraData? ExtraData { get; set; }
 
+        /// <summary>
+        /// The data type of the custom field, which determines how `value` is formatted.
+        /// </summary>
         [JsonProperty("format")]
         public TaskMetadataFormat? Format { get; set; }
 
+        /// <summary>
+        /// The ID of the custom field definition (from the metadata/metadata endpoint).
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
 
+        /// <summary>
+        /// The integration's API name (key) of an existing custom field. List valid slugs for this object with the metadata/metadata endpoint; unknown slugs are rejected by the integration.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// The field's value, typed by `format`: DATE as ISO-8601 (`YYYY-MM-DD`, or `YYYY-MM-DDTHH:MM:SSZ` for date-times); NUMBER, PRICE and CURRENCY as a number; BOOLEAN and YES_NO as true/false; MULTIPLE_SELECT as an array of option values; otherwise a string.
+        /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public TaskMetadataValue? Value { get; set; }
     }

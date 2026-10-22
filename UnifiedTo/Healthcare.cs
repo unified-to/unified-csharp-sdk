@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an appointment.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
+        /// </remarks>
         /// <param name="healthcareAppointment">A <see cref="HealthcareAppointment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an observation.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
+        /// </remarks>
         /// <param name="healthcareObservation">A <see cref="HealthcareObservation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a patient.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
+        /// </remarks>
         /// <param name="healthcarePatient">A <see cref="HealthcarePatient"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an allergy.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareAllergy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Allergy.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an appointment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Appointment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a condition.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Condition.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an encounter.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Encounter.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an immunization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareImmunization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Immunization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a medication.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareMedication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Medication.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an observation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Observation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a patient.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Patient.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a practitioner.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcarePractitioner by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Practitioner.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a slot.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Slot.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all allergies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareAllergies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareAllergiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareAllergiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -306,6 +351,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all appointments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareAppointmentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareAppointmentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -319,6 +367,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all conditions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareConditionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareConditionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -332,6 +383,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all encounters.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareEncountersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareEncountersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -345,6 +399,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all immunizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareImmunizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareImmunizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareImmunizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -358,6 +415,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -371,6 +431,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all medications.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareMedications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareMedicationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareMedicationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -384,6 +447,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all observations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareObservationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareObservationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -397,6 +463,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all patients.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcarePatientsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcarePatientsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -408,6 +477,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all practitioners.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcarePractitioners. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcarePractitionersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcarePractitionersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -421,6 +493,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all slots.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareSlotsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareSlotsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -432,6 +507,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an appointment.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHealthcareAppointmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHealthcareAppointmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -445,6 +523,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a patient.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHealthcarePatientRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHealthcarePatientResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -456,6 +537,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an appointment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HealthcareAppointment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Appointment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHealthcareAppointmentResponse"/> response envelope when completed.</returns>
@@ -470,6 +554,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an appointment.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHealthcareAppointmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHealthcareAppointmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -483,6 +570,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a patient.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHealthcarePatientRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHealthcarePatientResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -510,6 +600,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an appointment.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
+        /// </remarks>
         /// <param name="healthcareAppointment">A <see cref="HealthcareAppointment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -638,6 +731,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an observation.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
+        /// </remarks>
         /// <param name="healthcareObservation">A <see cref="HealthcareObservation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -766,6 +862,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a patient.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
+        /// </remarks>
         /// <param name="healthcarePatient">A <see cref="HealthcarePatient"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -894,6 +993,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an allergy.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareAllergy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Allergy.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1016,6 +1118,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an appointment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Appointment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1138,6 +1243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a condition.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Condition.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1260,6 +1368,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an encounter.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Encounter.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1382,6 +1493,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an immunization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareImmunization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Immunization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1504,6 +1618,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1626,6 +1743,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a medication.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareMedication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Medication.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1748,6 +1868,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an observation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Observation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1870,6 +1993,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a patient.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Patient.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1992,6 +2118,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a practitioner.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcarePractitioner by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Practitioner.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2114,6 +2243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a slot.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Slot.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2236,6 +2368,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all allergies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareAllergies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareAllergiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareAllergiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2343,6 +2478,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all appointments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareAppointmentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareAppointmentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2450,6 +2588,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all conditions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareConditionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareConditionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2557,6 +2698,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all encounters.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareEncountersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareEncountersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2664,6 +2808,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all immunizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareImmunizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareImmunizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareImmunizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2771,6 +2918,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2878,6 +3028,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all medications.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareMedications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareMedicationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareMedicationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2985,6 +3138,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all observations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareObservationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareObservationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3092,6 +3248,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all patients.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcarePatientsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcarePatientsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3199,6 +3358,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all practitioners.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcarePractitioners. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcarePractitionersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcarePractitionersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3306,6 +3468,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all slots.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareSlotsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareSlotsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3411,6 +3576,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an appointment.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHealthcareAppointmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHealthcareAppointmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3524,6 +3692,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a patient.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHealthcarePatientRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHealthcarePatientResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3637,6 +3808,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an appointment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HealthcareAppointment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Appointment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHealthcareAppointmentResponse"/> response envelope when completed.</returns>
@@ -3743,6 +3917,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an appointment.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHealthcareAppointmentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHealthcareAppointmentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3856,6 +4033,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a patient.
         /// </summary>
+        /// <remarks>
+        /// Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHealthcarePatientRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHealthcarePatientResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

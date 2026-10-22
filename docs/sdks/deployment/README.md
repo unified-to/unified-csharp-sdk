@@ -13,7 +13,7 @@
 
 ## CreateComputeDeployment
 
-Create a deployment
+Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
 
 ### Example Usage
 
@@ -35,13 +35,13 @@ var res = await sdk.Deployment.CreateComputeDeploymentAsync(
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-29T15:17:57.248Z").ToUniversalTime(),
-        Id = "bf64167c-e90e-4d65-9a88-5875d7fda101",
+        FinishedAt = System.DateTime.Parse("2025-08-30T07:16:06.906Z").ToUniversalTime(),
+        Id = "8fe619d8-d808-4266-b6bc-328ceadbd5d8",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-10T07:40:51.258Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-10T21:44:12.866Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-28T18:17:11.691Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T12:44:07.143Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     connectionId: "<id>"
@@ -71,7 +71,7 @@ var res = await sdk.Deployment.CreateComputeDeploymentAsync(
 
 ## GetComputeDeployment
 
-Retrieve a deployment
+Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +113,7 @@ var res = await sdk.Deployment.GetComputeDeploymentAsync(
 
 ## ListComputeDeployments
 
-List all deployments
+Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -154,7 +154,7 @@ var res = await sdk.Deployment.ListComputeDeploymentsAsync(req);
 
 ## PatchComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -177,13 +177,13 @@ PatchComputeDeploymentRequest req = new PatchComputeDeploymentRequest() {
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-29T15:17:57.262Z").ToUniversalTime(),
-        Id = "599d554e-daf0-4889-b07a-6ac0fbce1a50",
+        FinishedAt = System.DateTime.Parse("2025-08-30T07:16:06.920Z").ToUniversalTime(),
+        Id = "e0d84afa-4513-4fd6-b2f4-e0743e6c83ba",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-10T07:40:51.270Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-10T21:44:12.879Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-28T18:17:11.707Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T12:44:07.159Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     ConnectionId = "<id>",
@@ -213,7 +213,7 @@ var res = await sdk.Deployment.PatchComputeDeploymentAsync(req);
 
 ## RemoveComputeDeployment
 
-Remove a deployment
+Deletes the ComputeDeployment identified by `id`.
 
 ### Example Usage
 
@@ -253,7 +253,7 @@ var res = await sdk.Deployment.RemoveComputeDeploymentAsync(
 
 ## UpdateComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -276,13 +276,13 @@ UpdateComputeDeploymentRequest req = new UpdateComputeDeploymentRequest() {
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-29T15:17:57.262Z").ToUniversalTime(),
-        Id = "599d554e-daf0-4889-b07a-6ac0fbce1a50",
+        FinishedAt = System.DateTime.Parse("2025-08-30T07:16:06.920Z").ToUniversalTime(),
+        Id = "e0d84afa-4513-4fd6-b2f4-e0743e6c83ba",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-10T07:40:51.270Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-10T21:44:12.879Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-28T18:17:11.707Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T12:44:07.159Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     ConnectionId = "<id>",

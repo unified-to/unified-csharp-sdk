@@ -8,7 +8,7 @@
 
 ## CreateGenaiEmbedding
 
-Create an embedding
+Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ var res = await sdk.Embedding.CreateGenaiEmbeddingAsync(
         Dimension = 423D,
         Embeddings = "Est.",
         EncondingFormat = EncondingFormat.Float,
-        Id = "85a5163c-b4f7-4c83-9e2e-285020ff3323",
+        Id = "bca20b8c-ed43-48ea-90b0-2e8deb8cdcc7",
         MaxTokens = 223D,
         TokensUsed = 836D,
         Type = "classification",

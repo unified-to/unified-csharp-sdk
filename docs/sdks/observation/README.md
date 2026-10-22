@@ -10,7 +10,7 @@
 
 ## CreateHealthcareObservation
 
-Create an observation
+Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
 
 ### Example Usage
 
@@ -59,15 +59,15 @@ var res = await sdk.Observation.CreateHealthcareObservationAsync(
             },
         },
         CreatedAt = System.DateTime.Parse("2022-12-06T21:34:04.293Z").ToUniversalTime(),
-        Id = "a23a3279-3610-438e-b74c-541c806c9b82",
+        Id = "4ad9d295-6fc1-4991-901a-3c43fbd9beb5",
         Interpretation = Interpretation.CriticalHigh,
-        IssuedAt = System.DateTime.Parse("2025-05-11T10:39:47.993Z").ToUniversalTime(),
+        IssuedAt = System.DateTime.Parse("2025-05-12T00:13:03.761Z").ToUniversalTime(),
         Metadata = new List<HealthcareMetadata>() {},
         Name = "Blood pressure panel",
-        ObservedAt = System.DateTime.Parse("2025-01-20T04:09:18.371Z").ToUniversalTime(),
+        ObservedAt = System.DateTime.Parse("2025-01-20T16:00:29.736Z").ToUniversalTime(),
         Status = HealthcareObservationStatus.Corrected,
         Type = HealthcareObservationType.VitalSigns,
-        UpdatedAt = System.DateTime.Parse("2026-03-24T06:38:38.832Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-25T01:02:33.168Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -96,7 +96,7 @@ var res = await sdk.Observation.CreateHealthcareObservationAsync(
 
 ## GetHealthcareObservation
 
-Retrieve an observation
+Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -138,7 +138,7 @@ var res = await sdk.Observation.GetHealthcareObservationAsync(
 
 ## ListHealthcareObservations
 
-List all observations
+Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

@@ -13,7 +13,7 @@
 
 ## CreateCrmPipeline
 
-Create a pipeline
+Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "3856f37f-bb76-41af-8c59-558e0521fdbe",
+        Id = "10591808-59c1-4e3a-a5d6-4e3342e22d0b",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -43,13 +43,13 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "edca416e-4810-4d64-a410-9f5b713ef26a",
+                Id = "656770a4-f402-4d92-b17d-673ac784f505",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-10T12:40:31.977Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.653Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T06:07:06.990Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.106Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -78,7 +78,7 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 
 ## GetCrmPipeline
 
-Retrieve a pipeline
+Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -120,7 +120,7 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 
 ## ListCrmPipelines
 
-List all pipelines
+Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -161,7 +161,7 @@ var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
 
 ## PatchCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "110bd91a-1a1e-493f-a449-0db3a73c3811",
+        Id = "33ab3e86-cb90-496d-8f33-72c34af17e83",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -192,13 +192,13 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "0c4beff6-ae22-4221-a16a-7501535b131a",
+                Id = "bcf35b65-992d-4396-bbbc-f4ad0fc0c2d0",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-10T12:40:31.984Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.659Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T06:07:06.997Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.113Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -227,7 +227,7 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(req);
 
 ## RemoveCrmPipeline
 
-Remove a pipeline
+Deletes the CrmPipeline identified by `id`.
 
 ### Example Usage
 
@@ -267,7 +267,7 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 
 ## UpdateCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "110bd91a-1a1e-493f-a449-0db3a73c3811",
+        Id = "33ab3e86-cb90-496d-8f33-72c34af17e83",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -298,13 +298,13 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "0c4beff6-ae22-4221-a16a-7501535b131a",
+                Id = "bcf35b65-992d-4396-bbbc-f4ad0fc0c2d0",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-10T12:40:31.984Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.659Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T06:07:06.997Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.113Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

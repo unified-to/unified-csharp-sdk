@@ -13,7 +13,7 @@
 
 ## CreateDatastoreRecord
 
-Create a record
+Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
 
 ### Example Usage
 
@@ -34,10 +34,10 @@ var res = await sdk.Record.CreateDatastoreRecordAsync(
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "53641f06-b2dd-4ddc-ab1d-d6952004fd4d",
+        Id = "e4e97d6b-1a7c-4891-b33e-78994604edf7",
         Metadata = new List<DatastoreMetadata>() {},
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-03-05T03:20:35.321Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-05T16:44:20.781Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -66,7 +66,7 @@ var res = await sdk.Record.CreateDatastoreRecordAsync(
 
 ## GetDatastoreRecord
 
-Retrieve a record
+Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -108,7 +108,7 @@ var res = await sdk.Record.GetDatastoreRecordAsync(
 
 ## ListDatastoreRecords
 
-List all records
+Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -149,7 +149,7 @@ var res = await sdk.Record.ListDatastoreRecordsAsync(req);
 
 ## PatchDatastoreRecord
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -171,10 +171,10 @@ PatchDatastoreRecordRequest req = new PatchDatastoreRecordRequest() {
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "2b12cb38-7037-4a20-85e5-54a2ea9c6605",
+        Id = "f51633f7-6ea5-453a-a158-d81bfd9dab10",
         Metadata = new List<DatastoreMetadata>() {},
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-03-05T03:20:35.326Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-05T16:44:20.790Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -203,7 +203,7 @@ var res = await sdk.Record.PatchDatastoreRecordAsync(req);
 
 ## RemoveDatastoreRecord
 
-Remove a record
+Deletes the DatastoreRecord identified by `id`.
 
 ### Example Usage
 
@@ -243,7 +243,7 @@ var res = await sdk.Record.RemoveDatastoreRecordAsync(
 
 ## UpdateDatastoreRecord
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -265,10 +265,10 @@ UpdateDatastoreRecordRequest req = new UpdateDatastoreRecordRequest() {
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "2b12cb38-7037-4a20-85e5-54a2ea9c6605",
+        Id = "f51633f7-6ea5-453a-a158-d81bfd9dab10",
         Metadata = new List<DatastoreMetadata>() {},
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-03-05T03:20:35.326Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-05T16:44:20.790Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

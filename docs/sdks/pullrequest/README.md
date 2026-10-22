@@ -13,7 +13,7 @@
 
 ## CreateRepoPullrequest
 
-Create a pullrequest
+Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
 
 ### Example Usage
 
@@ -30,9 +30,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.823Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-02T02:56:23.128Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "f3617f0c-7c55-4781-b6b4-7c3573c07bc8",
+        Id = "c36e6023-c574-47db-878f-67dcb0e51ab9",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -41,7 +41,7 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.007Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-18T00:26:42.452Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -70,7 +70,7 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
 
 ## GetRepoPullrequest
 
-Retrieve a pullrequest
+Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +112,7 @@ var res = await sdk.Pullrequest.GetRepoPullrequestAsync(
 
 ## ListRepoPullrequests
 
-List all pullrequests
+Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Pullrequest.ListRepoPullrequestsAsync(req);
 
 ## PatchRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -171,9 +171,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.830Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-02T02:56:23.134Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "0b2547a8-d217-4ebf-a3c8-83c9530b5815",
+        Id = "b6676e4c-7c3f-4100-8e59-7926bc7c94d2",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -182,7 +182,7 @@ PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-18T00:26:42.460Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -211,7 +211,7 @@ var res = await sdk.Pullrequest.PatchRepoPullrequestAsync(req);
 
 ## RemoveRepoPullrequest
 
-Remove a pullrequest
+Deletes the RepoPullrequest identified by `id`.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ var res = await sdk.Pullrequest.RemoveRepoPullrequestAsync(
 
 ## UpdateRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -269,9 +269,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.830Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-02T02:56:23.134Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "0b2547a8-d217-4ebf-a3c8-83c9530b5815",
+        Id = "b6676e4c-7c3f-4100-8e59-7926bc7c94d2",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -280,7 +280,7 @@ UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-18T00:26:42.460Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

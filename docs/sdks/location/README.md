@@ -23,7 +23,7 @@
 
 ## CreateCommerceLocation
 
-Create a location
+Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "b55dec59-86c9-4f1a-a617-1044edbc9cd7",
+        Id = "b419563d-7f1a-46dc-8eae-8afcc9949d6f",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -63,10 +63,10 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "a75c7d28-0e82-4824-aabd-0ba15647f64b",
+                Id = "881070fb-822c-4609-a556-03568bf39235",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6bee8194-2859-42b2-9b0b-3fbce5c8a2ac",
+                        Id = "44205a33-c72d-4407-8b7c-d422619f3b3e",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -94,7 +94,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-20T18:02:28.795Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T01:28:31.052Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -124,7 +124,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 
 ## CreateHrisLocation
 
-Create a location
+Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "5caa3a3d-e282-4c8e-9944-c7318b652a42",
+        Id = "effd3b90-9464-4f7e-833d-320f588e6e4c",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -174,7 +174,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T02:33:35.070Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-21T10:28:10.823Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -203,7 +203,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 
 ## GetClubsLocation
 
-Retrieve a location
+Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ var res = await sdk.Location.GetClubsLocationAsync(
 
 ## GetCommerceLocation
 
-Retrieve a location
+Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -287,7 +287,7 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 
 ## GetHealthcareLocation
 
-Retrieve a location
+Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -329,7 +329,7 @@ var res = await sdk.Location.GetHealthcareLocationAsync(
 
 ## GetHrisLocation
 
-Retrieve a location
+Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -371,7 +371,7 @@ var res = await sdk.Location.GetHrisLocationAsync(
 
 ## ListClubsLocations
 
-List all locations
+Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -412,7 +412,7 @@ var res = await sdk.Location.ListClubsLocationsAsync(req);
 
 ## ListCommerceLocations
 
-List all locations
+Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -453,7 +453,7 @@ var res = await sdk.Location.ListCommerceLocationsAsync(req);
 
 ## ListHealthcareLocations
 
-List all locations
+Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -494,7 +494,7 @@ var res = await sdk.Location.ListHealthcareLocationsAsync(req);
 
 ## ListHrisLocations
 
-List all locations
+Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -535,7 +535,7 @@ var res = await sdk.Location.ListHrisLocationsAsync(req);
 
 ## PatchCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -565,7 +565,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "3a252470-af97-47a7-bc16-27a55ffd0890",
+        Id = "6fbb2092-4f06-447b-b341-5d74d16391e6",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -576,10 +576,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "ec25273b-636f-46b8-b2dc-879270863e7f",
+                Id = "8cfe5bae-d748-4c60-841d-55e6cf068f20",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "f42cbd3b-7b2a-47f8-b41a-77bd2ca6bd8d",
+                        Id = "e1c649fd-059e-418f-8b02-fdc93c484597",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -607,7 +607,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-20T18:02:28.805Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T01:28:31.067Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -637,7 +637,7 @@ var res = await sdk.Location.PatchCommerceLocationAsync(req);
 
 ## PatchHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -667,7 +667,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "5f004bfc-dace-4a25-b396-bede523be895",
+        Id = "423a7c06-1e81-4415-9122-fe2b1742f75d",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -688,7 +688,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T02:33:35.075Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-21T10:28:10.828Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -717,7 +717,7 @@ var res = await sdk.Location.PatchHrisLocationAsync(req);
 
 ## RemoveCommerceLocation
 
-Remove a location
+Deletes the CommerceLocation identified by `id`.
 
 ### Example Usage
 
@@ -757,7 +757,7 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 
 ## RemoveHrisLocation
 
-Remove a location
+Deletes the HrisLocation identified by `id`.
 
 ### Example Usage
 
@@ -797,7 +797,7 @@ var res = await sdk.Location.RemoveHrisLocationAsync(
 
 ## UpdateCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -827,7 +827,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "3a252470-af97-47a7-bc16-27a55ffd0890",
+        Id = "6fbb2092-4f06-447b-b341-5d74d16391e6",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -838,10 +838,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "ec25273b-636f-46b8-b2dc-879270863e7f",
+                Id = "8cfe5bae-d748-4c60-841d-55e6cf068f20",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "f42cbd3b-7b2a-47f8-b41a-77bd2ca6bd8d",
+                        Id = "e1c649fd-059e-418f-8b02-fdc93c484597",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -869,7 +869,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-20T18:02:28.805Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T01:28:31.067Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -899,7 +899,7 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(req);
 
 ## UpdateHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -929,7 +929,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "5f004bfc-dace-4a25-b396-bede523be895",
+        Id = "423a7c06-1e81-4415-9122-fe2b1742f75d",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -950,7 +950,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T02:33:35.075Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-21T10:28:10.828Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

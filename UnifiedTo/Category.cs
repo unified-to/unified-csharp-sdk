@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
+        /// </remarks>
         /// <param name="accountingCategory">A <see cref="AccountingCategory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category.
         /// </summary>
+        /// <remarks>
+        /// Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
+        /// </remarks>
         /// <param name="ticketingCategory">A <see cref="TicketingCategory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a category.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a category.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all categories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCategoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCategoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -116,6 +131,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all categories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTicketingCategoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTicketingCategoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -129,6 +147,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -142,6 +163,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTicketingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTicketingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -153,6 +177,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a category.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingCategory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingCategoryResponse"/> response envelope when completed.</returns>
@@ -164,6 +191,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a category.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TicketingCategory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTicketingCategoryResponse"/> response envelope when completed.</returns>
@@ -175,6 +205,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -188,6 +221,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTicketingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTicketingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -215,6 +251,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
+        /// </remarks>
         /// <param name="accountingCategory">A <see cref="AccountingCategory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -343,6 +382,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category.
         /// </summary>
+        /// <remarks>
+        /// Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
+        /// </remarks>
         /// <param name="ticketingCategory">A <see cref="TicketingCategory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -471,6 +513,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a category.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <param name="fields">Fields to return.</param>
@@ -593,6 +638,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a category.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <param name="fields">Fields to return.</param>
@@ -715,6 +763,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all categories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCategoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCategoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -822,6 +873,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all categories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTicketingCategoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTicketingCategoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -929,6 +983,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1042,6 +1099,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTicketingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTicketingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1155,6 +1215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a category.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingCategory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingCategoryResponse"/> response envelope when completed.</returns>
@@ -1261,6 +1324,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a category.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TicketingCategory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTicketingCategoryResponse"/> response envelope when completed.</returns>
@@ -1364,6 +1430,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1477,6 +1546,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTicketingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTicketingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

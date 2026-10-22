@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
+        /// </remarks>
         /// <param name="atsActivity">A <see cref="AtsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
+        /// </remarks>
         /// <param name="lmsActivity">A <see cref="LmsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -133,6 +151,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -144,6 +165,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -155,6 +179,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -166,6 +193,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -177,6 +207,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsActivityResponse"/> response envelope when completed.</returns>
@@ -188,6 +221,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsActivityResponse"/> response envelope when completed.</returns>
@@ -199,6 +235,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -210,6 +249,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -235,6 +277,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
+        /// </remarks>
         /// <param name="atsActivity">A <see cref="AtsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -363,6 +408,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
+        /// </remarks>
         /// <param name="lmsActivity">A <see cref="LmsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -491,6 +539,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -613,6 +664,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -735,6 +789,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -857,6 +914,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -962,6 +1022,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1067,6 +1130,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1172,6 +1238,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1283,6 +1352,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1394,6 +1466,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsActivityResponse"/> response envelope when completed.</returns>
@@ -1497,6 +1572,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsActivityResponse"/> response envelope when completed.</returns>
@@ -1600,6 +1678,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1711,6 +1792,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

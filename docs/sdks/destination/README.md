@@ -13,7 +13,7 @@
 
 ## CreateCdpDestination
 
-Create a destination
+Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
 
 ### Example Usage
 
@@ -55,7 +55,7 @@ var res = await sdk.Destination.CreateCdpDestinationAsync(
 
 ## GetCdpDestination
 
-Retrieve a destination
+Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -97,7 +97,7 @@ var res = await sdk.Destination.GetCdpDestinationAsync(
 
 ## ListCdpDestinations
 
-List all destinations
+Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -138,7 +138,7 @@ var res = await sdk.Destination.ListCdpDestinationsAsync(req);
 
 ## PatchCdpDestination
 
-Update a destination
+Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ var res = await sdk.Destination.PatchCdpDestinationAsync(req);
 
 ## RemoveCdpDestination
 
-Remove a destination
+Deletes the CdpDestination identified by `id`.
 
 ### Example Usage
 
@@ -221,7 +221,7 @@ var res = await sdk.Destination.RemoveCdpDestinationAsync(
 
 ## UpdateCdpDestination
 
-Update a destination
+Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
 
 ### Example Usage
 

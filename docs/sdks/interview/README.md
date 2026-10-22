@@ -13,7 +13,7 @@
 
 ## CreateAtsInterview
 
-Create an interview
+Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
 
 ### Example Usage
 
@@ -32,13 +32,13 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "155e1c06-2bbf-4514-94be-bf49719c3c89",
+        Id = "a7a813ea-d547-4bdd-a4e2-65bf9fedd6f3",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-23T16:45:17.595Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T00:47:28.010Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -67,7 +67,7 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 
 ## GetAtsInterview
 
-Retrieve an interview
+Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -109,7 +109,7 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 
 ## ListAtsInterviews
 
-List all interviews
+Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -150,7 +150,7 @@ var res = await sdk.Interview.ListAtsInterviewsAsync(req);
 
 ## PatchAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -170,13 +170,13 @@ PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "8007c240-85ae-42ec-8369-38030467aee0",
+        Id = "a794df14-a73a-4270-b471-aed3b1e7cefb",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-23T16:45:17.599Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T00:47:28.015Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -205,7 +205,7 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(req);
 
 ## RemoveAtsInterview
 
-Remove an interview
+Deletes the AtsInterview identified by `id`.
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 
 ## UpdateAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -265,13 +265,13 @@ UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "8007c240-85ae-42ec-8369-38030467aee0",
+        Id = "a794df14-a73a-4270-b471-aed3b1e7cefb",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-23T16:45:17.599Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T00:47:28.015Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

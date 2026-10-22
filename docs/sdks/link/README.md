@@ -19,7 +19,7 @@
 
 ## CreateCalendarLink
 
-Create a link
+Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
 
 ### Example Usage
 
@@ -38,13 +38,13 @@ var res = await sdk.Link.CreateCalendarLinkAsync(
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "56f56475-63e4-471b-9756-432fd4fd9a62",
+        Id = "2fcc36ba-86c3-44e6-807f-40e9e5a6105f",
         IsActive = true,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-15T13:06:35.491Z",
+        UpdatedAt = "2024-03-15T19:13:09.596Z",
         Url = "https://annual-apricot.info/",
     },
     connectionId: "<id>"
@@ -74,7 +74,7 @@ var res = await sdk.Link.CreateCalendarLinkAsync(
 
 ## CreatePaymentLink
 
-Create a link
+Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
 
 ### Example Usage
 
@@ -95,13 +95,13 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
         CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Savor the tender essence in our Ball, designed for dim culinary adventures",
-        Id = "95ca1701-9a97-40d8-b2b8-14bb3ceded0a",
+        Id = "cc623d08-21a1-4f81-a556-daf8b18e763f",
         IsActive = true,
         IsChargeableNow = true,
         Lineitems = new List<PaymentLineitem>() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "56c5d53f-d803-462c-884b-ed9d672f8437",
+                Id = "0759353a-fa58-41b7-a46a-e8f8bf0f635f",
                 ItemDescription = "Discover the worst new Computer with an exciting mix of Steel ingredients",
                 ItemName = "Soft Marble Cheese",
                 TaxAmount = 0D,
@@ -113,7 +113,7 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
                 DiscountAmount = 424.32D,
-                Id = "19656cb9-33ad-4b91-98ac-a9f22095c884",
+                Id = "9f9a154a-71ef-4b4b-923c-c61b6309d8db",
                 ItemDescription = "Innovative Shoes featuring utilized technology and Cotton construction",
                 ItemName = "Sleek Aluminum Shoes",
                 Notes = "Cervus decretum viridis doloremque.",
@@ -125,7 +125,7 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
             },
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "76f2e426-29cd-4630-8a27-c79166d3c03a",
+                Id = "2c83cfa8-769b-4da1-8630-8fdee783254b",
                 ItemDescription = "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
                 ItemName = "Elegant Concrete Gloves",
                 Notes = "Desipio usque vacuus currus cetera testimonium.",
@@ -138,8 +138,8 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
         },
         Metadata = new List<PaymentMetadata>() {},
         SuccessUrl = "https://tinted-jet.info",
-        UpdatedAt = System.DateTime.Parse("2024-04-13T09:35:36.719Z").ToUniversalTime(),
-        Url = "https://pay.example.com/95ca1701-9a97-40d8-b2b8-14bb3ceded0a",
+        UpdatedAt = System.DateTime.Parse("2024-04-13T15:05:19.053Z").ToUniversalTime(),
+        Url = "https://pay.example.com/cc623d08-21a1-4f81-a556-daf8b18e763f",
     },
     connectionId: "<id>"
 );
@@ -168,7 +168,7 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 
 ## GetCalendarLink
 
-Retrieve a link
+Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -210,7 +210,7 @@ var res = await sdk.Link.GetCalendarLinkAsync(
 
 ## GetPaymentLink
 
-Retrieve a link
+Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -252,7 +252,7 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 
 ## ListCalendarLinks
 
-List all links
+Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -293,7 +293,7 @@ var res = await sdk.Link.ListCalendarLinksAsync(req);
 
 ## ListPaymentLinks
 
-List all links
+Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -334,7 +334,7 @@ var res = await sdk.Link.ListPaymentLinksAsync(req);
 
 ## PatchCalendarLink
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -354,13 +354,13 @@ PatchCalendarLinkRequest req = new PatchCalendarLinkRequest() {
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "e1fb4ca3-e293-473a-aa91-e1bd43a664d3",
+        Id = "4d0e4cbb-7876-4125-a193-cc9809d20c01",
         IsActive = true,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-15T13:06:35.495Z",
+        UpdatedAt = "2024-03-15T19:13:09.600Z",
         Url = "https://annual-apricot.info/",
     },
     ConnectionId = "<id>",
@@ -390,7 +390,7 @@ var res = await sdk.Link.PatchCalendarLinkAsync(req);
 
 ## PatchPaymentLink
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -412,13 +412,13 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
         CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Savor the tender essence in our Ball, designed for dim culinary adventures",
-        Id = "0b342998-9562-4730-bb95-c37b0a89983e",
+        Id = "301bd460-46f0-462f-a2bb-50be8ee51e82",
         IsActive = true,
         IsChargeableNow = true,
         Lineitems = new List<PaymentLineitem>() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "d68633de-488d-4422-b388-0ed2546d244a",
+                Id = "a87314aa-abd1-45dc-a863-52272ff8a597",
                 ItemDescription = "Discover the worst new Computer with an exciting mix of Steel ingredients",
                 ItemName = "Soft Marble Cheese",
                 TaxAmount = 0D,
@@ -430,7 +430,7 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
                 DiscountAmount = 424.32D,
-                Id = "4de4c706-32d9-4863-8f3d-1d981da2ff12",
+                Id = "23f71fda-f274-4567-9449-793471f9d42c",
                 ItemDescription = "Innovative Shoes featuring utilized technology and Cotton construction",
                 ItemName = "Sleek Aluminum Shoes",
                 Notes = "Cervus decretum viridis doloremque.",
@@ -442,7 +442,7 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
             },
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "5d559395-af99-45fd-8ab5-3f542517872b",
+                Id = "c1c8d1de-ce17-4e81-a4ac-96cbd4d761f7",
                 ItemDescription = "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
                 ItemName = "Elegant Concrete Gloves",
                 Notes = "Desipio usque vacuus currus cetera testimonium.",
@@ -455,8 +455,8 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
         },
         Metadata = new List<PaymentMetadata>() {},
         SuccessUrl = "https://tinted-jet.info",
-        UpdatedAt = System.DateTime.Parse("2024-04-13T09:35:36.724Z").ToUniversalTime(),
-        Url = "https://pay.example.com/0b342998-9562-4730-bb95-c37b0a89983e",
+        UpdatedAt = System.DateTime.Parse("2024-04-13T15:05:19.061Z").ToUniversalTime(),
+        Url = "https://pay.example.com/301bd460-46f0-462f-a2bb-50be8ee51e82",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -485,7 +485,7 @@ var res = await sdk.Link.PatchPaymentLinkAsync(req);
 
 ## RemoveCalendarLink
 
-Remove a link
+Deletes the CalendarLink identified by `id`.
 
 ### Example Usage
 
@@ -525,7 +525,7 @@ var res = await sdk.Link.RemoveCalendarLinkAsync(
 
 ## RemovePaymentLink
 
-Remove a link
+Deletes the PaymentLink identified by `id`.
 
 ### Example Usage
 
@@ -565,7 +565,7 @@ var res = await sdk.Link.RemovePaymentLinkAsync(
 
 ## UpdateCalendarLink
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -585,13 +585,13 @@ UpdateCalendarLinkRequest req = new UpdateCalendarLinkRequest() {
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "e1fb4ca3-e293-473a-aa91-e1bd43a664d3",
+        Id = "4d0e4cbb-7876-4125-a193-cc9809d20c01",
         IsActive = true,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-15T13:06:35.495Z",
+        UpdatedAt = "2024-03-15T19:13:09.600Z",
         Url = "https://annual-apricot.info/",
     },
     ConnectionId = "<id>",
@@ -621,7 +621,7 @@ var res = await sdk.Link.UpdateCalendarLinkAsync(req);
 
 ## UpdatePaymentLink
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -643,13 +643,13 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
         CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Savor the tender essence in our Ball, designed for dim culinary adventures",
-        Id = "0b342998-9562-4730-bb95-c37b0a89983e",
+        Id = "301bd460-46f0-462f-a2bb-50be8ee51e82",
         IsActive = true,
         IsChargeableNow = true,
         Lineitems = new List<PaymentLineitem>() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "d68633de-488d-4422-b388-0ed2546d244a",
+                Id = "a87314aa-abd1-45dc-a863-52272ff8a597",
                 ItemDescription = "Discover the worst new Computer with an exciting mix of Steel ingredients",
                 ItemName = "Soft Marble Cheese",
                 TaxAmount = 0D,
@@ -661,7 +661,7 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
                 DiscountAmount = 424.32D,
-                Id = "4de4c706-32d9-4863-8f3d-1d981da2ff12",
+                Id = "23f71fda-f274-4567-9449-793471f9d42c",
                 ItemDescription = "Innovative Shoes featuring utilized technology and Cotton construction",
                 ItemName = "Sleek Aluminum Shoes",
                 Notes = "Cervus decretum viridis doloremque.",
@@ -673,7 +673,7 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
             },
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "5d559395-af99-45fd-8ab5-3f542517872b",
+                Id = "c1c8d1de-ce17-4e81-a4ac-96cbd4d761f7",
                 ItemDescription = "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
                 ItemName = "Elegant Concrete Gloves",
                 Notes = "Desipio usque vacuus currus cetera testimonium.",
@@ -686,8 +686,8 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
         },
         Metadata = new List<PaymentMetadata>() {},
         SuccessUrl = "https://tinted-jet.info",
-        UpdatedAt = System.DateTime.Parse("2024-04-13T09:35:36.724Z").ToUniversalTime(),
-        Url = "https://pay.example.com/0b342998-9562-4730-bb95-c37b0a89983e",
+        UpdatedAt = System.DateTime.Parse("2024-04-13T15:05:19.061Z").ToUniversalTime(),
+        Url = "https://pay.example.com/301bd460-46f0-462f-a2bb-50be8ee51e82",
     },
     ConnectionId = "<id>",
     Id = "<id>",

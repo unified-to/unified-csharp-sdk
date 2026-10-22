@@ -13,7 +13,7 @@
 
 ## CreateLmsCourse
 
-Create a course
+Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ var res = await sdk.Course.CreateLmsCourseAsync(
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "2e4b2eaf-7fe4-46ca-9ee1-90abcc9bf2fb",
+        Id = "504f519d-2f36-49b3-9867-ccbe2ffcb06d",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -65,14 +65,14 @@ var res = await sdk.Course.CreateLmsCourseAsync(
         Name = "comptus",
         PriceAmount = 84D,
         ProviderName = "Homenick - Wunsch",
-        PublishedAt = System.DateTime.Parse("2022-11-05T18:11:26.371Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-11-05T18:38:06.816Z").ToUniversalTime(),
         Skills = new List<string>() {
             "adiuvo",
             "tam",
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-09T18:21:32.889Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-09T20:12:37.394Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -101,7 +101,7 @@ var res = await sdk.Course.CreateLmsCourseAsync(
 
 ## GetLmsCourse
 
-Retrieve a course
+Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -143,7 +143,7 @@ var res = await sdk.Course.GetLmsCourseAsync(
 
 ## ListLmsCourses
 
-List all courses
+Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -184,7 +184,7 @@ var res = await sdk.Course.ListLmsCoursesAsync(req);
 
 ## PatchLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -210,7 +210,7 @@ PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "7e77cb5a-4b84-49a2-b5d8-b8c60d3b3530",
+        Id = "7e348666-faea-437c-9637-9fda9368a2be",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -237,14 +237,14 @@ PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
         Name = "comptus",
         PriceAmount = 84D,
         ProviderName = "Homenick - Wunsch",
-        PublishedAt = System.DateTime.Parse("2022-11-05T18:11:26.372Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-11-05T18:38:06.817Z").ToUniversalTime(),
         Skills = new List<string>() {
             "adiuvo",
             "tam",
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-09T18:21:32.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-09T20:12:37.396Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -273,7 +273,7 @@ var res = await sdk.Course.PatchLmsCourseAsync(req);
 
 ## RemoveLmsCourse
 
-Remove a course
+Deletes the LmsCourse identified by `id`.
 
 ### Example Usage
 
@@ -313,7 +313,7 @@ var res = await sdk.Course.RemoveLmsCourseAsync(
 
 ## UpdateLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -339,7 +339,7 @@ UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "7e77cb5a-4b84-49a2-b5d8-b8c60d3b3530",
+        Id = "7e348666-faea-437c-9637-9fda9368a2be",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -366,14 +366,14 @@ UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
         Name = "comptus",
         PriceAmount = 84D,
         ProviderName = "Homenick - Wunsch",
-        PublishedAt = System.DateTime.Parse("2022-11-05T18:11:26.372Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-11-05T18:38:06.817Z").ToUniversalTime(),
         Skills = new List<string>() {
             "adiuvo",
             "tam",
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-09T18:21:32.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-09T20:12:37.396Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

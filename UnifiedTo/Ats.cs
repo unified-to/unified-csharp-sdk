@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
+        /// </remarks>
         /// <param name="atsActivity">A <see cref="AtsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an application.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
+        /// </remarks>
         /// <param name="atsApplication">A <see cref="AtsApplication"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a candidate.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
+        /// </remarks>
         /// <param name="atsCandidate">A <see cref="AtsCandidate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
+        /// </remarks>
         /// <param name="atsCompany">A <see cref="AtsCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
+        /// </remarks>
         /// <param name="atsDocument">A <see cref="AtsDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an interview.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
+        /// </remarks>
         /// <param name="atsInterview">A <see cref="AtsInterview"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
+        /// </remarks>
         /// <param name="atsJob">A <see cref="AtsJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
+        /// </remarks>
         /// <param name="atsScorecard">A <see cref="AtsScorecard"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an application.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Application.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an applicationstatus.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsStatus by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Applicationstatus.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a candidate.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Candidate.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an interview.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Interview.</param>
         /// <param name="fields">Fields to return.</param>
@@ -312,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -331,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -350,6 +401,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -361,6 +415,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all applications.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsApplicationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsApplicationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -372,6 +429,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all applicationstatuses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsStatuses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsApplicationstatusesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsApplicationstatusesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -385,6 +445,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all candidates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsCandidatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsCandidatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -396,6 +459,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -407,6 +473,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -418,6 +487,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all interviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsInterviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsInterviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -429,6 +501,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -440,6 +515,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -451,6 +529,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -462,6 +543,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsApplicationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsApplicationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -473,6 +557,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a candidate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsCandidateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsCandidateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -484,6 +571,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -495,6 +585,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -506,6 +599,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsInterviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsInterviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -517,6 +613,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -528,6 +627,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -539,6 +641,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsActivityResponse"/> response envelope when completed.</returns>
@@ -550,6 +655,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an application.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsApplication identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Application.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsApplicationResponse"/> response envelope when completed.</returns>
@@ -561,6 +669,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a candidate.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsCandidate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Candidate.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsCandidateResponse"/> response envelope when completed.</returns>
@@ -572,6 +683,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsCompanyResponse"/> response envelope when completed.</returns>
@@ -583,6 +697,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsDocumentResponse"/> response envelope when completed.</returns>
@@ -594,6 +711,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an interview.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsInterview identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Interview.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsInterviewResponse"/> response envelope when completed.</returns>
@@ -605,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsJobResponse"/> response envelope when completed.</returns>
@@ -616,6 +739,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsScorecard identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsScorecardResponse"/> response envelope when completed.</returns>
@@ -627,6 +753,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -638,6 +767,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsApplicationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsApplicationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -649,6 +781,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a candidate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsCandidateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsCandidateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -660,6 +795,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -671,6 +809,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -682,6 +823,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsInterviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsInterviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -693,6 +837,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -704,6 +851,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -729,6 +879,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
+        /// </remarks>
         /// <param name="atsActivity">A <see cref="AtsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -857,6 +1010,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an application.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
+        /// </remarks>
         /// <param name="atsApplication">A <see cref="AtsApplication"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -985,6 +1141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a candidate.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
+        /// </remarks>
         /// <param name="atsCandidate">A <see cref="AtsCandidate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1113,6 +1272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
+        /// </remarks>
         /// <param name="atsCompany">A <see cref="AtsCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1241,6 +1403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
+        /// </remarks>
         /// <param name="atsDocument">A <see cref="AtsDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1369,6 +1534,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an interview.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
+        /// </remarks>
         /// <param name="atsInterview">A <see cref="AtsInterview"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1497,6 +1665,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
+        /// </remarks>
         /// <param name="atsJob">A <see cref="AtsJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1625,6 +1796,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
+        /// </remarks>
         /// <param name="atsScorecard">A <see cref="AtsScorecard"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1753,6 +1927,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1875,6 +2052,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an application.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Application.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1997,6 +2177,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an applicationstatus.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsStatus by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Applicationstatus.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2119,6 +2302,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a candidate.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Candidate.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2241,6 +2427,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2363,6 +2552,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2485,6 +2677,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an interview.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Interview.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2607,6 +2802,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2729,6 +2927,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2851,6 +3052,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2956,6 +3160,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all applications.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsApplicationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsApplicationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3061,6 +3268,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all applicationstatuses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsStatuses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsApplicationstatusesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsApplicationstatusesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3168,6 +3378,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all candidates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsCandidatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsCandidatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3273,6 +3486,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3378,6 +3594,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3483,6 +3702,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all interviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsInterviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsInterviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3588,6 +3810,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3693,6 +3918,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3798,6 +4026,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3909,6 +4140,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsApplicationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsApplicationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4020,6 +4254,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a candidate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsCandidateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsCandidateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4131,6 +4368,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4242,6 +4482,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4353,6 +4596,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsInterviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsInterviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4464,6 +4710,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4575,6 +4824,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4686,6 +4938,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsActivityResponse"/> response envelope when completed.</returns>
@@ -4789,6 +5044,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an application.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsApplication identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Application.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsApplicationResponse"/> response envelope when completed.</returns>
@@ -4892,6 +5150,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a candidate.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsCandidate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Candidate.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsCandidateResponse"/> response envelope when completed.</returns>
@@ -4995,6 +5256,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsCompanyResponse"/> response envelope when completed.</returns>
@@ -5098,6 +5362,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsDocumentResponse"/> response envelope when completed.</returns>
@@ -5201,6 +5468,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an interview.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsInterview identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Interview.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsInterviewResponse"/> response envelope when completed.</returns>
@@ -5304,6 +5574,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsJobResponse"/> response envelope when completed.</returns>
@@ -5407,6 +5680,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsScorecard identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsScorecardResponse"/> response envelope when completed.</returns>
@@ -5510,6 +5786,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5621,6 +5900,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsApplicationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsApplicationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5732,6 +6014,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a candidate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsCandidateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsCandidateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5843,6 +6128,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5954,6 +6242,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6065,6 +6356,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsInterviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsInterviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6176,6 +6470,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6287,6 +6584,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

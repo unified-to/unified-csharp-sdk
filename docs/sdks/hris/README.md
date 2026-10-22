@@ -100,7 +100,7 @@
 
 ## CreateHrisAttendance
 
-Create an attendance
+Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
 
 ### Example Usage
 
@@ -125,32 +125,32 @@ var res = await sdk.Hris.CreateHrisAttendanceAsync(
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-09-19T14:06:51.248Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T14:34:02.650Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 51D,
-                EndAt = System.DateTime.Parse("2024-02-14T13:23:56.511Z").ToUniversalTime(),
-                Id = "d165eaae-9fd5-461a-95a0-93c3cf23a66c",
+                EndAt = System.DateTime.Parse("2024-02-14T23:51:26.362Z").ToUniversalTime(),
+                Id = "199c5898-aa8e-4fd6-a827-ca1a6261e8dd",
                 IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T23:10:00.577Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-30T08:23:56.459Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "EUR",
         DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-23T07:56:43.487Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-23T19:11:14.719Z").ToUniversalTime(),
         HourlyRate = 16D,
         Hours = 10D,
-        Id = "060ca073-ae6c-45a3-a0e5-e853f40bd85c",
+        Id = "d008e6e9-7742-467f-8059-62ad2ab80640",
         JobName = "Human Accountability Administrator",
         Metadata = new List<HrisMetadata>() {},
         NonCashTipsAmount = 167D,
-        StartAt = System.DateTime.Parse("2021-11-11T00:56:49.662Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-11T01:59:52.865Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T21:05:58.859Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T22:56:47.213Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -179,7 +179,7 @@ var res = await sdk.Hris.CreateHrisAttendanceAsync(
 
 ## CreateHrisBankaccount
 
-Create a bankaccount
+Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "79305c3d-7a09-4a29-8ce4-4d0f9973aab1",
+        Id = "7da860c1-5b11-43ab-b95d-596efed977cb",
         IsPrimary = true,
         Metadata = new List<HrisMetadata>() {},
         Name = "Granville Schumm - Checking",
@@ -211,7 +211,7 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
         RoutingNumber = "448650724",
         SplitAmount = 98D,
         SplitType = SplitType.Percentage,
-        UpdatedAt = System.DateTime.Parse("2025-07-01T06:34:38.935Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T00:07:26.147Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -240,7 +240,7 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
 
 ## CreateHrisBenefit
 
-Create a benefit
+Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
 
 ### Example Usage
 
@@ -265,13 +265,13 @@ var res = await sdk.Hris.CreateHrisBenefitAsync(
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "1d2e4abb-08c1-4243-98f8-a00097488dd2",
+        Id = "f0c55385-1c25-4a9a-a731-d0db6db055a3",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-20T20:28:10.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-21T05:53:44.405Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -300,7 +300,7 @@ var res = await sdk.Hris.CreateHrisBenefitAsync(
 
 ## CreateHrisCompany
 
-Create a company
+Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
 
 ### Example Usage
 
@@ -326,11 +326,11 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "152a6976-2ffe-471c-aca8-aa11b1474bb0",
+        Id = "c9afbbbe-7760-4b24-a0b3-5ae4ce2b6804",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-08T16:39:14.454Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-09T14:08:25.970Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -359,7 +359,7 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 
 ## CreateHrisDeduction
 
-Create a deduction
+Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
 
 ### Example Usage
 
@@ -383,14 +383,14 @@ var res = await sdk.Hris.CreateHrisDeductionAsync(
         EmployerType = EmployerType.Percentage,
         Frequency = HrisDeductionFrequency.OneTime,
         GarnishmentType = GarnishmentType.ChildSupport,
-        Id = "d321bf90-5d7b-4dc5-a51d-10134104537d",
+        Id = "bdb5e443-342e-4481-8879-00f32559f834",
         IsActive = true,
         MaxAmount = 21794D,
         Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-15T07:53:16.592Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-16T00:20:53.423Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-22T07:09:38.434Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-22T20:27:41.087Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -419,7 +419,7 @@ var res = await sdk.Hris.CreateHrisDeductionAsync(
 
 ## CreateHrisDevice
 
-Create a device
+Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = false,
-        Id = "8d8f451f-10cf-4ff3-933a-210f70aa7ba9",
+        Id = "fb078e8b-e01a-452a-a844-479e38fe39cb",
         IsMissing = false,
         Manufacturer = "Hackett Inc",
         Metadata = new List<HrisMetadata>() {},
@@ -452,7 +452,7 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
         Name = "august-laptop",
         Os = "transmitter",
         OsVersion = "8.4.8",
-        UpdatedAt = System.DateTime.Parse("2023-06-08T07:30:02.461Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T19:28:01.779Z").ToUniversalTime(),
         Version = "4.15.7",
     },
     connectionId: "<id>"
@@ -482,7 +482,7 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
 
 ## CreateHrisDocument
 
-Create a document
+Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
 
 ### Example Usage
 
@@ -502,10 +502,10 @@ var res = await sdk.Hris.CreateHrisDocumentAsync(
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "fb5751b9-840d-482b-904a-cc15d3687f70",
+        Id = "52bc1cff-e277-4433-b267-f1bef11afc5a",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-11T14:18:16.209Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-12T06:21:32.917Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -534,7 +534,7 @@ var res = await sdk.Hris.CreateHrisDocumentAsync(
 
 ## CreateHrisEarning
 
-Create an earning
+Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
 
 ### Example Usage
 
@@ -555,12 +555,12 @@ var res = await sdk.Hris.CreateHrisEarningAsync(
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
         Currency = "USD",
         Frequency = HrisEarningFrequency.Semimonthly,
-        Id = "2392f486-6129-4dbb-b7cf-54fe016f277f",
+        Id = "045e0a35-39bd-48b1-b9aa-83d782886fb8",
         Metadata = new List<HrisMetadata>() {},
         Notes = "Deporto truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-25T11:56:12.923Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-25T21:42:13.460Z").ToUniversalTime(),
         Status = HrisEarningStatus.Ended,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T20:35:04.145Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-08T23:28:49.314Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -589,7 +589,7 @@ var res = await sdk.Hris.CreateHrisEarningAsync(
 
 ## CreateHrisEmployee
 
-Create an employee
+Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
 
 ### Example Usage
 
@@ -642,7 +642,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "d398d77f-6047-4834-a57a-5dbc3d3ac82e",
+        Id = "d105f995-e128-48f6-96f6-41061bfdb72b",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -656,7 +656,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "a0b28604-721b-463c-aa36-21608c93b57c",
+                Id = "7f3e6a27-a37d-48a5-81a9-fb2e04f912a2",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -706,7 +706,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T04:14:40.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T06:48:07.036Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -735,7 +735,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 
 ## CreateHrisGroup
 
-Create a group
+Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
 
 ### Example Usage
 
@@ -754,12 +754,12 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "71a24531-093a-445d-ba87-6188f6b2ea07",
+        Id = "6333a3d8-8fdc-480d-b57a-aa9403d9ae91",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-21T23:41:48.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T18:17:09.468Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -788,7 +788,7 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 
 ## CreateHrisJob
 
-Create a job
+Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
 
 ### Example Usage
 
@@ -809,11 +809,11 @@ var res = await sdk.Hris.CreateHrisJobAsync(
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "caa7bb67-8e85-4ec3-9795-cc42af2c21c6",
+        Id = "75f20ba4-46a1-4bd1-bea1-5fe4285e9f22",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.108Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T13:34:23.869Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -842,7 +842,7 @@ var res = await sdk.Hris.CreateHrisJobAsync(
 
 ## CreateHrisLocation
 
-Create a location
+Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
 
 ### Example Usage
 
@@ -871,7 +871,7 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "5caa3a3d-e282-4c8e-9944-c7318b652a42",
+        Id = "effd3b90-9464-4f7e-833d-320f588e6e4c",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -892,7 +892,7 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T02:33:35.070Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-21T10:28:10.823Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -921,7 +921,7 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 
 ## CreateHrisTaxonomy
 
-Create a taxonomy
+Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
 
 ### Example Usage
 
@@ -945,13 +945,13 @@ var res = await sdk.Hris.CreateHrisTaxonomyAsync(
         CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
         Description = "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
         Domain = "Health",
-        Id = "86315234-1fd4-4aaa-8dbe-eb7fa5b5f4d1",
+        Id = "763eb688-6049-4980-a573-29a15979eff5",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "International Functionality Architect",
         Subcategory = "Marble",
         Type = HrisTaxonomyType.Knowledge,
-        UpdatedAt = System.DateTime.Parse("2023-05-29T07:28:35.283Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-29T12:07:45.014Z").ToUniversalTime(),
         Url = "https://fixed-membership.biz/",
     },
     connectionId: "<id>"
@@ -981,7 +981,7 @@ var res = await sdk.Hris.CreateHrisTaxonomyAsync(
 
 ## CreateHrisTimeoff
 
-Create a timeoff
+Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
 
 ### Example Usage
 
@@ -998,21 +998,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T09:09:53.408Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T10:48:18.959Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-28T17:28:47.958Z").ToUniversalTime(),
-        Id = "97ceb238-b4a1-4267-95fe-2576c333c36d",
+        EndAt = System.DateTime.Parse("2024-12-29T07:19:51.408Z").ToUniversalTime(),
+        Id = "77df4da1-616d-410b-808d-588b555c6b75",
         IsPaid = true,
         Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T19:30:35.327Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-05T03:42:39.042Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T19:44:29.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T23:01:12.747Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -1042,7 +1042,7 @@ var res = await sdk.Hris.CreateHrisTimeoffAsync(
 
 ## CreateHrisTimeshift
 
-Create a timeshift
+Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
 
 ### Example Usage
 
@@ -1059,7 +1059,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2022-07-18T01:57:56.614Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-18T10:58:38.432Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -1071,13 +1071,13 @@ var res = await sdk.Hris.CreateHrisTimeshiftAsync(
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-27T01:43:03.107Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-27T23:08:36.165Z").ToUniversalTime(),
         Hours = 6D,
-        Id = "eba7e5b2-83ce-44ca-be2e-047f167dd290",
+        Id = "43b2c70d-29d2-419b-a41d-0c7e73c3a658",
         IsApproved = false,
         Metadata = new List<HrisMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-07-13T00:39:39.193Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T21:57:30.686Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-13T12:35:21.354Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-02T03:52:53.091Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1106,7 +1106,7 @@ var res = await sdk.Hris.CreateHrisTimeshiftAsync(
 
 ## GetHrisAttendance
 
-Retrieve an attendance
+Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1148,7 +1148,7 @@ var res = await sdk.Hris.GetHrisAttendanceAsync(
 
 ## GetHrisBankaccount
 
-Retrieve a bankaccount
+Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1190,7 +1190,7 @@ var res = await sdk.Hris.GetHrisBankaccountAsync(
 
 ## GetHrisBenefit
 
-Retrieve a benefit
+Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1232,7 +1232,7 @@ var res = await sdk.Hris.GetHrisBenefitAsync(
 
 ## GetHrisCompany
 
-Retrieve a company
+Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1274,7 +1274,7 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 
 ## GetHrisDeduction
 
-Retrieve a deduction
+Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1316,7 +1316,7 @@ var res = await sdk.Hris.GetHrisDeductionAsync(
 
 ## GetHrisDevice
 
-Retrieve a device
+Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1358,7 +1358,7 @@ var res = await sdk.Hris.GetHrisDeviceAsync(
 
 ## GetHrisDocument
 
-Retrieve a document
+Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1400,7 +1400,7 @@ var res = await sdk.Hris.GetHrisDocumentAsync(
 
 ## GetHrisEarning
 
-Retrieve an earning
+Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1442,7 +1442,7 @@ var res = await sdk.Hris.GetHrisEarningAsync(
 
 ## GetHrisEmployee
 
-Retrieve an employee
+Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1484,7 +1484,7 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 
 ## GetHrisGroup
 
-Retrieve a group
+Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1526,7 +1526,7 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 
 ## GetHrisJob
 
-Retrieve a job
+Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1568,7 +1568,7 @@ var res = await sdk.Hris.GetHrisJobAsync(
 
 ## GetHrisLocation
 
-Retrieve a location
+Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1610,7 +1610,7 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 
 ## GetHrisPaycode
 
-Retrieve a paycode
+Retrieves a single HrisPaycode by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1652,7 +1652,7 @@ var res = await sdk.Hris.GetHrisPaycodeAsync(
 
 ## GetHrisPayroll
 
-Retrieve a payroll
+Retrieves a single HrisPayroll by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1694,7 +1694,7 @@ var res = await sdk.Hris.GetHrisPayrollAsync(
 
 ## GetHrisPayslip
 
-Retrieve a payslip
+Retrieves a single HrisPayslip by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1736,7 +1736,7 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 
 ## GetHrisTaxonomy
 
-Retrieve a taxonomy
+Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1778,7 +1778,7 @@ var res = await sdk.Hris.GetHrisTaxonomyAsync(
 
 ## GetHrisTimeoff
 
-Retrieve a timeoff
+Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1820,7 +1820,7 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 
 ## GetHrisTimeshift
 
-Retrieve a timeshift
+Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1862,7 +1862,7 @@ var res = await sdk.Hris.GetHrisTimeshiftAsync(
 
 ## ListHrisAttendances
 
-List all attendances
+Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1903,7 +1903,7 @@ var res = await sdk.Hris.ListHrisAttendancesAsync(req);
 
 ## ListHrisBankaccounts
 
-List all bankaccounts
+Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1944,7 +1944,7 @@ var res = await sdk.Hris.ListHrisBankaccountsAsync(req);
 
 ## ListHrisBenefits
 
-List all benefits
+Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1985,7 +1985,7 @@ var res = await sdk.Hris.ListHrisBenefitsAsync(req);
 
 ## ListHrisCompanies
 
-List all companies
+Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2026,7 +2026,7 @@ var res = await sdk.Hris.ListHrisCompaniesAsync(req);
 
 ## ListHrisDeductions
 
-List all deductions
+Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2067,7 +2067,7 @@ var res = await sdk.Hris.ListHrisDeductionsAsync(req);
 
 ## ListHrisDevices
 
-List all devices
+Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2108,7 +2108,7 @@ var res = await sdk.Hris.ListHrisDevicesAsync(req);
 
 ## ListHrisDocuments
 
-List all documents
+Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2149,7 +2149,7 @@ var res = await sdk.Hris.ListHrisDocumentsAsync(req);
 
 ## ListHrisEarnings
 
-List all earnings
+Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2190,7 +2190,7 @@ var res = await sdk.Hris.ListHrisEarningsAsync(req);
 
 ## ListHrisEmployees
 
-List all employees
+Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2231,7 +2231,7 @@ var res = await sdk.Hris.ListHrisEmployeesAsync(req);
 
 ## ListHrisGroups
 
-List all groups
+Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2272,7 +2272,7 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 
 ## ListHrisJobs
 
-List all jobs
+Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2313,7 +2313,7 @@ var res = await sdk.Hris.ListHrisJobsAsync(req);
 
 ## ListHrisLocations
 
-List all locations
+Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2354,7 +2354,7 @@ var res = await sdk.Hris.ListHrisLocationsAsync(req);
 
 ## ListHrisPaycodes
 
-List all paycodes
+Returns a list of HrisPaycodes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2395,7 +2395,7 @@ var res = await sdk.Hris.ListHrisPaycodesAsync(req);
 
 ## ListHrisPayrolls
 
-List all payrolls
+Returns a list of HrisPayrolls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2436,7 +2436,7 @@ var res = await sdk.Hris.ListHrisPayrollsAsync(req);
 
 ## ListHrisPayslips
 
-List all payslips
+Returns a list of HrisPayslips. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2477,7 +2477,7 @@ var res = await sdk.Hris.ListHrisPayslipsAsync(req);
 
 ## ListHrisTaxonomies
 
-List all taxonomies
+Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2518,7 +2518,7 @@ var res = await sdk.Hris.ListHrisTaxonomiesAsync(req);
 
 ## ListHrisTimeoffs
 
-List all timeoffs
+Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2559,7 +2559,7 @@ var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
 
 ## ListHrisTimeshifts
 
-List all timeshifts
+Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2600,7 +2600,7 @@ var res = await sdk.Hris.ListHrisTimeshiftsAsync(req);
 
 ## PatchHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -2626,32 +2626,32 @@ PatchHrisAttendanceRequest req = new PatchHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-09-19T14:06:51.249Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T14:34:02.651Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 51D,
-                EndAt = System.DateTime.Parse("2024-02-14T13:23:56.519Z").ToUniversalTime(),
-                Id = "45757800-6e4e-4c42-af1d-9aa34203f259",
+                EndAt = System.DateTime.Parse("2024-02-14T23:51:26.371Z").ToUniversalTime(),
+                Id = "34b08779-a872-4609-9397-f70b4a6d7fd7",
                 IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T23:10:00.584Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-30T08:23:56.467Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "EUR",
         DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-23T07:56:43.496Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-23T19:11:14.729Z").ToUniversalTime(),
         HourlyRate = 16D,
         Hours = 10D,
-        Id = "378e6e19-e1d1-4d41-954f-df34d6c0edbc",
+        Id = "462021ff-5dfb-46ab-bd17-9ebf7cac4273",
         JobName = "Human Accountability Administrator",
         Metadata = new List<HrisMetadata>() {},
         NonCashTipsAmount = 167D,
-        StartAt = System.DateTime.Parse("2021-11-11T00:56:49.663Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-11T01:59:52.866Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T21:05:58.860Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T22:56:47.214Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2680,7 +2680,7 @@ var res = await sdk.Hris.PatchHrisAttendanceAsync(req);
 
 ## PatchHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -2705,7 +2705,7 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "22cf284b-b698-4ccb-8622-1d6d5e725bad",
+        Id = "82159742-fdc2-4d55-b973-7a8a0ae7ff56",
         IsPrimary = true,
         Metadata = new List<HrisMetadata>() {},
         Name = "Granville Schumm - Checking",
@@ -2713,7 +2713,7 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         RoutingNumber = "448650724",
         SplitAmount = 98D,
         SplitType = SplitType.Percentage,
-        UpdatedAt = System.DateTime.Parse("2025-07-01T06:34:38.949Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T00:07:26.157Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2742,7 +2742,7 @@ var res = await sdk.Hris.PatchHrisBankaccountAsync(req);
 
 ## PatchHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -2768,13 +2768,13 @@ PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "2e0d9afe-7bbf-4a38-a044-111797969279",
+        Id = "c05b68e1-d212-4f9d-b2fd-1429e6465003",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-20T20:28:10.314Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-21T05:53:44.412Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2803,7 +2803,7 @@ var res = await sdk.Hris.PatchHrisBenefitAsync(req);
 
 ## PatchHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -2830,11 +2830,11 @@ PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "5fe1130b-7395-45fc-85f5-30b9bf169838",
+        Id = "66e3b624-e8d4-41c7-8f63-1cfc01ea9361",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-08T16:39:14.469Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-09T14:08:25.985Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2863,7 +2863,7 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(req);
 
 ## PatchHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -2888,14 +2888,14 @@ PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
         EmployerType = EmployerType.Percentage,
         Frequency = HrisDeductionFrequency.OneTime,
         GarnishmentType = GarnishmentType.ChildSupport,
-        Id = "005a3e5c-8fd2-4061-a826-292f575a8f27",
+        Id = "831d0e8d-d1ed-45bb-a2ef-b9f48cb9f861",
         IsActive = true,
         MaxAmount = 21794D,
         Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-15T07:53:16.603Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-16T00:20:53.433Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-22T07:09:38.444Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-22T20:27:41.095Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2924,7 +2924,7 @@ var res = await sdk.Hris.PatchHrisDeductionAsync(req);
 
 ## PatchHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -2950,7 +2950,7 @@ PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = false,
-        Id = "d0344a75-80dd-4f3c-b501-369f3552b0ca",
+        Id = "706c2aee-0d80-490b-bef8-2ef083d3594d",
         IsMissing = false,
         Manufacturer = "Hackett Inc",
         Metadata = new List<HrisMetadata>() {},
@@ -2958,7 +2958,7 @@ PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
         Name = "august-laptop",
         Os = "transmitter",
         OsVersion = "8.4.8",
-        UpdatedAt = System.DateTime.Parse("2023-06-08T07:30:02.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T19:28:01.785Z").ToUniversalTime(),
         Version = "4.15.7",
     },
     ConnectionId = "<id>",
@@ -2988,7 +2988,7 @@ var res = await sdk.Hris.PatchHrisDeviceAsync(req);
 
 ## PatchHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -3009,10 +3009,10 @@ PatchHrisDocumentRequest req = new PatchHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "5ad82d77-6ecb-44ae-8610-c841047a6052",
+        Id = "073ecae1-c424-438e-837a-280f38f536a2",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-11T14:18:16.215Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-12T06:21:32.924Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3041,7 +3041,7 @@ var res = await sdk.Hris.PatchHrisDocumentAsync(req);
 
 ## PatchHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -3063,12 +3063,12 @@ PatchHrisEarningRequest req = new PatchHrisEarningRequest() {
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
         Currency = "USD",
         Frequency = HrisEarningFrequency.Semimonthly,
-        Id = "5774acfc-c290-41bd-ba5d-2143f809c3ff",
+        Id = "cf585d30-c0e9-4085-8b61-55987b8d6689",
         Metadata = new List<HrisMetadata>() {},
         Notes = "Deporto truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-25T11:56:12.928Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-25T21:42:13.467Z").ToUniversalTime(),
         Status = HrisEarningStatus.Ended,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T20:35:04.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-08T23:28:49.316Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3097,7 +3097,7 @@ var res = await sdk.Hris.PatchHrisEarningAsync(req);
 
 ## PatchHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -3151,7 +3151,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "9e4a22af-d2b7-4d82-9c82-c81fccddf1ad",
+        Id = "85cc67ff-4d19-4abb-aaf0-d28e1b2a93e6",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -3165,7 +3165,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "76e6306e-3028-4804-bdba-80d97f553eb6",
+                Id = "d387408c-2017-4f24-ace9-2a94e585b5a9",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -3215,7 +3215,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T04:14:40.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T06:48:07.044Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3244,7 +3244,7 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(req);
 
 ## PatchHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -3264,12 +3264,12 @@ PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "0924dac9-e3bd-4b44-8601-a750ee67856b",
+        Id = "0e267efa-b666-4056-a11f-e0eb8f65c0b9",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-21T23:41:48.267Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T18:17:09.476Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3298,7 +3298,7 @@ var res = await sdk.Hris.PatchHrisGroupAsync(req);
 
 ## PatchHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -3320,11 +3320,11 @@ PatchHrisJobRequest req = new PatchHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "cc9b894a-a561-420c-974c-85c030f2340c",
+        Id = "c4a513d1-9011-47ea-9899-f8c6acde5317",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T13:34:23.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3353,7 +3353,7 @@ var res = await sdk.Hris.PatchHrisJobAsync(req);
 
 ## PatchHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -3383,7 +3383,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "5f004bfc-dace-4a25-b396-bede523be895",
+        Id = "423a7c06-1e81-4415-9122-fe2b1742f75d",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -3404,7 +3404,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T02:33:35.075Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-21T10:28:10.828Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3433,7 +3433,7 @@ var res = await sdk.Hris.PatchHrisLocationAsync(req);
 
 ## PatchHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -3451,21 +3451,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T09:09:53.409Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T10:48:18.959Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-28T17:28:47.967Z").ToUniversalTime(),
-        Id = "f8bc24cc-9f02-4d1f-bb30-48728ea2e1c4",
+        EndAt = System.DateTime.Parse("2024-12-29T07:19:51.416Z").ToUniversalTime(),
+        Id = "8d35eee8-529d-4f5d-8fb4-2c4ef4d8edbc",
         IsPaid = true,
         Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T19:30:35.332Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-05T03:42:39.046Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T19:44:29.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T23:01:12.749Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -3495,7 +3495,7 @@ var res = await sdk.Hris.PatchHrisTimeoffAsync(req);
 
 ## PatchHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -3513,7 +3513,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2022-07-18T01:57:56.621Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-18T10:58:38.441Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -3525,13 +3525,13 @@ PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-27T01:43:03.122Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-27T23:08:36.187Z").ToUniversalTime(),
         Hours = 6D,
-        Id = "45297750-9202-41be-bd8e-5ce96540ec8f",
+        Id = "9648cb82-63b3-47c8-9b71-8ddf2e9f68e3",
         IsApproved = false,
         Metadata = new List<HrisMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-07-13T00:39:39.202Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T21:57:30.690Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-13T12:35:21.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-02T03:52:53.097Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3560,7 +3560,7 @@ var res = await sdk.Hris.PatchHrisTimeshiftAsync(req);
 
 ## RemoveHrisAttendance
 
-Remove an attendance
+Deletes the HrisAttendance identified by `id`.
 
 ### Example Usage
 
@@ -3600,7 +3600,7 @@ var res = await sdk.Hris.RemoveHrisAttendanceAsync(
 
 ## RemoveHrisBankaccount
 
-Remove a bankaccount
+Deletes the HrisBankaccount identified by `id`.
 
 ### Example Usage
 
@@ -3640,7 +3640,7 @@ var res = await sdk.Hris.RemoveHrisBankaccountAsync(
 
 ## RemoveHrisBenefit
 
-Remove a benefit
+Deletes the HrisBenefit identified by `id`.
 
 ### Example Usage
 
@@ -3680,7 +3680,7 @@ var res = await sdk.Hris.RemoveHrisBenefitAsync(
 
 ## RemoveHrisCompany
 
-Remove a company
+Deletes the HrisCompany identified by `id`.
 
 ### Example Usage
 
@@ -3720,7 +3720,7 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 
 ## RemoveHrisDeduction
 
-Remove a deduction
+Deletes the HrisDeduction identified by `id`.
 
 ### Example Usage
 
@@ -3760,7 +3760,7 @@ var res = await sdk.Hris.RemoveHrisDeductionAsync(
 
 ## RemoveHrisDevice
 
-Remove a device
+Deletes the HrisDevice identified by `id`.
 
 ### Example Usage
 
@@ -3800,7 +3800,7 @@ var res = await sdk.Hris.RemoveHrisDeviceAsync(
 
 ## RemoveHrisDocument
 
-Remove a document
+Deletes the HrisDocument identified by `id`.
 
 ### Example Usage
 
@@ -3840,7 +3840,7 @@ var res = await sdk.Hris.RemoveHrisDocumentAsync(
 
 ## RemoveHrisEarning
 
-Remove an earning
+Deletes the HrisEarning identified by `id`.
 
 ### Example Usage
 
@@ -3880,7 +3880,7 @@ var res = await sdk.Hris.RemoveHrisEarningAsync(
 
 ## RemoveHrisEmployee
 
-Remove an employee
+Deletes the HrisEmployee identified by `id`.
 
 ### Example Usage
 
@@ -3920,7 +3920,7 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 
 ## RemoveHrisGroup
 
-Remove a group
+Deletes the HrisGroup identified by `id`.
 
 ### Example Usage
 
@@ -3960,7 +3960,7 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 
 ## RemoveHrisJob
 
-Remove a job
+Deletes the HrisJob identified by `id`.
 
 ### Example Usage
 
@@ -4000,7 +4000,7 @@ var res = await sdk.Hris.RemoveHrisJobAsync(
 
 ## RemoveHrisLocation
 
-Remove a location
+Deletes the HrisLocation identified by `id`.
 
 ### Example Usage
 
@@ -4040,7 +4040,7 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 
 ## RemoveHrisTimeoff
 
-Remove a timeoff
+Deletes the HrisTimeoff identified by `id`.
 
 ### Example Usage
 
@@ -4080,7 +4080,7 @@ var res = await sdk.Hris.RemoveHrisTimeoffAsync(
 
 ## RemoveHrisTimeshift
 
-Remove a timeshift
+Deletes the HrisTimeshift identified by `id`.
 
 ### Example Usage
 
@@ -4120,7 +4120,7 @@ var res = await sdk.Hris.RemoveHrisTimeshiftAsync(
 
 ## UpdateHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -4146,32 +4146,32 @@ UpdateHrisAttendanceRequest req = new UpdateHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-09-19T14:06:51.249Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-09-19T14:34:02.651Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 51D,
-                EndAt = System.DateTime.Parse("2024-02-14T13:23:56.519Z").ToUniversalTime(),
-                Id = "45757800-6e4e-4c42-af1d-9aa34203f259",
+                EndAt = System.DateTime.Parse("2024-02-14T23:51:26.371Z").ToUniversalTime(),
+                Id = "34b08779-a872-4609-9397-f70b4a6d7fd7",
                 IsPaid = false,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-29T23:10:00.584Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-30T08:23:56.467Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "EUR",
         DeclaredTipsAmount = 54D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-23T07:56:43.496Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-23T19:11:14.729Z").ToUniversalTime(),
         HourlyRate = 16D,
         Hours = 10D,
-        Id = "378e6e19-e1d1-4d41-954f-df34d6c0edbc",
+        Id = "462021ff-5dfb-46ab-bd17-9ebf7cac4273",
         JobName = "Human Accountability Administrator",
         Metadata = new List<HrisMetadata>() {},
         NonCashTipsAmount = 167D,
-        StartAt = System.DateTime.Parse("2021-11-11T00:56:49.663Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-11T01:59:52.866Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Open,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-19T21:05:58.860Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T22:56:47.214Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4200,7 +4200,7 @@ var res = await sdk.Hris.UpdateHrisAttendanceAsync(req);
 
 ## UpdateHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -4225,7 +4225,7 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "22cf284b-b698-4ccb-8622-1d6d5e725bad",
+        Id = "82159742-fdc2-4d55-b973-7a8a0ae7ff56",
         IsPrimary = true,
         Metadata = new List<HrisMetadata>() {},
         Name = "Granville Schumm - Checking",
@@ -4233,7 +4233,7 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         RoutingNumber = "448650724",
         SplitAmount = 98D,
         SplitType = SplitType.Percentage,
-        UpdatedAt = System.DateTime.Parse("2025-07-01T06:34:38.949Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-02T00:07:26.157Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4262,7 +4262,7 @@ var res = await sdk.Hris.UpdateHrisBankaccountAsync(req);
 
 ## UpdateHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -4288,13 +4288,13 @@ UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "2e0d9afe-7bbf-4a38-a044-111797969279",
+        Id = "c05b68e1-d212-4f9d-b2fd-1429e6465003",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-20T20:28:10.314Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-21T05:53:44.412Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4323,7 +4323,7 @@ var res = await sdk.Hris.UpdateHrisBenefitAsync(req);
 
 ## UpdateHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -4350,11 +4350,11 @@ UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "5fe1130b-7395-45fc-85f5-30b9bf169838",
+        Id = "66e3b624-e8d4-41c7-8f63-1cfc01ea9361",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-08T16:39:14.469Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-09T14:08:25.985Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4383,7 +4383,7 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(req);
 
 ## UpdateHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -4408,14 +4408,14 @@ UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
         EmployerType = EmployerType.Percentage,
         Frequency = HrisDeductionFrequency.OneTime,
         GarnishmentType = GarnishmentType.ChildSupport,
-        Id = "005a3e5c-8fd2-4061-a826-292f575a8f27",
+        Id = "831d0e8d-d1ed-45bb-a2ef-b9f48cb9f861",
         IsActive = true,
         MaxAmount = 21794D,
         Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-15T07:53:16.603Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-16T00:20:53.433Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-22T07:09:38.444Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-22T20:27:41.095Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4444,7 +4444,7 @@ var res = await sdk.Hris.UpdateHrisDeductionAsync(req);
 
 ## UpdateHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -4470,7 +4470,7 @@ UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = false,
-        Id = "d0344a75-80dd-4f3c-b501-369f3552b0ca",
+        Id = "706c2aee-0d80-490b-bef8-2ef083d3594d",
         IsMissing = false,
         Manufacturer = "Hackett Inc",
         Metadata = new List<HrisMetadata>() {},
@@ -4478,7 +4478,7 @@ UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
         Name = "august-laptop",
         Os = "transmitter",
         OsVersion = "8.4.8",
-        UpdatedAt = System.DateTime.Parse("2023-06-08T07:30:02.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T19:28:01.785Z").ToUniversalTime(),
         Version = "4.15.7",
     },
     ConnectionId = "<id>",
@@ -4508,7 +4508,7 @@ var res = await sdk.Hris.UpdateHrisDeviceAsync(req);
 
 ## UpdateHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -4529,10 +4529,10 @@ UpdateHrisDocumentRequest req = new UpdateHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "5ad82d77-6ecb-44ae-8610-c841047a6052",
+        Id = "073ecae1-c424-438e-837a-280f38f536a2",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-11T14:18:16.215Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-12T06:21:32.924Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4561,7 +4561,7 @@ var res = await sdk.Hris.UpdateHrisDocumentAsync(req);
 
 ## UpdateHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -4583,12 +4583,12 @@ UpdateHrisEarningRequest req = new UpdateHrisEarningRequest() {
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
         Currency = "USD",
         Frequency = HrisEarningFrequency.Semimonthly,
-        Id = "5774acfc-c290-41bd-ba5d-2143f809c3ff",
+        Id = "cf585d30-c0e9-4085-8b61-55987b8d6689",
         Metadata = new List<HrisMetadata>() {},
         Notes = "Deporto truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-25T11:56:12.928Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-25T21:42:13.467Z").ToUniversalTime(),
         Status = HrisEarningStatus.Ended,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T20:35:04.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-08T23:28:49.316Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4617,7 +4617,7 @@ var res = await sdk.Hris.UpdateHrisEarningAsync(req);
 
 ## UpdateHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -4671,7 +4671,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "9e4a22af-d2b7-4d82-9c82-c81fccddf1ad",
+        Id = "85cc67ff-4d19-4abb-aaf0-d28e1b2a93e6",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -4685,7 +4685,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "76e6306e-3028-4804-bdba-80d97f553eb6",
+                Id = "d387408c-2017-4f24-ace9-2a94e585b5a9",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -4735,7 +4735,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T04:14:40.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T06:48:07.044Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4764,7 +4764,7 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(req);
 
 ## UpdateHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -4784,12 +4784,12 @@ UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "0924dac9-e3bd-4b44-8601-a750ee67856b",
+        Id = "0e267efa-b666-4056-a11f-e0eb8f65c0b9",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-21T23:41:48.267Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T18:17:09.476Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4818,7 +4818,7 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(req);
 
 ## UpdateHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -4840,11 +4840,11 @@ UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "cc9b894a-a561-420c-974c-85c030f2340c",
+        Id = "c4a513d1-9011-47ea-9899-f8c6acde5317",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T13:34:23.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4873,7 +4873,7 @@ var res = await sdk.Hris.UpdateHrisJobAsync(req);
 
 ## UpdateHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -4903,7 +4903,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "5f004bfc-dace-4a25-b396-bede523be895",
+        Id = "423a7c06-1e81-4415-9122-fe2b1742f75d",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -4924,7 +4924,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T02:33:35.075Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-21T10:28:10.828Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4953,7 +4953,7 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(req);
 
 ## UpdateHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -4971,21 +4971,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T09:09:53.409Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T10:48:18.959Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-28T17:28:47.967Z").ToUniversalTime(),
-        Id = "f8bc24cc-9f02-4d1f-bb30-48728ea2e1c4",
+        EndAt = System.DateTime.Parse("2024-12-29T07:19:51.416Z").ToUniversalTime(),
+        Id = "8d35eee8-529d-4f5d-8fb4-2c4ef4d8edbc",
         IsPaid = true,
         Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T19:30:35.332Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-05T03:42:39.046Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T19:44:29.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T23:01:12.749Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -5015,7 +5015,7 @@ var res = await sdk.Hris.UpdateHrisTimeoffAsync(req);
 
 ## UpdateHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -5033,7 +5033,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2022-07-18T01:57:56.621Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-18T10:58:38.441Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -5045,13 +5045,13 @@ UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-27T01:43:03.122Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-27T23:08:36.187Z").ToUniversalTime(),
         Hours = 6D,
-        Id = "45297750-9202-41be-bd8e-5ce96540ec8f",
+        Id = "9648cb82-63b3-47c8-9b71-8ddf2e9f68e3",
         IsApproved = false,
         Metadata = new List<HrisMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-07-13T00:39:39.202Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T21:57:30.690Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-13T12:35:21.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-02T03:52:53.097Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

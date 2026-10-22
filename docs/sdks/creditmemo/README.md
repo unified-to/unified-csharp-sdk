@@ -13,7 +13,7 @@
 
 ## CreateAccountingCreditmemo
 
-Create a creditmemo
+Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ var res = await sdk.Creditmemo.CreateAccountingCreditmemoAsync(
         CreditmemoNumber = "CM-99537",
         Currency = "AUD",
         DiscountAmount = 0D,
-        Id = "393514cf-e843-447a-99bc-16a45ed4e043",
+        Id = "7f8244a9-4640-41fe-b46e-2f3fb628c345",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -46,7 +46,7 @@ var res = await sdk.Creditmemo.CreateAccountingCreditmemoAsync(
         Status = AccountingCreditmemoStatus.Authorized,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-09-11T08:07:53.353Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T21:59:16.697Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -75,7 +75,7 @@ var res = await sdk.Creditmemo.CreateAccountingCreditmemoAsync(
 
 ## GetAccountingCreditmemo
 
-Retrieve a creditmemo
+Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,7 +117,7 @@ var res = await sdk.Creditmemo.GetAccountingCreditmemoAsync(
 
 ## ListAccountingCreditmemoes
 
-List all creditmemoes
+Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -158,7 +158,7 @@ var res = await sdk.Creditmemo.ListAccountingCreditmemoesAsync(req);
 
 ## PatchAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         CreditmemoNumber = "CM-99537",
         Currency = "AUD",
         DiscountAmount = 0D,
-        Id = "1d5dac56-da2f-4c16-9b59-3ab92a27dcd3",
+        Id = "1813c524-aef1-4669-a88c-cbf6116fd067",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -192,7 +192,7 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         Status = AccountingCreditmemoStatus.Authorized,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-09-11T08:07:53.372Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T21:59:16.728Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -221,7 +221,7 @@ var res = await sdk.Creditmemo.PatchAccountingCreditmemoAsync(req);
 
 ## RemoveAccountingCreditmemo
 
-Remove a creditmemo
+Deletes the AccountingCreditmemo identified by `id`.
 
 ### Example Usage
 
@@ -261,7 +261,7 @@ var res = await sdk.Creditmemo.RemoveAccountingCreditmemoAsync(
 
 ## UpdateAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -286,7 +286,7 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         CreditmemoNumber = "CM-99537",
         Currency = "AUD",
         DiscountAmount = 0D,
-        Id = "1d5dac56-da2f-4c16-9b59-3ab92a27dcd3",
+        Id = "1813c524-aef1-4669-a88c-cbf6116fd067",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -295,7 +295,7 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         Status = AccountingCreditmemoStatus.Authorized,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-09-11T08:07:53.372Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T21:59:16.728Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

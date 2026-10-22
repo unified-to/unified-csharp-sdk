@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
+        /// </remarks>
         /// <param name="calendarLink">A <see cref="CalendarLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
+        /// </remarks>
         /// <param name="paymentLink">A <see cref="PaymentLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -114,6 +129,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -147,6 +171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarLinkResponse"/> response envelope when completed.</returns>
@@ -158,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentLinkResponse"/> response envelope when completed.</returns>
@@ -169,6 +199,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -180,6 +213,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -205,6 +241,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
+        /// </remarks>
         /// <param name="calendarLink">A <see cref="CalendarLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -333,6 +372,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
+        /// </remarks>
         /// <param name="paymentLink">A <see cref="PaymentLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -461,6 +503,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -583,6 +628,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -705,6 +753,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -810,6 +861,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -915,6 +969,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1026,6 +1083,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1137,6 +1197,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarLinkResponse"/> response envelope when completed.</returns>
@@ -1240,6 +1303,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentLinkResponse"/> response envelope when completed.</returns>
@@ -1343,6 +1409,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1454,6 +1523,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

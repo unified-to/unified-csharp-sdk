@@ -13,7 +13,7 @@
 
 ## CreateCommerceReservation
 
-Create a reservation
+Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
 
 ### Example Usage
 
@@ -35,13 +35,13 @@ var res = await sdk.Reservation.CreateCommerceReservationAsync(
         GuestEmail = "julien.bartoletti@icloud.com",
         GuestName = "Julien Bartoletti",
         GuestPhone = "(728) 596-2620",
-        Id = "f0938111-8946-416a-a11e-8513f4e08662",
+        Id = "10115731-9f33-4a2a-8754-4f90a5b17097",
         Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T21:27:23.887Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-04T02:09:25.157Z").ToUniversalTime(),
         Url = "https://expensive-gift.org",
     },
     connectionId: "<id>"
@@ -71,7 +71,7 @@ var res = await sdk.Reservation.CreateCommerceReservationAsync(
 
 ## GetCommerceReservation
 
-Retrieve a reservation
+Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +113,7 @@ var res = await sdk.Reservation.GetCommerceReservationAsync(
 
 ## ListCommerceReservations
 
-List all reservations
+Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -154,7 +154,7 @@ var res = await sdk.Reservation.ListCommerceReservationsAsync(req);
 
 ## PatchCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -177,13 +177,13 @@ PatchCommerceReservationRequest req = new PatchCommerceReservationRequest() {
         GuestEmail = "julien.bartoletti@icloud.com",
         GuestName = "Julien Bartoletti",
         GuestPhone = "(728) 596-2620",
-        Id = "d8df9f0b-19e4-47d3-a2ae-5d24773a61c3",
+        Id = "372b582d-ffec-4aaa-b2f1-feb78713408d",
         Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T21:27:23.890Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-04T02:09:25.162Z").ToUniversalTime(),
         Url = "https://expensive-gift.org",
     },
     ConnectionId = "<id>",
@@ -213,7 +213,7 @@ var res = await sdk.Reservation.PatchCommerceReservationAsync(req);
 
 ## RemoveCommerceReservation
 
-Remove a reservation
+Deletes the CommerceReservation identified by `id`.
 
 ### Example Usage
 
@@ -253,7 +253,7 @@ var res = await sdk.Reservation.RemoveCommerceReservationAsync(
 
 ## UpdateCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -276,13 +276,13 @@ UpdateCommerceReservationRequest req = new UpdateCommerceReservationRequest() {
         GuestEmail = "julien.bartoletti@icloud.com",
         GuestName = "Julien Bartoletti",
         GuestPhone = "(728) 596-2620",
-        Id = "d8df9f0b-19e4-47d3-a2ae-5d24773a61c3",
+        Id = "372b582d-ffec-4aaa-b2f1-feb78713408d",
         Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T21:27:23.890Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-04T02:09:25.162Z").ToUniversalTime(),
         Url = "https://expensive-gift.org",
     },
     ConnectionId = "<id>",

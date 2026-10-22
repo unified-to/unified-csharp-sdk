@@ -13,7 +13,7 @@
 
 ## CreateRepoRepository
 
-Create a repository
+Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ var res = await sdk.Repository.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
         Description = "Sed somnus crastinus armarium.",
-        Id = "e5276c4e-8c3b-4cc3-a784-12beb729226c",
+        Id = "0ab2ce47-5030-4b18-a803-d155f4845b27",
         IsPrivate = false,
         Metadata = new List<RepoMetadata>() {},
         Name = "bah-bogus",
-        UpdatedAt = System.DateTime.Parse("2024-03-01T02:08:36.364Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-01T06:46:24.777Z").ToUniversalTime(),
         WebUrl = "https://neat-birdbath.org",
     },
     connectionId: "<id>"
@@ -66,7 +66,7 @@ var res = await sdk.Repository.CreateRepoRepositoryAsync(
 
 ## GetRepoRepository
 
-Retrieve a repository
+Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -108,7 +108,7 @@ var res = await sdk.Repository.GetRepoRepositoryAsync(
 
 ## ListRepoRepositories
 
-List all repositories
+Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -149,7 +149,7 @@ var res = await sdk.Repository.ListRepoRepositoriesAsync(req);
 
 ## PatchRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -169,11 +169,11 @@ PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
         Description = "Sed somnus crastinus armarium.",
-        Id = "8498ebf0-69d8-4a04-b779-7e4beed97f6d",
+        Id = "b7c5e9c3-393a-48e5-86c3-ee58c87bbd49",
         IsPrivate = false,
         Metadata = new List<RepoMetadata>() {},
         Name = "bah-bogus",
-        UpdatedAt = System.DateTime.Parse("2024-03-01T02:08:36.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-01T06:46:24.779Z").ToUniversalTime(),
         WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",
@@ -203,7 +203,7 @@ var res = await sdk.Repository.PatchRepoRepositoryAsync(req);
 
 ## RemoveRepoRepository
 
-Remove a repository
+Deletes the RepoRepository identified by `id`.
 
 ### Example Usage
 
@@ -243,7 +243,7 @@ var res = await sdk.Repository.RemoveRepoRepositoryAsync(
 
 ## UpdateRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -263,11 +263,11 @@ UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
         Description = "Sed somnus crastinus armarium.",
-        Id = "8498ebf0-69d8-4a04-b779-7e4beed97f6d",
+        Id = "b7c5e9c3-393a-48e5-86c3-ee58c87bbd49",
         IsPrivate = false,
         Metadata = new List<RepoMetadata>() {},
         Name = "bah-bogus",
-        UpdatedAt = System.DateTime.Parse("2024-03-01T02:08:36.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-01T06:46:24.779Z").ToUniversalTime(),
         WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",

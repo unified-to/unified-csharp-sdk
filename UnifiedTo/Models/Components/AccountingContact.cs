@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; } = "USD";
 
+        /// <summary>
+        /// The contact's email addresses.
+        /// </summary>
         [JsonProperty("emails")]
         public List<AccountingEmail>? Emails { get; set; }
 
@@ -73,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AccountingMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The contact's display name: the company name for a business, or the person's full name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

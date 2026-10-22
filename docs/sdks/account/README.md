@@ -13,7 +13,7 @@
 
 ## CreateAccountingAccount
 
-Create an account
+Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "6d729508-f3f6-475a-8fd9-7f7106271f96",
+        Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -48,7 +48,7 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-06T21:45:04.191Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
 
 ## GetAccountingAccount
 
-Retrieve an account
+Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -119,7 +119,7 @@ var res = await sdk.Account.GetAccountingAccountAsync(
 
 ## ListAccountingAccounts
 
-List all accounts
+Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -160,7 +160,7 @@ var res = await sdk.Account.ListAccountingAccountsAsync(req);
 
 ## PatchAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "d39ecc40-d9c5-4f99-b2d6-852ba6eedecb",
+        Id = "e700ce3c-3bb9-4fea-bc54-58458746ade4",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -196,7 +196,7 @@ PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-06T21:45:04.195Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.887Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -225,7 +225,7 @@ var res = await sdk.Account.PatchAccountingAccountAsync(req);
 
 ## RemoveAccountingAccount
 
-Remove an account
+Deletes the AccountingAccount identified by `id`.
 
 ### Example Usage
 
@@ -265,7 +265,7 @@ var res = await sdk.Account.RemoveAccountingAccountAsync(
 
 ## UpdateAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "d39ecc40-d9c5-4f99-b2d6-852ba6eedecb",
+        Id = "e700ce3c-3bb9-4fea-bc54-58458746ade4",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -301,7 +301,7 @@ UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-06T21:45:04.195Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.887Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

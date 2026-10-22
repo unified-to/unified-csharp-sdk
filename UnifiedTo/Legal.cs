@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
+        /// </remarks>
         /// <param name="legalExpense">A <see cref="LegalExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a matter.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
+        /// </remarks>
         /// <param name="legalMatter">A <see cref="LegalMatter"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
+        /// </remarks>
         /// <param name="legalPracticearea">A <see cref="LegalPracticearea"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
+        /// </remarks>
         /// <param name="legalTimeentry">A <see cref="LegalTimeentry"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a matter.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Matter.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Practicearea.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeentry.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -190,6 +217,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all matters.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalMattersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalMattersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -201,6 +231,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all practiceareas.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalPracticeareasRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalPracticeareasResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -212,6 +245,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all timeentries.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalTimeentriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalTimeentriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -223,6 +259,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -234,6 +273,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a matter.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalMatterRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalMatterResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -245,6 +287,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalPracticeareaRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalPracticeareaResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -256,6 +301,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalTimeentryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalTimeentryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -267,6 +315,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalExpenseResponse"/> response envelope when completed.</returns>
@@ -278,6 +329,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a matter.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalMatter identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Matter.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalMatterResponse"/> response envelope when completed.</returns>
@@ -289,6 +343,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalPracticearea identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Practicearea.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalPracticeareaResponse"/> response envelope when completed.</returns>
@@ -300,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalTimeentry identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeentry.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalTimeentryResponse"/> response envelope when completed.</returns>
@@ -311,6 +371,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -322,6 +385,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a matter.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalMatterRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalMatterResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -333,6 +399,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalPracticeareaRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalPracticeareaResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -346,6 +415,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalTimeentryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalTimeentryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -371,6 +443,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
+        /// </remarks>
         /// <param name="legalExpense">A <see cref="LegalExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -499,6 +574,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a matter.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
+        /// </remarks>
         /// <param name="legalMatter">A <see cref="LegalMatter"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -627,6 +705,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
+        /// </remarks>
         /// <param name="legalPracticearea">A <see cref="LegalPracticearea"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -755,6 +836,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
+        /// </remarks>
         /// <param name="legalTimeentry">A <see cref="LegalTimeentry"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -883,6 +967,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1005,6 +1092,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a matter.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Matter.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1127,6 +1217,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Practicearea.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1249,6 +1342,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeentry.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1371,6 +1467,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1476,6 +1575,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all matters.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalMattersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalMattersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1581,6 +1683,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all practiceareas.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalPracticeareasRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalPracticeareasResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1688,6 +1793,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all timeentries.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalTimeentriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalTimeentriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1793,6 +1901,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1904,6 +2015,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a matter.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalMatterRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalMatterResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2015,6 +2129,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalPracticeareaRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalPracticeareaResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2128,6 +2245,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalTimeentryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalTimeentryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2239,6 +2359,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalExpenseResponse"/> response envelope when completed.</returns>
@@ -2342,6 +2465,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a matter.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalMatter identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Matter.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalMatterResponse"/> response envelope when completed.</returns>
@@ -2445,6 +2571,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalPracticearea identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Practicearea.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalPracticeareaResponse"/> response envelope when completed.</returns>
@@ -2548,6 +2677,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalTimeentry identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeentry.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalTimeentryResponse"/> response envelope when completed.</returns>
@@ -2651,6 +2783,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2762,6 +2897,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a matter.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalMatterRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalMatterResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2873,6 +3011,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a practicearea.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalPracticeareaRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalPracticeareaResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2986,6 +3127,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeentry.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalTimeentryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalTimeentryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

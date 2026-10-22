@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -38,6 +41,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -49,6 +55,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of MarketingReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListMartechReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListMartechReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -74,6 +83,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -179,6 +191,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -284,6 +299,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of MarketingReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListMartechReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListMartechReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

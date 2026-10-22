@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("database_id")]
         public string? DatabaseId { get; set; }
 
+        /// <summary>
+        /// The record's values, keyed by the table's field (column) names; each value is a typed value object (e.g. { "string": "Acme" } or { "number": 3 }).
+        /// </summary>
         [JsonProperty("fields")]
         public Dictionary<string, DatastoreFieldValue> Fields { get; set; } = default!;
 

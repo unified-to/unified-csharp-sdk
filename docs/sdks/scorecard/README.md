@@ -15,7 +15,7 @@
 
 ## CreateAtsScorecard
 
-Create a scorecard
+Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
 
 ### Example Usage
 
@@ -34,7 +34,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "017adf89-a81f-4c58-8326-c45c195846f4",
+        Id = "9f3c97ae-4d3b-4fe7-8df5-a57d4c406aa3",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -48,7 +48,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-05T13:44:35.918Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T19:42:25.927Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 
 ## GetAtsScorecard
 
-Retrieve a scorecard
+Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -119,7 +119,7 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 
 ## GetUcScorecard
 
-Retrieve a scorecard
+Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -161,7 +161,7 @@ var res = await sdk.Scorecard.GetUcScorecardAsync(
 
 ## ListAtsScorecards
 
-List all scorecards
+Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -202,7 +202,7 @@ var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
 
 ## ListUcScorecards
 
-List all scorecards
+Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -243,7 +243,7 @@ var res = await sdk.Scorecard.ListUcScorecardsAsync(req);
 
 ## PatchAtsScorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -263,7 +263,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "691c7d3e-4eee-46ee-ab6f-049c1974e293",
+        Id = "3635a79c-811f-4e15-9510-a8a2ab63bd66",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -277,7 +277,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-05T13:44:35.921Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T19:42:25.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -306,7 +306,7 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(req);
 
 ## RemoveAtsScorecard
 
-Remove a scorecard
+Deletes the AtsScorecard identified by `id`.
 
 ### Example Usage
 
@@ -346,7 +346,7 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 
 ## UpdateAtsScorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -366,7 +366,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "691c7d3e-4eee-46ee-ab6f-049c1974e293",
+        Id = "3635a79c-811f-4e15-9510-a8a2ab63bd66",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -380,7 +380,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-05T13:44:35.921Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T19:42:25.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

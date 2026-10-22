@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a template.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
+        /// </remarks>
         /// <param name="computeTemplate">A <see cref="ComputeTemplate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all templates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeTemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeTemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -95,6 +107,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all templates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListSigningTemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSigningTemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -106,6 +121,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -117,6 +135,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a template.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeTemplate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeTemplateResponse"/> response envelope when completed.</returns>
@@ -128,6 +149,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -153,6 +177,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a template.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
+        /// </remarks>
         /// <param name="computeTemplate">A <see cref="ComputeTemplate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -281,6 +308,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <param name="fields">Fields to return.</param>
@@ -403,6 +433,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <param name="fields">Fields to return.</param>
@@ -525,6 +558,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all templates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeTemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeTemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -630,6 +666,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all templates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListSigningTemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSigningTemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -735,6 +774,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -846,6 +888,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a template.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeTemplate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeTemplateResponse"/> response envelope when completed.</returns>
@@ -949,6 +994,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -13,7 +13,7 @@
 
 ## CreateLegalPracticearea
 
-Create a practicearea
+Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ var res = await sdk.Practicearea.CreateLegalPracticeareaAsync(
     legalPracticearea: new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "a3ed62e9-f276-492d-b3e4-9dadd80eb986",
+        Id = "466d5981-62c7-4632-b5ae-da7e7a157976",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.352Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-28T08:17:40.601Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -65,7 +65,7 @@ var res = await sdk.Practicearea.CreateLegalPracticeareaAsync(
 
 ## GetLegalPracticearea
 
-Retrieve a practicearea
+Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -107,7 +107,7 @@ var res = await sdk.Practicearea.GetLegalPracticeareaAsync(
 
 ## ListLegalPracticeareas
 
-List all practiceareas
+Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -148,7 +148,7 @@ var res = await sdk.Practicearea.ListLegalPracticeareasAsync(req);
 
 ## PatchLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -168,11 +168,11 @@ PatchLegalPracticeareaRequest req = new PatchLegalPracticeareaRequest() {
     LegalPracticearea = new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "f3f674d1-4502-40ad-b68a-63a2a30f9d4d",
+        Id = "2cbadea4-61e9-4ca6-b813-138d862d2226",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.363Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-28T08:17:40.612Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -201,7 +201,7 @@ var res = await sdk.Practicearea.PatchLegalPracticeareaAsync(req);
 
 ## RemoveLegalPracticearea
 
-Remove a practicearea
+Deletes the LegalPracticearea identified by `id`.
 
 ### Example Usage
 
@@ -241,7 +241,7 @@ var res = await sdk.Practicearea.RemoveLegalPracticeareaAsync(
 
 ## UpdateLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -261,11 +261,11 @@ UpdateLegalPracticeareaRequest req = new UpdateLegalPracticeareaRequest() {
     LegalPracticearea = new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "f3f674d1-4502-40ad-b68a-63a2a30f9d4d",
+        Id = "2cbadea4-61e9-4ca6-b813-138d862d2226",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.363Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-28T08:17:40.612Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

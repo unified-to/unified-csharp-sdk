@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a feedback.
         /// </summary>
+        /// <remarks>
+        /// Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
+        /// </remarks>
         /// <param name="performanceFeedback">A <see cref="PerformanceFeedback"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a goal.
         /// </summary>
+        /// <remarks>
+        /// Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
+        /// </remarks>
         /// <param name="performanceGoal">A <see cref="PerformanceGoal"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a cycle.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceCycle by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Cycle.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a feedback.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Feedback.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a goal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Goal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all cycles.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceCycles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceCyclesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceCyclesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -152,6 +173,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all feedbacks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceFeedbacksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceFeedbacksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -165,6 +189,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all goals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceGoalsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceGoalsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -176,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -187,6 +217,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a goal.
         /// </summary>
+        /// <remarks>
+        /// Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPerformanceGoalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPerformanceGoalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -198,6 +231,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a goal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PerformanceGoal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Goal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePerformanceGoalResponse"/> response envelope when completed.</returns>
@@ -209,6 +245,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a goal.
         /// </summary>
+        /// <remarks>
+        /// Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePerformanceGoalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePerformanceGoalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -234,6 +273,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a feedback.
         /// </summary>
+        /// <remarks>
+        /// Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
+        /// </remarks>
         /// <param name="performanceFeedback">A <see cref="PerformanceFeedback"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -362,6 +404,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a goal.
         /// </summary>
+        /// <remarks>
+        /// Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
+        /// </remarks>
         /// <param name="performanceGoal">A <see cref="PerformanceGoal"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -490,6 +535,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a cycle.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceCycle by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Cycle.</param>
         /// <param name="fields">Fields to return.</param>
@@ -612,6 +660,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a feedback.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Feedback.</param>
         /// <param name="fields">Fields to return.</param>
@@ -734,6 +785,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a goal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Goal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -856,6 +910,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -978,6 +1035,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all cycles.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceCycles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceCyclesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceCyclesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1085,6 +1145,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all feedbacks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceFeedbacksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceFeedbacksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1192,6 +1255,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all goals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceGoalsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceGoalsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1297,6 +1363,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1404,6 +1473,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a goal.
         /// </summary>
+        /// <remarks>
+        /// Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPerformanceGoalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPerformanceGoalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1515,6 +1587,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a goal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PerformanceGoal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Goal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePerformanceGoalResponse"/> response envelope when completed.</returns>
@@ -1618,6 +1693,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a goal.
         /// </summary>
+        /// <remarks>
+        /// Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePerformanceGoalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePerformanceGoalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

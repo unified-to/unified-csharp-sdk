@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The data type of the custom field's values.
+        /// </summary>
         [JsonProperty("format")]
         public MetadataMetadataFormat? Format { get; set; }
 
@@ -37,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_required")]
         public bool? IsRequired { get; set; }
 
+        /// <summary>
+        /// The display name of the custom field.
+        /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 

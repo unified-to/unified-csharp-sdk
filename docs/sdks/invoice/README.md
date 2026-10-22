@@ -13,7 +13,7 @@
 
 ## CreateAccountingInvoice
 
-Create an invoice
+Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "a9ebd48b-e09d-4ec0-9bef-38595f378fa8",
+                Id = "90751c88-0530-41da-ac7a-531936b446a2",
                 MimeType = "application/pdf",
                 Name = "INV-77705.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://earnest-giggle.net",
-                Id = "c6974327-8f04-4f3a-ab72-ca6836768025",
+                Id = "22dd0a67-4a8a-45b8-b6d2-ca9fd06f6074",
                 MimeType = "application/pdf",
                 Name = "INV-77705-1.pdf",
             },
@@ -51,7 +51,7 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-12-07T14:17:29.587Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "0d30a2d0-38fb-4535-a59d-ebfbafcbec49",
+        Id = "4ac485e7-aa64-483c-b4b6-96ccfe949b9f",
         InvoiceNumber = "INV-77705",
         IsInclusiveOfTax = false,
         Lineitems = new List<AccountingLineitem>() {},
@@ -69,7 +69,7 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
         Term = AccountingInvoiceTerm.Net25,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2026-04-23T13:18:03.543Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-24T08:13:04.773Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>"
@@ -99,7 +99,7 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
 
 ## GetAccountingInvoice
 
-Retrieve an invoice
+Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -141,7 +141,7 @@ var res = await sdk.Invoice.GetAccountingInvoiceAsync(
 
 ## ListAccountingInvoices
 
-List all invoices
+Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ var res = await sdk.Invoice.ListAccountingInvoicesAsync(req);
 
 ## PatchAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -203,13 +203,13 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "aa647b3d-4b70-40c0-8dce-d5b766aed94e",
+                Id = "5019ee74-ee00-4280-8fbe-4dabc6a16252",
                 MimeType = "application/pdf",
                 Name = "INV-77705.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://earnest-giggle.net",
-                Id = "b96e3544-c6c2-4828-b0c3-29dfedeac592",
+                Id = "99142117-b1e2-4ed5-8fca-5efca19f2623",
                 MimeType = "application/pdf",
                 Name = "INV-77705-1.pdf",
             },
@@ -221,7 +221,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-12-07T14:17:29.587Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "15765a96-e0d7-4c05-a327-99bb80ccd290",
+        Id = "82dc41ac-ec57-468b-88d1-1c76229a448a",
         InvoiceNumber = "INV-77705",
         IsInclusiveOfTax = false,
         Lineitems = new List<AccountingLineitem>() {},
@@ -239,7 +239,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         Term = AccountingInvoiceTerm.Net25,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2026-04-23T13:18:03.577Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-24T08:13:04.829Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     ConnectionId = "<id>",
@@ -269,7 +269,7 @@ var res = await sdk.Invoice.PatchAccountingInvoiceAsync(req);
 
 ## RemoveAccountingInvoice
 
-Remove an invoice
+Deletes the AccountingInvoice identified by `id`.
 
 ### Example Usage
 
@@ -309,7 +309,7 @@ var res = await sdk.Invoice.RemoveAccountingInvoiceAsync(
 
 ## UpdateAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -330,13 +330,13 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "aa647b3d-4b70-40c0-8dce-d5b766aed94e",
+                Id = "5019ee74-ee00-4280-8fbe-4dabc6a16252",
                 MimeType = "application/pdf",
                 Name = "INV-77705.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://earnest-giggle.net",
-                Id = "b96e3544-c6c2-4828-b0c3-29dfedeac592",
+                Id = "99142117-b1e2-4ed5-8fca-5efca19f2623",
                 MimeType = "application/pdf",
                 Name = "INV-77705-1.pdf",
             },
@@ -348,7 +348,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-12-07T14:17:29.587Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "15765a96-e0d7-4c05-a327-99bb80ccd290",
+        Id = "82dc41ac-ec57-468b-88d1-1c76229a448a",
         InvoiceNumber = "INV-77705",
         IsInclusiveOfTax = false,
         Lineitems = new List<AccountingLineitem>() {},
@@ -366,7 +366,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         Term = AccountingInvoiceTerm.Net25,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2026-04-23T13:18:03.577Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-24T08:13:04.829Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     ConnectionId = "<id>",

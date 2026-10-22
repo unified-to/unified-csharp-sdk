@@ -21,7 +21,7 @@
 
 ## CreateAtsActivity
 
-Create an activity
+Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
 
 ### Example Usage
 
@@ -40,7 +40,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "4ebba259-5754-4493-8c81-0cb54d8d0ec0",
+        Id = "d08e3aa1-41ea-4436-965e-9a4c37ae4a70",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -50,7 +50,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "6f092177-2eb4-448b-855f-81100592f25b",
+                Id = "be52a43b-6ed0-433a-bd9a-277549187763",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -61,7 +61,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-04T06:52:31.703Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-05T01:41:02.127Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -90,7 +90,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 
 ## CreateLmsActivity
 
-Create an activity
+Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
 
 ### Example Usage
 
@@ -108,15 +108,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Activity.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-05T23:49:13.460Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-06T11:05:52.640Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "ec3b5e8b-d063-4af7-8db7-c4ab240d04aa",
+        Id = "d5c3e55c-6fcd-4906-b09b-a52ba2076590",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T04:24:57.934Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T23:44:52.188Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T06:17:19.731Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-31T04:23:11.311Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -145,7 +145,7 @@ var res = await sdk.Activity.CreateLmsActivityAsync(
 
 ## GetAtsActivity
 
-Retrieve an activity
+Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -187,7 +187,7 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 
 ## GetClubsActivity
 
-Retrieve an activity
+Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -229,7 +229,7 @@ var res = await sdk.Activity.GetClubsActivityAsync(
 
 ## GetLmsActivity
 
-Retrieve an activity
+Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -271,7 +271,7 @@ var res = await sdk.Activity.GetLmsActivityAsync(
 
 ## ListAtsActivities
 
-List all activities
+Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -312,7 +312,7 @@ var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 
 ## ListClubsActivities
 
-List all activities
+Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -353,7 +353,7 @@ var res = await sdk.Activity.ListClubsActivitiesAsync(req);
 
 ## ListLmsActivities
 
-List all activities
+Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -394,7 +394,7 @@ var res = await sdk.Activity.ListLmsActivitiesAsync(req);
 
 ## PatchAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -414,7 +414,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "4a3f6c22-5763-431c-8ebc-5671c7b2966e",
+        Id = "80863fb9-ede4-4ed0-95a5-8ded4f97cf93",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -424,7 +424,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "757726f6-0959-427b-b2b1-9eab8720367d",
+                Id = "06542d52-c1d9-4a82-a5cb-712a939e251d",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -435,7 +435,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-04T06:52:31.718Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-05T01:41:02.148Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -464,7 +464,7 @@ var res = await sdk.Activity.PatchAtsActivityAsync(req);
 
 ## PatchLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -483,15 +483,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-05T23:49:13.465Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-06T11:05:52.645Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "f51034d2-8d07-4ff4-92eb-5fdfeae89450",
+        Id = "79549434-f841-407b-8094-43b0b8cc972e",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T04:24:57.934Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T23:44:52.190Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T06:17:19.732Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-31T04:23:11.313Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -520,7 +520,7 @@ var res = await sdk.Activity.PatchLmsActivityAsync(req);
 
 ## RemoveAtsActivity
 
-Remove an activity
+Deletes the AtsActivity identified by `id`.
 
 ### Example Usage
 
@@ -560,7 +560,7 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 
 ## RemoveLmsActivity
 
-Remove an activity
+Deletes the LmsActivity identified by `id`.
 
 ### Example Usage
 
@@ -600,7 +600,7 @@ var res = await sdk.Activity.RemoveLmsActivityAsync(
 
 ## UpdateAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -620,7 +620,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "4a3f6c22-5763-431c-8ebc-5671c7b2966e",
+        Id = "80863fb9-ede4-4ed0-95a5-8ded4f97cf93",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -630,7 +630,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "757726f6-0959-427b-b2b1-9eab8720367d",
+                Id = "06542d52-c1d9-4a82-a5cb-712a939e251d",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -641,7 +641,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-04T06:52:31.718Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-05T01:41:02.148Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -670,7 +670,7 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(req);
 
 ## UpdateLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -689,15 +689,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-05T23:49:13.465Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-06T11:05:52.645Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "f51034d2-8d07-4ff4-92eb-5fdfeae89450",
+        Id = "79549434-f841-407b-8094-43b0b8cc972e",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T04:24:57.934Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T23:44:52.190Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T06:17:19.732Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-31T04:23:11.313Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
+        /// </remarks>
         /// <param name="accountingExpense">A <see cref="AccountingExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
+        /// </remarks>
         /// <param name="legalExpense">A <see cref="LegalExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -114,6 +129,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -147,6 +171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingExpenseResponse"/> response envelope when completed.</returns>
@@ -158,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalExpenseResponse"/> response envelope when completed.</returns>
@@ -169,6 +199,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -182,6 +215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -207,6 +243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
+        /// </remarks>
         /// <param name="accountingExpense">A <see cref="AccountingExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -335,6 +374,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
+        /// </remarks>
         /// <param name="legalExpense">A <see cref="LegalExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -463,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -585,6 +630,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -707,6 +755,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -814,6 +865,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLegalExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLegalExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -919,6 +973,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1032,6 +1089,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1143,6 +1203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingExpenseResponse"/> response envelope when completed.</returns>
@@ -1246,6 +1309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LegalExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLegalExpenseResponse"/> response envelope when completed.</returns>
@@ -1349,6 +1415,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1462,6 +1531,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLegalExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLegalExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

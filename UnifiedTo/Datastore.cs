@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a database.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
+        /// </remarks>
         /// <param name="datastoreDatabase">A <see cref="DatastoreDatabase"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a query.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
+        /// </remarks>
         /// <param name="datastoreQuery">A <see cref="DatastoreQuery"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a record.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
+        /// </remarks>
         /// <param name="datastoreRecord">A <see cref="DatastoreRecord"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a table.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
+        /// </remarks>
         /// <param name="datastoreTable">A <see cref="DatastoreTable"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a database.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Database.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a record.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Record.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a table.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Table.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all databases.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListDatastoreDatabasesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListDatastoreDatabasesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -171,6 +195,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all records.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListDatastoreRecordsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListDatastoreRecordsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -182,6 +209,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tables.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of DatastoreTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListDatastoreTablesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListDatastoreTablesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -193,6 +223,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a database.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchDatastoreDatabaseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchDatastoreDatabaseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -204,6 +237,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a record.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchDatastoreRecordRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchDatastoreRecordResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -215,6 +251,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a table.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchDatastoreTableRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchDatastoreTableResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -226,6 +265,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a database.
         /// </summary>
+        /// <remarks>
+        /// Deletes the DatastoreDatabase identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Database.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveDatastoreDatabaseResponse"/> response envelope when completed.</returns>
@@ -237,6 +279,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a record.
         /// </summary>
+        /// <remarks>
+        /// Deletes the DatastoreRecord identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Record.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveDatastoreRecordResponse"/> response envelope when completed.</returns>
@@ -248,6 +293,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a table.
         /// </summary>
+        /// <remarks>
+        /// Deletes the DatastoreTable identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Table.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveDatastoreTableResponse"/> response envelope when completed.</returns>
@@ -259,6 +307,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a database.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateDatastoreDatabaseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateDatastoreDatabaseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -272,6 +323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a record.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateDatastoreRecordRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateDatastoreRecordResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -283,6 +337,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a table.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateDatastoreTableRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateDatastoreTableResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -308,6 +365,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a database.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
+        /// </remarks>
         /// <param name="datastoreDatabase">A <see cref="DatastoreDatabase"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -436,6 +496,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a query.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
+        /// </remarks>
         /// <param name="datastoreQuery">A <see cref="DatastoreQuery"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -564,6 +627,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a record.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
+        /// </remarks>
         /// <param name="datastoreRecord">A <see cref="DatastoreRecord"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -692,6 +758,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a table.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
+        /// </remarks>
         /// <param name="datastoreTable">A <see cref="DatastoreTable"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -820,6 +889,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a database.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Database.</param>
         /// <param name="fields">Fields to return.</param>
@@ -942,6 +1014,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a record.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Record.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1064,6 +1139,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a table.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Table.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1186,6 +1264,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all databases.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListDatastoreDatabasesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListDatastoreDatabasesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1293,6 +1374,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all records.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListDatastoreRecordsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListDatastoreRecordsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1398,6 +1482,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tables.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of DatastoreTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListDatastoreTablesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListDatastoreTablesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1503,6 +1590,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a database.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchDatastoreDatabaseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchDatastoreDatabaseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1616,6 +1706,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a record.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchDatastoreRecordRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchDatastoreRecordResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1727,6 +1820,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a table.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchDatastoreTableRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchDatastoreTableResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1838,6 +1934,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a database.
         /// </summary>
+        /// <remarks>
+        /// Deletes the DatastoreDatabase identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Database.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveDatastoreDatabaseResponse"/> response envelope when completed.</returns>
@@ -1941,6 +2040,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a record.
         /// </summary>
+        /// <remarks>
+        /// Deletes the DatastoreRecord identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Record.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveDatastoreRecordResponse"/> response envelope when completed.</returns>
@@ -2044,6 +2146,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a table.
         /// </summary>
+        /// <remarks>
+        /// Deletes the DatastoreTable identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Table.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveDatastoreTableResponse"/> response envelope when completed.</returns>
@@ -2147,6 +2252,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a database.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateDatastoreDatabaseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateDatastoreDatabaseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2260,6 +2368,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a record.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateDatastoreRecordRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateDatastoreRecordResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2373,6 +2484,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a table.
         /// </summary>
+        /// <remarks>
+        /// Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateDatastoreTableRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateDatastoreTableResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

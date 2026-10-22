@@ -13,7 +13,7 @@
 
 ## CreateKmsSpace
 
-Create a space
+Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "401a5d78-ee87-495d-8791-212d95a1819c",
+        Id = "0fb194a5-7687-4e75-bc87-84c1c2fdf97d",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-29T23:05:36.342Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T16:19:02.066Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -65,7 +65,7 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
 
 ## GetKmsSpace
 
-Retrieve a space
+Retrieves a single KmsSpace by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -107,7 +107,7 @@ var res = await sdk.Space.GetKmsSpaceAsync(
 
 ## ListKmsSpaces
 
-List all spaces
+Returns a list of KmsSpaces. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -148,7 +148,7 @@ var res = await sdk.Space.ListKmsSpacesAsync(req);
 
 ## PatchKmsSpace
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -168,11 +168,11 @@ PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "60504251-4e4f-4622-a671-d17ee45847bc",
+        Id = "e5d8a902-2280-4c88-8c8e-eab71d833603",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-29T23:05:36.349Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T16:19:02.078Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -201,7 +201,7 @@ var res = await sdk.Space.PatchKmsSpaceAsync(req);
 
 ## RemoveKmsSpace
 
-Remove a space
+Deletes the KmsSpace identified by `id`.
 
 ### Example Usage
 
@@ -241,7 +241,7 @@ var res = await sdk.Space.RemoveKmsSpaceAsync(
 
 ## UpdateKmsSpace
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -261,11 +261,11 @@ UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "60504251-4e4f-4622-a671-d17ee45847bc",
+        Id = "e5d8a902-2280-4c88-8c8e-eab71d833603",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-29T23:05:36.349Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T16:19:02.078Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

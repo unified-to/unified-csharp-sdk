@@ -13,7 +13,7 @@
 
 ## CreateCommerceInventory
 
-Create an inventory
+Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
 
 ### Example Usage
 
@@ -31,9 +31,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 337D,
-        Id = "8a69d7f5-baac-4732-a3fe-ceb9cd8c1767",
+        Id = "5b222ad4-ba39-44fe-83dc-13ae9f26b85e",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-20T10:01:51.445Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-21T03:27:03.491Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -62,7 +62,7 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 
 ## GetCommerceInventory
 
-Retrieve an inventory
+Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -104,7 +104,7 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 
 ## ListCommerceInventories
 
-List all inventories
+Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -145,7 +145,7 @@ var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
 
 ## PatchCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -164,9 +164,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        Id = "e6171a93-f7ad-4c2b-8c46-0a4c5b35ab63",
+        Id = "efd77c10-8d9b-4209-80e6-262a36c769ce",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-20T10:01:51.452Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-21T03:27:03.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -195,7 +195,7 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(req);
 
 ## RemoveCommerceInventory
 
-Remove an inventory
+Deletes the CommerceInventory identified by `id`.
 
 ### Example Usage
 
@@ -235,7 +235,7 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 
 ## UpdateCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -254,9 +254,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        Id = "e6171a93-f7ad-4c2b-8c46-0a4c5b35ab63",
+        Id = "efd77c10-8d9b-4209-80e6-262a36c769ce",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-20T10:01:51.452Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-21T03:27:03.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
+        /// </remarks>
         /// <param name="crmCompany">A company represents an organization that optionally is associated with a deal and/or contacts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
+        /// </remarks>
         /// <param name="crmContact">A contact represents a person that optionally is associated with a deal and/or a company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deal.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
+        /// </remarks>
         /// <param name="crmDeal">A deal represents an opportunity with companies and/or contacts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
+        /// </remarks>
         /// <param name="crmEvent">An event represents an event, activity, or engagement and is always associated with a deal, contact, or company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a lead.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
+        /// </remarks>
         /// <param name="crmLead">A <see cref="CrmLead"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
+        /// </remarks>
         /// <param name="crmPipeline">A <see cref="CrmPipeline"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a deal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a lead.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Lead.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pipeline.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -266,6 +305,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -277,6 +319,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all deals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmDealsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmDealsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -288,6 +333,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -299,6 +347,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all leads.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmLeadsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmLeadsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -310,6 +361,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all pipelines.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmPipelinesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmPipelinesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -321,6 +375,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all taxonomies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmTaxonomiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmTaxonomiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -332,6 +389,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -343,6 +403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -354,6 +417,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmDealRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmDealResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -365,6 +431,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -376,6 +445,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a lead.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmLeadRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmLeadResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -387,6 +459,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmPipelineRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmPipelineResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -398,6 +473,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmCompanyResponse"/> response envelope when completed.</returns>
@@ -409,6 +487,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmContactResponse"/> response envelope when completed.</returns>
@@ -420,6 +501,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a deal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmDeal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmDealResponse"/> response envelope when completed.</returns>
@@ -431,6 +515,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmEventResponse"/> response envelope when completed.</returns>
@@ -442,6 +529,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a lead.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmLead identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Lead.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmLeadResponse"/> response envelope when completed.</returns>
@@ -453,6 +543,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmPipeline identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pipeline.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmPipelineResponse"/> response envelope when completed.</returns>
@@ -464,6 +557,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -475,6 +571,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -486,6 +585,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmDealRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmDealResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -497,6 +599,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -508,6 +613,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a lead.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmLeadRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmLeadResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -519,6 +627,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmPipelineRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmPipelineResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -544,6 +655,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
+        /// </remarks>
         /// <param name="crmCompany">A company represents an organization that optionally is associated with a deal and/or contacts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -672,6 +786,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
+        /// </remarks>
         /// <param name="crmContact">A contact represents a person that optionally is associated with a deal and/or a company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -800,6 +917,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deal.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
+        /// </remarks>
         /// <param name="crmDeal">A deal represents an opportunity with companies and/or contacts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -928,6 +1048,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
+        /// </remarks>
         /// <param name="crmEvent">An event represents an event, activity, or engagement and is always associated with a deal, contact, or company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1056,6 +1179,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a lead.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
+        /// </remarks>
         /// <param name="crmLead">A <see cref="CrmLead"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1184,6 +1310,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
+        /// </remarks>
         /// <param name="crmPipeline">A <see cref="CrmPipeline"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1312,6 +1441,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1434,6 +1566,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1556,6 +1691,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a deal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1678,6 +1816,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1800,6 +1941,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a lead.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Lead.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1922,6 +2066,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pipeline.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2044,6 +2191,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2149,6 +2299,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2254,6 +2407,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all deals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmDealsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmDealsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2359,6 +2515,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2464,6 +2623,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all leads.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmLeadsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmLeadsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2569,6 +2731,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all pipelines.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmPipelinesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmPipelinesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2674,6 +2839,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all taxonomies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmTaxonomiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmTaxonomiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2779,6 +2947,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2890,6 +3061,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3001,6 +3175,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmDealRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmDealResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3112,6 +3289,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3223,6 +3403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a lead.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmLeadRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmLeadResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3334,6 +3517,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmPipelineRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmPipelineResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3445,6 +3631,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmCompanyResponse"/> response envelope when completed.</returns>
@@ -3548,6 +3737,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmContactResponse"/> response envelope when completed.</returns>
@@ -3651,6 +3843,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a deal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmDeal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmDealResponse"/> response envelope when completed.</returns>
@@ -3754,6 +3949,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmEventResponse"/> response envelope when completed.</returns>
@@ -3857,6 +4055,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a lead.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmLead identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Lead.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmLeadResponse"/> response envelope when completed.</returns>
@@ -3960,6 +4161,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmPipeline identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pipeline.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmPipelineResponse"/> response envelope when completed.</returns>
@@ -4063,6 +4267,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4174,6 +4381,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4285,6 +4495,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmDealRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmDealResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4396,6 +4609,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4507,6 +4723,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a lead.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmLeadRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmLeadResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4618,6 +4837,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmPipelineRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmPipelineResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

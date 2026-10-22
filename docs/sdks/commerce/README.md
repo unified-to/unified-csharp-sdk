@@ -56,7 +56,7 @@
 
 ## CreateCommerceCollection
 
-Create a collection
+Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
 
 ### Example Usage
 
@@ -75,7 +75,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "87d67277-c202-466c-94b2-85729c291c83",
+        Id = "ca15de12-cfc0-4461-bc9d-ec096395d653",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -84,10 +84,10 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "85f30760-131e-4934-9e56-987267f8bf35",
+                Id = "c94e64ff-8463-4941-b48e-722f3109b02b",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0eda53b9-f22e-4b07-9eaa-7549db69abc4",
+                        Id = "301c9d0b-f2b6-479b-80e7-6bdd6c9a6829",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -102,7 +102,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "5235584b-23ab-4e6a-aeeb-e4b3047802e8",
+                Id = "edc821bd-d857-42a0-b07e-11985a3a4348",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -118,7 +118,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-15T01:26:43.446Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-15T12:28:56.456Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -147,7 +147,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
 
 ## CreateCommerceInventory
 
-Create an inventory
+Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
 
 ### Example Usage
 
@@ -165,9 +165,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 337D,
-        Id = "8a69d7f5-baac-4732-a3fe-ceb9cd8c1767",
+        Id = "5b222ad4-ba39-44fe-83dc-13ae9f26b85e",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-20T10:01:51.445Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-21T03:27:03.491Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -196,7 +196,7 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
 
 ## CreateCommerceItem
 
-Create an item
+Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
 
 ### Example Usage
 
@@ -218,7 +218,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
         Description = "Decretum vulnero ustulo abeo.",
         Duration = 104D,
         GlobalCode = "978-0-85270-680-0",
-        Id = "2a9440ca-5ea3-4a4b-ba1d-541b2c4b4ea4",
+        Id = "27a08bc0-d226-41e4-a946-ffddca45602b",
         IsActive = false,
         IsFeatured = false,
         IsTaxable = true,
@@ -227,10 +227,10 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 876D,
-                Id = "bf760972-4280-4350-a465-10bc7322a355",
+                Id = "d967cd4c-9783-4219-9236-b4826c2c33bd",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "398e34ea-52c5-4d8d-9110-87dad8a78cb6",
+                        Id = "1624b79a-3b65-465b-9df0-c5ed62d40390",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -245,10 +245,10 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 651D,
-                Id = "700a824a-d204-45ae-82e5-c9013ca7c37a",
+                Id = "abe2df2f-9b25-4206-9ad2-b9294f53672c",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "c62b7a82-7984-4b15-ac66-f210f1d0f955",
+                        Id = "47694ae6-f3fb-47f6-a38b-26092c05e8ad",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -269,7 +269,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8dc4e756-ba52-4d88-afd6-f23960ff0eb3",
+                Id = "66b5bea7-52e6-46fa-8ab2-bb4b54d6f3ed",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -294,7 +294,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
         },
         TotalStock = 682D,
         Type = "SERVICE",
-        UpdatedAt = System.DateTime.Parse("2022-04-19T12:07:52.299Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-19T20:28:03.147Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 37D,
         WeightUnit = WeightUnit.Oz,
@@ -326,7 +326,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
 
 ## CreateCommerceItemvariant
 
-Create an itemvariant
+Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
 
 ### Example Usage
 
@@ -347,7 +347,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "369ff475-e816-4dd4-a999-a3ca6e94f5aa",
+        Id = "fd424e9e-eac4-4c01-bbbb-e2b259873405",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -356,10 +356,10 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "0b681473-1b12-41a8-a8a9-eb86d571b8b6",
+                Id = "3dc055f7-60f3-4d81-8d89-4c2653c99f23",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "27246227-2e93-4080-9e55-090f4257c65a",
+                        Id = "ebaad0ce-dc74-4b28-8dc8-c226c21aadf7",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -380,7 +380,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "38bf4e00-34cc-4c98-a851-fd5ad5d863f1",
+                Id = "d77713c3-e2c9-4170-ac56-0a7ea65026b1",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -391,7 +391,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "10da0a12-8f97-4607-8c97-2cf9be24b8e0",
+                Id = "38fe8804-f4da-497d-820b-43cc2ab3bb72",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -399,7 +399,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
                 },
             },
             new CommerceItemOption() {
-                Id = "faf16d3c-31e3-4927-85c4-f893bd44d7b2",
+                Id = "9697bdb7-5b96-44eb-af8c-b9a37b67e5db",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -422,7 +422,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-09T16:34:59.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-10T11:23:40.854Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -454,7 +454,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
 
 ## CreateCommerceLocation
 
-Create a location
+Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
 
 ### Example Usage
 
@@ -483,7 +483,7 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "b55dec59-86c9-4f1a-a617-1044edbc9cd7",
+        Id = "b419563d-7f1a-46dc-8eae-8afcc9949d6f",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -494,10 +494,10 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "a75c7d28-0e82-4824-aabd-0ba15647f64b",
+                Id = "881070fb-822c-4609-a556-03568bf39235",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6bee8194-2859-42b2-9b0b-3fbce5c8a2ac",
+                        Id = "44205a33-c72d-4407-8b7c-d422619f3b3e",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -525,7 +525,7 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-20T18:02:28.795Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T01:28:31.052Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -555,7 +555,7 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
 
 ## CreateCommerceReservation
 
-Create a reservation
+Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
 
 ### Example Usage
 
@@ -577,13 +577,13 @@ var res = await sdk.Commerce.CreateCommerceReservationAsync(
         GuestEmail = "julien.bartoletti@icloud.com",
         GuestName = "Julien Bartoletti",
         GuestPhone = "(728) 596-2620",
-        Id = "f0938111-8946-416a-a11e-8513f4e08662",
+        Id = "10115731-9f33-4a2a-8754-4f90a5b17097",
         Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T21:27:23.887Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-04T02:09:25.157Z").ToUniversalTime(),
         Url = "https://expensive-gift.org",
     },
     connectionId: "<id>"
@@ -613,7 +613,7 @@ var res = await sdk.Commerce.CreateCommerceReservationAsync(
 
 ## CreateCommerceReview
 
-Create a review
+Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
 
 ### Example Usage
 
@@ -638,7 +638,7 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "3de2d24f-878a-4d7f-96a3-70962eaf3fb1",
+        Id = "ad927503-77ec-412f-b1fc-ce3f15a18f34",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -646,10 +646,10 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "9eb7ad77-ce6a-4b16-aecc-56f9633ff8d5",
+                Id = "dce20d29-5cb6-49fa-884d-b1bf6f5ca8b2",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "65cc7108-9ab1-4ec8-b9df-a3e148b068a7",
+                        Id = "590c834f-caa6-46b7-a126-85e7845c92b3",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -664,10 +664,10 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "564893ab-601b-49d0-9a0a-a79dd15a03ea",
+                Id = "af386662-f95e-4ac1-92bc-8e2b0cfd3454",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6d6c25cc-d346-4ffa-86ee-e8285d3b9c22",
+                        Id = "b4d6ddc0-5f0b-4126-94df-a4515e377662",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -685,7 +685,7 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-21T08:56:12.847Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-22T02:52:56.147Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -716,7 +716,7 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
 
 ## CreateCommerceSaleschannel
 
-Create a saleschannel
+Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
 
 ### Example Usage
 
@@ -736,11 +736,11 @@ var res = await sdk.Commerce.CreateCommerceSaleschannelAsync(
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "ca129e09-40c7-43a9-8eb1-181cbbbe1048",
+        Id = "d2d2997a-39d8-4b5d-bf5b-4775b960f1cc",
         IsActive = false,
         Metadata = new List<CommerceMetadata>() {},
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-28T00:12:28.025Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-28T14:08:11.879Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -769,7 +769,7 @@ var res = await sdk.Commerce.CreateCommerceSaleschannelAsync(
 
 ## GetCommerceCollection
 
-Retrieve a collection
+Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -811,7 +811,7 @@ var res = await sdk.Commerce.GetCommerceCollectionAsync(
 
 ## GetCommerceInventory
 
-Retrieve an inventory
+Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -853,7 +853,7 @@ var res = await sdk.Commerce.GetCommerceInventoryAsync(
 
 ## GetCommerceItem
 
-Retrieve an item
+Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -895,7 +895,7 @@ var res = await sdk.Commerce.GetCommerceItemAsync(
 
 ## GetCommerceItemvariant
 
-Retrieve an itemvariant
+Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -937,7 +937,7 @@ var res = await sdk.Commerce.GetCommerceItemvariantAsync(
 
 ## GetCommerceLocation
 
-Retrieve a location
+Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -979,7 +979,7 @@ var res = await sdk.Commerce.GetCommerceLocationAsync(
 
 ## GetCommerceReservation
 
-Retrieve a reservation
+Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1021,7 +1021,7 @@ var res = await sdk.Commerce.GetCommerceReservationAsync(
 
 ## GetCommerceReview
 
-Retrieve a review
+Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1063,7 +1063,7 @@ var res = await sdk.Commerce.GetCommerceReviewAsync(
 
 ## GetCommerceSaleschannel
 
-Retrieve a saleschannel
+Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1105,7 +1105,7 @@ var res = await sdk.Commerce.GetCommerceSaleschannelAsync(
 
 ## ListCommerceAvailabilities
 
-List all availabilities
+Returns a list of CommerceAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1146,7 +1146,7 @@ var res = await sdk.Commerce.ListCommerceAvailabilitiesAsync(req);
 
 ## ListCommerceCollections
 
-List all collections
+Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1187,7 +1187,7 @@ var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
 
 ## ListCommerceInventories
 
-List all inventories
+Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1228,7 +1228,7 @@ var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
 
 ## ListCommerceItems
 
-List all items
+Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1269,7 +1269,7 @@ var res = await sdk.Commerce.ListCommerceItemsAsync(req);
 
 ## ListCommerceItemvariants
 
-List all itemvariants
+Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1310,7 +1310,7 @@ var res = await sdk.Commerce.ListCommerceItemvariantsAsync(req);
 
 ## ListCommerceLocations
 
-List all locations
+Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1351,7 +1351,7 @@ var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
 
 ## ListCommerceReservations
 
-List all reservations
+Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1392,7 +1392,7 @@ var res = await sdk.Commerce.ListCommerceReservationsAsync(req);
 
 ## ListCommerceReviews
 
-List all reviews
+Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1433,7 +1433,7 @@ var res = await sdk.Commerce.ListCommerceReviewsAsync(req);
 
 ## ListCommerceSaleschannels
 
-List all saleschannels
+Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1474,7 +1474,7 @@ var res = await sdk.Commerce.ListCommerceSaleschannelsAsync(req);
 
 ## PatchCommerceCollection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -1494,7 +1494,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "991f5b6f-addc-4fc8-ad6a-d50897d9a9de",
+        Id = "d8b2a3ff-41f5-4dca-bfef-b17025d08ea5",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -1503,10 +1503,10 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "8ae1c7f6-2449-4ce1-8cf1-14b54c19e66f",
+                Id = "951328d3-e511-4aaa-b232-1a68c4b24773",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "93656983-da92-443f-828c-e4ecb1274815",
+                        Id = "34b8df44-b231-44b8-80f6-137f1fa9d775",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -1521,7 +1521,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "89eb271f-08c0-4c4d-9787-2ff13dfc4904",
+                Id = "084dff93-84ff-43b1-88b9-22bc7b617537",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -1537,7 +1537,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-15T01:26:43.458Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-15T12:28:56.475Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1566,7 +1566,7 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(req);
 
 ## PatchCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -1585,9 +1585,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        Id = "e6171a93-f7ad-4c2b-8c46-0a4c5b35ab63",
+        Id = "efd77c10-8d9b-4209-80e6-262a36c769ce",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-20T10:01:51.452Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-21T03:27:03.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1616,7 +1616,7 @@ var res = await sdk.Commerce.PatchCommerceInventoryAsync(req);
 
 ## PatchCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -1639,7 +1639,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         Description = "Decretum vulnero ustulo abeo.",
         Duration = 104D,
         GlobalCode = "978-0-85270-680-0",
-        Id = "889641b6-5238-40b2-8f6e-5efa654f91f2",
+        Id = "72942384-a5e5-4427-8380-a6530866f52d",
         IsActive = false,
         IsFeatured = false,
         IsTaxable = true,
@@ -1648,10 +1648,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 876D,
-                Id = "3f21a39b-3714-4ea2-b673-9aaa02478b93",
+                Id = "7b725666-cdd3-4d0d-b7c7-ef2c66770786",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "664806ad-0293-42e1-881e-4769875c1799",
+                        Id = "c2c30809-2967-4c40-975a-06c65aaf4b2d",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -1666,10 +1666,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 651D,
-                Id = "61e74e24-2690-4a98-8764-787c1cf7e4b6",
+                Id = "546b5fac-4bfe-4d89-988b-737d882cdb0d",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "b469541d-ab4c-42af-a1c0-edaa7abb65c5",
+                        Id = "c934a36c-0ea3-4904-878a-f23b0f1776d5",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -1690,7 +1690,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8088de66-4139-4874-9203-1325a0bc7656",
+                Id = "837957fb-838f-48e4-a434-e62695010966",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -1715,7 +1715,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         },
         TotalStock = 682D,
         Type = "SERVICE",
-        UpdatedAt = System.DateTime.Parse("2022-04-19T12:07:52.307Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-19T20:28:03.163Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 37D,
         WeightUnit = WeightUnit.Oz,
@@ -1747,7 +1747,7 @@ var res = await sdk.Commerce.PatchCommerceItemAsync(req);
 
 ## PatchCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -1769,7 +1769,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "5cdf28df-c68e-4c74-a33f-57dd40866dc0",
+        Id = "c6ab1753-14e2-4592-b97b-9a45185d380f",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -1778,10 +1778,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "a8e82768-e2da-4c4c-9b25-1f5254ee8ced",
+                Id = "d7ff097c-fae0-4c70-91cf-233535f49113",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "03d576d8-ee9d-43e7-a880-e73e7dfcd69b",
+                        Id = "72681c6e-72fa-4426-8c14-483c9f0cffa0",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -1802,7 +1802,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "126bc2df-b738-45a4-a538-525b82532cfa",
+                Id = "7b5a161f-5df2-4a56-83d5-6ced157a1faa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -1813,7 +1813,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "6c4970a9-d2fd-4b2b-99af-87ec8e445aa8",
+                Id = "cf6bb4cd-1be3-428f-ae18-9f230a6f6405",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -1821,7 +1821,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                 },
             },
             new CommerceItemOption() {
-                Id = "da08ef13-8fda-46ff-b6e4-5a190c228546",
+                Id = "ee820778-ce70-413b-b3d6-9a7a4e7103f3",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -1844,7 +1844,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-09T16:34:59.675Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-10T11:23:40.888Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -1876,7 +1876,7 @@ var res = await sdk.Commerce.PatchCommerceItemvariantAsync(req);
 
 ## PatchCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -1906,7 +1906,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "3a252470-af97-47a7-bc16-27a55ffd0890",
+        Id = "6fbb2092-4f06-447b-b341-5d74d16391e6",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -1917,10 +1917,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "ec25273b-636f-46b8-b2dc-879270863e7f",
+                Id = "8cfe5bae-d748-4c60-841d-55e6cf068f20",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "f42cbd3b-7b2a-47f8-b41a-77bd2ca6bd8d",
+                        Id = "e1c649fd-059e-418f-8b02-fdc93c484597",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -1948,7 +1948,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-20T18:02:28.805Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T01:28:31.067Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -1978,7 +1978,7 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(req);
 
 ## PatchCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -2001,13 +2001,13 @@ PatchCommerceReservationRequest req = new PatchCommerceReservationRequest() {
         GuestEmail = "julien.bartoletti@icloud.com",
         GuestName = "Julien Bartoletti",
         GuestPhone = "(728) 596-2620",
-        Id = "d8df9f0b-19e4-47d3-a2ae-5d24773a61c3",
+        Id = "372b582d-ffec-4aaa-b2f1-feb78713408d",
         Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T21:27:23.890Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-04T02:09:25.162Z").ToUniversalTime(),
         Url = "https://expensive-gift.org",
     },
     ConnectionId = "<id>",
@@ -2037,7 +2037,7 @@ var res = await sdk.Commerce.PatchCommerceReservationAsync(req);
 
 ## PatchCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -2063,7 +2063,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "accb1337-6a83-48b5-afb9-d40d9ce3e161",
+        Id = "1cb1cb86-0065-4cdd-9277-ed721eed30a9",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -2071,10 +2071,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "b71bac37-2169-4a4c-be33-88137126d1e4",
+                Id = "f9e24a7d-2944-4a65-9037-8dc7c693c332",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "64499485-683e-4e03-ad12-1631bbafec5f",
+                        Id = "6ec856df-44a0-4744-8fe7-f6ae92be771f",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -2089,10 +2089,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "d7460583-bbed-454b-9872-173392b36504",
+                Id = "74d94876-cdae-4e86-b083-dab58cbb61ac",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "72e06495-6faa-4566-b02b-3dd3766ca4e7",
+                        Id = "d452af00-1e42-41e5-9a58-32c47145b3ff",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -2110,7 +2110,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-21T08:56:12.872Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-22T02:52:56.185Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -2141,7 +2141,7 @@ var res = await sdk.Commerce.PatchCommerceReviewAsync(req);
 
 ## PatchCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -2162,11 +2162,11 @@ PatchCommerceSaleschannelRequest req = new PatchCommerceSaleschannelRequest() {
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "eaf469f9-2aac-46ef-a8cb-99a7e279d327",
+        Id = "8e488829-1e13-40fc-809e-7ed91429070f",
         IsActive = false,
         Metadata = new List<CommerceMetadata>() {},
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-28T00:12:28.031Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-28T14:08:11.890Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2195,7 +2195,7 @@ var res = await sdk.Commerce.PatchCommerceSaleschannelAsync(req);
 
 ## RemoveCommerceCollection
 
-Remove a collection
+Deletes the CommerceCollection identified by `id`.
 
 ### Example Usage
 
@@ -2235,7 +2235,7 @@ var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
 
 ## RemoveCommerceInventory
 
-Remove an inventory
+Deletes the CommerceInventory identified by `id`.
 
 ### Example Usage
 
@@ -2275,7 +2275,7 @@ var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
 
 ## RemoveCommerceItem
 
-Remove an item
+Deletes the CommerceItem identified by `id`.
 
 ### Example Usage
 
@@ -2315,7 +2315,7 @@ var res = await sdk.Commerce.RemoveCommerceItemAsync(
 
 ## RemoveCommerceItemvariant
 
-Remove an itemvariant
+Deletes the CommerceItemvariant identified by `id`.
 
 ### Example Usage
 
@@ -2355,7 +2355,7 @@ var res = await sdk.Commerce.RemoveCommerceItemvariantAsync(
 
 ## RemoveCommerceLocation
 
-Remove a location
+Deletes the CommerceLocation identified by `id`.
 
 ### Example Usage
 
@@ -2395,7 +2395,7 @@ var res = await sdk.Commerce.RemoveCommerceLocationAsync(
 
 ## RemoveCommerceReservation
 
-Remove a reservation
+Deletes the CommerceReservation identified by `id`.
 
 ### Example Usage
 
@@ -2435,7 +2435,7 @@ var res = await sdk.Commerce.RemoveCommerceReservationAsync(
 
 ## RemoveCommerceReview
 
-Remove a review
+Deletes the CommerceReview identified by `id`.
 
 ### Example Usage
 
@@ -2475,7 +2475,7 @@ var res = await sdk.Commerce.RemoveCommerceReviewAsync(
 
 ## RemoveCommerceSaleschannel
 
-Remove a saleschannel
+Deletes the CommerceSaleschannel identified by `id`.
 
 ### Example Usage
 
@@ -2515,7 +2515,7 @@ var res = await sdk.Commerce.RemoveCommerceSaleschannelAsync(
 
 ## UpdateCommerceCollection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -2535,7 +2535,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "991f5b6f-addc-4fc8-ad6a-d50897d9a9de",
+        Id = "d8b2a3ff-41f5-4dca-bfef-b17025d08ea5",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -2544,10 +2544,10 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "8ae1c7f6-2449-4ce1-8cf1-14b54c19e66f",
+                Id = "951328d3-e511-4aaa-b232-1a68c4b24773",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "93656983-da92-443f-828c-e4ecb1274815",
+                        Id = "34b8df44-b231-44b8-80f6-137f1fa9d775",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -2562,7 +2562,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "89eb271f-08c0-4c4d-9787-2ff13dfc4904",
+                Id = "084dff93-84ff-43b1-88b9-22bc7b617537",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -2578,7 +2578,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-15T01:26:43.458Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-15T12:28:56.475Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2607,7 +2607,7 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(req);
 
 ## UpdateCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -2626,9 +2626,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        Id = "e6171a93-f7ad-4c2b-8c46-0a4c5b35ab63",
+        Id = "efd77c10-8d9b-4209-80e6-262a36c769ce",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-20T10:01:51.452Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-21T03:27:03.503Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2657,7 +2657,7 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(req);
 
 ## UpdateCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -2680,7 +2680,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         Description = "Decretum vulnero ustulo abeo.",
         Duration = 104D,
         GlobalCode = "978-0-85270-680-0",
-        Id = "889641b6-5238-40b2-8f6e-5efa654f91f2",
+        Id = "72942384-a5e5-4427-8380-a6530866f52d",
         IsActive = false,
         IsFeatured = false,
         IsTaxable = true,
@@ -2689,10 +2689,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 876D,
-                Id = "3f21a39b-3714-4ea2-b673-9aaa02478b93",
+                Id = "7b725666-cdd3-4d0d-b7c7-ef2c66770786",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "664806ad-0293-42e1-881e-4769875c1799",
+                        Id = "c2c30809-2967-4c40-975a-06c65aaf4b2d",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -2707,10 +2707,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 651D,
-                Id = "61e74e24-2690-4a98-8764-787c1cf7e4b6",
+                Id = "546b5fac-4bfe-4d89-988b-737d882cdb0d",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "b469541d-ab4c-42af-a1c0-edaa7abb65c5",
+                        Id = "c934a36c-0ea3-4904-878a-f23b0f1776d5",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -2731,7 +2731,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8088de66-4139-4874-9203-1325a0bc7656",
+                Id = "837957fb-838f-48e4-a434-e62695010966",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -2756,7 +2756,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         },
         TotalStock = 682D,
         Type = "SERVICE",
-        UpdatedAt = System.DateTime.Parse("2022-04-19T12:07:52.307Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-19T20:28:03.163Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 37D,
         WeightUnit = WeightUnit.Oz,
@@ -2788,7 +2788,7 @@ var res = await sdk.Commerce.UpdateCommerceItemAsync(req);
 
 ## UpdateCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -2810,7 +2810,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "5cdf28df-c68e-4c74-a33f-57dd40866dc0",
+        Id = "c6ab1753-14e2-4592-b97b-9a45185d380f",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -2819,10 +2819,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "a8e82768-e2da-4c4c-9b25-1f5254ee8ced",
+                Id = "d7ff097c-fae0-4c70-91cf-233535f49113",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "03d576d8-ee9d-43e7-a880-e73e7dfcd69b",
+                        Id = "72681c6e-72fa-4426-8c14-483c9f0cffa0",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -2843,7 +2843,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "126bc2df-b738-45a4-a538-525b82532cfa",
+                Id = "7b5a161f-5df2-4a56-83d5-6ced157a1faa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -2854,7 +2854,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "6c4970a9-d2fd-4b2b-99af-87ec8e445aa8",
+                Id = "cf6bb4cd-1be3-428f-ae18-9f230a6f6405",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -2862,7 +2862,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                 },
             },
             new CommerceItemOption() {
-                Id = "da08ef13-8fda-46ff-b6e4-5a190c228546",
+                Id = "ee820778-ce70-413b-b3d6-9a7a4e7103f3",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -2885,7 +2885,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-09T16:34:59.675Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-10T11:23:40.888Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -2917,7 +2917,7 @@ var res = await sdk.Commerce.UpdateCommerceItemvariantAsync(req);
 
 ## UpdateCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -2947,7 +2947,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "3a252470-af97-47a7-bc16-27a55ffd0890",
+        Id = "6fbb2092-4f06-447b-b341-5d74d16391e6",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -2958,10 +2958,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "ec25273b-636f-46b8-b2dc-879270863e7f",
+                Id = "8cfe5bae-d748-4c60-841d-55e6cf068f20",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "f42cbd3b-7b2a-47f8-b41a-77bd2ca6bd8d",
+                        Id = "e1c649fd-059e-418f-8b02-fdc93c484597",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -2989,7 +2989,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-20T18:02:28.805Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T01:28:31.067Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -3019,7 +3019,7 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(req);
 
 ## UpdateCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -3042,13 +3042,13 @@ UpdateCommerceReservationRequest req = new UpdateCommerceReservationRequest() {
         GuestEmail = "julien.bartoletti@icloud.com",
         GuestName = "Julien Bartoletti",
         GuestPhone = "(728) 596-2620",
-        Id = "d8df9f0b-19e4-47d3-a2ae-5d24773a61c3",
+        Id = "372b582d-ffec-4aaa-b2f1-feb78713408d",
         Metadata = new List<CommerceMetadata>() {},
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T21:27:23.890Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-04T02:09:25.162Z").ToUniversalTime(),
         Url = "https://expensive-gift.org",
     },
     ConnectionId = "<id>",
@@ -3078,7 +3078,7 @@ var res = await sdk.Commerce.UpdateCommerceReservationAsync(req);
 
 ## UpdateCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -3104,7 +3104,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "accb1337-6a83-48b5-afb9-d40d9ce3e161",
+        Id = "1cb1cb86-0065-4cdd-9277-ed721eed30a9",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -3112,10 +3112,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "b71bac37-2169-4a4c-be33-88137126d1e4",
+                Id = "f9e24a7d-2944-4a65-9037-8dc7c693c332",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "64499485-683e-4e03-ad12-1631bbafec5f",
+                        Id = "6ec856df-44a0-4744-8fe7-f6ae92be771f",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -3130,10 +3130,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "d7460583-bbed-454b-9872-173392b36504",
+                Id = "74d94876-cdae-4e86-b083-dab58cbb61ac",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "72e06495-6faa-4566-b02b-3dd3766ca4e7",
+                        Id = "d452af00-1e42-41e5-9a58-32c47145b3ff",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -3151,7 +3151,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-21T08:56:12.872Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-22T02:52:56.185Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -3182,7 +3182,7 @@ var res = await sdk.Commerce.UpdateCommerceReviewAsync(req);
 
 ## UpdateCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -3203,11 +3203,11 @@ UpdateCommerceSaleschannelRequest req = new UpdateCommerceSaleschannelRequest() 
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "eaf469f9-2aac-46ef-a8cb-99a7e279d327",
+        Id = "8e488829-1e13-40fc-809e-7ed91429070f",
         IsActive = false,
         Metadata = new List<CommerceMetadata>() {},
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-28T00:12:28.031Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-28T14:08:11.890Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -19,7 +19,7 @@
 
 ## CreateCommerceReview
 
-Create a review
+Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
 
 ### Example Usage
 
@@ -44,7 +44,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "3de2d24f-878a-4d7f-96a3-70962eaf3fb1",
+        Id = "ad927503-77ec-412f-b1fc-ce3f15a18f34",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -52,10 +52,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "9eb7ad77-ce6a-4b16-aecc-56f9633ff8d5",
+                Id = "dce20d29-5cb6-49fa-884d-b1bf6f5ca8b2",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "65cc7108-9ab1-4ec8-b9df-a3e148b068a7",
+                        Id = "590c834f-caa6-46b7-a126-85e7845c92b3",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -70,10 +70,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "564893ab-601b-49d0-9a0a-a79dd15a03ea",
+                Id = "af386662-f95e-4ac1-92bc-8e2b0cfd3454",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6d6c25cc-d346-4ffa-86ee-e8285d3b9c22",
+                        Id = "b4d6ddc0-5f0b-4126-94df-a4515e377662",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -91,7 +91,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-21T08:56:12.847Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-22T02:52:56.147Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -122,7 +122,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
 
 ## GetCommerceReview
 
-Retrieve a review
+Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -164,7 +164,7 @@ var res = await sdk.Review.GetCommerceReviewAsync(
 
 ## GetPerformanceReview
 
-Retrieve a review
+Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -206,7 +206,7 @@ var res = await sdk.Review.GetPerformanceReviewAsync(
 
 ## GetSocialReview
 
-Retrieve a review
+Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -248,7 +248,7 @@ var res = await sdk.Review.GetSocialReviewAsync(
 
 ## ListCommerceReviews
 
-List all reviews
+Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -289,7 +289,7 @@ var res = await sdk.Review.ListCommerceReviewsAsync(req);
 
 ## ListPerformanceReviews
 
-List all reviews
+Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -330,7 +330,7 @@ var res = await sdk.Review.ListPerformanceReviewsAsync(req);
 
 ## ListSocialReviews
 
-List all reviews
+Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -371,7 +371,7 @@ var res = await sdk.Review.ListSocialReviewsAsync(req);
 
 ## PatchCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -397,7 +397,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "accb1337-6a83-48b5-afb9-d40d9ce3e161",
+        Id = "1cb1cb86-0065-4cdd-9277-ed721eed30a9",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -405,10 +405,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "b71bac37-2169-4a4c-be33-88137126d1e4",
+                Id = "f9e24a7d-2944-4a65-9037-8dc7c693c332",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "64499485-683e-4e03-ad12-1631bbafec5f",
+                        Id = "6ec856df-44a0-4744-8fe7-f6ae92be771f",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -423,10 +423,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "d7460583-bbed-454b-9872-173392b36504",
+                Id = "74d94876-cdae-4e86-b083-dab58cbb61ac",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "72e06495-6faa-4566-b02b-3dd3766ca4e7",
+                        Id = "d452af00-1e42-41e5-9a58-32c47145b3ff",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -444,7 +444,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-21T08:56:12.872Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-22T02:52:56.185Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -475,7 +475,7 @@ var res = await sdk.Review.PatchCommerceReviewAsync(req);
 
 ## PatchSocialReview
 
-Update a review
+Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
 
 ### Example Usage
 
@@ -518,7 +518,7 @@ var res = await sdk.Review.PatchSocialReviewAsync(req);
 
 ## RemoveCommerceReview
 
-Remove a review
+Deletes the CommerceReview identified by `id`.
 
 ### Example Usage
 
@@ -558,7 +558,7 @@ var res = await sdk.Review.RemoveCommerceReviewAsync(
 
 ## UpdateCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -584,7 +584,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "accb1337-6a83-48b5-afb9-d40d9ce3e161",
+        Id = "1cb1cb86-0065-4cdd-9277-ed721eed30a9",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -592,10 +592,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "b71bac37-2169-4a4c-be33-88137126d1e4",
+                Id = "f9e24a7d-2944-4a65-9037-8dc7c693c332",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "64499485-683e-4e03-ad12-1631bbafec5f",
+                        Id = "6ec856df-44a0-4744-8fe7-f6ae92be771f",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -610,10 +610,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "d7460583-bbed-454b-9872-173392b36504",
+                Id = "74d94876-cdae-4e86-b083-dab58cbb61ac",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "72e06495-6faa-4566-b02b-3dd3766ca4e7",
+                        Id = "d452af00-1e42-41e5-9a58-32c47145b3ff",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -631,7 +631,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-21T08:56:12.872Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-22T02:52:56.185Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -662,7 +662,7 @@ var res = await sdk.Review.UpdateCommerceReviewAsync(req);
 
 ## UpdateSocialReview
 
-Update a review
+Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
 
 ### Example Usage
 

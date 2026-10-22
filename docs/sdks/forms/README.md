@@ -15,7 +15,7 @@
 
 ## CreateFormsForm
 
-Create a form
+Creates a FormsForm. Provide the unified FormsForm fields in the request body; they are mapped to the provider's API. Returns the created FormsForm.
 
 ### Example Usage
 
@@ -38,24 +38,24 @@ var res = await sdk.Forms.CreateFormsFormAsync(
         Fields = new List<FormField>() {
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
-                Id = "2d035dc8-4af4-42f9-b49d-e379e3e91a64",
+                Id = "902ac608-1360-4293-91d3-f8388ab3dd63",
                 IsActive = true,
                 IsRequired = true,
                 MaxLength = 146D,
                 Name = "cornu creta confugo",
                 Order = 0D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2025-04-28T16:19:12.193Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-04-29T03:25:35.278Z").ToUniversalTime(),
             },
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
-                Id = "4e2f7426-1460-458d-95d6-a0ec647b24d8",
+                Id = "0290ec29-1815-4743-a2c8-4231d020e262",
                 IsActive = true,
                 IsRequired = false,
                 Name = "tracto nostrum desidero",
                 Order = 1D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2024-09-02T04:06:59.044Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-09-02T10:34:54.663Z").ToUniversalTime(),
             },
             new FormField() {
                 Choices = new List<string>() {
@@ -67,36 +67,36 @@ var res = await sdk.Forms.CreateFormsFormAsync(
                 },
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
                 DefaultValue = "somniculosus",
-                Id = "483f99e5-9d29-4c17-97ae-cd2f0df1b8f6",
+                Id = "7abceeb6-5029-445d-8c68-34f3d3c1592c",
                 IsActive = true,
                 IsRequired = false,
                 Name = "officia supra consequatur",
                 Order = 2D,
                 Type = FormFieldType.MultipleSelect,
-                UpdatedAt = System.DateTime.Parse("2024-02-26T08:32:32.665Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-02-26T11:20:01.795Z").ToUniversalTime(),
             },
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
                 Description = "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-                Id = "206f7d84-4150-403b-bbce-b0a47040ba34",
+                Id = "8f61e607-eb2f-4170-9b85-3a30fcceea7b",
                 IsActive = true,
                 IsRequired = false,
                 Name = "curtus fugiat audentia",
                 Order = 3D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2024-11-27T10:10:42.789Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-11-27T18:19:20.383Z").ToUniversalTime(),
             },
         },
         HasMultipleSubmissions = false,
         HasProgressBar = false,
         HasShuffleQuestions = true,
-        Id = "5d831984-0fa1-4403-95b2-867134b4585d",
+        Id = "227bb9e2-083f-4bde-93e9-bbc1e8ad75fd",
         IsActive = false,
         Metadata = new List<FormsMetadata>() {},
         Name = "tandem tracto vivo Form",
         PublishedUrl = "https://massive-blowgun.info",
         ResponseCount = 423D,
-        UpdatedAt = System.DateTime.Parse("2024-08-24T19:22:30.600Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-08-25T01:40:40.308Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -125,7 +125,7 @@ var res = await sdk.Forms.CreateFormsFormAsync(
 
 ## GetFormsForm
 
-Retrieve a form
+Retrieves a single FormsForm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -167,7 +167,7 @@ var res = await sdk.Forms.GetFormsFormAsync(
 
 ## GetFormsSubmission
 
-Retrieve a submission
+Retrieves a single FormsSubmission by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -209,7 +209,7 @@ var res = await sdk.Forms.GetFormsSubmissionAsync(
 
 ## ListFormsForms
 
-List all forms
+Returns a list of FormsForms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -250,7 +250,7 @@ var res = await sdk.Forms.ListFormsFormsAsync(req);
 
 ## ListFormsSubmissions
 
-List all submissions
+Returns a list of FormsSubmissions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -291,7 +291,7 @@ var res = await sdk.Forms.ListFormsSubmissionsAsync(req);
 
 ## PatchFormsForm
 
-Update a form
+Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
 
 ### Example Usage
 
@@ -315,24 +315,24 @@ PatchFormsFormRequest req = new PatchFormsFormRequest() {
         Fields = new List<FormField>() {
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
-                Id = "9d2a324e-9c41-4783-8e7d-8577694b0610",
+                Id = "5f123fb1-e32c-4f03-8a49-ac33e98ee5d8",
                 IsActive = true,
                 IsRequired = true,
                 MaxLength = 146D,
                 Name = "cornu creta confugo",
                 Order = 0D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2025-04-28T16:19:12.203Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-04-29T03:25:35.292Z").ToUniversalTime(),
             },
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
-                Id = "6de34689-7470-44f6-89eb-3cecef633528",
+                Id = "673d27f5-ba13-40bd-976b-523d65e12886",
                 IsActive = true,
                 IsRequired = false,
                 Name = "tracto nostrum desidero",
                 Order = 1D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2024-09-02T04:06:59.050Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-09-02T10:34:54.672Z").ToUniversalTime(),
             },
             new FormField() {
                 Choices = new List<string>() {
@@ -344,36 +344,36 @@ PatchFormsFormRequest req = new PatchFormsFormRequest() {
                 },
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
                 DefaultValue = "somniculosus",
-                Id = "74ae60e2-c3dc-4062-af00-2bc6379cc9c6",
+                Id = "0ea200f7-cb4d-44d6-8bc7-29a3d887e48e",
                 IsActive = true,
                 IsRequired = false,
                 Name = "officia supra consequatur",
                 Order = 2D,
                 Type = FormFieldType.MultipleSelect,
-                UpdatedAt = System.DateTime.Parse("2024-02-26T08:32:32.668Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-02-26T11:20:01.798Z").ToUniversalTime(),
             },
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
                 Description = "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-                Id = "34b9bb38-8304-4c98-9b72-ffe630806ddd",
+                Id = "801c4dcf-9ac9-4e4b-b3ef-415faf6d5e07",
                 IsActive = true,
                 IsRequired = false,
                 Name = "curtus fugiat audentia",
                 Order = 3D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2024-11-27T10:10:42.796Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-11-27T18:19:20.393Z").ToUniversalTime(),
             },
         },
         HasMultipleSubmissions = false,
         HasProgressBar = false,
         HasShuffleQuestions = true,
-        Id = "e67469f1-11aa-4c4f-8b46-54d02862c835",
+        Id = "e565b50f-9616-4026-a6af-3f7adb9d9f34",
         IsActive = false,
         Metadata = new List<FormsMetadata>() {},
         Name = "tandem tracto vivo Form",
         PublishedUrl = "https://massive-blowgun.info",
         ResponseCount = 423D,
-        UpdatedAt = System.DateTime.Parse("2024-08-24T19:22:30.606Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-08-25T01:40:40.316Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -402,7 +402,7 @@ var res = await sdk.Forms.PatchFormsFormAsync(req);
 
 ## RemoveFormsForm
 
-Remove a form
+Deletes the FormsForm identified by `id`.
 
 ### Example Usage
 
@@ -442,7 +442,7 @@ var res = await sdk.Forms.RemoveFormsFormAsync(
 
 ## UpdateFormsForm
 
-Update a form
+Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
 
 ### Example Usage
 
@@ -466,24 +466,24 @@ UpdateFormsFormRequest req = new UpdateFormsFormRequest() {
         Fields = new List<FormField>() {
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
-                Id = "9d2a324e-9c41-4783-8e7d-8577694b0610",
+                Id = "5f123fb1-e32c-4f03-8a49-ac33e98ee5d8",
                 IsActive = true,
                 IsRequired = true,
                 MaxLength = 146D,
                 Name = "cornu creta confugo",
                 Order = 0D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2025-04-28T16:19:12.203Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-04-29T03:25:35.292Z").ToUniversalTime(),
             },
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
-                Id = "6de34689-7470-44f6-89eb-3cecef633528",
+                Id = "673d27f5-ba13-40bd-976b-523d65e12886",
                 IsActive = true,
                 IsRequired = false,
                 Name = "tracto nostrum desidero",
                 Order = 1D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2024-09-02T04:06:59.050Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-09-02T10:34:54.672Z").ToUniversalTime(),
             },
             new FormField() {
                 Choices = new List<string>() {
@@ -495,36 +495,36 @@ UpdateFormsFormRequest req = new UpdateFormsFormRequest() {
                 },
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
                 DefaultValue = "somniculosus",
-                Id = "74ae60e2-c3dc-4062-af00-2bc6379cc9c6",
+                Id = "0ea200f7-cb4d-44d6-8bc7-29a3d887e48e",
                 IsActive = true,
                 IsRequired = false,
                 Name = "officia supra consequatur",
                 Order = 2D,
                 Type = FormFieldType.MultipleSelect,
-                UpdatedAt = System.DateTime.Parse("2024-02-26T08:32:32.668Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-02-26T11:20:01.798Z").ToUniversalTime(),
             },
             new FormField() {
                 CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
                 Description = "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-                Id = "34b9bb38-8304-4c98-9b72-ffe630806ddd",
+                Id = "801c4dcf-9ac9-4e4b-b3ef-415faf6d5e07",
                 IsActive = true,
                 IsRequired = false,
                 Name = "curtus fugiat audentia",
                 Order = 3D,
                 Type = FormFieldType.Textarea,
-                UpdatedAt = System.DateTime.Parse("2024-11-27T10:10:42.796Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2024-11-27T18:19:20.393Z").ToUniversalTime(),
             },
         },
         HasMultipleSubmissions = false,
         HasProgressBar = false,
         HasShuffleQuestions = true,
-        Id = "e67469f1-11aa-4c4f-8b46-54d02862c835",
+        Id = "e565b50f-9616-4026-a6af-3f7adb9d9f34",
         IsActive = false,
         Metadata = new List<FormsMetadata>() {},
         Name = "tandem tracto vivo Form",
         PublishedUrl = "https://massive-blowgun.info",
         ResponseCount = 423D,
-        UpdatedAt = System.DateTime.Parse("2024-08-24T19:22:30.606Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-08-25T01:40:40.316Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

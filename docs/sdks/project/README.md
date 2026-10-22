@@ -19,7 +19,7 @@
 
 ## CreateAccountingProject
 
-Create a project
+Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
 
 ### Example Usage
 
@@ -61,7 +61,7 @@ var res = await sdk.Project.CreateAccountingProjectAsync(
 
 ## CreateTaskProject
 
-Create a project
+Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
 
 ### Example Usage
 
@@ -82,7 +82,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "c07ed87f-6289-4b4d-b56e-5f5990f80488",
+        Id = "5c0906c3-321c-40db-8d95-05d13b723750",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -91,7 +91,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "3fe89182-1acc-44c1-b3b9-ed35a0ea5a1a",
+                Id = "944e5e2b-4731-4742-9789-a4d717bdd41e",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -105,7 +105,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "25744e94-66bd-4b25-af0b-2064ea5c3172",
+                Id = "af2a270d-8f8a-4743-b762-366a7cf5b45b",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -114,7 +114,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-11T14:32:02.088Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-11T16:29:21.169Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -143,7 +143,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
 
 ## GetAccountingProject
 
-Retrieve a project
+Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ var res = await sdk.Project.GetAccountingProjectAsync(
 
 ## GetTaskProject
 
-Retrieve a project
+Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -227,7 +227,7 @@ var res = await sdk.Project.GetTaskProjectAsync(
 
 ## ListAccountingProjects
 
-List all projects
+Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ var res = await sdk.Project.ListAccountingProjectsAsync(req);
 
 ## ListTaskProjects
 
-List all projects
+Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -309,7 +309,7 @@ var res = await sdk.Project.ListTaskProjectsAsync(req);
 
 ## PatchAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -352,7 +352,7 @@ var res = await sdk.Project.PatchAccountingProjectAsync(req);
 
 ## PatchTaskProject
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -374,7 +374,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "bf15f776-e1bc-4e0a-b54e-1c347a2cb045",
+        Id = "f283afb1-8c0a-4073-9c42-7b40d3fc7b1f",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -383,7 +383,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "ff73a596-f4fc-4569-89e3-c5fba2671bf3",
+                Id = "129cd3d4-1ba5-47b7-b1b4-5b07e01f8de2",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -397,7 +397,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "4a8f7f7c-2f05-4a70-9627-aba1395eb78a",
+                Id = "c9ba49d5-95a2-4f43-8735-96346fdd6aa3",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -406,7 +406,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-11T14:32:02.089Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-11T16:29:21.170Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -435,7 +435,7 @@ var res = await sdk.Project.PatchTaskProjectAsync(req);
 
 ## RemoveAccountingProject
 
-Remove a project
+Deletes the AccountingProject identified by `id`.
 
 ### Example Usage
 
@@ -475,7 +475,7 @@ var res = await sdk.Project.RemoveAccountingProjectAsync(
 
 ## RemoveTaskProject
 
-Remove a project
+Deletes the TaskProject identified by `id`.
 
 ### Example Usage
 
@@ -515,7 +515,7 @@ var res = await sdk.Project.RemoveTaskProjectAsync(
 
 ## UpdateAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -558,7 +558,7 @@ var res = await sdk.Project.UpdateAccountingProjectAsync(req);
 
 ## UpdateTaskProject
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -580,7 +580,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "bf15f776-e1bc-4e0a-b54e-1c347a2cb045",
+        Id = "f283afb1-8c0a-4073-9c42-7b40d3fc7b1f",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -589,7 +589,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "ff73a596-f4fc-4569-89e3-c5fba2671bf3",
+                Id = "129cd3d4-1ba5-47b7-b1b4-5b07e01f8de2",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -603,7 +603,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "4a8f7f7c-2f05-4a70-9627-aba1395eb78a",
+                Id = "c9ba49d5-95a2-4f43-8735-96346fdd6aa3",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -612,7 +612,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-11T14:32:02.089Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-11T16:29:21.170Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

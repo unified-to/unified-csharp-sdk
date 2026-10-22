@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a query.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
+        /// </remarks>
         /// <param name="datastoreQuery">A <see cref="DatastoreQuery"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -60,6 +63,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a query.
         /// </summary>
+        /// <remarks>
+        /// Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
+        /// </remarks>
         /// <param name="datastoreQuery">A <see cref="DatastoreQuery"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>

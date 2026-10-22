@@ -13,7 +13,7 @@
 
 ## CreateAdsInsertionorder
 
-Create an insertionorder
+Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
 
 ### Example Usage
 
@@ -31,11 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
     adsInsertionorder: new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "d52aa3e7-a87a-42dc-9cdf-09b7c85c4731",
+        Id = "48e5948c-2844-479b-ae6b-f1f454d257e0",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:47:38.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:59:32.914Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -64,7 +64,7 @@ var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
 
 ## GetAdsInsertionorder
 
-Retrieve an insertionorder
+Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -106,7 +106,7 @@ var res = await sdk.Insertionorder.GetAdsInsertionorderAsync(
 
 ## ListAdsInsertionorders
 
-List all insertionorders
+Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -147,7 +147,7 @@ var res = await sdk.Insertionorder.ListAdsInsertionordersAsync(req);
 
 ## PatchAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -166,11 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "ca4df6b6-3b9e-41b1-ad45-dae8218fefbb",
+        Id = "548a169a-f97d-452f-99e7-346c58f9ccb5",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:47:38.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:59:32.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -199,7 +199,7 @@ var res = await sdk.Insertionorder.PatchAdsInsertionorderAsync(req);
 
 ## RemoveAdsInsertionorder
 
-Remove an insertionorder
+Deletes the AdsInsertionorder identified by `id`.
 
 ### Example Usage
 
@@ -239,7 +239,7 @@ var res = await sdk.Insertionorder.RemoveAdsInsertionorderAsync(
 
 ## UpdateAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -258,11 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "ca4df6b6-3b9e-41b1-ad45-dae8218fefbb",
+        Id = "548a169a-f97d-452f-99e7-346c58f9ccb5",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T19:47:38.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T19:59:32.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

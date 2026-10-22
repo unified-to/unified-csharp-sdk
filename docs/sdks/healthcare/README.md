@@ -37,7 +37,7 @@
 
 ## CreateHealthcareAppointment
 
-Create an appointment
+Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
 
 ### Example Usage
 
@@ -57,7 +57,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "4e398a7e-f549-46de-aaea-b46f0f35d984",
+        Id = "83e88fd4-9492-4578-850c-5f2fdcde1d09",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -77,7 +77,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-19T10:53:26.412Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-20T02:52:52.612Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -106,7 +106,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
 
 ## CreateHealthcareObservation
 
-Create an observation
+Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
 
 ### Example Usage
 
@@ -155,15 +155,15 @@ var res = await sdk.Healthcare.CreateHealthcareObservationAsync(
             },
         },
         CreatedAt = System.DateTime.Parse("2022-12-06T21:34:04.293Z").ToUniversalTime(),
-        Id = "a23a3279-3610-438e-b74c-541c806c9b82",
+        Id = "4ad9d295-6fc1-4991-901a-3c43fbd9beb5",
         Interpretation = Interpretation.CriticalHigh,
-        IssuedAt = System.DateTime.Parse("2025-05-11T10:39:47.993Z").ToUniversalTime(),
+        IssuedAt = System.DateTime.Parse("2025-05-12T00:13:03.761Z").ToUniversalTime(),
         Metadata = new List<HealthcareMetadata>() {},
         Name = "Blood pressure panel",
-        ObservedAt = System.DateTime.Parse("2025-01-20T04:09:18.371Z").ToUniversalTime(),
+        ObservedAt = System.DateTime.Parse("2025-01-20T16:00:29.736Z").ToUniversalTime(),
         Status = HealthcareObservationStatus.Corrected,
         Type = HealthcareObservationType.VitalSigns,
-        UpdatedAt = System.DateTime.Parse("2026-03-24T06:38:38.832Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-25T01:02:33.168Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -192,7 +192,7 @@ var res = await sdk.Healthcare.CreateHealthcareObservationAsync(
 
 ## CreateHealthcarePatient
 
-Create a patient
+Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
 
 ### Example Usage
 
@@ -216,7 +216,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-12",
+        Birthdate = "2025-02-13",
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -226,7 +226,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "a9fee73b-db47-4d58-a286-3968f57482c9",
+        Id = "e8c4bcd2-fab7-4d75-acd9-e4b34ccf7487",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -246,7 +246,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-22T20:33:55.967Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-23T16:51:45.202Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -275,7 +275,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
 
 ## GetHealthcareAllergy
 
-Retrieve an allergy
+Retrieves a single HealthcareAllergy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -317,7 +317,7 @@ var res = await sdk.Healthcare.GetHealthcareAllergyAsync(
 
 ## GetHealthcareAppointment
 
-Retrieve an appointment
+Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -359,7 +359,7 @@ var res = await sdk.Healthcare.GetHealthcareAppointmentAsync(
 
 ## GetHealthcareCondition
 
-Retrieve a condition
+Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -401,7 +401,7 @@ var res = await sdk.Healthcare.GetHealthcareConditionAsync(
 
 ## GetHealthcareEncounter
 
-Retrieve an encounter
+Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -443,7 +443,7 @@ var res = await sdk.Healthcare.GetHealthcareEncounterAsync(
 
 ## GetHealthcareImmunization
 
-Retrieve an immunization
+Retrieves a single HealthcareImmunization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -485,7 +485,7 @@ var res = await sdk.Healthcare.GetHealthcareImmunizationAsync(
 
 ## GetHealthcareLocation
 
-Retrieve a location
+Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -527,7 +527,7 @@ var res = await sdk.Healthcare.GetHealthcareLocationAsync(
 
 ## GetHealthcareMedication
 
-Retrieve a medication
+Retrieves a single HealthcareMedication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -569,7 +569,7 @@ var res = await sdk.Healthcare.GetHealthcareMedicationAsync(
 
 ## GetHealthcareObservation
 
-Retrieve an observation
+Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -611,7 +611,7 @@ var res = await sdk.Healthcare.GetHealthcareObservationAsync(
 
 ## GetHealthcarePatient
 
-Retrieve a patient
+Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -653,7 +653,7 @@ var res = await sdk.Healthcare.GetHealthcarePatientAsync(
 
 ## GetHealthcarePractitioner
 
-Retrieve a practitioner
+Retrieves a single HealthcarePractitioner by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -695,7 +695,7 @@ var res = await sdk.Healthcare.GetHealthcarePractitionerAsync(
 
 ## GetHealthcareSlot
 
-Retrieve a slot
+Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -737,7 +737,7 @@ var res = await sdk.Healthcare.GetHealthcareSlotAsync(
 
 ## ListHealthcareAllergies
 
-List all allergies
+Returns a list of HealthcareAllergies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -778,7 +778,7 @@ var res = await sdk.Healthcare.ListHealthcareAllergiesAsync(req);
 
 ## ListHealthcareAppointments
 
-List all appointments
+Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -819,7 +819,7 @@ var res = await sdk.Healthcare.ListHealthcareAppointmentsAsync(req);
 
 ## ListHealthcareConditions
 
-List all conditions
+Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -860,7 +860,7 @@ var res = await sdk.Healthcare.ListHealthcareConditionsAsync(req);
 
 ## ListHealthcareEncounters
 
-List all encounters
+Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -901,7 +901,7 @@ var res = await sdk.Healthcare.ListHealthcareEncountersAsync(req);
 
 ## ListHealthcareImmunizations
 
-List all immunizations
+Returns a list of HealthcareImmunizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -942,7 +942,7 @@ var res = await sdk.Healthcare.ListHealthcareImmunizationsAsync(req);
 
 ## ListHealthcareLocations
 
-List all locations
+Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -983,7 +983,7 @@ var res = await sdk.Healthcare.ListHealthcareLocationsAsync(req);
 
 ## ListHealthcareMedications
 
-List all medications
+Returns a list of HealthcareMedications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1024,7 +1024,7 @@ var res = await sdk.Healthcare.ListHealthcareMedicationsAsync(req);
 
 ## ListHealthcareObservations
 
-List all observations
+Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1065,7 +1065,7 @@ var res = await sdk.Healthcare.ListHealthcareObservationsAsync(req);
 
 ## ListHealthcarePatients
 
-List all patients
+Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1106,7 +1106,7 @@ var res = await sdk.Healthcare.ListHealthcarePatientsAsync(req);
 
 ## ListHealthcarePractitioners
 
-List all practitioners
+Returns a list of HealthcarePractitioners. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1147,7 +1147,7 @@ var res = await sdk.Healthcare.ListHealthcarePractitionersAsync(req);
 
 ## ListHealthcareSlots
 
-List all slots
+Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1188,7 +1188,7 @@ var res = await sdk.Healthcare.ListHealthcareSlotsAsync(req);
 
 ## PatchHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -1209,7 +1209,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "bb1535ab-24bc-46f1-9339-457cb304c591",
+        Id = "3b59b099-9d5c-4587-bc8b-a82902904104",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -1229,7 +1229,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-19T10:53:26.424Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-20T02:52:52.623Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1258,7 +1258,7 @@ var res = await sdk.Healthcare.PatchHealthcareAppointmentAsync(req);
 
 ## PatchHealthcarePatient
 
-Update a patient
+Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
 
 ### Example Usage
 
@@ -1283,7 +1283,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-12",
+        Birthdate = "2025-02-13",
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -1293,7 +1293,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "ff3e97c3-d1e3-49e0-a3cd-35cf13f67b76",
+        Id = "67861186-3393-43ad-a0a3-0deafe6d9390",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1313,7 +1313,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-22T20:33:55.988Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-23T16:51:45.219Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1342,7 +1342,7 @@ var res = await sdk.Healthcare.PatchHealthcarePatientAsync(req);
 
 ## RemoveHealthcareAppointment
 
-Remove an appointment
+Deletes the HealthcareAppointment identified by `id`.
 
 ### Example Usage
 
@@ -1382,7 +1382,7 @@ var res = await sdk.Healthcare.RemoveHealthcareAppointmentAsync(
 
 ## UpdateHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -1403,7 +1403,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "bb1535ab-24bc-46f1-9339-457cb304c591",
+        Id = "3b59b099-9d5c-4587-bc8b-a82902904104",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -1423,7 +1423,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-19T10:53:26.424Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-20T02:52:52.623Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1452,7 +1452,7 @@ var res = await sdk.Healthcare.UpdateHealthcareAppointmentAsync(req);
 
 ## UpdateHealthcarePatient
 
-Update a patient
+Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
 
 ### Example Usage
 
@@ -1477,7 +1477,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-12",
+        Birthdate = "2025-02-13",
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -1487,7 +1487,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "ff3e97c3-d1e3-49e0-a3cd-35cf13f67b76",
+        Id = "67861186-3393-43ad-a0a3-0deafe6d9390",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1507,7 +1507,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-22T20:33:55.988Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-23T16:51:45.219Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

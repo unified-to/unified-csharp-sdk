@@ -49,7 +49,7 @@
 
 ## CreateLmsActivity
 
-Create an activity
+Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
 
 ### Example Usage
 
@@ -67,15 +67,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Lms.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-05T23:49:13.460Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-06T11:05:52.640Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "ec3b5e8b-d063-4af7-8db7-c4ab240d04aa",
+        Id = "d5c3e55c-6fcd-4906-b09b-a52ba2076590",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T04:24:57.934Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T23:44:52.188Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T06:17:19.731Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-31T04:23:11.311Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -104,7 +104,7 @@ var res = await sdk.Lms.CreateLmsActivityAsync(
 
 ## CreateLmsClass
 
-Create a class
+Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
 
 ### Example Usage
 
@@ -123,7 +123,7 @@ var res = await sdk.Lms.CreateLmsClassAsync(
     lmsClass: new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "7f117b15-d2bf-48ae-9830-1eeab73d6ef8",
+        Id = "daedefa2-6412-46b6-8bdc-aaeeaa027247",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -145,7 +145,7 @@ var res = await sdk.Lms.CreateLmsClassAsync(
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-03T21:44:08.605Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.222Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -174,7 +174,7 @@ var res = await sdk.Lms.CreateLmsClassAsync(
 
 ## CreateLmsCollection
 
-Create a collection
+Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ var res = await sdk.Lms.CreateLmsCollectionAsync(
     lmsCollection: new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "724df50d-29f2-4b6f-98bd-b34584ad3f71",
+        Id = "c53ea4c4-0de3-400f-a8ab-7b4f757410ef",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -210,7 +210,7 @@ var res = await sdk.Lms.CreateLmsCollectionAsync(
         },
         Metadata = new List<LmsMetadata>() {},
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-30T07:20:49.976Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-31T04:17:05.107Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -239,7 +239,7 @@ var res = await sdk.Lms.CreateLmsCollectionAsync(
 
 ## CreateLmsContent
 
-Create a content
+Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
 
 ### Example Usage
 
@@ -263,7 +263,7 @@ var res = await sdk.Lms.CreateLmsContentAsync(
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        Id = "48309286-242f-468b-baa2-c27f69595bf3",
+        Id = "019a136b-c106-4cbd-8519-bd0a99da0a70",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
@@ -323,7 +323,7 @@ var res = await sdk.Lms.CreateLmsContentAsync(
         Metadata = new List<LmsMetadata>() {},
         Name = "ut",
         ProviderName = "Bins LLC",
-        PublishedAt = System.DateTime.Parse("2022-09-03T06:23:40.082Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-09-03T13:06:49.220Z").ToUniversalTime(),
         ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
@@ -338,7 +338,7 @@ var res = await sdk.Lms.CreateLmsContentAsync(
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-04T04:40:13.095Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-04T11:41:41.888Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -367,7 +367,7 @@ var res = await sdk.Lms.CreateLmsContentAsync(
 
 ## CreateLmsCourse
 
-Create a course
+Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
 
 ### Example Usage
 
@@ -392,7 +392,7 @@ var res = await sdk.Lms.CreateLmsCourseAsync(
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "2e4b2eaf-7fe4-46ca-9ee1-90abcc9bf2fb",
+        Id = "504f519d-2f36-49b3-9867-ccbe2ffcb06d",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -419,14 +419,14 @@ var res = await sdk.Lms.CreateLmsCourseAsync(
         Name = "comptus",
         PriceAmount = 84D,
         ProviderName = "Homenick - Wunsch",
-        PublishedAt = System.DateTime.Parse("2022-11-05T18:11:26.371Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-11-05T18:38:06.816Z").ToUniversalTime(),
         Skills = new List<string>() {
             "adiuvo",
             "tam",
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-09T18:21:32.889Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-09T20:12:37.394Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -455,7 +455,7 @@ var res = await sdk.Lms.CreateLmsCourseAsync(
 
 ## CreateLmsInstructor
 
-Create an instructor
+Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
 
 ### Example Usage
 
@@ -477,7 +477,7 @@ var res = await sdk.Lms.CreateLmsInstructorAsync(
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "6278249a-b2fc-4044-989b-83be3300ee32",
+        Id = "6f35b484-6d3f-480d-8239-89d42b6bfc4b",
         ImageUrl = "https://avatars.githubusercontent.com/u/95131132",
         LastName = "Ritchie",
         Metadata = new List<LmsMetadata>() {},
@@ -493,7 +493,7 @@ var res = await sdk.Lms.CreateLmsInstructorAsync(
             },
         },
         Title = "Regional Security Agent",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T10:32:09.829Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-25T02:48:36.886Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -522,7 +522,7 @@ var res = await sdk.Lms.CreateLmsInstructorAsync(
 
 ## CreateLmsStudent
 
-Create a student
+Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
 
 ### Example Usage
 
@@ -552,7 +552,7 @@ var res = await sdk.Lms.CreateLmsStudentAsync(
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "13a768cd-a870-437a-8e7f-c717cc81054d",
+        Id = "45dda078-f5f3-43cb-9b8c-d10564d5a37e",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
         LastName = "Murazik",
         Metadata = new List<LmsMetadata>() {},
@@ -571,7 +571,7 @@ var res = await sdk.Lms.CreateLmsStudentAsync(
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-30T23:32:27.489Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-01T07:00:24.084Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -600,7 +600,7 @@ var res = await sdk.Lms.CreateLmsStudentAsync(
 
 ## GetLmsActivity
 
-Retrieve an activity
+Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -642,7 +642,7 @@ var res = await sdk.Lms.GetLmsActivityAsync(
 
 ## GetLmsClass
 
-Retrieve a class
+Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -684,7 +684,7 @@ var res = await sdk.Lms.GetLmsClassAsync(
 
 ## GetLmsCollection
 
-Retrieve a collection
+Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -726,7 +726,7 @@ var res = await sdk.Lms.GetLmsCollectionAsync(
 
 ## GetLmsContent
 
-Retrieve a content
+Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -768,7 +768,7 @@ var res = await sdk.Lms.GetLmsContentAsync(
 
 ## GetLmsCourse
 
-Retrieve a course
+Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -810,7 +810,7 @@ var res = await sdk.Lms.GetLmsCourseAsync(
 
 ## GetLmsInstructor
 
-Retrieve an instructor
+Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -852,7 +852,7 @@ var res = await sdk.Lms.GetLmsInstructorAsync(
 
 ## GetLmsStudent
 
-Retrieve a student
+Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -894,7 +894,7 @@ var res = await sdk.Lms.GetLmsStudentAsync(
 
 ## ListLmsActivities
 
-List all activities
+Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -935,7 +935,7 @@ var res = await sdk.Lms.ListLmsActivitiesAsync(req);
 
 ## ListLmsClasses
 
-List all classes
+Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -976,7 +976,7 @@ var res = await sdk.Lms.ListLmsClassesAsync(req);
 
 ## ListLmsCollections
 
-List all collections
+Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1017,7 +1017,7 @@ var res = await sdk.Lms.ListLmsCollectionsAsync(req);
 
 ## ListLmsContents
 
-List all contents
+Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1058,7 +1058,7 @@ var res = await sdk.Lms.ListLmsContentsAsync(req);
 
 ## ListLmsCourses
 
-List all courses
+Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1099,7 +1099,7 @@ var res = await sdk.Lms.ListLmsCoursesAsync(req);
 
 ## ListLmsInstructors
 
-List all instructors
+Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1140,7 +1140,7 @@ var res = await sdk.Lms.ListLmsInstructorsAsync(req);
 
 ## ListLmsStudents
 
-List all students
+Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1181,7 +1181,7 @@ var res = await sdk.Lms.ListLmsStudentsAsync(req);
 
 ## PatchLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -1200,15 +1200,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-05T23:49:13.465Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-06T11:05:52.645Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "f51034d2-8d07-4ff4-92eb-5fdfeae89450",
+        Id = "79549434-f841-407b-8094-43b0b8cc972e",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T04:24:57.934Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T23:44:52.190Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T06:17:19.732Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-31T04:23:11.313Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1237,7 +1237,7 @@ var res = await sdk.Lms.PatchLmsActivityAsync(req);
 
 ## PatchLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -1257,7 +1257,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "04557705-70ca-4af4-a1bd-89f61c3ec274",
+        Id = "4afb8174-d665-464c-b393-097e52580ca5",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -1279,7 +1279,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-03T21:44:08.619Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.243Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1308,7 +1308,7 @@ var res = await sdk.Lms.PatchLmsClassAsync(req);
 
 ## PatchLmsCollection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -1328,7 +1328,7 @@ PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "73f7c05b-96a7-4f05-9e73-08efcc403631",
+        Id = "7beac66b-59fe-42d7-966e-324252501f35",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -1345,7 +1345,7 @@ PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
         },
         Metadata = new List<LmsMetadata>() {},
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-30T07:20:49.990Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-31T04:17:05.119Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1374,7 +1374,7 @@ var res = await sdk.Lms.PatchLmsCollectionAsync(req);
 
 ## PatchLmsContent
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -1399,7 +1399,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        Id = "915c205d-7ce3-4ca8-be39-3d256d57791b",
+        Id = "c1c9b324-ca3a-4097-a254-1897e8d1cad1",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
@@ -1459,7 +1459,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "ut",
         ProviderName = "Bins LLC",
-        PublishedAt = System.DateTime.Parse("2022-09-03T06:23:40.088Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-09-03T13:06:49.227Z").ToUniversalTime(),
         ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
@@ -1474,7 +1474,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-04T04:40:13.102Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-04T11:41:41.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1503,7 +1503,7 @@ var res = await sdk.Lms.PatchLmsContentAsync(req);
 
 ## PatchLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -1529,7 +1529,7 @@ PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "7e77cb5a-4b84-49a2-b5d8-b8c60d3b3530",
+        Id = "7e348666-faea-437c-9637-9fda9368a2be",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -1556,14 +1556,14 @@ PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
         Name = "comptus",
         PriceAmount = 84D,
         ProviderName = "Homenick - Wunsch",
-        PublishedAt = System.DateTime.Parse("2022-11-05T18:11:26.372Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-11-05T18:38:06.817Z").ToUniversalTime(),
         Skills = new List<string>() {
             "adiuvo",
             "tam",
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-09T18:21:32.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-09T20:12:37.396Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1592,7 +1592,7 @@ var res = await sdk.Lms.PatchLmsCourseAsync(req);
 
 ## PatchLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -1615,7 +1615,7 @@ PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "48252562-e6d1-450a-9a6c-ff0e3a0e2408",
+        Id = "5d5a00fc-7c11-4862-8ecf-5573d8f97ebb",
         ImageUrl = "https://avatars.githubusercontent.com/u/95131132",
         LastName = "Ritchie",
         Metadata = new List<LmsMetadata>() {},
@@ -1631,7 +1631,7 @@ PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
             },
         },
         Title = "Regional Security Agent",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T10:32:09.842Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-25T02:48:36.898Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1660,7 +1660,7 @@ var res = await sdk.Lms.PatchLmsInstructorAsync(req);
 
 ## PatchLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -1691,7 +1691,7 @@ PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "118bff1b-ec5b-4573-b79c-046448e2cc91",
+        Id = "e70dee22-665b-466a-a90a-a0f938e18615",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
         LastName = "Murazik",
         Metadata = new List<LmsMetadata>() {},
@@ -1710,7 +1710,7 @@ PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-30T23:32:27.495Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-01T07:00:24.092Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1739,7 +1739,7 @@ var res = await sdk.Lms.PatchLmsStudentAsync(req);
 
 ## RemoveLmsActivity
 
-Remove an activity
+Deletes the LmsActivity identified by `id`.
 
 ### Example Usage
 
@@ -1779,7 +1779,7 @@ var res = await sdk.Lms.RemoveLmsActivityAsync(
 
 ## RemoveLmsClass
 
-Remove a class
+Deletes the LmsClass identified by `id`.
 
 ### Example Usage
 
@@ -1819,7 +1819,7 @@ var res = await sdk.Lms.RemoveLmsClassAsync(
 
 ## RemoveLmsCollection
 
-Remove a collection
+Deletes the LmsCollection identified by `id`.
 
 ### Example Usage
 
@@ -1859,7 +1859,7 @@ var res = await sdk.Lms.RemoveLmsCollectionAsync(
 
 ## RemoveLmsContent
 
-Remove a content
+Deletes the LmsContent identified by `id`.
 
 ### Example Usage
 
@@ -1899,7 +1899,7 @@ var res = await sdk.Lms.RemoveLmsContentAsync(
 
 ## RemoveLmsCourse
 
-Remove a course
+Deletes the LmsCourse identified by `id`.
 
 ### Example Usage
 
@@ -1939,7 +1939,7 @@ var res = await sdk.Lms.RemoveLmsCourseAsync(
 
 ## RemoveLmsInstructor
 
-Remove an instructor
+Deletes the LmsInstructor identified by `id`.
 
 ### Example Usage
 
@@ -1979,7 +1979,7 @@ var res = await sdk.Lms.RemoveLmsInstructorAsync(
 
 ## RemoveLmsStudent
 
-Remove a student
+Deletes the LmsStudent identified by `id`.
 
 ### Example Usage
 
@@ -2019,7 +2019,7 @@ var res = await sdk.Lms.RemoveLmsStudentAsync(
 
 ## UpdateLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -2038,15 +2038,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-05T23:49:13.465Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-06T11:05:52.645Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "f51034d2-8d07-4ff4-92eb-5fdfeae89450",
+        Id = "79549434-f841-407b-8094-43b0b8cc972e",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T04:24:57.934Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-30T23:44:52.190Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T06:17:19.732Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-31T04:23:11.313Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2075,7 +2075,7 @@ var res = await sdk.Lms.UpdateLmsActivityAsync(req);
 
 ## UpdateLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -2095,7 +2095,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "04557705-70ca-4af4-a1bd-89f61c3ec274",
+        Id = "4afb8174-d665-464c-b393-097e52580ca5",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -2117,7 +2117,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-03T21:44:08.619Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.243Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2146,7 +2146,7 @@ var res = await sdk.Lms.UpdateLmsClassAsync(req);
 
 ## UpdateLmsCollection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -2166,7 +2166,7 @@ UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "73f7c05b-96a7-4f05-9e73-08efcc403631",
+        Id = "7beac66b-59fe-42d7-966e-324252501f35",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -2183,7 +2183,7 @@ UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
         },
         Metadata = new List<LmsMetadata>() {},
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-30T07:20:49.990Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-31T04:17:05.119Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2212,7 +2212,7 @@ var res = await sdk.Lms.UpdateLmsCollectionAsync(req);
 
 ## UpdateLmsContent
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -2237,7 +2237,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        Id = "915c205d-7ce3-4ca8-be39-3d256d57791b",
+        Id = "c1c9b324-ca3a-4097-a254-1897e8d1cad1",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
@@ -2297,7 +2297,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "ut",
         ProviderName = "Bins LLC",
-        PublishedAt = System.DateTime.Parse("2022-09-03T06:23:40.088Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-09-03T13:06:49.227Z").ToUniversalTime(),
         ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
@@ -2312,7 +2312,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-04T04:40:13.102Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-04T11:41:41.894Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2341,7 +2341,7 @@ var res = await sdk.Lms.UpdateLmsContentAsync(req);
 
 ## UpdateLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -2367,7 +2367,7 @@ UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "7e77cb5a-4b84-49a2-b5d8-b8c60d3b3530",
+        Id = "7e348666-faea-437c-9637-9fda9368a2be",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -2394,14 +2394,14 @@ UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
         Name = "comptus",
         PriceAmount = 84D,
         ProviderName = "Homenick - Wunsch",
-        PublishedAt = System.DateTime.Parse("2022-11-05T18:11:26.372Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-11-05T18:38:06.817Z").ToUniversalTime(),
         Skills = new List<string>() {
             "adiuvo",
             "tam",
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-09T18:21:32.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-09T20:12:37.396Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2430,7 +2430,7 @@ var res = await sdk.Lms.UpdateLmsCourseAsync(req);
 
 ## UpdateLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -2453,7 +2453,7 @@ UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "48252562-e6d1-450a-9a6c-ff0e3a0e2408",
+        Id = "5d5a00fc-7c11-4862-8ecf-5573d8f97ebb",
         ImageUrl = "https://avatars.githubusercontent.com/u/95131132",
         LastName = "Ritchie",
         Metadata = new List<LmsMetadata>() {},
@@ -2469,7 +2469,7 @@ UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
             },
         },
         Title = "Regional Security Agent",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T10:32:09.842Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-25T02:48:36.898Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2498,7 +2498,7 @@ var res = await sdk.Lms.UpdateLmsInstructorAsync(req);
 
 ## UpdateLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -2529,7 +2529,7 @@ UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "118bff1b-ec5b-4573-b79c-046448e2cc91",
+        Id = "e70dee22-665b-466a-a90a-a0f938e18615",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
         LastName = "Murazik",
         Metadata = new List<LmsMetadata>() {},
@@ -2548,7 +2548,7 @@ UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-30T23:32:27.495Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-01T07:00:24.092Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -73,6 +73,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<TaskMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The task's title.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

@@ -13,7 +13,7 @@
 
 ## CreateAccountingPaymentterm
 
-Create a paymentterm
+Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
 
 ### Example Usage
 
@@ -39,12 +39,12 @@ var res = await sdk.Paymentterm.CreateAccountingPaymenttermAsync(
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "daf3e41a-5718-467a-a341-b1a4df756297",
+        Id = "36a08e57-c9fd-4c3b-99c2-1241fbc96cd2",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2026-01-08T11:26:40.785Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-09T05:47:23.282Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -73,7 +73,7 @@ var res = await sdk.Paymentterm.CreateAccountingPaymenttermAsync(
 
 ## GetAccountingPaymentterm
 
-Retrieve a paymentterm
+Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +115,7 @@ var res = await sdk.Paymentterm.GetAccountingPaymenttermAsync(
 
 ## ListAccountingPaymentterms
 
-List all paymentterms
+Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ var res = await sdk.Paymentterm.ListAccountingPaymenttermsAsync(req);
 
 ## PatchAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -183,12 +183,12 @@ PatchAccountingPaymenttermRequest req = new PatchAccountingPaymenttermRequest() 
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "0e8960d8-4d2b-4e9a-85d1-ca89ea831c0d",
+        Id = "3982fce1-64b8-4240-bc07-1b926ca5684e",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2026-01-08T11:26:40.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-09T05:47:23.294Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -217,7 +217,7 @@ var res = await sdk.Paymentterm.PatchAccountingPaymenttermAsync(req);
 
 ## RemoveAccountingPaymentterm
 
-Remove a paymentterm
+Deletes the AccountingPaymentterm identified by `id`.
 
 ### Example Usage
 
@@ -257,7 +257,7 @@ var res = await sdk.Paymentterm.RemoveAccountingPaymenttermAsync(
 
 ## UpdateAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -284,12 +284,12 @@ UpdateAccountingPaymenttermRequest req = new UpdateAccountingPaymenttermRequest(
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "0e8960d8-4d2b-4e9a-85d1-ca89ea831c0d",
+        Id = "3982fce1-64b8-4240-bc07-1b926ca5684e",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2026-01-08T11:26:40.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-09T05:47:23.294Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

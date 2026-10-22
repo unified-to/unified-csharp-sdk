@@ -13,7 +13,7 @@
 
 ## CreateAnalyticsProperty
 
-Create a property
+Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
 
 ### Example Usage
 
@@ -31,10 +31,10 @@ var res = await sdk.Property.CreateAnalyticsPropertyAsync(
     analyticsProperty: new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "518b4f8b-bd28-4c14-95df-1e1128f791f4",
+        Id = "96ba3f28-db26-446c-b29d-55e79843de87",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:26:23.062Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:32:39.768Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -63,7 +63,7 @@ var res = await sdk.Property.CreateAnalyticsPropertyAsync(
 
 ## GetAnalyticsProperty
 
-Retrieve a property
+Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -105,7 +105,7 @@ var res = await sdk.Property.GetAnalyticsPropertyAsync(
 
 ## ListAnalyticsProperties
 
-List all properties
+Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -146,7 +146,7 @@ var res = await sdk.Property.ListAnalyticsPropertiesAsync(req);
 
 ## PatchAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -165,10 +165,10 @@ PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "7a8ef4f1-023d-4f89-b38e-8a0295c97272",
+        Id = "5e7574a3-930d-4604-b13d-a36790997cd2",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:26:23.063Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:32:39.768Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -197,7 +197,7 @@ var res = await sdk.Property.PatchAnalyticsPropertyAsync(req);
 
 ## RemoveAnalyticsProperty
 
-Remove a property
+Deletes the AnalyticsProperty identified by `id`.
 
 ### Example Usage
 
@@ -237,7 +237,7 @@ var res = await sdk.Property.RemoveAnalyticsPropertyAsync(
 
 ## UpdateAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -256,10 +256,10 @@ UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "7a8ef4f1-023d-4f89-b38e-8a0295c97272",
+        Id = "5e7574a3-930d-4604-b13d-a36790997cd2",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:26:23.063Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:32:39.768Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

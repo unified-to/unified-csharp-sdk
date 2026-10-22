@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
+        /// </remarks>
         /// <param name="analyticsEvent">A <see cref="AnalyticsEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
+        /// </remarks>
         /// <param name="calendarEvent">A <see cref="CalendarEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
+        /// </remarks>
         /// <param name="cdpEvent">A <see cref="CdpEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
+        /// </remarks>
         /// <param name="crmEvent">An event represents an event, activity, or engagement and is always associated with a deal, contact, or company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -209,6 +239,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -220,6 +253,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -231,6 +267,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -242,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -253,6 +295,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -264,6 +309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -275,6 +323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -286,6 +337,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchMessagingEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchMessagingEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -297,6 +351,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarEventResponse"/> response envelope when completed.</returns>
@@ -308,6 +365,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpEventResponse"/> response envelope when completed.</returns>
@@ -319,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmEventResponse"/> response envelope when completed.</returns>
@@ -330,6 +393,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -341,6 +407,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -352,6 +421,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -363,6 +435,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateMessagingEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateMessagingEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -388,6 +463,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
+        /// </remarks>
         /// <param name="analyticsEvent">A <see cref="AnalyticsEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -516,6 +594,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
+        /// </remarks>
         /// <param name="calendarEvent">A <see cref="CalendarEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -644,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
+        /// </remarks>
         /// <param name="cdpEvent">A <see cref="CdpEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -772,6 +856,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
+        /// </remarks>
         /// <param name="crmEvent">An event represents an event, activity, or engagement and is always associated with a deal, contact, or company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -900,6 +987,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1022,6 +1112,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1144,6 +1237,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1266,6 +1362,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1388,6 +1487,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1510,6 +1612,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1615,6 +1720,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1720,6 +1828,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCdpEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCdpEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1825,6 +1936,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1930,6 +2044,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2035,6 +2152,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2146,6 +2266,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2257,6 +2380,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2368,6 +2494,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchMessagingEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchMessagingEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2479,6 +2608,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarEventResponse"/> response envelope when completed.</returns>
@@ -2582,6 +2714,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CdpEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCdpEventResponse"/> response envelope when completed.</returns>
@@ -2685,6 +2820,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmEventResponse"/> response envelope when completed.</returns>
@@ -2788,6 +2926,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2899,6 +3040,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCdpEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCdpEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3010,6 +3154,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3121,6 +3268,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateMessagingEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateMessagingEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -57,7 +57,7 @@
 
 ## CreateAtsActivity
 
-Create an activity
+Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
 
 ### Example Usage
 
@@ -76,7 +76,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "4ebba259-5754-4493-8c81-0cb54d8d0ec0",
+        Id = "d08e3aa1-41ea-4436-965e-9a4c37ae4a70",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -86,7 +86,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "6f092177-2eb4-448b-855f-81100592f25b",
+                Id = "be52a43b-6ed0-433a-bd9a-277549187763",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -97,7 +97,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-04T06:52:31.703Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-05T01:41:02.127Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -126,7 +126,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 
 ## CreateAtsApplication
 
-Create an application
+Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
 
 ### Example Usage
 
@@ -144,10 +144,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-29T18:52:23.332Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.141Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-12T18:44:35.414Z").ToUniversalTime(),
-        Id = "c37e3af6-b7b0-4473-b971-4636b7164436",
+        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.276Z").ToUniversalTime(),
+        Id = "c73ca526-7494-4fe0-8465-02851221825d",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -156,7 +156,7 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "8e57e37e-a256-48d8-9adc-b2a12324ba8d",
+                Id = "49124ee6-0d45-4725-b9dd-ab3493da2802",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -167,12 +167,12 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-11T13:23:21.535Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.450Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-18T09:37:43.984Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.237Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -201,7 +201,7 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 
 ## CreateAtsCandidate
 
-Create a candidate
+Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
 
 ### Example Usage
 
@@ -269,7 +269,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "bdac5f0e-4cbe-48a3-a02c-a8804c61de52",
+        Id = "246cd235-9cf4-48ff-8d5c-baef50290006",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -284,7 +284,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "8b35a3b4-338f-4bed-9372-83f9326a3fea",
+                Id = "74acdbdb-c07f-430e-aa02-632038beae54",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -313,7 +313,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.273Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T21:40:50.783Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     connectionId: "<id>"
@@ -343,7 +343,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 
 ## CreateAtsCompany
 
-Create a company
+Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
 
 ### Example Usage
 
@@ -360,10 +360,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "ef467a9e-18cd-46a3-b2c5-cee9b8b531c1",
+        Id = "94374d0d-2d8f-4f88-881c-7c967fa66d31",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T04:15:33.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-01T08:25:38.428Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>"
@@ -393,7 +393,7 @@ var res = await sdk.Ats.CreateAtsCompanyAsync(
 
 ## CreateAtsDocument
 
-Create a document
+Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
 
 ### Example Usage
 
@@ -413,10 +413,10 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "a4f1f686-50f2-41a9-852e-a7ec64c21a9c",
+        Id = "a07aafd0-930e-4a95-9585-da4f83c04f80",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T05:04:02.238Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-07T10:29:40.867Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -445,7 +445,7 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 
 ## CreateAtsInterview
 
-Create an interview
+Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
 
 ### Example Usage
 
@@ -464,13 +464,13 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "155e1c06-2bbf-4514-94be-bf49719c3c89",
+        Id = "a7a813ea-d547-4bdd-a4e2-65bf9fedd6f3",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-23T16:45:17.595Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T00:47:28.010Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -499,7 +499,7 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 
 ## CreateAtsJob
 
-Create a job
+Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
 
 ### Example Usage
 
@@ -546,7 +546,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "7d5507c4-9cd4-4da1-a6be-36327afcaf93",
+        Id = "1b08bbdd-1745-466d-b9c8-ce293116e140",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -557,7 +557,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f98bfe1a-7776-49f4-b6c9-be9936ad7936",
+                Id = "7f914f64-644f-4bba-97f5-c91f58b8ca91",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -572,7 +572,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.441Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-08T16:56:33.391Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -586,14 +586,14 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.147Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T20:57:05.854Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "7ad7e889-0e0c-446b-bbb2-f95c3311c0d3",
+                Id = "a003fd8d-bf97-4d05-a0fc-988719ff0a37",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.849Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-29T04:48:21.510Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -603,7 +603,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "deb78b33-474c-4454-a21b-377f33beb75e",
+                Id = "c87148d5-7a68-4ad8-a855-13cd14822d8e",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -616,7 +616,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "5847fb89-c2e7-416c-9145-4032c16775f5",
+                Id = "a5e9159e-9970-4640-bb98-38ea53a1970a",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -629,7 +629,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "4492b258-d53a-4f07-a0ce-6c99cb70981f",
+                Id = "03cb1255-dc7f-4475-8d3c-b27c18606cdc",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -647,7 +647,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.763Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T03:27:44.927Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -676,7 +676,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 
 ## CreateAtsScorecard
 
-Create a scorecard
+Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
 
 ### Example Usage
 
@@ -695,7 +695,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "017adf89-a81f-4c58-8326-c45c195846f4",
+        Id = "9f3c97ae-4d3b-4fe7-8df5-a57d4c406aa3",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -709,7 +709,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-05T13:44:35.918Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T19:42:25.927Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -738,7 +738,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 
 ## GetAtsActivity
 
-Retrieve an activity
+Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -780,7 +780,7 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 
 ## GetAtsApplication
 
-Retrieve an application
+Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -822,7 +822,7 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 
 ## GetAtsApplicationstatus
 
-Retrieve an applicationstatus
+Retrieves a single AtsStatus by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -864,7 +864,7 @@ var res = await sdk.Ats.GetAtsApplicationstatusAsync(
 
 ## GetAtsCandidate
 
-Retrieve a candidate
+Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -906,7 +906,7 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 
 ## GetAtsCompany
 
-Retrieve a company
+Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -948,7 +948,7 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 
 ## GetAtsDocument
 
-Retrieve a document
+Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -990,7 +990,7 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 
 ## GetAtsInterview
 
-Retrieve an interview
+Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1032,7 +1032,7 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 
 ## GetAtsJob
 
-Retrieve a job
+Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1074,7 +1074,7 @@ var res = await sdk.Ats.GetAtsJobAsync(
 
 ## GetAtsScorecard
 
-Retrieve a scorecard
+Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1116,7 +1116,7 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 
 ## ListAtsActivities
 
-List all activities
+Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1157,7 +1157,7 @@ var res = await sdk.Ats.ListAtsActivitiesAsync(req);
 
 ## ListAtsApplications
 
-List all applications
+Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1198,7 +1198,7 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 
 ## ListAtsApplicationstatuses
 
-List all applicationstatuses
+Returns a list of AtsStatuses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1239,7 +1239,7 @@ var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
 
 ## ListAtsCandidates
 
-List all candidates
+Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1280,7 +1280,7 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 
 ## ListAtsCompanies
 
-List all companies
+Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1321,7 +1321,7 @@ var res = await sdk.Ats.ListAtsCompaniesAsync(req);
 
 ## ListAtsDocuments
 
-List all documents
+Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1362,7 +1362,7 @@ var res = await sdk.Ats.ListAtsDocumentsAsync(req);
 
 ## ListAtsInterviews
 
-List all interviews
+Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1403,7 +1403,7 @@ var res = await sdk.Ats.ListAtsInterviewsAsync(req);
 
 ## ListAtsJobs
 
-List all jobs
+Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1444,7 +1444,7 @@ var res = await sdk.Ats.ListAtsJobsAsync(req);
 
 ## ListAtsScorecards
 
-List all scorecards
+Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1485,7 +1485,7 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 
 ## PatchAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -1505,7 +1505,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "4a3f6c22-5763-431c-8ebc-5671c7b2966e",
+        Id = "80863fb9-ede4-4ed0-95a5-8ded4f97cf93",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -1515,7 +1515,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "757726f6-0959-427b-b2b1-9eab8720367d",
+                Id = "06542d52-c1d9-4a82-a5cb-712a939e251d",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -1526,7 +1526,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-04T06:52:31.718Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-05T01:41:02.148Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1555,7 +1555,7 @@ var res = await sdk.Ats.PatchAtsActivityAsync(req);
 
 ## PatchAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -1574,10 +1574,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-29T18:52:23.345Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.155Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-12T18:44:35.430Z").ToUniversalTime(),
-        Id = "522f7627-481f-4155-9ddd-9e6b1e63a63a",
+        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.294Z").ToUniversalTime(),
+        Id = "ea2b2f1d-34f2-4ab9-987c-3c73bac52513",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -1586,7 +1586,7 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3832d779-0d88-4aba-997e-bc00cbc71d8c",
+                Id = "f347728d-ebb4-4974-94c5-61d27931ff96",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -1597,12 +1597,12 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-11T13:23:21.554Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.471Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-18T09:37:44.003Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.258Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1631,7 +1631,7 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(req);
 
 ## PatchAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -1700,7 +1700,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "6c0d5ef8-c731-4a0a-a92b-3aeceebfc011",
+        Id = "84910f96-e8a5-4473-b5de-1db6c39dac01",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -1715,7 +1715,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3d6cb52c-8627-4039-a4c8-1d3d2c40c5d6",
+                Id = "204d8705-9a59-4a4d-bf63-a5b0d637883c",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -1744,7 +1744,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.278Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T21:40:50.788Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",
@@ -1774,7 +1774,7 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(req);
 
 ## PatchAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1792,10 +1792,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "238531de-7b06-4981-a7f5-6408e0f99a9c",
+        Id = "a768f245-2583-41fb-9b4c-0f8d8dc90a12",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T04:15:33.470Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-01T08:25:38.431Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -1825,7 +1825,7 @@ var res = await sdk.Ats.PatchAtsCompanyAsync(req);
 
 ## PatchAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -1846,10 +1846,10 @@ PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "c8f7379a-84a2-4bc5-9566-3fdd6121eb59",
+        Id = "54d2b19c-5191-4915-9076-3304bb427845",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T05:04:02.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-07T10:29:40.869Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1878,7 +1878,7 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(req);
 
 ## PatchAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -1898,13 +1898,13 @@ PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "8007c240-85ae-42ec-8369-38030467aee0",
+        Id = "a794df14-a73a-4270-b471-aed3b1e7cefb",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-23T16:45:17.599Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T00:47:28.015Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1933,7 +1933,7 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(req);
 
 ## PatchAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -1981,7 +1981,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "6eeaab25-327e-4de2-8235-66e5cc2f076c",
+        Id = "2b83fb5e-6b1d-4005-9d0d-ebd1830dc4a3",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -1992,7 +1992,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "38255357-d7f9-4850-a69a-439b8511c5e3",
+                Id = "80d5fd62-44ab-497a-b01e-33db28429622",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -2007,7 +2007,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.478Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-08T16:56:33.451Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -2021,14 +2021,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.186Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T20:57:05.917Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "079379ff-1a12-48ce-b29a-9b93f6400e6e",
+                Id = "acef1ff2-a00e-4dde-a063-3c49449406d9",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.889Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-29T04:48:21.574Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -2038,7 +2038,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "0f6b8cdf-a2be-45f5-906c-d2469d8d5493",
+                Id = "6a31d893-0ddc-485d-a3ee-8d772519cce2",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -2051,7 +2051,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "dc06afd1-71bd-4286-8140-f358a0b71982",
+                Id = "c3950db5-0cf3-4a99-a533-a39a9874443a",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -2064,7 +2064,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "136b91f4-21df-44e8-9ecd-79ff7be1950d",
+                Id = "413f9242-5731-4670-ad99-8210c3616675",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -2082,7 +2082,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.797Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T03:27:44.981Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2111,7 +2111,7 @@ var res = await sdk.Ats.PatchAtsJobAsync(req);
 
 ## PatchAtsScorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -2131,7 +2131,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "691c7d3e-4eee-46ee-ab6f-049c1974e293",
+        Id = "3635a79c-811f-4e15-9510-a8a2ab63bd66",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -2145,7 +2145,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-05T13:44:35.921Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T19:42:25.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2174,7 +2174,7 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(req);
 
 ## RemoveAtsActivity
 
-Remove an activity
+Deletes the AtsActivity identified by `id`.
 
 ### Example Usage
 
@@ -2214,7 +2214,7 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 
 ## RemoveAtsApplication
 
-Remove an application
+Deletes the AtsApplication identified by `id`.
 
 ### Example Usage
 
@@ -2254,7 +2254,7 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 
 ## RemoveAtsCandidate
 
-Remove a candidate
+Deletes the AtsCandidate identified by `id`.
 
 ### Example Usage
 
@@ -2294,7 +2294,7 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 
 ## RemoveAtsCompany
 
-Remove a company
+Deletes the AtsCompany identified by `id`.
 
 ### Example Usage
 
@@ -2334,7 +2334,7 @@ var res = await sdk.Ats.RemoveAtsCompanyAsync(
 
 ## RemoveAtsDocument
 
-Remove a document
+Deletes the AtsDocument identified by `id`.
 
 ### Example Usage
 
@@ -2374,7 +2374,7 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 
 ## RemoveAtsInterview
 
-Remove an interview
+Deletes the AtsInterview identified by `id`.
 
 ### Example Usage
 
@@ -2414,7 +2414,7 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 
 ## RemoveAtsJob
 
-Remove a job
+Deletes the AtsJob identified by `id`.
 
 ### Example Usage
 
@@ -2454,7 +2454,7 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 
 ## RemoveAtsScorecard
 
-Remove a scorecard
+Deletes the AtsScorecard identified by `id`.
 
 ### Example Usage
 
@@ -2494,7 +2494,7 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 
 ## UpdateAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -2514,7 +2514,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "4a3f6c22-5763-431c-8ebc-5671c7b2966e",
+        Id = "80863fb9-ede4-4ed0-95a5-8ded4f97cf93",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -2524,7 +2524,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "757726f6-0959-427b-b2b1-9eab8720367d",
+                Id = "06542d52-c1d9-4a82-a5cb-712a939e251d",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -2535,7 +2535,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-04T06:52:31.718Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-05T01:41:02.148Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2564,7 +2564,7 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(req);
 
 ## UpdateAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -2583,10 +2583,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-29T18:52:23.345Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.155Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-12T18:44:35.430Z").ToUniversalTime(),
-        Id = "522f7627-481f-4155-9ddd-9e6b1e63a63a",
+        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.294Z").ToUniversalTime(),
+        Id = "ea2b2f1d-34f2-4ab9-987c-3c73bac52513",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -2595,7 +2595,7 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3832d779-0d88-4aba-997e-bc00cbc71d8c",
+                Id = "f347728d-ebb4-4974-94c5-61d27931ff96",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -2606,12 +2606,12 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-11T13:23:21.554Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.471Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-18T09:37:44.003Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.258Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2640,7 +2640,7 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(req);
 
 ## UpdateAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -2709,7 +2709,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "6c0d5ef8-c731-4a0a-a92b-3aeceebfc011",
+        Id = "84910f96-e8a5-4473-b5de-1db6c39dac01",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -2724,7 +2724,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3d6cb52c-8627-4039-a4c8-1d3d2c40c5d6",
+                Id = "204d8705-9a59-4a4d-bf63-a5b0d637883c",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -2753,7 +2753,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.278Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T21:40:50.788Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",
@@ -2783,7 +2783,7 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(req);
 
 ## UpdateAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -2801,10 +2801,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "238531de-7b06-4981-a7f5-6408e0f99a9c",
+        Id = "a768f245-2583-41fb-9b4c-0f8d8dc90a12",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T04:15:33.470Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-01T08:25:38.431Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -2834,7 +2834,7 @@ var res = await sdk.Ats.UpdateAtsCompanyAsync(req);
 
 ## UpdateAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -2855,10 +2855,10 @@ UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "c8f7379a-84a2-4bc5-9566-3fdd6121eb59",
+        Id = "54d2b19c-5191-4915-9076-3304bb427845",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T05:04:02.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-07T10:29:40.869Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2887,7 +2887,7 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(req);
 
 ## UpdateAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -2907,13 +2907,13 @@ UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "8007c240-85ae-42ec-8369-38030467aee0",
+        Id = "a794df14-a73a-4270-b471-aed3b1e7cefb",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-23T16:45:17.599Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T00:47:28.015Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2942,7 +2942,7 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(req);
 
 ## UpdateAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -2990,7 +2990,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "6eeaab25-327e-4de2-8235-66e5cc2f076c",
+        Id = "2b83fb5e-6b1d-4005-9d0d-ebd1830dc4a3",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -3001,7 +3001,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "38255357-d7f9-4850-a69a-439b8511c5e3",
+                Id = "80d5fd62-44ab-497a-b01e-33db28429622",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -3016,7 +3016,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.478Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-08T16:56:33.451Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -3030,14 +3030,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.186Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T20:57:05.917Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "079379ff-1a12-48ce-b29a-9b93f6400e6e",
+                Id = "acef1ff2-a00e-4dde-a063-3c49449406d9",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.889Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-29T04:48:21.574Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -3047,7 +3047,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "0f6b8cdf-a2be-45f5-906c-d2469d8d5493",
+                Id = "6a31d893-0ddc-485d-a3ee-8d772519cce2",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -3060,7 +3060,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "dc06afd1-71bd-4286-8140-f358a0b71982",
+                Id = "c3950db5-0cf3-4a99-a533-a39a9874443a",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -3073,7 +3073,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "136b91f4-21df-44e8-9ecd-79ff7be1950d",
+                Id = "413f9242-5731-4670-ad99-8210c3616675",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -3091,7 +3091,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.797Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T03:27:44.981Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3120,7 +3120,7 @@ var res = await sdk.Ats.UpdateAtsJobAsync(req);
 
 ## UpdateAtsScorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -3140,7 +3140,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "691c7d3e-4eee-46ee-ab6f-049c1974e293",
+        Id = "3635a79c-811f-4e15-9510-a8a2ab63bd66",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -3154,7 +3154,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-05T13:44:35.921Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-05T19:42:25.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

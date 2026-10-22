@@ -13,7 +13,7 @@
 
 ## CreateLegalMatter
 
-Create a matter
+Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
 
 ### Example Usage
 
@@ -37,11 +37,11 @@ var res = await sdk.Matter.CreateLegalMatterAsync(
         CreatedAt = System.DateTime.Parse("2023-05-28T04:10:42.375Z").ToUniversalTime(),
         Currency = "BOB",
         Description = "Speciosus cresco aut cotidie temeritas arma.",
-        Id = "c5566fec-015a-41f6-84d5-6c18f5f8495a",
+        Id = "8a44dd1f-b1a9-4c18-a174-a84573797f2a",
         Metadata = new List<LegalMetadata>() {},
         Name = "Walter v. Franecki - Spinka",
         Number = "2023-3062",
-        OpenedAt = System.DateTime.Parse("2023-07-05T06:19:13.749Z").ToUniversalTime(),
+        OpenedAt = System.DateTime.Parse("2023-07-05T06:59:01.030Z").ToUniversalTime(),
         Parties = new List<LegalParty>() {
             new LegalParty() {
                 Description = "Urban Walter",
@@ -50,8 +50,8 @@ var res = await sdk.Matter.CreateLegalMatterAsync(
         },
         Stage = "currus",
         Status = LegalMatterStatus.Open,
-        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-28T21:28:28.739Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2023-07-17T10:06:04.032Z").ToUniversalTime(),
+        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-29T19:05:41.236Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T10:58:33.298Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -80,7 +80,7 @@ var res = await sdk.Matter.CreateLegalMatterAsync(
 
 ## GetLegalMatter
 
-Retrieve a matter
+Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -122,7 +122,7 @@ var res = await sdk.Matter.GetLegalMatterAsync(
 
 ## ListLegalMatters
 
-List all matters
+Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -163,7 +163,7 @@ var res = await sdk.Matter.ListLegalMattersAsync(req);
 
 ## PatchLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -188,11 +188,11 @@ PatchLegalMatterRequest req = new PatchLegalMatterRequest() {
         CreatedAt = System.DateTime.Parse("2023-05-28T04:10:42.375Z").ToUniversalTime(),
         Currency = "BOB",
         Description = "Speciosus cresco aut cotidie temeritas arma.",
-        Id = "9c754b9c-cdaf-4346-b0a9-10ab91a424e2",
+        Id = "283e2e01-f157-4f43-b3fd-3513bf741b26",
         Metadata = new List<LegalMetadata>() {},
         Name = "Walter v. Franecki - Spinka",
         Number = "2023-3062",
-        OpenedAt = System.DateTime.Parse("2023-07-05T06:19:13.750Z").ToUniversalTime(),
+        OpenedAt = System.DateTime.Parse("2023-07-05T06:59:01.031Z").ToUniversalTime(),
         Parties = new List<LegalParty>() {
             new LegalParty() {
                 Description = "Urban Walter",
@@ -201,8 +201,8 @@ PatchLegalMatterRequest req = new PatchLegalMatterRequest() {
         },
         Stage = "currus",
         Status = LegalMatterStatus.Open,
-        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-28T21:28:28.755Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2023-07-17T10:06:04.033Z").ToUniversalTime(),
+        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-29T19:05:41.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T10:58:33.299Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -231,7 +231,7 @@ var res = await sdk.Matter.PatchLegalMatterAsync(req);
 
 ## RemoveLegalMatter
 
-Remove a matter
+Deletes the LegalMatter identified by `id`.
 
 ### Example Usage
 
@@ -271,7 +271,7 @@ var res = await sdk.Matter.RemoveLegalMatterAsync(
 
 ## UpdateLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -296,11 +296,11 @@ UpdateLegalMatterRequest req = new UpdateLegalMatterRequest() {
         CreatedAt = System.DateTime.Parse("2023-05-28T04:10:42.375Z").ToUniversalTime(),
         Currency = "BOB",
         Description = "Speciosus cresco aut cotidie temeritas arma.",
-        Id = "9c754b9c-cdaf-4346-b0a9-10ab91a424e2",
+        Id = "283e2e01-f157-4f43-b3fd-3513bf741b26",
         Metadata = new List<LegalMetadata>() {},
         Name = "Walter v. Franecki - Spinka",
         Number = "2023-3062",
-        OpenedAt = System.DateTime.Parse("2023-07-05T06:19:13.750Z").ToUniversalTime(),
+        OpenedAt = System.DateTime.Parse("2023-07-05T06:59:01.031Z").ToUniversalTime(),
         Parties = new List<LegalParty>() {
             new LegalParty() {
                 Description = "Urban Walter",
@@ -309,8 +309,8 @@ UpdateLegalMatterRequest req = new UpdateLegalMatterRequest() {
         },
         Stage = "currus",
         Status = LegalMatterStatus.Open,
-        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-28T21:28:28.755Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2023-07-17T10:06:04.033Z").ToUniversalTime(),
+        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-29T19:05:41.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T10:58:33.299Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
+        /// </remarks>
         /// <param name="commerceCollection">A collection of items/products/services.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
+        /// </remarks>
         /// <param name="lmsCollection">A <see cref="LmsCollection"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -116,6 +131,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -127,6 +145,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -140,6 +161,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -151,6 +175,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceCollectionResponse"/> response envelope when completed.</returns>
@@ -162,6 +189,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsCollectionResponse"/> response envelope when completed.</returns>
@@ -173,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -186,6 +219,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -211,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
+        /// </remarks>
         /// <param name="commerceCollection">A collection of items/products/services.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -339,6 +378,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
+        /// </remarks>
         /// <param name="lmsCollection">A <see cref="LmsCollection"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -467,6 +509,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -589,6 +634,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -711,6 +759,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -818,6 +869,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -923,6 +977,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1036,6 +1093,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1147,6 +1207,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceCollectionResponse"/> response envelope when completed.</returns>
@@ -1253,6 +1316,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsCollectionResponse"/> response envelope when completed.</returns>
@@ -1356,6 +1422,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1469,6 +1538,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

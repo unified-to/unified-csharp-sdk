@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
+        /// </remarks>
         /// <param name="commerceItemvariant">A <see cref="CommerceItemvariant"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all itemvariants.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceItemvariantsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceItemvariantsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -78,6 +87,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -91,6 +103,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceItemvariant identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceItemvariantResponse"/> response envelope when completed.</returns>
@@ -102,6 +117,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -129,6 +147,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
+        /// </remarks>
         /// <param name="commerceItemvariant">A <see cref="CommerceItemvariant"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -257,6 +278,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <param name="fields">Fields to return.</param>
@@ -379,6 +403,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all itemvariants.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceItemvariantsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceItemvariantsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -486,6 +513,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -599,6 +629,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceItemvariant identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceItemvariantResponse"/> response envelope when completed.</returns>
@@ -705,6 +738,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

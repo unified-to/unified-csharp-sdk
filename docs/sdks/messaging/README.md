@@ -21,7 +21,7 @@
 
 ## CreateMessagingChannel
 
-Create a channel
+Creates a MessagingChannel. Provide the unified MessagingChannel fields in the request body; they are mapped to the provider's API. Returns the created MessagingChannel.
 
 ### Example Usage
 
@@ -41,13 +41,13 @@ var res = await sdk.Messaging.CreateMessagingChannelAsync(
         CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
         Description = "Dolores tutis.",
         HasSubchannels = true,
-        Id = "e83e7daa-a4f5-407c-bb7b-e833eeae445c",
+        Id = "21861a9a-ee8f-4ad4-9519-4f166a0e1a08",
         IsActive = false,
         IsPrivate = true,
         Members = new List<MessagingMember>() {},
         Metadata = new List<MessagingMetadata>() {},
         Name = "tego",
-        UpdatedAt = System.DateTime.Parse("2026-05-21T14:07:46.192Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T08:47:08.849Z").ToUniversalTime(),
         WebUrl = "https://svelte-rule.name/",
     },
     connectionId: "<id>"
@@ -77,7 +77,7 @@ var res = await sdk.Messaging.CreateMessagingChannelAsync(
 
 ## CreateMessagingMessage
 
-Create a message
+Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
 
 ### Example Usage
 
@@ -96,17 +96,17 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
     messagingMessage: new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "fe38048e-9a9b-4ab2-a664-5c2a96682d66",
+                ContentIdentifier = "7abd8ad4-d875-4dc9-b650-775e2a39bb28",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "c2804ce6-2984-479c-9b39-c053bab62dbb",
+                MessageId = "845d1693-bdcc-4926-88c5-be145bf17fac",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "02489d0a-587f-4e25-a8bc-53c6a26f7d76",
+                Id = "d43e6d5d-183a-4a65-b3cc-94cc3052a706",
                 Text = "comparo",
             },
         },
@@ -114,7 +114,7 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "c2804ce6-2984-479c-9b39-c053bab62dbb",
+        Id = "845d1693-bdcc-4926-88c5-be145bf17fac",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -123,7 +123,7 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
         Metadata = new List<MessagingMetadata>() {},
         Reactions = new List<MessagingReaction>() {},
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-17T12:02:04.285Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T19:15:36.345Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     connectionId: "<id>"
@@ -153,7 +153,7 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
 
 ## GetMessagingChannel
 
-Retrieve a channel
+Retrieves a single MessagingChannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -195,7 +195,7 @@ var res = await sdk.Messaging.GetMessagingChannelAsync(
 
 ## GetMessagingMessage
 
-Retrieve a message
+Retrieves a single MessagingMessage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -237,7 +237,7 @@ var res = await sdk.Messaging.GetMessagingMessageAsync(
 
 ## ListMessagingChannels
 
-List all channels
+Returns a list of MessagingChannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -278,7 +278,7 @@ var res = await sdk.Messaging.ListMessagingChannelsAsync(req);
 
 ## ListMessagingMessages
 
-List all messages
+Returns a list of MessagingMessages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -319,7 +319,7 @@ var res = await sdk.Messaging.ListMessagingMessagesAsync(req);
 
 ## PatchMessagingChannel
 
-Update a channel
+Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
 
 ### Example Usage
 
@@ -340,13 +340,13 @@ PatchMessagingChannelRequest req = new PatchMessagingChannelRequest() {
         CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
         Description = "Dolores tutis.",
         HasSubchannels = true,
-        Id = "487bc195-0fa7-40b1-9f60-e53f78b34677",
+        Id = "e071198b-429f-4c89-8e7a-77564852cf2e",
         IsActive = false,
         IsPrivate = true,
         Members = new List<MessagingMember>() {},
         Metadata = new List<MessagingMetadata>() {},
         Name = "tego",
-        UpdatedAt = System.DateTime.Parse("2026-05-21T14:07:46.204Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T08:47:08.859Z").ToUniversalTime(),
         WebUrl = "https://svelte-rule.name/",
     },
     ConnectionId = "<id>",
@@ -376,7 +376,7 @@ var res = await sdk.Messaging.PatchMessagingChannelAsync(req);
 
 ## PatchMessagingEvent
 
-Update an event
+Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -399,7 +399,7 @@ PatchMessagingEventRequest req = new PatchMessagingEventRequest() {
             Name = "",
         },
         CreatedAt = System.DateTime.Parse("2019-05-30T19:44:46.461Z").ToUniversalTime(),
-        Id = "aa1d94db-f54f-4b91-840b-26a6adbdef7e",
+        Id = "660e2307-d1e2-4036-9528-704bb83bb610",
         IsReplacingOriginal = false,
         Metadata = new List<MessagingMetadata>() {},
         Type = MessagingEventType.ButtonClick,
@@ -431,7 +431,7 @@ var res = await sdk.Messaging.PatchMessagingEventAsync(req);
 
 ## PatchMessagingMessage
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -451,17 +451,17 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "f40b36ad-0dbc-4d00-97de-52b0ba4f53c1",
+                ContentIdentifier = "241408e6-43f9-4b24-af6e-3965429185c1",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+                MessageId = "15edee8d-451e-4064-86ec-1b65dac5edfe",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "23ec18af-dbb6-4ba5-8e5f-dc6d713e3ffe",
+                Id = "191ae686-e2a5-4e5c-bf5c-fd7ef0d4e02d",
                 Text = "comparo",
             },
         },
@@ -469,7 +469,7 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+        Id = "15edee8d-451e-4064-86ec-1b65dac5edfe",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -478,7 +478,7 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
         Metadata = new List<MessagingMetadata>() {},
         Reactions = new List<MessagingReaction>() {},
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-17T12:02:04.295Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T19:15:36.353Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     ConnectionId = "<id>",
@@ -508,7 +508,7 @@ var res = await sdk.Messaging.PatchMessagingMessageAsync(req);
 
 ## RemoveMessagingChannel
 
-Remove a channel
+Deletes the MessagingChannel identified by `id`.
 
 ### Example Usage
 
@@ -548,7 +548,7 @@ var res = await sdk.Messaging.RemoveMessagingChannelAsync(
 
 ## RemoveMessagingMessage
 
-Remove a message
+Deletes the MessagingMessage identified by `id`.
 
 ### Example Usage
 
@@ -588,7 +588,7 @@ var res = await sdk.Messaging.RemoveMessagingMessageAsync(
 
 ## UpdateMessagingChannel
 
-Update a channel
+Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
 
 ### Example Usage
 
@@ -609,13 +609,13 @@ UpdateMessagingChannelRequest req = new UpdateMessagingChannelRequest() {
         CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
         Description = "Dolores tutis.",
         HasSubchannels = true,
-        Id = "487bc195-0fa7-40b1-9f60-e53f78b34677",
+        Id = "e071198b-429f-4c89-8e7a-77564852cf2e",
         IsActive = false,
         IsPrivate = true,
         Members = new List<MessagingMember>() {},
         Metadata = new List<MessagingMetadata>() {},
         Name = "tego",
-        UpdatedAt = System.DateTime.Parse("2026-05-21T14:07:46.204Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T08:47:08.859Z").ToUniversalTime(),
         WebUrl = "https://svelte-rule.name/",
     },
     ConnectionId = "<id>",
@@ -645,7 +645,7 @@ var res = await sdk.Messaging.UpdateMessagingChannelAsync(req);
 
 ## UpdateMessagingEvent
 
-Update an event
+Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -668,7 +668,7 @@ UpdateMessagingEventRequest req = new UpdateMessagingEventRequest() {
             Name = "",
         },
         CreatedAt = System.DateTime.Parse("2019-05-30T19:44:46.461Z").ToUniversalTime(),
-        Id = "aa1d94db-f54f-4b91-840b-26a6adbdef7e",
+        Id = "660e2307-d1e2-4036-9528-704bb83bb610",
         IsReplacingOriginal = false,
         Metadata = new List<MessagingMetadata>() {},
         Type = MessagingEventType.ButtonClick,
@@ -700,7 +700,7 @@ var res = await sdk.Messaging.UpdateMessagingEventAsync(req);
 
 ## UpdateMessagingMessage
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -720,17 +720,17 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "f40b36ad-0dbc-4d00-97de-52b0ba4f53c1",
+                ContentIdentifier = "241408e6-43f9-4b24-af6e-3965429185c1",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+                MessageId = "15edee8d-451e-4064-86ec-1b65dac5edfe",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "23ec18af-dbb6-4ba5-8e5f-dc6d713e3ffe",
+                Id = "191ae686-e2a5-4e5c-bf5c-fd7ef0d4e02d",
                 Text = "comparo",
             },
         },
@@ -738,7 +738,7 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "9818c02c-9a87-4d9f-aa96-c95f7b2b7789",
+        Id = "15edee8d-451e-4064-86ec-1b65dac5edfe",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -747,7 +747,7 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
         Metadata = new List<MessagingMetadata>() {},
         Reactions = new List<MessagingReaction>() {},
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-17T12:02:04.295Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T19:15:36.353Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     ConnectionId = "<id>",

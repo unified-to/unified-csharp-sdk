@@ -52,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("space_id")]
         public string? SpaceId { get; set; }
 
+        /// <summary>
+        /// The page's title.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 

@@ -13,7 +13,7 @@
 
 ## CreateHrisBenefit
 
-Create a benefit
+Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
 
 ### Example Usage
 
@@ -38,13 +38,13 @@ var res = await sdk.Benefit.CreateHrisBenefitAsync(
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "1d2e4abb-08c1-4243-98f8-a00097488dd2",
+        Id = "f0c55385-1c25-4a9a-a731-d0db6db055a3",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-20T20:28:10.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-21T05:53:44.405Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -73,7 +73,7 @@ var res = await sdk.Benefit.CreateHrisBenefitAsync(
 
 ## GetHrisBenefit
 
-Retrieve a benefit
+Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +115,7 @@ var res = await sdk.Benefit.GetHrisBenefitAsync(
 
 ## ListHrisBenefits
 
-List all benefits
+Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ var res = await sdk.Benefit.ListHrisBenefitsAsync(req);
 
 ## PatchHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -182,13 +182,13 @@ PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "2e0d9afe-7bbf-4a38-a044-111797969279",
+        Id = "c05b68e1-d212-4f9d-b2fd-1429e6465003",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-20T20:28:10.314Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-21T05:53:44.412Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -217,7 +217,7 @@ var res = await sdk.Benefit.PatchHrisBenefitAsync(req);
 
 ## RemoveHrisBenefit
 
-Remove a benefit
+Deletes the HrisBenefit identified by `id`.
 
 ### Example Usage
 
@@ -257,7 +257,7 @@ var res = await sdk.Benefit.RemoveHrisBenefitAsync(
 
 ## UpdateHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -283,13 +283,13 @@ UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
         Frequency = HrisBenefitFrequency.Month,
-        Id = "2e0d9afe-7bbf-4a38-a044-111797969279",
+        Id = "c05b68e1-d212-4f9d-b2fd-1429e6465003",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
         Type = HrisBenefitType.Other,
-        UpdatedAt = System.DateTime.Parse("2023-03-20T20:28:10.314Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-21T05:53:44.412Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

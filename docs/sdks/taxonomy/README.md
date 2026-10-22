@@ -11,7 +11,7 @@
 
 ## CreateHrisTaxonomy
 
-Create a taxonomy
+Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
 
 ### Example Usage
 
@@ -35,13 +35,13 @@ var res = await sdk.Taxonomy.CreateHrisTaxonomyAsync(
         CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
         Description = "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
         Domain = "Health",
-        Id = "86315234-1fd4-4aaa-8dbe-eb7fa5b5f4d1",
+        Id = "763eb688-6049-4980-a573-29a15979eff5",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "International Functionality Architect",
         Subcategory = "Marble",
         Type = HrisTaxonomyType.Knowledge,
-        UpdatedAt = System.DateTime.Parse("2023-05-29T07:28:35.283Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-29T12:07:45.014Z").ToUniversalTime(),
         Url = "https://fixed-membership.biz/",
     },
     connectionId: "<id>"
@@ -71,7 +71,7 @@ var res = await sdk.Taxonomy.CreateHrisTaxonomyAsync(
 
 ## GetHrisTaxonomy
 
-Retrieve a taxonomy
+Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +113,7 @@ var res = await sdk.Taxonomy.GetHrisTaxonomyAsync(
 
 ## ListCrmTaxonomies
 
-List all taxonomies
+Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -154,7 +154,7 @@ var res = await sdk.Taxonomy.ListCrmTaxonomiesAsync(req);
 
 ## ListHrisTaxonomies
 
-List all taxonomies
+Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

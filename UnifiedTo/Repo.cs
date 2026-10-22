@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a branch.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
+        /// </remarks>
         /// <param name="repoBranch">A <see cref="RepoBranch"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a commit.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
+        /// </remarks>
         /// <param name="repoCommit">A <see cref="RepoCommit"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
+        /// </remarks>
         /// <param name="repoOrganization">A <see cref="RepoOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
+        /// </remarks>
         /// <param name="repoPullrequest">A <see cref="RepoPullrequest"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a repository.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
+        /// </remarks>
         /// <param name="repoRepository">A <see cref="RepoRepository"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a branch.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Branch.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a commit.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Commit.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pullrequest.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a repository.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Repository.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all branches.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoBranchesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoBranchesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -228,6 +261,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all commits.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoCommitsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoCommitsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -239,6 +275,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -250,6 +289,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all pullrequests.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoPullrequestsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoPullrequestsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -261,6 +303,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all repositories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoRepositoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoRepositoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -272,6 +317,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a branch.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoBranchRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoBranchResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -283,6 +331,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a commit.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoCommitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoCommitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -294,6 +345,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -305,6 +359,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoPullrequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoPullrequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -316,6 +373,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a repository.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoRepositoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoRepositoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -327,6 +387,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a branch.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoBranch identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Branch.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoBranchResponse"/> response envelope when completed.</returns>
@@ -338,6 +401,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a commit.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoCommit identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Commit.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoCommitResponse"/> response envelope when completed.</returns>
@@ -349,6 +415,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoOrganizationResponse"/> response envelope when completed.</returns>
@@ -360,6 +429,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoPullrequest identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pullrequest.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoPullrequestResponse"/> response envelope when completed.</returns>
@@ -371,6 +443,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a repository.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoRepository identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Repository.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoRepositoryResponse"/> response envelope when completed.</returns>
@@ -382,6 +457,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a branch.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoBranchRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoBranchResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -393,6 +471,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a commit.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoCommitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoCommitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -404,6 +485,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -415,6 +499,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoPullrequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoPullrequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -426,6 +513,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a repository.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoRepositoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoRepositoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -451,6 +541,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a branch.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
+        /// </remarks>
         /// <param name="repoBranch">A <see cref="RepoBranch"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -579,6 +672,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a commit.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
+        /// </remarks>
         /// <param name="repoCommit">A <see cref="RepoCommit"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -707,6 +803,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
+        /// </remarks>
         /// <param name="repoOrganization">A <see cref="RepoOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -835,6 +934,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
+        /// </remarks>
         /// <param name="repoPullrequest">A <see cref="RepoPullrequest"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -963,6 +1065,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a repository.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
+        /// </remarks>
         /// <param name="repoRepository">A <see cref="RepoRepository"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1091,6 +1196,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a branch.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Branch.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1213,6 +1321,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a commit.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Commit.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1335,6 +1446,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1457,6 +1571,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pullrequest.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1579,6 +1696,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a repository.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Repository.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1701,6 +1821,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all branches.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoBranchesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoBranchesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1806,6 +1929,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all commits.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoCommitsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoCommitsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1911,6 +2037,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2018,6 +2147,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all pullrequests.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoPullrequestsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoPullrequestsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2123,6 +2255,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all repositories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoRepositoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoRepositoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2228,6 +2363,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a branch.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoBranchRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoBranchResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2339,6 +2477,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a commit.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoCommitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoCommitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2450,6 +2591,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2563,6 +2707,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoPullrequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoPullrequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2674,6 +2821,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a repository.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoRepositoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoRepositoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2785,6 +2935,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a branch.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoBranch identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Branch.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoBranchResponse"/> response envelope when completed.</returns>
@@ -2888,6 +3041,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a commit.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoCommit identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Commit.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoCommitResponse"/> response envelope when completed.</returns>
@@ -2991,6 +3147,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoOrganizationResponse"/> response envelope when completed.</returns>
@@ -3094,6 +3253,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoPullrequest identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Pullrequest.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoPullrequestResponse"/> response envelope when completed.</returns>
@@ -3197,6 +3359,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a repository.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoRepository identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Repository.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoRepositoryResponse"/> response envelope when completed.</returns>
@@ -3300,6 +3465,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a branch.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoBranchRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoBranchResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3411,6 +3579,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a commit.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoCommitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoCommitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3522,6 +3693,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3635,6 +3809,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pullrequest.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoPullrequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoPullrequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3748,6 +3925,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a repository.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoRepositoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoRepositoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

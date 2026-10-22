@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The data type of the custom field's values.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class MetadataMetadataFormat : IEquatable<MetadataMetadataFormat>
     {

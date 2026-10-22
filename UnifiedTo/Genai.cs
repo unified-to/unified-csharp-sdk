@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an agent.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
+        /// </remarks>
         /// <param name="genaiAgent">A <see cref="GenaiAgent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an embedding.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
+        /// </remarks>
         /// <param name="genaiEmbedding">A <see cref="GenaiEmbedding"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a memory.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
+        /// </remarks>
         /// <param name="genaiMemory">A <see cref="GenaiMemory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
+        /// </remarks>
         /// <param name="genaiOrganization">A <see cref="GenaiOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
+        /// </remarks>
         /// <param name="genaiPrompt">A <see cref="GenaiPrompt"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a task.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
+        /// </remarks>
         /// <param name="genaiTask">A <see cref="GenaiTask"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an agent.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agent.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a memory.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a model.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiModel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Model.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a skill.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiSkill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Skill.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a task.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all agents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiAgentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiAgentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -266,6 +305,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all memories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiMemoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiMemoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -277,6 +319,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all models.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiModels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiModelsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiModelsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -288,6 +333,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -299,6 +347,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all skills.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiSkills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiSkillsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiSkillsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -310,6 +361,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tasks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiTasksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiTasksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -321,6 +375,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an agent.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiAgentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiAgentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -332,6 +389,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -343,6 +403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -354,6 +417,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -365,6 +431,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an agent.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiAgent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agent.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiAgentResponse"/> response envelope when completed.</returns>
@@ -376,6 +445,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a memory.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiMemory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiMemoryResponse"/> response envelope when completed.</returns>
@@ -387,6 +459,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiOrganizationResponse"/> response envelope when completed.</returns>
@@ -398,6 +473,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a skill.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiSkill identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Skill.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiSkillResponse"/> response envelope when completed.</returns>
@@ -409,6 +487,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a task.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiTask identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiTaskResponse"/> response envelope when completed.</returns>
@@ -420,6 +501,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an agent.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiAgentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiAgentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -431,6 +515,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -442,6 +529,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -455,6 +545,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -480,6 +573,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an agent.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
+        /// </remarks>
         /// <param name="genaiAgent">A <see cref="GenaiAgent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -608,6 +704,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an embedding.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
+        /// </remarks>
         /// <param name="genaiEmbedding">A <see cref="GenaiEmbedding"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -736,6 +835,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a memory.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
+        /// </remarks>
         /// <param name="genaiMemory">A <see cref="GenaiMemory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -864,6 +966,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
+        /// </remarks>
         /// <param name="genaiOrganization">A <see cref="GenaiOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -992,6 +1097,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
+        /// </remarks>
         /// <param name="genaiPrompt">A <see cref="GenaiPrompt"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1120,6 +1228,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a task.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
+        /// </remarks>
         /// <param name="genaiTask">A <see cref="GenaiTask"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1248,6 +1359,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an agent.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agent.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1370,6 +1484,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a memory.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1492,6 +1609,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a model.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiModel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Model.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1614,6 +1734,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1736,6 +1859,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a skill.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiSkill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Skill.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1858,6 +1984,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a task.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1980,6 +2109,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all agents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiAgentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiAgentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2085,6 +2217,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all memories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiMemoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiMemoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2190,6 +2325,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all models.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiModels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiModelsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiModelsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2295,6 +2433,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2402,6 +2543,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all skills.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiSkills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiSkillsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiSkillsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2507,6 +2651,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tasks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiTasksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiTasksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2612,6 +2759,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an agent.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiAgentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiAgentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2723,6 +2873,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2834,6 +2987,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2947,6 +3103,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3058,6 +3217,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an agent.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiAgent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agent.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiAgentResponse"/> response envelope when completed.</returns>
@@ -3161,6 +3323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a memory.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiMemory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiMemoryResponse"/> response envelope when completed.</returns>
@@ -3264,6 +3429,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiOrganizationResponse"/> response envelope when completed.</returns>
@@ -3367,6 +3535,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a skill.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiSkill identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Skill.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiSkillResponse"/> response envelope when completed.</returns>
@@ -3470,6 +3641,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a task.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiTask identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiTaskResponse"/> response envelope when completed.</returns>
@@ -3573,6 +3747,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an agent.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiAgentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiAgentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3684,6 +3861,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3795,6 +3975,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3908,6 +4091,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

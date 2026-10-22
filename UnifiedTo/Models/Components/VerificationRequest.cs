@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<VerificationMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The ID of the verification package (the check) to run (a VerificationPackage ID).
+        /// </summary>
         [JsonProperty("package_id")]
         public string? PackageId { get; set; }
 
@@ -52,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("profile_date_of_birth")]
         public string? ProfileDateOfBirth { get; set; }
 
+        /// <summary>
+        /// The email addresses of the person being verified.
+        /// </summary>
         [JsonProperty("profile_emails")]
         public List<string>? ProfileEmails { get; set; }
 
@@ -64,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("profile_ip_address")]
         public string? ProfileIpAddress { get; set; }
 
+        /// <summary>
+        /// The full name of the person being verified.
+        /// </summary>
         [JsonProperty("profile_name")]
         public string? ProfileName { get; set; }
 

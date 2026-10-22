@@ -44,7 +44,7 @@
 
 ## CreateCrmCompany
 
-Create a company
+Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
 
 ### Example Usage
 
@@ -90,7 +90,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
             },
         },
         Employees = 4177D,
-        Id = "8c00a300-3be6-4c52-9269-7ad0a8811c0b",
+        Id = "dd31cdf6-f76b-4330-aeab-420e2f0b6ff1",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -104,7 +104,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "4b089547-c718-46ef-bb40-98fc0c781fc8",
+                Id = "e3a12f4f-e1b5-4d55-aa69-5ddd51a15e5d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -125,7 +125,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T03:56:40.927Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.111Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -157,7 +157,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
 
 ## CreateCrmContact
 
-Create a contact
+Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
 
 ### Example Usage
 
@@ -192,7 +192,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
             },
         },
         FirstName = "Mohammad",
-        Id = "2a17266a-ae35-4620-9775-fd254091c73f",
+        Id = "01d55dd9-c5fe-4dd3-a46d-196cb3533715",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -206,7 +206,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "2e81c79b-9557-45ad-82d7-bad66dfb4a5e",
+                Id = "ca1fc40c-da2d-4226-8c04-d7767282ab81",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -226,7 +226,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.977Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.386Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -255,7 +255,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
 
 ## CreateCrmDeal
 
-Create a deal
+Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
 
 ### Example Usage
 
@@ -273,12 +273,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Crm.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T10:10:00.332Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-31T12:48:39.602Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.887Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.768Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "9d20cc08-53c9-4f73-b633-7eb5fd228ab7",
+        Id = "d5734b69-7092-4361-8f37-f9826abe82eb",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -287,7 +287,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "21955c2d-f36b-414b-9d2b-f534e9b2272d",
+                Id = "63233597-c349-4bd3-a4ee-dc8d734ff423",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -302,7 +302,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-11T21:19:19.397Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.012Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     connectionId: "<id>"
@@ -332,7 +332,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
 
 ## CreateCrmEvent
 
-Create an event
+Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
 
 ### Example Usage
 
@@ -352,13 +352,13 @@ var res = await sdk.Crm.CreateCrmEventAsync(
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T00:59:53.650Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.598Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "93c219bb-1032-4722-9091-6ba16501c012",
+        Id = "539ad616-e6dc-4089-acf9-2d25041d5d7d",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-11T13:12:05.824Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.601Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -387,7 +387,7 @@ var res = await sdk.Crm.CreateCrmEventAsync(
 
 ## CreateCrmLead
 
-Create a lead
+Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
 
 ### Example Usage
 
@@ -421,7 +421,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "306d9ac4-a773-42a8-8437-30821be97079",
+        Id = "d0ea7f22-d8c1-4515-bcf6-1ad4e2e75802",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -435,7 +435,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c62862d4-b27c-486d-b6df-a3c5d98011dd",
+                Id = "51615d51-54f8-439f-9fdc-e14540f41363",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -461,7 +461,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T21:36:13.965Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.308Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -490,7 +490,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
 
 ## CreateCrmPipeline
 
-Create a pipeline
+Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
 
 ### Example Usage
 
@@ -510,7 +510,7 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "3856f37f-bb76-41af-8c59-558e0521fdbe",
+        Id = "10591808-59c1-4e3a-a5d6-4e3342e22d0b",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -520,13 +520,13 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "edca416e-4810-4d64-a410-9f5b713ef26a",
+                Id = "656770a4-f402-4d92-b17d-673ac784f505",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-10T12:40:31.977Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.653Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T06:07:06.990Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.106Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -555,7 +555,7 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
 
 ## GetCrmCompany
 
-Retrieve a company
+Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -597,7 +597,7 @@ var res = await sdk.Crm.GetCrmCompanyAsync(
 
 ## GetCrmContact
 
-Retrieve a contact
+Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -639,7 +639,7 @@ var res = await sdk.Crm.GetCrmContactAsync(
 
 ## GetCrmDeal
 
-Retrieve a deal
+Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -681,7 +681,7 @@ var res = await sdk.Crm.GetCrmDealAsync(
 
 ## GetCrmEvent
 
-Retrieve an event
+Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -723,7 +723,7 @@ var res = await sdk.Crm.GetCrmEventAsync(
 
 ## GetCrmLead
 
-Retrieve a lead
+Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -765,7 +765,7 @@ var res = await sdk.Crm.GetCrmLeadAsync(
 
 ## GetCrmPipeline
 
-Retrieve a pipeline
+Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -807,7 +807,7 @@ var res = await sdk.Crm.GetCrmPipelineAsync(
 
 ## ListCrmCompanies
 
-List all companies
+Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -848,7 +848,7 @@ var res = await sdk.Crm.ListCrmCompaniesAsync(req);
 
 ## ListCrmContacts
 
-List all contacts
+Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -889,7 +889,7 @@ var res = await sdk.Crm.ListCrmContactsAsync(req);
 
 ## ListCrmDeals
 
-List all deals
+Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -930,7 +930,7 @@ var res = await sdk.Crm.ListCrmDealsAsync(req);
 
 ## ListCrmEvents
 
-List all events
+Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -971,7 +971,7 @@ var res = await sdk.Crm.ListCrmEventsAsync(req);
 
 ## ListCrmLeads
 
-List all leads
+Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1012,7 +1012,7 @@ var res = await sdk.Crm.ListCrmLeadsAsync(req);
 
 ## ListCrmPipelines
 
-List all pipelines
+Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1053,7 +1053,7 @@ var res = await sdk.Crm.ListCrmPipelinesAsync(req);
 
 ## ListCrmTaxonomies
 
-List all taxonomies
+Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1094,7 +1094,7 @@ var res = await sdk.Crm.ListCrmTaxonomiesAsync(req);
 
 ## PatchCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1141,7 +1141,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "20b975ae-a20d-4b12-958d-35ceb1b8f52f",
+        Id = "a336f93e-4139-4ddb-8997-b241f5380661",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1155,7 +1155,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "5f5357c5-bce0-4d29-a58f-624b31f33367",
+                Id = "426704ae-175c-4579-90a8-6344aae069ce",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1176,7 +1176,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T03:56:40.942Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.131Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -1208,7 +1208,7 @@ var res = await sdk.Crm.PatchCrmCompanyAsync(req);
 
 ## PatchCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1244,7 +1244,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "840e33b2-a05c-483e-8e30-53d1434ffaa0",
+        Id = "b3351907-6b1f-4ba6-b15e-46f54cdb4660",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -1258,7 +1258,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "fb6e0969-a00b-4511-aff5-50e9b75f4664",
+                Id = "c725dffa-914c-4a67-abdd-be4eb9bfce9c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1278,7 +1278,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.978Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.387Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1307,7 +1307,7 @@ var res = await sdk.Crm.PatchCrmContactAsync(req);
 
 ## PatchCrmDeal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -1326,12 +1326,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T10:10:00.336Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-31T12:48:39.613Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.891Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.781Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "6c0bb7e4-858c-409f-9a13-444cb2aba4a4",
+        Id = "e53edb19-8ac2-4eb3-a662-68df79aecaff",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -1340,7 +1340,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "74548368-7d1b-41d5-9cb5-95364e2ddd88",
+                Id = "332b0cd3-a961-4dc1-bd27-0e3afdaf8e72",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1355,7 +1355,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-11T21:19:19.404Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.020Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -1385,7 +1385,7 @@ var res = await sdk.Crm.PatchCrmDealAsync(req);
 
 ## PatchCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1406,13 +1406,13 @@ PatchCrmEventRequest req = new PatchCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T00:59:53.674Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.625Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "8c92e6d4-a43b-4881-a3f9-abade98dc352",
+        Id = "606fdccd-fbf1-4444-b5a8-d3ab3cbd498a",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-11T13:12:05.858Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1441,7 +1441,7 @@ var res = await sdk.Crm.PatchCrmEventAsync(req);
 
 ## PatchCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -1476,7 +1476,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "39d4598c-a669-4809-aea2-2aa2e970addf",
+        Id = "494568b4-675b-4841-8867-565fbce30a02",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -1490,7 +1490,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c70f003d-b03d-4aa1-b643-c395b7b7f2ed",
+                Id = "9adb865a-c20d-482f-9dca-da0e6e582ff8",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1516,7 +1516,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T21:36:13.967Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.309Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1545,7 +1545,7 @@ var res = await sdk.Crm.PatchCrmLeadAsync(req);
 
 ## PatchCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -1566,7 +1566,7 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "110bd91a-1a1e-493f-a449-0db3a73c3811",
+        Id = "33ab3e86-cb90-496d-8f33-72c34af17e83",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -1576,13 +1576,13 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "0c4beff6-ae22-4221-a16a-7501535b131a",
+                Id = "bcf35b65-992d-4396-bbbc-f4ad0fc0c2d0",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-10T12:40:31.984Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.659Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T06:07:06.997Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.113Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1611,7 +1611,7 @@ var res = await sdk.Crm.PatchCrmPipelineAsync(req);
 
 ## RemoveCrmCompany
 
-Remove a company
+Deletes the CrmCompany identified by `id`.
 
 ### Example Usage
 
@@ -1651,7 +1651,7 @@ var res = await sdk.Crm.RemoveCrmCompanyAsync(
 
 ## RemoveCrmContact
 
-Remove a contact
+Deletes the CrmContact identified by `id`.
 
 ### Example Usage
 
@@ -1691,7 +1691,7 @@ var res = await sdk.Crm.RemoveCrmContactAsync(
 
 ## RemoveCrmDeal
 
-Remove a deal
+Deletes the CrmDeal identified by `id`.
 
 ### Example Usage
 
@@ -1731,7 +1731,7 @@ var res = await sdk.Crm.RemoveCrmDealAsync(
 
 ## RemoveCrmEvent
 
-Remove an event
+Deletes the CrmEvent identified by `id`.
 
 ### Example Usage
 
@@ -1771,7 +1771,7 @@ var res = await sdk.Crm.RemoveCrmEventAsync(
 
 ## RemoveCrmLead
 
-Remove a lead
+Deletes the CrmLead identified by `id`.
 
 ### Example Usage
 
@@ -1811,7 +1811,7 @@ var res = await sdk.Crm.RemoveCrmLeadAsync(
 
 ## RemoveCrmPipeline
 
-Remove a pipeline
+Deletes the CrmPipeline identified by `id`.
 
 ### Example Usage
 
@@ -1851,7 +1851,7 @@ var res = await sdk.Crm.RemoveCrmPipelineAsync(
 
 ## UpdateCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1898,7 +1898,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "20b975ae-a20d-4b12-958d-35ceb1b8f52f",
+        Id = "a336f93e-4139-4ddb-8997-b241f5380661",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1912,7 +1912,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "5f5357c5-bce0-4d29-a58f-624b31f33367",
+                Id = "426704ae-175c-4579-90a8-6344aae069ce",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1933,7 +1933,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T03:56:40.942Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.131Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -1965,7 +1965,7 @@ var res = await sdk.Crm.UpdateCrmCompanyAsync(req);
 
 ## UpdateCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -2001,7 +2001,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "840e33b2-a05c-483e-8e30-53d1434ffaa0",
+        Id = "b3351907-6b1f-4ba6-b15e-46f54cdb4660",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -2015,7 +2015,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "fb6e0969-a00b-4511-aff5-50e9b75f4664",
+                Id = "c725dffa-914c-4a67-abdd-be4eb9bfce9c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2035,7 +2035,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.978Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.387Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2064,7 +2064,7 @@ var res = await sdk.Crm.UpdateCrmContactAsync(req);
 
 ## UpdateCrmDeal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -2083,12 +2083,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T10:10:00.336Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-31T12:48:39.613Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.891Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.781Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "6c0bb7e4-858c-409f-9a13-444cb2aba4a4",
+        Id = "e53edb19-8ac2-4eb3-a662-68df79aecaff",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -2097,7 +2097,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "74548368-7d1b-41d5-9cb5-95364e2ddd88",
+                Id = "332b0cd3-a961-4dc1-bd27-0e3afdaf8e72",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2112,7 +2112,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-11T21:19:19.404Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.020Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -2142,7 +2142,7 @@ var res = await sdk.Crm.UpdateCrmDealAsync(req);
 
 ## UpdateCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2163,13 +2163,13 @@ UpdateCrmEventRequest req = new UpdateCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T00:59:53.674Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.625Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "8c92e6d4-a43b-4881-a3f9-abade98dc352",
+        Id = "606fdccd-fbf1-4444-b5a8-d3ab3cbd498a",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-11T13:12:05.858Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2198,7 +2198,7 @@ var res = await sdk.Crm.UpdateCrmEventAsync(req);
 
 ## UpdateCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -2233,7 +2233,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "39d4598c-a669-4809-aea2-2aa2e970addf",
+        Id = "494568b4-675b-4841-8867-565fbce30a02",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -2247,7 +2247,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c70f003d-b03d-4aa1-b643-c395b7b7f2ed",
+                Id = "9adb865a-c20d-482f-9dca-da0e6e582ff8",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2273,7 +2273,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T21:36:13.967Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.309Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2302,7 +2302,7 @@ var res = await sdk.Crm.UpdateCrmLeadAsync(req);
 
 ## UpdateCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -2323,7 +2323,7 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "110bd91a-1a1e-493f-a449-0db3a73c3811",
+        Id = "33ab3e86-cb90-496d-8f33-72c34af17e83",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -2333,13 +2333,13 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "0c4beff6-ae22-4221-a16a-7501535b131a",
+                Id = "bcf35b65-992d-4396-bbbc-f4ad0fc0c2d0",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-10T12:40:31.984Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.659Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T06:07:06.997Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.113Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

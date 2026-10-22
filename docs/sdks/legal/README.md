@@ -31,7 +31,7 @@
 
 ## CreateLegalExpense
 
-Create an expense
+Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ var res = await sdk.Legal.CreateLegalExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "97aef49d-e6ae-4f42-b72f-0f4640914372",
+        Id = "0ffb5978-1521-40f4-9bbe-c5cbc9217b1e",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -60,7 +60,7 @@ var res = await sdk.Legal.CreateLegalExpenseAsync(
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.179Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-31T11:50:10.543Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -89,7 +89,7 @@ var res = await sdk.Legal.CreateLegalExpenseAsync(
 
 ## CreateLegalMatter
 
-Create a matter
+Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
 
 ### Example Usage
 
@@ -113,11 +113,11 @@ var res = await sdk.Legal.CreateLegalMatterAsync(
         CreatedAt = System.DateTime.Parse("2023-05-28T04:10:42.375Z").ToUniversalTime(),
         Currency = "BOB",
         Description = "Speciosus cresco aut cotidie temeritas arma.",
-        Id = "c5566fec-015a-41f6-84d5-6c18f5f8495a",
+        Id = "8a44dd1f-b1a9-4c18-a174-a84573797f2a",
         Metadata = new List<LegalMetadata>() {},
         Name = "Walter v. Franecki - Spinka",
         Number = "2023-3062",
-        OpenedAt = System.DateTime.Parse("2023-07-05T06:19:13.749Z").ToUniversalTime(),
+        OpenedAt = System.DateTime.Parse("2023-07-05T06:59:01.030Z").ToUniversalTime(),
         Parties = new List<LegalParty>() {
             new LegalParty() {
                 Description = "Urban Walter",
@@ -126,8 +126,8 @@ var res = await sdk.Legal.CreateLegalMatterAsync(
         },
         Stage = "currus",
         Status = LegalMatterStatus.Open,
-        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-28T21:28:28.739Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2023-07-17T10:06:04.032Z").ToUniversalTime(),
+        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-29T19:05:41.236Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T10:58:33.298Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -156,7 +156,7 @@ var res = await sdk.Legal.CreateLegalMatterAsync(
 
 ## CreateLegalPracticearea
 
-Create a practicearea
+Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
 
 ### Example Usage
 
@@ -175,11 +175,11 @@ var res = await sdk.Legal.CreateLegalPracticeareaAsync(
     legalPracticearea: new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "a3ed62e9-f276-492d-b3e4-9dadd80eb986",
+        Id = "466d5981-62c7-4632-b5ae-da7e7a157976",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.352Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-28T08:17:40.601Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -208,7 +208,7 @@ var res = await sdk.Legal.CreateLegalPracticeareaAsync(
 
 ## CreateLegalTimeentry
 
-Create a timeentry
+Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
 
 ### Example Usage
 
@@ -229,13 +229,13 @@ var res = await sdk.Legal.CreateLegalTimeentryAsync(
         CreatedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
         Currency = "ZAR",
         Description = "Ea derideo adulatio torrens.",
-        Id = "cac4ad52-6a0d-47c4-a1ca-1733f7a52179",
+        Id = "ea8180d9-ad33-481b-8ee5-e40150817db6",
         IsBillable = true,
         Metadata = new List<LegalMetadata>() {},
         Minutes = 390D,
         RateAmount = 637D,
         TotalAmount = 4140.5D,
-        UpdatedAt = System.DateTime.Parse("2022-06-30T01:49:59.710Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-30T02:33:44.619Z").ToUniversalTime(),
         WorkedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
     },
     connectionId: "<id>"
@@ -265,7 +265,7 @@ var res = await sdk.Legal.CreateLegalTimeentryAsync(
 
 ## GetLegalExpense
 
-Retrieve an expense
+Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -307,7 +307,7 @@ var res = await sdk.Legal.GetLegalExpenseAsync(
 
 ## GetLegalMatter
 
-Retrieve a matter
+Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -349,7 +349,7 @@ var res = await sdk.Legal.GetLegalMatterAsync(
 
 ## GetLegalPracticearea
 
-Retrieve a practicearea
+Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -391,7 +391,7 @@ var res = await sdk.Legal.GetLegalPracticeareaAsync(
 
 ## GetLegalTimeentry
 
-Retrieve a timeentry
+Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -433,7 +433,7 @@ var res = await sdk.Legal.GetLegalTimeentryAsync(
 
 ## ListLegalExpenses
 
-List all expenses
+Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -474,7 +474,7 @@ var res = await sdk.Legal.ListLegalExpensesAsync(req);
 
 ## ListLegalMatters
 
-List all matters
+Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -515,7 +515,7 @@ var res = await sdk.Legal.ListLegalMattersAsync(req);
 
 ## ListLegalPracticeareas
 
-List all practiceareas
+Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -556,7 +556,7 @@ var res = await sdk.Legal.ListLegalPracticeareasAsync(req);
 
 ## ListLegalTimeentries
 
-List all timeentries
+Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -597,7 +597,7 @@ var res = await sdk.Legal.ListLegalTimeentriesAsync(req);
 
 ## PatchLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -619,7 +619,7 @@ PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "c4beccdb-3c40-4539-9db2-e9bd2eb61f84",
+        Id = "ed6e659c-7917-4f90-8c80-14cfb5313635",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -627,7 +627,7 @@ PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.185Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-31T11:50:10.550Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -656,7 +656,7 @@ var res = await sdk.Legal.PatchLegalExpenseAsync(req);
 
 ## PatchLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -681,11 +681,11 @@ PatchLegalMatterRequest req = new PatchLegalMatterRequest() {
         CreatedAt = System.DateTime.Parse("2023-05-28T04:10:42.375Z").ToUniversalTime(),
         Currency = "BOB",
         Description = "Speciosus cresco aut cotidie temeritas arma.",
-        Id = "9c754b9c-cdaf-4346-b0a9-10ab91a424e2",
+        Id = "283e2e01-f157-4f43-b3fd-3513bf741b26",
         Metadata = new List<LegalMetadata>() {},
         Name = "Walter v. Franecki - Spinka",
         Number = "2023-3062",
-        OpenedAt = System.DateTime.Parse("2023-07-05T06:19:13.750Z").ToUniversalTime(),
+        OpenedAt = System.DateTime.Parse("2023-07-05T06:59:01.031Z").ToUniversalTime(),
         Parties = new List<LegalParty>() {
             new LegalParty() {
                 Description = "Urban Walter",
@@ -694,8 +694,8 @@ PatchLegalMatterRequest req = new PatchLegalMatterRequest() {
         },
         Stage = "currus",
         Status = LegalMatterStatus.Open,
-        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-28T21:28:28.755Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2023-07-17T10:06:04.033Z").ToUniversalTime(),
+        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-29T19:05:41.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T10:58:33.299Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -724,7 +724,7 @@ var res = await sdk.Legal.PatchLegalMatterAsync(req);
 
 ## PatchLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -744,11 +744,11 @@ PatchLegalPracticeareaRequest req = new PatchLegalPracticeareaRequest() {
     LegalPracticearea = new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "f3f674d1-4502-40ad-b68a-63a2a30f9d4d",
+        Id = "2cbadea4-61e9-4ca6-b813-138d862d2226",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.363Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-28T08:17:40.612Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -777,7 +777,7 @@ var res = await sdk.Legal.PatchLegalPracticeareaAsync(req);
 
 ## PatchLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -799,13 +799,13 @@ PatchLegalTimeentryRequest req = new PatchLegalTimeentryRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
         Currency = "ZAR",
         Description = "Ea derideo adulatio torrens.",
-        Id = "b8156d90-18bd-411e-a58e-d2f3efd26f91",
+        Id = "abf17726-0d86-4a24-8cb5-5abbfa8510fe",
         IsBillable = true,
         Metadata = new List<LegalMetadata>() {},
         Minutes = 390D,
         RateAmount = 637D,
         TotalAmount = 4140.5D,
-        UpdatedAt = System.DateTime.Parse("2022-06-30T01:49:59.711Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-30T02:33:44.620Z").ToUniversalTime(),
         WorkedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
@@ -835,7 +835,7 @@ var res = await sdk.Legal.PatchLegalTimeentryAsync(req);
 
 ## RemoveLegalExpense
 
-Remove an expense
+Deletes the LegalExpense identified by `id`.
 
 ### Example Usage
 
@@ -875,7 +875,7 @@ var res = await sdk.Legal.RemoveLegalExpenseAsync(
 
 ## RemoveLegalMatter
 
-Remove a matter
+Deletes the LegalMatter identified by `id`.
 
 ### Example Usage
 
@@ -915,7 +915,7 @@ var res = await sdk.Legal.RemoveLegalMatterAsync(
 
 ## RemoveLegalPracticearea
 
-Remove a practicearea
+Deletes the LegalPracticearea identified by `id`.
 
 ### Example Usage
 
@@ -955,7 +955,7 @@ var res = await sdk.Legal.RemoveLegalPracticeareaAsync(
 
 ## RemoveLegalTimeentry
 
-Remove a timeentry
+Deletes the LegalTimeentry identified by `id`.
 
 ### Example Usage
 
@@ -995,7 +995,7 @@ var res = await sdk.Legal.RemoveLegalTimeentryAsync(
 
 ## UpdateLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -1017,7 +1017,7 @@ UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "c4beccdb-3c40-4539-9db2-e9bd2eb61f84",
+        Id = "ed6e659c-7917-4f90-8c80-14cfb5313635",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -1025,7 +1025,7 @@ UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.185Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-31T11:50:10.550Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1054,7 +1054,7 @@ var res = await sdk.Legal.UpdateLegalExpenseAsync(req);
 
 ## UpdateLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -1079,11 +1079,11 @@ UpdateLegalMatterRequest req = new UpdateLegalMatterRequest() {
         CreatedAt = System.DateTime.Parse("2023-05-28T04:10:42.375Z").ToUniversalTime(),
         Currency = "BOB",
         Description = "Speciosus cresco aut cotidie temeritas arma.",
-        Id = "9c754b9c-cdaf-4346-b0a9-10ab91a424e2",
+        Id = "283e2e01-f157-4f43-b3fd-3513bf741b26",
         Metadata = new List<LegalMetadata>() {},
         Name = "Walter v. Franecki - Spinka",
         Number = "2023-3062",
-        OpenedAt = System.DateTime.Parse("2023-07-05T06:19:13.750Z").ToUniversalTime(),
+        OpenedAt = System.DateTime.Parse("2023-07-05T06:59:01.031Z").ToUniversalTime(),
         Parties = new List<LegalParty>() {
             new LegalParty() {
                 Description = "Urban Walter",
@@ -1092,8 +1092,8 @@ UpdateLegalMatterRequest req = new UpdateLegalMatterRequest() {
         },
         Stage = "currus",
         Status = LegalMatterStatus.Open,
-        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-28T21:28:28.755Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2023-07-17T10:06:04.033Z").ToUniversalTime(),
+        StatuteOfLimitationsAt = System.DateTime.Parse("2027-06-29T19:05:41.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-17T10:58:33.299Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1122,7 +1122,7 @@ var res = await sdk.Legal.UpdateLegalMatterAsync(req);
 
 ## UpdateLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -1142,11 +1142,11 @@ UpdateLegalPracticeareaRequest req = new UpdateLegalPracticeareaRequest() {
     LegalPracticearea = new LegalPracticearea() {
         Code = "QCA",
         CreatedAt = System.DateTime.Parse("2023-01-28T21:00:26.264Z").ToUniversalTime(),
-        Id = "f3f674d1-4502-40ad-b68a-63a2a30f9d4d",
+        Id = "2cbadea4-61e9-4ca6-b813-138d862d2226",
         Metadata = new List<LegalMetadata>() {},
         Name = "witty Law",
         Type = LegalPracticeareaType.Education,
-        UpdatedAt = System.DateTime.Parse("2025-08-27T17:20:03.363Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-28T08:17:40.612Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1175,7 +1175,7 @@ var res = await sdk.Legal.UpdateLegalPracticeareaAsync(req);
 
 ## UpdateLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -1197,13 +1197,13 @@ UpdateLegalTimeentryRequest req = new UpdateLegalTimeentryRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
         Currency = "ZAR",
         Description = "Ea derideo adulatio torrens.",
-        Id = "b8156d90-18bd-411e-a58e-d2f3efd26f91",
+        Id = "abf17726-0d86-4a24-8cb5-5abbfa8510fe",
         IsBillable = true,
         Metadata = new List<LegalMetadata>() {},
         Minutes = 390D,
         RateAmount = 637D,
         TotalAmount = 4140.5D,
-        UpdatedAt = System.DateTime.Parse("2022-06-30T01:49:59.711Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-30T02:33:44.620Z").ToUniversalTime(),
         WorkedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",

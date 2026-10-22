@@ -13,7 +13,7 @@
 
 ## CreateShippingLabel
 
-Create a label
+Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
 
 ### Example Usage
 
@@ -31,17 +31,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Label.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "8e4506a3-73c2-44be-901d-0d7df2caa297",
+        Id = "497fd9a7-bb5b-4f69-9a27-d165b32df801",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/8e4506a3-73c2-44be-901d-0d7df2caa297.pdf",
+        LabelUrl = "https://labels.example.com/497fd9a7-bb5b-4f69-9a27-d165b32df801.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T21:59:52.526Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.025Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -70,7 +70,7 @@ var res = await sdk.Label.CreateShippingLabelAsync(
 
 ## GetShippingLabel
 
-Retrieve a label
+Retrieves a single ShippingLabel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +112,7 @@ var res = await sdk.Label.GetShippingLabelAsync(
 
 ## ListShippingLabels
 
-List all labels
+Returns a list of ShippingLabels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Label.ListShippingLabelsAsync(req);
 
 ## PatchShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -172,17 +172,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "ce74f0a8-808c-4963-81bc-0ba17b2173a9",
+        Id = "30ef2873-699c-4444-b333-6081f7a58553",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/ce74f0a8-808c-4963-81bc-0ba17b2173a9.pdf",
+        LabelUrl = "https://labels.example.com/30ef2873-699c-4444-b333-6081f7a58553.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T21:59:52.531Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.033Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -211,7 +211,7 @@ var res = await sdk.Label.PatchShippingLabelAsync(req);
 
 ## RemoveShippingLabel
 
-Remove a label
+Deletes the ShippingLabel identified by `id`.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ var res = await sdk.Label.RemoveShippingLabelAsync(
 
 ## UpdateShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -270,17 +270,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "ce74f0a8-808c-4963-81bc-0ba17b2173a9",
+        Id = "30ef2873-699c-4444-b333-6081f7a58553",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/ce74f0a8-808c-4963-81bc-0ba17b2173a9.pdf",
+        LabelUrl = "https://labels.example.com/30ef2873-699c-4444-b333-6081f7a58553.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T21:59:52.531Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.033Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

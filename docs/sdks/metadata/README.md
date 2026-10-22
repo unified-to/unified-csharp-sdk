@@ -13,7 +13,7 @@
 
 ## CreateMetadataMetadata
 
-Create a metadata
+Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     metadataMetadata: new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "37a9a605-6dfb-43f6-a8e9-6281e725021f",
+        Id = "f9725264-5936-452d-b24e-9be74f31e263",
         IsRequired = false,
         Name = "autem",
         ObjectType = "social_review",
@@ -42,7 +42,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-21T23:23:21.623Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-22T14:52:15.769Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -71,7 +71,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
 
 ## GetMetadataMetadata
 
-Retrieve a metadata
+Retrieves a single MetadataMetadata by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +113,7 @@ var res = await sdk.Metadata.GetMetadataMetadataAsync(
 
 ## ListMetadataMetadatas
 
-List all metadatas
+Returns a list of MetadataMetadatas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -154,7 +154,7 @@ var res = await sdk.Metadata.ListMetadataMetadatasAsync(req);
 
 ## PatchMetadataMetadata
 
-Update a metadata
+Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
 
 ### Example Usage
 
@@ -174,7 +174,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "7a62e8f4-4864-46ec-9e82-2dff338266ad",
+        Id = "c9497d49-de74-45bd-a62e-267efddff071",
         IsRequired = false,
         Name = "autem",
         ObjectType = "social_review",
@@ -184,7 +184,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-21T23:23:21.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-22T14:52:15.775Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -213,7 +213,7 @@ var res = await sdk.Metadata.PatchMetadataMetadataAsync(req);
 
 ## RemoveMetadataMetadata
 
-Remove a metadata
+Deletes the MetadataMetadata identified by `id`.
 
 ### Example Usage
 
@@ -253,7 +253,7 @@ var res = await sdk.Metadata.RemoveMetadataMetadataAsync(
 
 ## UpdateMetadataMetadata
 
-Update a metadata
+Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
 
 ### Example Usage
 
@@ -273,7 +273,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "7a62e8f4-4864-46ec-9e82-2dff338266ad",
+        Id = "c9497d49-de74-45bd-a62e-267efddff071",
         IsRequired = false,
         Name = "autem",
         ObjectType = "social_review",
@@ -283,7 +283,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-21T23:23:21.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-22T14:52:15.775Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

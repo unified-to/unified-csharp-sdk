@@ -73,6 +73,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AdsMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The ad's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

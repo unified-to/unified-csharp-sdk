@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a rate.
         /// </summary>
+        /// <remarks>
+        /// Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
+        /// </remarks>
         /// <param name="shippingRate">A <see cref="ShippingRate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -60,6 +63,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a rate.
         /// </summary>
+        /// <remarks>
+        /// Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
+        /// </remarks>
         /// <param name="shippingRate">A <see cref="ShippingRate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>

@@ -13,7 +13,7 @@
 
 ## CreateAtsCandidate
 
-Create a candidate
+Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
 
 ### Example Usage
 
@@ -81,7 +81,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "bdac5f0e-4cbe-48a3-a02c-a8804c61de52",
+        Id = "246cd235-9cf4-48ff-8d5c-baef50290006",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -96,7 +96,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "8b35a3b4-338f-4bed-9372-83f9326a3fea",
+                Id = "74acdbdb-c07f-430e-aa02-632038beae54",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -125,7 +125,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.273Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T21:40:50.783Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     connectionId: "<id>"
@@ -155,7 +155,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
 
 ## GetAtsCandidate
 
-Retrieve a candidate
+Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ var res = await sdk.Candidate.GetAtsCandidateAsync(
 
 ## ListAtsCandidates
 
-List all candidates
+Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -238,7 +238,7 @@ var res = await sdk.Candidate.ListAtsCandidatesAsync(req);
 
 ## PatchAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -307,7 +307,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "6c0d5ef8-c731-4a0a-a92b-3aeceebfc011",
+        Id = "84910f96-e8a5-4473-b5de-1db6c39dac01",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -322,7 +322,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3d6cb52c-8627-4039-a4c8-1d3d2c40c5d6",
+                Id = "204d8705-9a59-4a4d-bf63-a5b0d637883c",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -351,7 +351,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.278Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T21:40:50.788Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",
@@ -381,7 +381,7 @@ var res = await sdk.Candidate.PatchAtsCandidateAsync(req);
 
 ## RemoveAtsCandidate
 
-Remove a candidate
+Deletes the AtsCandidate identified by `id`.
 
 ### Example Usage
 
@@ -421,7 +421,7 @@ var res = await sdk.Candidate.RemoveAtsCandidateAsync(
 
 ## UpdateAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -490,7 +490,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "6c0d5ef8-c731-4a0a-a92b-3aeceebfc011",
+        Id = "84910f96-e8a5-4473-b5de-1db6c39dac01",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -505,7 +505,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3d6cb52c-8627-4039-a4c8-1d3d2c40c5d6",
+                Id = "204d8705-9a59-4a4d-bf63-a5b0d637883c",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -534,7 +534,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T17:50:27.278Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-28T21:40:50.788Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",

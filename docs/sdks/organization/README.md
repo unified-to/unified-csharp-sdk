@@ -27,7 +27,7 @@
 
 ## CreateAdsOrganization
 
-Create an organization
+Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
 
 ### Example Usage
 
@@ -47,13 +47,13 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "b675e8b5-7a45-428d-aca9-b477c8335175",
+        Id = "5601cef8-1525-4dfe-a994-d5035a5a6059",
         Managers = new List<AdsManager>() {},
         Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-29T03:19:41.548Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T22:59:46.570Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -82,7 +82,7 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
 
 ## CreateGenaiOrganization
 
-Create an organization
+Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
 
 ### Example Usage
 
@@ -100,10 +100,10 @@ var res = await sdk.Organization.CreateGenaiOrganizationAsync(
     genaiOrganization: new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "c5cc3acf-9a6d-4488-ae39-423b5f14be62",
+        Id = "0db969ee-5975-4deb-8e0a-f365afb65a00",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:44:44.329Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:52:10.280Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -132,7 +132,7 @@ var res = await sdk.Organization.CreateGenaiOrganizationAsync(
 
 ## CreateRepoOrganization
 
-Create an organization
+Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
 
 ### Example Usage
 
@@ -152,10 +152,10 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "268638dd-46fc-458a-a1c1-c717b15b2793",
+        Id = "bbadfceb-6ce0-488b-9cab-8c83b5b87aab",
         Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T15:12:36.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T20:52:32.280Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     connectionId: "<id>"
@@ -185,7 +185,7 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
 
 ## GetAccountingOrganization
 
-Retrieve an organization
+Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -227,7 +227,7 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 
 ## GetAdsOrganization
 
-Retrieve an organization
+Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -269,7 +269,7 @@ var res = await sdk.Organization.GetAdsOrganizationAsync(
 
 ## GetGenaiOrganization
 
-Retrieve an organization
+Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -311,7 +311,7 @@ var res = await sdk.Organization.GetGenaiOrganizationAsync(
 
 ## GetRepoOrganization
 
-Retrieve an organization
+Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -353,7 +353,7 @@ var res = await sdk.Organization.GetRepoOrganizationAsync(
 
 ## ListAccountingOrganizations
 
-List all organizations
+Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -394,7 +394,7 @@ var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);
 
 ## ListAdsOrganizations
 
-List all organizations
+Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -435,7 +435,7 @@ var res = await sdk.Organization.ListAdsOrganizationsAsync(req);
 
 ## ListGenaiOrganizations
 
-List all organizations
+Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ var res = await sdk.Organization.ListGenaiOrganizationsAsync(req);
 
 ## ListRepoOrganizations
 
-List all organizations
+Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -517,7 +517,7 @@ var res = await sdk.Organization.ListRepoOrganizationsAsync(req);
 
 ## PatchAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -538,13 +538,13 @@ PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "350893bc-0ea6-4868-a9a5-146e332b8520",
+        Id = "b88f23ba-5e1b-4e73-bb08-eb4fa80aed3f",
         Managers = new List<AdsManager>() {},
         Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-29T03:19:41.558Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T22:59:46.586Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -573,7 +573,7 @@ var res = await sdk.Organization.PatchAdsOrganizationAsync(req);
 
 ## PatchGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -592,10 +592,10 @@ PatchGenaiOrganizationRequest req = new PatchGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "e881cf2c-ad2e-4719-81e9-eaaae51f7bd6",
+        Id = "17e87277-6bb2-4ad4-a19e-a14f3777b078",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:44:44.330Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:52:10.282Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -624,7 +624,7 @@ var res = await sdk.Organization.PatchGenaiOrganizationAsync(req);
 
 ## PatchRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -645,10 +645,10 @@ PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "0580b911-e61c-4b4b-bd42-314031432549",
+        Id = "75010e2c-294b-4c50-8298-0b6bea991617",
         Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T15:12:36.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T20:52:32.282Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -678,7 +678,7 @@ var res = await sdk.Organization.PatchRepoOrganizationAsync(req);
 
 ## RemoveAdsOrganization
 
-Remove an organization
+Deletes the AdsOrganization identified by `id`.
 
 ### Example Usage
 
@@ -718,7 +718,7 @@ var res = await sdk.Organization.RemoveAdsOrganizationAsync(
 
 ## RemoveGenaiOrganization
 
-Remove an organization
+Deletes the GenaiOrganization identified by `id`.
 
 ### Example Usage
 
@@ -758,7 +758,7 @@ var res = await sdk.Organization.RemoveGenaiOrganizationAsync(
 
 ## RemoveRepoOrganization
 
-Remove an organization
+Deletes the RepoOrganization identified by `id`.
 
 ### Example Usage
 
@@ -798,7 +798,7 @@ var res = await sdk.Organization.RemoveRepoOrganizationAsync(
 
 ## UpdateAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -819,13 +819,13 @@ UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "350893bc-0ea6-4868-a9a5-146e332b8520",
+        Id = "b88f23ba-5e1b-4e73-bb08-eb4fa80aed3f",
         Managers = new List<AdsManager>() {},
         Metadata = new List<AdsMetadata>() {},
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-03-29T03:19:41.558Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-29T22:59:46.586Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -854,7 +854,7 @@ var res = await sdk.Organization.UpdateAdsOrganizationAsync(req);
 
 ## UpdateGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -873,10 +873,10 @@ UpdateGenaiOrganizationRequest req = new UpdateGenaiOrganizationRequest() {
     GenaiOrganization = new GenaiOrganization() {
         CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
         Description = "Voluptates abeo subseco.",
-        Id = "e881cf2c-ad2e-4719-81e9-eaaae51f7bd6",
+        Id = "17e87277-6bb2-4ad4-a19e-a14f3777b078",
         IsActive = false,
         Name = "officially about",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:44:44.330Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:52:10.282Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -905,7 +905,7 @@ var res = await sdk.Organization.UpdateGenaiOrganizationAsync(req);
 
 ## UpdateRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -926,10 +926,10 @@ UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "0580b911-e61c-4b4b-bd42-314031432549",
+        Id = "75010e2c-294b-4c50-8298-0b6bea991617",
         Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T15:12:36.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T20:52:32.282Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",

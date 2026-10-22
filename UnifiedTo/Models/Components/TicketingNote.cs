@@ -26,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("customer_id")]
         public string? CustomerId { get; set; }
 
+        /// <summary>
+        /// The note's text.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -38,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The ID of the ticket the note is added to (a TicketingTicket ID).
+        /// </summary>
         [JsonProperty("ticket_id")]
         public string? TicketId { get; set; }
 

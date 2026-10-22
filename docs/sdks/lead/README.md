@@ -13,7 +13,7 @@
 
 ## CreateCrmLead
 
-Create a lead
+Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
 
 ### Example Usage
 
@@ -47,7 +47,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "306d9ac4-a773-42a8-8437-30821be97079",
+        Id = "d0ea7f22-d8c1-4515-bcf6-1ad4e2e75802",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -61,7 +61,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c62862d4-b27c-486d-b6df-a3c5d98011dd",
+                Id = "51615d51-54f8-439f-9fdc-e14540f41363",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -87,7 +87,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T21:36:13.965Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.308Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -116,7 +116,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 
 ## GetCrmLead
 
-Retrieve a lead
+Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -158,7 +158,7 @@ var res = await sdk.Lead.GetCrmLeadAsync(
 
 ## ListCrmLeads
 
-List all leads
+Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -199,7 +199,7 @@ var res = await sdk.Lead.ListCrmLeadsAsync(req);
 
 ## PatchCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -234,7 +234,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "39d4598c-a669-4809-aea2-2aa2e970addf",
+        Id = "494568b4-675b-4841-8867-565fbce30a02",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -248,7 +248,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c70f003d-b03d-4aa1-b643-c395b7b7f2ed",
+                Id = "9adb865a-c20d-482f-9dca-da0e6e582ff8",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -274,7 +274,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T21:36:13.967Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.309Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -303,7 +303,7 @@ var res = await sdk.Lead.PatchCrmLeadAsync(req);
 
 ## RemoveCrmLead
 
-Remove a lead
+Deletes the CrmLead identified by `id`.
 
 ### Example Usage
 
@@ -343,7 +343,7 @@ var res = await sdk.Lead.RemoveCrmLeadAsync(
 
 ## UpdateCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -378,7 +378,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "39d4598c-a669-4809-aea2-2aa2e970addf",
+        Id = "494568b4-675b-4841-8867-565fbce30a02",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -392,7 +392,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c70f003d-b03d-4aa1-b643-c395b7b7f2ed",
+                Id = "9adb865a-c20d-482f-9dca-da0e6e582ff8",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -418,7 +418,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T21:36:13.967Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.309Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

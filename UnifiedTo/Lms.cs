@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
+        /// </remarks>
         /// <param name="lmsActivity">A <see cref="LmsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a class.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
+        /// </remarks>
         /// <param name="lmsClass">A <see cref="LmsClass"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
+        /// </remarks>
         /// <param name="lmsCollection">A <see cref="LmsCollection"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a content.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
+        /// </remarks>
         /// <param name="lmsContent">A <see cref="LmsContent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a course.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
+        /// </remarks>
         /// <param name="lmsCourse">A <see cref="LmsCourse"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an instructor.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
+        /// </remarks>
         /// <param name="lmsInstructor">A <see cref="LmsInstructor"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a student.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
+        /// </remarks>
         /// <param name="lmsStudent">A <see cref="LmsStudent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a class.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Class.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a content.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Content.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a course.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Course.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an instructor.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instructor.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a student.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Student.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -304,6 +349,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all classes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsClassesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsClassesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -315,6 +363,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -326,6 +377,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsContentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsContentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -337,6 +391,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all courses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsCoursesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsCoursesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -348,6 +405,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all instructors.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsInstructorsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsInstructorsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -359,6 +419,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all students.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsStudentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsStudentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -370,6 +433,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -381,6 +447,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsClassRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsClassResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -392,6 +461,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -403,6 +475,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a content.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsContentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsContentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -414,6 +489,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a course.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsCourseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsCourseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -425,6 +503,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instructor.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsInstructorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsInstructorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -436,6 +517,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a student.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsStudentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsStudentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -447,6 +531,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsActivityResponse"/> response envelope when completed.</returns>
@@ -458,6 +545,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a class.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsClass identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Class.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsClassResponse"/> response envelope when completed.</returns>
@@ -469,6 +559,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsCollectionResponse"/> response envelope when completed.</returns>
@@ -480,6 +573,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a content.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsContent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Content.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsContentResponse"/> response envelope when completed.</returns>
@@ -491,6 +587,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a course.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsCourse identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Course.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsCourseResponse"/> response envelope when completed.</returns>
@@ -502,6 +601,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an instructor.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsInstructor identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instructor.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsInstructorResponse"/> response envelope when completed.</returns>
@@ -513,6 +615,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a student.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsStudent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Student.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsStudentResponse"/> response envelope when completed.</returns>
@@ -524,6 +629,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -535,6 +643,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsClassRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsClassResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -546,6 +657,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -557,6 +671,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a content.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsContentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsContentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -568,6 +685,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a course.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsCourseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsCourseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -579,6 +699,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instructor.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsInstructorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsInstructorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -590,6 +713,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a student.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsStudentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsStudentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -615,6 +741,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
+        /// </remarks>
         /// <param name="lmsActivity">A <see cref="LmsActivity"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -743,6 +872,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a class.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
+        /// </remarks>
         /// <param name="lmsClass">A <see cref="LmsClass"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -871,6 +1003,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
+        /// </remarks>
         /// <param name="lmsCollection">A <see cref="LmsCollection"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -999,6 +1134,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a content.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
+        /// </remarks>
         /// <param name="lmsContent">A <see cref="LmsContent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1127,6 +1265,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a course.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
+        /// </remarks>
         /// <param name="lmsCourse">A <see cref="LmsCourse"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1255,6 +1396,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an instructor.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
+        /// </remarks>
         /// <param name="lmsInstructor">A <see cref="LmsInstructor"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1383,6 +1527,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a student.
         /// </summary>
+        /// <remarks>
+        /// Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
+        /// </remarks>
         /// <param name="lmsStudent">A <see cref="LmsStudent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1511,6 +1658,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1633,6 +1783,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a class.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Class.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1755,6 +1908,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1877,6 +2033,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a content.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Content.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1999,6 +2158,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a course.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Course.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2121,6 +2283,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an instructor.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instructor.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2243,6 +2408,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a student.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Student.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2365,6 +2533,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2470,6 +2641,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all classes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsClassesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsClassesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2575,6 +2749,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2680,6 +2857,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsContentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsContentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2785,6 +2965,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all courses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsCoursesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsCoursesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2890,6 +3073,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all instructors.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsInstructorsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsInstructorsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2995,6 +3181,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all students.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListLmsStudentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListLmsStudentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3100,6 +3289,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3211,6 +3403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsClassRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsClassResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3322,6 +3517,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3433,6 +3631,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a content.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsContentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsContentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3544,6 +3745,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a course.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsCourseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsCourseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3655,6 +3859,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instructor.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsInstructorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsInstructorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3766,6 +3973,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a student.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchLmsStudentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchLmsStudentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3877,6 +4087,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an activity.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsActivity identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsActivityResponse"/> response envelope when completed.</returns>
@@ -3980,6 +4193,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a class.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsClass identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Class.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsClassResponse"/> response envelope when completed.</returns>
@@ -4083,6 +4299,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsCollectionResponse"/> response envelope when completed.</returns>
@@ -4186,6 +4405,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a content.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsContent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Content.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsContentResponse"/> response envelope when completed.</returns>
@@ -4289,6 +4511,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a course.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsCourse identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Course.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsCourseResponse"/> response envelope when completed.</returns>
@@ -4392,6 +4617,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an instructor.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsInstructor identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instructor.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsInstructorResponse"/> response envelope when completed.</returns>
@@ -4495,6 +4723,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a student.
         /// </summary>
+        /// <remarks>
+        /// Deletes the LmsStudent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Student.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveLmsStudentResponse"/> response envelope when completed.</returns>
@@ -4598,6 +4829,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsActivityRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsActivityResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4709,6 +4943,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsClassRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsClassResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4820,6 +5057,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4931,6 +5171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a content.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsContentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsContentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5042,6 +5285,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a course.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsCourseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsCourseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5153,6 +5399,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instructor.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsInstructorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsInstructorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5264,6 +5513,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a student.
         /// </summary>
+        /// <remarks>
+        /// Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateLmsStudentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateLmsStudentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

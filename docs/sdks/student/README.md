@@ -13,7 +13,7 @@
 
 ## CreateLmsStudent
 
-Create a student
+Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
 
 ### Example Usage
 
@@ -43,7 +43,7 @@ var res = await sdk.Student.CreateLmsStudentAsync(
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "13a768cd-a870-437a-8e7f-c717cc81054d",
+        Id = "45dda078-f5f3-43cb-9b8c-d10564d5a37e",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
         LastName = "Murazik",
         Metadata = new List<LmsMetadata>() {},
@@ -62,7 +62,7 @@ var res = await sdk.Student.CreateLmsStudentAsync(
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-30T23:32:27.489Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-01T07:00:24.084Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -91,7 +91,7 @@ var res = await sdk.Student.CreateLmsStudentAsync(
 
 ## GetLmsStudent
 
-Retrieve a student
+Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -133,7 +133,7 @@ var res = await sdk.Student.GetLmsStudentAsync(
 
 ## ListLmsStudents
 
-List all students
+Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -174,7 +174,7 @@ var res = await sdk.Student.ListLmsStudentsAsync(req);
 
 ## PatchLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -205,7 +205,7 @@ PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "118bff1b-ec5b-4573-b79c-046448e2cc91",
+        Id = "e70dee22-665b-466a-a90a-a0f938e18615",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
         LastName = "Murazik",
         Metadata = new List<LmsMetadata>() {},
@@ -224,7 +224,7 @@ PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-30T23:32:27.495Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-01T07:00:24.092Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -253,7 +253,7 @@ var res = await sdk.Student.PatchLmsStudentAsync(req);
 
 ## RemoveLmsStudent
 
-Remove a student
+Deletes the LmsStudent identified by `id`.
 
 ### Example Usage
 
@@ -293,7 +293,7 @@ var res = await sdk.Student.RemoveLmsStudentAsync(
 
 ## UpdateLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -324,7 +324,7 @@ UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "118bff1b-ec5b-4573-b79c-046448e2cc91",
+        Id = "e70dee22-665b-466a-a90a-a0f938e18615",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
         LastName = "Murazik",
         Metadata = new List<LmsMetadata>() {},
@@ -343,7 +343,7 @@ UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-30T23:32:27.495Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-01T07:00:24.092Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

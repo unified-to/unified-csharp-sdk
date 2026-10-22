@@ -13,7 +13,7 @@
 
 ## CreateCdpActivation
 
-Create an activation
+Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
 
 ### Example Usage
 
@@ -55,7 +55,7 @@ var res = await sdk.Activation.CreateCdpActivationAsync(
 
 ## GetCdpActivation
 
-Retrieve an activation
+Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -97,7 +97,7 @@ var res = await sdk.Activation.GetCdpActivationAsync(
 
 ## ListCdpActivations
 
-List all activations
+Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -138,7 +138,7 @@ var res = await sdk.Activation.ListCdpActivationsAsync(req);
 
 ## PatchCdpActivation
 
-Update an activation
+Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ var res = await sdk.Activation.PatchCdpActivationAsync(req);
 
 ## RemoveCdpActivation
 
-Remove an activation
+Deletes the CdpActivation identified by `id`.
 
 ### Example Usage
 
@@ -221,7 +221,7 @@ var res = await sdk.Activation.RemoveCdpActivationAsync(
 
 ## UpdateCdpActivation
 
-Update an activation
+Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
 
 ### Example Usage
 

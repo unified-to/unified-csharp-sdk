@@ -13,7 +13,7 @@
 
 ## CreateComputeEnvvar
 
-Create an envvar
+Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
 
 ### Example Usage
 
@@ -34,11 +34,11 @@ var res = await sdk.Envvar.CreateComputeEnvvarAsync(
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "b3e912da-9706-42b1-8726-d13a0b891ac6",
+        Id = "7418cf2c-df66-4e25-82cf-7c94101e4235",
         IsSecret = true,
         Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-03T14:34:23.152Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-04T06:46:16.924Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -67,7 +67,7 @@ var res = await sdk.Envvar.CreateComputeEnvvarAsync(
 
 ## GetComputeEnvvar
 
-Retrieve an envvar
+Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -109,7 +109,7 @@ var res = await sdk.Envvar.GetComputeEnvvarAsync(
 
 ## ListComputeEnvvars
 
-List all envvars
+Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -150,7 +150,7 @@ var res = await sdk.Envvar.ListComputeEnvvarsAsync(req);
 
 ## PatchComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -172,11 +172,11 @@ PatchComputeEnvvarRequest req = new PatchComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "a740f0e0-cb68-4cd8-9cb4-2c902325b954",
+        Id = "11787ca8-323f-4faf-abdb-0f87b2f8d9cb",
         IsSecret = true,
         Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-03T14:34:23.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-04T06:46:16.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -205,7 +205,7 @@ var res = await sdk.Envvar.PatchComputeEnvvarAsync(req);
 
 ## RemoveComputeEnvvar
 
-Remove an envvar
+Deletes the ComputeEnvvar identified by `id`.
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ var res = await sdk.Envvar.RemoveComputeEnvvarAsync(
 
 ## UpdateComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -267,11 +267,11 @@ UpdateComputeEnvvarRequest req = new UpdateComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "a740f0e0-cb68-4cd8-9cb4-2c902325b954",
+        Id = "11787ca8-323f-4faf-abdb-0f87b2f8d9cb",
         IsSecret = true,
         Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-03T14:34:23.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-04T06:46:16.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

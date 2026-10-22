@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("applied_at")]
         public DateTime? AppliedAt { get; set; }
 
+        /// <summary>
+        /// The ID of the candidate who is applying (an AtsCandidate ID).
+        /// </summary>
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
@@ -46,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The ID of the job being applied to (an AtsJob ID).
+        /// </summary>
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 

@@ -13,7 +13,7 @@
 
 ## CreateCommerceItemvariant
 
-Create an itemvariant
+Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
 
 ### Example Usage
 
@@ -34,7 +34,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "369ff475-e816-4dd4-a999-a3ca6e94f5aa",
+        Id = "fd424e9e-eac4-4c01-bbbb-e2b259873405",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -43,10 +43,10 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "0b681473-1b12-41a8-a8a9-eb86d571b8b6",
+                Id = "3dc055f7-60f3-4d81-8d89-4c2653c99f23",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "27246227-2e93-4080-9e55-090f4257c65a",
+                        Id = "ebaad0ce-dc74-4b28-8dc8-c226c21aadf7",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -67,7 +67,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "38bf4e00-34cc-4c98-a851-fd5ad5d863f1",
+                Id = "d77713c3-e2c9-4170-ac56-0a7ea65026b1",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -78,7 +78,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "10da0a12-8f97-4607-8c97-2cf9be24b8e0",
+                Id = "38fe8804-f4da-497d-820b-43cc2ab3bb72",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -86,7 +86,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
                 },
             },
             new CommerceItemOption() {
-                Id = "faf16d3c-31e3-4927-85c4-f893bd44d7b2",
+                Id = "9697bdb7-5b96-44eb-af8c-b9a37b67e5db",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -109,7 +109,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-09T16:34:59.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-10T11:23:40.854Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -141,7 +141,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
 
 ## GetCommerceItemvariant
 
-Retrieve an itemvariant
+Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ var res = await sdk.Itemvariant.GetCommerceItemvariantAsync(
 
 ## ListCommerceItemvariants
 
-List all itemvariants
+Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -224,7 +224,7 @@ var res = await sdk.Itemvariant.ListCommerceItemvariantsAsync(req);
 
 ## PatchCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -246,7 +246,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "5cdf28df-c68e-4c74-a33f-57dd40866dc0",
+        Id = "c6ab1753-14e2-4592-b97b-9a45185d380f",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -255,10 +255,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "a8e82768-e2da-4c4c-9b25-1f5254ee8ced",
+                Id = "d7ff097c-fae0-4c70-91cf-233535f49113",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "03d576d8-ee9d-43e7-a880-e73e7dfcd69b",
+                        Id = "72681c6e-72fa-4426-8c14-483c9f0cffa0",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -279,7 +279,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "126bc2df-b738-45a4-a538-525b82532cfa",
+                Id = "7b5a161f-5df2-4a56-83d5-6ced157a1faa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -290,7 +290,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "6c4970a9-d2fd-4b2b-99af-87ec8e445aa8",
+                Id = "cf6bb4cd-1be3-428f-ae18-9f230a6f6405",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -298,7 +298,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                 },
             },
             new CommerceItemOption() {
-                Id = "da08ef13-8fda-46ff-b6e4-5a190c228546",
+                Id = "ee820778-ce70-413b-b3d6-9a7a4e7103f3",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -321,7 +321,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-09T16:34:59.675Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-10T11:23:40.888Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -353,7 +353,7 @@ var res = await sdk.Itemvariant.PatchCommerceItemvariantAsync(req);
 
 ## RemoveCommerceItemvariant
 
-Remove an itemvariant
+Deletes the CommerceItemvariant identified by `id`.
 
 ### Example Usage
 
@@ -393,7 +393,7 @@ var res = await sdk.Itemvariant.RemoveCommerceItemvariantAsync(
 
 ## UpdateCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -415,7 +415,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "5cdf28df-c68e-4c74-a33f-57dd40866dc0",
+        Id = "c6ab1753-14e2-4592-b97b-9a45185d380f",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -424,10 +424,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "a8e82768-e2da-4c4c-9b25-1f5254ee8ced",
+                Id = "d7ff097c-fae0-4c70-91cf-233535f49113",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "03d576d8-ee9d-43e7-a880-e73e7dfcd69b",
+                        Id = "72681c6e-72fa-4426-8c14-483c9f0cffa0",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -448,7 +448,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "126bc2df-b738-45a4-a538-525b82532cfa",
+                Id = "7b5a161f-5df2-4a56-83d5-6ced157a1faa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -459,7 +459,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "6c4970a9-d2fd-4b2b-99af-87ec8e445aa8",
+                Id = "cf6bb4cd-1be3-428f-ae18-9f230a6f6405",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -467,7 +467,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                 },
             },
             new CommerceItemOption() {
-                Id = "da08ef13-8fda-46ff-b6e4-5a190c228546",
+                Id = "ee820778-ce70-413b-b3d6-9a7a4e7103f3",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -490,7 +490,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-09T16:34:59.675Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-10T11:23:40.888Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,

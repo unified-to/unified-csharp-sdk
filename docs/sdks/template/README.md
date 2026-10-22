@@ -15,7 +15,7 @@
 
 ## CreateComputeTemplate
 
-Create a template
+Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
 
 ### Example Usage
 
@@ -39,10 +39,10 @@ var res = await sdk.Template.CreateComputeTemplateAsync(
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "e50d99dd-a9b3-4996-91a2-967dc2968200",
+        Id = "f6f36ea5-8966-4092-8c75-5c8411d767e0",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-23T20:41:03.195Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-24T14:53:14.008Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -50,7 +50,7 @@ var res = await sdk.Template.CreateComputeTemplateAsync(
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-12T18:47:41.369Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-13T06:27:28.825Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -79,7 +79,7 @@ var res = await sdk.Template.CreateComputeTemplateAsync(
 
 ## GetComputeTemplate
 
-Retrieve a template
+Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -121,7 +121,7 @@ var res = await sdk.Template.GetComputeTemplateAsync(
 
 ## GetSigningTemplate
 
-Retrieve a template
+Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -163,7 +163,7 @@ var res = await sdk.Template.GetSigningTemplateAsync(
 
 ## ListComputeTemplates
 
-List all templates
+Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -204,7 +204,7 @@ var res = await sdk.Template.ListComputeTemplatesAsync(req);
 
 ## ListSigningTemplates
 
-List all templates
+Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ var res = await sdk.Template.ListSigningTemplatesAsync(req);
 
 ## PatchComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -270,10 +270,10 @@ PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "b3e6edf2-1a5a-412d-aa78-81899ad50b70",
+        Id = "84b24b1c-67b4-41e2-bf47-ce745df66bc8",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-23T20:41:03.209Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-24T14:53:14.024Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -281,7 +281,7 @@ PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-12T18:47:41.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-13T06:27:28.835Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -310,7 +310,7 @@ var res = await sdk.Template.PatchComputeTemplateAsync(req);
 
 ## RemoveComputeTemplate
 
-Remove a template
+Deletes the ComputeTemplate identified by `id`.
 
 ### Example Usage
 
@@ -350,7 +350,7 @@ var res = await sdk.Template.RemoveComputeTemplateAsync(
 
 ## UpdateComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -375,10 +375,10 @@ UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "b3e6edf2-1a5a-412d-aa78-81899ad50b70",
+        Id = "84b24b1c-67b4-41e2-bf47-ce745df66bc8",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-23T20:41:03.209Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-24T14:53:14.024Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -386,7 +386,7 @@ UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-12T18:47:41.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-13T06:27:28.835Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

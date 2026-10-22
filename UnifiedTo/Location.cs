@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
+        /// </remarks>
         /// <param name="commerceLocation">A <see cref="CommerceLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
+        /// </remarks>
         /// <param name="hrisLocation">A <see cref="HrisLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -152,6 +173,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -163,6 +187,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -176,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -187,6 +217,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -198,6 +231,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -209,6 +245,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceLocationResponse"/> response envelope when completed.</returns>
@@ -220,6 +259,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisLocationResponse"/> response envelope when completed.</returns>
@@ -231,6 +273,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -242,6 +287,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -267,6 +315,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
+        /// </remarks>
         /// <param name="commerceLocation">A <see cref="CommerceLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -395,6 +446,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
+        /// </remarks>
         /// <param name="hrisLocation">A <see cref="HrisLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -523,6 +577,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -645,6 +702,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -767,6 +827,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -889,6 +952,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1011,6 +1077,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1116,6 +1185,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1223,6 +1295,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1330,6 +1405,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1435,6 +1513,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1548,6 +1629,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1659,6 +1743,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceLocationResponse"/> response envelope when completed.</returns>
@@ -1762,6 +1849,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisLocationResponse"/> response envelope when completed.</returns>
@@ -1865,6 +1955,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1978,6 +2071,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

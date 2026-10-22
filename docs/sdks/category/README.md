@@ -19,7 +19,7 @@
 
 ## CreateAccountingCategory
 
-Create a category
+Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
 
 ### Example Usage
 
@@ -38,11 +38,11 @@ var res = await sdk.Category.CreateAccountingCategoryAsync(
     accountingCategory: new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "32c13c1f-94c1-4883-979d-41ff9c6cb35d",
+        Id = "3cd2ad16-e554-4190-81c1-483fdbd29961",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.177Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-12T02:55:57.671Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -71,7 +71,7 @@ var res = await sdk.Category.CreateAccountingCategoryAsync(
 
 ## CreateTicketingCategory
 
-Create a category
+Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
 
 ### Example Usage
 
@@ -90,11 +90,11 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "bea4c1e5-83f1-4c91-b5f1-eeeb2852b53d",
+        Id = "ce9361d7-ecc0-4f5c-a0dc-1f0d65dd1f78",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.407Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T20:03:52.300Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -123,7 +123,7 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
 
 ## GetAccountingCategory
 
-Retrieve a category
+Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -165,7 +165,7 @@ var res = await sdk.Category.GetAccountingCategoryAsync(
 
 ## GetTicketingCategory
 
-Retrieve a category
+Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -207,7 +207,7 @@ var res = await sdk.Category.GetTicketingCategoryAsync(
 
 ## ListAccountingCategories
 
-List all categories
+Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -248,7 +248,7 @@ var res = await sdk.Category.ListAccountingCategoriesAsync(req);
 
 ## ListTicketingCategories
 
-List all categories
+Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -289,7 +289,7 @@ var res = await sdk.Category.ListTicketingCategoriesAsync(req);
 
 ## PatchAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -309,11 +309,11 @@ PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "30d6bf76-1c33-427c-812f-661c4e743880",
+        Id = "3cf8b91c-a97c-44ef-9b1d-f5566defcfbe",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.184Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-12T02:55:57.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -342,7 +342,7 @@ var res = await sdk.Category.PatchAccountingCategoryAsync(req);
 
 ## PatchTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -362,11 +362,11 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
+        Id = "60299d04-1e8a-4dde-be37-f32ee38fff95",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T20:03:52.311Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -395,7 +395,7 @@ var res = await sdk.Category.PatchTicketingCategoryAsync(req);
 
 ## RemoveAccountingCategory
 
-Remove a category
+Deletes the AccountingCategory identified by `id`.
 
 ### Example Usage
 
@@ -435,7 +435,7 @@ var res = await sdk.Category.RemoveAccountingCategoryAsync(
 
 ## RemoveTicketingCategory
 
-Remove a category
+Deletes the TicketingCategory identified by `id`.
 
 ### Example Usage
 
@@ -475,7 +475,7 @@ var res = await sdk.Category.RemoveTicketingCategoryAsync(
 
 ## UpdateAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -495,11 +495,11 @@ UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "30d6bf76-1c33-427c-812f-661c4e743880",
+        Id = "3cf8b91c-a97c-44ef-9b1d-f5566defcfbe",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.184Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-12T02:55:57.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -528,7 +528,7 @@ var res = await sdk.Category.UpdateAccountingCategoryAsync(req);
 
 ## UpdateTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -548,11 +548,11 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
+        Id = "60299d04-1e8a-4dde-be37-f32ee38fff95",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T20:03:52.311Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

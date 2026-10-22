@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
+        /// </remarks>
         /// <param name="assessmentOrder">A <see cref="AssessmentOrder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -61,6 +64,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -109,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -148,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -190,6 +202,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
+        /// </remarks>
         /// <param name="assessmentOrder">A <see cref="AssessmentOrder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -440,6 +455,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -793,6 +811,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1133,6 +1154,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAssessmentOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAssessmentOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

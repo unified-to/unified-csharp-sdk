@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
+        /// </remarks>
         /// <param name="accountingProject">A <see cref="AccountingProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
+        /// </remarks>
         /// <param name="taskProject">A <see cref="TaskProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -114,6 +129,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -147,6 +171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingProjectResponse"/> response envelope when completed.</returns>
@@ -158,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskProjectResponse"/> response envelope when completed.</returns>
@@ -169,6 +199,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -182,6 +215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -207,6 +243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
+        /// </remarks>
         /// <param name="accountingProject">A <see cref="AccountingProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -335,6 +374,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
+        /// </remarks>
         /// <param name="taskProject">A <see cref="TaskProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -463,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -585,6 +630,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -707,6 +755,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -814,6 +865,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -919,6 +973,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1032,6 +1089,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1143,6 +1203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingProjectResponse"/> response envelope when completed.</returns>
@@ -1246,6 +1309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskProjectResponse"/> response envelope when completed.</returns>
@@ -1349,6 +1415,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1462,6 +1531,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

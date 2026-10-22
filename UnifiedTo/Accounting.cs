@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
+        /// </remarks>
         /// <param name="accountingAccount">Chart of accounts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
+        /// </remarks>
         /// <param name="accountingBankfeedaccount">A <see cref="AccountingBankfeedaccount"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
+        /// </remarks>
         /// <param name="accountingBankfeedtransaction">A <see cref="AccountingBankfeedtransaction"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bill.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
+        /// </remarks>
         /// <param name="accountingBill">A <see cref="AccountingBill"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
+        /// </remarks>
         /// <param name="accountingCategory">A <see cref="AccountingCategory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
+        /// </remarks>
         /// <param name="accountingContact">A <see cref="AccountingContact"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
+        /// </remarks>
         /// <param name="accountingCreditmemo">A <see cref="AccountingCreditmemo"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
+        /// </remarks>
         /// <param name="accountingExpense">A <see cref="AccountingExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
+        /// </remarks>
         /// <param name="accountingExpensereport">A <see cref="AccountingExpensereport"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an invoice.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
+        /// </remarks>
         /// <param name="accountingInvoice">A <see cref="AccountingInvoice"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a journal.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
+        /// </remarks>
         /// <param name="accountingJournal">A <see cref="AccountingJournal"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+        /// </remarks>
         /// <param name="accountingOrder">@deprecated; use AccountingSalesorder or AccountingPurchaseorder.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -245,6 +281,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(
             AccountingOrder accountingOrder,
             string connectionId,
@@ -255,6 +292,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
+        /// </remarks>
         /// <param name="accountingPaymentterm">A <see cref="AccountingPaymentterm"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +314,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
+        /// </remarks>
         /// <param name="accountingProject">A <see cref="AccountingProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +336,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
+        /// </remarks>
         /// <param name="accountingPurchaseorder">A <see cref="AccountingPurchaseorder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -312,6 +358,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a quote.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
+        /// </remarks>
         /// <param name="accountingQuote">A <see cref="AccountingQuote"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -331,6 +380,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
+        /// </remarks>
         /// <param name="accountingSalesorder">A <see cref="AccountingSalesorder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -350,6 +402,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
+        /// </remarks>
         /// <param name="accountingTaxrate">A <see cref="AccountingTaxrate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -369,6 +424,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a transaction.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
+        /// </remarks>
         /// <param name="accountingTransaction">A <see cref="AccountingTransaction"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -388,6 +446,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
+        /// </remarks>
         /// <param name="accountingVendorcredit">A <see cref="AccountingVendorcredit"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -407,6 +468,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an account.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Account.</param>
         /// <param name="fields">Fields to return.</param>
@@ -426,6 +490,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an agedpayable.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingAgedpayable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agedpayable.</param>
         /// <param name="fields">Fields to return.</param>
@@ -445,6 +512,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an agedreceivable.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agedreceivable.</param>
         /// <param name="fields">Fields to return.</param>
@@ -464,6 +534,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a balancesheet.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBalancesheet by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Balancesheet.</param>
         /// <param name="fields">Fields to return.</param>
@@ -483,6 +556,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <param name="fields">Fields to return.</param>
@@ -502,6 +578,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedtransaction.</param>
         /// <param name="fields">Fields to return.</param>
@@ -521,6 +600,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bill.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bill.</param>
         /// <param name="fields">Fields to return.</param>
@@ -540,6 +622,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a cashflow.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCashflow by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Cashflow.</param>
         /// <param name="fields">Fields to return.</param>
@@ -559,6 +644,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a category.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <param name="fields">Fields to return.</param>
@@ -578,6 +666,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -597,6 +688,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creditmemo.</param>
         /// <param name="fields">Fields to return.</param>
@@ -616,6 +710,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -635,6 +732,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expensereport.</param>
         /// <param name="fields">Fields to return.</param>
@@ -654,6 +754,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an invoice.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Invoice.</param>
         /// <param name="fields">Fields to return.</param>
@@ -673,6 +776,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a journal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -692,6 +798,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -701,6 +810,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<GetAccountingOrderResponse> GetAccountingOrderAsync(
             string connectionId,
             string id,
@@ -711,6 +821,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -730,6 +843,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <param name="fields">Fields to return.</param>
@@ -749,6 +865,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a profitloss.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingProfitloss by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Profitloss.</param>
         /// <param name="fields">Fields to return.</param>
@@ -768,6 +887,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -787,6 +909,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Purchaseorder.</param>
         /// <param name="fields">Fields to return.</param>
@@ -806,6 +931,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a purchasereceipt.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPurchasereceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Purchasereceipt.</param>
         /// <param name="fields">Fields to return.</param>
@@ -825,6 +953,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a quote.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Quote.</param>
         /// <param name="fields">Fields to return.</param>
@@ -844,6 +975,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Salesorder.</param>
         /// <param name="fields">Fields to return.</param>
@@ -863,6 +997,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a salesreceipt.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingSalesreceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Salesreceipt.</param>
         /// <param name="fields">Fields to return.</param>
@@ -882,6 +1019,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Taxrate.</param>
         /// <param name="fields">Fields to return.</param>
@@ -901,6 +1041,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a transaction.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Transaction.</param>
         /// <param name="fields">Fields to return.</param>
@@ -920,6 +1063,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a trialbalance.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingTrialbalance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Trialbalance.</param>
         /// <param name="fields">Fields to return.</param>
@@ -939,6 +1085,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Vendorcredit.</param>
         /// <param name="fields">Fields to return.</param>
@@ -958,6 +1107,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all accounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingAccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingAccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -969,6 +1121,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all agedpayables.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingAgedpayables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingAgedpayablesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingAgedpayablesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -982,6 +1137,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all agedreceivables.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingAgedreceivables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingAgedreceivablesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingAgedreceivablesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -995,6 +1153,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all balancesheets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBalancesheets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBalancesheetsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBalancesheetsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1008,6 +1169,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankfeedaccounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBankfeedaccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedaccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1021,6 +1185,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankfeedtransactions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBankfeedtransactionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedtransactionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1034,6 +1201,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bills.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBillsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBillsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1045,6 +1215,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all cashflows.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCashflows. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCashflowsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCashflowsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1058,6 +1231,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all categories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCategoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCategoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1071,6 +1247,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1082,6 +1261,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all creditmemoes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCreditmemoesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCreditmemoesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1095,6 +1277,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expensereports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingExpensereportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingExpensereportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1108,6 +1293,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1119,6 +1307,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all invoices.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingInvoicesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingInvoicesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1130,6 +1321,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all journals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingJournalsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingJournalsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1141,17 +1335,24 @@ namespace UnifiedTo
         /// <summary>
         /// List all orders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrdersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrdersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<ListAccountingOrdersResponse> ListAccountingOrdersAsync(ListAccountingOrdersRequest request);
 
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1165,6 +1366,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all paymentterms.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPaymenttermsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPaymenttermsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1178,6 +1382,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all profitlosses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingProfitlosses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingProfitlossesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingProfitlossesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1191,6 +1398,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1202,6 +1412,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all purchaseorders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPurchaseordersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPurchaseordersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1215,6 +1428,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all purchasereceipts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPurchasereceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPurchasereceiptsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPurchasereceiptsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1228,6 +1444,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all quotes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingQuotesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingQuotesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1239,6 +1458,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all salesorders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingSalesordersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingSalesordersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1252,6 +1474,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all salesreceipts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingSalesreceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingSalesreceiptsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingSalesreceiptsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1265,6 +1490,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all taxrates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingTaxratesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingTaxratesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1276,6 +1504,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all transactions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingTransactionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingTransactionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1289,6 +1520,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all trialbalances.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingTrialbalances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingTrialbalancesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingTrialbalancesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1302,6 +1536,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all vendorcredits.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingVendorcreditsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingVendorcreditsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1315,6 +1552,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingAccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1326,6 +1566,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1339,6 +1582,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBankfeedtransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1352,6 +1598,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bill.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBillRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBillResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1363,6 +1612,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1376,6 +1628,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1387,6 +1642,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingCreditmemoRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingCreditmemoResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1400,6 +1658,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1411,6 +1672,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingExpensereportRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingExpensereportResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1424,6 +1688,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an invoice.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingInvoiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingInvoiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1435,6 +1702,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1446,17 +1716,24 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(PatchAccountingOrderRequest request);
 
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1470,6 +1747,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1481,6 +1761,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingPurchaseorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingPurchaseorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1494,6 +1777,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a quote.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingQuoteRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingQuoteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1505,6 +1791,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingSalesorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingSalesorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1518,6 +1807,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingTaxrateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingTaxrateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1529,6 +1821,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a transaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingTransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingTransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1542,6 +1837,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingVendorcreditRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingVendorcreditResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1555,6 +1853,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an account.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingAccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Account.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingAccountResponse"/> response envelope when completed.</returns>
@@ -1566,6 +1867,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBankfeedaccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
@@ -1580,6 +1884,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBankfeedtransaction identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedtransaction.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
@@ -1594,6 +1901,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bill.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBill identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bill.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBillResponse"/> response envelope when completed.</returns>
@@ -1605,6 +1915,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a category.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingCategory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingCategoryResponse"/> response envelope when completed.</returns>
@@ -1616,6 +1929,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingContactResponse"/> response envelope when completed.</returns>
@@ -1627,6 +1943,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingCreditmemo identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creditmemo.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingCreditmemoResponse"/> response envelope when completed.</returns>
@@ -1638,6 +1957,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingExpenseResponse"/> response envelope when completed.</returns>
@@ -1649,6 +1971,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingExpensereport identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expensereport.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingExpensereportResponse"/> response envelope when completed.</returns>
@@ -1663,6 +1988,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an invoice.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingInvoice identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Invoice.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingInvoiceResponse"/> response envelope when completed.</returns>
@@ -1674,6 +2002,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a journal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingJournal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingJournalResponse"/> response envelope when completed.</returns>
@@ -1685,17 +2016,24 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an order.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingOrder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<RemoveAccountingOrderResponse> RemoveAccountingOrderAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingPaymentterm identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingPaymenttermResponse"/> response envelope when completed.</returns>
@@ -1710,6 +2048,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingProjectResponse"/> response envelope when completed.</returns>
@@ -1721,6 +2062,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingPurchaseorder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Purchaseorder.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingPurchaseorderResponse"/> response envelope when completed.</returns>
@@ -1735,6 +2079,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a quote.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingQuote identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Quote.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingQuoteResponse"/> response envelope when completed.</returns>
@@ -1746,6 +2093,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingSalesorder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Salesorder.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingSalesorderResponse"/> response envelope when completed.</returns>
@@ -1757,6 +2107,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingTaxrate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Taxrate.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingTaxrateResponse"/> response envelope when completed.</returns>
@@ -1768,6 +2121,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a transaction.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingTransaction identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Transaction.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingTransactionResponse"/> response envelope when completed.</returns>
@@ -1782,6 +2138,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingVendorcredit identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Vendorcredit.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingVendorcreditResponse"/> response envelope when completed.</returns>
@@ -1796,6 +2155,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingAccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1809,6 +2171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1822,6 +2187,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBankfeedtransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1835,6 +2203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bill.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBillRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBillResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1846,6 +2217,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1859,6 +2233,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1872,6 +2249,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingCreditmemoRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingCreditmemoResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1885,6 +2265,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1898,6 +2281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingExpensereportRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingExpensereportResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1911,6 +2297,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an invoice.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingInvoiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingInvoiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1924,6 +2313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1937,17 +2329,24 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(UpdateAccountingOrderRequest request);
 
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1961,6 +2360,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1974,6 +2376,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingPurchaseorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingPurchaseorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1987,6 +2392,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a quote.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingQuoteRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingQuoteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1998,6 +2406,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingSalesorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingSalesorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2011,6 +2422,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingTaxrateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingTaxrateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2024,6 +2438,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a transaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingTransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingTransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2037,6 +2454,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingVendorcreditRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingVendorcreditResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2064,6 +2484,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
+        /// </remarks>
         /// <param name="accountingAccount">Chart of accounts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2192,6 +2615,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
+        /// </remarks>
         /// <param name="accountingBankfeedaccount">A <see cref="AccountingBankfeedaccount"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2320,6 +2746,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
+        /// </remarks>
         /// <param name="accountingBankfeedtransaction">A <see cref="AccountingBankfeedtransaction"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2448,6 +2877,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bill.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
+        /// </remarks>
         /// <param name="accountingBill">A <see cref="AccountingBill"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2576,6 +3008,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
+        /// </remarks>
         /// <param name="accountingCategory">A <see cref="AccountingCategory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2704,6 +3139,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
+        /// </remarks>
         /// <param name="accountingContact">A <see cref="AccountingContact"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2832,6 +3270,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
+        /// </remarks>
         /// <param name="accountingCreditmemo">A <see cref="AccountingCreditmemo"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2960,6 +3401,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expense.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
+        /// </remarks>
         /// <param name="accountingExpense">A <see cref="AccountingExpense"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3088,6 +3532,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
+        /// </remarks>
         /// <param name="accountingExpensereport">A <see cref="AccountingExpensereport"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3216,6 +3663,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an invoice.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
+        /// </remarks>
         /// <param name="accountingInvoice">A <see cref="AccountingInvoice"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3344,6 +3794,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a journal.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
+        /// </remarks>
         /// <param name="accountingJournal">A <see cref="AccountingJournal"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3472,6 +3925,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+        /// </remarks>
         /// <param name="accountingOrder">@deprecated; use AccountingSalesorder or AccountingPurchaseorder.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3481,6 +3937,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(
             AccountingOrder accountingOrder,
             string connectionId,
@@ -3600,6 +4057,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
+        /// </remarks>
         /// <param name="accountingPaymentterm">A <see cref="AccountingPaymentterm"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3728,6 +4188,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
+        /// </remarks>
         /// <param name="accountingProject">A <see cref="AccountingProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3856,6 +4319,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
+        /// </remarks>
         /// <param name="accountingPurchaseorder">A <see cref="AccountingPurchaseorder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3984,6 +4450,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a quote.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
+        /// </remarks>
         /// <param name="accountingQuote">A <see cref="AccountingQuote"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4112,6 +4581,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
+        /// </remarks>
         /// <param name="accountingSalesorder">A <see cref="AccountingSalesorder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4240,6 +4712,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
+        /// </remarks>
         /// <param name="accountingTaxrate">A <see cref="AccountingTaxrate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4368,6 +4843,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a transaction.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
+        /// </remarks>
         /// <param name="accountingTransaction">A <see cref="AccountingTransaction"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4496,6 +4974,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
+        /// </remarks>
         /// <param name="accountingVendorcredit">A <see cref="AccountingVendorcredit"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4624,6 +5105,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an account.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Account.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4746,6 +5230,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an agedpayable.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingAgedpayable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agedpayable.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4868,6 +5355,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an agedreceivable.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Agedreceivable.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4990,6 +5480,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a balancesheet.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBalancesheet by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Balancesheet.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5112,6 +5605,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5234,6 +5730,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedtransaction.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5356,6 +5855,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bill.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bill.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5478,6 +5980,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a cashflow.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCashflow by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Cashflow.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5600,6 +6105,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a category.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5722,6 +6230,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5844,6 +6355,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creditmemo.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5966,6 +6480,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expense.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6088,6 +6605,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expensereport.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6210,6 +6730,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an invoice.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Invoice.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6332,6 +6855,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a journal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6454,6 +6980,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an order.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6463,6 +6992,7 @@ namespace UnifiedTo
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<GetAccountingOrderResponse> GetAccountingOrderAsync(
             string connectionId,
             string id,
@@ -6576,6 +7106,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6698,6 +7231,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6820,6 +7356,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a profitloss.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingProfitloss by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Profitloss.</param>
         /// <param name="fields">Fields to return.</param>
@@ -6942,6 +7481,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7064,6 +7606,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Purchaseorder.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7186,6 +7731,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a purchasereceipt.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPurchasereceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Purchasereceipt.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7308,6 +7856,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a quote.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Quote.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7430,6 +7981,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Salesorder.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7552,6 +8106,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a salesreceipt.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingSalesreceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Salesreceipt.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7674,6 +8231,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Taxrate.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7796,6 +8356,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a transaction.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Transaction.</param>
         /// <param name="fields">Fields to return.</param>
@@ -7918,6 +8481,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a trialbalance.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingTrialbalance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Trialbalance.</param>
         /// <param name="fields">Fields to return.</param>
@@ -8040,6 +8606,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Vendorcredit.</param>
         /// <param name="fields">Fields to return.</param>
@@ -8162,6 +8731,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all accounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingAccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingAccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8269,6 +8841,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all agedpayables.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingAgedpayables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingAgedpayablesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingAgedpayablesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8376,6 +8951,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all agedreceivables.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingAgedreceivables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingAgedreceivablesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingAgedreceivablesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8483,6 +9061,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all balancesheets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBalancesheets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBalancesheetsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBalancesheetsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8590,6 +9171,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankfeedaccounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBankfeedaccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedaccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8697,6 +9281,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankfeedtransactions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBankfeedtransactionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedtransactionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8804,6 +9391,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bills.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingBillsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingBillsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8909,6 +9499,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all cashflows.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCashflows. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCashflowsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCashflowsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9016,6 +9609,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all categories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCategoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCategoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9123,6 +9719,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9230,6 +9829,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all creditmemoes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingCreditmemoesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingCreditmemoesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9337,6 +9939,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expensereports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingExpensereportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingExpensereportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9444,6 +10049,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all expenses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingExpensesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingExpensesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9551,6 +10159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all invoices.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingInvoicesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingInvoicesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9658,6 +10269,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all journals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingJournalsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingJournalsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9765,12 +10379,16 @@ namespace UnifiedTo
         /// <summary>
         /// List all orders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrdersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrdersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<ListAccountingOrdersResponse> ListAccountingOrdersAsync(ListAccountingOrdersRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -9870,6 +10488,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -9977,6 +10598,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all paymentterms.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPaymenttermsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPaymenttermsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10084,6 +10708,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all profitlosses.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingProfitlosses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingProfitlossesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingProfitlossesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10191,6 +10818,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10298,6 +10928,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all purchaseorders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPurchaseordersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPurchaseordersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10405,6 +11038,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all purchasereceipts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPurchasereceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPurchasereceiptsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPurchasereceiptsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10512,6 +11148,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all quotes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingQuotesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingQuotesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10617,6 +11256,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all salesorders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingSalesordersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingSalesordersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10724,6 +11366,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all salesreceipts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingSalesreceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingSalesreceiptsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingSalesreceiptsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10831,6 +11476,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all taxrates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingTaxratesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingTaxratesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10938,6 +11586,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all transactions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingTransactionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingTransactionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11045,6 +11696,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all trialbalances.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingTrialbalances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingTrialbalancesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingTrialbalancesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11152,6 +11806,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all vendorcredits.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingVendorcreditsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingVendorcreditsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11259,6 +11916,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingAccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11372,6 +12032,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11485,6 +12148,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBankfeedtransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11598,6 +12264,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bill.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingBillRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingBillResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11709,6 +12378,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11822,6 +12494,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11935,6 +12610,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingCreditmemoRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingCreditmemoResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12048,6 +12726,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12161,6 +12842,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingExpensereportRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingExpensereportResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12274,6 +12958,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an invoice.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingInvoiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingInvoiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12387,6 +13074,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12500,12 +13190,16 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(PatchAccountingOrderRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -12611,6 +13305,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12724,6 +13421,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12837,6 +13537,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingPurchaseorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingPurchaseorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -12950,6 +13653,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a quote.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingQuoteRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingQuoteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -13061,6 +13767,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingSalesorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingSalesorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -13174,6 +13883,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingTaxrateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingTaxrateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -13287,6 +13999,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a transaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingTransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingTransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -13400,6 +14115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingVendorcreditRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingVendorcreditResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -13513,6 +14231,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an account.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingAccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Account.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingAccountResponse"/> response envelope when completed.</returns>
@@ -13616,6 +14337,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBankfeedaccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedaccount.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
@@ -13722,6 +14446,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBankfeedtransaction identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankfeedtransaction.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
@@ -13828,6 +14555,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bill.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingBill identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bill.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBillResponse"/> response envelope when completed.</returns>
@@ -13931,6 +14661,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a category.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingCategory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Category.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingCategoryResponse"/> response envelope when completed.</returns>
@@ -14037,6 +14770,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingContactResponse"/> response envelope when completed.</returns>
@@ -14140,6 +14876,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingCreditmemo identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creditmemo.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingCreditmemoResponse"/> response envelope when completed.</returns>
@@ -14246,6 +14985,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expense.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingExpense identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expense.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingExpenseResponse"/> response envelope when completed.</returns>
@@ -14349,6 +15091,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingExpensereport identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Expensereport.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingExpensereportResponse"/> response envelope when completed.</returns>
@@ -14455,6 +15200,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an invoice.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingInvoice identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Invoice.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingInvoiceResponse"/> response envelope when completed.</returns>
@@ -14558,6 +15306,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a journal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingJournal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingJournalResponse"/> response envelope when completed.</returns>
@@ -14661,12 +15412,16 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an order.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingOrder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Order.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<RemoveAccountingOrderResponse> RemoveAccountingOrderAsync(string connectionId, string id)
         {
             if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
@@ -14764,6 +15519,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingPaymentterm identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingPaymenttermResponse"/> response envelope when completed.</returns>
@@ -14870,6 +15628,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingProjectResponse"/> response envelope when completed.</returns>
@@ -14973,6 +15734,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingPurchaseorder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Purchaseorder.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingPurchaseorderResponse"/> response envelope when completed.</returns>
@@ -15079,6 +15843,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a quote.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingQuote identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Quote.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingQuoteResponse"/> response envelope when completed.</returns>
@@ -15182,6 +15949,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingSalesorder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Salesorder.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingSalesorderResponse"/> response envelope when completed.</returns>
@@ -15288,6 +16058,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingTaxrate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Taxrate.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingTaxrateResponse"/> response envelope when completed.</returns>
@@ -15391,6 +16164,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a transaction.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingTransaction identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Transaction.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingTransactionResponse"/> response envelope when completed.</returns>
@@ -15497,6 +16273,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingVendorcredit identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Vendorcredit.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingVendorcreditResponse"/> response envelope when completed.</returns>
@@ -15603,6 +16382,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingAccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -15716,6 +16498,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBankfeedaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -15829,6 +16614,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankfeedtransaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBankfeedtransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -15942,6 +16730,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bill.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingBillRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBillResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16053,6 +16844,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a category.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingCategoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingCategoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16166,6 +16960,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16279,6 +17076,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creditmemo.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingCreditmemoRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingCreditmemoResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16392,6 +17192,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expense.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingExpenseRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingExpenseResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16505,6 +17308,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an expensereport.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingExpensereportRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingExpensereportResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16618,6 +17424,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an invoice.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingInvoiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingInvoiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16731,6 +17540,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -16844,12 +17656,16 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingOrderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingOrderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(
             UpdateAccountingOrderRequest request
         )
@@ -16957,6 +17773,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17070,6 +17889,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17183,6 +18005,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a purchaseorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingPurchaseorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingPurchaseorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17296,6 +18121,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a quote.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingQuoteRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingQuoteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17409,6 +18237,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a salesorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingSalesorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingSalesorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17522,6 +18353,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a taxrate.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingTaxrateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingTaxrateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17635,6 +18469,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a transaction.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingTransactionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingTransactionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -17748,6 +18585,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a vendorcredit.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingVendorcreditRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingVendorcreditResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -13,7 +13,7 @@
 
 ## CreateComputeVolume
 
-Create a volume
+Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
 
 ### Example Usage
 
@@ -31,14 +31,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Volume.CreateComputeVolumeAsync(
     computeVolume: new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "ad54c53c-bc60-4514-9dfc-d139e36bb25f",
+        Id = "8fd12d84-2578-464c-a190-75cde39b59c0",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T21:56:21.764Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-10T04:44:12.402Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     connectionId: "<id>"
@@ -68,7 +68,7 @@ var res = await sdk.Volume.CreateComputeVolumeAsync(
 
 ## GetComputeVolume
 
-Retrieve a volume
+Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +110,7 @@ var res = await sdk.Volume.GetComputeVolumeAsync(
 
 ## ListComputeVolumes
 
-List all volumes
+Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -151,7 +151,7 @@ var res = await sdk.Volume.ListComputeVolumesAsync(req);
 
 ## PatchComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -170,14 +170,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeVolumeRequest req = new PatchComputeVolumeRequest() {
     ComputeVolume = new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "bfd2c9a9-d7d1-4cab-9b6e-f632faeb765f",
+        Id = "ed29ce6b-d4c1-46cd-bc76-d02fd40e958d",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T21:56:21.768Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-10T04:44:12.405Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     ConnectionId = "<id>",
@@ -207,7 +207,7 @@ var res = await sdk.Volume.PatchComputeVolumeAsync(req);
 
 ## RemoveComputeVolume
 
-Remove a volume
+Deletes the ComputeVolume identified by `id`.
 
 ### Example Usage
 
@@ -247,7 +247,7 @@ var res = await sdk.Volume.RemoveComputeVolumeAsync(
 
 ## UpdateComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -266,14 +266,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeVolumeRequest req = new UpdateComputeVolumeRequest() {
     ComputeVolume = new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "bfd2c9a9-d7d1-4cab-9b6e-f632faeb765f",
+        Id = "ed29ce6b-d4c1-46cd-bc76-d02fd40e958d",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T21:56:21.768Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-10T04:44:12.405Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     ConnectionId = "<id>",

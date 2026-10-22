@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an ad.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
+        /// </remarks>
         /// <param name="adsAd">A <see cref="AdsAd"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an asset.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
+        /// </remarks>
         /// <param name="adsAsset">A <see cref="AdsAsset"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a campaign.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
+        /// </remarks>
         /// <param name="adsCampaign">A <see cref="AdsCampaign"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a creative.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
+        /// </remarks>
         /// <param name="adsCreative">A <see cref="AdsCreative"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
+        /// </remarks>
         /// <param name="adsGroup">A <see cref="AdsGroup"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
+        /// </remarks>
         /// <param name="adsInsertionorder">A <see cref="AdsInsertionorder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
+        /// </remarks>
         /// <param name="adsOrganization">A <see cref="AdsOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an ad.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ad.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an asset.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Asset.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a campaign.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a creative.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creative.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Insertionorder.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a promoted.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsPromoted by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Promoted.</param>
         /// <param name="fields">Fields to return.</param>
@@ -312,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a target.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Target.</param>
         /// <param name="fields">Fields to return.</param>
@@ -331,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all ads.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsAdsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsAdsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -342,6 +393,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all assets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsAssetsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsAssetsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -353,6 +407,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all campaigns.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsCampaignsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsCampaignsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -364,6 +421,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all creatives.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsCreativesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsCreativesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -375,6 +435,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsGroupsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsGroupsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -386,6 +449,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all insertionorders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsInsertionordersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsInsertionordersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -397,6 +463,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -408,6 +477,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all promoteds.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsPromoteds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsPromotedsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsPromotedsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -419,6 +491,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -430,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all targets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsTargets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsTargetsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsTargetsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -441,6 +519,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an ad.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsAdRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsAdResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -452,6 +533,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -463,6 +547,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creative.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsCreativeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsCreativeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -474,6 +561,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -485,6 +575,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsInsertionorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsInsertionorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -496,6 +589,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -507,6 +603,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an ad.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsAd identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ad.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsAdResponse"/> response envelope when completed.</returns>
@@ -518,6 +617,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a campaign.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsCampaign identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsCampaignResponse"/> response envelope when completed.</returns>
@@ -529,6 +631,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a creative.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsCreative identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creative.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsCreativeResponse"/> response envelope when completed.</returns>
@@ -540,6 +645,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a group.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsGroup identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsGroupResponse"/> response envelope when completed.</returns>
@@ -551,6 +659,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsInsertionorder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Insertionorder.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsInsertionorderResponse"/> response envelope when completed.</returns>
@@ -562,6 +673,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsOrganizationResponse"/> response envelope when completed.</returns>
@@ -573,6 +687,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an ad.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsAdRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsAdResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -584,6 +701,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -595,6 +715,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creative.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsCreativeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsCreativeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -606,6 +729,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -617,6 +743,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsInsertionorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsInsertionorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -630,6 +759,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -655,6 +787,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an ad.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
+        /// </remarks>
         /// <param name="adsAd">A <see cref="AdsAd"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -783,6 +918,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an asset.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
+        /// </remarks>
         /// <param name="adsAsset">A <see cref="AdsAsset"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -911,6 +1049,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a campaign.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
+        /// </remarks>
         /// <param name="adsCampaign">A <see cref="AdsCampaign"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1039,6 +1180,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a creative.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
+        /// </remarks>
         /// <param name="adsCreative">A <see cref="AdsCreative"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1167,6 +1311,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
+        /// </remarks>
         /// <param name="adsGroup">A <see cref="AdsGroup"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1295,6 +1442,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
+        /// </remarks>
         /// <param name="adsInsertionorder">A <see cref="AdsInsertionorder"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1423,6 +1573,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
+        /// </remarks>
         /// <param name="adsOrganization">A <see cref="AdsOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1551,6 +1704,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an ad.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ad.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1673,6 +1829,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an asset.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Asset.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1795,6 +1954,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a campaign.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1917,6 +2079,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a creative.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creative.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2039,6 +2204,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2161,6 +2329,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Insertionorder.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2283,6 +2454,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2405,6 +2579,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a promoted.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsPromoted by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Promoted.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2527,6 +2704,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a target.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Target.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2649,6 +2829,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all ads.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsAdsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsAdsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2754,6 +2937,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all assets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsAssetsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsAssetsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2859,6 +3045,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all campaigns.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsCampaignsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsCampaignsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2964,6 +3153,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all creatives.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsCreativesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsCreativesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3069,6 +3261,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsGroupsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsGroupsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3174,6 +3369,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all insertionorders.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsInsertionordersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsInsertionordersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3281,6 +3479,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3386,6 +3587,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all promoteds.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsPromoteds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsPromotedsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsPromotedsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3491,6 +3695,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3596,6 +3803,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all targets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsTargets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsTargetsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsTargetsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3701,6 +3911,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an ad.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsAdRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsAdResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3812,6 +4025,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3923,6 +4139,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creative.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsCreativeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsCreativeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4034,6 +4253,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4145,6 +4367,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsInsertionorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsInsertionorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4258,6 +4483,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4369,6 +4597,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an ad.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsAd identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ad.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsAdResponse"/> response envelope when completed.</returns>
@@ -4472,6 +4703,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a campaign.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsCampaign identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsCampaignResponse"/> response envelope when completed.</returns>
@@ -4575,6 +4809,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a creative.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsCreative identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Creative.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsCreativeResponse"/> response envelope when completed.</returns>
@@ -4678,6 +4915,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a group.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsGroup identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsGroupResponse"/> response envelope when completed.</returns>
@@ -4781,6 +5021,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsInsertionorder identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Insertionorder.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsInsertionorderResponse"/> response envelope when completed.</returns>
@@ -4884,6 +5127,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsOrganizationResponse"/> response envelope when completed.</returns>
@@ -4987,6 +5233,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an ad.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsAdRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsAdResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5098,6 +5347,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5209,6 +5461,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a creative.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsCreativeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsCreativeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5320,6 +5575,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5431,6 +5689,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an insertionorder.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsInsertionorderRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsInsertionorderResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5544,6 +5805,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

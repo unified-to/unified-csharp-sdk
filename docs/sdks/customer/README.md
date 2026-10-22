@@ -13,7 +13,7 @@
 
 ## CreateTicketingCustomer
 
-Create a customer
+Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "670ab99c-0cdb-45f0-acf7-7d58b1812baf",
+        Id = "71f5fc46-63ca-489e-a3af-be574066e213",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -58,7 +58,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.194Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T22:20:40.722Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -87,7 +87,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
 
 ## GetTicketingCustomer
 
-Retrieve a customer
+Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -129,7 +129,7 @@ var res = await sdk.Customer.GetTicketingCustomerAsync(
 
 ## ListTicketingCustomers
 
-List all customers
+Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -170,7 +170,7 @@ var res = await sdk.Customer.ListTicketingCustomersAsync(req);
 
 ## PatchTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -195,7 +195,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
+        Id = "95bd9d4b-4f32-4da7-af58-40c5f2f86375",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -216,7 +216,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T22:20:40.731Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -245,7 +245,7 @@ var res = await sdk.Customer.PatchTicketingCustomerAsync(req);
 
 ## RemoveTicketingCustomer
 
-Remove a customer
+Deletes the TicketingCustomer identified by `id`.
 
 ### Example Usage
 
@@ -285,7 +285,7 @@ var res = await sdk.Customer.RemoveTicketingCustomerAsync(
 
 ## UpdateTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -310,7 +310,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
+        Id = "95bd9d4b-4f32-4da7-af58-40c5f2f86375",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -331,7 +331,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T22:20:40.731Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

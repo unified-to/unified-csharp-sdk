@@ -13,7 +13,7 @@
 
 ## CreateAccountingExpensereport
 
-Create an expensereport
+Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
 
 ### Example Usage
 
@@ -30,16 +30,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
     accountingExpensereport: new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-19T11:31:30.783Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-19T14:32:12.741Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "45fe8ace-3a78-4443-9457-e90ecfa9cf79",
+        Id = "238a1a44-7f7f-462b-b701-2f2e241db582",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "b8082ca1-566e-4225-822b-0945ba2f7cf2",
+                Id = "1404d37f-1948-4ba9-b14f-123b62fca880",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -47,7 +47,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "6ff8b0e0-76c3-44cc-8aa3-44e23b205a58",
+                Id = "76703a5c-32ac-4782-92d5-99306fbf107f",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -56,7 +56,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "834d5a34-2bd0-4f1a-9853-3b0339dcd561",
+                Id = "5146710a-23f8-47d8-a6b2-9d9678db401e",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -65,7 +65,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "7c4e739a-e68d-4181-b3c0-403b77b2a2c1",
+                Id = "d90b20f9-0e54-4bf2-81bb-29bd3fbddbcc",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -77,11 +77,11 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-19T11:31:30.783Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-19T14:32:12.741Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-19T11:31:30.783Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-19T14:32:12.741Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -110,7 +110,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
 
 ## GetAccountingExpensereport
 
-Retrieve an expensereport
+Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -152,7 +152,7 @@ var res = await sdk.Expensereport.GetAccountingExpensereportAsync(
 
 ## ListAccountingExpensereports
 
-List all expensereports
+Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ var res = await sdk.Expensereport.ListAccountingExpensereportsAsync(req);
 
 ## PatchAccountingExpensereport
 
-Update an expensereport
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
 
 ### Example Usage
 
@@ -211,16 +211,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "8a3bc77f-0b1a-485b-9fc1-26cb8e3a9599",
+        Id = "a6e871ce-b3b3-4282-a867-47f688257392",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "62652705-2071-49da-a9a7-ead182df3399",
+                Id = "ee7efd51-b0fa-4ad8-9f5e-f3117c432135",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -228,7 +228,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a4a7493d-b091-4d0f-9afa-8cd3dc2f1542",
+                Id = "efc7d06b-39f3-4b86-ae22-f7640401476a",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -237,7 +237,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "afa33947-5b2d-4ba9-b1a7-241db2b10292",
+                Id = "c7892a65-a617-439e-9f4a-3b1200aea1c8",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -246,7 +246,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "05e2fb5b-ef01-434f-8249-8dee53497d93",
+                Id = "3d289400-bff9-4f84-b3d7-094fc7dc67ad",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -258,11 +258,11 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -291,7 +291,7 @@ var res = await sdk.Expensereport.PatchAccountingExpensereportAsync(req);
 
 ## RemoveAccountingExpensereport
 
-Remove an expensereport
+Deletes the AccountingExpensereport identified by `id`.
 
 ### Example Usage
 
@@ -331,7 +331,7 @@ var res = await sdk.Expensereport.RemoveAccountingExpensereportAsync(
 
 ## UpdateAccountingExpensereport
 
-Update an expensereport
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
 
 ### Example Usage
 
@@ -349,16 +349,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "8a3bc77f-0b1a-485b-9fc1-26cb8e3a9599",
+        Id = "a6e871ce-b3b3-4282-a867-47f688257392",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "62652705-2071-49da-a9a7-ead182df3399",
+                Id = "ee7efd51-b0fa-4ad8-9f5e-f3117c432135",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -366,7 +366,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a4a7493d-b091-4d0f-9afa-8cd3dc2f1542",
+                Id = "efc7d06b-39f3-4b86-ae22-f7640401476a",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -375,7 +375,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "afa33947-5b2d-4ba9-b1a7-241db2b10292",
+                Id = "c7892a65-a617-439e-9f4a-3b1200aea1c8",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -384,7 +384,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "05e2fb5b-ef01-434f-8249-8dee53497d93",
+                Id = "3d289400-bff9-4f84-b3d7-094fc7dc67ad",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -396,11 +396,11 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

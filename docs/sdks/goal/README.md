@@ -13,7 +13,7 @@
 
 ## CreatePerformanceGoal
 
-Create a goal
+Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
 
 ### Example Usage
 
@@ -32,14 +32,14 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
     performanceGoal: new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-07-29T18:40:36.702Z").ToUniversalTime(),
-        Id = "d16f9aa5-af44-4e07-95eb-8792ce86f189",
+        DueAt = System.DateTime.Parse("2026-07-30T15:34:13.358Z").ToUniversalTime(),
+        Id = "670a434d-6fd8-4a7d-80f2-721162d7f054",
         Metadata = new List<PerformanceMetadata>() {},
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-06-03T21:22:05.033Z").ToUniversalTime(),
-                Id = "b881912f-b167-4375-a139-f5c48291afe1",
+                DueAt = System.DateTime.Parse("2026-06-04T17:46:24.962Z").ToUniversalTime(),
+                Id = "a7640934-c935-4d08-8a3c-de133441bc4f",
                 IsCompleted = true,
                 Name = "Team-oriented secondary matrix",
                 TargetValue = 32D,
@@ -48,8 +48,8 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-08T11:31:28.808Z").ToUniversalTime(),
-                Id = "4b28c912-187c-4e8c-ac77-e5fcd004ddde",
+                DueAt = System.DateTime.Parse("2026-08-09T08:30:10.428Z").ToUniversalTime(),
+                Id = "5d788809-9bce-45c0-97ff-f0345dded832",
                 IsCompleted = true,
                 Name = "Exclusive client-server conglomeration",
                 TargetValue = 32D,
@@ -58,8 +58,8 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Hic explicabo odit.",
-                DueAt = System.DateTime.Parse("2026-10-10T10:21:53.965Z").ToUniversalTime(),
-                Id = "dd427b88-cdf3-4ab2-9fc3-09d20f5b500e",
+                DueAt = System.DateTime.Parse("2026-10-11T07:53:34.348Z").ToUniversalTime(),
+                Id = "bfe76e0c-3318-4b40-bfb5-eb3d4535d93b",
                 IsCompleted = true,
                 Name = "Synchronised immersive success",
                 TargetValue = 32D,
@@ -68,10 +68,10 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-23T09:25:16.141Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-24T03:04:19.007Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-13T01:35:33.371Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-13T10:07:29.861Z").ToUniversalTime(),
         Weight = 5D,
     },
     connectionId: "<id>"
@@ -101,7 +101,7 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
 
 ## GetPerformanceGoal
 
-Retrieve a goal
+Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -143,7 +143,7 @@ var res = await sdk.Goal.GetPerformanceGoalAsync(
 
 ## ListPerformanceGoals
 
-List all goals
+Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -184,7 +184,7 @@ var res = await sdk.Goal.ListPerformanceGoalsAsync(req);
 
 ## PatchPerformanceGoal
 
-Update a goal
+Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
 
 ### Example Usage
 
@@ -204,14 +204,14 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
     PerformanceGoal = new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-07-29T18:40:36.719Z").ToUniversalTime(),
-        Id = "0a821189-da6c-4449-97a0-bfe538b8f4e3",
+        DueAt = System.DateTime.Parse("2026-07-30T15:34:13.374Z").ToUniversalTime(),
+        Id = "c37b1f91-4eff-4df1-816c-e777ad5f357d",
         Metadata = new List<PerformanceMetadata>() {},
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-06-03T21:22:05.050Z").ToUniversalTime(),
-                Id = "7b271c05-f593-4e47-aa4a-b8f282055863",
+                DueAt = System.DateTime.Parse("2026-06-04T17:46:24.977Z").ToUniversalTime(),
+                Id = "1c80ede4-7b45-4a99-9230-e499e76e1047",
                 IsCompleted = true,
                 Name = "Team-oriented secondary matrix",
                 TargetValue = 32D,
@@ -220,8 +220,8 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-08T11:31:28.825Z").ToUniversalTime(),
-                Id = "60259cf5-1f64-42bb-bcec-da8dc8c383f1",
+                DueAt = System.DateTime.Parse("2026-08-09T08:30:10.443Z").ToUniversalTime(),
+                Id = "5d2f6881-eb19-490e-a238-2519a86acb98",
                 IsCompleted = true,
                 Name = "Exclusive client-server conglomeration",
                 TargetValue = 32D,
@@ -230,8 +230,8 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Hic explicabo odit.",
-                DueAt = System.DateTime.Parse("2026-10-10T10:21:53.982Z").ToUniversalTime(),
-                Id = "a4bd9803-78e6-4545-a180-7a8c82667437",
+                DueAt = System.DateTime.Parse("2026-10-11T07:53:34.364Z").ToUniversalTime(),
+                Id = "179b7e59-629e-4d42-bfaa-3bfe004bac1b",
                 IsCompleted = true,
                 Name = "Synchronised immersive success",
                 TargetValue = 32D,
@@ -240,10 +240,10 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-23T09:25:16.155Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-24T03:04:19.020Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-13T01:35:33.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-13T10:07:29.867Z").ToUniversalTime(),
         Weight = 5D,
     },
     ConnectionId = "<id>",
@@ -273,7 +273,7 @@ var res = await sdk.Goal.PatchPerformanceGoalAsync(req);
 
 ## RemovePerformanceGoal
 
-Remove a goal
+Deletes the PerformanceGoal identified by `id`.
 
 ### Example Usage
 
@@ -313,7 +313,7 @@ var res = await sdk.Goal.RemovePerformanceGoalAsync(
 
 ## UpdatePerformanceGoal
 
-Update a goal
+Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
 
 ### Example Usage
 
@@ -333,14 +333,14 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
     PerformanceGoal = new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-07-29T18:40:36.719Z").ToUniversalTime(),
-        Id = "0a821189-da6c-4449-97a0-bfe538b8f4e3",
+        DueAt = System.DateTime.Parse("2026-07-30T15:34:13.374Z").ToUniversalTime(),
+        Id = "c37b1f91-4eff-4df1-816c-e777ad5f357d",
         Metadata = new List<PerformanceMetadata>() {},
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-06-03T21:22:05.050Z").ToUniversalTime(),
-                Id = "7b271c05-f593-4e47-aa4a-b8f282055863",
+                DueAt = System.DateTime.Parse("2026-06-04T17:46:24.977Z").ToUniversalTime(),
+                Id = "1c80ede4-7b45-4a99-9230-e499e76e1047",
                 IsCompleted = true,
                 Name = "Team-oriented secondary matrix",
                 TargetValue = 32D,
@@ -349,8 +349,8 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-08T11:31:28.825Z").ToUniversalTime(),
-                Id = "60259cf5-1f64-42bb-bcec-da8dc8c383f1",
+                DueAt = System.DateTime.Parse("2026-08-09T08:30:10.443Z").ToUniversalTime(),
+                Id = "5d2f6881-eb19-490e-a238-2519a86acb98",
                 IsCompleted = true,
                 Name = "Exclusive client-server conglomeration",
                 TargetValue = 32D,
@@ -359,8 +359,8 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Hic explicabo odit.",
-                DueAt = System.DateTime.Parse("2026-10-10T10:21:53.982Z").ToUniversalTime(),
-                Id = "a4bd9803-78e6-4545-a180-7a8c82667437",
+                DueAt = System.DateTime.Parse("2026-10-11T07:53:34.364Z").ToUniversalTime(),
+                Id = "179b7e59-629e-4d42-bfaa-3bfe004bac1b",
                 IsCompleted = true,
                 Name = "Synchronised immersive success",
                 TargetValue = 32D,
@@ -369,10 +369,10 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-23T09:25:16.155Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-24T03:04:19.020Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-13T01:35:33.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-13T10:07:29.867Z").ToUniversalTime(),
         Weight = 5D,
     },
     ConnectionId = "<id>",

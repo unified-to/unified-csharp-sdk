@@ -46,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<HrisMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The name of the group (e.g. a team or department).
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

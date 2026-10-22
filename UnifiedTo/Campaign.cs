@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a campaign.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
+        /// </remarks>
         /// <param name="adsCampaign">A <see cref="AdsCampaign"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a campaign.
         /// </summary>
+        /// <remarks>
+        /// Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
+        /// </remarks>
         /// <param name="marketingCampaign">A <see cref="MarketingCampaign"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a campaign.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a campaign.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all campaigns.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsCampaignsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsCampaignsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -114,6 +129,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all campaigns.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListMartechCampaignsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListMartechCampaignsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchMartechCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchMartechCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -147,6 +171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a campaign.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsCampaign identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsCampaignResponse"/> response envelope when completed.</returns>
@@ -158,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a campaign.
         /// </summary>
+        /// <remarks>
+        /// Deletes the MarketingCampaign identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveMartechCampaignResponse"/> response envelope when completed.</returns>
@@ -169,6 +199,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -180,6 +213,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateMartechCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateMartechCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -205,6 +241,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a campaign.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
+        /// </remarks>
         /// <param name="adsCampaign">A <see cref="AdsCampaign"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -333,6 +372,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a campaign.
         /// </summary>
+        /// <remarks>
+        /// Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
+        /// </remarks>
         /// <param name="marketingCampaign">A <see cref="MarketingCampaign"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -461,6 +503,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a campaign.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <param name="fields">Fields to return.</param>
@@ -583,6 +628,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a campaign.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <param name="fields">Fields to return.</param>
@@ -705,6 +753,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all campaigns.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsCampaignsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsCampaignsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -810,6 +861,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all campaigns.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListMartechCampaignsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListMartechCampaignsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -915,6 +969,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1026,6 +1083,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchMartechCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchMartechCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1137,6 +1197,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a campaign.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsCampaign identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsCampaignResponse"/> response envelope when completed.</returns>
@@ -1240,6 +1303,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a campaign.
         /// </summary>
+        /// <remarks>
+        /// Deletes the MarketingCampaign identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Campaign.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveMartechCampaignResponse"/> response envelope when completed.</returns>
@@ -1343,6 +1409,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1454,6 +1523,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a campaign.
         /// </summary>
+        /// <remarks>
+        /// Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateMartechCampaignRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateMartechCampaignResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

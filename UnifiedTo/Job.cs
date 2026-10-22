@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
+        /// </remarks>
         /// <param name="atsJob">A <see cref="AtsJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
+        /// </remarks>
         /// <param name="hrisJob">A <see cref="HrisJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -114,6 +129,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -147,6 +171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsJobResponse"/> response envelope when completed.</returns>
@@ -158,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisJobResponse"/> response envelope when completed.</returns>
@@ -169,6 +199,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -180,6 +213,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -205,6 +241,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
+        /// </remarks>
         /// <param name="atsJob">A <see cref="AtsJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -333,6 +372,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
+        /// </remarks>
         /// <param name="hrisJob">A <see cref="HrisJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -461,6 +503,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -583,6 +628,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -705,6 +753,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -810,6 +861,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -915,6 +969,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1026,6 +1083,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1137,6 +1197,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsJobResponse"/> response envelope when completed.</returns>
@@ -1240,6 +1303,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisJobResponse"/> response envelope when completed.</returns>
@@ -1343,6 +1409,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1454,6 +1523,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

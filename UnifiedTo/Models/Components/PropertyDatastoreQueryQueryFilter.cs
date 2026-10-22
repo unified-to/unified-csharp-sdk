@@ -20,13 +20,13 @@ namespace UnifiedTo.Models.Components
     public class PropertyDatastoreQueryQueryFilter
     {
         [JsonProperty("and")]
-        public List<PropertyDatastoreQueryQueryFilter>? And { get; set; }
+        public List<DatastoreFilterGroup>? And { get; set; }
 
         [JsonProperty("filters")]
         public List<DatastoreFilter>? Filters { get; set; }
 
         [JsonProperty("or")]
-        public List<PropertyDatastoreQueryQueryFilter>? Or { get; set; }
+        public List<DatastoreFilterGroup>? Or { get; set; }
 
         [JsonProperty("type")]
         public PropertyDatastoreQueryQueryFilterType Type { get; set; } = default!;

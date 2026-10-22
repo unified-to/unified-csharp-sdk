@@ -13,7 +13,7 @@
 
 ## CreateHrisEmployee
 
-Create an employee
+Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "d398d77f-6047-4834-a57a-5dbc3d3ac82e",
+        Id = "d105f995-e128-48f6-96f6-41061bfdb72b",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -80,7 +80,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "a0b28604-721b-463c-aa36-21608c93b57c",
+                Id = "7f3e6a27-a37d-48a5-81a9-fb2e04f912a2",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -130,7 +130,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T04:14:40.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T06:48:07.036Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -159,7 +159,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
 
 ## GetHrisEmployee
 
-Retrieve an employee
+Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -201,7 +201,7 @@ var res = await sdk.Employee.GetHrisEmployeeAsync(
 
 ## ListHrisEmployees
 
-List all employees
+Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -242,7 +242,7 @@ var res = await sdk.Employee.ListHrisEmployeesAsync(req);
 
 ## PatchHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -296,7 +296,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "9e4a22af-d2b7-4d82-9c82-c81fccddf1ad",
+        Id = "85cc67ff-4d19-4abb-aaf0-d28e1b2a93e6",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -310,7 +310,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "76e6306e-3028-4804-bdba-80d97f553eb6",
+                Id = "d387408c-2017-4f24-ace9-2a94e585b5a9",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -360,7 +360,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T04:14:40.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T06:48:07.044Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -389,7 +389,7 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(req);
 
 ## RemoveHrisEmployee
 
-Remove an employee
+Deletes the HrisEmployee identified by `id`.
 
 ### Example Usage
 
@@ -429,7 +429,7 @@ var res = await sdk.Employee.RemoveHrisEmployeeAsync(
 
 ## UpdateHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -483,7 +483,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "9e4a22af-d2b7-4d82-9c82-c81fccddf1ad",
+        Id = "85cc67ff-4d19-4abb-aaf0-d28e1b2a93e6",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -497,7 +497,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "76e6306e-3028-4804-bdba-80d97f553eb6",
+                Id = "d387408c-2017-4f24-ace9-2a94e585b5a9",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -547,7 +547,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T04:14:40.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T06:48:07.044Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -82,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("minimum_experience_years")]
         public double? MinimumExperienceYears { get; set; }
 
+        /// <summary>
+        /// The job's title.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

@@ -13,7 +13,7 @@
 
 ## CreateAdsCreative
 
-Create a creative
+Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
 
 ### Example Usage
 
@@ -31,7 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Creative.CreateAdsCreativeAsync(
     adsCreative: new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "cfd0b41a-d828-4267-8c65-fa01961f36f3",
+        Id = "bcd16e0d-e681-45ac-8ad4-fa33dca697d6",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -40,7 +40,7 @@ var res = await sdk.Creative.CreateAdsCreativeAsync(
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T18:20:52.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T22:44:59.563Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -69,7 +69,7 @@ var res = await sdk.Creative.CreateAdsCreativeAsync(
 
 ## GetAdsCreative
 
-Retrieve a creative
+Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -111,7 +111,7 @@ var res = await sdk.Creative.GetAdsCreativeAsync(
 
 ## ListAdsCreatives
 
-List all creatives
+Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -152,7 +152,7 @@ var res = await sdk.Creative.ListAdsCreativesAsync(req);
 
 ## PatchAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -171,7 +171,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "ba61ed48-a10a-4f54-b5e7-7f748471a3a2",
+        Id = "b5b501af-f891-49a8-9f63-6e23612c9ab9",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -180,7 +180,7 @@ PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T18:20:52.647Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T22:44:59.568Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -209,7 +209,7 @@ var res = await sdk.Creative.PatchAdsCreativeAsync(req);
 
 ## RemoveAdsCreative
 
-Remove a creative
+Deletes the AdsCreative identified by `id`.
 
 ### Example Usage
 
@@ -249,7 +249,7 @@ var res = await sdk.Creative.RemoveAdsCreativeAsync(
 
 ## UpdateAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "ba61ed48-a10a-4f54-b5e7-7f748471a3a2",
+        Id = "b5b501af-f891-49a8-9f63-6e23612c9ab9",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -277,7 +277,7 @@ UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-27T18:20:52.647Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-27T22:44:59.568Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

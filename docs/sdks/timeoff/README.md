@@ -13,7 +13,7 @@
 
 ## CreateHrisTimeoff
 
-Create a timeoff
+Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
 
 ### Example Usage
 
@@ -30,21 +30,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T09:09:53.408Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T10:48:18.959Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-28T17:28:47.958Z").ToUniversalTime(),
-        Id = "97ceb238-b4a1-4267-95fe-2576c333c36d",
+        EndAt = System.DateTime.Parse("2024-12-29T07:19:51.408Z").ToUniversalTime(),
+        Id = "77df4da1-616d-410b-808d-588b555c6b75",
         IsPaid = true,
         Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T19:30:35.327Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-05T03:42:39.042Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T19:44:29.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T23:01:12.747Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -74,7 +74,7 @@ var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
 
 ## GetHrisTimeoff
 
-Retrieve a timeoff
+Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +116,7 @@ var res = await sdk.Timeoff.GetHrisTimeoffAsync(
 
 ## ListHrisTimeoffs
 
-List all timeoffs
+Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -157,7 +157,7 @@ var res = await sdk.Timeoff.ListHrisTimeoffsAsync(req);
 
 ## PatchHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -175,21 +175,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T09:09:53.409Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T10:48:18.959Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-28T17:28:47.967Z").ToUniversalTime(),
-        Id = "f8bc24cc-9f02-4d1f-bb30-48728ea2e1c4",
+        EndAt = System.DateTime.Parse("2024-12-29T07:19:51.416Z").ToUniversalTime(),
+        Id = "8d35eee8-529d-4f5d-8fb4-2c4ef4d8edbc",
         IsPaid = true,
         Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T19:30:35.332Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-05T03:42:39.046Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T19:44:29.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T23:01:12.749Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -219,7 +219,7 @@ var res = await sdk.Timeoff.PatchHrisTimeoffAsync(req);
 
 ## RemoveHrisTimeoff
 
-Remove a timeoff
+Deletes the HrisTimeoff identified by `id`.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ var res = await sdk.Timeoff.RemoveHrisTimeoffAsync(
 
 ## UpdateHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -277,21 +277,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-23T09:09:53.409Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-23T10:48:18.959Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-28T17:28:47.967Z").ToUniversalTime(),
-        Id = "f8bc24cc-9f02-4d1f-bb30-48728ea2e1c4",
+        EndAt = System.DateTime.Parse("2024-12-29T07:19:51.416Z").ToUniversalTime(),
+        Id = "8d35eee8-529d-4f5d-8fb4-2c4ef4d8edbc",
         IsPaid = true,
         Metadata = new List<HrisMetadata>() {},
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-09-04T19:30:35.332Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-05T03:42:39.046Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-12T19:44:29.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-12T23:01:12.749Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",

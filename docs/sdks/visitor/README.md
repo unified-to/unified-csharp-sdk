@@ -13,7 +13,7 @@
 
 ## CreateAnalyticsVisitor
 
-Create a visitor
+Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ var res = await sdk.Visitor.CreateAnalyticsVisitorAsync(
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "a13712f4-ed42-43e7-9821-60386e0b304a",
-        LastSeenAt = System.DateTime.Parse("2025-01-11T07:43:49.048Z").ToUniversalTime(),
+        Id = "6625ec1a-d831-4a8d-84cd-e78d421d75df",
+        LastSeenAt = System.DateTime.Parse("2025-01-11T23:27:44.256Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         TotalEvents = 2916D,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T17:27:57.368Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-30T10:44:16.928Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -68,7 +68,7 @@ var res = await sdk.Visitor.CreateAnalyticsVisitorAsync(
 
 ## GetAnalyticsVisitor
 
-Retrieve a visitor
+Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +110,7 @@ var res = await sdk.Visitor.GetAnalyticsVisitorAsync(
 
 ## ListAnalyticsVisitors
 
-List all visitors
+Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -151,7 +151,7 @@ var res = await sdk.Visitor.ListAnalyticsVisitorsAsync(req);
 
 ## PatchAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -172,13 +172,13 @@ PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "0cda5fd7-6321-42fd-b069-e7d551c976db",
-        LastSeenAt = System.DateTime.Parse("2025-01-11T07:43:49.055Z").ToUniversalTime(),
+        Id = "99759d9b-12f9-495b-9016-64c2c79886e2",
+        LastSeenAt = System.DateTime.Parse("2025-01-11T23:27:44.264Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         TotalEvents = 2916D,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T17:27:57.376Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-30T10:44:16.936Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -207,7 +207,7 @@ var res = await sdk.Visitor.PatchAnalyticsVisitorAsync(req);
 
 ## RemoveAnalyticsVisitor
 
-Remove a visitor
+Deletes the AnalyticsVisitor identified by `id`.
 
 ### Example Usage
 
@@ -247,7 +247,7 @@ var res = await sdk.Visitor.RemoveAnalyticsVisitorAsync(
 
 ## UpdateAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -268,13 +268,13 @@ UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "0cda5fd7-6321-42fd-b069-e7d551c976db",
-        LastSeenAt = System.DateTime.Parse("2025-01-11T07:43:49.055Z").ToUniversalTime(),
+        Id = "99759d9b-12f9-495b-9016-64c2c79886e2",
+        LastSeenAt = System.DateTime.Parse("2025-01-11T23:27:44.264Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         TotalEvents = 2916D,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T17:27:57.376Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-30T10:44:16.936Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

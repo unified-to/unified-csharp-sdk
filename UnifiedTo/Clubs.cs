@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a member.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Member.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -133,6 +151,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -144,6 +165,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsGroupsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsGroupsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -155,6 +179,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -166,6 +193,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all members.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsMembersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsMembersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -191,6 +221,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Activity.</param>
         /// <param name="fields">Fields to return.</param>
@@ -313,6 +346,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -435,6 +471,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <param name="fields">Fields to return.</param>
@@ -557,6 +596,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -679,6 +721,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a member.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Member.</param>
         /// <param name="fields">Fields to return.</param>
@@ -801,6 +846,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all activities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsActivitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsActivitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -906,6 +954,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1011,6 +1062,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsGroupsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsGroupsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1116,6 +1170,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1221,6 +1278,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all members.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListClubsMembersRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListClubsMembersResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

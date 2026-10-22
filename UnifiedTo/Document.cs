@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
+        /// </remarks>
         /// <param name="atsDocument">A <see cref="AtsDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
+        /// </remarks>
         /// <param name="hrisDocument">A <see cref="HrisDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
+        /// </remarks>
         /// <param name="signingDocument">A <see cref="SigningDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -152,6 +173,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -163,6 +187,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListSigningDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSigningDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -174,6 +201,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -185,6 +215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -196,6 +229,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchSigningDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchSigningDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -207,6 +243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsDocumentResponse"/> response envelope when completed.</returns>
@@ -218,6 +257,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDocumentResponse"/> response envelope when completed.</returns>
@@ -229,6 +271,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the SigningDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveSigningDocumentResponse"/> response envelope when completed.</returns>
@@ -240,6 +285,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -251,6 +299,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -262,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateSigningDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateSigningDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -287,6 +341,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
+        /// </remarks>
         /// <param name="atsDocument">A <see cref="AtsDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -415,6 +472,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
+        /// </remarks>
         /// <param name="hrisDocument">A <see cref="HrisDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -543,6 +603,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
+        /// </remarks>
         /// <param name="signingDocument">A <see cref="SigningDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -671,6 +734,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -793,6 +859,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -915,6 +984,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1037,6 +1109,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1142,6 +1217,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1247,6 +1325,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListSigningDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSigningDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1352,6 +1433,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1463,6 +1547,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1574,6 +1661,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchSigningDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchSigningDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1685,6 +1775,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsDocumentResponse"/> response envelope when completed.</returns>
@@ -1788,6 +1881,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDocumentResponse"/> response envelope when completed.</returns>
@@ -1891,6 +1987,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the SigningDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveSigningDocumentResponse"/> response envelope when completed.</returns>
@@ -1994,6 +2093,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2105,6 +2207,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2216,6 +2321,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateSigningDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateSigningDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

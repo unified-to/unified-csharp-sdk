@@ -13,7 +13,7 @@
 
 ## CreateHrisTimeshift
 
-Create a timeshift
+Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
 
 ### Example Usage
 
@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2022-07-18T01:57:56.614Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-18T10:58:38.432Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -42,13 +42,13 @@ var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-27T01:43:03.107Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-27T23:08:36.165Z").ToUniversalTime(),
         Hours = 6D,
-        Id = "eba7e5b2-83ce-44ca-be2e-047f167dd290",
+        Id = "43b2c70d-29d2-419b-a41d-0c7e73c3a658",
         IsApproved = false,
         Metadata = new List<HrisMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-07-13T00:39:39.193Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T21:57:30.686Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-13T12:35:21.354Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-02T03:52:53.091Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
 
 ## GetHrisTimeshift
 
-Retrieve a timeshift
+Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -119,7 +119,7 @@ var res = await sdk.Timeshift.GetHrisTimeshiftAsync(
 
 ## ListHrisTimeshifts
 
-List all timeshifts
+Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -160,7 +160,7 @@ var res = await sdk.Timeshift.ListHrisTimeshiftsAsync(req);
 
 ## PatchHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -178,7 +178,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2022-07-18T01:57:56.621Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-18T10:58:38.441Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -190,13 +190,13 @@ PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-27T01:43:03.122Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-27T23:08:36.187Z").ToUniversalTime(),
         Hours = 6D,
-        Id = "45297750-9202-41be-bd8e-5ce96540ec8f",
+        Id = "9648cb82-63b3-47c8-9b71-8ddf2e9f68e3",
         IsApproved = false,
         Metadata = new List<HrisMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-07-13T00:39:39.202Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T21:57:30.690Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-13T12:35:21.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-02T03:52:53.097Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -225,7 +225,7 @@ var res = await sdk.Timeshift.PatchHrisTimeshiftAsync(req);
 
 ## RemoveHrisTimeshift
 
-Remove a timeshift
+Deletes the HrisTimeshift identified by `id`.
 
 ### Example Usage
 
@@ -265,7 +265,7 @@ var res = await sdk.Timeshift.RemoveHrisTimeshiftAsync(
 
 ## UpdateHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -283,7 +283,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2022-07-18T01:57:56.621Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-07-18T10:58:38.441Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -295,13 +295,13 @@ UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-27T01:43:03.122Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-27T23:08:36.187Z").ToUniversalTime(),
         Hours = 6D,
-        Id = "45297750-9202-41be-bd8e-5ce96540ec8f",
+        Id = "9648cb82-63b3-47c8-9b71-8ddf2e9f68e3",
         IsApproved = false,
         Metadata = new List<HrisMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-07-13T00:39:39.202Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-07-01T21:57:30.690Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-13T12:35:21.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-02T03:52:53.097Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

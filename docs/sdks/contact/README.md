@@ -25,7 +25,7 @@
 
 ## CreateAccountingContact
 
-Create a contact
+Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
             },
         },
         FirstName = "Delores",
-        Id = "31fa4845-3227-4e9f-9036-be38557b7807",
+        Id = "7f71589f-ade6-49bb-b986-0d292518d198",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -77,7 +77,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "7aa1a708-304c-4970-928f-8489ea7c5f5b",
+                Id = "bcaabac1-12a6-4dd7-aab2-e435fb09c53d",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -99,7 +99,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.513Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-20T06:45:47.082Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     connectionId: "<id>"
@@ -129,7 +129,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
 
 ## CreateCrmContact
 
-Create a contact
+Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
 
 ### Example Usage
 
@@ -164,7 +164,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
             },
         },
         FirstName = "Mohammad",
-        Id = "2a17266a-ae35-4620-9775-fd254091c73f",
+        Id = "01d55dd9-c5fe-4dd3-a46d-196cb3533715",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -178,7 +178,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "2e81c79b-9557-45ad-82d7-bad66dfb4a5e",
+                Id = "ca1fc40c-da2d-4226-8c04-d7767282ab81",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -198,7 +198,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.977Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.386Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -227,7 +227,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
 
 ## CreateUcContact
 
-Create a contact
+Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
 
 ### Example Usage
 
@@ -253,7 +253,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "fa772c3b-4f74-4e50-9912-7937c0aeb895",
+        Id = "18a1c6b4-4630-4625-9a54-3d69647bd263",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -272,7 +272,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.688Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T22:00:29.664Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -301,7 +301,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
 
 ## GetAccountingContact
 
-Retrieve a contact
+Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -343,7 +343,7 @@ var res = await sdk.Contact.GetAccountingContactAsync(
 
 ## GetCrmContact
 
-Retrieve a contact
+Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -385,7 +385,7 @@ var res = await sdk.Contact.GetCrmContactAsync(
 
 ## GetUcContact
 
-Retrieve a contact
+Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -427,7 +427,7 @@ var res = await sdk.Contact.GetUcContactAsync(
 
 ## ListAccountingContacts
 
-List all contacts
+Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -468,7 +468,7 @@ var res = await sdk.Contact.ListAccountingContactsAsync(req);
 
 ## ListCrmContacts
 
-List all contacts
+Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -509,7 +509,7 @@ var res = await sdk.Contact.ListCrmContactsAsync(req);
 
 ## ListUcContacts
 
-List all contacts
+Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -550,7 +550,7 @@ var res = await sdk.Contact.ListUcContactsAsync(req);
 
 ## PatchAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -592,7 +592,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4d9d12a6-5a51-4cc1-a10e-0e68fd48bff6",
+        Id = "b2d7e058-09ba-4dc4-bb7d-42c423e44bd9",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -603,7 +603,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "c0231a80-4c39-4c9e-8ac8-24b26bfce8be",
+                Id = "dcd1e233-1a6b-44de-8351-65458f5d176e",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -625,7 +625,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.530Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-20T06:45:47.106Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
@@ -655,7 +655,7 @@ var res = await sdk.Contact.PatchAccountingContactAsync(req);
 
 ## PatchCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -691,7 +691,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "840e33b2-a05c-483e-8e30-53d1434ffaa0",
+        Id = "b3351907-6b1f-4ba6-b15e-46f54cdb4660",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -705,7 +705,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "fb6e0969-a00b-4511-aff5-50e9b75f4664",
+                Id = "c725dffa-914c-4a67-abdd-be4eb9bfce9c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -725,7 +725,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.978Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.387Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -754,7 +754,7 @@ var res = await sdk.Contact.PatchCrmContactAsync(req);
 
 ## PatchUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -781,7 +781,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "31eb2471-3e3c-4948-808c-32e639e3714a",
+        Id = "167efbd4-ebba-45b5-b7be-85e4905b2f69",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -800,7 +800,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.695Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T22:00:29.670Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -829,7 +829,7 @@ var res = await sdk.Contact.PatchUcContactAsync(req);
 
 ## RemoveAccountingContact
 
-Remove a contact
+Deletes the AccountingContact identified by `id`.
 
 ### Example Usage
 
@@ -869,7 +869,7 @@ var res = await sdk.Contact.RemoveAccountingContactAsync(
 
 ## RemoveCrmContact
 
-Remove a contact
+Deletes the CrmContact identified by `id`.
 
 ### Example Usage
 
@@ -909,7 +909,7 @@ var res = await sdk.Contact.RemoveCrmContactAsync(
 
 ## RemoveUcContact
 
-Remove a contact
+Deletes the UcContact identified by `id`.
 
 ### Example Usage
 
@@ -949,7 +949,7 @@ var res = await sdk.Contact.RemoveUcContactAsync(
 
 ## UpdateAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -991,7 +991,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4d9d12a6-5a51-4cc1-a10e-0e68fd48bff6",
+        Id = "b2d7e058-09ba-4dc4-bb7d-42c423e44bd9",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -1002,7 +1002,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "c0231a80-4c39-4c9e-8ac8-24b26bfce8be",
+                Id = "dcd1e233-1a6b-44de-8351-65458f5d176e",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -1024,7 +1024,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.530Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-20T06:45:47.106Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
@@ -1054,7 +1054,7 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(req);
 
 ## UpdateCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1090,7 +1090,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "840e33b2-a05c-483e-8e30-53d1434ffaa0",
+        Id = "b3351907-6b1f-4ba6-b15e-46f54cdb4660",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -1104,7 +1104,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "fb6e0969-a00b-4511-aff5-50e9b75f4664",
+                Id = "c725dffa-914c-4a67-abdd-be4eb9bfce9c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1124,7 +1124,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:06:56.978Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.387Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1153,7 +1153,7 @@ var res = await sdk.Contact.UpdateCrmContactAsync(req);
 
 ## UpdateUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1180,7 +1180,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "31eb2471-3e3c-4948-808c-32e639e3714a",
+        Id = "167efbd4-ebba-45b5-b7be-85e4905b2f69",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -1199,7 +1199,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.695Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T22:00:29.670Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

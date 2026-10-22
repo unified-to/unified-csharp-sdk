@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a request.
         /// </summary>
+        /// <remarks>
+        /// Creates a VerificationRequest. Provide the unified VerificationRequest fields in the request body; they are mapped to the provider's API. Returns the created VerificationRequest.
+        /// </remarks>
         /// <param name="verificationRequest">A <see cref="VerificationRequest"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a package.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single VerificationPackage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Package.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a request.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single VerificationRequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Request.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all packages.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of VerificationPackages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListVerificationPackagesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListVerificationPackagesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -97,6 +109,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all requests.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of VerificationRequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListVerificationRequestsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListVerificationRequestsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -110,6 +125,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a request.
         /// </summary>
+        /// <remarks>
+        /// Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchVerificationRequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchVerificationRequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a request.
         /// </summary>
+        /// <remarks>
+        /// Deletes the VerificationRequest identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Request.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveVerificationRequestResponse"/> response envelope when completed.</returns>
@@ -134,6 +155,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a request.
         /// </summary>
+        /// <remarks>
+        /// Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateVerificationRequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateVerificationRequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -161,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a request.
         /// </summary>
+        /// <remarks>
+        /// Creates a VerificationRequest. Provide the unified VerificationRequest fields in the request body; they are mapped to the provider's API. Returns the created VerificationRequest.
+        /// </remarks>
         /// <param name="verificationRequest">A <see cref="VerificationRequest"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -289,6 +316,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a package.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single VerificationPackage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Package.</param>
         /// <param name="fields">Fields to return.</param>
@@ -411,6 +441,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a request.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single VerificationRequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Request.</param>
         /// <param name="fields">Fields to return.</param>
@@ -533,6 +566,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all packages.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of VerificationPackages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListVerificationPackagesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListVerificationPackagesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -640,6 +676,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all requests.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of VerificationRequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListVerificationRequestsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListVerificationRequestsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -747,6 +786,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a request.
         /// </summary>
+        /// <remarks>
+        /// Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchVerificationRequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchVerificationRequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -860,6 +902,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a request.
         /// </summary>
+        /// <remarks>
+        /// Deletes the VerificationRequest identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Request.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveVerificationRequestResponse"/> response envelope when completed.</returns>
@@ -966,6 +1011,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a request.
         /// </summary>
+        /// <remarks>
+        /// Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateVerificationRequestRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateVerificationRequestResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

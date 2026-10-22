@@ -13,7 +13,7 @@
 
 ## CreateComputeService
 
-Create a service
+Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ var res = await sdk.Service.CreateComputeServiceAsync(
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "2f0e38c8-4bdc-45fa-ab7c-273083a74dc5",
+        Id = "a790709c-fe25-4e2c-b340-e5521226c05c",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -44,7 +44,7 @@ var res = await sdk.Service.CreateComputeServiceAsync(
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-04T16:38:31.301Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-05T03:17:58.597Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>"
@@ -74,7 +74,7 @@ var res = await sdk.Service.CreateComputeServiceAsync(
 
 ## GetComputeService
 
-Retrieve a service
+Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +116,7 @@ var res = await sdk.Service.GetComputeServiceAsync(
 
 ## ListComputeServices
 
-List all services
+Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -157,7 +157,7 @@ var res = await sdk.Service.ListComputeServicesAsync(req);
 
 ## PatchComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -178,7 +178,7 @@ PatchComputeServiceRequest req = new PatchComputeServiceRequest() {
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "ccc3725e-1698-4e85-9714-3c03764a7c96",
+        Id = "1ad6eb4a-2a5c-40da-b6ab-858defbecb52",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -189,7 +189,7 @@ PatchComputeServiceRequest req = new PatchComputeServiceRequest() {
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-04T16:38:31.313Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-05T03:17:58.605Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     ConnectionId = "<id>",
@@ -219,7 +219,7 @@ var res = await sdk.Service.PatchComputeServiceAsync(req);
 
 ## RemoveComputeService
 
-Remove a service
+Deletes the ComputeService identified by `id`.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ var res = await sdk.Service.RemoveComputeServiceAsync(
 
 ## UpdateComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ UpdateComputeServiceRequest req = new UpdateComputeServiceRequest() {
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "ccc3725e-1698-4e85-9714-3c03764a7c96",
+        Id = "1ad6eb4a-2a5c-40da-b6ab-858defbecb52",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -291,7 +291,7 @@ UpdateComputeServiceRequest req = new UpdateComputeServiceRequest() {
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-04T16:38:31.313Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-05T03:17:58.605Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     ConnectionId = "<id>",

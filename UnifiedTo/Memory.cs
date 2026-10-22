@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a memory.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
+        /// </remarks>
         /// <param name="genaiMemory">A <see cref="GenaiMemory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a memory.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all memories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiMemoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiMemoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a memory.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiMemory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiMemoryResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a memory.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
+        /// </remarks>
         /// <param name="genaiMemory">A <see cref="GenaiMemory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -251,6 +272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a memory.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <param name="fields">Fields to return.</param>
@@ -373,6 +397,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all memories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiMemoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiMemoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -478,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -589,6 +619,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a memory.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiMemory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Memory.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiMemoryResponse"/> response envelope when completed.</returns>
@@ -692,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a memory.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiMemoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiMemoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

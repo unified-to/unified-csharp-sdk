@@ -13,7 +13,7 @@
 
 ## CreateAccountingPurchaseorder
 
-Create a purchaseorder
+Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
 
 ### Example Usage
 
@@ -43,7 +43,7 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "EUR",
-        Id = "7a67124c-e6c3-4c69-b8ff-b34229a64501",
+        Id = "03539c13-2977-4fea-a53a-c9fa43b578b2",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
@@ -57,7 +57,7 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
         },
         Status = AccountingPurchaseorderStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-08-11T06:02:15.173Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-08-11T08:29:00.127Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -86,7 +86,7 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
 
 ## GetAccountingPurchaseorder
 
-Retrieve a purchaseorder
+Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -128,7 +128,7 @@ var res = await sdk.Purchaseorder.GetAccountingPurchaseorderAsync(
 
 ## ListAccountingPurchaseorders
 
-List all purchaseorders
+Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -169,7 +169,7 @@ var res = await sdk.Purchaseorder.ListAccountingPurchaseordersAsync(req);
 
 ## PatchAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -200,7 +200,7 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "EUR",
-        Id = "429f5c00-e125-40a8-a449-ce1df3b41643",
+        Id = "835423df-62d9-4cef-8316-6dcb624cae5b",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
@@ -214,7 +214,7 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         },
         Status = AccountingPurchaseorderStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-08-11T06:02:15.177Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-08-11T08:29:00.133Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -243,7 +243,7 @@ var res = await sdk.Purchaseorder.PatchAccountingPurchaseorderAsync(req);
 
 ## RemoveAccountingPurchaseorder
 
-Remove a purchaseorder
+Deletes the AccountingPurchaseorder identified by `id`.
 
 ### Example Usage
 
@@ -283,7 +283,7 @@ var res = await sdk.Purchaseorder.RemoveAccountingPurchaseorderAsync(
 
 ## UpdateAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -314,7 +314,7 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "EUR",
-        Id = "429f5c00-e125-40a8-a449-ce1df3b41643",
+        Id = "835423df-62d9-4cef-8316-6dcb624cae5b",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
@@ -328,7 +328,7 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         },
         Status = AccountingPurchaseorderStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-08-11T06:02:15.177Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-08-11T08:29:00.133Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

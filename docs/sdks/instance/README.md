@@ -13,7 +13,7 @@
 
 ## CreateComputeInstance
 
-Create an instance
+Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
 
 ### Example Usage
 
@@ -48,7 +48,7 @@ var res = await sdk.Instance.CreateComputeInstanceAsync(
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "e5c8356d-559c-4e3a-a18c-34f31f96afd0",
+        Id = "29bc97bf-ed08-457c-b659-bb843561470f",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -63,11 +63,11 @@ var res = await sdk.Instance.CreateComputeInstanceAsync(
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-23T23:28:09.657Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-24T12:38:34.520Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-16T05:01:39.438Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-16T19:26:10.822Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -96,7 +96,7 @@ var res = await sdk.Instance.CreateComputeInstanceAsync(
 
 ## GetComputeInstance
 
-Retrieve an instance
+Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -138,7 +138,7 @@ var res = await sdk.Instance.GetComputeInstanceAsync(
 
 ## ListComputeInstances
 
-List all instances
+Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -179,7 +179,7 @@ var res = await sdk.Instance.ListComputeInstancesAsync(req);
 
 ## PatchComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -215,7 +215,7 @@ PatchComputeInstanceRequest req = new PatchComputeInstanceRequest() {
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "b85722b6-ee7b-4fe2-a1f4-590c866ee5d6",
+        Id = "5c415506-e1d3-46d8-a872-e6df61329abf",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -230,11 +230,11 @@ PatchComputeInstanceRequest req = new PatchComputeInstanceRequest() {
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-23T23:28:09.679Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-24T12:38:34.538Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-16T05:01:39.462Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-16T19:26:10.842Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -263,7 +263,7 @@ var res = await sdk.Instance.PatchComputeInstanceAsync(req);
 
 ## RemoveComputeInstance
 
-Remove an instance
+Deletes the ComputeInstance identified by `id`.
 
 ### Example Usage
 
@@ -303,7 +303,7 @@ var res = await sdk.Instance.RemoveComputeInstanceAsync(
 
 ## UpdateComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -339,7 +339,7 @@ UpdateComputeInstanceRequest req = new UpdateComputeInstanceRequest() {
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "b85722b6-ee7b-4fe2-a1f4-590c866ee5d6",
+        Id = "5c415506-e1d3-46d8-a872-e6df61329abf",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -354,11 +354,11 @@ UpdateComputeInstanceRequest req = new UpdateComputeInstanceRequest() {
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-23T23:28:09.679Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-24T12:38:34.538Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-16T05:01:39.462Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-16T19:26:10.842Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

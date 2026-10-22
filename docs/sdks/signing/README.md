@@ -21,7 +21,7 @@
 
 ## CreateSigningDocument
 
-Create a document
+Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
 
 ### Example Usage
 
@@ -41,12 +41,12 @@ var res = await sdk.Signing.CreateSigningDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "6ed235d7-f86d-4997-80c1-5ceed1ee5558",
+        Id = "e658ff76-dbba-4e72-b71a-5e1bf4a21ca4",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-29T12:09:26.649Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-29T16:44:12.171Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T22:41:47.810Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T15:50:46.498Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -75,7 +75,7 @@ var res = await sdk.Signing.CreateSigningDocumentAsync(
 
 ## CreateSigningSignatory
 
-Create a signatory
+Creates a SigningSignatory. Provide the unified SigningSignatory fields in the request body; they are mapped to the provider's API. Returns the created SigningSignatory.
 
 ### Example Usage
 
@@ -94,12 +94,12 @@ var res = await sdk.Signing.CreateSigningSignatoryAsync(
     signingSignatory: new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "anais.lakin@icloud.com",
-        Id = "4a11fe81-947f-4840-a2b9-47fd950453a9",
+        Id = "1281db60-b3a9-4512-8528-ca643337d488",
         Metadata = new List<SigningMetadata>() {},
         Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Error,
-        UpdatedAt = System.DateTime.Parse("2024-05-17T20:05:23.443Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-05-18T06:05:08.710Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -128,7 +128,7 @@ var res = await sdk.Signing.CreateSigningSignatoryAsync(
 
 ## GetSigningDocument
 
-Retrieve a document
+Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -170,7 +170,7 @@ var res = await sdk.Signing.GetSigningDocumentAsync(
 
 ## GetSigningSignatory
 
-Retrieve a signatory
+Retrieves a single SigningSignatory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -212,7 +212,7 @@ var res = await sdk.Signing.GetSigningSignatoryAsync(
 
 ## GetSigningTemplate
 
-Retrieve a template
+Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -254,7 +254,7 @@ var res = await sdk.Signing.GetSigningTemplateAsync(
 
 ## ListSigningDocuments
 
-List all documents
+Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -295,7 +295,7 @@ var res = await sdk.Signing.ListSigningDocumentsAsync(req);
 
 ## ListSigningSignatories
 
-List all signatories
+Returns a list of SigningSignatories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -336,7 +336,7 @@ var res = await sdk.Signing.ListSigningSignatoriesAsync(req);
 
 ## ListSigningTemplates
 
-List all templates
+Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -377,7 +377,7 @@ var res = await sdk.Signing.ListSigningTemplatesAsync(req);
 
 ## PatchSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -398,12 +398,12 @@ PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "789a9731-b7b0-4700-aaf6-6981349b9f5e",
+        Id = "231d0832-7b7e-4894-852e-47e7b36039fd",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-29T12:09:26.651Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-29T16:44:12.174Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T22:41:47.819Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T15:50:46.512Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -432,7 +432,7 @@ var res = await sdk.Signing.PatchSigningDocumentAsync(req);
 
 ## PatchSigningSignatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -452,12 +452,12 @@ PatchSigningSignatoryRequest req = new PatchSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "anais.lakin@icloud.com",
-        Id = "fd8b482e-1ea1-43c3-87c1-b8cd0fe06867",
+        Id = "277a9d5f-7c08-4d9c-94b1-dd55a4d83933",
         Metadata = new List<SigningMetadata>() {},
         Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Error,
-        UpdatedAt = System.DateTime.Parse("2024-05-17T20:05:23.448Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-05-18T06:05:08.718Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -486,7 +486,7 @@ var res = await sdk.Signing.PatchSigningSignatoryAsync(req);
 
 ## RemoveSigningDocument
 
-Remove a document
+Deletes the SigningDocument identified by `id`.
 
 ### Example Usage
 
@@ -526,7 +526,7 @@ var res = await sdk.Signing.RemoveSigningDocumentAsync(
 
 ## RemoveSigningSignatory
 
-Remove a signatory
+Deletes the SigningSignatory identified by `id`.
 
 ### Example Usage
 
@@ -566,7 +566,7 @@ var res = await sdk.Signing.RemoveSigningSignatoryAsync(
 
 ## UpdateSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -587,12 +587,12 @@ UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "789a9731-b7b0-4700-aaf6-6981349b9f5e",
+        Id = "231d0832-7b7e-4894-852e-47e7b36039fd",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-29T12:09:26.651Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-29T16:44:12.174Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T22:41:47.819Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T15:50:46.512Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -621,7 +621,7 @@ var res = await sdk.Signing.UpdateSigningDocumentAsync(req);
 
 ## UpdateSigningSignatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -641,12 +641,12 @@ UpdateSigningSignatoryRequest req = new UpdateSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "anais.lakin@icloud.com",
-        Id = "fd8b482e-1ea1-43c3-87c1-b8cd0fe06867",
+        Id = "277a9d5f-7c08-4d9c-94b1-dd55a4d83933",
         Metadata = new List<SigningMetadata>() {},
         Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Error,
-        UpdatedAt = System.DateTime.Parse("2024-05-17T20:05:23.448Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-05-18T06:05:08.718Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

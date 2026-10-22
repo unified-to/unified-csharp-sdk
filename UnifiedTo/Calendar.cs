@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a calendar.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarCalendar. Provide the unified CalendarCalendar fields in the request body; they are mapped to the provider's API. Returns the created CalendarCalendar.
+        /// </remarks>
         /// <param name="calendarCalendar">A <see cref="CalendarCalendar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
+        /// </remarks>
         /// <param name="calendarEvent">A <see cref="CalendarEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
+        /// </remarks>
         /// <param name="calendarLink">A <see cref="CalendarLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a webinar.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
+        /// </remarks>
         /// <param name="calendarWebinar">A <see cref="CalendarWebinar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a calendar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarCalendar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Calendar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a recording.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Recording.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a webinar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Webinar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all busies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarBusies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarBusiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarBusiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -209,6 +239,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all calendars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarCalendars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarCalendarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarCalendarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -220,6 +253,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -231,6 +267,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -242,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all recordings.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarRecordingsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarRecordingsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -253,6 +295,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all webinars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarWebinarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarWebinarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -264,6 +309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a calendar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarCalendarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarCalendarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -275,6 +323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -286,6 +337,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -297,6 +351,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a webinar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarWebinarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarWebinarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -308,6 +365,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a calendar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarCalendar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Calendar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarCalendarResponse"/> response envelope when completed.</returns>
@@ -319,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarEventResponse"/> response envelope when completed.</returns>
@@ -330,6 +393,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarLinkResponse"/> response envelope when completed.</returns>
@@ -341,6 +407,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a webinar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarWebinar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Webinar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarWebinarResponse"/> response envelope when completed.</returns>
@@ -352,6 +421,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a calendar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarCalendarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarCalendarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -363,6 +435,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -374,6 +449,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -385,6 +463,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a webinar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarWebinarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarWebinarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -410,6 +491,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a calendar.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarCalendar. Provide the unified CalendarCalendar fields in the request body; they are mapped to the provider's API. Returns the created CalendarCalendar.
+        /// </remarks>
         /// <param name="calendarCalendar">A <see cref="CalendarCalendar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -538,6 +622,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
+        /// </remarks>
         /// <param name="calendarEvent">A <see cref="CalendarEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -666,6 +753,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
+        /// </remarks>
         /// <param name="calendarLink">A <see cref="CalendarLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -794,6 +884,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a webinar.
         /// </summary>
+        /// <remarks>
+        /// Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
+        /// </remarks>
         /// <param name="calendarWebinar">A <see cref="CalendarWebinar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -922,6 +1015,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a calendar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarCalendar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Calendar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1044,6 +1140,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1166,6 +1265,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1288,6 +1390,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a recording.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Recording.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1410,6 +1515,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a webinar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Webinar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1532,6 +1640,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all busies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarBusies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarBusiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarBusiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1637,6 +1748,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all calendars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarCalendars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarCalendarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarCalendarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1744,6 +1858,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1849,6 +1966,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1954,6 +2074,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all recordings.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarRecordingsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarRecordingsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2061,6 +2184,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all webinars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCalendarWebinarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCalendarWebinarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2166,6 +2292,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a calendar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarCalendarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarCalendarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2279,6 +2408,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2390,6 +2522,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2501,6 +2636,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a webinar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCalendarWebinarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCalendarWebinarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2612,6 +2750,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a calendar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarCalendar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Calendar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarCalendarResponse"/> response envelope when completed.</returns>
@@ -2715,6 +2856,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an event.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarEvent identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarEventResponse"/> response envelope when completed.</returns>
@@ -2818,6 +2962,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarLinkResponse"/> response envelope when completed.</returns>
@@ -2921,6 +3068,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a webinar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CalendarWebinar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Webinar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCalendarWebinarResponse"/> response envelope when completed.</returns>
@@ -3024,6 +3174,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a calendar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarCalendarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarCalendarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3137,6 +3290,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an event.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarEventRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarEventResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3248,6 +3404,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3359,6 +3518,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a webinar.
         /// </summary>
+        /// <remarks>
+        /// Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCalendarWebinarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCalendarWebinarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -37,7 +37,7 @@
 
 ## CreateRepoBranch
 
-Create a branch
+Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
 
 ### Example Usage
 
@@ -55,11 +55,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "c926e36c-75e1-45ea-bc6b-10c90fc44df9",
+        Id = "8f71aa4a-1906-4a40-adae-b85bf1553a7c",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T08:04:47.427Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.296Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -88,7 +88,7 @@ var res = await sdk.Repo.CreateRepoBranchAsync(
 
 ## CreateRepoCommit
 
-Create a commit
+Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
 
 ### Example Usage
 
@@ -106,14 +106,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "79c86208-adc2-482a-836e-4a3856032cb9",
+        Id = "aafa3271-3e03-411c-84a1-3824f1ec1021",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-31T06:58:59.441Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-31T16:54:54.849Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -142,7 +142,7 @@ var res = await sdk.Repo.CreateRepoCommitAsync(
 
 ## CreateRepoOrganization
 
-Create an organization
+Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
 
 ### Example Usage
 
@@ -162,10 +162,10 @@ var res = await sdk.Repo.CreateRepoOrganizationAsync(
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "268638dd-46fc-458a-a1c1-c717b15b2793",
+        Id = "bbadfceb-6ce0-488b-9cab-8c83b5b87aab",
         Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T15:12:36.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T20:52:32.280Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     connectionId: "<id>"
@@ -195,7 +195,7 @@ var res = await sdk.Repo.CreateRepoOrganizationAsync(
 
 ## CreateRepoPullrequest
 
-Create a pullrequest
+Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
 
 ### Example Usage
 
@@ -212,9 +212,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.823Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-02T02:56:23.128Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "f3617f0c-7c55-4781-b6b4-7c3573c07bc8",
+        Id = "c36e6023-c574-47db-878f-67dcb0e51ab9",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -223,7 +223,7 @@ var res = await sdk.Repo.CreateRepoPullrequestAsync(
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.007Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-18T00:26:42.452Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -252,7 +252,7 @@ var res = await sdk.Repo.CreateRepoPullrequestAsync(
 
 ## CreateRepoRepository
 
-Create a repository
+Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
 
 ### Example Usage
 
@@ -271,11 +271,11 @@ var res = await sdk.Repo.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
         Description = "Sed somnus crastinus armarium.",
-        Id = "e5276c4e-8c3b-4cc3-a784-12beb729226c",
+        Id = "0ab2ce47-5030-4b18-a803-d155f4845b27",
         IsPrivate = false,
         Metadata = new List<RepoMetadata>() {},
         Name = "bah-bogus",
-        UpdatedAt = System.DateTime.Parse("2024-03-01T02:08:36.364Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-01T06:46:24.777Z").ToUniversalTime(),
         WebUrl = "https://neat-birdbath.org",
     },
     connectionId: "<id>"
@@ -305,7 +305,7 @@ var res = await sdk.Repo.CreateRepoRepositoryAsync(
 
 ## GetRepoBranch
 
-Retrieve a branch
+Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -347,7 +347,7 @@ var res = await sdk.Repo.GetRepoBranchAsync(
 
 ## GetRepoCommit
 
-Retrieve a commit
+Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -389,7 +389,7 @@ var res = await sdk.Repo.GetRepoCommitAsync(
 
 ## GetRepoOrganization
 
-Retrieve an organization
+Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -431,7 +431,7 @@ var res = await sdk.Repo.GetRepoOrganizationAsync(
 
 ## GetRepoPullrequest
 
-Retrieve a pullrequest
+Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -473,7 +473,7 @@ var res = await sdk.Repo.GetRepoPullrequestAsync(
 
 ## GetRepoRepository
 
-Retrieve a repository
+Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -515,7 +515,7 @@ var res = await sdk.Repo.GetRepoRepositoryAsync(
 
 ## ListRepoBranches
 
-List all branches
+Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -556,7 +556,7 @@ var res = await sdk.Repo.ListRepoBranchesAsync(req);
 
 ## ListRepoCommits
 
-List all commits
+Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -597,7 +597,7 @@ var res = await sdk.Repo.ListRepoCommitsAsync(req);
 
 ## ListRepoOrganizations
 
-List all organizations
+Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -638,7 +638,7 @@ var res = await sdk.Repo.ListRepoOrganizationsAsync(req);
 
 ## ListRepoPullrequests
 
-List all pullrequests
+Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -679,7 +679,7 @@ var res = await sdk.Repo.ListRepoPullrequestsAsync(req);
 
 ## ListRepoRepositories
 
-List all repositories
+Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -720,7 +720,7 @@ var res = await sdk.Repo.ListRepoRepositoriesAsync(req);
 
 ## PatchRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -739,11 +739,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "47899b1c-0443-4524-b01d-a2542ed50ea5",
+        Id = "d87ec157-ea03-4f85-b520-b872b02d3147",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T08:04:47.428Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.297Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -772,7 +772,7 @@ var res = await sdk.Repo.PatchRepoBranchAsync(req);
 
 ## PatchRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -791,14 +791,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "f998ef5b-6cd0-453b-add3-d115d44f8357",
+        Id = "6185b032-6d09-4b17-af74-5539ac1f77ea",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-31T06:58:59.445Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-31T16:54:54.853Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -827,7 +827,7 @@ var res = await sdk.Repo.PatchRepoCommitAsync(req);
 
 ## PatchRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -848,10 +848,10 @@ PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "0580b911-e61c-4b4b-bd42-314031432549",
+        Id = "75010e2c-294b-4c50-8298-0b6bea991617",
         Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T15:12:36.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T20:52:32.282Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -881,7 +881,7 @@ var res = await sdk.Repo.PatchRepoOrganizationAsync(req);
 
 ## PatchRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -899,9 +899,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.830Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-02T02:56:23.134Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "0b2547a8-d217-4ebf-a3c8-83c9530b5815",
+        Id = "b6676e4c-7c3f-4100-8e59-7926bc7c94d2",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -910,7 +910,7 @@ PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-18T00:26:42.460Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -939,7 +939,7 @@ var res = await sdk.Repo.PatchRepoPullrequestAsync(req);
 
 ## PatchRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -959,11 +959,11 @@ PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
         Description = "Sed somnus crastinus armarium.",
-        Id = "8498ebf0-69d8-4a04-b779-7e4beed97f6d",
+        Id = "b7c5e9c3-393a-48e5-86c3-ee58c87bbd49",
         IsPrivate = false,
         Metadata = new List<RepoMetadata>() {},
         Name = "bah-bogus",
-        UpdatedAt = System.DateTime.Parse("2024-03-01T02:08:36.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-01T06:46:24.779Z").ToUniversalTime(),
         WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",
@@ -993,7 +993,7 @@ var res = await sdk.Repo.PatchRepoRepositoryAsync(req);
 
 ## RemoveRepoBranch
 
-Remove a branch
+Deletes the RepoBranch identified by `id`.
 
 ### Example Usage
 
@@ -1033,7 +1033,7 @@ var res = await sdk.Repo.RemoveRepoBranchAsync(
 
 ## RemoveRepoCommit
 
-Remove a commit
+Deletes the RepoCommit identified by `id`.
 
 ### Example Usage
 
@@ -1073,7 +1073,7 @@ var res = await sdk.Repo.RemoveRepoCommitAsync(
 
 ## RemoveRepoOrganization
 
-Remove an organization
+Deletes the RepoOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1113,7 +1113,7 @@ var res = await sdk.Repo.RemoveRepoOrganizationAsync(
 
 ## RemoveRepoPullrequest
 
-Remove a pullrequest
+Deletes the RepoPullrequest identified by `id`.
 
 ### Example Usage
 
@@ -1153,7 +1153,7 @@ var res = await sdk.Repo.RemoveRepoPullrequestAsync(
 
 ## RemoveRepoRepository
 
-Remove a repository
+Deletes the RepoRepository identified by `id`.
 
 ### Example Usage
 
@@ -1193,7 +1193,7 @@ var res = await sdk.Repo.RemoveRepoRepositoryAsync(
 
 ## UpdateRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -1212,11 +1212,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "47899b1c-0443-4524-b01d-a2542ed50ea5",
+        Id = "d87ec157-ea03-4f85-b520-b872b02d3147",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T08:04:47.428Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.297Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1245,7 +1245,7 @@ var res = await sdk.Repo.UpdateRepoBranchAsync(req);
 
 ## UpdateRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -1264,14 +1264,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "f998ef5b-6cd0-453b-add3-d115d44f8357",
+        Id = "6185b032-6d09-4b17-af74-5539ac1f77ea",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-31T06:58:59.445Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-31T16:54:54.853Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1300,7 +1300,7 @@ var res = await sdk.Repo.UpdateRepoCommitAsync(req);
 
 ## UpdateRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1321,10 +1321,10 @@ UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "0580b911-e61c-4b4b-bd42-314031432549",
+        Id = "75010e2c-294b-4c50-8298-0b6bea991617",
         Metadata = new List<RepoMetadata>() {},
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-21T15:12:36.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-21T20:52:32.282Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -1354,7 +1354,7 @@ var res = await sdk.Repo.UpdateRepoOrganizationAsync(req);
 
 ## UpdateRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -1372,9 +1372,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-05-01T14:02:42.830Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-05-02T02:56:23.134Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "0b2547a8-d217-4ebf-a3c8-83c9530b5815",
+        Id = "b6676e4c-7c3f-4100-8e59-7926bc7c94d2",
         Labels = new List<string>() {
             "creptio",
             "tutamen",
@@ -1383,7 +1383,7 @@ UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
         Notes = "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
         Status = RepoPullrequestStatus.Approved,
         Title = "reboot mobile application",
-        UpdatedAt = System.DateTime.Parse("2026-01-17T07:19:03.015Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-18T00:26:42.460Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1412,7 +1412,7 @@ var res = await sdk.Repo.UpdateRepoPullrequestAsync(req);
 
 ## UpdateRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -1432,11 +1432,11 @@ UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
         Description = "Sed somnus crastinus armarium.",
-        Id = "8498ebf0-69d8-4a04-b779-7e4beed97f6d",
+        Id = "b7c5e9c3-393a-48e5-86c3-ee58c87bbd49",
         IsPrivate = false,
         Metadata = new List<RepoMetadata>() {},
         Name = "bah-bogus",
-        UpdatedAt = System.DateTime.Parse("2024-03-01T02:08:36.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-01T06:46:24.779Z").ToUniversalTime(),
         WebUrl = "https://neat-birdbath.org",
     },
     ConnectionId = "<id>",

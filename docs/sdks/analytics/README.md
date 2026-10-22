@@ -25,7 +25,7 @@
 
 ## CreateAnalyticsEvent
 
-Create an event
+Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
 
 ### Example Usage
 
@@ -44,13 +44,13 @@ var res = await sdk.Analytics.CreateAnalyticsEventAsync(
     analyticsEvent: new AnalyticsEvent() {
         CreatedAt = System.DateTime.Parse("2023-06-21T03:13:22.954Z").ToUniversalTime(),
         EventType = EventType.ScreenView,
-        Id = "4cbcba68-a8c0-4a02-afed-2a3d8f373be4",
+        Id = "0227c3f6-b8ec-4f42-ac59-3162994acc52",
         Metadata = new Dictionary<string, PropertyAnalyticsEventMetadata>() {
             { "key", new PropertyAnalyticsEventMetadata() {} },
         },
         Name = "page_view",
         PageUrl = "https://golden-carboxyl.biz",
-        UpdatedAt = System.DateTime.Parse("2023-09-24T16:24:20.839Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T18:06:07.304Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -79,7 +79,7 @@ var res = await sdk.Analytics.CreateAnalyticsEventAsync(
 
 ## CreateAnalyticsProperty
 
-Create a property
+Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
 
 ### Example Usage
 
@@ -97,10 +97,10 @@ var res = await sdk.Analytics.CreateAnalyticsPropertyAsync(
     analyticsProperty: new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "518b4f8b-bd28-4c14-95df-1e1128f791f4",
+        Id = "96ba3f28-db26-446c-b29d-55e79843de87",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:26:23.062Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:32:39.768Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -129,7 +129,7 @@ var res = await sdk.Analytics.CreateAnalyticsPropertyAsync(
 
 ## CreateAnalyticsVisitor
 
-Create a visitor
+Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
 
 ### Example Usage
 
@@ -149,13 +149,13 @@ var res = await sdk.Analytics.CreateAnalyticsVisitorAsync(
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "a13712f4-ed42-43e7-9821-60386e0b304a",
-        LastSeenAt = System.DateTime.Parse("2025-01-11T07:43:49.048Z").ToUniversalTime(),
+        Id = "6625ec1a-d831-4a8d-84cd-e78d421d75df",
+        LastSeenAt = System.DateTime.Parse("2025-01-11T23:27:44.256Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         TotalEvents = 2916D,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T17:27:57.368Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-30T10:44:16.928Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -184,7 +184,7 @@ var res = await sdk.Analytics.CreateAnalyticsVisitorAsync(
 
 ## GetAnalyticsEvent
 
-Retrieve an event
+Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -226,7 +226,7 @@ var res = await sdk.Analytics.GetAnalyticsEventAsync(
 
 ## GetAnalyticsProperty
 
-Retrieve a property
+Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ var res = await sdk.Analytics.GetAnalyticsPropertyAsync(
 
 ## GetAnalyticsSession
 
-Retrieve a session
+Retrieves a single AnalyticsSession by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -310,7 +310,7 @@ var res = await sdk.Analytics.GetAnalyticsSessionAsync(
 
 ## GetAnalyticsVisitor
 
-Retrieve a visitor
+Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -352,7 +352,7 @@ var res = await sdk.Analytics.GetAnalyticsVisitorAsync(
 
 ## ListAnalyticsEvents
 
-List all events
+Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -393,7 +393,7 @@ var res = await sdk.Analytics.ListAnalyticsEventsAsync(req);
 
 ## ListAnalyticsProperties
 
-List all properties
+Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -434,7 +434,7 @@ var res = await sdk.Analytics.ListAnalyticsPropertiesAsync(req);
 
 ## ListAnalyticsReports
 
-List all reports
+Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -475,7 +475,7 @@ var res = await sdk.Analytics.ListAnalyticsReportsAsync(req);
 
 ## ListAnalyticsSessions
 
-List all sessions
+Returns a list of AnalyticsSessions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -516,7 +516,7 @@ var res = await sdk.Analytics.ListAnalyticsSessionsAsync(req);
 
 ## ListAnalyticsVisitors
 
-List all visitors
+Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -557,7 +557,7 @@ var res = await sdk.Analytics.ListAnalyticsVisitorsAsync(req);
 
 ## PatchAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -576,10 +576,10 @@ PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "7a8ef4f1-023d-4f89-b38e-8a0295c97272",
+        Id = "5e7574a3-930d-4604-b13d-a36790997cd2",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:26:23.063Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:32:39.768Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -608,7 +608,7 @@ var res = await sdk.Analytics.PatchAnalyticsPropertyAsync(req);
 
 ## PatchAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -629,13 +629,13 @@ PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "0cda5fd7-6321-42fd-b069-e7d551c976db",
-        LastSeenAt = System.DateTime.Parse("2025-01-11T07:43:49.055Z").ToUniversalTime(),
+        Id = "99759d9b-12f9-495b-9016-64c2c79886e2",
+        LastSeenAt = System.DateTime.Parse("2025-01-11T23:27:44.264Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         TotalEvents = 2916D,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T17:27:57.376Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-30T10:44:16.936Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -664,7 +664,7 @@ var res = await sdk.Analytics.PatchAnalyticsVisitorAsync(req);
 
 ## RemoveAnalyticsProperty
 
-Remove a property
+Deletes the AnalyticsProperty identified by `id`.
 
 ### Example Usage
 
@@ -704,7 +704,7 @@ var res = await sdk.Analytics.RemoveAnalyticsPropertyAsync(
 
 ## RemoveAnalyticsVisitor
 
-Remove a visitor
+Deletes the AnalyticsVisitor identified by `id`.
 
 ### Example Usage
 
@@ -744,7 +744,7 @@ var res = await sdk.Analytics.RemoveAnalyticsVisitorAsync(
 
 ## UpdateAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -763,10 +763,10 @@ UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "7a8ef4f1-023d-4f89-b38e-8a0295c97272",
+        Id = "5e7574a3-930d-4604-b13d-a36790997cd2",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:26:23.063Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:32:39.768Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -795,7 +795,7 @@ var res = await sdk.Analytics.UpdateAnalyticsPropertyAsync(req);
 
 ## UpdateAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -816,13 +816,13 @@ UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "desiree.o.hara@icloud.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "0cda5fd7-6321-42fd-b069-e7d551c976db",
-        LastSeenAt = System.DateTime.Parse("2025-01-11T07:43:49.055Z").ToUniversalTime(),
+        Id = "99759d9b-12f9-495b-9016-64c2c79886e2",
+        LastSeenAt = System.DateTime.Parse("2025-01-11T23:27:44.264Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         TotalEvents = 2916D,
-        UpdatedAt = System.DateTime.Parse("2025-06-29T17:27:57.376Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-30T10:44:16.936Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

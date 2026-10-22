@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
+        /// </remarks>
         /// <param name="atsScorecard">A <see cref="AtsScorecard"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -95,6 +107,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -106,6 +121,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -117,6 +135,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsScorecard identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsScorecardResponse"/> response envelope when completed.</returns>
@@ -128,6 +149,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -153,6 +177,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
+        /// </remarks>
         /// <param name="atsScorecard">A <see cref="AtsScorecard"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -281,6 +308,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -403,6 +433,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -525,6 +558,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -630,6 +666,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -735,6 +774,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -846,6 +888,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsScorecard identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsScorecardResponse"/> response envelope when completed.</returns>
@@ -949,6 +994,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsScorecardRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsScorecardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

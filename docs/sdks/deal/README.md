@@ -13,7 +13,7 @@
 
 ## CreateCrmDeal
 
-Create a deal
+Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
 
 ### Example Usage
 
@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Deal.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T10:10:00.332Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-31T12:48:39.602Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.887Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.768Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "9d20cc08-53c9-4f73-b633-7eb5fd228ab7",
+        Id = "d5734b69-7092-4361-8f37-f9826abe82eb",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -45,7 +45,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "21955c2d-f36b-414b-9d2b-f534e9b2272d",
+                Id = "63233597-c349-4bd3-a4ee-dc8d734ff423",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -60,7 +60,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-11T21:19:19.397Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.012Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     connectionId: "<id>"
@@ -90,7 +90,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
 
 ## GetCrmDeal
 
-Retrieve a deal
+Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -132,7 +132,7 @@ var res = await sdk.Deal.GetCrmDealAsync(
 
 ## ListCrmDeals
 
-List all deals
+Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -173,7 +173,7 @@ var res = await sdk.Deal.ListCrmDealsAsync(req);
 
 ## PatchCrmDeal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -192,12 +192,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T10:10:00.336Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-31T12:48:39.613Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.891Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.781Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "6c0bb7e4-858c-409f-9a13-444cb2aba4a4",
+        Id = "e53edb19-8ac2-4eb3-a662-68df79aecaff",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -206,7 +206,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "74548368-7d1b-41d5-9cb5-95364e2ddd88",
+                Id = "332b0cd3-a961-4dc1-bd27-0e3afdaf8e72",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -221,7 +221,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-11T21:19:19.404Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.020Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -251,7 +251,7 @@ var res = await sdk.Deal.PatchCrmDealAsync(req);
 
 ## RemoveCrmDeal
 
-Remove a deal
+Deletes the CrmDeal identified by `id`.
 
 ### Example Usage
 
@@ -291,7 +291,7 @@ var res = await sdk.Deal.RemoveCrmDealAsync(
 
 ## UpdateCrmDeal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -310,12 +310,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T10:10:00.336Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-31T12:48:39.613Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.891Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.781Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "6c0bb7e4-858c-409f-9a13-444cb2aba4a4",
+        Id = "e53edb19-8ac2-4eb3-a662-68df79aecaff",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -324,7 +324,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "74548368-7d1b-41d5-9cb5-95364e2ddd88",
+                Id = "332b0cd3-a961-4dc1-bd27-0e3afdaf8e72",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -339,7 +339,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-11T21:19:19.404Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.020Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",

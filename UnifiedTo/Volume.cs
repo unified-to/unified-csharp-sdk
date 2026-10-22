@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a volume.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
+        /// </remarks>
         /// <param name="computeVolume">A <see cref="ComputeVolume"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a volume.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all volumes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeVolumesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeVolumesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a volume.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeVolume identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeVolumeResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a volume.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
+        /// </remarks>
         /// <param name="computeVolume">A <see cref="ComputeVolume"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -251,6 +272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a volume.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <param name="fields">Fields to return.</param>
@@ -373,6 +397,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all volumes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeVolumesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeVolumesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -478,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -589,6 +619,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a volume.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeVolume identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeVolumeResponse"/> response envelope when completed.</returns>
@@ -692,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -34,7 +34,7 @@
 
 ## CreateCalendarCalendar
 
-Create a calendar
+Creates a CalendarCalendar. Provide the unified CalendarCalendar fields in the request body; they are mapped to the provider's API. Returns the created CalendarCalendar.
 
 ### Example Usage
 
@@ -53,12 +53,12 @@ var res = await sdk.Calendar.CreateCalendarCalendarAsync(
     calendarCalendar: new CalendarCalendar() {
         CreatedAt = System.DateTime.Parse("2020-01-09T23:11:34.147Z").ToUniversalTime(),
         Description = "Acer supra vallum suasoria thesaurus.",
-        Id = "b81ee488-e8f3-4d99-94da-161ea8a4ad1c",
+        Id = "31068331-9355-4178-b410-2dfc51013f29",
         IsPrimary = false,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Interviews",
         Timezone = "Asia/Kolkata",
-        UpdatedAt = System.DateTime.Parse("2023-03-28T03:34:32.689Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-28T13:49:10.730Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -87,7 +87,7 @@ var res = await sdk.Calendar.CreateCalendarCalendarAsync(
 
 ## CreateCalendarEvent
 
-Create an event
+Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
 
 ### Example Usage
 
@@ -107,9 +107,9 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-24T07:02:58.840Z",
+        EndAt = "2020-05-24T09:27:35.704Z",
         HasConference = false,
-        Id = "cdbfaa60-2149-4f15-b0b9-36f9336f89e8",
+        Id = "867d2a4d-54e6-4368-9b84-20aa3e2512b4",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -119,15 +119,15 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 4D,
-                EndAt = System.DateTime.Parse("2025-03-24T15:53:53.524Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-03-25T08:47:47.514Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-02-02T18:55:50.489Z",
+                    "2024-02-03T08:24:57.655Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Yearly,
                 IncludedDates = new List<string>() {
-                    "2023-07-07T01:37:04.505Z",
-                    "2025-01-23T21:52:51.959Z",
-                    "2024-04-01T23:51:48.387Z",
+                    "2023-07-07T13:22:25.990Z",
+                    "2025-01-24T14:17:20.637Z",
+                    "2024-04-02T13:50:04.757Z",
                 },
                 Interval = 7D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -464,11 +464,11 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
                 WeekStart = WeekStart.Tu,
             },
         },
-        StartAt = "2020-05-23T21:49:21.469Z",
+        StartAt = "2020-05-24T00:13:46.974Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-30T05:25:49.127Z",
+        UpdatedAt = "2020-06-30T08:08:37.148Z",
         WebUrl = "https://another-pinstripe.com",
     },
     connectionId: "<id>"
@@ -498,7 +498,7 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
 
 ## CreateCalendarLink
 
-Create a link
+Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
 
 ### Example Usage
 
@@ -517,13 +517,13 @@ var res = await sdk.Calendar.CreateCalendarLinkAsync(
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "56f56475-63e4-471b-9756-432fd4fd9a62",
+        Id = "2fcc36ba-86c3-44e6-807f-40e9e5a6105f",
         IsActive = true,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-15T13:06:35.491Z",
+        UpdatedAt = "2024-03-15T19:13:09.596Z",
         Url = "https://annual-apricot.info/",
     },
     connectionId: "<id>"
@@ -553,7 +553,7 @@ var res = await sdk.Calendar.CreateCalendarLinkAsync(
 
 ## CreateCalendarWebinar
 
-Create a webinar
+Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
 
 ### Example Usage
 
@@ -572,10 +572,10 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
     calendarWebinar: new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-28T17:34:25.053Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-29T10:15:57.713Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "c211041b-4110-4b9a-9a50-d684559eef55",
+        Id = "424e7ab5-c501-4baf-a8ed-1bc05384eeb9",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -585,13 +585,13 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-31T14:52:53.014Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-31T20:41:23.568Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-02-13T00:45:59.534Z",
+                    "2025-02-13T13:54:16.497Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-28T06:54:19.024Z",
+                    "2024-04-28T16:01:59.547Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -982,16 +982,16 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-30T16:14:33.640Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-30T17:25:53.120Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-09-01T18:14:35.039Z",
-                    "2024-08-17T05:16:23.036Z",
+                    "2024-09-02T05:06:55.348Z",
+                    "2024-08-17T15:55:51.710Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-25T04:18:51.121Z",
-                    "2026-01-13T09:54:27.249Z",
-                    "2023-08-14T06:26:33.528Z",
+                    "2024-03-25T12:58:18.067Z",
+                    "2026-01-14T03:39:27.361Z",
+                    "2023-08-14T12:00:42.515Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1135,16 +1135,16 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-07-26T13:04:56.085Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-07-27T09:30:35.526Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-18T14:33:07.942Z",
-                    "2023-06-07T15:23:30.057Z",
+                    "2023-06-18T19:20:23.463Z",
+                    "2023-06-07T20:01:41.127Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-04-02T05:11:15.074Z",
-                    "2023-08-20T01:52:14.872Z",
-                    "2024-09-26T23:01:46.923Z",
+                    "2024-04-02T13:57:21.055Z",
+                    "2023-08-20T07:31:12.321Z",
+                    "2024-09-27T10:14:58.470Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1297,11 +1297,11 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
         RegistrantPassword = "W7J6DhkM",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-30T13:59:38.951Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-05-01T04:11:16.939Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-09-30T12:21:48.374Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-01T09:42:03.453Z").ToUniversalTime(),
         WebUrl = "https://quiet-permafrost.name",
     },
     connectionId: "<id>"
@@ -1331,7 +1331,7 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
 
 ## GetCalendarCalendar
 
-Retrieve a calendar
+Retrieves a single CalendarCalendar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1373,7 +1373,7 @@ var res = await sdk.Calendar.GetCalendarCalendarAsync(
 
 ## GetCalendarEvent
 
-Retrieve an event
+Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1415,7 +1415,7 @@ var res = await sdk.Calendar.GetCalendarEventAsync(
 
 ## GetCalendarLink
 
-Retrieve a link
+Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1457,7 +1457,7 @@ var res = await sdk.Calendar.GetCalendarLinkAsync(
 
 ## GetCalendarRecording
 
-Retrieve a recording
+Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1499,7 +1499,7 @@ var res = await sdk.Calendar.GetCalendarRecordingAsync(
 
 ## GetCalendarWebinar
 
-Retrieve a webinar
+Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1541,7 +1541,7 @@ var res = await sdk.Calendar.GetCalendarWebinarAsync(
 
 ## ListCalendarBusies
 
-List all busies
+Returns a list of CalendarBusies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1582,7 +1582,7 @@ var res = await sdk.Calendar.ListCalendarBusiesAsync(req);
 
 ## ListCalendarCalendars
 
-List all calendars
+Returns a list of CalendarCalendars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1623,7 +1623,7 @@ var res = await sdk.Calendar.ListCalendarCalendarsAsync(req);
 
 ## ListCalendarEvents
 
-List all events
+Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1664,7 +1664,7 @@ var res = await sdk.Calendar.ListCalendarEventsAsync(req);
 
 ## ListCalendarLinks
 
-List all links
+Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1705,7 +1705,7 @@ var res = await sdk.Calendar.ListCalendarLinksAsync(req);
 
 ## ListCalendarRecordings
 
-List all recordings
+Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1746,7 +1746,7 @@ var res = await sdk.Calendar.ListCalendarRecordingsAsync(req);
 
 ## ListCalendarWebinars
 
-List all webinars
+Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1787,7 +1787,7 @@ var res = await sdk.Calendar.ListCalendarWebinarsAsync(req);
 
 ## PatchCalendarCalendar
 
-Update a calendar
+Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
 
 ### Example Usage
 
@@ -1807,12 +1807,12 @@ PatchCalendarCalendarRequest req = new PatchCalendarCalendarRequest() {
     CalendarCalendar = new CalendarCalendar() {
         CreatedAt = System.DateTime.Parse("2020-01-09T23:11:34.147Z").ToUniversalTime(),
         Description = "Acer supra vallum suasoria thesaurus.",
-        Id = "4c6e6f9f-f2d2-4cda-b1bf-5eeba2bc8688",
+        Id = "168d0e39-d612-4a3c-88b7-5b4b99ac55a1",
         IsPrimary = false,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Interviews",
         Timezone = "Asia/Kolkata",
-        UpdatedAt = System.DateTime.Parse("2023-03-28T03:34:32.693Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-28T13:49:10.736Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1841,7 +1841,7 @@ var res = await sdk.Calendar.PatchCalendarCalendarAsync(req);
 
 ## PatchCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1862,9 +1862,9 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-24T07:02:58.844Z",
+        EndAt = "2020-05-24T09:27:35.710Z",
         HasConference = false,
-        Id = "a08b9a13-08d1-43b9-952d-01ffc5ab5ec5",
+        Id = "be2e4527-6277-4c21-aa57-40084d360912",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -1874,15 +1874,15 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 4D,
-                EndAt = System.DateTime.Parse("2025-03-24T15:53:53.548Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-03-25T08:47:47.554Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-02-02T18:55:50.508Z",
+                    "2024-02-03T08:24:57.687Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Yearly,
                 IncludedDates = new List<string>() {
-                    "2023-07-07T01:37:04.521Z",
-                    "2025-01-23T21:52:51.981Z",
-                    "2024-04-01T23:51:48.407Z",
+                    "2023-07-07T13:22:26.018Z",
+                    "2025-01-24T14:17:20.676Z",
+                    "2024-04-02T13:50:04.790Z",
                 },
                 Interval = 7D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2219,11 +2219,11 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
                 WeekStart = WeekStart.Tu,
             },
         },
-        StartAt = "2020-05-23T21:49:21.473Z",
+        StartAt = "2020-05-24T00:13:46.980Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-30T05:25:49.131Z",
+        UpdatedAt = "2020-06-30T08:08:37.155Z",
         WebUrl = "https://another-pinstripe.com",
     },
     ConnectionId = "<id>",
@@ -2253,7 +2253,7 @@ var res = await sdk.Calendar.PatchCalendarEventAsync(req);
 
 ## PatchCalendarLink
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -2273,13 +2273,13 @@ PatchCalendarLinkRequest req = new PatchCalendarLinkRequest() {
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "e1fb4ca3-e293-473a-aa91-e1bd43a664d3",
+        Id = "4d0e4cbb-7876-4125-a193-cc9809d20c01",
         IsActive = true,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-15T13:06:35.495Z",
+        UpdatedAt = "2024-03-15T19:13:09.600Z",
         Url = "https://annual-apricot.info/",
     },
     ConnectionId = "<id>",
@@ -2309,7 +2309,7 @@ var res = await sdk.Calendar.PatchCalendarLinkAsync(req);
 
 ## PatchCalendarWebinar
 
-Update a webinar
+Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
 
 ### Example Usage
 
@@ -2329,10 +2329,10 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-28T17:34:25.083Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-29T10:15:57.758Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "52ef25c2-1066-461c-a197-d945d17c3087",
+        Id = "fd704f52-c1d1-4ba6-870d-3f8f2869dc89",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -2342,13 +2342,13 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-31T14:52:53.024Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-31T20:41:23.583Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-02-13T00:45:59.557Z",
+                    "2025-02-13T13:54:16.532Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-28T06:54:19.041Z",
+                    "2024-04-28T16:01:59.571Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2739,16 +2739,16 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-30T16:14:33.643Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-30T17:25:53.123Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-09-01T18:14:35.058Z",
-                    "2024-08-17T05:16:23.055Z",
+                    "2024-09-02T05:06:55.376Z",
+                    "2024-08-17T15:55:51.738Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-25T04:18:51.136Z",
-                    "2026-01-13T09:54:27.280Z",
-                    "2023-08-14T06:26:33.538Z",
+                    "2024-03-25T12:58:18.090Z",
+                    "2026-01-14T03:39:27.408Z",
+                    "2023-08-14T12:00:42.530Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2892,16 +2892,16 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-07-26T13:04:56.121Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-07-27T09:30:35.579Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-18T14:33:07.950Z",
-                    "2023-06-07T15:23:30.066Z",
+                    "2023-06-18T19:20:23.475Z",
+                    "2023-06-07T20:01:41.140Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-04-02T05:11:15.090Z",
-                    "2023-08-20T01:52:14.882Z",
-                    "2024-09-26T23:01:46.943Z",
+                    "2024-04-02T13:57:21.077Z",
+                    "2023-08-20T07:31:12.335Z",
+                    "2024-09-27T10:14:58.500Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -3054,11 +3054,11 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
         RegistrantPassword = "W7J6DhkM",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-30T13:59:38.976Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-05-01T04:11:16.977Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-09-30T12:21:48.413Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-01T09:42:03.509Z").ToUniversalTime(),
         WebUrl = "https://quiet-permafrost.name",
     },
     ConnectionId = "<id>",
@@ -3088,7 +3088,7 @@ var res = await sdk.Calendar.PatchCalendarWebinarAsync(req);
 
 ## RemoveCalendarCalendar
 
-Remove a calendar
+Deletes the CalendarCalendar identified by `id`.
 
 ### Example Usage
 
@@ -3128,7 +3128,7 @@ var res = await sdk.Calendar.RemoveCalendarCalendarAsync(
 
 ## RemoveCalendarEvent
 
-Remove an event
+Deletes the CalendarEvent identified by `id`.
 
 ### Example Usage
 
@@ -3168,7 +3168,7 @@ var res = await sdk.Calendar.RemoveCalendarEventAsync(
 
 ## RemoveCalendarLink
 
-Remove a link
+Deletes the CalendarLink identified by `id`.
 
 ### Example Usage
 
@@ -3208,7 +3208,7 @@ var res = await sdk.Calendar.RemoveCalendarLinkAsync(
 
 ## RemoveCalendarWebinar
 
-Remove a webinar
+Deletes the CalendarWebinar identified by `id`.
 
 ### Example Usage
 
@@ -3248,7 +3248,7 @@ var res = await sdk.Calendar.RemoveCalendarWebinarAsync(
 
 ## UpdateCalendarCalendar
 
-Update a calendar
+Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
 
 ### Example Usage
 
@@ -3268,12 +3268,12 @@ UpdateCalendarCalendarRequest req = new UpdateCalendarCalendarRequest() {
     CalendarCalendar = new CalendarCalendar() {
         CreatedAt = System.DateTime.Parse("2020-01-09T23:11:34.147Z").ToUniversalTime(),
         Description = "Acer supra vallum suasoria thesaurus.",
-        Id = "4c6e6f9f-f2d2-4cda-b1bf-5eeba2bc8688",
+        Id = "168d0e39-d612-4a3c-88b7-5b4b99ac55a1",
         IsPrimary = false,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Interviews",
         Timezone = "Asia/Kolkata",
-        UpdatedAt = System.DateTime.Parse("2023-03-28T03:34:32.693Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-28T13:49:10.736Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3302,7 +3302,7 @@ var res = await sdk.Calendar.UpdateCalendarCalendarAsync(req);
 
 ## UpdateCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -3323,9 +3323,9 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-24T07:02:58.844Z",
+        EndAt = "2020-05-24T09:27:35.710Z",
         HasConference = false,
-        Id = "a08b9a13-08d1-43b9-952d-01ffc5ab5ec5",
+        Id = "be2e4527-6277-4c21-aa57-40084d360912",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -3335,15 +3335,15 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 4D,
-                EndAt = System.DateTime.Parse("2025-03-24T15:53:53.548Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-03-25T08:47:47.554Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-02-02T18:55:50.508Z",
+                    "2024-02-03T08:24:57.687Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Yearly,
                 IncludedDates = new List<string>() {
-                    "2023-07-07T01:37:04.521Z",
-                    "2025-01-23T21:52:51.981Z",
-                    "2024-04-01T23:51:48.407Z",
+                    "2023-07-07T13:22:26.018Z",
+                    "2025-01-24T14:17:20.676Z",
+                    "2024-04-02T13:50:04.790Z",
                 },
                 Interval = 7D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -3680,11 +3680,11 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
                 WeekStart = WeekStart.Tu,
             },
         },
-        StartAt = "2020-05-23T21:49:21.473Z",
+        StartAt = "2020-05-24T00:13:46.980Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-30T05:25:49.131Z",
+        UpdatedAt = "2020-06-30T08:08:37.155Z",
         WebUrl = "https://another-pinstripe.com",
     },
     ConnectionId = "<id>",
@@ -3714,7 +3714,7 @@ var res = await sdk.Calendar.UpdateCalendarEventAsync(req);
 
 ## UpdateCalendarLink
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -3734,13 +3734,13 @@ UpdateCalendarLinkRequest req = new UpdateCalendarLinkRequest() {
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "e1fb4ca3-e293-473a-aa91-e1bd43a664d3",
+        Id = "4d0e4cbb-7876-4125-a193-cc9809d20c01",
         IsActive = true,
         Metadata = new List<CalendarMetadata>() {},
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-15T13:06:35.495Z",
+        UpdatedAt = "2024-03-15T19:13:09.600Z",
         Url = "https://annual-apricot.info/",
     },
     ConnectionId = "<id>",
@@ -3770,7 +3770,7 @@ var res = await sdk.Calendar.UpdateCalendarLinkAsync(req);
 
 ## UpdateCalendarWebinar
 
-Update a webinar
+Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
 
 ### Example Usage
 
@@ -3790,10 +3790,10 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-28T17:34:25.083Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-29T10:15:57.758Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "52ef25c2-1066-461c-a197-d945d17c3087",
+        Id = "fd704f52-c1d1-4ba6-870d-3f8f2869dc89",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -3803,13 +3803,13 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-31T14:52:53.024Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-31T20:41:23.583Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-02-13T00:45:59.557Z",
+                    "2025-02-13T13:54:16.532Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-28T06:54:19.041Z",
+                    "2024-04-28T16:01:59.571Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -4200,16 +4200,16 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-30T16:14:33.643Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-30T17:25:53.123Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-09-01T18:14:35.058Z",
-                    "2024-08-17T05:16:23.055Z",
+                    "2024-09-02T05:06:55.376Z",
+                    "2024-08-17T15:55:51.738Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-25T04:18:51.136Z",
-                    "2026-01-13T09:54:27.280Z",
-                    "2023-08-14T06:26:33.538Z",
+                    "2024-03-25T12:58:18.090Z",
+                    "2026-01-14T03:39:27.408Z",
+                    "2023-08-14T12:00:42.530Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -4353,16 +4353,16 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-07-26T13:04:56.121Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-07-27T09:30:35.579Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-18T14:33:07.950Z",
-                    "2023-06-07T15:23:30.066Z",
+                    "2023-06-18T19:20:23.475Z",
+                    "2023-06-07T20:01:41.140Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-04-02T05:11:15.090Z",
-                    "2023-08-20T01:52:14.882Z",
-                    "2024-09-26T23:01:46.943Z",
+                    "2024-04-02T13:57:21.077Z",
+                    "2023-08-20T07:31:12.335Z",
+                    "2024-09-27T10:14:58.500Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -4515,11 +4515,11 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
         RegistrantPassword = "W7J6DhkM",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-30T13:59:38.976Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-05-01T04:11:16.977Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-09-30T12:21:48.413Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-01T09:42:03.509Z").ToUniversalTime(),
         WebUrl = "https://quiet-permafrost.name",
     },
     ConnectionId = "<id>",

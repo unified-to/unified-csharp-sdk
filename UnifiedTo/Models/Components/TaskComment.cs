@@ -44,6 +44,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("task_id")]
         public string? TaskId { get; set; }
 
+        /// <summary>
+        /// The comment's text.
+        /// </summary>
         [JsonProperty("text")]
         public string? Text { get; set; }
 

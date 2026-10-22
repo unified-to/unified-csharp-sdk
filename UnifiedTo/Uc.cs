@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
+        /// </remarks>
         /// <param name="ucComment">A <see cref="UcComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
+        /// </remarks>
         /// <param name="ucContact">A contact represents a person that optionally is associated with a call.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a recording.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
+        /// </remarks>
         /// <param name="ucRecording">A <see cref="UcRecording"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a call.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcCall by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Call.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a recording.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Recording.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecardtemplate.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcScorecardtemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecardtemplate.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all calls.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcCallsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcCallsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -209,6 +239,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -220,6 +253,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -231,6 +267,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all recordings.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcRecordingsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcRecordingsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -242,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -253,6 +295,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecardtemplates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcScorecardtemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcScorecardtemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -266,6 +311,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -277,6 +325,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -288,6 +339,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a recording.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcRecordingRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcRecordingResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -299,6 +353,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcCommentResponse"/> response envelope when completed.</returns>
@@ -310,6 +367,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcContactResponse"/> response envelope when completed.</returns>
@@ -321,6 +381,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a recording.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcRecording identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Recording.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcRecordingResponse"/> response envelope when completed.</returns>
@@ -332,6 +395,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -343,6 +409,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -354,6 +423,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a recording.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcRecordingRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcRecordingResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -379,6 +451,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
+        /// </remarks>
         /// <param name="ucComment">A <see cref="UcComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -507,6 +582,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
+        /// </remarks>
         /// <param name="ucContact">A contact represents a person that optionally is associated with a call.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -635,6 +713,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a recording.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
+        /// </remarks>
         /// <param name="ucRecording">A <see cref="UcRecording"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -763,6 +844,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a call.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcCall by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Call.</param>
         /// <param name="fields">Fields to return.</param>
@@ -885,6 +969,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1007,6 +1094,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1129,6 +1219,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a recording.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Recording.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1251,6 +1344,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecard.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecard.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1373,6 +1469,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a scorecardtemplate.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcScorecardtemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Scorecardtemplate.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1495,6 +1594,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all calls.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcCallsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcCallsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1600,6 +1702,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1705,6 +1810,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1810,6 +1918,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all recordings.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcRecordingsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcRecordingsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1915,6 +2026,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecards.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcScorecardsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcScorecardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2020,6 +2134,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all scorecardtemplates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcScorecardtemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcScorecardtemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2127,6 +2244,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2238,6 +2358,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2349,6 +2472,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a recording.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcRecordingRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcRecordingResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2460,6 +2586,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcCommentResponse"/> response envelope when completed.</returns>
@@ -2563,6 +2692,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcContactResponse"/> response envelope when completed.</returns>
@@ -2666,6 +2798,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a recording.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcRecording identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Recording.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcRecordingResponse"/> response envelope when completed.</returns>
@@ -2769,6 +2904,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2880,6 +3018,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2991,6 +3132,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a recording.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcRecordingRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcRecordingResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

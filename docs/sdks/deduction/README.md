@@ -13,7 +13,7 @@
 
 ## CreateHrisDeduction
 
-Create a deduction
+Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
 
 ### Example Usage
 
@@ -37,14 +37,14 @@ var res = await sdk.Deduction.CreateHrisDeductionAsync(
         EmployerType = EmployerType.Percentage,
         Frequency = HrisDeductionFrequency.OneTime,
         GarnishmentType = GarnishmentType.ChildSupport,
-        Id = "d321bf90-5d7b-4dc5-a51d-10134104537d",
+        Id = "bdb5e443-342e-4481-8879-00f32559f834",
         IsActive = true,
         MaxAmount = 21794D,
         Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-15T07:53:16.592Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-16T00:20:53.423Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-22T07:09:38.434Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-22T20:27:41.087Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -73,7 +73,7 @@ var res = await sdk.Deduction.CreateHrisDeductionAsync(
 
 ## GetHrisDeduction
 
-Retrieve a deduction
+Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +115,7 @@ var res = await sdk.Deduction.GetHrisDeductionAsync(
 
 ## ListHrisDeductions
 
-List all deductions
+Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ var res = await sdk.Deduction.ListHrisDeductionsAsync(req);
 
 ## PatchHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -181,14 +181,14 @@ PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
         EmployerType = EmployerType.Percentage,
         Frequency = HrisDeductionFrequency.OneTime,
         GarnishmentType = GarnishmentType.ChildSupport,
-        Id = "005a3e5c-8fd2-4061-a826-292f575a8f27",
+        Id = "831d0e8d-d1ed-45bb-a2ef-b9f48cb9f861",
         IsActive = true,
         MaxAmount = 21794D,
         Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-15T07:53:16.603Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-16T00:20:53.433Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-22T07:09:38.444Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-22T20:27:41.095Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -217,7 +217,7 @@ var res = await sdk.Deduction.PatchHrisDeductionAsync(req);
 
 ## RemoveHrisDeduction
 
-Remove a deduction
+Deletes the HrisDeduction identified by `id`.
 
 ### Example Usage
 
@@ -257,7 +257,7 @@ var res = await sdk.Deduction.RemoveHrisDeductionAsync(
 
 ## UpdateHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -282,14 +282,14 @@ UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
         EmployerType = EmployerType.Percentage,
         Frequency = HrisDeductionFrequency.OneTime,
         GarnishmentType = GarnishmentType.ChildSupport,
-        Id = "005a3e5c-8fd2-4061-a826-292f575a8f27",
+        Id = "831d0e8d-d1ed-45bb-a2ef-b9f48cb9f861",
         IsActive = true,
         MaxAmount = 21794D,
         Metadata = new List<HrisMetadata>() {},
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-03-15T07:53:16.603Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-16T00:20:53.433Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-22T07:09:38.444Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-22T20:27:41.095Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate).
+    /// </summary>
     public class PropertyDatastoreQueryQuery
     {
         [JsonProperty("aggregate")]

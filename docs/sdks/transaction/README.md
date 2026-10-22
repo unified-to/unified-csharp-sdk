@@ -13,7 +13,7 @@
 
 ## CreateAccountingTransaction
 
-Create a transaction
+Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
 
 ### Example Usage
 
@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "ebb5944f-dd22-4b0f-9449-19a0c99bc4c2",
+        Id = "8f655204-2f41-40a5-99b8-9860b5c99c4b",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "e77f43e5-0dfd-4dde-929b-a18274d41f97",
+                Id = "428ff9a3-ade8-484e-bdf1-c20d031f40b4",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -48,7 +48,7 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T06:08:36.561Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T06:18:02.227Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
 
 ## GetAccountingTransaction
 
-Retrieve a transaction
+Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -119,7 +119,7 @@ var res = await sdk.Transaction.GetAccountingTransactionAsync(
 
 ## ListAccountingTransactions
 
-List all transactions
+Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -160,7 +160,7 @@ var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
 
 ## PatchAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -179,12 +179,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f6598d52-bbff-4e17-b0d3-f017087e1b66",
+        Id = "32fb1f54-43a1-442e-b9f9-f5f5a23e2f40",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "1db0fe0a-d5d0-4da8-9fcd-65621b19b454",
+                Id = "850b4fa3-d5d4-4eb5-98a8-e48959199d81",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -196,7 +196,7 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T06:08:36.561Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T06:18:02.228Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -225,7 +225,7 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(req);
 
 ## RemoveAccountingTransaction
 
-Remove a transaction
+Deletes the AccountingTransaction identified by `id`.
 
 ### Example Usage
 
@@ -265,7 +265,7 @@ var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
 
 ## UpdateAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -284,12 +284,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f6598d52-bbff-4e17-b0d3-f017087e1b66",
+        Id = "32fb1f54-43a1-442e-b9f9-f5f5a23e2f40",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "1db0fe0a-d5d0-4da8-9fcd-65621b19b454",
+                Id = "850b4fa3-d5d4-4eb5-98a8-e48959199d81",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -301,7 +301,7 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T06:08:36.561Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T06:18:02.228Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

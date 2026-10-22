@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a journal.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
+        /// </remarks>
         /// <param name="accountingJournal">A <see cref="AccountingJournal"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a journal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all journals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingJournalsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingJournalsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a journal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingJournal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingJournalResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a journal.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
+        /// </remarks>
         /// <param name="accountingJournal">A <see cref="AccountingJournal"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -253,6 +274,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a journal.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <param name="fields">Fields to return.</param>
@@ -375,6 +399,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all journals.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingJournalsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingJournalsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -482,6 +509,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -595,6 +625,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a journal.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingJournal identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Journal.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingJournalResponse"/> response envelope when completed.</returns>
@@ -698,6 +731,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingJournalRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingJournalResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

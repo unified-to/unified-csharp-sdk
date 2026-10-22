@@ -13,7 +13,7 @@
 
 ## CreateAccountingJournal
 
-Create a journal
+Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
 
 ### Example Usage
 
@@ -35,16 +35,16 @@ var res = await sdk.Journal.CreateAccountingJournalAsync(
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Cilicium minima calco constans adipisci.",
-        Id = "246d0a16-30c7-467c-9944-91faf716350e",
+        Id = "6c5bbfb6-0d2b-4f99-a075-33ab6d64d5cd",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingJournalLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2023-11-06T10:50:00.360Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-11-06T22:51:56.321Z").ToUniversalTime(),
         Reference = "JE-78884",
         Source = "crustulum",
         Status = AccountingJournalStatus.Void,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-01-10T19:47:31.060Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-11T01:55:17.682Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -73,7 +73,7 @@ var res = await sdk.Journal.CreateAccountingJournalAsync(
 
 ## GetAccountingJournal
 
-Retrieve a journal
+Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +115,7 @@ var res = await sdk.Journal.GetAccountingJournalAsync(
 
 ## ListAccountingJournals
 
-List all journals
+Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ var res = await sdk.Journal.ListAccountingJournalsAsync(req);
 
 ## PatchAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -179,16 +179,16 @@ PatchAccountingJournalRequest req = new PatchAccountingJournalRequest() {
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Cilicium minima calco constans adipisci.",
-        Id = "e99861f6-e6aa-4484-a950-3adad6e52d7d",
+        Id = "b202f271-4c7e-4cf3-a9e2-d8c1ef753a13",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingJournalLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2023-11-06T10:50:00.372Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-11-06T22:51:56.331Z").ToUniversalTime(),
         Reference = "JE-78884",
         Source = "crustulum",
         Status = AccountingJournalStatus.Void,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-01-10T19:47:31.066Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-11T01:55:17.687Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -217,7 +217,7 @@ var res = await sdk.Journal.PatchAccountingJournalAsync(req);
 
 ## RemoveAccountingJournal
 
-Remove a journal
+Deletes the AccountingJournal identified by `id`.
 
 ### Example Usage
 
@@ -257,7 +257,7 @@ var res = await sdk.Journal.RemoveAccountingJournalAsync(
 
 ## UpdateAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -280,16 +280,16 @@ UpdateAccountingJournalRequest req = new UpdateAccountingJournalRequest() {
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Cilicium minima calco constans adipisci.",
-        Id = "e99861f6-e6aa-4484-a950-3adad6e52d7d",
+        Id = "b202f271-4c7e-4cf3-a9e2-d8c1ef753a13",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingJournalLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2023-11-06T10:50:00.372Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-11-06T22:51:56.331Z").ToUniversalTime(),
         Reference = "JE-78884",
         Source = "crustulum",
         Status = AccountingJournalStatus.Void,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-01-10T19:47:31.066Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-11T01:55:17.687Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

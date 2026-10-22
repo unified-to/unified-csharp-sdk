@@ -13,7 +13,7 @@
 
 ## CreateLegalTimeentry
 
-Create a timeentry
+Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
 
 ### Example Usage
 
@@ -34,13 +34,13 @@ var res = await sdk.Timeentry.CreateLegalTimeentryAsync(
         CreatedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
         Currency = "ZAR",
         Description = "Ea derideo adulatio torrens.",
-        Id = "cac4ad52-6a0d-47c4-a1ca-1733f7a52179",
+        Id = "ea8180d9-ad33-481b-8ee5-e40150817db6",
         IsBillable = true,
         Metadata = new List<LegalMetadata>() {},
         Minutes = 390D,
         RateAmount = 637D,
         TotalAmount = 4140.5D,
-        UpdatedAt = System.DateTime.Parse("2022-06-30T01:49:59.710Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-30T02:33:44.619Z").ToUniversalTime(),
         WorkedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
     },
     connectionId: "<id>"
@@ -70,7 +70,7 @@ var res = await sdk.Timeentry.CreateLegalTimeentryAsync(
 
 ## GetLegalTimeentry
 
-Retrieve a timeentry
+Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +112,7 @@ var res = await sdk.Timeentry.GetLegalTimeentryAsync(
 
 ## ListLegalTimeentries
 
-List all timeentries
+Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Timeentry.ListLegalTimeentriesAsync(req);
 
 ## PatchLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -175,13 +175,13 @@ PatchLegalTimeentryRequest req = new PatchLegalTimeentryRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
         Currency = "ZAR",
         Description = "Ea derideo adulatio torrens.",
-        Id = "b8156d90-18bd-411e-a58e-d2f3efd26f91",
+        Id = "abf17726-0d86-4a24-8cb5-5abbfa8510fe",
         IsBillable = true,
         Metadata = new List<LegalMetadata>() {},
         Minutes = 390D,
         RateAmount = 637D,
         TotalAmount = 4140.5D,
-        UpdatedAt = System.DateTime.Parse("2022-06-30T01:49:59.711Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-30T02:33:44.620Z").ToUniversalTime(),
         WorkedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
@@ -211,7 +211,7 @@ var res = await sdk.Timeentry.PatchLegalTimeentryAsync(req);
 
 ## RemoveLegalTimeentry
 
-Remove a timeentry
+Deletes the LegalTimeentry identified by `id`.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ var res = await sdk.Timeentry.RemoveLegalTimeentryAsync(
 
 ## UpdateLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -273,13 +273,13 @@ UpdateLegalTimeentryRequest req = new UpdateLegalTimeentryRequest() {
         CreatedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
         Currency = "ZAR",
         Description = "Ea derideo adulatio torrens.",
-        Id = "b8156d90-18bd-411e-a58e-d2f3efd26f91",
+        Id = "abf17726-0d86-4a24-8cb5-5abbfa8510fe",
         IsBillable = true,
         Metadata = new List<LegalMetadata>() {},
         Minutes = 390D,
         RateAmount = 637D,
         TotalAmount = 4140.5D,
-        UpdatedAt = System.DateTime.Parse("2022-06-30T01:49:59.711Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-30T02:33:44.620Z").ToUniversalTime(),
         WorkedAt = System.DateTime.Parse("2022-05-06T03:26:03.756Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",

@@ -13,7 +13,7 @@
 
 ## CreateAdsAd
 
-Create an ad
+Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
 
 ### Example Usage
 
@@ -37,11 +37,11 @@ var res = await sdk.Ad.CreateAdsAdAsync(
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "7525b64f-40b3-4b93-b1d6-c85e180edefc",
+        Id = "12f5bea1-b21e-48c5-a5ae-13656c010dcb",
         Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-18T13:46:18.349Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T22:35:19.870Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -70,7 +70,7 @@ var res = await sdk.Ad.CreateAdsAdAsync(
 
 ## GetAdsAd
 
-Retrieve an ad
+Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +112,7 @@ var res = await sdk.Ad.GetAdsAdAsync(
 
 ## ListAdsAds
 
-List all ads
+Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Ad.ListAdsAdsAsync(req);
 
 ## PatchAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -178,11 +178,11 @@ PatchAdsAdRequest req = new PatchAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "da1abf34-12f6-4545-bcfd-d92130a0fc54",
+        Id = "b502c75b-8bd1-4e88-9343-0cca29b47e24",
         Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-18T13:46:18.359Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T22:35:19.879Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -211,7 +211,7 @@ var res = await sdk.Ad.PatchAdsAdAsync(req);
 
 ## RemoveAdsAd
 
-Remove an ad
+Deletes the AdsAd identified by `id`.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ var res = await sdk.Ad.RemoveAdsAdAsync(
 
 ## UpdateAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -276,11 +276,11 @@ UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
         CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
         Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
         FinalUrl = "https://improbable-sanity.com",
-        Id = "da1abf34-12f6-4545-bcfd-d92130a0fc54",
+        Id = "b502c75b-8bd1-4e88-9343-0cca29b47e24",
         Metadata = new List<AdsMetadata>() {},
         Name = "Hermiston Group",
         Status = AdsAdStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2024-06-18T13:46:18.359Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-06-18T22:35:19.879Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -25,7 +25,7 @@
 
 ## CreateKmsComment
 
-Create a comment
+Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
 
 ### Example Usage
 
@@ -45,10 +45,10 @@ var res = await sdk.Kms.CreateKmsCommentAsync(
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "9bb0fa6b-6078-40ca-bf4d-1b087575348f",
+        Id = "595dc521-ff38-4c5a-b9f6-ac2ddaa83a5c",
         Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-26T06:52:36.014Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-26T13:23:15.891Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Kms.CreateKmsCommentAsync(
 
 ## CreateKmsPage
 
-Create a page
+Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider's API. Returns the created KmsPage.
 
 ### Example Usage
 
@@ -97,12 +97,12 @@ var res = await sdk.Kms.CreateKmsPageAsync(
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "4e230536-7861-4c26-83b7-34f25af3b4a8",
+        Id = "83cc8743-e0ce-4492-ba8f-3aa7d4b1cb67",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-09T04:36:43.399Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-09T23:13:34.363Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     connectionId: "<id>"
@@ -132,7 +132,7 @@ var res = await sdk.Kms.CreateKmsPageAsync(
 
 ## CreateKmsSpace
 
-Create a space
+Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
 
 ### Example Usage
 
@@ -151,11 +151,11 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "401a5d78-ee87-495d-8791-212d95a1819c",
+        Id = "0fb194a5-7687-4e75-bc87-84c1c2fdf97d",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-29T23:05:36.342Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T16:19:02.066Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -184,7 +184,7 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
 
 ## GetKmsComment
 
-Retrieve a comment
+Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -226,7 +226,7 @@ var res = await sdk.Kms.GetKmsCommentAsync(
 
 ## GetKmsPage
 
-Retrieve a page
+Retrieves a single KmsPage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ var res = await sdk.Kms.GetKmsPageAsync(
 
 ## GetKmsSpace
 
-Retrieve a space
+Retrieves a single KmsSpace by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -310,7 +310,7 @@ var res = await sdk.Kms.GetKmsSpaceAsync(
 
 ## ListKmsComments
 
-List all comments
+Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -351,7 +351,7 @@ var res = await sdk.Kms.ListKmsCommentsAsync(req);
 
 ## ListKmsPages
 
-List all pages
+Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -392,7 +392,7 @@ var res = await sdk.Kms.ListKmsPagesAsync(req);
 
 ## ListKmsSpaces
 
-List all spaces
+Returns a list of KmsSpaces. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -433,7 +433,7 @@ var res = await sdk.Kms.ListKmsSpacesAsync(req);
 
 ## PatchKmsComment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -454,10 +454,10 @@ PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "48f1999b-2001-44a8-8609-383ce75a5f50",
+        Id = "f1e66f64-e50b-4323-94e0-82d5f2269c3a",
         Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-26T06:52:36.016Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-26T13:23:15.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -486,7 +486,7 @@ var res = await sdk.Kms.PatchKmsCommentAsync(req);
 
 ## PatchKmsPage
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -507,12 +507,12 @@ PatchKmsPageRequest req = new PatchKmsPageRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "ff481899-5d1f-471b-92d3-31bfacd50a69",
+        Id = "896ec9ed-c773-45b1-b2b0-8fd372f7a610",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-09T04:36:43.410Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-09T23:13:34.378Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
@@ -542,7 +542,7 @@ var res = await sdk.Kms.PatchKmsPageAsync(req);
 
 ## PatchKmsSpace
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -562,11 +562,11 @@ PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "60504251-4e4f-4622-a671-d17ee45847bc",
+        Id = "e5d8a902-2280-4c88-8c8e-eab71d833603",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-29T23:05:36.349Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T16:19:02.078Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -595,7 +595,7 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(req);
 
 ## RemoveKmsComment
 
-Remove a comment
+Deletes the KmsComment identified by `id`.
 
 ### Example Usage
 
@@ -635,7 +635,7 @@ var res = await sdk.Kms.RemoveKmsCommentAsync(
 
 ## RemoveKmsPage
 
-Remove a page
+Deletes the KmsPage identified by `id`.
 
 ### Example Usage
 
@@ -675,7 +675,7 @@ var res = await sdk.Kms.RemoveKmsPageAsync(
 
 ## RemoveKmsSpace
 
-Remove a space
+Deletes the KmsSpace identified by `id`.
 
 ### Example Usage
 
@@ -715,7 +715,7 @@ var res = await sdk.Kms.RemoveKmsSpaceAsync(
 
 ## UpdateKmsComment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -736,10 +736,10 @@ UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
         Content = "Decimus tolero viriliter usque.",
         ContentType = ContentType.Html,
         CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
-        Id = "48f1999b-2001-44a8-8609-383ce75a5f50",
+        Id = "f1e66f64-e50b-4323-94e0-82d5f2269c3a",
         Metadata = new List<KmsPageMetadata>() {},
         Type = KmsCommentType.Page,
-        UpdatedAt = System.DateTime.Parse("2023-11-26T06:52:36.016Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-26T13:23:15.896Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -768,7 +768,7 @@ var res = await sdk.Kms.UpdateKmsCommentAsync(req);
 
 ## UpdateKmsPage
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -789,12 +789,12 @@ UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
         CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
         DownloadUrl = "https://agitated-validity.info",
         HasChildren = true,
-        Id = "ff481899-5d1f-471b-92d3-31bfacd50a69",
+        Id = "896ec9ed-c773-45b1-b2b0-8fd372f7a610",
         IsActive = true,
         Metadata = new List<KmsPageMetadata>() {},
         Title = "even minister extract",
         Type = KmsPageType.Html,
-        UpdatedAt = System.DateTime.Parse("2025-10-09T04:36:43.410Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-09T23:13:34.378Z").ToUniversalTime(),
         WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
@@ -824,7 +824,7 @@ var res = await sdk.Kms.UpdateKmsPageAsync(req);
 
 ## UpdateKmsSpace
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -844,11 +844,11 @@ UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "60504251-4e4f-4622-a671-d17ee45847bc",
+        Id = "e5d8a902-2280-4c88-8c8e-eab71d833603",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2025-12-29T23:05:36.349Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T16:19:02.078Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

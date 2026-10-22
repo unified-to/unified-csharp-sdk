@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("date_of_birth")]
         public DateTime? DateOfBirth { get; set; }
 
+        /// <summary>
+        /// The employee's email addresses.
+        /// </summary>
         [JsonProperty("emails")]
         public List<HrisEmail>? Emails { get; set; }
 
@@ -67,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("employment_type")]
         public HrisEmployeeEmploymentType? EmploymentType { get; set; }
 
+        /// <summary>
+        /// The employee's first (given) name.
+        /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
@@ -115,6 +121,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
 
+        /// <summary>
+        /// The employee's last (family) name.
+        /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
@@ -130,6 +139,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<HrisMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The employee's full name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

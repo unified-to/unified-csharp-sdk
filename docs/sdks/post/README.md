@@ -13,7 +13,7 @@
 
 ## CreateSocialPost
 
-Create a post
+Creates a SocialPost. Provide the unified SocialPost fields in the request body; they are mapped to the provider's API. Returns the created SocialPost.
 
 ### Example Usage
 
@@ -55,7 +55,7 @@ var res = await sdk.Post.CreateSocialPostAsync(
 
 ## GetSocialPost
 
-Retrieve a post
+Retrieves a single SocialPost by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -97,7 +97,7 @@ var res = await sdk.Post.GetSocialPostAsync(
 
 ## ListSocialPosts
 
-List all posts
+Returns a list of SocialPosts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -138,7 +138,7 @@ var res = await sdk.Post.ListSocialPostsAsync(req);
 
 ## PatchSocialPost
 
-Update a post
+Updates the SocialPost identified by `id`. Provide the unified SocialPost fields to change in the request body.
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ var res = await sdk.Post.PatchSocialPostAsync(req);
 
 ## RemoveSocialPost
 
-Remove a post
+Deletes the SocialPost identified by `id`.
 
 ### Example Usage
 
@@ -221,7 +221,7 @@ var res = await sdk.Post.RemoveSocialPostAsync(
 
 ## UpdateSocialPost
 
-Update a post
+Updates the SocialPost identified by `id`. Provide the unified SocialPost fields to change in the request body.
 
 ### Example Usage
 

@@ -25,7 +25,7 @@
 
 ## CreateAtsDocument
 
-Create a document
+Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
 
 ### Example Usage
 
@@ -45,10 +45,10 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "a4f1f686-50f2-41a9-852e-a7ec64c21a9c",
+        Id = "a07aafd0-930e-4a95-9585-da4f83c04f80",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T05:04:02.238Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-07T10:29:40.867Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -77,7 +77,7 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 
 ## CreateHrisDocument
 
-Create a document
+Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
 
 ### Example Usage
 
@@ -97,10 +97,10 @@ var res = await sdk.Document.CreateHrisDocumentAsync(
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "fb5751b9-840d-482b-904a-cc15d3687f70",
+        Id = "52bc1cff-e277-4433-b267-f1bef11afc5a",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-11T14:18:16.209Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-12T06:21:32.917Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -129,7 +129,7 @@ var res = await sdk.Document.CreateHrisDocumentAsync(
 
 ## CreateSigningDocument
 
-Create a document
+Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
 
 ### Example Usage
 
@@ -149,12 +149,12 @@ var res = await sdk.Document.CreateSigningDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "6ed235d7-f86d-4997-80c1-5ceed1ee5558",
+        Id = "e658ff76-dbba-4e72-b71a-5e1bf4a21ca4",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-29T12:09:26.649Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-29T16:44:12.171Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T22:41:47.810Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T15:50:46.498Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -183,7 +183,7 @@ var res = await sdk.Document.CreateSigningDocumentAsync(
 
 ## GetAtsDocument
 
-Retrieve a document
+Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -225,7 +225,7 @@ var res = await sdk.Document.GetAtsDocumentAsync(
 
 ## GetHrisDocument
 
-Retrieve a document
+Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -267,7 +267,7 @@ var res = await sdk.Document.GetHrisDocumentAsync(
 
 ## GetSigningDocument
 
-Retrieve a document
+Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -309,7 +309,7 @@ var res = await sdk.Document.GetSigningDocumentAsync(
 
 ## ListAtsDocuments
 
-List all documents
+Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -350,7 +350,7 @@ var res = await sdk.Document.ListAtsDocumentsAsync(req);
 
 ## ListHrisDocuments
 
-List all documents
+Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -391,7 +391,7 @@ var res = await sdk.Document.ListHrisDocumentsAsync(req);
 
 ## ListSigningDocuments
 
-List all documents
+Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -432,7 +432,7 @@ var res = await sdk.Document.ListSigningDocumentsAsync(req);
 
 ## PatchAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -453,10 +453,10 @@ PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "c8f7379a-84a2-4bc5-9566-3fdd6121eb59",
+        Id = "54d2b19c-5191-4915-9076-3304bb427845",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T05:04:02.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-07T10:29:40.869Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -485,7 +485,7 @@ var res = await sdk.Document.PatchAtsDocumentAsync(req);
 
 ## PatchHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -506,10 +506,10 @@ PatchHrisDocumentRequest req = new PatchHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "5ad82d77-6ecb-44ae-8610-c841047a6052",
+        Id = "073ecae1-c424-438e-837a-280f38f536a2",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-11T14:18:16.215Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-12T06:21:32.924Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -538,7 +538,7 @@ var res = await sdk.Document.PatchHrisDocumentAsync(req);
 
 ## PatchSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -559,12 +559,12 @@ PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "789a9731-b7b0-4700-aaf6-6981349b9f5e",
+        Id = "231d0832-7b7e-4894-852e-47e7b36039fd",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-29T12:09:26.651Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-29T16:44:12.174Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T22:41:47.819Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T15:50:46.512Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -593,7 +593,7 @@ var res = await sdk.Document.PatchSigningDocumentAsync(req);
 
 ## RemoveAtsDocument
 
-Remove a document
+Deletes the AtsDocument identified by `id`.
 
 ### Example Usage
 
@@ -633,7 +633,7 @@ var res = await sdk.Document.RemoveAtsDocumentAsync(
 
 ## RemoveHrisDocument
 
-Remove a document
+Deletes the HrisDocument identified by `id`.
 
 ### Example Usage
 
@@ -673,7 +673,7 @@ var res = await sdk.Document.RemoveHrisDocumentAsync(
 
 ## RemoveSigningDocument
 
-Remove a document
+Deletes the SigningDocument identified by `id`.
 
 ### Example Usage
 
@@ -713,7 +713,7 @@ var res = await sdk.Document.RemoveSigningDocumentAsync(
 
 ## UpdateAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -734,10 +734,10 @@ UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "c8f7379a-84a2-4bc5-9566-3fdd6121eb59",
+        Id = "54d2b19c-5191-4915-9076-3304bb427845",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T05:04:02.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-07T10:29:40.869Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -766,7 +766,7 @@ var res = await sdk.Document.UpdateAtsDocumentAsync(req);
 
 ## UpdateHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -787,10 +787,10 @@ UpdateHrisDocumentRequest req = new UpdateHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "5ad82d77-6ecb-44ae-8610-c841047a6052",
+        Id = "073ecae1-c424-438e-837a-280f38f536a2",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-11T14:18:16.215Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-12T06:21:32.924Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -819,7 +819,7 @@ var res = await sdk.Document.UpdateHrisDocumentAsync(req);
 
 ## UpdateSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -840,12 +840,12 @@ UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "789a9731-b7b0-4700-aaf6-6981349b9f5e",
+        Id = "231d0832-7b7e-4894-852e-47e7b36039fd",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-29T12:09:26.651Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-29T16:44:12.174Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-02T22:41:47.819Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-03T15:50:46.512Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

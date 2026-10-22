@@ -24,7 +24,7 @@
 
 ## CreateShippingLabel
 
-Create a label
+Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
 
 ### Example Usage
 
@@ -42,17 +42,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "8e4506a3-73c2-44be-901d-0d7df2caa297",
+        Id = "497fd9a7-bb5b-4f69-9a27-d165b32df801",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/8e4506a3-73c2-44be-901d-0d7df2caa297.pdf",
+        LabelUrl = "https://labels.example.com/497fd9a7-bb5b-4f69-9a27-d165b32df801.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T21:59:52.526Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.025Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -81,7 +81,7 @@ var res = await sdk.Shipping.CreateShippingLabelAsync(
 
 ## CreateShippingRate
 
-Create a rate
+Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
 
 ### Example Usage
 
@@ -99,7 +99,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingRateAsync(
     shippingRate: new ShippingRate() {
         Currency = "USD",
-        Id = "17f739c8-cca9-4578-b636-4149aa7a52bd",
+        Id = "692b955b-49fc-40d4-8400-59b9c2a2cb2d",
         Metadata = new List<ShippingMetadata>() {},
         Rates = new List<ShippingRateRate>() {
             new ShippingRateRate() {
@@ -144,7 +144,7 @@ var res = await sdk.Shipping.CreateShippingRateAsync(
 
 ## CreateShippingShipment
 
-Create a shipment
+Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
 
 ### Example Usage
 
@@ -162,7 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingShipmentAsync(
     shippingShipment: new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "c6c46515-d002-4101-9218-38b7368cfc86",
+        Id = "be77e204-392a-4fa5-8dd1-bf1438fe6268",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -172,7 +172,7 @@ var res = await sdk.Shipping.CreateShippingShipmentAsync(
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T06:47:02.908Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.822Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -201,7 +201,7 @@ var res = await sdk.Shipping.CreateShippingShipmentAsync(
 
 ## GetShippingCarrier
 
-Retrieve a carrier
+Retrieves a single ShippingCarrier by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -243,7 +243,7 @@ var res = await sdk.Shipping.GetShippingCarrierAsync(
 
 ## GetShippingLabel
 
-Retrieve a label
+Retrieves a single ShippingLabel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -285,7 +285,7 @@ var res = await sdk.Shipping.GetShippingLabelAsync(
 
 ## GetShippingShipment
 
-Retrieve a shipment
+Retrieves a single ShippingShipment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -327,7 +327,7 @@ var res = await sdk.Shipping.GetShippingShipmentAsync(
 
 ## GetShippingTracking
 
-Retrieve a tracking
+Retrieves a single ShippingTracking by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -369,7 +369,7 @@ var res = await sdk.Shipping.GetShippingTrackingAsync(
 
 ## ListShippingCarriers
 
-List all carriers
+Returns a list of ShippingCarriers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -410,7 +410,7 @@ var res = await sdk.Shipping.ListShippingCarriersAsync(req);
 
 ## ListShippingLabels
 
-List all labels
+Returns a list of ShippingLabels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -451,7 +451,7 @@ var res = await sdk.Shipping.ListShippingLabelsAsync(req);
 
 ## ListShippingShipments
 
-List all shipments
+Returns a list of ShippingShipments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -492,7 +492,7 @@ var res = await sdk.Shipping.ListShippingShipmentsAsync(req);
 
 ## ListShippingTrackings
 
-List all trackings
+Returns a list of ShippingTrackings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -533,7 +533,7 @@ var res = await sdk.Shipping.ListShippingTrackingsAsync(req);
 
 ## PatchShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -552,17 +552,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "ce74f0a8-808c-4963-81bc-0ba17b2173a9",
+        Id = "30ef2873-699c-4444-b333-6081f7a58553",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/ce74f0a8-808c-4963-81bc-0ba17b2173a9.pdf",
+        LabelUrl = "https://labels.example.com/30ef2873-699c-4444-b333-6081f7a58553.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T21:59:52.531Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.033Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -591,7 +591,7 @@ var res = await sdk.Shipping.PatchShippingLabelAsync(req);
 
 ## PatchShippingShipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -610,7 +610,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "fda353fc-f395-4f6b-80f3-5bfe032220fe",
+        Id = "f9bef9fd-b286-439c-9a1a-8bb7ab602aa7",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -620,7 +620,7 @@ PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T06:47:02.911Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.827Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -649,7 +649,7 @@ var res = await sdk.Shipping.PatchShippingShipmentAsync(req);
 
 ## RemoveShippingLabel
 
-Remove a label
+Deletes the ShippingLabel identified by `id`.
 
 ### Example Usage
 
@@ -689,7 +689,7 @@ var res = await sdk.Shipping.RemoveShippingLabelAsync(
 
 ## RemoveShippingShipment
 
-Remove a shipment
+Deletes the ShippingShipment identified by `id`.
 
 ### Example Usage
 
@@ -729,7 +729,7 @@ var res = await sdk.Shipping.RemoveShippingShipmentAsync(
 
 ## UpdateShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -748,17 +748,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "ce74f0a8-808c-4963-81bc-0ba17b2173a9",
+        Id = "30ef2873-699c-4444-b333-6081f7a58553",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/ce74f0a8-808c-4963-81bc-0ba17b2173a9.pdf",
+        LabelUrl = "https://labels.example.com/30ef2873-699c-4444-b333-6081f7a58553.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-28T21:59:52.531Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.033Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -787,7 +787,7 @@ var res = await sdk.Shipping.UpdateShippingLabelAsync(req);
 
 ## UpdateShippingShipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -806,7 +806,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "fda353fc-f395-4f6b-80f3-5bfe032220fe",
+        Id = "f9bef9fd-b286-439c-9a1a-8bb7ab602aa7",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -816,7 +816,7 @@ UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T06:47:02.911Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.827Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

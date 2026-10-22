@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
+        /// </remarks>
         /// <param name="analyticsEvent">A <see cref="AnalyticsEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a property.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
+        /// </remarks>
         /// <param name="analyticsProperty">A <see cref="AnalyticsProperty"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a visitor.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
+        /// </remarks>
         /// <param name="analyticsVisitor">A <see cref="AnalyticsVisitor"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a property.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Property.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a session.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsSession by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Session.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a visitor.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Visitor.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -171,6 +195,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all properties.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsPropertiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsPropertiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -184,6 +211,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -195,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all sessions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsSessions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsSessionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsSessionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -206,6 +239,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all visitors.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsVisitorsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsVisitorsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -217,6 +253,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a property.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAnalyticsPropertyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAnalyticsPropertyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -228,6 +267,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a visitor.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAnalyticsVisitorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAnalyticsVisitorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -239,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a property.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AnalyticsProperty identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Property.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAnalyticsPropertyResponse"/> response envelope when completed.</returns>
@@ -250,6 +295,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a visitor.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AnalyticsVisitor identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Visitor.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAnalyticsVisitorResponse"/> response envelope when completed.</returns>
@@ -261,6 +309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a property.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAnalyticsPropertyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAnalyticsPropertyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -274,6 +325,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a visitor.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAnalyticsVisitorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAnalyticsVisitorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -299,6 +353,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
+        /// </remarks>
         /// <param name="analyticsEvent">A <see cref="AnalyticsEvent"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -427,6 +484,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a property.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
+        /// </remarks>
         /// <param name="analyticsProperty">A <see cref="AnalyticsProperty"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -555,6 +615,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a visitor.
         /// </summary>
+        /// <remarks>
+        /// Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
+        /// </remarks>
         /// <param name="analyticsVisitor">A <see cref="AnalyticsVisitor"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -683,6 +746,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an event.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Event.</param>
         /// <param name="fields">Fields to return.</param>
@@ -805,6 +871,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a property.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Property.</param>
         /// <param name="fields">Fields to return.</param>
@@ -927,6 +996,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a session.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsSession by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Session.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1049,6 +1121,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a visitor.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Visitor.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1171,6 +1246,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all events.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsEventsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1276,6 +1354,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all properties.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsPropertiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsPropertiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1383,6 +1464,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reports.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsReportsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsReportsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1488,6 +1572,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all sessions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsSessions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsSessionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsSessionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1595,6 +1682,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all visitors.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAnalyticsVisitorsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAnalyticsVisitorsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1702,6 +1792,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a property.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAnalyticsPropertyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAnalyticsPropertyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1815,6 +1908,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a visitor.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAnalyticsVisitorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAnalyticsVisitorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1928,6 +2024,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a property.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AnalyticsProperty identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Property.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAnalyticsPropertyResponse"/> response envelope when completed.</returns>
@@ -2031,6 +2130,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a visitor.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AnalyticsVisitor identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Visitor.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAnalyticsVisitorResponse"/> response envelope when completed.</returns>
@@ -2134,6 +2236,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a property.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAnalyticsPropertyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAnalyticsPropertyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2247,6 +2352,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a visitor.
         /// </summary>
+        /// <remarks>
+        /// Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAnalyticsVisitorRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAnalyticsVisitorResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

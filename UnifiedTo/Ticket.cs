@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a ticket.
         /// </summary>
+        /// <remarks>
+        /// Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
+        /// </remarks>
         /// <param name="ticketingTicket">A <see cref="TicketingTicket"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a ticket.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ticket.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tickets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTicketingTicketsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTicketingTicketsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a ticket.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTicketingTicketRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTicketingTicketResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a ticket.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TicketingTicket identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ticket.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTicketingTicketResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a ticket.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTicketingTicketRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTicketingTicketResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a ticket.
         /// </summary>
+        /// <remarks>
+        /// Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
+        /// </remarks>
         /// <param name="ticketingTicket">A <see cref="TicketingTicket"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -251,6 +272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a ticket.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ticket.</param>
         /// <param name="fields">Fields to return.</param>
@@ -373,6 +397,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tickets.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTicketingTicketsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTicketingTicketsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -478,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a ticket.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTicketingTicketRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTicketingTicketResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -589,6 +619,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a ticket.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TicketingTicket identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Ticket.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTicketingTicketResponse"/> response envelope when completed.</returns>
@@ -692,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a ticket.
         /// </summary>
+        /// <remarks>
+        /// Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTicketingTicketRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTicketingTicketResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

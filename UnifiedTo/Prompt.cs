@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
+        /// </remarks>
         /// <param name="genaiPrompt">A <see cref="GenaiPrompt"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -60,6 +63,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
+        /// </remarks>
         /// <param name="genaiPrompt">A <see cref="GenaiPrompt"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>

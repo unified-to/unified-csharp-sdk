@@ -64,7 +64,7 @@
 
 ## CreateComputeDeployment
 
-Create a deployment
+Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
 
 ### Example Usage
 
@@ -86,13 +86,13 @@ var res = await sdk.Compute.CreateComputeDeploymentAsync(
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-29T15:17:57.248Z").ToUniversalTime(),
-        Id = "bf64167c-e90e-4d65-9a88-5875d7fda101",
+        FinishedAt = System.DateTime.Parse("2025-08-30T07:16:06.906Z").ToUniversalTime(),
+        Id = "8fe619d8-d808-4266-b6bc-328ceadbd5d8",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-10T07:40:51.258Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-10T21:44:12.866Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-28T18:17:11.691Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T12:44:07.143Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     connectionId: "<id>"
@@ -122,7 +122,7 @@ var res = await sdk.Compute.CreateComputeDeploymentAsync(
 
 ## CreateComputeDomain
 
-Create a domain
+Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
 
 ### Example Usage
 
@@ -140,12 +140,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeDomainAsync(
     computeDomain: new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "605b3624-2c0c-4fe9-89e4-972fe01672a2",
+        Id = "b1acfcda-c7e4-4001-8960-cca9b6ef6e69",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-03T15:21:11.635Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-04T03:42:11.525Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -174,7 +174,7 @@ var res = await sdk.Compute.CreateComputeDomainAsync(
 
 ## CreateComputeEnvvar
 
-Create an envvar
+Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
 
 ### Example Usage
 
@@ -195,11 +195,11 @@ var res = await sdk.Compute.CreateComputeEnvvarAsync(
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "b3e912da-9706-42b1-8726-d13a0b891ac6",
+        Id = "7418cf2c-df66-4e25-82cf-7c94101e4235",
         IsSecret = true,
         Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-03T14:34:23.152Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-04T06:46:16.924Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -228,7 +228,7 @@ var res = await sdk.Compute.CreateComputeEnvvarAsync(
 
 ## CreateComputeInstance
 
-Create an instance
+Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
 
 ### Example Usage
 
@@ -263,7 +263,7 @@ var res = await sdk.Compute.CreateComputeInstanceAsync(
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "e5c8356d-559c-4e3a-a18c-34f31f96afd0",
+        Id = "29bc97bf-ed08-457c-b659-bb843561470f",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -278,11 +278,11 @@ var res = await sdk.Compute.CreateComputeInstanceAsync(
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-23T23:28:09.657Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-24T12:38:34.520Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-16T05:01:39.438Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-16T19:26:10.822Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -311,7 +311,7 @@ var res = await sdk.Compute.CreateComputeInstanceAsync(
 
 ## CreateComputeKey
 
-Create a key
+Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
 
 ### Example Usage
 
@@ -329,11 +329,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeKeyAsync(
     computeKey: new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "9ebb4465-b6cc-4c3f-a0af-f79ebd46f2c3",
+        Id = "f1e2e71a-90d4-4dd4-976a-6ef025ca6ad1",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.588Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-07T07:10:37.245Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -362,7 +362,7 @@ var res = await sdk.Compute.CreateComputeKeyAsync(
 
 ## CreateComputeService
 
-Create a service
+Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
 
 ### Example Usage
 
@@ -382,7 +382,7 @@ var res = await sdk.Compute.CreateComputeServiceAsync(
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "2f0e38c8-4bdc-45fa-ab7c-273083a74dc5",
+        Id = "a790709c-fe25-4e2c-b340-e5521226c05c",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -393,7 +393,7 @@ var res = await sdk.Compute.CreateComputeServiceAsync(
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-04T16:38:31.301Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-05T03:17:58.597Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>"
@@ -423,7 +423,7 @@ var res = await sdk.Compute.CreateComputeServiceAsync(
 
 ## CreateComputeSnapshot
 
-Create a snapshot
+Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
 
 ### Example Usage
 
@@ -441,13 +441,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeSnapshotAsync(
     computeSnapshot: new ComputeSnapshot() {
         CreatedAt = System.DateTime.Parse("2021-09-24T14:40:06.110Z").ToUniversalTime(),
-        Id = "06b5b432-936c-4e85-9e31-40805d4a5a94",
+        Id = "c4e452a9-cc50-4f09-9749-9cbe4c7bc624",
         Metadata = new List<ComputeMetadata>() {},
         Name = "snap-alius",
         SizeMb = 169984D,
         Status = ComputeSnapshotStatus.Deleting,
         Type = ComputeSnapshotType.Disk,
-        UpdatedAt = System.DateTime.Parse("2026-03-30T21:39:00.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-31T16:53:17.234Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -476,7 +476,7 @@ var res = await sdk.Compute.CreateComputeSnapshotAsync(
 
 ## CreateComputeTemplate
 
-Create a template
+Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
 
 ### Example Usage
 
@@ -500,10 +500,10 @@ var res = await sdk.Compute.CreateComputeTemplateAsync(
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "e50d99dd-a9b3-4996-91a2-967dc2968200",
+        Id = "f6f36ea5-8966-4092-8c75-5c8411d767e0",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-23T20:41:03.195Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-24T14:53:14.008Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -511,7 +511,7 @@ var res = await sdk.Compute.CreateComputeTemplateAsync(
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-12T18:47:41.369Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-13T06:27:28.825Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -540,7 +540,7 @@ var res = await sdk.Compute.CreateComputeTemplateAsync(
 
 ## CreateComputeVolume
 
-Create a volume
+Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
 
 ### Example Usage
 
@@ -558,14 +558,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Compute.CreateComputeVolumeAsync(
     computeVolume: new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "ad54c53c-bc60-4514-9dfc-d139e36bb25f",
+        Id = "8fd12d84-2578-464c-a190-75cde39b59c0",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T21:56:21.764Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-10T04:44:12.402Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     connectionId: "<id>"
@@ -595,7 +595,7 @@ var res = await sdk.Compute.CreateComputeVolumeAsync(
 
 ## GetComputeDeployment
 
-Retrieve a deployment
+Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -637,7 +637,7 @@ var res = await sdk.Compute.GetComputeDeploymentAsync(
 
 ## GetComputeDomain
 
-Retrieve a domain
+Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -679,7 +679,7 @@ var res = await sdk.Compute.GetComputeDomainAsync(
 
 ## GetComputeEnvvar
 
-Retrieve an envvar
+Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -721,7 +721,7 @@ var res = await sdk.Compute.GetComputeEnvvarAsync(
 
 ## GetComputeGputype
 
-Retrieve a gputype
+Retrieves a single ComputeGputype by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -763,7 +763,7 @@ var res = await sdk.Compute.GetComputeGputypeAsync(
 
 ## GetComputeInstance
 
-Retrieve an instance
+Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -805,7 +805,7 @@ var res = await sdk.Compute.GetComputeInstanceAsync(
 
 ## GetComputeKey
 
-Retrieve a key
+Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -847,7 +847,7 @@ var res = await sdk.Compute.GetComputeKeyAsync(
 
 ## GetComputeRegion
 
-Retrieve a region
+Retrieves a single ComputeRegion by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -889,7 +889,7 @@ var res = await sdk.Compute.GetComputeRegionAsync(
 
 ## GetComputeService
 
-Retrieve a service
+Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -931,7 +931,7 @@ var res = await sdk.Compute.GetComputeServiceAsync(
 
 ## GetComputeSnapshot
 
-Retrieve a snapshot
+Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -973,7 +973,7 @@ var res = await sdk.Compute.GetComputeSnapshotAsync(
 
 ## GetComputeTemplate
 
-Retrieve a template
+Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1015,7 +1015,7 @@ var res = await sdk.Compute.GetComputeTemplateAsync(
 
 ## GetComputeVolume
 
-Retrieve a volume
+Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1057,7 +1057,7 @@ var res = await sdk.Compute.GetComputeVolumeAsync(
 
 ## ListComputeDeployments
 
-List all deployments
+Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1098,7 +1098,7 @@ var res = await sdk.Compute.ListComputeDeploymentsAsync(req);
 
 ## ListComputeDomains
 
-List all domains
+Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1139,7 +1139,7 @@ var res = await sdk.Compute.ListComputeDomainsAsync(req);
 
 ## ListComputeEnvvars
 
-List all envvars
+Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1180,7 +1180,7 @@ var res = await sdk.Compute.ListComputeEnvvarsAsync(req);
 
 ## ListComputeGputypes
 
-List all gputypes
+Returns a list of ComputeGputypes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1221,7 +1221,7 @@ var res = await sdk.Compute.ListComputeGputypesAsync(req);
 
 ## ListComputeInstances
 
-List all instances
+Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1262,7 +1262,7 @@ var res = await sdk.Compute.ListComputeInstancesAsync(req);
 
 ## ListComputeKeys
 
-List all keys
+Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1303,7 +1303,7 @@ var res = await sdk.Compute.ListComputeKeysAsync(req);
 
 ## ListComputeRegions
 
-List all regions
+Returns a list of ComputeRegions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1344,7 +1344,7 @@ var res = await sdk.Compute.ListComputeRegionsAsync(req);
 
 ## ListComputeServices
 
-List all services
+Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1385,7 +1385,7 @@ var res = await sdk.Compute.ListComputeServicesAsync(req);
 
 ## ListComputeSnapshots
 
-List all snapshots
+Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1426,7 +1426,7 @@ var res = await sdk.Compute.ListComputeSnapshotsAsync(req);
 
 ## ListComputeTemplates
 
-List all templates
+Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1467,7 +1467,7 @@ var res = await sdk.Compute.ListComputeTemplatesAsync(req);
 
 ## ListComputeUsages
 
-List all usages
+Returns a list of ComputeUsages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1508,7 +1508,7 @@ var res = await sdk.Compute.ListComputeUsagesAsync(req);
 
 ## ListComputeVolumes
 
-List all volumes
+Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1549,7 +1549,7 @@ var res = await sdk.Compute.ListComputeVolumesAsync(req);
 
 ## PatchComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -1572,13 +1572,13 @@ PatchComputeDeploymentRequest req = new PatchComputeDeploymentRequest() {
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-29T15:17:57.262Z").ToUniversalTime(),
-        Id = "599d554e-daf0-4889-b07a-6ac0fbce1a50",
+        FinishedAt = System.DateTime.Parse("2025-08-30T07:16:06.920Z").ToUniversalTime(),
+        Id = "e0d84afa-4513-4fd6-b2f4-e0743e6c83ba",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-10T07:40:51.270Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-10T21:44:12.879Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-28T18:17:11.707Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T12:44:07.159Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     ConnectionId = "<id>",
@@ -1608,7 +1608,7 @@ var res = await sdk.Compute.PatchComputeDeploymentAsync(req);
 
 ## PatchComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -1627,12 +1627,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeDomainRequest req = new PatchComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "671cc05d-52e7-4294-88b7-d6f8c6cfe76f",
+        Id = "a5ca018e-387d-465b-abe9-34aa9ba21f20",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-03T15:21:11.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-04T03:42:11.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1661,7 +1661,7 @@ var res = await sdk.Compute.PatchComputeDomainAsync(req);
 
 ## PatchComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -1683,11 +1683,11 @@ PatchComputeEnvvarRequest req = new PatchComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "a740f0e0-cb68-4cd8-9cb4-2c902325b954",
+        Id = "11787ca8-323f-4faf-abdb-0f87b2f8d9cb",
         IsSecret = true,
         Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-03T14:34:23.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-04T06:46:16.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1716,7 +1716,7 @@ var res = await sdk.Compute.PatchComputeEnvvarAsync(req);
 
 ## PatchComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -1752,7 +1752,7 @@ PatchComputeInstanceRequest req = new PatchComputeInstanceRequest() {
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "b85722b6-ee7b-4fe2-a1f4-590c866ee5d6",
+        Id = "5c415506-e1d3-46d8-a872-e6df61329abf",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -1767,11 +1767,11 @@ PatchComputeInstanceRequest req = new PatchComputeInstanceRequest() {
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-23T23:28:09.679Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-24T12:38:34.538Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-16T05:01:39.462Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-16T19:26:10.842Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1800,7 +1800,7 @@ var res = await sdk.Compute.PatchComputeInstanceAsync(req);
 
 ## PatchComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -1819,11 +1819,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeKeyRequest req = new PatchComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "88766066-7c0a-46f8-a094-d43f8a531555",
+        Id = "a0735718-34a8-4986-a957-9ed105cf1a57",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.591Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-07T07:10:37.248Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1852,7 +1852,7 @@ var res = await sdk.Compute.PatchComputeKeyAsync(req);
 
 ## PatchComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -1873,7 +1873,7 @@ PatchComputeServiceRequest req = new PatchComputeServiceRequest() {
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "ccc3725e-1698-4e85-9714-3c03764a7c96",
+        Id = "1ad6eb4a-2a5c-40da-b6ab-858defbecb52",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -1884,7 +1884,7 @@ PatchComputeServiceRequest req = new PatchComputeServiceRequest() {
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-04T16:38:31.313Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-05T03:17:58.605Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     ConnectionId = "<id>",
@@ -1914,7 +1914,7 @@ var res = await sdk.Compute.PatchComputeServiceAsync(req);
 
 ## PatchComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -1939,10 +1939,10 @@ PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "b3e6edf2-1a5a-412d-aa78-81899ad50b70",
+        Id = "84b24b1c-67b4-41e2-bf47-ce745df66bc8",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-23T20:41:03.209Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-24T14:53:14.024Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -1950,7 +1950,7 @@ PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-12T18:47:41.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-13T06:27:28.835Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1979,7 +1979,7 @@ var res = await sdk.Compute.PatchComputeTemplateAsync(req);
 
 ## PatchComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -1998,14 +1998,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeVolumeRequest req = new PatchComputeVolumeRequest() {
     ComputeVolume = new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "bfd2c9a9-d7d1-4cab-9b6e-f632faeb765f",
+        Id = "ed29ce6b-d4c1-46cd-bc76-d02fd40e958d",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T21:56:21.768Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-10T04:44:12.405Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     ConnectionId = "<id>",
@@ -2035,7 +2035,7 @@ var res = await sdk.Compute.PatchComputeVolumeAsync(req);
 
 ## RemoveComputeDeployment
 
-Remove a deployment
+Deletes the ComputeDeployment identified by `id`.
 
 ### Example Usage
 
@@ -2075,7 +2075,7 @@ var res = await sdk.Compute.RemoveComputeDeploymentAsync(
 
 ## RemoveComputeDomain
 
-Remove a domain
+Deletes the ComputeDomain identified by `id`.
 
 ### Example Usage
 
@@ -2115,7 +2115,7 @@ var res = await sdk.Compute.RemoveComputeDomainAsync(
 
 ## RemoveComputeEnvvar
 
-Remove an envvar
+Deletes the ComputeEnvvar identified by `id`.
 
 ### Example Usage
 
@@ -2155,7 +2155,7 @@ var res = await sdk.Compute.RemoveComputeEnvvarAsync(
 
 ## RemoveComputeInstance
 
-Remove an instance
+Deletes the ComputeInstance identified by `id`.
 
 ### Example Usage
 
@@ -2195,7 +2195,7 @@ var res = await sdk.Compute.RemoveComputeInstanceAsync(
 
 ## RemoveComputeKey
 
-Remove a key
+Deletes the ComputeKey identified by `id`.
 
 ### Example Usage
 
@@ -2235,7 +2235,7 @@ var res = await sdk.Compute.RemoveComputeKeyAsync(
 
 ## RemoveComputeService
 
-Remove a service
+Deletes the ComputeService identified by `id`.
 
 ### Example Usage
 
@@ -2275,7 +2275,7 @@ var res = await sdk.Compute.RemoveComputeServiceAsync(
 
 ## RemoveComputeSnapshot
 
-Remove a snapshot
+Deletes the ComputeSnapshot identified by `id`.
 
 ### Example Usage
 
@@ -2315,7 +2315,7 @@ var res = await sdk.Compute.RemoveComputeSnapshotAsync(
 
 ## RemoveComputeTemplate
 
-Remove a template
+Deletes the ComputeTemplate identified by `id`.
 
 ### Example Usage
 
@@ -2355,7 +2355,7 @@ var res = await sdk.Compute.RemoveComputeTemplateAsync(
 
 ## RemoveComputeVolume
 
-Remove a volume
+Deletes the ComputeVolume identified by `id`.
 
 ### Example Usage
 
@@ -2395,7 +2395,7 @@ var res = await sdk.Compute.RemoveComputeVolumeAsync(
 
 ## UpdateComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -2418,13 +2418,13 @@ UpdateComputeDeploymentRequest req = new UpdateComputeDeploymentRequest() {
         CommitMessage = "copy primary pixel",
         CreatedAt = System.DateTime.Parse("2022-06-07T03:52:04.613Z").ToUniversalTime(),
         Environment = UnifiedTo.Models.Components.Environment.Preview,
-        FinishedAt = System.DateTime.Parse("2025-08-29T15:17:57.262Z").ToUniversalTime(),
-        Id = "599d554e-daf0-4889-b07a-6ac0fbce1a50",
+        FinishedAt = System.DateTime.Parse("2025-08-30T07:16:06.920Z").ToUniversalTime(),
+        Id = "e0d84afa-4513-4fd6-b2f4-e0743e6c83ba",
         Metadata = new List<ComputeMetadata>() {},
-        StartedAt = System.DateTime.Parse("2025-04-10T07:40:51.270Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-04-10T21:44:12.879Z").ToUniversalTime(),
         Status = ComputeDeploymentStatus.Live,
         Trigger = Trigger.Api,
-        UpdatedAt = System.DateTime.Parse("2026-02-28T18:17:11.707Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T12:44:07.159Z").ToUniversalTime(),
         Url = "https://comfortable-petal.name",
     },
     ConnectionId = "<id>",
@@ -2454,7 +2454,7 @@ var res = await sdk.Compute.UpdateComputeDeploymentAsync(req);
 
 ## UpdateComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -2473,12 +2473,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeDomainRequest req = new UpdateComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "671cc05d-52e7-4294-88b7-d6f8c6cfe76f",
+        Id = "a5ca018e-387d-465b-abe9-34aa9ba21f20",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-03T15:21:11.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-04T03:42:11.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2507,7 +2507,7 @@ var res = await sdk.Compute.UpdateComputeDomainAsync(req);
 
 ## UpdateComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -2529,11 +2529,11 @@ UpdateComputeEnvvarRequest req = new UpdateComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "a740f0e0-cb68-4cd8-9cb4-2c902325b954",
+        Id = "11787ca8-323f-4faf-abdb-0f87b2f8d9cb",
         IsSecret = true,
         Metadata = new List<ComputeMetadata>() {},
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-07-03T14:34:23.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-04T06:46:16.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2562,7 +2562,7 @@ var res = await sdk.Compute.UpdateComputeEnvvarAsync(req);
 
 ## UpdateComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -2598,7 +2598,7 @@ UpdateComputeInstanceRequest req = new UpdateComputeInstanceRequest() {
         },
         GpuCount = 0D,
         HasInternetAccess = true,
-        Id = "b85722b6-ee7b-4fe2-a1f4-590c866ee5d6",
+        Id = "5c415506-e1d3-46d8-a872-e6df61329abf",
         Image = "ubuntu:24.04",
         Market = Market.Spot,
         MemoryMb = 2048D,
@@ -2613,11 +2613,11 @@ UpdateComputeInstanceRequest req = new UpdateComputeInstanceRequest() {
             Port = 22D,
             Username = "root",
         },
-        StartedAt = System.DateTime.Parse("2025-03-23T23:28:09.679Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2025-03-24T12:38:34.538Z").ToUniversalTime(),
         Status = ComputeInstanceStatus.Error,
         StatusReason = "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
         Type = ComputeInstanceType.Baremetal,
-        UpdatedAt = System.DateTime.Parse("2025-06-16T05:01:39.462Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-16T19:26:10.842Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2646,7 +2646,7 @@ var res = await sdk.Compute.UpdateComputeInstanceAsync(req);
 
 ## UpdateComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -2665,11 +2665,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeKeyRequest req = new UpdateComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "88766066-7c0a-46f8-a094-d43f8a531555",
+        Id = "a0735718-34a8-4986-a957-9ed105cf1a57",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.591Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-07T07:10:37.248Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2698,7 +2698,7 @@ var res = await sdk.Compute.UpdateComputeKeyAsync(req);
 
 ## UpdateComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -2719,7 +2719,7 @@ UpdateComputeServiceRequest req = new UpdateComputeServiceRequest() {
         Branch = "main",
         BuildCommand = "npm run build",
         CreatedAt = System.DateTime.Parse("2023-10-04T02:06:29.391Z").ToUniversalTime(),
-        Id = "ccc3725e-1698-4e85-9714-3c03764a7c96",
+        Id = "1ad6eb4a-2a5c-40da-b6ab-858defbecb52",
         InstanceCount = 6D,
         MaxInstanceCount = 6D,
         Metadata = new List<ComputeMetadata>() {},
@@ -2730,7 +2730,7 @@ UpdateComputeServiceRequest req = new UpdateComputeServiceRequest() {
         Runtime = "python",
         Status = ComputeServiceStatus.Suspended,
         Type = ComputeServiceType.Other,
-        UpdatedAt = System.DateTime.Parse("2025-04-04T16:38:31.313Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-05T03:17:58.605Z").ToUniversalTime(),
         Url = "https://tame-sideboard.rotating-shoulder.biz",
     },
     ConnectionId = "<id>",
@@ -2760,7 +2760,7 @@ var res = await sdk.Compute.UpdateComputeServiceAsync(req);
 
 ## UpdateComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -2785,10 +2785,10 @@ UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
         RUN apt-get update",
         GpuCount = 2D,
         GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
-        Id = "b3e6edf2-1a5a-412d-aa78-81899ad50b70",
+        Id = "84b24b1c-67b4-41e2-bf47-ce745df66bc8",
         Image = "perfumed-molasses/cohibeo:5.2",
         IsPublic = false,
-        LastUsedAt = System.DateTime.Parse("2026-03-23T20:41:03.209Z").ToUniversalTime(),
+        LastUsedAt = System.DateTime.Parse("2026-03-24T14:53:14.024Z").ToUniversalTime(),
         MemoryMb = 8192D,
         Metadata = new List<ComputeMetadata>() {},
         Name = "multi-byte-card",
@@ -2796,7 +2796,7 @@ UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
             8080D,
         },
         Status = ComputeTemplateStatus.Other,
-        UpdatedAt = System.DateTime.Parse("2025-02-12T18:47:41.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-13T06:27:28.835Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2825,7 +2825,7 @@ var res = await sdk.Compute.UpdateComputeTemplateAsync(req);
 
 ## UpdateComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -2844,14 +2844,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeVolumeRequest req = new UpdateComputeVolumeRequest() {
     ComputeVolume = new ComputeVolume() {
         CreatedAt = System.DateTime.Parse("2022-11-15T15:12:48.055Z").ToUniversalTime(),
-        Id = "bfd2c9a9-d7d1-4cab-9b6e-f632faeb765f",
+        Id = "ed29ce6b-d4c1-46cd-bc76-d02fd40e958d",
         InstanceIds = new List<string>() {},
         Metadata = new List<ComputeMetadata>() {},
         Name = "vol-solum",
         SizeMb = 1024000D,
         Status = ComputeVolumeStatus.Other,
         Type = ComputeVolumeType.HighPerformance,
-        UpdatedAt = System.DateTime.Parse("2024-02-09T21:56:21.768Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-02-10T04:44:12.405Z").ToUniversalTime(),
         UsedMb = 524986D,
     },
     ConnectionId = "<id>",

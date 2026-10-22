@@ -27,7 +27,7 @@
 
 ## CreateAdsGroup
 
-Create a group
+Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
 
 ### Example Usage
 
@@ -50,15 +50,15 @@ var res = await sdk.Group.CreateAdsGroupAsync(
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-25T01:50:30.766Z").ToUniversalTime(),
-        Id = "8cf8d7ad-5e77-40b0-9676-ae8fc045c67b",
+        EndAt = System.DateTime.Parse("2026-06-25T22:29:05.372Z").ToUniversalTime(),
+        Id = "aed25c3c-3092-4020-9760-2fb3969218b2",
         LanguageLocale = "fr-FR",
         Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-09T07:03:47.280Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-10T02:19:26.878Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-13T16:19:28.159Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T23:30:57.939Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -87,7 +87,7 @@ var res = await sdk.Group.CreateAdsGroupAsync(
 
 ## CreateHrisGroup
 
-Create a group
+Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
 
 ### Example Usage
 
@@ -106,12 +106,12 @@ var res = await sdk.Group.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "71a24531-093a-445d-ba87-6188f6b2ea07",
+        Id = "6333a3d8-8fdc-480d-b57a-aa9403d9ae91",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-21T23:41:48.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T18:17:09.468Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -182,7 +182,7 @@ var res = await sdk.Group.CreateScimGroupsAsync(
 
 ## GetAdsGroup
 
-Retrieve a group
+Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -224,7 +224,7 @@ var res = await sdk.Group.GetAdsGroupAsync(
 
 ## GetClubsGroup
 
-Retrieve a group
+Retrieves a single ClubsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -266,7 +266,7 @@ var res = await sdk.Group.GetClubsGroupAsync(
 
 ## GetHrisGroup
 
-Retrieve a group
+Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -348,7 +348,7 @@ var res = await sdk.Group.GetScimGroupsAsync(
 
 ## ListAdsGroups
 
-List all groups
+Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -389,7 +389,7 @@ var res = await sdk.Group.ListAdsGroupsAsync(req);
 
 ## ListClubsGroups
 
-List all groups
+Returns a list of ClubsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -430,7 +430,7 @@ var res = await sdk.Group.ListClubsGroupsAsync(req);
 
 ## ListHrisGroups
 
-List all groups
+Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -512,7 +512,7 @@ var res = await sdk.Group.ListScimGroupsAsync(req);
 
 ## PatchAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -536,15 +536,15 @@ PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-25T01:50:30.881Z").ToUniversalTime(),
-        Id = "ebb44678-7607-4ee1-a7e4-55ace1b34f59",
+        EndAt = System.DateTime.Parse("2026-06-25T22:29:05.476Z").ToUniversalTime(),
+        Id = "00bee325-3171-407e-b7c1-47ec3f84c30a",
         LanguageLocale = "fr-FR",
         Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-09T07:03:47.387Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-10T02:19:26.975Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-13T16:19:28.199Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T23:30:57.975Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -573,7 +573,7 @@ var res = await sdk.Group.PatchAdsGroupAsync(req);
 
 ## PatchHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -593,12 +593,12 @@ PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "0924dac9-e3bd-4b44-8601-a750ee67856b",
+        Id = "0e267efa-b666-4056-a11f-e0eb8f65c0b9",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-21T23:41:48.267Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T18:17:09.476Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -671,7 +671,7 @@ var res = await sdk.Group.PatchScimGroupsAsync(
 
 ## RemoveAdsGroup
 
-Remove a group
+Deletes the AdsGroup identified by `id`.
 
 ### Example Usage
 
@@ -711,7 +711,7 @@ var res = await sdk.Group.RemoveAdsGroupAsync(
 
 ## RemoveHrisGroup
 
-Remove a group
+Deletes the HrisGroup identified by `id`.
 
 ### Example Usage
 
@@ -791,7 +791,7 @@ var res = await sdk.Group.RemoveScimGroupsAsync(
 
 ## UpdateAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -815,15 +815,15 @@ UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
         CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
         Currency = "USD",
         EffectiveStatus = AdsGroupEffectiveStatus.Paused,
-        EndAt = System.DateTime.Parse("2026-06-25T01:50:30.881Z").ToUniversalTime(),
-        Id = "ebb44678-7607-4ee1-a7e4-55ace1b34f59",
+        EndAt = System.DateTime.Parse("2026-06-25T22:29:05.476Z").ToUniversalTime(),
+        Id = "00bee325-3171-407e-b7c1-47ec3f84c30a",
         LanguageLocale = "fr-FR",
         Metadata = new List<AdsMetadata>() {},
         Name = "Stark - Baumbach",
-        StartAt = System.DateTime.Parse("2026-01-09T07:03:47.387Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2026-01-10T02:19:26.975Z").ToUniversalTime(),
         Status = AdsGroupStatus.Processing,
         Targeting = new PropertyAdsGroupTargeting() {},
-        UpdatedAt = System.DateTime.Parse("2022-01-13T16:19:28.199Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-13T23:30:57.975Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -852,7 +852,7 @@ var res = await sdk.Group.UpdateAdsGroupAsync(req);
 
 ## UpdateHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -872,12 +872,12 @@ UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "0924dac9-e3bd-4b44-8601-a750ee67856b",
+        Id = "0e267efa-b666-4056-a11f-e0eb8f65c0b9",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Games",
         Type = HrisGroupType.Branch,
-        UpdatedAt = System.DateTime.Parse("2026-05-21T23:41:48.267Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T18:17:09.476Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

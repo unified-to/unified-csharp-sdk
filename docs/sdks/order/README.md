@@ -4,20 +4,22 @@
 
 ### Available Operations
 
-* [CreateAccountingOrder](#createaccountingorder) - Create an order
+* [~~CreateAccountingOrder~~](#createaccountingorder) - Create an order :warning: **Deprecated**
 * [CreateAssessmentOrder](#createassessmentorder) - Create an order
-* [GetAccountingOrder](#getaccountingorder) - Retrieve an order
+* [~~GetAccountingOrder~~](#getaccountingorder) - Retrieve an order :warning: **Deprecated**
 * [GetAssessmentOrder](#getassessmentorder) - Retrieve an order
-* [ListAccountingOrders](#listaccountingorders) - List all orders
-* [PatchAccountingOrder](#patchaccountingorder) - Update an order
+* [~~ListAccountingOrders~~](#listaccountingorders) - List all orders :warning: **Deprecated**
+* [~~PatchAccountingOrder~~](#patchaccountingorder) - Update an order :warning: **Deprecated**
 * [PatchAssessmentOrder](#patchassessmentorder) - Update an order
-* [RemoveAccountingOrder](#removeaccountingorder) - Remove an order
-* [UpdateAccountingOrder](#updateaccountingorder) - Update an order
+* [~~RemoveAccountingOrder~~](#removeaccountingorder) - Remove an order :warning: **Deprecated**
+* [~~UpdateAccountingOrder~~](#updateaccountingorder) - Update an order :warning: **Deprecated**
 * [UpdateAssessmentOrder](#updateassessmentorder) - Update an order
 
-## CreateAccountingOrder
+## ~~CreateAccountingOrder~~
 
-Create an order
+Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -44,7 +46,7 @@ var res = await sdk.Order.CreateAccountingOrderAsync(
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "GBP",
-        Id = "2ef97e51-25fc-443a-953f-ef5d646926ab",
+        Id = "02bbc3bd-9dc5-4f81-b81d-8ed8484ac294",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
@@ -59,7 +61,7 @@ var res = await sdk.Order.CreateAccountingOrderAsync(
         Status = AccountingOrderStatus.Authorized,
         TotalAmount = 0D,
         Type = AccountingOrderType.Sales,
-        UpdatedAt = System.DateTime.Parse("2022-02-08T07:22:15.415Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-08T11:49:29.254Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -88,7 +90,7 @@ var res = await sdk.Order.CreateAccountingOrderAsync(
 
 ## CreateAssessmentOrder
 
-Create an order
+Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
 
 ### Example Usage
 
@@ -107,7 +109,7 @@ var res = await sdk.Order.CreateAssessmentOrderAsync(
     assessmentOrder: new AssessmentOrder() {
         ConnectionId = "<id>",
         CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
-        Id = "b4d62f52-d6fb-4e31-bfcf-e588a51d63c2",
+        Id = "fc5bc621-f18c-4593-aa5d-2661567ac16f",
         Metadata = new List<AssessmentMetadata>() {},
         Parameters = new List<AssessmentParameterInput>() {},
         ProfileAddresses = new List<AssessmentAddress>() {},
@@ -134,7 +136,7 @@ var res = await sdk.Order.CreateAssessmentOrderAsync(
         ResponseUrl = "https://rowdy-fisherman.biz/",
         Status = AssessmentOrderStatus.Rejected,
         TargetUrl = "https://cautious-turret.info",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T20:39:07.899Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T02:24:12.768Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     connectionId: "<id>"
@@ -162,9 +164,11 @@ var res = await sdk.Order.CreateAssessmentOrderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingOrder
+## ~~GetAccountingOrder~~
 
-Retrieve an order
+Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -206,7 +210,7 @@ var res = await sdk.Order.GetAccountingOrderAsync(
 
 ## GetAssessmentOrder
 
-Retrieve an order
+Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -246,9 +250,11 @@ var res = await sdk.Order.GetAssessmentOrderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingOrders
+## ~~ListAccountingOrders~~
 
-List all orders
+Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -287,9 +293,11 @@ var res = await sdk.Order.ListAccountingOrdersAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingOrder
+## ~~PatchAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -317,7 +325,7 @@ PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "GBP",
-        Id = "72fb3636-1621-4028-96dd-afd7afac8356",
+        Id = "ab392c44-03f1-49b7-90b6-c2d097724efb",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
@@ -332,7 +340,7 @@ PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
         Status = AccountingOrderStatus.Authorized,
         TotalAmount = 0D,
         Type = AccountingOrderType.Sales,
-        UpdatedAt = System.DateTime.Parse("2022-02-08T07:22:15.421Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-08T11:49:29.265Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -361,7 +369,7 @@ var res = await sdk.Order.PatchAccountingOrderAsync(req);
 
 ## PatchAssessmentOrder
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -381,7 +389,7 @@ PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
         CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
-        Id = "0839ed88-c247-41cc-bb93-19b5255d95d8",
+        Id = "bd18da58-002f-4f31-b006-c7c126009774",
         Metadata = new List<AssessmentMetadata>() {},
         Parameters = new List<AssessmentParameterInput>() {},
         ProfileAddresses = new List<AssessmentAddress>() {},
@@ -408,7 +416,7 @@ PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
         ResponseUrl = "https://rowdy-fisherman.biz/",
         Status = AssessmentOrderStatus.Rejected,
         TargetUrl = "https://cautious-turret.info",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T20:39:07.909Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T02:24:12.776Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     ConnectionId = "<id>",
@@ -436,9 +444,11 @@ var res = await sdk.Order.PatchAssessmentOrderAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingOrder
+## ~~RemoveAccountingOrder~~
 
-Remove an order
+Deletes the AccountingOrder identified by `id`.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -476,9 +486,11 @@ var res = await sdk.Order.RemoveAccountingOrderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingOrder
+## ~~UpdateAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -506,7 +518,7 @@ UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "GBP",
-        Id = "72fb3636-1621-4028-96dd-afd7afac8356",
+        Id = "ab392c44-03f1-49b7-90b6-c2d097724efb",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
@@ -521,7 +533,7 @@ UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
         Status = AccountingOrderStatus.Authorized,
         TotalAmount = 0D,
         Type = AccountingOrderType.Sales,
-        UpdatedAt = System.DateTime.Parse("2022-02-08T07:22:15.421Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-08T11:49:29.265Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -550,7 +562,7 @@ var res = await sdk.Order.UpdateAccountingOrderAsync(req);
 
 ## UpdateAssessmentOrder
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -570,7 +582,7 @@ UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
         CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
-        Id = "0839ed88-c247-41cc-bb93-19b5255d95d8",
+        Id = "bd18da58-002f-4f31-b006-c7c126009774",
         Metadata = new List<AssessmentMetadata>() {},
         Parameters = new List<AssessmentParameterInput>() {},
         ProfileAddresses = new List<AssessmentAddress>() {},
@@ -597,7 +609,7 @@ UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
         ResponseUrl = "https://rowdy-fisherman.biz/",
         Status = AssessmentOrderStatus.Rejected,
         TargetUrl = "https://cautious-turret.info",
-        UpdatedAt = System.DateTime.Parse("2023-01-25T20:39:07.909Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T02:24:12.776Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     ConnectionId = "<id>",

@@ -13,7 +13,7 @@
 
 ## CreateVerificationRequest
 
-Create a request
+Creates a VerificationRequest. Provide the unified VerificationRequest fields in the request body; they are mapped to the provider's API. Returns the created VerificationRequest.
 
 ### Example Usage
 
@@ -31,7 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Request.CreateVerificationRequestAsync(
     verificationRequest: new VerificationRequest() {
         CreatedAt = System.DateTime.Parse("2023-11-20T08:17:29.950Z").ToUniversalTime(),
-        Id = "8c1dda87-c858-431a-ba10-948bbf2a8db1",
+        Id = "9e21f432-c2e1-46db-86eb-3e3deb597281",
         Metadata = new List<VerificationMetadata>() {},
         Parameters = new List<VerificationParameterInput>() {},
         ProfileAddresses = new List<VerificationAddress>() {},
@@ -41,7 +41,7 @@ var res = await sdk.Request.CreateVerificationRequestAsync(
         ResponseDownloadUrls = new List<string>() {},
         ResponseSource = "Implemented regional protocol",
         ResponseStatus = VerificationRequestResponseStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-12-27T07:01:42.317Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-27T07:46:40.808Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -70,7 +70,7 @@ var res = await sdk.Request.CreateVerificationRequestAsync(
 
 ## GetVerificationRequest
 
-Retrieve a request
+Retrieves a single VerificationRequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +112,7 @@ var res = await sdk.Request.GetVerificationRequestAsync(
 
 ## ListVerificationRequests
 
-List all requests
+Returns a list of VerificationRequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Request.ListVerificationRequestsAsync(req);
 
 ## PatchVerificationRequest
 
-Update a request
+Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
 
 ### Example Usage
 
@@ -172,7 +172,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchVerificationRequestRequest req = new PatchVerificationRequestRequest() {
     VerificationRequest = new VerificationRequest() {
         CreatedAt = System.DateTime.Parse("2023-11-20T08:17:29.950Z").ToUniversalTime(),
-        Id = "d14072ca-8705-467d-8f99-7a50257d607d",
+        Id = "7ab591a3-58aa-4ab0-8c4e-02de56ba712f",
         Metadata = new List<VerificationMetadata>() {},
         Parameters = new List<VerificationParameterInput>() {},
         ProfileAddresses = new List<VerificationAddress>() {},
@@ -182,7 +182,7 @@ PatchVerificationRequestRequest req = new PatchVerificationRequestRequest() {
         ResponseDownloadUrls = new List<string>() {},
         ResponseSource = "Implemented regional protocol",
         ResponseStatus = VerificationRequestResponseStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-12-27T07:01:42.318Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-27T07:46:40.808Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -211,7 +211,7 @@ var res = await sdk.Request.PatchVerificationRequestAsync(req);
 
 ## RemoveVerificationRequest
 
-Remove a request
+Deletes the VerificationRequest identified by `id`.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ var res = await sdk.Request.RemoveVerificationRequestAsync(
 
 ## UpdateVerificationRequest
 
-Update a request
+Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
 
 ### Example Usage
 
@@ -270,7 +270,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateVerificationRequestRequest req = new UpdateVerificationRequestRequest() {
     VerificationRequest = new VerificationRequest() {
         CreatedAt = System.DateTime.Parse("2023-11-20T08:17:29.950Z").ToUniversalTime(),
-        Id = "d14072ca-8705-467d-8f99-7a50257d607d",
+        Id = "7ab591a3-58aa-4ab0-8c4e-02de56ba712f",
         Metadata = new List<VerificationMetadata>() {},
         Parameters = new List<VerificationParameterInput>() {},
         ProfileAddresses = new List<VerificationAddress>() {},
@@ -280,7 +280,7 @@ UpdateVerificationRequestRequest req = new UpdateVerificationRequestRequest() {
         ResponseDownloadUrls = new List<string>() {},
         ResponseSource = "Implemented regional protocol",
         ResponseStatus = VerificationRequestResponseStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-12-27T07:01:42.318Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-27T07:46:40.808Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

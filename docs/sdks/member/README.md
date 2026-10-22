@@ -15,7 +15,7 @@
 
 ## CreateMartechMember
 
-Create a member
+Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
 
 ### Example Usage
 
@@ -41,7 +41,7 @@ var res = await sdk.Member.CreateMartechMemberAsync(
             },
         },
         FirstName = "Jude",
-        Id = "2f238a06-48e5-4960-9442-8757cf7308cd",
+        Id = "7f3d03c7-b4bb-44c8-9b93-6ec91c467219",
         LastName = "Leffler",
         Metadata = new List<MarketingMetadata>() {},
         Name = "Jude Leffler",
@@ -50,7 +50,7 @@ var res = await sdk.Member.CreateMartechMemberAsync(
             "adnuo",
             "verumtamen",
         },
-        UpdatedAt = System.DateTime.Parse("2025-07-08T20:04:12.371Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-09T11:32:24.104Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -79,7 +79,7 @@ var res = await sdk.Member.CreateMartechMemberAsync(
 
 ## GetClubsMember
 
-Retrieve a member
+Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -121,7 +121,7 @@ var res = await sdk.Member.GetClubsMemberAsync(
 
 ## GetMartechMember
 
-Retrieve a member
+Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -163,7 +163,7 @@ var res = await sdk.Member.GetMartechMemberAsync(
 
 ## ListClubsMembers
 
-List all members
+Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -204,7 +204,7 @@ var res = await sdk.Member.ListClubsMembersAsync(req);
 
 ## ListMartechMembers
 
-List all members
+Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -245,7 +245,7 @@ var res = await sdk.Member.ListMartechMembersAsync(req);
 
 ## PatchMartechMember
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -272,7 +272,7 @@ PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
             },
         },
         FirstName = "Jude",
-        Id = "056bf7d3-6278-44a5-9a27-4a89084d8f58",
+        Id = "6806e39e-1ff1-4c15-a5f3-4a20feca6617",
         LastName = "Leffler",
         Metadata = new List<MarketingMetadata>() {},
         Name = "Jude Leffler",
@@ -281,7 +281,7 @@ PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
             "adnuo",
             "verumtamen",
         },
-        UpdatedAt = System.DateTime.Parse("2025-07-08T20:04:12.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-09T11:32:24.117Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -310,7 +310,7 @@ var res = await sdk.Member.PatchMartechMemberAsync(req);
 
 ## RemoveMartechMember
 
-Remove a member
+Deletes the MarketingMember identified by `id`.
 
 ### Example Usage
 
@@ -350,7 +350,7 @@ var res = await sdk.Member.RemoveMartechMemberAsync(
 
 ## UpdateMartechMember
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -377,7 +377,7 @@ UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
             },
         },
         FirstName = "Jude",
-        Id = "056bf7d3-6278-44a5-9a27-4a89084d8f58",
+        Id = "6806e39e-1ff1-4c15-a5f3-4a20feca6617",
         LastName = "Leffler",
         Metadata = new List<MarketingMetadata>() {},
         Name = "Jude Leffler",
@@ -386,7 +386,7 @@ UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
             "adnuo",
             "verumtamen",
         },
-        UpdatedAt = System.DateTime.Parse("2025-07-08T20:04:12.378Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-09T11:32:24.117Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

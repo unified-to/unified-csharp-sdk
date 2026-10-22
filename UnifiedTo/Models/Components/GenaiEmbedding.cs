@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class GenaiEmbedding
     {
+        /// <summary>
+        /// The texts to create embeddings for.
+        /// </summary>
         [JsonProperty("content")]
         public List<GenaiEmbeddingContent>? Content { get; set; }
 

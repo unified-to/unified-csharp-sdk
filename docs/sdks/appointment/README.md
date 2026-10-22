@@ -13,7 +13,7 @@
 
 ## CreateHealthcareAppointment
 
-Create an appointment
+Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ var res = await sdk.Appointment.CreateHealthcareAppointmentAsync(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "4e398a7e-f549-46de-aaea-b46f0f35d984",
+        Id = "83e88fd4-9492-4578-850c-5f2fdcde1d09",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -53,7 +53,7 @@ var res = await sdk.Appointment.CreateHealthcareAppointmentAsync(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-19T10:53:26.412Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-20T02:52:52.612Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -82,7 +82,7 @@ var res = await sdk.Appointment.CreateHealthcareAppointmentAsync(
 
 ## GetHealthcareAppointment
 
-Retrieve an appointment
+Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -124,7 +124,7 @@ var res = await sdk.Appointment.GetHealthcareAppointmentAsync(
 
 ## ListHealthcareAppointments
 
-List all appointments
+Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -165,7 +165,7 @@ var res = await sdk.Appointment.ListHealthcareAppointmentsAsync(req);
 
 ## PatchHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -186,7 +186,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "bb1535ab-24bc-46f1-9339-457cb304c591",
+        Id = "3b59b099-9d5c-4587-bc8b-a82902904104",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -206,7 +206,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-19T10:53:26.424Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-20T02:52:52.623Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -235,7 +235,7 @@ var res = await sdk.Appointment.PatchHealthcareAppointmentAsync(req);
 
 ## RemoveHealthcareAppointment
 
-Remove an appointment
+Deletes the HealthcareAppointment identified by `id`.
 
 ### Example Usage
 
@@ -275,7 +275,7 @@ var res = await sdk.Appointment.RemoveHealthcareAppointmentAsync(
 
 ## UpdateHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -296,7 +296,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "bb1535ab-24bc-46f1-9339-457cb304c591",
+        Id = "3b59b099-9d5c-4587-bc8b-a82902904104",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -316,7 +316,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-19T10:53:26.424Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-20T02:52:52.623Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

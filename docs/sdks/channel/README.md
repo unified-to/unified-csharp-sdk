@@ -13,7 +13,7 @@
 
 ## CreateMessagingChannel
 
-Create a channel
+Creates a MessagingChannel. Provide the unified MessagingChannel fields in the request body; they are mapped to the provider's API. Returns the created MessagingChannel.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ var res = await sdk.Channel.CreateMessagingChannelAsync(
         CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
         Description = "Dolores tutis.",
         HasSubchannels = true,
-        Id = "e83e7daa-a4f5-407c-bb7b-e833eeae445c",
+        Id = "21861a9a-ee8f-4ad4-9519-4f166a0e1a08",
         IsActive = false,
         IsPrivate = true,
         Members = new List<MessagingMember>() {},
         Metadata = new List<MessagingMetadata>() {},
         Name = "tego",
-        UpdatedAt = System.DateTime.Parse("2026-05-21T14:07:46.192Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T08:47:08.849Z").ToUniversalTime(),
         WebUrl = "https://svelte-rule.name/",
     },
     connectionId: "<id>"
@@ -69,7 +69,7 @@ var res = await sdk.Channel.CreateMessagingChannelAsync(
 
 ## GetMessagingChannel
 
-Retrieve a channel
+Retrieves a single MessagingChannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -111,7 +111,7 @@ var res = await sdk.Channel.GetMessagingChannelAsync(
 
 ## ListMessagingChannels
 
-List all channels
+Returns a list of MessagingChannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -152,7 +152,7 @@ var res = await sdk.Channel.ListMessagingChannelsAsync(req);
 
 ## PatchMessagingChannel
 
-Update a channel
+Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
 
 ### Example Usage
 
@@ -173,13 +173,13 @@ PatchMessagingChannelRequest req = new PatchMessagingChannelRequest() {
         CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
         Description = "Dolores tutis.",
         HasSubchannels = true,
-        Id = "487bc195-0fa7-40b1-9f60-e53f78b34677",
+        Id = "e071198b-429f-4c89-8e7a-77564852cf2e",
         IsActive = false,
         IsPrivate = true,
         Members = new List<MessagingMember>() {},
         Metadata = new List<MessagingMetadata>() {},
         Name = "tego",
-        UpdatedAt = System.DateTime.Parse("2026-05-21T14:07:46.204Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T08:47:08.859Z").ToUniversalTime(),
         WebUrl = "https://svelte-rule.name/",
     },
     ConnectionId = "<id>",
@@ -209,7 +209,7 @@ var res = await sdk.Channel.PatchMessagingChannelAsync(req);
 
 ## RemoveMessagingChannel
 
-Remove a channel
+Deletes the MessagingChannel identified by `id`.
 
 ### Example Usage
 
@@ -249,7 +249,7 @@ var res = await sdk.Channel.RemoveMessagingChannelAsync(
 
 ## UpdateMessagingChannel
 
-Update a channel
+Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
 
 ### Example Usage
 
@@ -270,13 +270,13 @@ UpdateMessagingChannelRequest req = new UpdateMessagingChannelRequest() {
         CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
         Description = "Dolores tutis.",
         HasSubchannels = true,
-        Id = "487bc195-0fa7-40b1-9f60-e53f78b34677",
+        Id = "e071198b-429f-4c89-8e7a-77564852cf2e",
         IsActive = false,
         IsPrivate = true,
         Members = new List<MessagingMember>() {},
         Metadata = new List<MessagingMetadata>() {},
         Name = "tego",
-        UpdatedAt = System.DateTime.Parse("2026-05-21T14:07:46.204Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-22T08:47:08.859Z").ToUniversalTime(),
         WebUrl = "https://svelte-rule.name/",
     },
     ConnectionId = "<id>",

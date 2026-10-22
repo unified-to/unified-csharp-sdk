@@ -13,7 +13,7 @@
 
 ## CreateAtsApplication
 
-Create an application
+Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
 
 ### Example Usage
 
@@ -31,10 +31,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Application.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-29T18:52:23.332Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.141Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-12T18:44:35.414Z").ToUniversalTime(),
-        Id = "c37e3af6-b7b0-4473-b971-4636b7164436",
+        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.276Z").ToUniversalTime(),
+        Id = "c73ca526-7494-4fe0-8465-02851221825d",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -43,7 +43,7 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "8e57e37e-a256-48d8-9adc-b2a12324ba8d",
+                Id = "49124ee6-0d45-4725-b9dd-ab3493da2802",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -54,12 +54,12 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-11T13:23:21.535Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.450Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-18T09:37:43.984Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.237Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -88,7 +88,7 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 
 ## GetAtsApplication
 
-Retrieve an application
+Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -130,7 +130,7 @@ var res = await sdk.Application.GetAtsApplicationAsync(
 
 ## ListAtsApplications
 
-List all applications
+Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -171,7 +171,7 @@ var res = await sdk.Application.ListAtsApplicationsAsync(req);
 
 ## PatchAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -190,10 +190,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-29T18:52:23.345Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.155Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-12T18:44:35.430Z").ToUniversalTime(),
-        Id = "522f7627-481f-4155-9ddd-9e6b1e63a63a",
+        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.294Z").ToUniversalTime(),
+        Id = "ea2b2f1d-34f2-4ab9-987c-3c73bac52513",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -202,7 +202,7 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3832d779-0d88-4aba-997e-bc00cbc71d8c",
+                Id = "f347728d-ebb4-4974-94c5-61d27931ff96",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -213,12 +213,12 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-11T13:23:21.554Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.471Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-18T09:37:44.003Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.258Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -247,7 +247,7 @@ var res = await sdk.Application.PatchAtsApplicationAsync(req);
 
 ## RemoveAtsApplication
 
-Remove an application
+Deletes the AtsApplication identified by `id`.
 
 ### Example Usage
 
@@ -287,7 +287,7 @@ var res = await sdk.Application.RemoveAtsApplicationAsync(
 
 ## UpdateAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -306,10 +306,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-29T18:52:23.345Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.155Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-12T18:44:35.430Z").ToUniversalTime(),
-        Id = "522f7627-481f-4155-9ddd-9e6b1e63a63a",
+        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.294Z").ToUniversalTime(),
+        Id = "ea2b2f1d-34f2-4ab9-987c-3c73bac52513",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -318,7 +318,7 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "3832d779-0d88-4aba-997e-bc00cbc71d8c",
+                Id = "f347728d-ebb4-4974-94c5-61d27931ff96",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -329,12 +329,12 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-11T13:23:21.554Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.471Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-18T09:37:44.003Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.258Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

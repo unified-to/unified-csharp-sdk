@@ -46,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("education")]
         public List<AtsCandidateEducation>? Education { get; set; }
 
+        /// <summary>
+        /// The candidate's email addresses.
+        /// </summary>
         [JsonProperty("emails")]
         public List<AtsEmail>? Emails { get; set; }
 
@@ -79,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AtsMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The candidate's full name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

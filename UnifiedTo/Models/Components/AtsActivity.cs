@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("bcc")]
         public List<AtsEmail>? Bcc { get; set; }
 
+        /// <summary>
+        /// The ID of the candidate the activity is about (an AtsCandidate ID).
+        /// </summary>
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
@@ -43,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The activity's content, such as the text of a note or the body of an email.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 

@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a task.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
+        /// </remarks>
         /// <param name="genaiTask">A <see cref="GenaiTask"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
+        /// </remarks>
         /// <param name="taskComment">A <see cref="TaskComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
+        /// </remarks>
         /// <param name="taskProject">A <see cref="TaskProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a task.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskTask. Provide the unified TaskTask fields in the request body; they are mapped to the provider's API. Returns the created TaskTask.
+        /// </remarks>
         /// <param name="taskTask">A <see cref="TaskTask"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a task.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a change.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskChange by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Change.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a task.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tasks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiTasksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiTasksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -209,6 +239,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all changes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskChanges. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskChangesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskChangesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -220,6 +253,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -231,6 +267,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -242,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tasks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskTasksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskTasksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -253,6 +295,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -264,6 +309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -275,6 +323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -286,6 +337,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -297,6 +351,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a task.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiTask identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiTaskResponse"/> response envelope when completed.</returns>
@@ -308,6 +365,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskCommentResponse"/> response envelope when completed.</returns>
@@ -319,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskProjectResponse"/> response envelope when completed.</returns>
@@ -330,6 +393,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a task.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskTask identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskTaskResponse"/> response envelope when completed.</returns>
@@ -341,6 +407,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -352,6 +421,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -363,6 +435,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -374,6 +449,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -399,6 +477,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a task.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
+        /// </remarks>
         /// <param name="genaiTask">A <see cref="GenaiTask"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -527,6 +608,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
+        /// </remarks>
         /// <param name="taskComment">A <see cref="TaskComment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -655,6 +739,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
+        /// </remarks>
         /// <param name="taskProject">A <see cref="TaskProject"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -783,6 +870,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a task.
         /// </summary>
+        /// <remarks>
+        /// Creates a TaskTask. Provide the unified TaskTask fields in the request body; they are mapped to the provider's API. Returns the created TaskTask.
+        /// </remarks>
         /// <param name="taskTask">A <see cref="TaskTask"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -911,6 +1001,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a task.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1033,6 +1126,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a change.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskChange by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Change.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1155,6 +1251,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a comment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1277,6 +1376,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a project.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1399,6 +1501,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a task.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single TaskTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1521,6 +1626,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tasks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiTasksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiTasksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1626,6 +1734,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all changes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskChanges. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskChangesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskChangesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1731,6 +1842,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all comments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskCommentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskCommentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1836,6 +1950,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all projects.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskProjectsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskProjectsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1941,6 +2058,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all tasks.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of TaskTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListTaskTasksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListTaskTasksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2046,6 +2166,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2157,6 +2280,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2268,6 +2394,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2379,6 +2508,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchTaskTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchTaskTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2490,6 +2622,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a task.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiTask identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiTaskResponse"/> response envelope when completed.</returns>
@@ -2593,6 +2728,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a comment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskComment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Comment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskCommentResponse"/> response envelope when completed.</returns>
@@ -2696,6 +2834,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a project.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskProject identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Project.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskProjectResponse"/> response envelope when completed.</returns>
@@ -2799,6 +2940,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a task.
         /// </summary>
+        /// <remarks>
+        /// Deletes the TaskTask identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Task.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveTaskTaskResponse"/> response envelope when completed.</returns>
@@ -2902,6 +3046,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3013,6 +3160,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskCommentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskCommentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3124,6 +3274,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskProjectRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskProjectResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3235,6 +3388,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a task.
         /// </summary>
+        /// <remarks>
+        /// Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateTaskTaskRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTaskTaskResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

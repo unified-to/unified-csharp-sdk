@@ -52,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("mime_type")]
         public string? MimeType { get; set; }
 
+        /// <summary>
+        /// The file or folder name, including the file's extension.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -64,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The records the file is attached to (e.g. an invoice or a candidate), each by its id and type.
+        /// </summary>
         [JsonProperty("references")]
         public List<StorageReference>? References { get; set; }
 
@@ -76,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// Whether this is a file or a folder.
+        /// </summary>
         [JsonProperty("type")]
         public StorageFileType? Type { get; set; }
 

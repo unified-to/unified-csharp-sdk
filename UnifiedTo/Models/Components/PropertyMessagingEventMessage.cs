@@ -68,6 +68,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("mentioned_members")]
         public List<MessagingMember>? MentionedMembers { get; set; }
 
+        /// <summary>
+        /// The message body as plain text.
+        /// </summary>
         [JsonProperty("message")]
         public string? Message { get; set; }
 

@@ -26,7 +26,7 @@
 
 ## CreateDatastoreDatabase
 
-Create a database
+Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
 
 ### Example Usage
 
@@ -45,13 +45,13 @@ var res = await sdk.Datastore.CreateDatastoreDatabaseAsync(
     datastoreDatabase: new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "99107f2c-ef96-448f-b6a8-8de5eabaeba0",
+        Id = "2a092191-c281-4db3-810f-c5ae342fc41e",
         IsActive = true,
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-30T19:58:01.564Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-01T08:12:46.138Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     connectionId: "<id>"
@@ -81,7 +81,7 @@ var res = await sdk.Datastore.CreateDatastoreDatabaseAsync(
 
 ## CreateDatastoreQuery
 
-Create a query
+Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
 
 ### Example Usage
 
@@ -135,7 +135,7 @@ var res = await sdk.Datastore.CreateDatastoreQueryAsync(
 
 ## CreateDatastoreRecord
 
-Create a record
+Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
 
 ### Example Usage
 
@@ -156,10 +156,10 @@ var res = await sdk.Datastore.CreateDatastoreRecordAsync(
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "53641f06-b2dd-4ddc-ab1d-d6952004fd4d",
+        Id = "e4e97d6b-1a7c-4891-b33e-78994604edf7",
         Metadata = new List<DatastoreMetadata>() {},
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-03-05T03:20:35.321Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-05T16:44:20.781Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -188,7 +188,7 @@ var res = await sdk.Datastore.CreateDatastoreRecordAsync(
 
 ## CreateDatastoreTable
 
-Create a table
+Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
 
 ### Example Usage
 
@@ -210,7 +210,7 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
         Fields = new List<DatastoreField>() {
             new DatastoreField() {
                 Description = "Antea soluta itaque clamo despecto basium accendo.",
-                Id = "9e681315-9da1-4a37-9988-12c56e57f8e0",
+                Id = "5a165c6b-1f08-4c70-8939-178aca915c71",
                 IsIndexed = true,
                 IsUnique = true,
                 Name = "Ferry LLC",
@@ -220,7 +220,7 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
             },
             new DatastoreField() {
                 Description = "Nulla cattus aequus sumo neque alter cauda subseco.",
-                Id = "4e000c4b-c0e0-4fd8-b140-fc67c14d163c",
+                Id = "4cdd46c2-d5a6-4f28-a056-99772ce09475",
                 IsNullable = true,
                 IsUnique = true,
                 Name = "Hand - Nader",
@@ -230,7 +230,7 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
             },
             new DatastoreField() {
                 Description = "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-                Id = "20586dcb-8adc-4bb8-859b-9f0b2dca5328",
+                Id = "e53205e3-a4ad-4556-be87-2035d8dfe489",
                 IsIndexed = true,
                 IsNullable = true,
                 IsUnique = true,
@@ -242,7 +242,7 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
             },
             new DatastoreField() {
                 Description = "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-                Id = "150617b5-17d9-4c7c-b287-7cd1b380a41f",
+                Id = "5ff33cb6-3171-4c89-a430-3f77ceeaf2ff",
                 Name = "Gislason, Gorczany and Hegmann",
                 OriginalType = "tego",
                 Precision = 94D,
@@ -251,7 +251,7 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
             },
             new DatastoreField() {
                 Description = "Communis coma cura audio aduro acer canis expedita.",
-                Id = "ea25f62d-b439-400f-aea7-8c45c7512f88",
+                Id = "b9f80688-ede3-483f-a79a-6ad5d82269e0",
                 IsIndexed = true,
                 IsPrimaryKey = true,
                 IsRequired = true,
@@ -261,18 +261,18 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
                 Type = DatastoreFieldType.Email,
             },
         },
-        Id = "71a619db-8149-460f-b0d6-eb3368e10780",
+        Id = "5eced25c-c73c-45b3-bbb1-233775d06aef",
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rogahn, Lowe and Heller",
         Relationships = new List<DatastoreRelationship>() {
             new DatastoreRelationship() {
                 Field = "Macejkovic - Shields",
                 Name = "Hyatt, Ryan and Nienow",
-                TableId = "71a619db-8149-460f-b0d6-eb3368e10780",
+                TableId = "5eced25c-c73c-45b3-bbb1-233775d06aef",
                 Type = DatastoreRelationshipType.Many,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-08-12T20:26:40.276Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-08-12T21:33:08.952Z").ToUniversalTime(),
         WebUrl = "https://nervous-deck.com",
     },
     connectionId: "<id>"
@@ -302,7 +302,7 @@ var res = await sdk.Datastore.CreateDatastoreTableAsync(
 
 ## GetDatastoreDatabase
 
-Retrieve a database
+Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -344,7 +344,7 @@ var res = await sdk.Datastore.GetDatastoreDatabaseAsync(
 
 ## GetDatastoreRecord
 
-Retrieve a record
+Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -386,7 +386,7 @@ var res = await sdk.Datastore.GetDatastoreRecordAsync(
 
 ## GetDatastoreTable
 
-Retrieve a table
+Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -428,7 +428,7 @@ var res = await sdk.Datastore.GetDatastoreTableAsync(
 
 ## ListDatastoreDatabases
 
-List all databases
+Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -469,7 +469,7 @@ var res = await sdk.Datastore.ListDatastoreDatabasesAsync(req);
 
 ## ListDatastoreRecords
 
-List all records
+Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -510,7 +510,7 @@ var res = await sdk.Datastore.ListDatastoreRecordsAsync(req);
 
 ## ListDatastoreTables
 
-List all tables
+Returns a list of DatastoreTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -551,7 +551,7 @@ var res = await sdk.Datastore.ListDatastoreTablesAsync(req);
 
 ## PatchDatastoreDatabase
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -571,13 +571,13 @@ PatchDatastoreDatabaseRequest req = new PatchDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "9729a46e-398e-47fc-b46c-8b0c0a64c30c",
+        Id = "1218387b-849e-43cb-adca-0c963394d917",
         IsActive = true,
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-30T19:58:01.570Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-01T08:12:46.146Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     ConnectionId = "<id>",
@@ -607,7 +607,7 @@ var res = await sdk.Datastore.PatchDatastoreDatabaseAsync(req);
 
 ## PatchDatastoreRecord
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -629,10 +629,10 @@ PatchDatastoreRecordRequest req = new PatchDatastoreRecordRequest() {
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "2b12cb38-7037-4a20-85e5-54a2ea9c6605",
+        Id = "f51633f7-6ea5-453a-a158-d81bfd9dab10",
         Metadata = new List<DatastoreMetadata>() {},
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-03-05T03:20:35.326Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-05T16:44:20.790Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -661,7 +661,7 @@ var res = await sdk.Datastore.PatchDatastoreRecordAsync(req);
 
 ## PatchDatastoreTable
 
-Update a table
+Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
 
 ### Example Usage
 
@@ -684,7 +684,7 @@ PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
         Fields = new List<DatastoreField>() {
             new DatastoreField() {
                 Description = "Antea soluta itaque clamo despecto basium accendo.",
-                Id = "e7fec63c-a963-43d1-b665-d2c04fd00b71",
+                Id = "a5eb1c63-1e0e-4469-a937-a46a71bc48a8",
                 IsIndexed = true,
                 IsUnique = true,
                 Name = "Ferry LLC",
@@ -694,7 +694,7 @@ PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Nulla cattus aequus sumo neque alter cauda subseco.",
-                Id = "e34ed5ff-4a64-407d-86df-2acbe8418302",
+                Id = "55408ef3-39e5-49df-8ed3-d361e594cded",
                 IsNullable = true,
                 IsUnique = true,
                 Name = "Hand - Nader",
@@ -704,7 +704,7 @@ PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-                Id = "5dd44e8c-c43f-4ce1-b678-e713ce4ed2be",
+                Id = "59a7f845-fb7f-4995-8988-2f3823dddb82",
                 IsIndexed = true,
                 IsNullable = true,
                 IsUnique = true,
@@ -716,7 +716,7 @@ PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-                Id = "720e768e-abd8-4de9-a0a6-e130ad46acbf",
+                Id = "a27b870a-aa75-4f6f-9cd6-4101d34d4248",
                 Name = "Gislason, Gorczany and Hegmann",
                 OriginalType = "tego",
                 Precision = 94D,
@@ -725,7 +725,7 @@ PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Communis coma cura audio aduro acer canis expedita.",
-                Id = "9ff186e7-9367-4c88-bcc5-9714ee8faa6a",
+                Id = "85488caf-0720-407e-8f4c-9bc3c6cacca7",
                 IsIndexed = true,
                 IsPrimaryKey = true,
                 IsRequired = true,
@@ -735,18 +735,18 @@ PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
                 Type = DatastoreFieldType.Email,
             },
         },
-        Id = "a1195e8b-4c5b-4ac7-b382-06759043a08b",
+        Id = "97b55b18-dbcf-404c-ba13-ff8572e1b52b",
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rogahn, Lowe and Heller",
         Relationships = new List<DatastoreRelationship>() {
             new DatastoreRelationship() {
                 Field = "Macejkovic - Shields",
                 Name = "Hyatt, Ryan and Nienow",
-                TableId = "a1195e8b-4c5b-4ac7-b382-06759043a08b",
+                TableId = "97b55b18-dbcf-404c-ba13-ff8572e1b52b",
                 Type = DatastoreRelationshipType.Many,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-08-12T20:26:40.277Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-08-12T21:33:08.954Z").ToUniversalTime(),
         WebUrl = "https://nervous-deck.com",
     },
     ConnectionId = "<id>",
@@ -776,7 +776,7 @@ var res = await sdk.Datastore.PatchDatastoreTableAsync(req);
 
 ## RemoveDatastoreDatabase
 
-Remove a database
+Deletes the DatastoreDatabase identified by `id`.
 
 ### Example Usage
 
@@ -816,7 +816,7 @@ var res = await sdk.Datastore.RemoveDatastoreDatabaseAsync(
 
 ## RemoveDatastoreRecord
 
-Remove a record
+Deletes the DatastoreRecord identified by `id`.
 
 ### Example Usage
 
@@ -856,7 +856,7 @@ var res = await sdk.Datastore.RemoveDatastoreRecordAsync(
 
 ## RemoveDatastoreTable
 
-Remove a table
+Deletes the DatastoreTable identified by `id`.
 
 ### Example Usage
 
@@ -896,7 +896,7 @@ var res = await sdk.Datastore.RemoveDatastoreTableAsync(
 
 ## UpdateDatastoreDatabase
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -916,13 +916,13 @@ UpdateDatastoreDatabaseRequest req = new UpdateDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "9729a46e-398e-47fc-b46c-8b0c0a64c30c",
+        Id = "1218387b-849e-43cb-adca-0c963394d917",
         IsActive = true,
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-30T19:58:01.570Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-01T08:12:46.146Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     ConnectionId = "<id>",
@@ -952,7 +952,7 @@ var res = await sdk.Datastore.UpdateDatastoreDatabaseAsync(req);
 
 ## UpdateDatastoreRecord
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -974,10 +974,10 @@ UpdateDatastoreRecordRequest req = new UpdateDatastoreRecordRequest() {
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "2b12cb38-7037-4a20-85e5-54a2ea9c6605",
+        Id = "f51633f7-6ea5-453a-a158-d81bfd9dab10",
         Metadata = new List<DatastoreMetadata>() {},
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-03-05T03:20:35.326Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-05T16:44:20.790Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1006,7 +1006,7 @@ var res = await sdk.Datastore.UpdateDatastoreRecordAsync(req);
 
 ## UpdateDatastoreTable
 
-Update a table
+Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
 
 ### Example Usage
 
@@ -1029,7 +1029,7 @@ UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
         Fields = new List<DatastoreField>() {
             new DatastoreField() {
                 Description = "Antea soluta itaque clamo despecto basium accendo.",
-                Id = "e7fec63c-a963-43d1-b665-d2c04fd00b71",
+                Id = "a5eb1c63-1e0e-4469-a937-a46a71bc48a8",
                 IsIndexed = true,
                 IsUnique = true,
                 Name = "Ferry LLC",
@@ -1039,7 +1039,7 @@ UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Nulla cattus aequus sumo neque alter cauda subseco.",
-                Id = "e34ed5ff-4a64-407d-86df-2acbe8418302",
+                Id = "55408ef3-39e5-49df-8ed3-d361e594cded",
                 IsNullable = true,
                 IsUnique = true,
                 Name = "Hand - Nader",
@@ -1049,7 +1049,7 @@ UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-                Id = "5dd44e8c-c43f-4ce1-b678-e713ce4ed2be",
+                Id = "59a7f845-fb7f-4995-8988-2f3823dddb82",
                 IsIndexed = true,
                 IsNullable = true,
                 IsUnique = true,
@@ -1061,7 +1061,7 @@ UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-                Id = "720e768e-abd8-4de9-a0a6-e130ad46acbf",
+                Id = "a27b870a-aa75-4f6f-9cd6-4101d34d4248",
                 Name = "Gislason, Gorczany and Hegmann",
                 OriginalType = "tego",
                 Precision = 94D,
@@ -1070,7 +1070,7 @@ UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
             },
             new DatastoreField() {
                 Description = "Communis coma cura audio aduro acer canis expedita.",
-                Id = "9ff186e7-9367-4c88-bcc5-9714ee8faa6a",
+                Id = "85488caf-0720-407e-8f4c-9bc3c6cacca7",
                 IsIndexed = true,
                 IsPrimaryKey = true,
                 IsRequired = true,
@@ -1080,18 +1080,18 @@ UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
                 Type = DatastoreFieldType.Email,
             },
         },
-        Id = "a1195e8b-4c5b-4ac7-b382-06759043a08b",
+        Id = "97b55b18-dbcf-404c-ba13-ff8572e1b52b",
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rogahn, Lowe and Heller",
         Relationships = new List<DatastoreRelationship>() {
             new DatastoreRelationship() {
                 Field = "Macejkovic - Shields",
                 Name = "Hyatt, Ryan and Nienow",
-                TableId = "a1195e8b-4c5b-4ac7-b382-06759043a08b",
+                TableId = "97b55b18-dbcf-404c-ba13-ff8572e1b52b",
                 Type = DatastoreRelationshipType.Many,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-08-12T20:26:40.277Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-08-12T21:33:08.954Z").ToUniversalTime(),
         WebUrl = "https://nervous-deck.com",
     },
     ConnectionId = "<id>",

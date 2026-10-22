@@ -31,7 +31,7 @@
 
 ## CreateUcComment
 
-Create a comment
+Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
 
 ### Example Usage
 
@@ -49,9 +49,9 @@ var res = await sdk.Uc.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "023de2d0-4000-485b-a2b9-f5519a942c7e",
+        Id = "7ed3fa47-fe1b-4c27-b5f3-5e8ff285e426",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-09T18:34:01.215Z",
+        UpdatedAt = "2024-02-09T23:46:50.856Z",
     },
     connectionId: "<id>"
 );
@@ -80,7 +80,7 @@ var res = await sdk.Uc.CreateUcCommentAsync(
 
 ## CreateUcContact
 
-Create a contact
+Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
 
 ### Example Usage
 
@@ -106,7 +106,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "fa772c3b-4f74-4e50-9912-7937c0aeb895",
+        Id = "18a1c6b4-4630-4625-9a54-3d69647bd263",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -125,7 +125,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.688Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T22:00:29.664Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -154,7 +154,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
 
 ## CreateUcRecording
 
-Create a recording
+Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
 
 ### Example Usage
 
@@ -172,36 +172,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Uc.CreateUcRecordingAsync(
     ucRecording: new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "c9694a55-3ebb-4df0-a7f6-f6829ce04dfd",
+        ConversationIdentifier = "1f3da3a8-e43a-4470-ab98-3ad2c3dcb606",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-05T00:02:19.214Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-26T18:43:18.587Z").ToUniversalTime(),
-        Id = "c9694a55-3ebb-4df0-a7f6-f6829ce04dfd",
+        EndAt = System.DateTime.Parse("2024-05-05T08:39:01.895Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-27T13:46:38.351Z").ToUniversalTime(),
+        Id = "1f3da3a8-e43a-4470-ab98-3ad2c3dcb606",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-01T19:42:03.185Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-02T03:49:57.497Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-15T10:47:25.151Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-16T06:06:57.400Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-24T12:31:58.538Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-02T06:11:11.082Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-25T06:42:07.410Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-02T15:12:25.611Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-12T13:20:51.959Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-08-02T21:23:02.616Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-13T00:16:57.846Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-03T17:51:32.929Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
         Metadata = new List<UcMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-04-27T18:06:44.468Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-27T21:19:24.900Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-16T11:18:19.835Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-17T00:28:55.163Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },
@@ -232,7 +232,7 @@ var res = await sdk.Uc.CreateUcRecordingAsync(
 
 ## GetUcCall
 
-Retrieve a call
+Retrieves a single UcCall by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ var res = await sdk.Uc.GetUcCallAsync(
 
 ## GetUcComment
 
-Retrieve a comment
+Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -316,7 +316,7 @@ var res = await sdk.Uc.GetUcCommentAsync(
 
 ## GetUcContact
 
-Retrieve a contact
+Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -358,7 +358,7 @@ var res = await sdk.Uc.GetUcContactAsync(
 
 ## GetUcRecording
 
-Retrieve a recording
+Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -400,7 +400,7 @@ var res = await sdk.Uc.GetUcRecordingAsync(
 
 ## GetUcScorecard
 
-Retrieve a scorecard
+Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -442,7 +442,7 @@ var res = await sdk.Uc.GetUcScorecardAsync(
 
 ## GetUcScorecardtemplate
 
-Retrieve a scorecardtemplate
+Retrieves a single UcScorecardtemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -484,7 +484,7 @@ var res = await sdk.Uc.GetUcScorecardtemplateAsync(
 
 ## ListUcCalls
 
-List all calls
+Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -525,7 +525,7 @@ var res = await sdk.Uc.ListUcCallsAsync(req);
 
 ## ListUcComments
 
-List all comments
+Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -566,7 +566,7 @@ var res = await sdk.Uc.ListUcCommentsAsync(req);
 
 ## ListUcContacts
 
-List all contacts
+Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -607,7 +607,7 @@ var res = await sdk.Uc.ListUcContactsAsync(req);
 
 ## ListUcRecordings
 
-List all recordings
+Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -648,7 +648,7 @@ var res = await sdk.Uc.ListUcRecordingsAsync(req);
 
 ## ListUcScorecards
 
-List all scorecards
+Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -689,7 +689,7 @@ var res = await sdk.Uc.ListUcScorecardsAsync(req);
 
 ## ListUcScorecardtemplates
 
-List all scorecardtemplates
+Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -730,7 +730,7 @@ var res = await sdk.Uc.ListUcScorecardtemplatesAsync(req);
 
 ## PatchUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -749,9 +749,9 @@ PatchUcCommentRequest req = new PatchUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "1a562fdd-c2f1-45af-a457-aa2cd760eae2",
+        Id = "05024e86-b7ef-4fac-a5af-3c8b7e35ff8d",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-09T18:34:01.216Z",
+        UpdatedAt = "2024-02-09T23:46:50.859Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -780,7 +780,7 @@ var res = await sdk.Uc.PatchUcCommentAsync(req);
 
 ## PatchUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -807,7 +807,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "31eb2471-3e3c-4948-808c-32e639e3714a",
+        Id = "167efbd4-ebba-45b5-b7be-85e4905b2f69",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -826,7 +826,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.695Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T22:00:29.670Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -855,7 +855,7 @@ var res = await sdk.Uc.PatchUcContactAsync(req);
 
 ## PatchUcRecording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -874,36 +874,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "96c55eee-5b3d-4d6a-9516-7292f6d6d8c3",
+        ConversationIdentifier = "ab93b72c-4f03-4efe-9afd-109ad6ae5208",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-05T00:02:19.223Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-26T18:43:18.607Z").ToUniversalTime(),
-        Id = "96c55eee-5b3d-4d6a-9516-7292f6d6d8c3",
+        EndAt = System.DateTime.Parse("2024-05-05T08:39:01.903Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-27T13:46:38.370Z").ToUniversalTime(),
+        Id = "ab93b72c-4f03-4efe-9afd-109ad6ae5208",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-01T19:42:03.193Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-02T03:49:57.505Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-15T10:47:25.170Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-16T06:06:57.420Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-24T12:31:58.557Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-02T06:11:11.091Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-25T06:42:07.428Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-02T15:12:25.620Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-12T13:20:51.970Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-08-02T21:23:02.637Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-13T00:16:57.857Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-03T17:51:32.950Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
         Metadata = new List<UcMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-04-27T18:06:44.471Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-27T21:19:24.903Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-16T11:18:19.848Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-17T00:28:55.176Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },
@@ -934,7 +934,7 @@ var res = await sdk.Uc.PatchUcRecordingAsync(req);
 
 ## RemoveUcComment
 
-Remove a comment
+Deletes the UcComment identified by `id`.
 
 ### Example Usage
 
@@ -974,7 +974,7 @@ var res = await sdk.Uc.RemoveUcCommentAsync(
 
 ## RemoveUcContact
 
-Remove a contact
+Deletes the UcContact identified by `id`.
 
 ### Example Usage
 
@@ -1014,7 +1014,7 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 
 ## RemoveUcRecording
 
-Remove a recording
+Deletes the UcRecording identified by `id`.
 
 ### Example Usage
 
@@ -1054,7 +1054,7 @@ var res = await sdk.Uc.RemoveUcRecordingAsync(
 
 ## UpdateUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1073,9 +1073,9 @@ UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "1a562fdd-c2f1-45af-a457-aa2cd760eae2",
+        Id = "05024e86-b7ef-4fac-a5af-3c8b7e35ff8d",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-09T18:34:01.216Z",
+        UpdatedAt = "2024-02-09T23:46:50.859Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1104,7 +1104,7 @@ var res = await sdk.Uc.UpdateUcCommentAsync(req);
 
 ## UpdateUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1131,7 +1131,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "31eb2471-3e3c-4948-808c-32e639e3714a",
+        Id = "167efbd4-ebba-45b5-b7be-85e4905b2f69",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -1150,7 +1150,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-08T09:16:19.695Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-08T22:00:29.670Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1179,7 +1179,7 @@ var res = await sdk.Uc.UpdateUcContactAsync(req);
 
 ## UpdateUcRecording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -1198,36 +1198,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "96c55eee-5b3d-4d6a-9516-7292f6d6d8c3",
+        ConversationIdentifier = "ab93b72c-4f03-4efe-9afd-109ad6ae5208",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-05T00:02:19.223Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-26T18:43:18.607Z").ToUniversalTime(),
-        Id = "96c55eee-5b3d-4d6a-9516-7292f6d6d8c3",
+        EndAt = System.DateTime.Parse("2024-05-05T08:39:01.903Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-27T13:46:38.370Z").ToUniversalTime(),
+        Id = "ab93b72c-4f03-4efe-9afd-109ad6ae5208",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-01T19:42:03.193Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-02T03:49:57.505Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-15T10:47:25.170Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-16T06:06:57.420Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-24T12:31:58.557Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-02T06:11:11.091Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-25T06:42:07.428Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-02T15:12:25.620Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-12T13:20:51.970Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-08-02T21:23:02.637Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-13T00:16:57.857Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-03T17:51:32.950Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
         Metadata = new List<UcMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-04-27T18:06:44.471Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-27T21:19:24.903Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-16T11:18:19.848Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-17T00:28:55.176Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },

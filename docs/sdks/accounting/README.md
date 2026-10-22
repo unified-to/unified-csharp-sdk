@@ -15,7 +15,7 @@
 * [CreateAccountingExpensereport](#createaccountingexpensereport) - Create an expensereport
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [CreateAccountingJournal](#createaccountingjournal) - Create a journal
-* [CreateAccountingOrder](#createaccountingorder) - Create an order
+* [~~CreateAccountingOrder~~](#createaccountingorder) - Create an order :warning: **Deprecated**
 * [CreateAccountingPaymentterm](#createaccountingpaymentterm) - Create a paymentterm
 * [CreateAccountingProject](#createaccountingproject) - Create a project
 * [CreateAccountingPurchaseorder](#createaccountingpurchaseorder) - Create a purchaseorder
@@ -39,7 +39,7 @@
 * [GetAccountingExpensereport](#getaccountingexpensereport) - Retrieve an expensereport
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
-* [GetAccountingOrder](#getaccountingorder) - Retrieve an order
+* [~~GetAccountingOrder~~](#getaccountingorder) - Retrieve an order :warning: **Deprecated**
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAccountingPaymentterm](#getaccountingpaymentterm) - Retrieve a paymentterm
 * [GetAccountingProfitloss](#getaccountingprofitloss) - Retrieve a profitloss
@@ -68,7 +68,7 @@
 * [ListAccountingExpenses](#listaccountingexpenses) - List all expenses
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [ListAccountingJournals](#listaccountingjournals) - List all journals
-* [ListAccountingOrders](#listaccountingorders) - List all orders
+* [~~ListAccountingOrders~~](#listaccountingorders) - List all orders :warning: **Deprecated**
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [ListAccountingPaymentterms](#listaccountingpaymentterms) - List all paymentterms
 * [ListAccountingProfitlosses](#listaccountingprofitlosses) - List all profitlosses
@@ -93,7 +93,7 @@
 * [PatchAccountingExpensereport](#patchaccountingexpensereport) - Update an expensereport
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [PatchAccountingJournal](#patchaccountingjournal) - Update a journal
-* [PatchAccountingOrder](#patchaccountingorder) - Update an order
+* [~~PatchAccountingOrder~~](#patchaccountingorder) - Update an order :warning: **Deprecated**
 * [PatchAccountingPaymentterm](#patchaccountingpaymentterm) - Update a paymentterm
 * [PatchAccountingProject](#patchaccountingproject) - Update a project
 * [PatchAccountingPurchaseorder](#patchaccountingpurchaseorder) - Update a purchaseorder
@@ -113,7 +113,7 @@
 * [RemoveAccountingExpensereport](#removeaccountingexpensereport) - Remove an expensereport
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [RemoveAccountingJournal](#removeaccountingjournal) - Remove a journal
-* [RemoveAccountingOrder](#removeaccountingorder) - Remove an order
+* [~~RemoveAccountingOrder~~](#removeaccountingorder) - Remove an order :warning: **Deprecated**
 * [RemoveAccountingPaymentterm](#removeaccountingpaymentterm) - Remove a paymentterm
 * [RemoveAccountingProject](#removeaccountingproject) - Remove a project
 * [RemoveAccountingPurchaseorder](#removeaccountingpurchaseorder) - Remove a purchaseorder
@@ -133,7 +133,7 @@
 * [UpdateAccountingExpensereport](#updateaccountingexpensereport) - Update an expensereport
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [UpdateAccountingJournal](#updateaccountingjournal) - Update a journal
-* [UpdateAccountingOrder](#updateaccountingorder) - Update an order
+* [~~UpdateAccountingOrder~~](#updateaccountingorder) - Update an order :warning: **Deprecated**
 * [UpdateAccountingPaymentterm](#updateaccountingpaymentterm) - Update a paymentterm
 * [UpdateAccountingProject](#updateaccountingproject) - Update a project
 * [UpdateAccountingPurchaseorder](#updateaccountingpurchaseorder) - Update a purchaseorder
@@ -145,7 +145,7 @@
 
 ## CreateAccountingAccount
 
-Create an account
+Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
 
 ### Example Usage
 
@@ -167,7 +167,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "6d729508-f3f6-475a-8fd9-7f7106271f96",
+        Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -180,7 +180,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-06T21:45:04.191Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -209,7 +209,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ## CreateAccountingBankfeedaccount
 
-Create a bankfeedaccount
+Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
 
 ### Example Usage
 
@@ -234,12 +234,12 @@ var res = await sdk.Accounting.CreateAccountingBankfeedaccountAsync(
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "25a12917-bc5f-4baa-9c29-980c6cb09552",
+        Id = "419be57d-b056-405b-8b55-a33ee9fbfa9f",
         Metadata = new List<AccountingMetadata>() {},
         Name = "Corwin, Donnelly and Connelly Checking",
         RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T20:02:28.553Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-24T04:05:35.525Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -268,7 +268,7 @@ var res = await sdk.Accounting.CreateAccountingBankfeedaccountAsync(
 
 ## CreateAccountingBankfeedtransaction
 
-Create a bankfeedtransaction
+Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
 
 ### Example Usage
 
@@ -291,15 +291,15 @@ var res = await sdk.Accounting.CreateAccountingBankfeedtransactionAsync(
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-        Id = "fc79b983-0abe-4eb6-a3af-c9f56dbf0ab3",
+        Id = "ee46a0bd-3c94-407c-a8cf-1a15f715a28c",
         IsPending = true,
         MerchantName = "Buckridge - Feest",
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-14T20:08:57.361Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-15T10:35:57.603Z").ToUniversalTime(),
         Reference = "79574105",
-        TransactionAt = System.DateTime.Parse("2022-07-30T08:11:27.080Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-30T09:50:18.933Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-25T01:45:14.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-25T02:32:40.206Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -328,7 +328,7 @@ var res = await sdk.Accounting.CreateAccountingBankfeedtransactionAsync(
 
 ## CreateAccountingBill
 
-Create a bill
+Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
 
 ### Example Usage
 
@@ -348,13 +348,13 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://puny-foodstuffs.name",
-                Id = "c1605439-f179-4b3b-a6d9-8587613faf73",
+                Id = "f802252a-cf6e-427a-97e9-899e07aca370",
                 MimeType = "application/pdf",
                 Name = "BILL-2466.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://grimy-characterization.net",
-                Id = "290d1f1a-3fa9-4564-be9d-4502bd742b86",
+                Id = "b3cd1be2-0f9d-47b4-b971-a611b8927761",
                 MimeType = "application/pdf",
                 Name = "BILL-2466-1.pdf",
             },
@@ -367,7 +367,7 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-09-07T23:03:14.104Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "d9cb1af0-bd77-4c74-b2a5-f03af0568090",
+        Id = "369ae9d6-6832-4c41-92b0-e9e775afd9f0",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -383,7 +383,7 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
         TaxAmount = 0D,
         Term = Term.Net90,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2020-06-01T05:49:59.569Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-06-01T08:13:39.080Z").ToUniversalTime(),
         Url = "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>"
@@ -413,7 +413,7 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
 
 ## CreateAccountingCategory
 
-Create a category
+Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
 
 ### Example Usage
 
@@ -432,11 +432,11 @@ var res = await sdk.Accounting.CreateAccountingCategoryAsync(
     accountingCategory: new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "32c13c1f-94c1-4883-979d-41ff9c6cb35d",
+        Id = "3cd2ad16-e554-4190-81c1-483fdbd29961",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.177Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-12T02:55:57.671Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -465,7 +465,7 @@ var res = await sdk.Accounting.CreateAccountingCategoryAsync(
 
 ## CreateAccountingContact
 
-Create a contact
+Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
 
 ### Example Usage
 
@@ -506,7 +506,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
             },
         },
         FirstName = "Delores",
-        Id = "31fa4845-3227-4e9f-9036-be38557b7807",
+        Id = "7f71589f-ade6-49bb-b986-0d292518d198",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -517,7 +517,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "7aa1a708-304c-4970-928f-8489ea7c5f5b",
+                Id = "bcaabac1-12a6-4dd7-aab2-e435fb09c53d",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -539,7 +539,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.513Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-20T06:45:47.082Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     connectionId: "<id>"
@@ -569,7 +569,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 
 ## CreateAccountingCreditmemo
 
-Create a creditmemo
+Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
 
 ### Example Usage
 
@@ -593,7 +593,7 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
         CreditmemoNumber = "CM-99537",
         Currency = "AUD",
         DiscountAmount = 0D,
-        Id = "393514cf-e843-447a-99bc-16a45ed4e043",
+        Id = "7f8244a9-4640-41fe-b46e-2f3fb628c345",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -602,7 +602,7 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
         Status = AccountingCreditmemoStatus.Authorized,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-09-11T08:07:53.353Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T21:59:16.697Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -631,7 +631,7 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
 
 ## CreateAccountingExpense
 
-Create an expense
+Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
 
 ### Example Usage
 
@@ -651,13 +651,13 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "6bfcf576-add7-458b-b613-19d5d6cd35cc",
+                Id = "ef8d1217-6586-4b5e-a431-2d2d80b2363b",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "292d1c7f-b917-4bf6-8cf6-50dd87b58abd",
+                Id = "aa8afd30-8fc1-4d2f-997e-eef61a92509e",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -666,10 +666,10 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "a029e98e-b8c5-4cf6-acb0-d8b8a558da1c",
+        Id = "ec7da21d-f359-4fa4-99f7-5217aa24c1c2",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "c78595fd-a880-4d5a-beb7-d5a883cf778b",
+                Id = "afe65feb-ab22-49e6-935c-dbb6a757884e",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -677,7 +677,7 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "9d7f8487-c0fe-4dfe-92a0-1de1eb0afe4a",
+                Id = "897190bc-abf2-40c5-b26f-a97f7599ac00",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -685,7 +685,7 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "6cb1d4be-ce47-4944-ad2f-f0232cbc0b64",
+                Id = "db50e25d-e56e-466d-8e41-57605de361de",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -694,7 +694,7 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "00b18a0c-7338-4861-98c3-c560b1fbffce",
+                Id = "fdb8abcc-792e-43da-8eb9-b384739595f8",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -702,7 +702,7 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "0580d0b1-5320-4b56-8927-edb50f7597df",
+                Id = "9972215c-4159-4501-84b7-6b44c836125b",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -718,7 +718,7 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.342Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T08:04:13.496Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -747,7 +747,7 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
 
 ## CreateAccountingExpensereport
 
-Create an expensereport
+Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
 
 ### Example Usage
 
@@ -764,16 +764,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
     accountingExpensereport: new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-19T11:31:30.783Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-19T14:32:12.741Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "45fe8ace-3a78-4443-9457-e90ecfa9cf79",
+        Id = "238a1a44-7f7f-462b-b701-2f2e241db582",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "b8082ca1-566e-4225-822b-0945ba2f7cf2",
+                Id = "1404d37f-1948-4ba9-b14f-123b62fca880",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -781,7 +781,7 @@ var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "6ff8b0e0-76c3-44cc-8aa3-44e23b205a58",
+                Id = "76703a5c-32ac-4782-92d5-99306fbf107f",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -790,7 +790,7 @@ var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "834d5a34-2bd0-4f1a-9853-3b0339dcd561",
+                Id = "5146710a-23f8-47d8-a6b2-9d9678db401e",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -799,7 +799,7 @@ var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "7c4e739a-e68d-4181-b3c0-403b77b2a2c1",
+                Id = "d90b20f9-0e54-4bf2-81bb-29bd3fbddbcc",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -811,11 +811,11 @@ var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-19T11:31:30.783Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-19T14:32:12.741Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-19T11:31:30.783Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-19T14:32:12.741Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -844,7 +844,7 @@ var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
 
 ## CreateAccountingInvoice
 
-Create an invoice
+Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
 
 ### Example Usage
 
@@ -864,13 +864,13 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "a9ebd48b-e09d-4ec0-9bef-38595f378fa8",
+                Id = "90751c88-0530-41da-ac7a-531936b446a2",
                 MimeType = "application/pdf",
                 Name = "INV-77705.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://earnest-giggle.net",
-                Id = "c6974327-8f04-4f3a-ab72-ca6836768025",
+                Id = "22dd0a67-4a8a-45b8-b6d2-ca9fd06f6074",
                 MimeType = "application/pdf",
                 Name = "INV-77705-1.pdf",
             },
@@ -882,7 +882,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-12-07T14:17:29.587Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "0d30a2d0-38fb-4535-a59d-ebfbafcbec49",
+        Id = "4ac485e7-aa64-483c-b4b6-96ccfe949b9f",
         InvoiceNumber = "INV-77705",
         IsInclusiveOfTax = false,
         Lineitems = new List<AccountingLineitem>() {},
@@ -900,7 +900,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         Term = AccountingInvoiceTerm.Net25,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2026-04-23T13:18:03.543Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-24T08:13:04.773Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>"
@@ -930,7 +930,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 
 ## CreateAccountingJournal
 
-Create a journal
+Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
 
 ### Example Usage
 
@@ -952,16 +952,16 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Cilicium minima calco constans adipisci.",
-        Id = "246d0a16-30c7-467c-9944-91faf716350e",
+        Id = "6c5bbfb6-0d2b-4f99-a075-33ab6d64d5cd",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingJournalLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2023-11-06T10:50:00.360Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-11-06T22:51:56.321Z").ToUniversalTime(),
         Reference = "JE-78884",
         Source = "crustulum",
         Status = AccountingJournalStatus.Void,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-01-10T19:47:31.060Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-11T01:55:17.682Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -988,9 +988,11 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAccountingOrder
+## ~~CreateAccountingOrder~~
 
-Create an order
+Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -1017,7 +1019,7 @@ var res = await sdk.Accounting.CreateAccountingOrderAsync(
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "GBP",
-        Id = "2ef97e51-25fc-443a-953f-ef5d646926ab",
+        Id = "02bbc3bd-9dc5-4f81-b81d-8ed8484ac294",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
@@ -1032,7 +1034,7 @@ var res = await sdk.Accounting.CreateAccountingOrderAsync(
         Status = AccountingOrderStatus.Authorized,
         TotalAmount = 0D,
         Type = AccountingOrderType.Sales,
-        UpdatedAt = System.DateTime.Parse("2022-02-08T07:22:15.415Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-08T11:49:29.254Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1061,7 +1063,7 @@ var res = await sdk.Accounting.CreateAccountingOrderAsync(
 
 ## CreateAccountingPaymentterm
 
-Create a paymentterm
+Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
 
 ### Example Usage
 
@@ -1087,12 +1089,12 @@ var res = await sdk.Accounting.CreateAccountingPaymenttermAsync(
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "daf3e41a-5718-467a-a341-b1a4df756297",
+        Id = "36a08e57-c9fd-4c3b-99c2-1241fbc96cd2",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2026-01-08T11:26:40.785Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-09T05:47:23.282Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1121,7 +1123,7 @@ var res = await sdk.Accounting.CreateAccountingPaymenttermAsync(
 
 ## CreateAccountingProject
 
-Create a project
+Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
 
 ### Example Usage
 
@@ -1163,7 +1165,7 @@ var res = await sdk.Accounting.CreateAccountingProjectAsync(
 
 ## CreateAccountingPurchaseorder
 
-Create a purchaseorder
+Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
 
 ### Example Usage
 
@@ -1193,7 +1195,7 @@ var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "EUR",
-        Id = "7a67124c-e6c3-4c69-b8ff-b34229a64501",
+        Id = "03539c13-2977-4fea-a53a-c9fa43b578b2",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
@@ -1207,7 +1209,7 @@ var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
         },
         Status = AccountingPurchaseorderStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-08-11T06:02:15.173Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-08-11T08:29:00.127Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1236,7 +1238,7 @@ var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
 
 ## CreateAccountingQuote
 
-Create a quote
+Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
 
 ### Example Usage
 
@@ -1278,7 +1280,7 @@ var res = await sdk.Accounting.CreateAccountingQuoteAsync(
 
 ## CreateAccountingSalesorder
 
-Create a salesorder
+Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
 
 ### Example Usage
 
@@ -1305,13 +1307,13 @@ var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-03-25T13:01:27.649Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-03-25T18:23:55.155Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "USD",
         DiscountAmount = 0D,
         Fees = new List<AccountingFee>() {},
         FulfillmentType = FulfillmentType.Other,
-        Id = "0b8650fc-528f-410a-bf3c-5dccaf0fbe81",
+        Id = "213f7ad6-97d2-4c2c-853b-1b4316b62b95",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "832663",
@@ -1333,7 +1335,7 @@ var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
         TaxAmount = 0D,
         TipAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-03-25T13:01:27.649Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-25T18:23:55.155Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1362,7 +1364,7 @@ var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
 
 ## CreateAccountingTaxrate
 
-Create a taxrate
+Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
 
 ### Example Usage
 
@@ -1390,7 +1392,7 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Exempt (0%)",
         EffectiveRate = 0D,
-        Id = "15af537c-fdf9-4d0e-8178-506d15986d91",
+        Id = "c850e4cb-a32c-47b0-9143-45d3c6f6be29",
         IsActive = false,
         IsCompound = false,
         Metadata = new List<AccountingMetadata>() {},
@@ -1399,7 +1401,7 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
         Region = "KS",
         TotalRate = 0D,
         Type = AccountingTaxrateType.Sales,
-        UpdatedAt = System.DateTime.Parse("2020-02-13T05:10:06.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-13T05:30:54.354Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1428,7 +1430,7 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 
 ## CreateAccountingTransaction
 
-Create a transaction
+Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
 
 ### Example Usage
 
@@ -1446,12 +1448,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "ebb5944f-dd22-4b0f-9449-19a0c99bc4c2",
+        Id = "8f655204-2f41-40a5-99b8-9860b5c99c4b",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "e77f43e5-0dfd-4dde-929b-a18274d41f97",
+                Id = "428ff9a3-ade8-484e-bdf1-c20d031f40b4",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -1463,7 +1465,7 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T06:08:36.561Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T06:18:02.227Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1492,7 +1494,7 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 
 ## CreateAccountingVendorcredit
 
-Create a vendorcredit
+Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
 
 ### Example Usage
 
@@ -1513,14 +1515,14 @@ var res = await sdk.Accounting.CreateAccountingVendorcreditAsync(
         BalanceAmount = 0D,
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "bbd9b920-7ca8-4eb6-bc69-871a2998b308",
+        Id = "e762b667-a5b1-42dd-a051-8be6ae736465",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Volup conatus cruciamentum decor avaritia.",
         PostedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Authorized,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-03T01:44:22.777Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-03T04:36:18.003Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1549,7 +1551,7 @@ var res = await sdk.Accounting.CreateAccountingVendorcreditAsync(
 
 ## GetAccountingAccount
 
-Retrieve an account
+Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1591,7 +1593,7 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(
 
 ## GetAccountingAgedpayable
 
-Retrieve an agedpayable
+Retrieves a single AccountingAgedpayable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1633,7 +1635,7 @@ var res = await sdk.Accounting.GetAccountingAgedpayableAsync(
 
 ## GetAccountingAgedreceivable
 
-Retrieve an agedreceivable
+Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1675,7 +1677,7 @@ var res = await sdk.Accounting.GetAccountingAgedreceivableAsync(
 
 ## GetAccountingBalancesheet
 
-Retrieve a balancesheet
+Retrieves a single AccountingBalancesheet by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1717,7 +1719,7 @@ var res = await sdk.Accounting.GetAccountingBalancesheetAsync(
 
 ## GetAccountingBankfeedaccount
 
-Retrieve a bankfeedaccount
+Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1759,7 +1761,7 @@ var res = await sdk.Accounting.GetAccountingBankfeedaccountAsync(
 
 ## GetAccountingBankfeedtransaction
 
-Retrieve a bankfeedtransaction
+Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1801,7 +1803,7 @@ var res = await sdk.Accounting.GetAccountingBankfeedtransactionAsync(
 
 ## GetAccountingBill
 
-Retrieve a bill
+Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1843,7 +1845,7 @@ var res = await sdk.Accounting.GetAccountingBillAsync(
 
 ## GetAccountingCashflow
 
-Retrieve a cashflow
+Retrieves a single AccountingCashflow by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1885,7 +1887,7 @@ var res = await sdk.Accounting.GetAccountingCashflowAsync(
 
 ## GetAccountingCategory
 
-Retrieve a category
+Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1927,7 +1929,7 @@ var res = await sdk.Accounting.GetAccountingCategoryAsync(
 
 ## GetAccountingContact
 
-Retrieve a contact
+Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1969,7 +1971,7 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 
 ## GetAccountingCreditmemo
 
-Retrieve a creditmemo
+Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2011,7 +2013,7 @@ var res = await sdk.Accounting.GetAccountingCreditmemoAsync(
 
 ## GetAccountingExpense
 
-Retrieve an expense
+Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2053,7 +2055,7 @@ var res = await sdk.Accounting.GetAccountingExpenseAsync(
 
 ## GetAccountingExpensereport
 
-Retrieve an expensereport
+Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2095,7 +2097,7 @@ var res = await sdk.Accounting.GetAccountingExpensereportAsync(
 
 ## GetAccountingInvoice
 
-Retrieve an invoice
+Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2137,7 +2139,7 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 
 ## GetAccountingJournal
 
-Retrieve a journal
+Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2177,9 +2179,11 @@ var res = await sdk.Accounting.GetAccountingJournalAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingOrder
+## ~~GetAccountingOrder~~
 
-Retrieve an order
+Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -2221,7 +2225,7 @@ var res = await sdk.Accounting.GetAccountingOrderAsync(
 
 ## GetAccountingOrganization
 
-Retrieve an organization
+Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2263,7 +2267,7 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 
 ## GetAccountingPaymentterm
 
-Retrieve a paymentterm
+Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2305,7 +2309,7 @@ var res = await sdk.Accounting.GetAccountingPaymenttermAsync(
 
 ## GetAccountingProfitloss
 
-Retrieve a profitloss
+Retrieves a single AccountingProfitloss by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2347,7 +2351,7 @@ var res = await sdk.Accounting.GetAccountingProfitlossAsync(
 
 ## GetAccountingProject
 
-Retrieve a project
+Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2389,7 +2393,7 @@ var res = await sdk.Accounting.GetAccountingProjectAsync(
 
 ## GetAccountingPurchaseorder
 
-Retrieve a purchaseorder
+Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2431,7 +2435,7 @@ var res = await sdk.Accounting.GetAccountingPurchaseorderAsync(
 
 ## GetAccountingPurchasereceipt
 
-Retrieve a purchasereceipt
+Retrieves a single AccountingPurchasereceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2473,7 +2477,7 @@ var res = await sdk.Accounting.GetAccountingPurchasereceiptAsync(
 
 ## GetAccountingQuote
 
-Retrieve a quote
+Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2515,7 +2519,7 @@ var res = await sdk.Accounting.GetAccountingQuoteAsync(
 
 ## GetAccountingSalesorder
 
-Retrieve a salesorder
+Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2557,7 +2561,7 @@ var res = await sdk.Accounting.GetAccountingSalesorderAsync(
 
 ## GetAccountingSalesreceipt
 
-Retrieve a salesreceipt
+Retrieves a single AccountingSalesreceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2599,7 +2603,7 @@ var res = await sdk.Accounting.GetAccountingSalesreceiptAsync(
 
 ## GetAccountingTaxrate
 
-Retrieve a taxrate
+Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2641,7 +2645,7 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 
 ## GetAccountingTransaction
 
-Retrieve a transaction
+Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2683,7 +2687,7 @@ var res = await sdk.Accounting.GetAccountingTransactionAsync(
 
 ## GetAccountingTrialbalance
 
-Retrieve a trialbalance
+Retrieves a single AccountingTrialbalance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2725,7 +2729,7 @@ var res = await sdk.Accounting.GetAccountingTrialbalanceAsync(
 
 ## GetAccountingVendorcredit
 
-Retrieve a vendorcredit
+Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2767,7 +2771,7 @@ var res = await sdk.Accounting.GetAccountingVendorcreditAsync(
 
 ## ListAccountingAccounts
 
-List all accounts
+Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2808,7 +2812,7 @@ var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
 
 ## ListAccountingAgedpayables
 
-List all agedpayables
+Returns a list of AccountingAgedpayables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2849,7 +2853,7 @@ var res = await sdk.Accounting.ListAccountingAgedpayablesAsync(req);
 
 ## ListAccountingAgedreceivables
 
-List all agedreceivables
+Returns a list of AccountingAgedreceivables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2890,7 +2894,7 @@ var res = await sdk.Accounting.ListAccountingAgedreceivablesAsync(req);
 
 ## ListAccountingBalancesheets
 
-List all balancesheets
+Returns a list of AccountingBalancesheets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2931,7 +2935,7 @@ var res = await sdk.Accounting.ListAccountingBalancesheetsAsync(req);
 
 ## ListAccountingBankfeedaccounts
 
-List all bankfeedaccounts
+Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2972,7 +2976,7 @@ var res = await sdk.Accounting.ListAccountingBankfeedaccountsAsync(req);
 
 ## ListAccountingBankfeedtransactions
 
-List all bankfeedtransactions
+Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3013,7 +3017,7 @@ var res = await sdk.Accounting.ListAccountingBankfeedtransactionsAsync(req);
 
 ## ListAccountingBills
 
-List all bills
+Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3054,7 +3058,7 @@ var res = await sdk.Accounting.ListAccountingBillsAsync(req);
 
 ## ListAccountingCashflows
 
-List all cashflows
+Returns a list of AccountingCashflows. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3095,7 +3099,7 @@ var res = await sdk.Accounting.ListAccountingCashflowsAsync(req);
 
 ## ListAccountingCategories
 
-List all categories
+Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3136,7 +3140,7 @@ var res = await sdk.Accounting.ListAccountingCategoriesAsync(req);
 
 ## ListAccountingContacts
 
-List all contacts
+Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3177,7 +3181,7 @@ var res = await sdk.Accounting.ListAccountingContactsAsync(req);
 
 ## ListAccountingCreditmemoes
 
-List all creditmemoes
+Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3218,7 +3222,7 @@ var res = await sdk.Accounting.ListAccountingCreditmemoesAsync(req);
 
 ## ListAccountingExpensereports
 
-List all expensereports
+Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3259,7 +3263,7 @@ var res = await sdk.Accounting.ListAccountingExpensereportsAsync(req);
 
 ## ListAccountingExpenses
 
-List all expenses
+Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3300,7 +3304,7 @@ var res = await sdk.Accounting.ListAccountingExpensesAsync(req);
 
 ## ListAccountingInvoices
 
-List all invoices
+Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3341,7 +3345,7 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 
 ## ListAccountingJournals
 
-List all journals
+Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3380,9 +3384,11 @@ var res = await sdk.Accounting.ListAccountingJournalsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingOrders
+## ~~ListAccountingOrders~~
 
-List all orders
+Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -3423,7 +3429,7 @@ var res = await sdk.Accounting.ListAccountingOrdersAsync(req);
 
 ## ListAccountingOrganizations
 
-List all organizations
+Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3464,7 +3470,7 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 
 ## ListAccountingPaymentterms
 
-List all paymentterms
+Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3505,7 +3511,7 @@ var res = await sdk.Accounting.ListAccountingPaymenttermsAsync(req);
 
 ## ListAccountingProfitlosses
 
-List all profitlosses
+Returns a list of AccountingProfitlosses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3546,7 +3552,7 @@ var res = await sdk.Accounting.ListAccountingProfitlossesAsync(req);
 
 ## ListAccountingProjects
 
-List all projects
+Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3587,7 +3593,7 @@ var res = await sdk.Accounting.ListAccountingProjectsAsync(req);
 
 ## ListAccountingPurchaseorders
 
-List all purchaseorders
+Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3628,7 +3634,7 @@ var res = await sdk.Accounting.ListAccountingPurchaseordersAsync(req);
 
 ## ListAccountingPurchasereceipts
 
-List all purchasereceipts
+Returns a list of AccountingPurchasereceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3669,7 +3675,7 @@ var res = await sdk.Accounting.ListAccountingPurchasereceiptsAsync(req);
 
 ## ListAccountingQuotes
 
-List all quotes
+Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3710,7 +3716,7 @@ var res = await sdk.Accounting.ListAccountingQuotesAsync(req);
 
 ## ListAccountingSalesorders
 
-List all salesorders
+Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3751,7 +3757,7 @@ var res = await sdk.Accounting.ListAccountingSalesordersAsync(req);
 
 ## ListAccountingSalesreceipts
 
-List all salesreceipts
+Returns a list of AccountingSalesreceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3792,7 +3798,7 @@ var res = await sdk.Accounting.ListAccountingSalesreceiptsAsync(req);
 
 ## ListAccountingTaxrates
 
-List all taxrates
+Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3833,7 +3839,7 @@ var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
 
 ## ListAccountingTransactions
 
-List all transactions
+Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3874,7 +3880,7 @@ var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
 
 ## ListAccountingTrialbalances
 
-List all trialbalances
+Returns a list of AccountingTrialbalances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3915,7 +3921,7 @@ var res = await sdk.Accounting.ListAccountingTrialbalancesAsync(req);
 
 ## ListAccountingVendorcredits
 
-List all vendorcredits
+Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3956,7 +3962,7 @@ var res = await sdk.Accounting.ListAccountingVendorcreditsAsync(req);
 
 ## PatchAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -3979,7 +3985,7 @@ PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "d39ecc40-d9c5-4f99-b2d6-852ba6eedecb",
+        Id = "e700ce3c-3bb9-4fea-bc54-58458746ade4",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -3992,7 +3998,7 @@ PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-06T21:45:04.195Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.887Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4021,7 +4027,7 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(req);
 
 ## PatchAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -4047,12 +4053,12 @@ PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRe
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "fb61cf23-b929-482f-b38a-4000bb95b21c",
+        Id = "2bfbc3f0-08b2-4b72-9eef-a4f51fbab1bf",
         Metadata = new List<AccountingMetadata>() {},
         Name = "Corwin, Donnelly and Connelly Checking",
         RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T20:02:28.556Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-24T04:05:35.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4081,7 +4087,7 @@ var res = await sdk.Accounting.PatchAccountingBankfeedaccountAsync(req);
 
 ## PatchAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -4105,15 +4111,15 @@ PatchAccountingBankfeedtransactionRequest req = new PatchAccountingBankfeedtrans
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-        Id = "4ebd7f02-e046-41c3-a8c3-78081ed49536",
+        Id = "85c392bd-159f-484c-a8f9-b24a8301a996",
         IsPending = true,
         MerchantName = "Buckridge - Feest",
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-14T20:08:57.369Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-15T10:35:57.618Z").ToUniversalTime(),
         Reference = "79574105",
-        TransactionAt = System.DateTime.Parse("2022-07-30T08:11:27.081Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-30T09:50:18.935Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-25T01:45:14.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-25T02:32:40.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4142,7 +4148,7 @@ var res = await sdk.Accounting.PatchAccountingBankfeedtransactionAsync(req);
 
 ## PatchAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -4163,13 +4169,13 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://puny-foodstuffs.name",
-                Id = "51a75033-e2d6-49dd-ace9-a977d4ffdc6e",
+                Id = "79fcaedb-ee8a-401b-af3f-49176c6f898d",
                 MimeType = "application/pdf",
                 Name = "BILL-2466.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://grimy-characterization.net",
-                Id = "e8f20ea6-5f59-4ba1-b28e-d2fe679e3bc0",
+                Id = "27d90a56-bfa5-47f0-8da1-2485fc743410",
                 MimeType = "application/pdf",
                 Name = "BILL-2466-1.pdf",
             },
@@ -4182,7 +4188,7 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-09-07T23:03:14.104Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "08832535-f5cd-4ae9-bca0-79b5152b1867",
+        Id = "5a77846c-b08f-4b77-b8fa-25b124783ea4",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -4198,7 +4204,7 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         TaxAmount = 0D,
         Term = Term.Net90,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2020-06-01T05:49:59.573Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-06-01T08:13:39.086Z").ToUniversalTime(),
         Url = "https://cluttered-importance.org/bills/BILL-2466",
     },
     ConnectionId = "<id>",
@@ -4228,7 +4234,7 @@ var res = await sdk.Accounting.PatchAccountingBillAsync(req);
 
 ## PatchAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -4248,11 +4254,11 @@ PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "30d6bf76-1c33-427c-812f-661c4e743880",
+        Id = "3cf8b91c-a97c-44ef-9b1d-f5566defcfbe",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.184Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-12T02:55:57.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4281,7 +4287,7 @@ var res = await sdk.Accounting.PatchAccountingCategoryAsync(req);
 
 ## PatchAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -4323,7 +4329,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4d9d12a6-5a51-4cc1-a10e-0e68fd48bff6",
+        Id = "b2d7e058-09ba-4dc4-bb7d-42c423e44bd9",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -4334,7 +4340,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "c0231a80-4c39-4c9e-8ac8-24b26bfce8be",
+                Id = "dcd1e233-1a6b-44de-8351-65458f5d176e",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -4356,7 +4362,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.530Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-20T06:45:47.106Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
@@ -4386,7 +4392,7 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(req);
 
 ## PatchAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -4411,7 +4417,7 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         CreditmemoNumber = "CM-99537",
         Currency = "AUD",
         DiscountAmount = 0D,
-        Id = "1d5dac56-da2f-4c16-9b59-3ab92a27dcd3",
+        Id = "1813c524-aef1-4669-a88c-cbf6116fd067",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -4420,7 +4426,7 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         Status = AccountingCreditmemoStatus.Authorized,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-09-11T08:07:53.372Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T21:59:16.728Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4449,7 +4455,7 @@ var res = await sdk.Accounting.PatchAccountingCreditmemoAsync(req);
 
 ## PatchAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -4470,13 +4476,13 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "f4777b7a-4b23-4c2e-acdf-f7f8251f8575",
+                Id = "4fd5b26d-bef0-42ee-957d-60b0ab7b72d4",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "724ceb69-0018-4d7b-80c7-41fed5941d97",
+                Id = "44ee7e43-a488-4cb2-b362-abd920377de2",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -4485,10 +4491,10 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "3fded96f-7b44-45db-907c-71d797647361",
+        Id = "55d2fe29-6512-43e2-a8bd-e509d183d79e",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "1bd6c341-8dd4-4a91-976a-5575888b82fc",
+                Id = "1c7765bc-081a-4c29-a789-96d72c01acf3",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -4496,7 +4502,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "718f3795-b0b0-455a-832c-ab6856a0e478",
+                Id = "824a64ab-23c0-4703-a847-64346cf43907",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -4504,7 +4510,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "96a5ec63-7756-4361-b496-1c8eff2c0fa8",
+                Id = "3a90c66d-ca50-4411-8d4a-2f7355639913",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -4513,7 +4519,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "c64853b3-6bdc-41c6-a22b-31238ebc78b1",
+                Id = "9b11393d-f3a2-4940-9d1f-5ee865682c13",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -4521,7 +4527,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "3ecac429-4a0f-4147-891b-21d4242a32c0",
+                Id = "1d92a98b-c254-4ebd-a54d-c68c11d9e8bb",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -4537,7 +4543,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.343Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T08:04:13.497Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4566,7 +4572,7 @@ var res = await sdk.Accounting.PatchAccountingExpenseAsync(req);
 
 ## PatchAccountingExpensereport
 
-Update an expensereport
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
 
 ### Example Usage
 
@@ -4584,16 +4590,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "8a3bc77f-0b1a-485b-9fc1-26cb8e3a9599",
+        Id = "a6e871ce-b3b3-4282-a867-47f688257392",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "62652705-2071-49da-a9a7-ead182df3399",
+                Id = "ee7efd51-b0fa-4ad8-9f5e-f3117c432135",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -4601,7 +4607,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a4a7493d-b091-4d0f-9afa-8cd3dc2f1542",
+                Id = "efc7d06b-39f3-4b86-ae22-f7640401476a",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -4610,7 +4616,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "afa33947-5b2d-4ba9-b1a7-241db2b10292",
+                Id = "c7892a65-a617-439e-9f4a-3b1200aea1c8",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -4619,7 +4625,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "05e2fb5b-ef01-434f-8249-8dee53497d93",
+                Id = "3d289400-bff9-4f84-b3d7-094fc7dc67ad",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -4631,11 +4637,11 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4664,7 +4670,7 @@ var res = await sdk.Accounting.PatchAccountingExpensereportAsync(req);
 
 ## PatchAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -4685,13 +4691,13 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "aa647b3d-4b70-40c0-8dce-d5b766aed94e",
+                Id = "5019ee74-ee00-4280-8fbe-4dabc6a16252",
                 MimeType = "application/pdf",
                 Name = "INV-77705.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://earnest-giggle.net",
-                Id = "b96e3544-c6c2-4828-b0c3-29dfedeac592",
+                Id = "99142117-b1e2-4ed5-8fca-5efca19f2623",
                 MimeType = "application/pdf",
                 Name = "INV-77705-1.pdf",
             },
@@ -4703,7 +4709,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-12-07T14:17:29.587Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "15765a96-e0d7-4c05-a327-99bb80ccd290",
+        Id = "82dc41ac-ec57-468b-88d1-1c76229a448a",
         InvoiceNumber = "INV-77705",
         IsInclusiveOfTax = false,
         Lineitems = new List<AccountingLineitem>() {},
@@ -4721,7 +4727,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         Term = AccountingInvoiceTerm.Net25,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2026-04-23T13:18:03.577Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-24T08:13:04.829Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     ConnectionId = "<id>",
@@ -4751,7 +4757,7 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(req);
 
 ## PatchAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -4774,16 +4780,16 @@ PatchAccountingJournalRequest req = new PatchAccountingJournalRequest() {
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Cilicium minima calco constans adipisci.",
-        Id = "e99861f6-e6aa-4484-a950-3adad6e52d7d",
+        Id = "b202f271-4c7e-4cf3-a9e2-d8c1ef753a13",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingJournalLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2023-11-06T10:50:00.372Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-11-06T22:51:56.331Z").ToUniversalTime(),
         Reference = "JE-78884",
         Source = "crustulum",
         Status = AccountingJournalStatus.Void,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-01-10T19:47:31.066Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-11T01:55:17.687Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4810,9 +4816,11 @@ var res = await sdk.Accounting.PatchAccountingJournalAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingOrder
+## ~~PatchAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -4840,7 +4848,7 @@ PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "GBP",
-        Id = "72fb3636-1621-4028-96dd-afd7afac8356",
+        Id = "ab392c44-03f1-49b7-90b6-c2d097724efb",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
@@ -4855,7 +4863,7 @@ PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
         Status = AccountingOrderStatus.Authorized,
         TotalAmount = 0D,
         Type = AccountingOrderType.Sales,
-        UpdatedAt = System.DateTime.Parse("2022-02-08T07:22:15.421Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-08T11:49:29.265Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4884,7 +4892,7 @@ var res = await sdk.Accounting.PatchAccountingOrderAsync(req);
 
 ## PatchAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -4911,12 +4919,12 @@ PatchAccountingPaymenttermRequest req = new PatchAccountingPaymenttermRequest() 
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "0e8960d8-4d2b-4e9a-85d1-ca89ea831c0d",
+        Id = "3982fce1-64b8-4240-bc07-1b926ca5684e",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2026-01-08T11:26:40.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-09T05:47:23.294Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4945,7 +4953,7 @@ var res = await sdk.Accounting.PatchAccountingPaymenttermAsync(req);
 
 ## PatchAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -4988,7 +4996,7 @@ var res = await sdk.Accounting.PatchAccountingProjectAsync(req);
 
 ## PatchAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -5019,7 +5027,7 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "EUR",
-        Id = "429f5c00-e125-40a8-a449-ce1df3b41643",
+        Id = "835423df-62d9-4cef-8316-6dcb624cae5b",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
@@ -5033,7 +5041,7 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         },
         Status = AccountingPurchaseorderStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-08-11T06:02:15.177Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-08-11T08:29:00.133Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5062,7 +5070,7 @@ var res = await sdk.Accounting.PatchAccountingPurchaseorderAsync(req);
 
 ## PatchAccountingQuote
 
-Update a quote
+Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
 
 ### Example Usage
 
@@ -5105,7 +5113,7 @@ var res = await sdk.Accounting.PatchAccountingQuoteAsync(req);
 
 ## PatchAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -5133,13 +5141,13 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "USD",
         DiscountAmount = 0D,
         Fees = new List<AccountingFee>() {},
         FulfillmentType = FulfillmentType.Other,
-        Id = "e9bd6dcf-1671-4366-b98b-21a061a74103",
+        Id = "8b907ab7-09a0-4c02-ba44-ba9d3703ee79",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "832663",
@@ -5161,7 +5169,7 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
         TaxAmount = 0D,
         TipAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5190,7 +5198,7 @@ var res = await sdk.Accounting.PatchAccountingSalesorderAsync(req);
 
 ## PatchAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -5219,7 +5227,7 @@ PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Exempt (0%)",
         EffectiveRate = 0D,
-        Id = "153638a2-a0b9-451a-99ee-9020af19c25c",
+        Id = "fbee78d2-8dd9-49f5-b2b0-6c386af356af",
         IsActive = false,
         IsCompound = false,
         Metadata = new List<AccountingMetadata>() {},
@@ -5228,7 +5236,7 @@ PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
         Region = "KS",
         TotalRate = 0D,
         Type = AccountingTaxrateType.Sales,
-        UpdatedAt = System.DateTime.Parse("2020-02-13T05:10:06.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-13T05:30:54.354Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5257,7 +5265,7 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(req);
 
 ## PatchAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -5276,12 +5284,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f6598d52-bbff-4e17-b0d3-f017087e1b66",
+        Id = "32fb1f54-43a1-442e-b9f9-f5f5a23e2f40",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "1db0fe0a-d5d0-4da8-9fcd-65621b19b454",
+                Id = "850b4fa3-d5d4-4eb5-98a8-e48959199d81",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -5293,7 +5301,7 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T06:08:36.561Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T06:18:02.228Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5322,7 +5330,7 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(req);
 
 ## PatchAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -5344,14 +5352,14 @@ PatchAccountingVendorcreditRequest req = new PatchAccountingVendorcreditRequest(
         BalanceAmount = 0D,
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "844e88e4-7776-4dd7-b0c3-1ad3350e8635",
+        Id = "4b8b71f3-31a6-4c84-9342-1b07a2413fb8",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Volup conatus cruciamentum decor avaritia.",
         PostedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Authorized,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-03T01:44:22.780Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-03T04:36:18.009Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5380,7 +5388,7 @@ var res = await sdk.Accounting.PatchAccountingVendorcreditAsync(req);
 
 ## RemoveAccountingAccount
 
-Remove an account
+Deletes the AccountingAccount identified by `id`.
 
 ### Example Usage
 
@@ -5420,7 +5428,7 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 
 ## RemoveAccountingBankfeedaccount
 
-Remove a bankfeedaccount
+Deletes the AccountingBankfeedaccount identified by `id`.
 
 ### Example Usage
 
@@ -5460,7 +5468,7 @@ var res = await sdk.Accounting.RemoveAccountingBankfeedaccountAsync(
 
 ## RemoveAccountingBankfeedtransaction
 
-Remove a bankfeedtransaction
+Deletes the AccountingBankfeedtransaction identified by `id`.
 
 ### Example Usage
 
@@ -5500,7 +5508,7 @@ var res = await sdk.Accounting.RemoveAccountingBankfeedtransactionAsync(
 
 ## RemoveAccountingBill
 
-Remove a bill
+Deletes the AccountingBill identified by `id`.
 
 ### Example Usage
 
@@ -5540,7 +5548,7 @@ var res = await sdk.Accounting.RemoveAccountingBillAsync(
 
 ## RemoveAccountingCategory
 
-Remove a category
+Deletes the AccountingCategory identified by `id`.
 
 ### Example Usage
 
@@ -5580,7 +5588,7 @@ var res = await sdk.Accounting.RemoveAccountingCategoryAsync(
 
 ## RemoveAccountingContact
 
-Remove a contact
+Deletes the AccountingContact identified by `id`.
 
 ### Example Usage
 
@@ -5620,7 +5628,7 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 
 ## RemoveAccountingCreditmemo
 
-Remove a creditmemo
+Deletes the AccountingCreditmemo identified by `id`.
 
 ### Example Usage
 
@@ -5660,7 +5668,7 @@ var res = await sdk.Accounting.RemoveAccountingCreditmemoAsync(
 
 ## RemoveAccountingExpense
 
-Remove an expense
+Deletes the AccountingExpense identified by `id`.
 
 ### Example Usage
 
@@ -5700,7 +5708,7 @@ var res = await sdk.Accounting.RemoveAccountingExpenseAsync(
 
 ## RemoveAccountingExpensereport
 
-Remove an expensereport
+Deletes the AccountingExpensereport identified by `id`.
 
 ### Example Usage
 
@@ -5740,7 +5748,7 @@ var res = await sdk.Accounting.RemoveAccountingExpensereportAsync(
 
 ## RemoveAccountingInvoice
 
-Remove an invoice
+Deletes the AccountingInvoice identified by `id`.
 
 ### Example Usage
 
@@ -5780,7 +5788,7 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 
 ## RemoveAccountingJournal
 
-Remove a journal
+Deletes the AccountingJournal identified by `id`.
 
 ### Example Usage
 
@@ -5818,9 +5826,11 @@ var res = await sdk.Accounting.RemoveAccountingJournalAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingOrder
+## ~~RemoveAccountingOrder~~
 
-Remove an order
+Deletes the AccountingOrder identified by `id`.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -5860,7 +5870,7 @@ var res = await sdk.Accounting.RemoveAccountingOrderAsync(
 
 ## RemoveAccountingPaymentterm
 
-Remove a paymentterm
+Deletes the AccountingPaymentterm identified by `id`.
 
 ### Example Usage
 
@@ -5900,7 +5910,7 @@ var res = await sdk.Accounting.RemoveAccountingPaymenttermAsync(
 
 ## RemoveAccountingProject
 
-Remove a project
+Deletes the AccountingProject identified by `id`.
 
 ### Example Usage
 
@@ -5940,7 +5950,7 @@ var res = await sdk.Accounting.RemoveAccountingProjectAsync(
 
 ## RemoveAccountingPurchaseorder
 
-Remove a purchaseorder
+Deletes the AccountingPurchaseorder identified by `id`.
 
 ### Example Usage
 
@@ -5980,7 +5990,7 @@ var res = await sdk.Accounting.RemoveAccountingPurchaseorderAsync(
 
 ## RemoveAccountingQuote
 
-Remove a quote
+Deletes the AccountingQuote identified by `id`.
 
 ### Example Usage
 
@@ -6020,7 +6030,7 @@ var res = await sdk.Accounting.RemoveAccountingQuoteAsync(
 
 ## RemoveAccountingSalesorder
 
-Remove a salesorder
+Deletes the AccountingSalesorder identified by `id`.
 
 ### Example Usage
 
@@ -6060,7 +6070,7 @@ var res = await sdk.Accounting.RemoveAccountingSalesorderAsync(
 
 ## RemoveAccountingTaxrate
 
-Remove a taxrate
+Deletes the AccountingTaxrate identified by `id`.
 
 ### Example Usage
 
@@ -6100,7 +6110,7 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 
 ## RemoveAccountingTransaction
 
-Remove a transaction
+Deletes the AccountingTransaction identified by `id`.
 
 ### Example Usage
 
@@ -6140,7 +6150,7 @@ var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
 
 ## RemoveAccountingVendorcredit
 
-Remove a vendorcredit
+Deletes the AccountingVendorcredit identified by `id`.
 
 ### Example Usage
 
@@ -6180,7 +6190,7 @@ var res = await sdk.Accounting.RemoveAccountingVendorcreditAsync(
 
 ## UpdateAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -6203,7 +6213,7 @@ UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "d39ecc40-d9c5-4f99-b2d6-852ba6eedecb",
+        Id = "e700ce3c-3bb9-4fea-bc54-58458746ade4",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -6216,7 +6226,7 @@ UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-06T21:45:04.195Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.887Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6245,7 +6255,7 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(req);
 
 ## UpdateAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -6271,12 +6281,12 @@ UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccount
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "fb61cf23-b929-482f-b38a-4000bb95b21c",
+        Id = "2bfbc3f0-08b2-4b72-9eef-a4f51fbab1bf",
         Metadata = new List<AccountingMetadata>() {},
         Name = "Corwin, Donnelly and Connelly Checking",
         RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T20:02:28.556Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-24T04:05:35.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6305,7 +6315,7 @@ var res = await sdk.Accounting.UpdateAccountingBankfeedaccountAsync(req);
 
 ## UpdateAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -6329,15 +6339,15 @@ UpdateAccountingBankfeedtransactionRequest req = new UpdateAccountingBankfeedtra
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-        Id = "4ebd7f02-e046-41c3-a8c3-78081ed49536",
+        Id = "85c392bd-159f-484c-a8f9-b24a8301a996",
         IsPending = true,
         MerchantName = "Buckridge - Feest",
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-14T20:08:57.369Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-15T10:35:57.618Z").ToUniversalTime(),
         Reference = "79574105",
-        TransactionAt = System.DateTime.Parse("2022-07-30T08:11:27.081Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-30T09:50:18.935Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-25T01:45:14.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-25T02:32:40.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6366,7 +6376,7 @@ var res = await sdk.Accounting.UpdateAccountingBankfeedtransactionAsync(req);
 
 ## UpdateAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -6387,13 +6397,13 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://puny-foodstuffs.name",
-                Id = "51a75033-e2d6-49dd-ace9-a977d4ffdc6e",
+                Id = "79fcaedb-ee8a-401b-af3f-49176c6f898d",
                 MimeType = "application/pdf",
                 Name = "BILL-2466.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://grimy-characterization.net",
-                Id = "e8f20ea6-5f59-4ba1-b28e-d2fe679e3bc0",
+                Id = "27d90a56-bfa5-47f0-8da1-2485fc743410",
                 MimeType = "application/pdf",
                 Name = "BILL-2466-1.pdf",
             },
@@ -6406,7 +6416,7 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-09-07T23:03:14.104Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "08832535-f5cd-4ae9-bca0-79b5152b1867",
+        Id = "5a77846c-b08f-4b77-b8fa-25b124783ea4",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -6422,7 +6432,7 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         TaxAmount = 0D,
         Term = Term.Net90,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2020-06-01T05:49:59.573Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-06-01T08:13:39.086Z").ToUniversalTime(),
         Url = "https://cluttered-importance.org/bills/BILL-2466",
     },
     ConnectionId = "<id>",
@@ -6452,7 +6462,7 @@ var res = await sdk.Accounting.UpdateAccountingBillAsync(req);
 
 ## UpdateAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -6472,11 +6482,11 @@ UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Textus ab thymum labore basium.",
-        Id = "30d6bf76-1c33-427c-812f-661c4e743880",
+        Id = "3cf8b91c-a97c-44ef-9b1d-f5566defcfbe",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Beauty",
-        UpdatedAt = System.DateTime.Parse("2025-09-11T12:22:05.184Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-12T02:55:57.680Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6505,7 +6515,7 @@ var res = await sdk.Accounting.UpdateAccountingCategoryAsync(req);
 
 ## UpdateAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -6547,7 +6557,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4d9d12a6-5a51-4cc1-a10e-0e68fd48bff6",
+        Id = "b2d7e058-09ba-4dc4-bb7d-42c423e44bd9",
         Identification = "531850872",
         IsActive = true,
         IsCustomer = true,
@@ -6558,7 +6568,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "c0231a80-4c39-4c9e-8ac8-24b26bfce8be",
+                Id = "dcd1e233-1a6b-44de-8351-65458f5d176e",
                 Name = "Visa 7844",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -6580,7 +6590,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-19T20:58:50.530Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-20T06:45:47.106Z").ToUniversalTime(),
         Website = "https://kertzmanngroup.com",
     },
     ConnectionId = "<id>",
@@ -6610,7 +6620,7 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(req);
 
 ## UpdateAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -6635,7 +6645,7 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         CreditmemoNumber = "CM-99537",
         Currency = "AUD",
         DiscountAmount = 0D,
-        Id = "1d5dac56-da2f-4c16-9b59-3ab92a27dcd3",
+        Id = "1813c524-aef1-4669-a88c-cbf6116fd067",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -6644,7 +6654,7 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         Status = AccountingCreditmemoStatus.Authorized,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-09-11T08:07:53.372Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-11T21:59:16.728Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6673,7 +6683,7 @@ var res = await sdk.Accounting.UpdateAccountingCreditmemoAsync(req);
 
 ## UpdateAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -6694,13 +6704,13 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "f4777b7a-4b23-4c2e-acdf-f7f8251f8575",
+                Id = "4fd5b26d-bef0-42ee-957d-60b0ab7b72d4",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "724ceb69-0018-4d7b-80c7-41fed5941d97",
+                Id = "44ee7e43-a488-4cb2-b362-abd920377de2",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -6709,10 +6719,10 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "3fded96f-7b44-45db-907c-71d797647361",
+        Id = "55d2fe29-6512-43e2-a8bd-e509d183d79e",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "1bd6c341-8dd4-4a91-976a-5575888b82fc",
+                Id = "1c7765bc-081a-4c29-a789-96d72c01acf3",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -6720,7 +6730,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "718f3795-b0b0-455a-832c-ab6856a0e478",
+                Id = "824a64ab-23c0-4703-a847-64346cf43907",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -6728,7 +6738,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "96a5ec63-7756-4361-b496-1c8eff2c0fa8",
+                Id = "3a90c66d-ca50-4411-8d4a-2f7355639913",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -6737,7 +6747,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "c64853b3-6bdc-41c6-a22b-31238ebc78b1",
+                Id = "9b11393d-f3a2-4940-9d1f-5ee865682c13",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -6745,7 +6755,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "3ecac429-4a0f-4147-891b-21d4242a32c0",
+                Id = "1d92a98b-c254-4ebd-a54d-c68c11d9e8bb",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -6761,7 +6771,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.343Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T08:04:13.497Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6790,7 +6800,7 @@ var res = await sdk.Accounting.UpdateAccountingExpenseAsync(req);
 
 ## UpdateAccountingExpensereport
 
-Update an expensereport
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
 
 ### Example Usage
 
@@ -6808,16 +6818,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "8a3bc77f-0b1a-485b-9fc1-26cb8e3a9599",
+        Id = "a6e871ce-b3b3-4282-a867-47f688257392",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "62652705-2071-49da-a9a7-ead182df3399",
+                Id = "ee7efd51-b0fa-4ad8-9f5e-f3117c432135",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -6825,7 +6835,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "a4a7493d-b091-4d0f-9afa-8cd3dc2f1542",
+                Id = "efc7d06b-39f3-4b86-ae22-f7640401476a",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -6834,7 +6844,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "afa33947-5b2d-4ba9-b1a7-241db2b10292",
+                Id = "c7892a65-a617-439e-9f4a-3b1200aea1c8",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -6843,7 +6853,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "05e2fb5b-ef01-434f-8249-8dee53497d93",
+                Id = "3d289400-bff9-4f84-b3d7-094fc7dc67ad",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -6855,11 +6865,11 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-19T11:31:30.787Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-19T14:32:12.745Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6888,7 +6898,7 @@ var res = await sdk.Accounting.UpdateAccountingExpensereportAsync(req);
 
 ## UpdateAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -6909,13 +6919,13 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "aa647b3d-4b70-40c0-8dce-d5b766aed94e",
+                Id = "5019ee74-ee00-4280-8fbe-4dabc6a16252",
                 MimeType = "application/pdf",
                 Name = "INV-77705.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://earnest-giggle.net",
-                Id = "b96e3544-c6c2-4828-b0c3-29dfedeac592",
+                Id = "99142117-b1e2-4ed5-8fca-5efca19f2623",
                 MimeType = "application/pdf",
                 Name = "INV-77705-1.pdf",
             },
@@ -6927,7 +6937,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-12-07T14:17:29.587Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "15765a96-e0d7-4c05-a327-99bb80ccd290",
+        Id = "82dc41ac-ec57-468b-88d1-1c76229a448a",
         InvoiceNumber = "INV-77705",
         IsInclusiveOfTax = false,
         Lineitems = new List<AccountingLineitem>() {},
@@ -6945,7 +6955,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         Term = AccountingInvoiceTerm.Net25,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2026-04-23T13:18:03.577Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-24T08:13:04.829Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     ConnectionId = "<id>",
@@ -6975,7 +6985,7 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(req);
 
 ## UpdateAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -6998,16 +7008,16 @@ UpdateAccountingJournalRequest req = new UpdateAccountingJournalRequest() {
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Cilicium minima calco constans adipisci.",
-        Id = "e99861f6-e6aa-4484-a950-3adad6e52d7d",
+        Id = "b202f271-4c7e-4cf3-a9e2-d8c1ef753a13",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingJournalLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2023-11-06T10:50:00.372Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-11-06T22:51:56.331Z").ToUniversalTime(),
         Reference = "JE-78884",
         Source = "crustulum",
         Status = AccountingJournalStatus.Void,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-01-10T19:47:31.066Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-11T01:55:17.687Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7034,9 +7044,11 @@ var res = await sdk.Accounting.UpdateAccountingJournalAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingOrder
+## ~~UpdateAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -7064,7 +7076,7 @@ UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "GBP",
-        Id = "72fb3636-1621-4028-96dd-afd7afac8356",
+        Id = "ab392c44-03f1-49b7-90b6-c2d097724efb",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
@@ -7079,7 +7091,7 @@ UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
         Status = AccountingOrderStatus.Authorized,
         TotalAmount = 0D,
         Type = AccountingOrderType.Sales,
-        UpdatedAt = System.DateTime.Parse("2022-02-08T07:22:15.421Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-08T11:49:29.265Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7108,7 +7120,7 @@ var res = await sdk.Accounting.UpdateAccountingOrderAsync(req);
 
 ## UpdateAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -7135,12 +7147,12 @@ UpdateAccountingPaymenttermRequest req = new UpdateAccountingPaymenttermRequest(
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "0e8960d8-4d2b-4e9a-85d1-ca89ea831c0d",
+        Id = "3982fce1-64b8-4240-bc07-1b926ca5684e",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2026-01-08T11:26:40.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-09T05:47:23.294Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7169,7 +7181,7 @@ var res = await sdk.Accounting.UpdateAccountingPaymenttermAsync(req);
 
 ## UpdateAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -7212,7 +7224,7 @@ var res = await sdk.Accounting.UpdateAccountingProjectAsync(req);
 
 ## UpdateAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -7243,7 +7255,7 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "EUR",
-        Id = "429f5c00-e125-40a8-a449-ce1df3b41643",
+        Id = "835423df-62d9-4cef-8316-6dcb624cae5b",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         PostedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
@@ -7257,7 +7269,7 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         },
         Status = AccountingPurchaseorderStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-08-11T06:02:15.177Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-08-11T08:29:00.133Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7286,7 +7298,7 @@ var res = await sdk.Accounting.UpdateAccountingPurchaseorderAsync(req);
 
 ## UpdateAccountingQuote
 
-Update a quote
+Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
 
 ### Example Usage
 
@@ -7329,7 +7341,7 @@ var res = await sdk.Accounting.UpdateAccountingQuoteAsync(req);
 
 ## UpdateAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -7357,13 +7369,13 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "USD",
         DiscountAmount = 0D,
         Fees = new List<AccountingFee>() {},
         FulfillmentType = FulfillmentType.Other,
-        Id = "e9bd6dcf-1671-4366-b98b-21a061a74103",
+        Id = "8b907ab7-09a0-4c02-ba44-ba9d3703ee79",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "832663",
@@ -7385,7 +7397,7 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
         TaxAmount = 0D,
         TipAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7414,7 +7426,7 @@ var res = await sdk.Accounting.UpdateAccountingSalesorderAsync(req);
 
 ## UpdateAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -7443,7 +7455,7 @@ UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Exempt (0%)",
         EffectiveRate = 0D,
-        Id = "153638a2-a0b9-451a-99ee-9020af19c25c",
+        Id = "fbee78d2-8dd9-49f5-b2b0-6c386af356af",
         IsActive = false,
         IsCompound = false,
         Metadata = new List<AccountingMetadata>() {},
@@ -7452,7 +7464,7 @@ UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
         Region = "KS",
         TotalRate = 0D,
         Type = AccountingTaxrateType.Sales,
-        UpdatedAt = System.DateTime.Parse("2020-02-13T05:10:06.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-13T05:30:54.354Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7481,7 +7493,7 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(req);
 
 ## UpdateAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -7500,12 +7512,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f6598d52-bbff-4e17-b0d3-f017087e1b66",
+        Id = "32fb1f54-43a1-442e-b9f9-f5f5a23e2f40",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "1db0fe0a-d5d0-4da8-9fcd-65621b19b454",
+                Id = "850b4fa3-d5d4-4eb5-98a8-e48959199d81",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -7517,7 +7529,7 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T06:08:36.561Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T06:18:02.228Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -7546,7 +7558,7 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(req);
 
 ## UpdateAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -7568,14 +7580,14 @@ UpdateAccountingVendorcreditRequest req = new UpdateAccountingVendorcreditReques
         BalanceAmount = 0D,
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "844e88e4-7776-4dd7-b0c3-1ad3350e8635",
+        Id = "4b8b71f3-31a6-4c84-9342-1b07a2413fb8",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Volup conatus cruciamentum decor avaritia.",
         PostedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Authorized,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-03T01:44:22.780Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-03T04:36:18.009Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

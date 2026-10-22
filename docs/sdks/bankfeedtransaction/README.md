@@ -13,7 +13,7 @@
 
 ## CreateAccountingBankfeedtransaction
 
-Create a bankfeedtransaction
+Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
 
 ### Example Usage
 
@@ -36,15 +36,15 @@ var res = await sdk.Bankfeedtransaction.CreateAccountingBankfeedtransactionAsync
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-        Id = "fc79b983-0abe-4eb6-a3af-c9f56dbf0ab3",
+        Id = "ee46a0bd-3c94-407c-a8cf-1a15f715a28c",
         IsPending = true,
         MerchantName = "Buckridge - Feest",
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-14T20:08:57.361Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-15T10:35:57.603Z").ToUniversalTime(),
         Reference = "79574105",
-        TransactionAt = System.DateTime.Parse("2022-07-30T08:11:27.080Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-30T09:50:18.933Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-25T01:45:14.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-25T02:32:40.206Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -73,7 +73,7 @@ var res = await sdk.Bankfeedtransaction.CreateAccountingBankfeedtransactionAsync
 
 ## GetAccountingBankfeedtransaction
 
-Retrieve a bankfeedtransaction
+Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +115,7 @@ var res = await sdk.Bankfeedtransaction.GetAccountingBankfeedtransactionAsync(
 
 ## ListAccountingBankfeedtransactions
 
-List all bankfeedtransactions
+Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ var res = await sdk.Bankfeedtransaction.ListAccountingBankfeedtransactionsAsync(
 
 ## PatchAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -180,15 +180,15 @@ PatchAccountingBankfeedtransactionRequest req = new PatchAccountingBankfeedtrans
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-        Id = "4ebd7f02-e046-41c3-a8c3-78081ed49536",
+        Id = "85c392bd-159f-484c-a8f9-b24a8301a996",
         IsPending = true,
         MerchantName = "Buckridge - Feest",
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-14T20:08:57.369Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-15T10:35:57.618Z").ToUniversalTime(),
         Reference = "79574105",
-        TransactionAt = System.DateTime.Parse("2022-07-30T08:11:27.081Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-30T09:50:18.935Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-25T01:45:14.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-25T02:32:40.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -217,7 +217,7 @@ var res = await sdk.Bankfeedtransaction.PatchAccountingBankfeedtransactionAsync(
 
 ## RemoveAccountingBankfeedtransaction
 
-Remove a bankfeedtransaction
+Deletes the AccountingBankfeedtransaction identified by `id`.
 
 ### Example Usage
 
@@ -257,7 +257,7 @@ var res = await sdk.Bankfeedtransaction.RemoveAccountingBankfeedtransactionAsync
 
 ## UpdateAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -281,15 +281,15 @@ UpdateAccountingBankfeedtransactionRequest req = new UpdateAccountingBankfeedtra
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-        Id = "4ebd7f02-e046-41c3-a8c3-78081ed49536",
+        Id = "85c392bd-159f-484c-a8f9-b24a8301a996",
         IsPending = true,
         MerchantName = "Buckridge - Feest",
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-14T20:08:57.369Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-15T10:35:57.618Z").ToUniversalTime(),
         Reference = "79574105",
-        TransactionAt = System.DateTime.Parse("2022-07-30T08:11:27.081Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-30T09:50:18.935Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-25T01:45:14.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-25T02:32:40.206Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

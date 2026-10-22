@@ -13,7 +13,7 @@
 
 ## CreateAccountingSalesorder
 
-Create a salesorder
+Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
 
 ### Example Usage
 
@@ -40,13 +40,13 @@ var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-03-25T13:01:27.649Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-03-25T18:23:55.155Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "USD",
         DiscountAmount = 0D,
         Fees = new List<AccountingFee>() {},
         FulfillmentType = FulfillmentType.Other,
-        Id = "0b8650fc-528f-410a-bf3c-5dccaf0fbe81",
+        Id = "213f7ad6-97d2-4c2c-853b-1b4316b62b95",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "832663",
@@ -68,7 +68,7 @@ var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
         TaxAmount = 0D,
         TipAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-03-25T13:01:27.649Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-25T18:23:55.155Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -97,7 +97,7 @@ var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
 
 ## GetAccountingSalesorder
 
-Retrieve a salesorder
+Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -139,7 +139,7 @@ var res = await sdk.Salesorder.GetAccountingSalesorderAsync(
 
 ## ListAccountingSalesorders
 
-List all salesorders
+Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -180,7 +180,7 @@ var res = await sdk.Salesorder.ListAccountingSalesordersAsync(req);
 
 ## PatchAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -208,13 +208,13 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "USD",
         DiscountAmount = 0D,
         Fees = new List<AccountingFee>() {},
         FulfillmentType = FulfillmentType.Other,
-        Id = "e9bd6dcf-1671-4366-b98b-21a061a74103",
+        Id = "8b907ab7-09a0-4c02-ba44-ba9d3703ee79",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "832663",
@@ -236,7 +236,7 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
         TaxAmount = 0D,
         TipAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -265,7 +265,7 @@ var res = await sdk.Salesorder.PatchAccountingSalesorderAsync(req);
 
 ## RemoveAccountingSalesorder
 
-Remove a salesorder
+Deletes the AccountingSalesorder identified by `id`.
 
 ### Example Usage
 
@@ -305,7 +305,7 @@ var res = await sdk.Salesorder.RemoveAccountingSalesorderAsync(
 
 ## UpdateAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -333,13 +333,13 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "USD",
         DiscountAmount = 0D,
         Fees = new List<AccountingFee>() {},
         FulfillmentType = FulfillmentType.Other,
-        Id = "e9bd6dcf-1671-4366-b98b-21a061a74103",
+        Id = "8b907ab7-09a0-4c02-ba44-ba9d3703ee79",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "832663",
@@ -361,7 +361,7 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
         TaxAmount = 0D,
         TipAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-03-25T13:01:27.659Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-25T18:23:55.172Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

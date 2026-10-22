@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a metadata.
         /// </summary>
+        /// <remarks>
+        /// Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
+        /// </remarks>
         /// <param name="metadataMetadata">A <see cref="MetadataMetadata"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a metadata.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single MetadataMetadata by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Metadata.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all metadatas.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of MetadataMetadatas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListMetadataMetadatasRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListMetadataMetadatasResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a metadata.
         /// </summary>
+        /// <remarks>
+        /// Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchMetadataMetadataRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchMetadataMetadataResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a metadata.
         /// </summary>
+        /// <remarks>
+        /// Deletes the MetadataMetadata identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Metadata.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveMetadataMetadataResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a metadata.
         /// </summary>
+        /// <remarks>
+        /// Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateMetadataMetadataRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateMetadataMetadataResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a metadata.
         /// </summary>
+        /// <remarks>
+        /// Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
+        /// </remarks>
         /// <param name="metadataMetadata">A <see cref="MetadataMetadata"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -251,6 +272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a metadata.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single MetadataMetadata by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Metadata.</param>
         /// <param name="fields">Fields to return.</param>
@@ -373,6 +397,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all metadatas.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of MetadataMetadatas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListMetadataMetadatasRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListMetadataMetadatasResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -480,6 +507,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a metadata.
         /// </summary>
+        /// <remarks>
+        /// Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchMetadataMetadataRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchMetadataMetadataResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -593,6 +623,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a metadata.
         /// </summary>
+        /// <remarks>
+        /// Deletes the MetadataMetadata identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Metadata.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveMetadataMetadataResponse"/> response envelope when completed.</returns>
@@ -696,6 +729,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a metadata.
         /// </summary>
+        /// <remarks>
+        /// Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateMetadataMetadataRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateMetadataMetadataResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -13,7 +13,7 @@
 
 ## CreateAccountingVendorcredit
 
-Create a vendorcredit
+Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
 
 ### Example Usage
 
@@ -34,14 +34,14 @@ var res = await sdk.Vendorcredit.CreateAccountingVendorcreditAsync(
         BalanceAmount = 0D,
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "bbd9b920-7ca8-4eb6-bc69-871a2998b308",
+        Id = "e762b667-a5b1-42dd-a051-8be6ae736465",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Volup conatus cruciamentum decor avaritia.",
         PostedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Authorized,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-03T01:44:22.777Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-03T04:36:18.003Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -70,7 +70,7 @@ var res = await sdk.Vendorcredit.CreateAccountingVendorcreditAsync(
 
 ## GetAccountingVendorcredit
 
-Retrieve a vendorcredit
+Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +112,7 @@ var res = await sdk.Vendorcredit.GetAccountingVendorcreditAsync(
 
 ## ListAccountingVendorcredits
 
-List all vendorcredits
+Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +153,7 @@ var res = await sdk.Vendorcredit.ListAccountingVendorcreditsAsync(req);
 
 ## PatchAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -175,14 +175,14 @@ PatchAccountingVendorcreditRequest req = new PatchAccountingVendorcreditRequest(
         BalanceAmount = 0D,
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "844e88e4-7776-4dd7-b0c3-1ad3350e8635",
+        Id = "4b8b71f3-31a6-4c84-9342-1b07a2413fb8",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Volup conatus cruciamentum decor avaritia.",
         PostedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Authorized,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-03T01:44:22.780Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-03T04:36:18.009Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -211,7 +211,7 @@ var res = await sdk.Vendorcredit.PatchAccountingVendorcreditAsync(req);
 
 ## RemoveAccountingVendorcredit
 
-Remove a vendorcredit
+Deletes the AccountingVendorcredit identified by `id`.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ var res = await sdk.Vendorcredit.RemoveAccountingVendorcreditAsync(
 
 ## UpdateAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -273,14 +273,14 @@ UpdateAccountingVendorcreditRequest req = new UpdateAccountingVendorcreditReques
         BalanceAmount = 0D,
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "844e88e4-7776-4dd7-b0c3-1ad3350e8635",
+        Id = "4b8b71f3-31a6-4c84-9342-1b07a2413fb8",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Volup conatus cruciamentum decor avaritia.",
         PostedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Authorized,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-03T01:44:22.780Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-03T04:36:18.009Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
+        /// </remarks>
         /// <param name="atsCompany">A <see cref="AtsCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
+        /// </remarks>
         /// <param name="crmCompany">A company represents an organization that optionally is associated with a deal and/or contacts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
+        /// </remarks>
         /// <param name="hrisCompany">A <see cref="HrisCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -152,6 +173,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -180,6 +204,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -191,6 +218,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -202,6 +232,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -213,6 +246,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -224,6 +260,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsCompanyResponse"/> response envelope when completed.</returns>
@@ -235,6 +274,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmCompanyResponse"/> response envelope when completed.</returns>
@@ -246,6 +288,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisCompanyResponse"/> response envelope when completed.</returns>
@@ -257,6 +302,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -268,6 +316,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -279,6 +330,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -304,6 +358,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
+        /// </remarks>
         /// <param name="atsCompany">A <see cref="AtsCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -432,6 +489,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
+        /// </remarks>
         /// <param name="crmCompany">A company represents an organization that optionally is associated with a deal and/or contacts.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -560,6 +620,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
+        /// </remarks>
         /// <param name="hrisCompany">A <see cref="HrisCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -688,6 +751,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -810,6 +876,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -932,6 +1001,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1054,6 +1126,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAtsCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAtsCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1159,6 +1234,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1382,6 +1460,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1487,6 +1568,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1598,6 +1682,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1709,6 +1796,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1820,6 +1910,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AtsCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAtsCompanyResponse"/> response envelope when completed.</returns>
@@ -1923,6 +2016,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmCompanyResponse"/> response envelope when completed.</returns>
@@ -2026,6 +2122,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisCompanyResponse"/> response envelope when completed.</returns>
@@ -2129,6 +2228,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAtsCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAtsCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2240,6 +2342,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2351,6 +2456,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

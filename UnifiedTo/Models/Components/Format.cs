@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The data type of the custom field, which determines how `value` is formatted.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Format : IEquatable<Format>
     {

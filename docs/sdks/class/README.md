@@ -13,7 +13,7 @@
 
 ## CreateLmsClass
 
-Create a class
+Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ var res = await sdk.Class.CreateLmsClassAsync(
     lmsClass: new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "7f117b15-d2bf-48ae-9830-1eeab73d6ef8",
+        Id = "daedefa2-6412-46b6-8bdc-aaeeaa027247",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -54,7 +54,7 @@ var res = await sdk.Class.CreateLmsClassAsync(
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-03T21:44:08.605Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.222Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -83,7 +83,7 @@ var res = await sdk.Class.CreateLmsClassAsync(
 
 ## GetLmsClass
 
-Retrieve a class
+Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -125,7 +125,7 @@ var res = await sdk.Class.GetLmsClassAsync(
 
 ## ListLmsClasses
 
-List all classes
+Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -166,7 +166,7 @@ var res = await sdk.Class.ListLmsClassesAsync(req);
 
 ## PatchLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -186,7 +186,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "04557705-70ca-4af4-a1bd-89f61c3ec274",
+        Id = "4afb8174-d665-464c-b393-097e52580ca5",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -208,7 +208,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-03T21:44:08.619Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.243Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -237,7 +237,7 @@ var res = await sdk.Class.PatchLmsClassAsync(req);
 
 ## RemoveLmsClass
 
-Remove a class
+Deletes the LmsClass identified by `id`.
 
 ### Example Usage
 
@@ -277,7 +277,7 @@ var res = await sdk.Class.RemoveLmsClassAsync(
 
 ## UpdateLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -297,7 +297,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "04557705-70ca-4af4-a1bd-89f61c3ec274",
+        Id = "4afb8174-d665-464c-b393-097e52580ca5",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -319,7 +319,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-03T21:44:08.619Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.243Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

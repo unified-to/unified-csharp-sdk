@@ -13,7 +13,7 @@
 
 ## CreateCommerceItem
 
-Create an item
+Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
         Description = "Decretum vulnero ustulo abeo.",
         Duration = 104D,
         GlobalCode = "978-0-85270-680-0",
-        Id = "2a9440ca-5ea3-4a4b-ba1d-541b2c4b4ea4",
+        Id = "27a08bc0-d226-41e4-a946-ffddca45602b",
         IsActive = false,
         IsFeatured = false,
         IsTaxable = true,
@@ -44,10 +44,10 @@ var res = await sdk.Item.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 876D,
-                Id = "bf760972-4280-4350-a465-10bc7322a355",
+                Id = "d967cd4c-9783-4219-9236-b4826c2c33bd",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "398e34ea-52c5-4d8d-9110-87dad8a78cb6",
+                        Id = "1624b79a-3b65-465b-9df0-c5ed62d40390",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -62,10 +62,10 @@ var res = await sdk.Item.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 651D,
-                Id = "700a824a-d204-45ae-82e5-c9013ca7c37a",
+                Id = "abe2df2f-9b25-4206-9ad2-b9294f53672c",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "c62b7a82-7984-4b15-ac66-f210f1d0f955",
+                        Id = "47694ae6-f3fb-47f6-a38b-26092c05e8ad",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -86,7 +86,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8dc4e756-ba52-4d88-afd6-f23960ff0eb3",
+                Id = "66b5bea7-52e6-46fa-8ab2-bb4b54d6f3ed",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -111,7 +111,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
         },
         TotalStock = 682D,
         Type = "SERVICE",
-        UpdatedAt = System.DateTime.Parse("2022-04-19T12:07:52.299Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-19T20:28:03.147Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 37D,
         WeightUnit = WeightUnit.Oz,
@@ -143,7 +143,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
 
 ## GetCommerceItem
 
-Retrieve an item
+Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ var res = await sdk.Item.GetCommerceItemAsync(
 
 ## ListCommerceItems
 
-List all items
+Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -226,7 +226,7 @@ var res = await sdk.Item.ListCommerceItemsAsync(req);
 
 ## PatchCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -249,7 +249,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         Description = "Decretum vulnero ustulo abeo.",
         Duration = 104D,
         GlobalCode = "978-0-85270-680-0",
-        Id = "889641b6-5238-40b2-8f6e-5efa654f91f2",
+        Id = "72942384-a5e5-4427-8380-a6530866f52d",
         IsActive = false,
         IsFeatured = false,
         IsTaxable = true,
@@ -258,10 +258,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 876D,
-                Id = "3f21a39b-3714-4ea2-b673-9aaa02478b93",
+                Id = "7b725666-cdd3-4d0d-b7c7-ef2c66770786",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "664806ad-0293-42e1-881e-4769875c1799",
+                        Id = "c2c30809-2967-4c40-975a-06c65aaf4b2d",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -276,10 +276,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 651D,
-                Id = "61e74e24-2690-4a98-8764-787c1cf7e4b6",
+                Id = "546b5fac-4bfe-4d89-988b-737d882cdb0d",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "b469541d-ab4c-42af-a1c0-edaa7abb65c5",
+                        Id = "c934a36c-0ea3-4904-878a-f23b0f1776d5",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -300,7 +300,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8088de66-4139-4874-9203-1325a0bc7656",
+                Id = "837957fb-838f-48e4-a434-e62695010966",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -325,7 +325,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         },
         TotalStock = 682D,
         Type = "SERVICE",
-        UpdatedAt = System.DateTime.Parse("2022-04-19T12:07:52.307Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-19T20:28:03.163Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 37D,
         WeightUnit = WeightUnit.Oz,
@@ -357,7 +357,7 @@ var res = await sdk.Item.PatchCommerceItemAsync(req);
 
 ## RemoveCommerceItem
 
-Remove an item
+Deletes the CommerceItem identified by `id`.
 
 ### Example Usage
 
@@ -397,7 +397,7 @@ var res = await sdk.Item.RemoveCommerceItemAsync(
 
 ## UpdateCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -420,7 +420,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         Description = "Decretum vulnero ustulo abeo.",
         Duration = 104D,
         GlobalCode = "978-0-85270-680-0",
-        Id = "889641b6-5238-40b2-8f6e-5efa654f91f2",
+        Id = "72942384-a5e5-4427-8380-a6530866f52d",
         IsActive = false,
         IsFeatured = false,
         IsTaxable = true,
@@ -429,10 +429,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 876D,
-                Id = "3f21a39b-3714-4ea2-b673-9aaa02478b93",
+                Id = "7b725666-cdd3-4d0d-b7c7-ef2c66770786",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "664806ad-0293-42e1-881e-4769875c1799",
+                        Id = "c2c30809-2967-4c40-975a-06c65aaf4b2d",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -447,10 +447,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 651D,
-                Id = "61e74e24-2690-4a98-8764-787c1cf7e4b6",
+                Id = "546b5fac-4bfe-4d89-988b-737d882cdb0d",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "b469541d-ab4c-42af-a1c0-edaa7abb65c5",
+                        Id = "c934a36c-0ea3-4904-878a-f23b0f1776d5",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -471,7 +471,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8088de66-4139-4874-9203-1325a0bc7656",
+                Id = "837957fb-838f-48e4-a434-e62695010966",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -496,7 +496,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         },
         TotalStock = 682D,
         Type = "SERVICE",
-        UpdatedAt = System.DateTime.Parse("2022-04-19T12:07:52.307Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-19T20:28:03.163Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 37D,
         WeightUnit = WeightUnit.Oz,

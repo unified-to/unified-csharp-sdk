@@ -13,7 +13,7 @@
 
 ## CreateComputeDomain
 
-Create a domain
+Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
 
 ### Example Usage
 
@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Domain.CreateComputeDomainAsync(
     computeDomain: new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "605b3624-2c0c-4fe9-89e4-972fe01672a2",
+        Id = "b1acfcda-c7e4-4001-8960-cca9b6ef6e69",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-03T15:21:11.635Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-04T03:42:11.525Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -65,7 +65,7 @@ var res = await sdk.Domain.CreateComputeDomainAsync(
 
 ## GetComputeDomain
 
-Retrieve a domain
+Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -107,7 +107,7 @@ var res = await sdk.Domain.GetComputeDomainAsync(
 
 ## ListComputeDomains
 
-List all domains
+Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -148,7 +148,7 @@ var res = await sdk.Domain.ListComputeDomainsAsync(req);
 
 ## PatchComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -167,12 +167,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeDomainRequest req = new PatchComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "671cc05d-52e7-4294-88b7-d6f8c6cfe76f",
+        Id = "a5ca018e-387d-465b-abe9-34aa9ba21f20",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-03T15:21:11.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-04T03:42:11.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -201,7 +201,7 @@ var res = await sdk.Domain.PatchComputeDomainAsync(req);
 
 ## RemoveComputeDomain
 
-Remove a domain
+Deletes the ComputeDomain identified by `id`.
 
 ### Example Usage
 
@@ -241,7 +241,7 @@ var res = await sdk.Domain.RemoveComputeDomainAsync(
 
 ## UpdateComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -260,12 +260,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeDomainRequest req = new UpdateComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "671cc05d-52e7-4294-88b7-d6f8c6cfe76f",
+        Id = "a5ca018e-387d-465b-abe9-34aa9ba21f20",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-03T15:21:11.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-04T03:42:11.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

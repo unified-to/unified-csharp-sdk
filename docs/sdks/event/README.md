@@ -32,7 +32,7 @@
 
 ## CreateAnalyticsEvent
 
-Create an event
+Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
 
 ### Example Usage
 
@@ -51,13 +51,13 @@ var res = await sdk.Event.CreateAnalyticsEventAsync(
     analyticsEvent: new AnalyticsEvent() {
         CreatedAt = System.DateTime.Parse("2023-06-21T03:13:22.954Z").ToUniversalTime(),
         EventType = EventType.ScreenView,
-        Id = "4cbcba68-a8c0-4a02-afed-2a3d8f373be4",
+        Id = "0227c3f6-b8ec-4f42-ac59-3162994acc52",
         Metadata = new Dictionary<string, PropertyAnalyticsEventMetadata>() {
             { "key", new PropertyAnalyticsEventMetadata() {} },
         },
         Name = "page_view",
         PageUrl = "https://golden-carboxyl.biz",
-        UpdatedAt = System.DateTime.Parse("2023-09-24T16:24:20.839Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T18:06:07.304Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -86,7 +86,7 @@ var res = await sdk.Event.CreateAnalyticsEventAsync(
 
 ## CreateCalendarEvent
 
-Create an event
+Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
 
 ### Example Usage
 
@@ -106,9 +106,9 @@ var res = await sdk.Event.CreateCalendarEventAsync(
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-24T07:02:58.840Z",
+        EndAt = "2020-05-24T09:27:35.704Z",
         HasConference = false,
-        Id = "cdbfaa60-2149-4f15-b0b9-36f9336f89e8",
+        Id = "867d2a4d-54e6-4368-9b84-20aa3e2512b4",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -118,15 +118,15 @@ var res = await sdk.Event.CreateCalendarEventAsync(
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 4D,
-                EndAt = System.DateTime.Parse("2025-03-24T15:53:53.524Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-03-25T08:47:47.514Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-02-02T18:55:50.489Z",
+                    "2024-02-03T08:24:57.655Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Yearly,
                 IncludedDates = new List<string>() {
-                    "2023-07-07T01:37:04.505Z",
-                    "2025-01-23T21:52:51.959Z",
-                    "2024-04-01T23:51:48.387Z",
+                    "2023-07-07T13:22:25.990Z",
+                    "2025-01-24T14:17:20.637Z",
+                    "2024-04-02T13:50:04.757Z",
                 },
                 Interval = 7D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -463,11 +463,11 @@ var res = await sdk.Event.CreateCalendarEventAsync(
                 WeekStart = WeekStart.Tu,
             },
         },
-        StartAt = "2020-05-23T21:49:21.469Z",
+        StartAt = "2020-05-24T00:13:46.974Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-30T05:25:49.127Z",
+        UpdatedAt = "2020-06-30T08:08:37.148Z",
         WebUrl = "https://another-pinstripe.com",
     },
     connectionId: "<id>"
@@ -497,7 +497,7 @@ var res = await sdk.Event.CreateCalendarEventAsync(
 
 ## CreateCdpEvent
 
-Create an event
+Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
 
 ### Example Usage
 
@@ -539,7 +539,7 @@ var res = await sdk.Event.CreateCdpEventAsync(
 
 ## CreateCrmEvent
 
-Create an event
+Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
 
 ### Example Usage
 
@@ -559,13 +559,13 @@ var res = await sdk.Event.CreateCrmEventAsync(
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T00:59:53.650Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.598Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "93c219bb-1032-4722-9091-6ba16501c012",
+        Id = "539ad616-e6dc-4089-acf9-2d25041d5d7d",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-11T13:12:05.824Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.601Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -594,7 +594,7 @@ var res = await sdk.Event.CreateCrmEventAsync(
 
 ## GetAnalyticsEvent
 
-Retrieve an event
+Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -636,7 +636,7 @@ var res = await sdk.Event.GetAnalyticsEventAsync(
 
 ## GetCalendarEvent
 
-Retrieve an event
+Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -678,7 +678,7 @@ var res = await sdk.Event.GetCalendarEventAsync(
 
 ## GetCdpEvent
 
-Retrieve an event
+Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -720,7 +720,7 @@ var res = await sdk.Event.GetCdpEventAsync(
 
 ## GetClubsEvent
 
-Retrieve an event
+Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -762,7 +762,7 @@ var res = await sdk.Event.GetClubsEventAsync(
 
 ## GetCrmEvent
 
-Retrieve an event
+Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -804,7 +804,7 @@ var res = await sdk.Event.GetCrmEventAsync(
 
 ## ListAnalyticsEvents
 
-List all events
+Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -845,7 +845,7 @@ var res = await sdk.Event.ListAnalyticsEventsAsync(req);
 
 ## ListCalendarEvents
 
-List all events
+Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -886,7 +886,7 @@ var res = await sdk.Event.ListCalendarEventsAsync(req);
 
 ## ListCdpEvents
 
-List all events
+Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -927,7 +927,7 @@ var res = await sdk.Event.ListCdpEventsAsync(req);
 
 ## ListClubsEvents
 
-List all events
+Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -968,7 +968,7 @@ var res = await sdk.Event.ListClubsEventsAsync(req);
 
 ## ListCrmEvents
 
-List all events
+Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1009,7 +1009,7 @@ var res = await sdk.Event.ListCrmEventsAsync(req);
 
 ## PatchCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1030,9 +1030,9 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-24T07:02:58.844Z",
+        EndAt = "2020-05-24T09:27:35.710Z",
         HasConference = false,
-        Id = "a08b9a13-08d1-43b9-952d-01ffc5ab5ec5",
+        Id = "be2e4527-6277-4c21-aa57-40084d360912",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -1042,15 +1042,15 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 4D,
-                EndAt = System.DateTime.Parse("2025-03-24T15:53:53.548Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-03-25T08:47:47.554Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-02-02T18:55:50.508Z",
+                    "2024-02-03T08:24:57.687Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Yearly,
                 IncludedDates = new List<string>() {
-                    "2023-07-07T01:37:04.521Z",
-                    "2025-01-23T21:52:51.981Z",
-                    "2024-04-01T23:51:48.407Z",
+                    "2023-07-07T13:22:26.018Z",
+                    "2025-01-24T14:17:20.676Z",
+                    "2024-04-02T13:50:04.790Z",
                 },
                 Interval = 7D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1387,11 +1387,11 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
                 WeekStart = WeekStart.Tu,
             },
         },
-        StartAt = "2020-05-23T21:49:21.473Z",
+        StartAt = "2020-05-24T00:13:46.980Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-30T05:25:49.131Z",
+        UpdatedAt = "2020-06-30T08:08:37.155Z",
         WebUrl = "https://another-pinstripe.com",
     },
     ConnectionId = "<id>",
@@ -1421,7 +1421,7 @@ var res = await sdk.Event.PatchCalendarEventAsync(req);
 
 ## PatchCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1464,7 +1464,7 @@ var res = await sdk.Event.PatchCdpEventAsync(req);
 
 ## PatchCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1485,13 +1485,13 @@ PatchCrmEventRequest req = new PatchCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T00:59:53.674Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.625Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "8c92e6d4-a43b-4881-a3f9-abade98dc352",
+        Id = "606fdccd-fbf1-4444-b5a8-d3ab3cbd498a",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-11T13:12:05.858Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1520,7 +1520,7 @@ var res = await sdk.Event.PatchCrmEventAsync(req);
 
 ## PatchMessagingEvent
 
-Update an event
+Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1543,7 +1543,7 @@ PatchMessagingEventRequest req = new PatchMessagingEventRequest() {
             Name = "",
         },
         CreatedAt = System.DateTime.Parse("2019-05-30T19:44:46.461Z").ToUniversalTime(),
-        Id = "aa1d94db-f54f-4b91-840b-26a6adbdef7e",
+        Id = "660e2307-d1e2-4036-9528-704bb83bb610",
         IsReplacingOriginal = false,
         Metadata = new List<MessagingMetadata>() {},
         Type = MessagingEventType.ButtonClick,
@@ -1575,7 +1575,7 @@ var res = await sdk.Event.PatchMessagingEventAsync(req);
 
 ## RemoveCalendarEvent
 
-Remove an event
+Deletes the CalendarEvent identified by `id`.
 
 ### Example Usage
 
@@ -1615,7 +1615,7 @@ var res = await sdk.Event.RemoveCalendarEventAsync(
 
 ## RemoveCdpEvent
 
-Remove an event
+Deletes the CdpEvent identified by `id`.
 
 ### Example Usage
 
@@ -1655,7 +1655,7 @@ var res = await sdk.Event.RemoveCdpEventAsync(
 
 ## RemoveCrmEvent
 
-Remove an event
+Deletes the CrmEvent identified by `id`.
 
 ### Example Usage
 
@@ -1695,7 +1695,7 @@ var res = await sdk.Event.RemoveCrmEventAsync(
 
 ## UpdateCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1716,9 +1716,9 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-24T07:02:58.844Z",
+        EndAt = "2020-05-24T09:27:35.710Z",
         HasConference = false,
-        Id = "a08b9a13-08d1-43b9-952d-01ffc5ab5ec5",
+        Id = "be2e4527-6277-4c21-aa57-40084d360912",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -1728,15 +1728,15 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 4D,
-                EndAt = System.DateTime.Parse("2025-03-24T15:53:53.548Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-03-25T08:47:47.554Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-02-02T18:55:50.508Z",
+                    "2024-02-03T08:24:57.687Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Yearly,
                 IncludedDates = new List<string>() {
-                    "2023-07-07T01:37:04.521Z",
-                    "2025-01-23T21:52:51.981Z",
-                    "2024-04-01T23:51:48.407Z",
+                    "2023-07-07T13:22:26.018Z",
+                    "2025-01-24T14:17:20.676Z",
+                    "2024-04-02T13:50:04.790Z",
                 },
                 Interval = 7D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2073,11 +2073,11 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
                 WeekStart = WeekStart.Tu,
             },
         },
-        StartAt = "2020-05-23T21:49:21.473Z",
+        StartAt = "2020-05-24T00:13:46.980Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-30T05:25:49.131Z",
+        UpdatedAt = "2020-06-30T08:08:37.155Z",
         WebUrl = "https://another-pinstripe.com",
     },
     ConnectionId = "<id>",
@@ -2107,7 +2107,7 @@ var res = await sdk.Event.UpdateCalendarEventAsync(req);
 
 ## UpdateCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2150,7 +2150,7 @@ var res = await sdk.Event.UpdateCdpEventAsync(req);
 
 ## UpdateCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2171,13 +2171,13 @@ UpdateCrmEventRequest req = new UpdateCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T00:59:53.674Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.625Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "8c92e6d4-a43b-4881-a3f9-abade98dc352",
+        Id = "606fdccd-fbf1-4444-b5a8-d3ab3cbd498a",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-11T13:12:05.858Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.640Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2206,7 +2206,7 @@ var res = await sdk.Event.UpdateCrmEventAsync(req);
 
 ## UpdateMessagingEvent
 
-Update an event
+Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2229,7 +2229,7 @@ UpdateMessagingEventRequest req = new UpdateMessagingEventRequest() {
             Name = "",
         },
         CreatedAt = System.DateTime.Parse("2019-05-30T19:44:46.461Z").ToUniversalTime(),
-        Id = "aa1d94db-f54f-4b91-840b-26a6adbdef7e",
+        Id = "660e2307-d1e2-4036-9528-704bb83bb610",
         IsReplacingOriginal = false,
         Metadata = new List<MessagingMetadata>() {},
         Type = MessagingEventType.ButtonClick,

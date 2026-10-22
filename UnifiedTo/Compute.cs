@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deployment.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
+        /// </remarks>
         /// <param name="computeDeployment">A <see cref="ComputeDeployment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a domain.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
+        /// </remarks>
         /// <param name="computeDomain">A <see cref="ComputeDomain"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an envvar.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
+        /// </remarks>
         /// <param name="computeEnvvar">A <see cref="ComputeEnvvar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an instance.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
+        /// </remarks>
         /// <param name="computeInstance">A <see cref="ComputeInstance"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a key.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
+        /// </remarks>
         /// <param name="computeKey">A <see cref="ComputeKey"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a service.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
+        /// </remarks>
         /// <param name="computeService">A <see cref="ComputeService"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
+        /// </remarks>
         /// <param name="computeSnapshot">A <see cref="ComputeSnapshot"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a template.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
+        /// </remarks>
         /// <param name="computeTemplate">A <see cref="ComputeTemplate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a volume.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
+        /// </remarks>
         /// <param name="computeVolume">A <see cref="ComputeVolume"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a deployment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deployment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a domain.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Domain.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an envvar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a gputype.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeGputype by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Gputype.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an instance.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instance.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a key.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Key.</param>
         /// <param name="fields">Fields to return.</param>
@@ -312,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a region.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeRegion by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Region.</param>
         /// <param name="fields">Fields to return.</param>
@@ -331,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a service.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Service.</param>
         /// <param name="fields">Fields to return.</param>
@@ -350,6 +401,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <param name="fields">Fields to return.</param>
@@ -369,6 +423,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <param name="fields">Fields to return.</param>
@@ -388,6 +445,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a volume.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <param name="fields">Fields to return.</param>
@@ -407,6 +467,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all deployments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeDeploymentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeDeploymentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -418,6 +481,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all domains.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeDomainsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -429,6 +495,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all envvars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeEnvvarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeEnvvarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -440,6 +509,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all gputypes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeGputypes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeGputypesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeGputypesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -451,6 +523,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all instances.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeInstancesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeInstancesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -462,6 +537,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all keys.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeKeysRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeKeysResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -473,6 +551,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all regions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeRegions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeRegionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeRegionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -484,6 +565,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all services.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeServicesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeServicesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -495,6 +579,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all snapshots.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeSnapshotsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeSnapshotsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -506,6 +593,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all templates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeTemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeTemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -517,6 +607,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all usages.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeUsages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeUsagesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeUsagesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -528,6 +621,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all volumes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeVolumesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeVolumesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -539,6 +635,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deployment.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeDeploymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeDeploymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -550,6 +649,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a domain.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeDomainRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeDomainResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -561,6 +663,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -572,6 +677,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instance.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeInstanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeInstanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -583,6 +691,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a key.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeKeyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeKeyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -594,6 +705,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a service.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeServiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeServiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -605,6 +719,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -616,6 +733,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -627,6 +747,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a deployment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeDeployment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deployment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeDeploymentResponse"/> response envelope when completed.</returns>
@@ -638,6 +761,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a domain.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeDomain identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Domain.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeDomainResponse"/> response envelope when completed.</returns>
@@ -649,6 +775,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an envvar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeEnvvar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeEnvvarResponse"/> response envelope when completed.</returns>
@@ -660,6 +789,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an instance.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeInstance identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instance.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeInstanceResponse"/> response envelope when completed.</returns>
@@ -671,6 +803,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a key.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeKey identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Key.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeKeyResponse"/> response envelope when completed.</returns>
@@ -682,6 +817,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a service.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeService identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Service.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeServiceResponse"/> response envelope when completed.</returns>
@@ -693,6 +831,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeSnapshot identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeSnapshotResponse"/> response envelope when completed.</returns>
@@ -704,6 +845,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a template.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeTemplate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeTemplateResponse"/> response envelope when completed.</returns>
@@ -715,6 +859,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a volume.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeVolume identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeVolumeResponse"/> response envelope when completed.</returns>
@@ -726,6 +873,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deployment.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeDeploymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeDeploymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -739,6 +889,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a domain.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeDomainRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeDomainResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -750,6 +903,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -761,6 +917,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instance.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeInstanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeInstanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -772,6 +931,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a key.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeKeyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeKeyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -783,6 +945,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a service.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeServiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeServiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -794,6 +959,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -805,6 +973,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -830,6 +1001,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deployment.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
+        /// </remarks>
         /// <param name="computeDeployment">A <see cref="ComputeDeployment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -958,6 +1132,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a domain.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
+        /// </remarks>
         /// <param name="computeDomain">A <see cref="ComputeDomain"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1086,6 +1263,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an envvar.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
+        /// </remarks>
         /// <param name="computeEnvvar">A <see cref="ComputeEnvvar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1214,6 +1394,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an instance.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
+        /// </remarks>
         /// <param name="computeInstance">A <see cref="ComputeInstance"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1342,6 +1525,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a key.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
+        /// </remarks>
         /// <param name="computeKey">A <see cref="ComputeKey"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1470,6 +1656,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a service.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
+        /// </remarks>
         /// <param name="computeService">A <see cref="ComputeService"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1598,6 +1787,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
+        /// </remarks>
         /// <param name="computeSnapshot">A <see cref="ComputeSnapshot"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1726,6 +1918,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a template.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
+        /// </remarks>
         /// <param name="computeTemplate">A <see cref="ComputeTemplate"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1854,6 +2049,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a volume.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
+        /// </remarks>
         /// <param name="computeVolume">A <see cref="ComputeVolume"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1982,6 +2180,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a deployment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deployment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2104,6 +2305,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a domain.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Domain.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2226,6 +2430,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an envvar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2348,6 +2555,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a gputype.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeGputype by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Gputype.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2470,6 +2680,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an instance.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instance.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2592,6 +2805,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a key.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Key.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2714,6 +2930,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a region.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeRegion by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Region.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2836,6 +3055,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a service.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Service.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2958,6 +3180,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3080,6 +3305,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3202,6 +3430,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a volume.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3324,6 +3555,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all deployments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeDeploymentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeDeploymentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3431,6 +3665,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all domains.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeDomainsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3536,6 +3773,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all envvars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeEnvvarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeEnvvarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3641,6 +3881,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all gputypes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeGputypes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeGputypesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeGputypesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3746,6 +3989,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all instances.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeInstancesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeInstancesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3851,6 +4097,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all keys.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeKeysRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeKeysResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3956,6 +4205,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all regions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeRegions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeRegionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeRegionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4061,6 +4313,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all services.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeServicesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeServicesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4166,6 +4421,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all snapshots.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeSnapshotsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeSnapshotsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4271,6 +4529,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all templates.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeTemplatesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeTemplatesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4376,6 +4637,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all usages.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeUsages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeUsagesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeUsagesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4481,6 +4745,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all volumes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeVolumesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeVolumesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4586,6 +4853,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deployment.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeDeploymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeDeploymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4699,6 +4969,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a domain.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeDomainRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeDomainResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4810,6 +5083,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4921,6 +5197,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instance.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeInstanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeInstanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5032,6 +5311,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a key.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeKeyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeKeyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5143,6 +5425,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a service.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeServiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeServiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5254,6 +5539,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5365,6 +5653,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5476,6 +5767,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a deployment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeDeployment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deployment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeDeploymentResponse"/> response envelope when completed.</returns>
@@ -5579,6 +5873,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a domain.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeDomain identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Domain.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeDomainResponse"/> response envelope when completed.</returns>
@@ -5682,6 +5979,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an envvar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeEnvvar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeEnvvarResponse"/> response envelope when completed.</returns>
@@ -5785,6 +6085,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an instance.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeInstance identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Instance.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeInstanceResponse"/> response envelope when completed.</returns>
@@ -5888,6 +6191,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a key.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeKey identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Key.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeKeyResponse"/> response envelope when completed.</returns>
@@ -5991,6 +6297,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a service.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeService identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Service.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeServiceResponse"/> response envelope when completed.</returns>
@@ -6094,6 +6403,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a snapshot.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeSnapshot identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Snapshot.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeSnapshotResponse"/> response envelope when completed.</returns>
@@ -6197,6 +6509,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a template.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeTemplate identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Template.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeTemplateResponse"/> response envelope when completed.</returns>
@@ -6300,6 +6615,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a volume.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeVolume identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Volume.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeVolumeResponse"/> response envelope when completed.</returns>
@@ -6403,6 +6721,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deployment.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeDeploymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeDeploymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6516,6 +6837,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a domain.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeDomainRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeDomainResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6627,6 +6951,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6738,6 +7065,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an instance.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeInstanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeInstanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6851,6 +7181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a key.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeKeyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeKeyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6962,6 +7295,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a service.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeServiceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeServiceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7073,6 +7409,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a template.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeTemplateRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeTemplateResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7186,6 +7525,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a volume.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeVolumeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeVolumeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

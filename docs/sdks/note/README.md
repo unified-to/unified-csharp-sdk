@@ -13,7 +13,7 @@
 
 ## CreateTicketingNote
 
-Create a note
+Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
 
 ### Example Usage
 
@@ -32,9 +32,9 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "17918410-082d-4632-b70f-1fe026837c2b",
+        Id = "2872d89a-0ca7-4229-922f-a8b31ba3041b",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.888Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T22:23:48.715Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -63,7 +63,7 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
 
 ## GetTicketingNote
 
-Retrieve a note
+Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -105,7 +105,7 @@ var res = await sdk.Note.GetTicketingNoteAsync(
 
 ## ListTicketingNotes
 
-List all notes
+Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -146,7 +146,7 @@ var res = await sdk.Note.ListTicketingNotesAsync(req);
 
 ## PatchTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -166,9 +166,9 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
+        Id = "89311885-c3d1-40df-a868-f09bdc4d13cc",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T22:23:48.720Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -197,7 +197,7 @@ var res = await sdk.Note.PatchTicketingNoteAsync(req);
 
 ## RemoveTicketingNote
 
-Remove a note
+Deletes the TicketingNote identified by `id`.
 
 ### Example Usage
 
@@ -237,7 +237,7 @@ var res = await sdk.Note.RemoveTicketingNoteAsync(
 
 ## UpdateTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -257,9 +257,9 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
+        Id = "89311885-c3d1-40df-a868-f09bdc4d13cc",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T22:23:48.720Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -13,7 +13,7 @@
 
 ## CreateDatastoreDatabase
 
-Create a database
+Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
 
 ### Example Usage
 
@@ -32,13 +32,13 @@ var res = await sdk.Database.CreateDatastoreDatabaseAsync(
     datastoreDatabase: new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "99107f2c-ef96-448f-b6a8-8de5eabaeba0",
+        Id = "2a092191-c281-4db3-810f-c5ae342fc41e",
         IsActive = true,
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-30T19:58:01.564Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-01T08:12:46.138Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     connectionId: "<id>"
@@ -68,7 +68,7 @@ var res = await sdk.Database.CreateDatastoreDatabaseAsync(
 
 ## GetDatastoreDatabase
 
-Retrieve a database
+Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +110,7 @@ var res = await sdk.Database.GetDatastoreDatabaseAsync(
 
 ## ListDatastoreDatabases
 
-List all databases
+Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -151,7 +151,7 @@ var res = await sdk.Database.ListDatastoreDatabasesAsync(req);
 
 ## PatchDatastoreDatabase
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -171,13 +171,13 @@ PatchDatastoreDatabaseRequest req = new PatchDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "9729a46e-398e-47fc-b46c-8b0c0a64c30c",
+        Id = "1218387b-849e-43cb-adca-0c963394d917",
         IsActive = true,
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-30T19:58:01.570Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-01T08:12:46.146Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     ConnectionId = "<id>",
@@ -207,7 +207,7 @@ var res = await sdk.Database.PatchDatastoreDatabaseAsync(req);
 
 ## RemoveDatastoreDatabase
 
-Remove a database
+Deletes the DatastoreDatabase identified by `id`.
 
 ### Example Usage
 
@@ -247,7 +247,7 @@ var res = await sdk.Database.RemoveDatastoreDatabaseAsync(
 
 ## UpdateDatastoreDatabase
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -267,13 +267,13 @@ UpdateDatastoreDatabaseRequest req = new UpdateDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {
         CreatedAt = System.DateTime.Parse("2019-03-05T14:31:00.223Z").ToUniversalTime(),
         Description = "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-        Id = "9729a46e-398e-47fc-b46c-8b0c0a64c30c",
+        Id = "1218387b-849e-43cb-adca-0c963394d917",
         IsActive = true,
         Metadata = new List<DatastoreMetadata>() {},
         Name = "Rau - O'Reilly",
         Password = "iYLhYwOHm0NLDvI",
         Region = "France",
-        UpdatedAt = System.DateTime.Parse("2023-06-30T19:58:01.570Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-01T08:12:46.146Z").ToUniversalTime(),
         WebUrl = "https://optimal-signature.name",
     },
     ConnectionId = "<id>",

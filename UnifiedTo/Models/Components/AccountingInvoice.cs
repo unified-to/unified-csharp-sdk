@@ -82,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_inclusive_of_tax")]
         public bool? IsInclusiveOfTax { get; set; }
 
+        /// <summary>
+        /// The invoice's line items: what is billed, with the quantity, price and amount of each.
+        /// </summary>
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
 

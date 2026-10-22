@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The current state of the assessment order.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AssessmentOrderStatus : IEquatable<AssessmentOrderStatus>
     {

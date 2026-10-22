@@ -29,7 +29,7 @@
 
 ## CreatePaymentLink
 
-Create a link
+Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
 
 ### Example Usage
 
@@ -50,13 +50,13 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
         CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Savor the tender essence in our Ball, designed for dim culinary adventures",
-        Id = "95ca1701-9a97-40d8-b2b8-14bb3ceded0a",
+        Id = "cc623d08-21a1-4f81-a556-daf8b18e763f",
         IsActive = true,
         IsChargeableNow = true,
         Lineitems = new List<PaymentLineitem>() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "56c5d53f-d803-462c-884b-ed9d672f8437",
+                Id = "0759353a-fa58-41b7-a46a-e8f8bf0f635f",
                 ItemDescription = "Discover the worst new Computer with an exciting mix of Steel ingredients",
                 ItemName = "Soft Marble Cheese",
                 TaxAmount = 0D,
@@ -68,7 +68,7 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
                 DiscountAmount = 424.32D,
-                Id = "19656cb9-33ad-4b91-98ac-a9f22095c884",
+                Id = "9f9a154a-71ef-4b4b-923c-c61b6309d8db",
                 ItemDescription = "Innovative Shoes featuring utilized technology and Cotton construction",
                 ItemName = "Sleek Aluminum Shoes",
                 Notes = "Cervus decretum viridis doloremque.",
@@ -80,7 +80,7 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
             },
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "76f2e426-29cd-4630-8a27-c79166d3c03a",
+                Id = "2c83cfa8-769b-4da1-8630-8fdee783254b",
                 ItemDescription = "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
                 ItemName = "Elegant Concrete Gloves",
                 Notes = "Desipio usque vacuus currus cetera testimonium.",
@@ -93,8 +93,8 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
         },
         Metadata = new List<PaymentMetadata>() {},
         SuccessUrl = "https://tinted-jet.info",
-        UpdatedAt = System.DateTime.Parse("2024-04-13T09:35:36.719Z").ToUniversalTime(),
-        Url = "https://pay.example.com/95ca1701-9a97-40d8-b2b8-14bb3ceded0a",
+        UpdatedAt = System.DateTime.Parse("2024-04-13T15:05:19.053Z").ToUniversalTime(),
+        Url = "https://pay.example.com/cc623d08-21a1-4f81-a556-daf8b18e763f",
     },
     connectionId: "<id>"
 );
@@ -123,7 +123,7 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
 
 ## CreatePaymentPayment
 
-Create a payment
+Creates a PaymentPayment. Provide the unified PaymentPayment fields in the request body; they are mapped to the provider's API. Returns the created PaymentPayment.
 
 ### Example Usage
 
@@ -147,7 +147,7 @@ var res = await sdk.Payment.CreatePaymentPaymentAsync(
         CreatedAt = System.DateTime.Parse("2022-03-10T00:19:42.086Z").ToUniversalTime(),
         Currency = "EUR",
         FeeAmount = 2055.82D,
-        Id = "b7bbe8b6-f9db-43da-96d1-91969ecc1a6d",
+        Id = "f1556270-31dd-46b3-8f20-4187052b03e1",
         Metadata = new List<PaymentMetadata>() {},
         NetAmount = 68824.18D,
         Notes = "Bibo tactus vilicus.",
@@ -159,7 +159,7 @@ var res = await sdk.Payment.CreatePaymentPaymentAsync(
         TipAmount = 0D,
         TotalAmount = 70880D,
         Type = PaymentPaymentType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2025-10-08T00:48:27.474Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-08T17:34:50.949Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -188,7 +188,7 @@ var res = await sdk.Payment.CreatePaymentPaymentAsync(
 
 ## CreatePaymentSubscription
 
-Create a subscription
+Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
         CurrentPeriodStartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         DayOfMonth = 8D,
         Description = "Innovative Mouse featuring important technology and Bamboo construction",
-        Id = "f14da343-454d-46a9-bb8c-00f75a48a8a3",
+        Id = "4fc45c43-ef87-4046-8ab0-4b05393b2772",
         Interval = 1D,
         IntervalUnit = IntervalUnit.Year,
         Lineitems = new List<PaymentLineitem>() {},
@@ -220,7 +220,7 @@ var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
         StartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         Status = PaymentSubscriptionStatus.Active,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-04T12:54:49.598Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-04T15:28:09.065Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -249,7 +249,7 @@ var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
 
 ## GetPaymentLink
 
-Retrieve a link
+Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -291,7 +291,7 @@ var res = await sdk.Payment.GetPaymentLinkAsync(
 
 ## GetPaymentPayment
 
-Retrieve a payment
+Retrieves a single PaymentPayment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -333,7 +333,7 @@ var res = await sdk.Payment.GetPaymentPaymentAsync(
 
 ## GetPaymentPayout
 
-Retrieve a payout
+Retrieves a single PaymentPayout by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -375,7 +375,7 @@ var res = await sdk.Payment.GetPaymentPayoutAsync(
 
 ## GetPaymentRefund
 
-Retrieve a refund
+Retrieves a single PaymentRefund by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -417,7 +417,7 @@ var res = await sdk.Payment.GetPaymentRefundAsync(
 
 ## GetPaymentSubscription
 
-Retrieve a subscription
+Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -459,7 +459,7 @@ var res = await sdk.Payment.GetPaymentSubscriptionAsync(
 
 ## ListPaymentLinks
 
-List all links
+Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -500,7 +500,7 @@ var res = await sdk.Payment.ListPaymentLinksAsync(req);
 
 ## ListPaymentPayments
 
-List all payments
+Returns a list of PaymentPayments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -541,7 +541,7 @@ var res = await sdk.Payment.ListPaymentPaymentsAsync(req);
 
 ## ListPaymentPayouts
 
-List all payouts
+Returns a list of PaymentPayouts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -582,7 +582,7 @@ var res = await sdk.Payment.ListPaymentPayoutsAsync(req);
 
 ## ListPaymentRefunds
 
-List all refunds
+Returns a list of PaymentRefunds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -623,7 +623,7 @@ var res = await sdk.Payment.ListPaymentRefundsAsync(req);
 
 ## ListPaymentSubscriptions
 
-List all subscriptions
+Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -664,7 +664,7 @@ var res = await sdk.Payment.ListPaymentSubscriptionsAsync(req);
 
 ## PatchPaymentLink
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -686,13 +686,13 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
         CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Savor the tender essence in our Ball, designed for dim culinary adventures",
-        Id = "0b342998-9562-4730-bb95-c37b0a89983e",
+        Id = "301bd460-46f0-462f-a2bb-50be8ee51e82",
         IsActive = true,
         IsChargeableNow = true,
         Lineitems = new List<PaymentLineitem>() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "d68633de-488d-4422-b388-0ed2546d244a",
+                Id = "a87314aa-abd1-45dc-a863-52272ff8a597",
                 ItemDescription = "Discover the worst new Computer with an exciting mix of Steel ingredients",
                 ItemName = "Soft Marble Cheese",
                 TaxAmount = 0D,
@@ -704,7 +704,7 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
                 DiscountAmount = 424.32D,
-                Id = "4de4c706-32d9-4863-8f3d-1d981da2ff12",
+                Id = "23f71fda-f274-4567-9449-793471f9d42c",
                 ItemDescription = "Innovative Shoes featuring utilized technology and Cotton construction",
                 ItemName = "Sleek Aluminum Shoes",
                 Notes = "Cervus decretum viridis doloremque.",
@@ -716,7 +716,7 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
             },
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "5d559395-af99-45fd-8ab5-3f542517872b",
+                Id = "c1c8d1de-ce17-4e81-a4ac-96cbd4d761f7",
                 ItemDescription = "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
                 ItemName = "Elegant Concrete Gloves",
                 Notes = "Desipio usque vacuus currus cetera testimonium.",
@@ -729,8 +729,8 @@ PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
         },
         Metadata = new List<PaymentMetadata>() {},
         SuccessUrl = "https://tinted-jet.info",
-        UpdatedAt = System.DateTime.Parse("2024-04-13T09:35:36.724Z").ToUniversalTime(),
-        Url = "https://pay.example.com/0b342998-9562-4730-bb95-c37b0a89983e",
+        UpdatedAt = System.DateTime.Parse("2024-04-13T15:05:19.061Z").ToUniversalTime(),
+        Url = "https://pay.example.com/301bd460-46f0-462f-a2bb-50be8ee51e82",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -759,7 +759,7 @@ var res = await sdk.Payment.PatchPaymentLinkAsync(req);
 
 ## PatchPaymentPayment
 
-Update a payment
+Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
 
 ### Example Usage
 
@@ -784,7 +784,7 @@ PatchPaymentPaymentRequest req = new PatchPaymentPaymentRequest() {
         CreatedAt = System.DateTime.Parse("2022-03-10T00:19:42.086Z").ToUniversalTime(),
         Currency = "EUR",
         FeeAmount = 2055.82D,
-        Id = "f332a50d-5c5c-4af2-bc35-5c1dfee12c1b",
+        Id = "d51d153c-eb00-482f-9a4d-bdea4b213310",
         Metadata = new List<PaymentMetadata>() {},
         NetAmount = 68824.18D,
         Notes = "Bibo tactus vilicus.",
@@ -796,7 +796,7 @@ PatchPaymentPaymentRequest req = new PatchPaymentPaymentRequest() {
         TipAmount = 0D,
         TotalAmount = 70880D,
         Type = PaymentPaymentType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2025-10-08T00:48:27.490Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-08T17:34:50.973Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -825,7 +825,7 @@ var res = await sdk.Payment.PatchPaymentPaymentAsync(req);
 
 ## PatchPaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -849,7 +849,7 @@ PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
         CurrentPeriodStartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         DayOfMonth = 8D,
         Description = "Innovative Mouse featuring important technology and Bamboo construction",
-        Id = "1d5f56eb-9d66-494d-b53f-22c2103a9147",
+        Id = "ed4db1ee-810e-4ac7-8b4b-bbbe6f5af84b",
         Interval = 1D,
         IntervalUnit = IntervalUnit.Year,
         Lineitems = new List<PaymentLineitem>() {},
@@ -858,7 +858,7 @@ PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
         StartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         Status = PaymentSubscriptionStatus.Active,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-04T12:54:49.601Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-04T15:28:09.068Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -887,7 +887,7 @@ var res = await sdk.Payment.PatchPaymentSubscriptionAsync(req);
 
 ## RemovePaymentLink
 
-Remove a link
+Deletes the PaymentLink identified by `id`.
 
 ### Example Usage
 
@@ -927,7 +927,7 @@ var res = await sdk.Payment.RemovePaymentLinkAsync(
 
 ## RemovePaymentPayment
 
-Remove a payment
+Deletes the PaymentPayment identified by `id`.
 
 ### Example Usage
 
@@ -967,7 +967,7 @@ var res = await sdk.Payment.RemovePaymentPaymentAsync(
 
 ## RemovePaymentSubscription
 
-Remove a subscription
+Deletes the PaymentSubscription identified by `id`.
 
 ### Example Usage
 
@@ -1007,7 +1007,7 @@ var res = await sdk.Payment.RemovePaymentSubscriptionAsync(
 
 ## UpdatePaymentLink
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -1029,13 +1029,13 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
         CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
         Currency = "CAD",
         Description = "Savor the tender essence in our Ball, designed for dim culinary adventures",
-        Id = "0b342998-9562-4730-bb95-c37b0a89983e",
+        Id = "301bd460-46f0-462f-a2bb-50be8ee51e82",
         IsActive = true,
         IsChargeableNow = true,
         Lineitems = new List<PaymentLineitem>() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "d68633de-488d-4422-b388-0ed2546d244a",
+                Id = "a87314aa-abd1-45dc-a863-52272ff8a597",
                 ItemDescription = "Discover the worst new Computer with an exciting mix of Steel ingredients",
                 ItemName = "Soft Marble Cheese",
                 TaxAmount = 0D,
@@ -1047,7 +1047,7 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
                 DiscountAmount = 424.32D,
-                Id = "4de4c706-32d9-4863-8f3d-1d981da2ff12",
+                Id = "23f71fda-f274-4567-9449-793471f9d42c",
                 ItemDescription = "Innovative Shoes featuring utilized technology and Cotton construction",
                 ItemName = "Sleek Aluminum Shoes",
                 Notes = "Cervus decretum viridis doloremque.",
@@ -1059,7 +1059,7 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
             },
             new PaymentLineitem() {
                 CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
-                Id = "5d559395-af99-45fd-8ab5-3f542517872b",
+                Id = "c1c8d1de-ce17-4e81-a4ac-96cbd4d761f7",
                 ItemDescription = "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
                 ItemName = "Elegant Concrete Gloves",
                 Notes = "Desipio usque vacuus currus cetera testimonium.",
@@ -1072,8 +1072,8 @@ UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
         },
         Metadata = new List<PaymentMetadata>() {},
         SuccessUrl = "https://tinted-jet.info",
-        UpdatedAt = System.DateTime.Parse("2024-04-13T09:35:36.724Z").ToUniversalTime(),
-        Url = "https://pay.example.com/0b342998-9562-4730-bb95-c37b0a89983e",
+        UpdatedAt = System.DateTime.Parse("2024-04-13T15:05:19.061Z").ToUniversalTime(),
+        Url = "https://pay.example.com/301bd460-46f0-462f-a2bb-50be8ee51e82",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1102,7 +1102,7 @@ var res = await sdk.Payment.UpdatePaymentLinkAsync(req);
 
 ## UpdatePaymentPayment
 
-Update a payment
+Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
 
 ### Example Usage
 
@@ -1127,7 +1127,7 @@ UpdatePaymentPaymentRequest req = new UpdatePaymentPaymentRequest() {
         CreatedAt = System.DateTime.Parse("2022-03-10T00:19:42.086Z").ToUniversalTime(),
         Currency = "EUR",
         FeeAmount = 2055.82D,
-        Id = "f332a50d-5c5c-4af2-bc35-5c1dfee12c1b",
+        Id = "d51d153c-eb00-482f-9a4d-bdea4b213310",
         Metadata = new List<PaymentMetadata>() {},
         NetAmount = 68824.18D,
         Notes = "Bibo tactus vilicus.",
@@ -1139,7 +1139,7 @@ UpdatePaymentPaymentRequest req = new UpdatePaymentPaymentRequest() {
         TipAmount = 0D,
         TotalAmount = 70880D,
         Type = PaymentPaymentType.Invoice,
-        UpdatedAt = System.DateTime.Parse("2025-10-08T00:48:27.490Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-08T17:34:50.973Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1168,7 +1168,7 @@ var res = await sdk.Payment.UpdatePaymentPaymentAsync(req);
 
 ## UpdatePaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -1192,7 +1192,7 @@ UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
         CurrentPeriodStartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         DayOfMonth = 8D,
         Description = "Innovative Mouse featuring important technology and Bamboo construction",
-        Id = "1d5f56eb-9d66-494d-b53f-22c2103a9147",
+        Id = "ed4db1ee-810e-4ac7-8b4b-bbbe6f5af84b",
         Interval = 1D,
         IntervalUnit = IntervalUnit.Year,
         Lineitems = new List<PaymentLineitem>() {},
@@ -1201,7 +1201,7 @@ UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
         StartAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
         Status = PaymentSubscriptionStatus.Active,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-10-04T12:54:49.601Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-04T15:28:09.068Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

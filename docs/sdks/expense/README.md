@@ -19,7 +19,7 @@
 
 ## CreateAccountingExpense
 
-Create an expense
+Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
 
 ### Example Usage
 
@@ -39,13 +39,13 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "6bfcf576-add7-458b-b613-19d5d6cd35cc",
+                Id = "ef8d1217-6586-4b5e-a431-2d2d80b2363b",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "292d1c7f-b917-4bf6-8cf6-50dd87b58abd",
+                Id = "aa8afd30-8fc1-4d2f-997e-eef61a92509e",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -54,10 +54,10 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "a029e98e-b8c5-4cf6-acb0-d8b8a558da1c",
+        Id = "ec7da21d-f359-4fa4-99f7-5217aa24c1c2",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "c78595fd-a880-4d5a-beb7-d5a883cf778b",
+                Id = "afe65feb-ab22-49e6-935c-dbb6a757884e",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -65,7 +65,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "9d7f8487-c0fe-4dfe-92a0-1de1eb0afe4a",
+                Id = "897190bc-abf2-40c5-b26f-a97f7599ac00",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -73,7 +73,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "6cb1d4be-ce47-4944-ad2f-f0232cbc0b64",
+                Id = "db50e25d-e56e-466d-8e41-57605de361de",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -82,7 +82,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "00b18a0c-7338-4861-98c3-c560b1fbffce",
+                Id = "fdb8abcc-792e-43da-8eb9-b384739595f8",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -90,7 +90,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "0580d0b1-5320-4b56-8927-edb50f7597df",
+                Id = "9972215c-4159-4501-84b7-6b44c836125b",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -106,7 +106,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.342Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T08:04:13.496Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -135,7 +135,7 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
 
 ## CreateLegalExpense
 
-Create an expense
+Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ var res = await sdk.Expense.CreateLegalExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "97aef49d-e6ae-4f42-b72f-0f4640914372",
+        Id = "0ffb5978-1521-40f4-9bbe-c5cbc9217b1e",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -164,7 +164,7 @@ var res = await sdk.Expense.CreateLegalExpenseAsync(
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.179Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-31T11:50:10.543Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -193,7 +193,7 @@ var res = await sdk.Expense.CreateLegalExpenseAsync(
 
 ## GetAccountingExpense
 
-Retrieve an expense
+Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -235,7 +235,7 @@ var res = await sdk.Expense.GetAccountingExpenseAsync(
 
 ## GetLegalExpense
 
-Retrieve an expense
+Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -277,7 +277,7 @@ var res = await sdk.Expense.GetLegalExpenseAsync(
 
 ## ListAccountingExpenses
 
-List all expenses
+Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -318,7 +318,7 @@ var res = await sdk.Expense.ListAccountingExpensesAsync(req);
 
 ## ListLegalExpenses
 
-List all expenses
+Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -359,7 +359,7 @@ var res = await sdk.Expense.ListLegalExpensesAsync(req);
 
 ## PatchAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -380,13 +380,13 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "f4777b7a-4b23-4c2e-acdf-f7f8251f8575",
+                Id = "4fd5b26d-bef0-42ee-957d-60b0ab7b72d4",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "724ceb69-0018-4d7b-80c7-41fed5941d97",
+                Id = "44ee7e43-a488-4cb2-b362-abd920377de2",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -395,10 +395,10 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "3fded96f-7b44-45db-907c-71d797647361",
+        Id = "55d2fe29-6512-43e2-a8bd-e509d183d79e",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "1bd6c341-8dd4-4a91-976a-5575888b82fc",
+                Id = "1c7765bc-081a-4c29-a789-96d72c01acf3",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -406,7 +406,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "718f3795-b0b0-455a-832c-ab6856a0e478",
+                Id = "824a64ab-23c0-4703-a847-64346cf43907",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -414,7 +414,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "96a5ec63-7756-4361-b496-1c8eff2c0fa8",
+                Id = "3a90c66d-ca50-4411-8d4a-2f7355639913",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -423,7 +423,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "c64853b3-6bdc-41c6-a22b-31238ebc78b1",
+                Id = "9b11393d-f3a2-4940-9d1f-5ee865682c13",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -431,7 +431,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "3ecac429-4a0f-4147-891b-21d4242a32c0",
+                Id = "1d92a98b-c254-4ebd-a54d-c68c11d9e8bb",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -447,7 +447,7 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.343Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T08:04:13.497Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -476,7 +476,7 @@ var res = await sdk.Expense.PatchAccountingExpenseAsync(req);
 
 ## PatchLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -498,7 +498,7 @@ PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "c4beccdb-3c40-4539-9db2-e9bd2eb61f84",
+        Id = "ed6e659c-7917-4f90-8c80-14cfb5313635",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -506,7 +506,7 @@ PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.185Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-31T11:50:10.550Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -535,7 +535,7 @@ var res = await sdk.Expense.PatchLegalExpenseAsync(req);
 
 ## RemoveAccountingExpense
 
-Remove an expense
+Deletes the AccountingExpense identified by `id`.
 
 ### Example Usage
 
@@ -575,7 +575,7 @@ var res = await sdk.Expense.RemoveAccountingExpenseAsync(
 
 ## RemoveLegalExpense
 
-Remove an expense
+Deletes the LegalExpense identified by `id`.
 
 ### Example Usage
 
@@ -615,7 +615,7 @@ var res = await sdk.Expense.RemoveLegalExpenseAsync(
 
 ## UpdateAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -636,13 +636,13 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://rubbery-couch.biz/",
-                Id = "f4777b7a-4b23-4c2e-acdf-f7f8251f8575",
+                Id = "4fd5b26d-bef0-42ee-957d-60b0ab7b72d4",
                 MimeType = "application/pdf",
                 Name = "receipt-9696.pdf",
             },
             new AccountingAttachment() {
                 DownloadUrl = "https://appropriate-smog.biz/",
-                Id = "724ceb69-0018-4d7b-80c7-41fed5941d97",
+                Id = "44ee7e43-a488-4cb2-b362-abd920377de2",
                 MimeType = "application/pdf",
                 Name = "receipt-9696-1.pdf",
             },
@@ -651,10 +651,10 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "EXP-38303",
-        Id = "3fded96f-7b44-45db-907c-71d797647361",
+        Id = "55d2fe29-6512-43e2-a8bd-e509d183d79e",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "1bd6c341-8dd4-4a91-976a-5575888b82fc",
+                Id = "1c7765bc-081a-4c29-a789-96d72c01acf3",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 364.74D,
@@ -662,7 +662,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "718f3795-b0b0-455a-832c-ab6856a0e478",
+                Id = "824a64ab-23c0-4703-a847-64346cf43907",
                 ItemName = "Client dinner",
                 TaxAmount = 0D,
                 TotalAmount = 258.35D,
@@ -670,7 +670,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "96a5ec63-7756-4361-b496-1c8eff2c0fa8",
+                Id = "3a90c66d-ca50-4411-8d4a-2f7355639913",
                 ItemName = "Conference ticket",
                 Notes = "Casus umquam conicio cinis demitto sint.",
                 TaxAmount = 0D,
@@ -679,7 +679,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "c64853b3-6bdc-41c6-a22b-31238ebc78b1",
+                Id = "9b11393d-f3a2-4940-9d1f-5ee865682c13",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 157.04D,
@@ -687,7 +687,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "3ecac429-4a0f-4147-891b-21d4242a32c0",
+                Id = "1d92a98b-c254-4ebd-a54d-c68c11d9e8bb",
                 ItemName = "Hotel",
                 TaxAmount = 0D,
                 TotalAmount = 164.02D,
@@ -703,7 +703,7 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         TaxAmount = 0D,
         TotalAmount = 972.29D,
         Type = AccountingExpenseType.Company,
-        UpdatedAt = System.DateTime.Parse("2020-09-02T07:17:47.343Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-02T08:04:13.497Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -732,7 +732,7 @@ var res = await sdk.Expense.UpdateAccountingExpenseAsync(req);
 
 ## UpdateLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -754,7 +754,7 @@ UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         Currency = "MVR",
         Description = "Temporibus agnitio sui.",
-        Id = "c4beccdb-3c40-4539-9db2-e9bd2eb61f84",
+        Id = "ed6e659c-7917-4f90-8c80-14cfb5313635",
         IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
         IsBilled = false,
         Metadata = new List<LegalMetadata>() {},
@@ -762,7 +762,7 @@ UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
         Quantity = 3D,
         TotalAmount = 300D,
         Type = LegalExpenseType.Other,
-        UpdatedAt = System.DateTime.Parse("2024-03-30T23:30:33.185Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-31T11:50:10.550Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

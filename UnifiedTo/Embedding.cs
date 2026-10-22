@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an embedding.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
+        /// </remarks>
         /// <param name="genaiEmbedding">A <see cref="GenaiEmbedding"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -60,6 +63,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an embedding.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
+        /// </remarks>
         /// <param name="genaiEmbedding">A <see cref="GenaiEmbedding"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>

@@ -35,6 +35,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<DatastoreMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The database's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

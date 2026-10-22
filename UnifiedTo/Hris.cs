@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an attendance.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
+        /// </remarks>
         /// <param name="hrisAttendance">Also called timesheets.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
+        /// </remarks>
         /// <param name="hrisBankaccount">A <see cref="HrisBankaccount"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a benefit.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
+        /// </remarks>
         /// <param name="hrisBenefit">Company-wide benefit plans available to employees.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
+        /// </remarks>
         /// <param name="hrisCompany">A <see cref="HrisCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deduction.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
+        /// </remarks>
         /// <param name="hrisDeduction">Employee-specific deduction/benefit enrolment.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a device.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
+        /// </remarks>
         /// <param name="hrisDevice">A <see cref="HrisDevice"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
+        /// </remarks>
         /// <param name="hrisDocument">A <see cref="HrisDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an earning.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
+        /// </remarks>
         /// <param name="hrisEarning">A <see cref="HrisEarning"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an employee.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
+        /// </remarks>
         /// <param name="hrisEmployee">A <see cref="HrisEmployee"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
+        /// </remarks>
         /// <param name="hrisGroup">A <see cref="HrisGroup"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
+        /// </remarks>
         /// <param name="hrisJob">A <see cref="HrisJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
+        /// </remarks>
         /// <param name="hrisLocation">A <see cref="HrisLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a taxonomy.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
+        /// </remarks>
         /// <param name="hrisTaxonomy">A <see cref="HrisTaxonomy"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
+        /// </remarks>
         /// <param name="hrisTimeoff">A <see cref="HrisTimeoff"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
+        /// </remarks>
         /// <param name="hrisTimeshift">A <see cref="HrisTimeshift"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -312,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an attendance.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Attendance.</param>
         /// <param name="fields">Fields to return.</param>
@@ -331,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankaccount.</param>
         /// <param name="fields">Fields to return.</param>
@@ -350,6 +401,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a benefit.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Benefit.</param>
         /// <param name="fields">Fields to return.</param>
@@ -369,6 +423,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -388,6 +445,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a deduction.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deduction.</param>
         /// <param name="fields">Fields to return.</param>
@@ -407,6 +467,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a device.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Device.</param>
         /// <param name="fields">Fields to return.</param>
@@ -426,6 +489,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -445,6 +511,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an earning.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Earning.</param>
         /// <param name="fields">Fields to return.</param>
@@ -464,6 +533,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an employee.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Employee.</param>
         /// <param name="fields">Fields to return.</param>
@@ -483,6 +555,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <param name="fields">Fields to return.</param>
@@ -502,6 +577,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -521,6 +599,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -540,6 +621,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a paycode.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisPaycode by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paycode.</param>
         /// <param name="fields">Fields to return.</param>
@@ -559,6 +643,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payroll.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisPayroll by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payroll.</param>
         /// <param name="fields">Fields to return.</param>
@@ -578,6 +665,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payslip.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisPayslip by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payslip.</param>
         /// <param name="fields">Fields to return.</param>
@@ -597,6 +687,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a taxonomy.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Taxonomy.</param>
         /// <param name="fields">Fields to return.</param>
@@ -616,6 +709,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeoff.</param>
         /// <param name="fields">Fields to return.</param>
@@ -635,6 +731,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeshift.</param>
         /// <param name="fields">Fields to return.</param>
@@ -654,6 +753,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all attendances.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisAttendancesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisAttendancesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -665,6 +767,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankaccounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisBankaccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisBankaccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -676,6 +781,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all benefits.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisBenefitsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisBenefitsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -687,6 +795,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -698,6 +809,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all deductions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDeductionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDeductionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -709,6 +823,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all devices.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDevicesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDevicesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -720,6 +837,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -731,6 +851,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all earnings.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisEarningsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisEarningsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -742,6 +865,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all employees.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisEmployeesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisEmployeesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -753,6 +879,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisGroupsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisGroupsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -764,6 +893,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -775,6 +907,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -786,6 +921,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all paycodes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisPaycodes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisPaycodesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisPaycodesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -797,6 +935,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payrolls.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisPayrolls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisPayrollsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisPayrollsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -808,6 +949,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payslips.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisPayslips. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisPayslipsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisPayslipsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -819,6 +963,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all taxonomies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisTaxonomiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisTaxonomiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -830,6 +977,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all timeoffs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisTimeoffsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisTimeoffsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -841,6 +991,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all timeshifts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisTimeshiftsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisTimeshiftsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -852,6 +1005,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an attendance.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisAttendanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisAttendanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -863,6 +1019,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisBankaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisBankaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -874,6 +1033,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a benefit.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisBenefitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisBenefitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -885,6 +1047,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -896,6 +1061,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deduction.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDeductionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDeductionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -907,6 +1075,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a device.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDeviceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDeviceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -918,6 +1089,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -929,6 +1103,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an earning.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisEarningRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisEarningResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -940,6 +1117,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an employee.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisEmployeeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisEmployeeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -951,6 +1131,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -962,6 +1145,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -973,6 +1159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -984,6 +1173,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisTimeoffRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisTimeoffResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -995,6 +1187,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisTimeshiftRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisTimeshiftResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1006,6 +1201,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an attendance.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisAttendance identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Attendance.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisAttendanceResponse"/> response envelope when completed.</returns>
@@ -1017,6 +1215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisBankaccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankaccount.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisBankaccountResponse"/> response envelope when completed.</returns>
@@ -1028,6 +1229,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a benefit.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisBenefit identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Benefit.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisBenefitResponse"/> response envelope when completed.</returns>
@@ -1039,6 +1243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisCompanyResponse"/> response envelope when completed.</returns>
@@ -1050,6 +1257,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a deduction.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDeduction identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deduction.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDeductionResponse"/> response envelope when completed.</returns>
@@ -1061,6 +1271,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a device.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDevice identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Device.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDeviceResponse"/> response envelope when completed.</returns>
@@ -1072,6 +1285,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDocumentResponse"/> response envelope when completed.</returns>
@@ -1083,6 +1299,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an earning.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisEarning identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Earning.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisEarningResponse"/> response envelope when completed.</returns>
@@ -1094,6 +1313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an employee.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisEmployee identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Employee.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisEmployeeResponse"/> response envelope when completed.</returns>
@@ -1105,6 +1327,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a group.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisGroup identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisGroupResponse"/> response envelope when completed.</returns>
@@ -1116,6 +1341,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisJobResponse"/> response envelope when completed.</returns>
@@ -1127,6 +1355,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisLocationResponse"/> response envelope when completed.</returns>
@@ -1138,6 +1369,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisTimeoff identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeoff.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisTimeoffResponse"/> response envelope when completed.</returns>
@@ -1149,6 +1383,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisTimeshift identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeshift.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisTimeshiftResponse"/> response envelope when completed.</returns>
@@ -1160,6 +1397,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an attendance.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisAttendanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisAttendanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1171,6 +1411,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisBankaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisBankaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1182,6 +1425,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a benefit.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisBenefitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisBenefitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1193,6 +1439,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1204,6 +1453,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deduction.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDeductionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDeductionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1215,6 +1467,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a device.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDeviceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDeviceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1226,6 +1481,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1237,6 +1495,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an earning.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisEarningRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisEarningResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1248,6 +1509,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an employee.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisEmployeeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisEmployeeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1259,6 +1523,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1270,6 +1537,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1281,6 +1551,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1292,6 +1565,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisTimeoffRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisTimeoffResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1303,6 +1579,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisTimeshiftRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisTimeshiftResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1328,6 +1607,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an attendance.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
+        /// </remarks>
         /// <param name="hrisAttendance">Also called timesheets.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1456,6 +1738,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
+        /// </remarks>
         /// <param name="hrisBankaccount">A <see cref="HrisBankaccount"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1584,6 +1869,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a benefit.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
+        /// </remarks>
         /// <param name="hrisBenefit">Company-wide benefit plans available to employees.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1712,6 +2000,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
+        /// </remarks>
         /// <param name="hrisCompany">A <see cref="HrisCompany"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1840,6 +2131,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deduction.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
+        /// </remarks>
         /// <param name="hrisDeduction">Employee-specific deduction/benefit enrolment.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1968,6 +2262,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a device.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
+        /// </remarks>
         /// <param name="hrisDevice">A <see cref="HrisDevice"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2096,6 +2393,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
+        /// </remarks>
         /// <param name="hrisDocument">A <see cref="HrisDocument"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2224,6 +2524,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an earning.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
+        /// </remarks>
         /// <param name="hrisEarning">A <see cref="HrisEarning"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2352,6 +2655,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an employee.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
+        /// </remarks>
         /// <param name="hrisEmployee">A <see cref="HrisEmployee"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2480,6 +2786,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
+        /// </remarks>
         /// <param name="hrisGroup">A <see cref="HrisGroup"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2608,6 +2917,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
+        /// </remarks>
         /// <param name="hrisJob">A <see cref="HrisJob"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2736,6 +3048,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
+        /// </remarks>
         /// <param name="hrisLocation">A <see cref="HrisLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2864,6 +3179,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a taxonomy.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
+        /// </remarks>
         /// <param name="hrisTaxonomy">A <see cref="HrisTaxonomy"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2992,6 +3310,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
+        /// </remarks>
         /// <param name="hrisTimeoff">A <see cref="HrisTimeoff"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3120,6 +3441,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
+        /// </remarks>
         /// <param name="hrisTimeshift">A <see cref="HrisTimeshift"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3248,6 +3572,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an attendance.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Attendance.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3370,6 +3697,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankaccount.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3492,6 +3822,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a benefit.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Benefit.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3614,6 +3947,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3736,6 +4072,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a deduction.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deduction.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3858,6 +4197,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a device.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Device.</param>
         /// <param name="fields">Fields to return.</param>
@@ -3980,6 +4322,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a document.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4102,6 +4447,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an earning.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Earning.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4224,6 +4572,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an employee.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Employee.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4346,6 +4697,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4468,6 +4822,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a job.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4590,6 +4947,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4712,6 +5072,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a paycode.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisPaycode by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paycode.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4834,6 +5197,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payroll.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisPayroll by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payroll.</param>
         /// <param name="fields">Fields to return.</param>
@@ -4956,6 +5322,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payslip.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisPayslip by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payslip.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5078,6 +5447,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a taxonomy.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Taxonomy.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5200,6 +5572,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeoff.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5322,6 +5697,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeshift.</param>
         /// <param name="fields">Fields to return.</param>
@@ -5444,6 +5822,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all attendances.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisAttendancesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisAttendancesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5549,6 +5930,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all bankaccounts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisBankaccountsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisBankaccountsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5654,6 +6038,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all benefits.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisBenefitsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisBenefitsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5759,6 +6146,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all companies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisCompaniesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisCompaniesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5864,6 +6254,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all deductions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDeductionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDeductionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5969,6 +6362,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all devices.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDevicesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDevicesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6074,6 +6470,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all documents.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisDocumentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisDocumentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6179,6 +6578,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all earnings.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisEarningsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisEarningsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6284,6 +6686,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all employees.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisEmployeesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisEmployeesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6389,6 +6794,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisGroupsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisGroupsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6494,6 +6902,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all jobs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisJobsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisJobsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6599,6 +7010,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6704,6 +7118,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all paycodes.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisPaycodes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisPaycodesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisPaycodesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6809,6 +7226,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payrolls.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisPayrolls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisPayrollsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisPayrollsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6914,6 +7334,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payslips.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisPayslips. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisPayslipsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisPayslipsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7019,6 +7442,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all taxonomies.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisTaxonomiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisTaxonomiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7124,6 +7550,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all timeoffs.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisTimeoffsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisTimeoffsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7229,6 +7658,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all timeshifts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHrisTimeshiftsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHrisTimeshiftsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7334,6 +7766,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an attendance.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisAttendanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisAttendanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7445,6 +7880,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisBankaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisBankaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7556,6 +7994,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a benefit.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisBenefitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisBenefitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7667,6 +8108,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7778,6 +8222,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deduction.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDeductionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDeductionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -7889,6 +8336,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a device.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDeviceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDeviceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8000,6 +8450,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8111,6 +8564,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an earning.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisEarningRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisEarningResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8222,6 +8678,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an employee.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisEmployeeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisEmployeeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8333,6 +8792,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8444,6 +8906,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8555,6 +9020,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8666,6 +9134,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisTimeoffRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisTimeoffResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8777,6 +9248,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchHrisTimeshiftRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchHrisTimeshiftResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -8888,6 +9362,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an attendance.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisAttendance identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Attendance.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisAttendanceResponse"/> response envelope when completed.</returns>
@@ -8991,6 +9468,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisBankaccount identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Bankaccount.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisBankaccountResponse"/> response envelope when completed.</returns>
@@ -9094,6 +9574,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a benefit.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisBenefit identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Benefit.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisBenefitResponse"/> response envelope when completed.</returns>
@@ -9197,6 +9680,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a company.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisCompany identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Company.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisCompanyResponse"/> response envelope when completed.</returns>
@@ -9300,6 +9786,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a deduction.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDeduction identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Deduction.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDeductionResponse"/> response envelope when completed.</returns>
@@ -9403,6 +9892,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a device.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDevice identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Device.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDeviceResponse"/> response envelope when completed.</returns>
@@ -9506,6 +9998,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a document.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisDocument identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Document.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisDocumentResponse"/> response envelope when completed.</returns>
@@ -9609,6 +10104,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an earning.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisEarning identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Earning.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisEarningResponse"/> response envelope when completed.</returns>
@@ -9712,6 +10210,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an employee.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisEmployee identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Employee.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisEmployeeResponse"/> response envelope when completed.</returns>
@@ -9815,6 +10316,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a group.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisGroup identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Group.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisGroupResponse"/> response envelope when completed.</returns>
@@ -9918,6 +10422,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a job.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisJob identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Job.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisJobResponse"/> response envelope when completed.</returns>
@@ -10021,6 +10528,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisLocationResponse"/> response envelope when completed.</returns>
@@ -10124,6 +10634,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisTimeoff identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeoff.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisTimeoffResponse"/> response envelope when completed.</returns>
@@ -10227,6 +10740,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Deletes the HrisTimeshift identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Timeshift.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveHrisTimeshiftResponse"/> response envelope when completed.</returns>
@@ -10330,6 +10846,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an attendance.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisAttendanceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisAttendanceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10441,6 +10960,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a bankaccount.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisBankaccountRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisBankaccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10554,6 +11076,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a benefit.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisBenefitRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisBenefitResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10665,6 +11190,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisCompanyRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisCompanyResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10776,6 +11304,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deduction.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDeductionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDeductionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10887,6 +11418,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a device.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDeviceRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDeviceResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -10998,6 +11532,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a document.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisDocumentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisDocumentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11109,6 +11646,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an earning.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisEarningRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisEarningResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11220,6 +11760,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an employee.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisEmployeeRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisEmployeeResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11331,6 +11874,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisGroupRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisGroupResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11442,6 +11988,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisJobRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisJobResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11553,6 +12102,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11664,6 +12216,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeoff.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisTimeoffRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisTimeoffResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -11775,6 +12330,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a timeshift.
         /// </summary>
+        /// <remarks>
+        /// Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateHrisTimeshiftRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateHrisTimeshiftResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -13,7 +13,7 @@
 
 ## CreateMartechList
 
-Create a list
+Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
 
 ### Example Usage
 
@@ -40,7 +40,7 @@ var res = await sdk.List.CreateMartechListAsync(
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
         Description = "Vilis.",
-        Id = "40154249-285d-4b22-a80f-7d9327fc8c6c",
+        Id = "960709f6-d027-4e9b-9f0a-6d03c6947c4d",
         IsActive = true,
         Language = "ru",
         Metadata = new List<MarketingMetadata>() {},
@@ -50,7 +50,7 @@ var res = await sdk.List.CreateMartechListAsync(
         SenderName = "Blake Kuhn",
         SenderPhone = "359.305.7962 x28115",
         Subject = "Theca caecus copia crebro valeo ulciscor.",
-        UpdatedAt = System.DateTime.Parse("2022-09-13T10:15:38.189Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-13T19:22:14.739Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -79,7 +79,7 @@ var res = await sdk.List.CreateMartechListAsync(
 
 ## GetMartechList
 
-Retrieve a list
+Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -121,7 +121,7 @@ var res = await sdk.List.GetMartechListAsync(
 
 ## ListMartechLists
 
-List all lists
+Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +162,7 @@ var res = await sdk.List.ListMartechListsAsync(req);
 
 ## PatchMartechList
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -190,7 +190,7 @@ PatchMartechListRequest req = new PatchMartechListRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
         Description = "Vilis.",
-        Id = "7b8dae51-d537-4731-89c0-563fb24ec582",
+        Id = "b770449c-2b82-4216-90f1-7c9eb06b63f9",
         IsActive = true,
         Language = "ru",
         Metadata = new List<MarketingMetadata>() {},
@@ -200,7 +200,7 @@ PatchMartechListRequest req = new PatchMartechListRequest() {
         SenderName = "Blake Kuhn",
         SenderPhone = "359.305.7962 x28115",
         Subject = "Theca caecus copia crebro valeo ulciscor.",
-        UpdatedAt = System.DateTime.Parse("2022-09-13T10:15:38.196Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-13T19:22:14.746Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -229,7 +229,7 @@ var res = await sdk.List.PatchMartechListAsync(req);
 
 ## RemoveMartechList
 
-Remove a list
+Deletes the MarketingList identified by `id`.
 
 ### Example Usage
 
@@ -269,7 +269,7 @@ var res = await sdk.List.RemoveMartechListAsync(
 
 ## UpdateMartechList
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -297,7 +297,7 @@ UpdateMartechListRequest req = new UpdateMartechListRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
         Description = "Vilis.",
-        Id = "7b8dae51-d537-4731-89c0-563fb24ec582",
+        Id = "b770449c-2b82-4216-90f1-7c9eb06b63f9",
         IsActive = true,
         Language = "ru",
         Metadata = new List<MarketingMetadata>() {},
@@ -307,7 +307,7 @@ UpdateMartechListRequest req = new UpdateMartechListRequest() {
         SenderName = "Blake Kuhn",
         SenderPhone = "359.305.7962 x28115",
         Subject = "Theca caecus copia crebro valeo ulciscor.",
-        UpdatedAt = System.DateTime.Parse("2022-09-13T10:15:38.196Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-13T19:22:14.746Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

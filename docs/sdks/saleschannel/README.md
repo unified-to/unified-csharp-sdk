@@ -13,7 +13,7 @@
 
 ## CreateCommerceSaleschannel
 
-Create a saleschannel
+Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
 
 ### Example Usage
 
@@ -33,11 +33,11 @@ var res = await sdk.Saleschannel.CreateCommerceSaleschannelAsync(
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "ca129e09-40c7-43a9-8eb1-181cbbbe1048",
+        Id = "d2d2997a-39d8-4b5d-bf5b-4775b960f1cc",
         IsActive = false,
         Metadata = new List<CommerceMetadata>() {},
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-28T00:12:28.025Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-28T14:08:11.879Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -66,7 +66,7 @@ var res = await sdk.Saleschannel.CreateCommerceSaleschannelAsync(
 
 ## GetCommerceSaleschannel
 
-Retrieve a saleschannel
+Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -108,7 +108,7 @@ var res = await sdk.Saleschannel.GetCommerceSaleschannelAsync(
 
 ## ListCommerceSaleschannels
 
-List all saleschannels
+Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -149,7 +149,7 @@ var res = await sdk.Saleschannel.ListCommerceSaleschannelsAsync(req);
 
 ## PatchCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -170,11 +170,11 @@ PatchCommerceSaleschannelRequest req = new PatchCommerceSaleschannelRequest() {
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "eaf469f9-2aac-46ef-a8cb-99a7e279d327",
+        Id = "8e488829-1e13-40fc-809e-7ed91429070f",
         IsActive = false,
         Metadata = new List<CommerceMetadata>() {},
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-28T00:12:28.031Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-28T14:08:11.890Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -203,7 +203,7 @@ var res = await sdk.Saleschannel.PatchCommerceSaleschannelAsync(req);
 
 ## RemoveCommerceSaleschannel
 
-Remove a saleschannel
+Deletes the CommerceSaleschannel identified by `id`.
 
 ### Example Usage
 
@@ -243,7 +243,7 @@ var res = await sdk.Saleschannel.RemoveCommerceSaleschannelAsync(
 
 ## UpdateCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -264,11 +264,11 @@ UpdateCommerceSaleschannelRequest req = new UpdateCommerceSaleschannelRequest() 
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "eaf469f9-2aac-46ef-a8cb-99a7e279d327",
+        Id = "8e488829-1e13-40fc-809e-7ed91429070f",
         IsActive = false,
         Metadata = new List<CommerceMetadata>() {},
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-28T00:12:28.031Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-28T14:08:11.890Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

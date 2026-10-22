@@ -19,7 +19,7 @@
 
 ## CreateAtsJob
 
-Create a job
+Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "7d5507c4-9cd4-4da1-a6be-36327afcaf93",
+        Id = "1b08bbdd-1745-466d-b9c8-ce293116e140",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -77,7 +77,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f98bfe1a-7776-49f4-b6c9-be9936ad7936",
+                Id = "7f914f64-644f-4bba-97f5-c91f58b8ca91",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -92,7 +92,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.441Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-08T16:56:33.391Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -106,14 +106,14 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.147Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T20:57:05.854Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "7ad7e889-0e0c-446b-bbb2-f95c3311c0d3",
+                Id = "a003fd8d-bf97-4d05-a0fc-988719ff0a37",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.849Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-29T04:48:21.510Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -123,7 +123,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "deb78b33-474c-4454-a21b-377f33beb75e",
+                Id = "c87148d5-7a68-4ad8-a855-13cd14822d8e",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -136,7 +136,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "5847fb89-c2e7-416c-9145-4032c16775f5",
+                Id = "a5e9159e-9970-4640-bb98-38ea53a1970a",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -149,7 +149,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "4492b258-d53a-4f07-a0ce-6c99cb70981f",
+                Id = "03cb1255-dc7f-4475-8d3c-b27c18606cdc",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -167,7 +167,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.763Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T03:27:44.927Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -196,7 +196,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
 
 ## CreateHrisJob
 
-Create a job
+Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
 
 ### Example Usage
 
@@ -217,11 +217,11 @@ var res = await sdk.Job.CreateHrisJobAsync(
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "caa7bb67-8e85-4ec3-9795-cc42af2c21c6",
+        Id = "75f20ba4-46a1-4bd1-bea1-5fe4285e9f22",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.108Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T13:34:23.869Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -250,7 +250,7 @@ var res = await sdk.Job.CreateHrisJobAsync(
 
 ## GetAtsJob
 
-Retrieve a job
+Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -292,7 +292,7 @@ var res = await sdk.Job.GetAtsJobAsync(
 
 ## GetHrisJob
 
-Retrieve a job
+Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -334,7 +334,7 @@ var res = await sdk.Job.GetHrisJobAsync(
 
 ## ListAtsJobs
 
-List all jobs
+Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -375,7 +375,7 @@ var res = await sdk.Job.ListAtsJobsAsync(req);
 
 ## ListHrisJobs
 
-List all jobs
+Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -416,7 +416,7 @@ var res = await sdk.Job.ListHrisJobsAsync(req);
 
 ## PatchAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -464,7 +464,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "6eeaab25-327e-4de2-8235-66e5cc2f076c",
+        Id = "2b83fb5e-6b1d-4005-9d0d-ebd1830dc4a3",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -475,7 +475,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "38255357-d7f9-4850-a69a-439b8511c5e3",
+                Id = "80d5fd62-44ab-497a-b01e-33db28429622",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -490,7 +490,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.478Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-08T16:56:33.451Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -504,14 +504,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.186Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T20:57:05.917Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "079379ff-1a12-48ce-b29a-9b93f6400e6e",
+                Id = "acef1ff2-a00e-4dde-a063-3c49449406d9",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.889Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-29T04:48:21.574Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -521,7 +521,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "0f6b8cdf-a2be-45f5-906c-d2469d8d5493",
+                Id = "6a31d893-0ddc-485d-a3ee-8d772519cce2",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -534,7 +534,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "dc06afd1-71bd-4286-8140-f358a0b71982",
+                Id = "c3950db5-0cf3-4a99-a533-a39a9874443a",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -547,7 +547,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "136b91f4-21df-44e8-9ecd-79ff7be1950d",
+                Id = "413f9242-5731-4670-ad99-8210c3616675",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -565,7 +565,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.797Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T03:27:44.981Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -594,7 +594,7 @@ var res = await sdk.Job.PatchAtsJobAsync(req);
 
 ## PatchHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -616,11 +616,11 @@ PatchHrisJobRequest req = new PatchHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "cc9b894a-a561-420c-974c-85c030f2340c",
+        Id = "c4a513d1-9011-47ea-9899-f8c6acde5317",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T13:34:23.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -649,7 +649,7 @@ var res = await sdk.Job.PatchHrisJobAsync(req);
 
 ## RemoveAtsJob
 
-Remove a job
+Deletes the AtsJob identified by `id`.
 
 ### Example Usage
 
@@ -689,7 +689,7 @@ var res = await sdk.Job.RemoveAtsJobAsync(
 
 ## RemoveHrisJob
 
-Remove a job
+Deletes the HrisJob identified by `id`.
 
 ### Example Usage
 
@@ -729,7 +729,7 @@ var res = await sdk.Job.RemoveHrisJobAsync(
 
 ## UpdateAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -777,7 +777,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "6eeaab25-327e-4de2-8235-66e5cc2f076c",
+        Id = "2b83fb5e-6b1d-4005-9d0d-ebd1830dc4a3",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -788,7 +788,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "38255357-d7f9-4850-a69a-439b8511c5e3",
+                Id = "80d5fd62-44ab-497a-b01e-33db28429622",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -803,7 +803,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-07T21:42:43.478Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-08T16:56:33.451Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -817,14 +817,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-02T00:44:46.186Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-02T20:57:05.917Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "079379ff-1a12-48ce-b29a-9b93f6400e6e",
+                Id = "acef1ff2-a00e-4dde-a063-3c49449406d9",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-08-28T08:08:06.889Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-29T04:48:21.574Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -834,7 +834,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "0f6b8cdf-a2be-45f5-906c-d2469d8d5493",
+                Id = "6a31d893-0ddc-485d-a3ee-8d772519cce2",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -847,7 +847,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "dc06afd1-71bd-4286-8140-f358a0b71982",
+                Id = "c3950db5-0cf3-4a99-a533-a39a9874443a",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -860,7 +860,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "136b91f4-21df-44e8-9ecd-79ff7be1950d",
+                Id = "413f9242-5731-4670-ad99-8210c3616675",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -878,7 +878,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:00:32.797Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T03:27:44.981Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -907,7 +907,7 @@ var res = await sdk.Job.UpdateAtsJobAsync(req);
 
 ## UpdateHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -929,11 +929,11 @@ UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "cc9b894a-a561-420c-974c-85c030f2340c",
+        Id = "c4a513d1-9011-47ea-9899-f8c6acde5317",
         IsActive = false,
         Metadata = new List<HrisMetadata>() {},
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-30T05:24:52.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-30T13:34:23.914Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

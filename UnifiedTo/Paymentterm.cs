@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
+        /// </remarks>
         /// <param name="accountingPaymentterm">A <see cref="AccountingPaymentterm"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all paymentterms.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPaymenttermsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPaymenttermsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -78,6 +87,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -91,6 +103,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingPaymentterm identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingPaymenttermResponse"/> response envelope when completed.</returns>
@@ -105,6 +120,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -132,6 +150,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
+        /// </remarks>
         /// <param name="accountingPaymentterm">A <see cref="AccountingPaymentterm"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -260,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <param name="fields">Fields to return.</param>
@@ -382,6 +406,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all paymentterms.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingPaymenttermsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingPaymenttermsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -489,6 +516,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -602,6 +632,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingPaymentterm identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Paymentterm.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingPaymenttermResponse"/> response envelope when completed.</returns>
@@ -708,6 +741,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a paymentterm.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingPaymenttermRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingPaymenttermResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

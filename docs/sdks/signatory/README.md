@@ -13,7 +13,7 @@
 
 ## CreateSigningSignatory
 
-Create a signatory
+Creates a SigningSignatory. Provide the unified SigningSignatory fields in the request body; they are mapped to the provider's API. Returns the created SigningSignatory.
 
 ### Example Usage
 
@@ -32,12 +32,12 @@ var res = await sdk.Signatory.CreateSigningSignatoryAsync(
     signingSignatory: new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "anais.lakin@icloud.com",
-        Id = "4a11fe81-947f-4840-a2b9-47fd950453a9",
+        Id = "1281db60-b3a9-4512-8528-ca643337d488",
         Metadata = new List<SigningMetadata>() {},
         Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Error,
-        UpdatedAt = System.DateTime.Parse("2024-05-17T20:05:23.443Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-05-18T06:05:08.710Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -66,7 +66,7 @@ var res = await sdk.Signatory.CreateSigningSignatoryAsync(
 
 ## GetSigningSignatory
 
-Retrieve a signatory
+Retrieves a single SigningSignatory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -108,7 +108,7 @@ var res = await sdk.Signatory.GetSigningSignatoryAsync(
 
 ## ListSigningSignatories
 
-List all signatories
+Returns a list of SigningSignatories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -149,7 +149,7 @@ var res = await sdk.Signatory.ListSigningSignatoriesAsync(req);
 
 ## PatchSigningSignatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -169,12 +169,12 @@ PatchSigningSignatoryRequest req = new PatchSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "anais.lakin@icloud.com",
-        Id = "fd8b482e-1ea1-43c3-87c1-b8cd0fe06867",
+        Id = "277a9d5f-7c08-4d9c-94b1-dd55a4d83933",
         Metadata = new List<SigningMetadata>() {},
         Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Error,
-        UpdatedAt = System.DateTime.Parse("2024-05-17T20:05:23.448Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-05-18T06:05:08.718Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -203,7 +203,7 @@ var res = await sdk.Signatory.PatchSigningSignatoryAsync(req);
 
 ## RemoveSigningSignatory
 
-Remove a signatory
+Deletes the SigningSignatory identified by `id`.
 
 ### Example Usage
 
@@ -243,7 +243,7 @@ var res = await sdk.Signatory.RemoveSigningSignatoryAsync(
 
 ## UpdateSigningSignatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -263,12 +263,12 @@ UpdateSigningSignatoryRequest req = new UpdateSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "anais.lakin@icloud.com",
-        Id = "fd8b482e-1ea1-43c3-87c1-b8cd0fe06867",
+        Id = "277a9d5f-7c08-4d9c-94b1-dd55a4d83933",
         Metadata = new List<SigningMetadata>() {},
         Name = "Anais Lakin",
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Error,
-        UpdatedAt = System.DateTime.Parse("2024-05-17T20:05:23.448Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-05-18T06:05:08.718Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

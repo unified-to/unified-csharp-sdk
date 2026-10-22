@@ -13,7 +13,7 @@
 
 ## CreateComputeKey
 
-Create a key
+Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
 
 ### Example Usage
 
@@ -31,11 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Key.CreateComputeKeyAsync(
     computeKey: new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "9ebb4465-b6cc-4c3f-a0af-f79ebd46f2c3",
+        Id = "f1e2e71a-90d4-4dd4-976a-6ef025ca6ad1",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.588Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-07T07:10:37.245Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -64,7 +64,7 @@ var res = await sdk.Key.CreateComputeKeyAsync(
 
 ## GetComputeKey
 
-Retrieve a key
+Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -106,7 +106,7 @@ var res = await sdk.Key.GetComputeKeyAsync(
 
 ## ListComputeKeys
 
-List all keys
+Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -147,7 +147,7 @@ var res = await sdk.Key.ListComputeKeysAsync(req);
 
 ## PatchComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -166,11 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeKeyRequest req = new PatchComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "88766066-7c0a-46f8-a094-d43f8a531555",
+        Id = "a0735718-34a8-4986-a957-9ed105cf1a57",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.591Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-07T07:10:37.248Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -199,7 +199,7 @@ var res = await sdk.Key.PatchComputeKeyAsync(req);
 
 ## RemoveComputeKey
 
-Remove a key
+Deletes the ComputeKey identified by `id`.
 
 ### Example Usage
 
@@ -239,7 +239,7 @@ var res = await sdk.Key.RemoveComputeKeyAsync(
 
 ## UpdateComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -258,11 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeKeyRequest req = new UpdateComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "88766066-7c0a-46f8-a094-d43f8a531555",
+        Id = "a0735718-34a8-4986-a957-9ed105cf1a57",
         Metadata = new List<ComputeMetadata>() {},
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-06T23:26:35.591Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-07T07:10:37.248Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

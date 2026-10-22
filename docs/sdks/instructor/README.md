@@ -13,7 +13,7 @@
 
 ## CreateLmsInstructor
 
-Create an instructor
+Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ var res = await sdk.Instructor.CreateLmsInstructorAsync(
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "6278249a-b2fc-4044-989b-83be3300ee32",
+        Id = "6f35b484-6d3f-480d-8239-89d42b6bfc4b",
         ImageUrl = "https://avatars.githubusercontent.com/u/95131132",
         LastName = "Ritchie",
         Metadata = new List<LmsMetadata>() {},
@@ -51,7 +51,7 @@ var res = await sdk.Instructor.CreateLmsInstructorAsync(
             },
         },
         Title = "Regional Security Agent",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T10:32:09.829Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-25T02:48:36.886Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -80,7 +80,7 @@ var res = await sdk.Instructor.CreateLmsInstructorAsync(
 
 ## GetLmsInstructor
 
-Retrieve an instructor
+Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -122,7 +122,7 @@ var res = await sdk.Instructor.GetLmsInstructorAsync(
 
 ## ListLmsInstructors
 
-List all instructors
+Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -163,7 +163,7 @@ var res = await sdk.Instructor.ListLmsInstructorsAsync(req);
 
 ## PatchLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -186,7 +186,7 @@ PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "48252562-e6d1-450a-9a6c-ff0e3a0e2408",
+        Id = "5d5a00fc-7c11-4862-8ecf-5573d8f97ebb",
         ImageUrl = "https://avatars.githubusercontent.com/u/95131132",
         LastName = "Ritchie",
         Metadata = new List<LmsMetadata>() {},
@@ -202,7 +202,7 @@ PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
             },
         },
         Title = "Regional Security Agent",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T10:32:09.842Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-25T02:48:36.898Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -231,7 +231,7 @@ var res = await sdk.Instructor.PatchLmsInstructorAsync(req);
 
 ## RemoveLmsInstructor
 
-Remove an instructor
+Deletes the LmsInstructor identified by `id`.
 
 ### Example Usage
 
@@ -271,7 +271,7 @@ var res = await sdk.Instructor.RemoveLmsInstructorAsync(
 
 ## UpdateLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -294,7 +294,7 @@ UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "48252562-e6d1-450a-9a6c-ff0e3a0e2408",
+        Id = "5d5a00fc-7c11-4862-8ecf-5573d8f97ebb",
         ImageUrl = "https://avatars.githubusercontent.com/u/95131132",
         LastName = "Ritchie",
         Metadata = new List<LmsMetadata>() {},
@@ -310,7 +310,7 @@ UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
             },
         },
         Title = "Regional Security Agent",
-        UpdatedAt = System.DateTime.Parse("2025-07-24T10:32:09.842Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-25T02:48:36.898Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

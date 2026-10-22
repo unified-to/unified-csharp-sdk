@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
+        /// </remarks>
         /// <param name="paymentLink">A <see cref="PaymentLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a payment.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentPayment. Provide the unified PaymentPayment fields in the request body; they are mapped to the provider's API. Returns the created PaymentPayment.
+        /// </remarks>
         /// <param name="paymentPayment">A <see cref="PaymentPayment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a subscription.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
+        /// </remarks>
         /// <param name="paymentSubscription">A <see cref="PaymentSubscription"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentPayment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payout.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentPayout by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payout.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a refund.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentRefund by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Refund.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a subscription.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Subscription.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -190,6 +217,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentPayments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentPaymentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentPaymentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -201,6 +231,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payouts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentPayouts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentPayoutsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentPayoutsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -212,6 +245,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all refunds.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentRefunds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentRefundsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentRefundsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -223,6 +259,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all subscriptions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentSubscriptionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentSubscriptionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -236,6 +275,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -247,6 +289,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a payment.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentPaymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentPaymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -258,6 +303,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a subscription.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentSubscriptionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentSubscriptionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -271,6 +319,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentLinkResponse"/> response envelope when completed.</returns>
@@ -282,6 +333,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a payment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentPayment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentPaymentResponse"/> response envelope when completed.</returns>
@@ -293,6 +347,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a subscription.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentSubscription identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Subscription.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentSubscriptionResponse"/> response envelope when completed.</returns>
@@ -304,6 +361,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -315,6 +375,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a payment.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentPaymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentPaymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -326,6 +389,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a subscription.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentSubscriptionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentSubscriptionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -353,6 +419,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
+        /// </remarks>
         /// <param name="paymentLink">A <see cref="PaymentLink"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -481,6 +550,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a payment.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentPayment. Provide the unified PaymentPayment fields in the request body; they are mapped to the provider's API. Returns the created PaymentPayment.
+        /// </remarks>
         /// <param name="paymentPayment">A <see cref="PaymentPayment"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -609,6 +681,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a subscription.
         /// </summary>
+        /// <remarks>
+        /// Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
+        /// </remarks>
         /// <param name="paymentSubscription">A <see cref="PaymentSubscription"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -737,6 +812,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a link.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <param name="fields">Fields to return.</param>
@@ -859,6 +937,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payment.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentPayment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payment.</param>
         /// <param name="fields">Fields to return.</param>
@@ -981,6 +1062,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payout.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentPayout by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payout.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1103,6 +1187,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a refund.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentRefund by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Refund.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1225,6 +1312,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a subscription.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Subscription.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1347,6 +1437,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all links.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentLinksRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentLinksResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1452,6 +1545,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payments.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentPayments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentPaymentsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentPaymentsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1557,6 +1653,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all payouts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentPayouts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentPayoutsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentPayoutsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1662,6 +1761,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all refunds.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentRefunds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentRefundsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentRefundsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1767,6 +1869,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all subscriptions.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPaymentSubscriptionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentSubscriptionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1874,6 +1979,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1985,6 +2093,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a payment.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentPaymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentPaymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2096,6 +2207,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a subscription.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchPaymentSubscriptionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchPaymentSubscriptionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2209,6 +2323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a link.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentLink identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Link.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentLinkResponse"/> response envelope when completed.</returns>
@@ -2312,6 +2429,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a payment.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentPayment identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Payment.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentPaymentResponse"/> response envelope when completed.</returns>
@@ -2415,6 +2535,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a subscription.
         /// </summary>
+        /// <remarks>
+        /// Deletes the PaymentSubscription identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Subscription.</param>
         /// <returns>An awaitable task that returns a <see cref="RemovePaymentSubscriptionResponse"/> response envelope when completed.</returns>
@@ -2521,6 +2644,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentLinkRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentLinkResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2632,6 +2758,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a payment.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentPaymentRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentPaymentResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2743,6 +2872,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a subscription.
         /// </summary>
+        /// <remarks>
+        /// Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdatePaymentSubscriptionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdatePaymentSubscriptionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

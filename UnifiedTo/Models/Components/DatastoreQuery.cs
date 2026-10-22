@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<DatastoreMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate).
+        /// </summary>
         [JsonProperty("query")]
         public PropertyDatastoreQueryQuery? Query { get; set; }
 

@@ -11,7 +11,7 @@
 
 ## CreateComputeSnapshot
 
-Create a snapshot
+Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
 
 ### Example Usage
 
@@ -29,13 +29,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Snapshot.CreateComputeSnapshotAsync(
     computeSnapshot: new ComputeSnapshot() {
         CreatedAt = System.DateTime.Parse("2021-09-24T14:40:06.110Z").ToUniversalTime(),
-        Id = "06b5b432-936c-4e85-9e31-40805d4a5a94",
+        Id = "c4e452a9-cc50-4f09-9749-9cbe4c7bc624",
         Metadata = new List<ComputeMetadata>() {},
         Name = "snap-alius",
         SizeMb = 169984D,
         Status = ComputeSnapshotStatus.Deleting,
         Type = ComputeSnapshotType.Disk,
-        UpdatedAt = System.DateTime.Parse("2026-03-30T21:39:00.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-31T16:53:17.234Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -64,7 +64,7 @@ var res = await sdk.Snapshot.CreateComputeSnapshotAsync(
 
 ## GetComputeSnapshot
 
-Retrieve a snapshot
+Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -106,7 +106,7 @@ var res = await sdk.Snapshot.GetComputeSnapshotAsync(
 
 ## ListComputeSnapshots
 
-List all snapshots
+Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -147,7 +147,7 @@ var res = await sdk.Snapshot.ListComputeSnapshotsAsync(req);
 
 ## RemoveComputeSnapshot
 
-Remove a snapshot
+Deletes the ComputeSnapshot identified by `id`.
 
 ### Example Usage
 

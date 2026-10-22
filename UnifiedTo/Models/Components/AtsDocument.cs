@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; }
 
+        /// <summary>
+        /// The ID of the candidate the document belongs to (an AtsCandidate ID).
+        /// </summary>
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
@@ -43,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("document_url")]
         public string? DocumentUrl { get; set; }
 
+        /// <summary>
+        /// The document's file name, including its extension (e.g. resume.pdf).
+        /// </summary>
         [JsonProperty("filename")]
         public string? Filename { get; set; }
 
@@ -58,6 +64,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The kind of document.
+        /// </summary>
         [JsonProperty("type")]
         public AtsDocumentType? Type { get; set; }
 

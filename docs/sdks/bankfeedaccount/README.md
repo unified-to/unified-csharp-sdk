@@ -13,7 +13,7 @@
 
 ## CreateAccountingBankfeedaccount
 
-Create a bankfeedaccount
+Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
 
 ### Example Usage
 
@@ -38,12 +38,12 @@ var res = await sdk.Bankfeedaccount.CreateAccountingBankfeedaccountAsync(
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "25a12917-bc5f-4baa-9c29-980c6cb09552",
+        Id = "419be57d-b056-405b-8b55-a33ee9fbfa9f",
         Metadata = new List<AccountingMetadata>() {},
         Name = "Corwin, Donnelly and Connelly Checking",
         RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T20:02:28.553Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-24T04:05:35.525Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -72,7 +72,7 @@ var res = await sdk.Bankfeedaccount.CreateAccountingBankfeedaccountAsync(
 
 ## GetAccountingBankfeedaccount
 
-Retrieve a bankfeedaccount
+Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -114,7 +114,7 @@ var res = await sdk.Bankfeedaccount.GetAccountingBankfeedaccountAsync(
 
 ## ListAccountingBankfeedaccounts
 
-List all bankfeedaccounts
+Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -155,7 +155,7 @@ var res = await sdk.Bankfeedaccount.ListAccountingBankfeedaccountsAsync(req);
 
 ## PatchAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -181,12 +181,12 @@ PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRe
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "fb61cf23-b929-482f-b38a-4000bb95b21c",
+        Id = "2bfbc3f0-08b2-4b72-9eef-a4f51fbab1bf",
         Metadata = new List<AccountingMetadata>() {},
         Name = "Corwin, Donnelly and Connelly Checking",
         RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T20:02:28.556Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-24T04:05:35.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -215,7 +215,7 @@ var res = await sdk.Bankfeedaccount.PatchAccountingBankfeedaccountAsync(req);
 
 ## RemoveAccountingBankfeedaccount
 
-Remove a bankfeedaccount
+Deletes the AccountingBankfeedaccount identified by `id`.
 
 ### Example Usage
 
@@ -255,7 +255,7 @@ var res = await sdk.Bankfeedaccount.RemoveAccountingBankfeedaccountAsync(
 
 ## UpdateAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -281,12 +281,12 @@ UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccount
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "AUD",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "fb61cf23-b929-482f-b38a-4000bb95b21c",
+        Id = "2bfbc3f0-08b2-4b72-9eef-a4f51fbab1bf",
         Metadata = new List<AccountingMetadata>() {},
         Name = "Corwin, Donnelly and Connelly Checking",
         RoutingNumber = "694667752",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-23T20:02:28.556Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-24T04:05:35.532Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

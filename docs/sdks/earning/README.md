@@ -13,7 +13,7 @@
 
 ## CreateHrisEarning
 
-Create an earning
+Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
 
 ### Example Usage
 
@@ -34,12 +34,12 @@ var res = await sdk.Earning.CreateHrisEarningAsync(
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
         Currency = "USD",
         Frequency = HrisEarningFrequency.Semimonthly,
-        Id = "2392f486-6129-4dbb-b7cf-54fe016f277f",
+        Id = "045e0a35-39bd-48b1-b9aa-83d782886fb8",
         Metadata = new List<HrisMetadata>() {},
         Notes = "Deporto truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-25T11:56:12.923Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-25T21:42:13.460Z").ToUniversalTime(),
         Status = HrisEarningStatus.Ended,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T20:35:04.145Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-08T23:28:49.314Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -68,7 +68,7 @@ var res = await sdk.Earning.CreateHrisEarningAsync(
 
 ## GetHrisEarning
 
-Retrieve an earning
+Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +110,7 @@ var res = await sdk.Earning.GetHrisEarningAsync(
 
 ## ListHrisEarnings
 
-List all earnings
+Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -151,7 +151,7 @@ var res = await sdk.Earning.ListHrisEarningsAsync(req);
 
 ## PatchHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -173,12 +173,12 @@ PatchHrisEarningRequest req = new PatchHrisEarningRequest() {
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
         Currency = "USD",
         Frequency = HrisEarningFrequency.Semimonthly,
-        Id = "5774acfc-c290-41bd-ba5d-2143f809c3ff",
+        Id = "cf585d30-c0e9-4085-8b61-55987b8d6689",
         Metadata = new List<HrisMetadata>() {},
         Notes = "Deporto truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-25T11:56:12.928Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-25T21:42:13.467Z").ToUniversalTime(),
         Status = HrisEarningStatus.Ended,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T20:35:04.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-08T23:28:49.316Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -207,7 +207,7 @@ var res = await sdk.Earning.PatchHrisEarningAsync(req);
 
 ## RemoveHrisEarning
 
-Remove an earning
+Deletes the HrisEarning identified by `id`.
 
 ### Example Usage
 
@@ -247,7 +247,7 @@ var res = await sdk.Earning.RemoveHrisEarningAsync(
 
 ## UpdateHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -269,12 +269,12 @@ UpdateHrisEarningRequest req = new UpdateHrisEarningRequest() {
         CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
         Currency = "USD",
         Frequency = HrisEarningFrequency.Semimonthly,
-        Id = "5774acfc-c290-41bd-ba5d-2143f809c3ff",
+        Id = "cf585d30-c0e9-4085-8b61-55987b8d6689",
         Metadata = new List<HrisMetadata>() {},
         Notes = "Deporto truculenter vinum beatae.",
-        StartAt = System.DateTime.Parse("2022-07-25T11:56:12.928Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-07-25T21:42:13.467Z").ToUniversalTime(),
         Status = HrisEarningStatus.Ended,
-        UpdatedAt = System.DateTime.Parse("2020-02-08T20:35:04.146Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-02-08T23:28:49.316Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

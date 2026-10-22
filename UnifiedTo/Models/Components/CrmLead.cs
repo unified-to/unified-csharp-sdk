@@ -26,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// The name of the company the lead works for.
+        /// </summary>
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 
@@ -65,9 +68,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }
 
+        /// <summary>
+        /// Custom field values. Include only existing custom fields and only the ones being set; omit to leave them unchanged.
+        /// </summary>
         [JsonProperty("metadata")]
         public List<CrmMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The lead's full name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

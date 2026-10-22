@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
+        /// </remarks>
         /// <param name="commerceCollection">A collection of items/products/services.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an inventory.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
+        /// </remarks>
         /// <param name="commerceInventory">A <see cref="CommerceInventory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an item.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
+        /// </remarks>
         /// <param name="commerceItem">A <see cref="CommerceItem"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
+        /// </remarks>
         /// <param name="commerceItemvariant">A <see cref="CommerceItemvariant"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
+        /// </remarks>
         /// <param name="commerceLocation">A <see cref="CommerceLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a reservation.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
+        /// </remarks>
         /// <param name="commerceReservation">A <see cref="CommerceReservation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a review.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
+        /// </remarks>
         /// <param name="commerceReview">A <see cref="CommerceReview"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
+        /// </remarks>
         /// <param name="commerceSaleschannel">A <see cref="CommerceSaleschannel"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -179,6 +203,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -198,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an inventory.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Inventory.</param>
         /// <param name="fields">Fields to return.</param>
@@ -217,6 +247,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an item.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Item.</param>
         /// <param name="fields">Fields to return.</param>
@@ -236,6 +269,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <param name="fields">Fields to return.</param>
@@ -255,6 +291,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -274,6 +313,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a reservation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Reservation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -293,6 +335,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -312,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Saleschannel.</param>
         /// <param name="fields">Fields to return.</param>
@@ -331,6 +379,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all availabilities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceAvailabilitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceAvailabilitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -344,6 +395,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -357,6 +411,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all inventories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceInventoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceInventoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -370,6 +427,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all items.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceItemsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceItemsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -381,6 +441,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all itemvariants.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceItemvariantsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceItemvariantsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -394,6 +457,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -405,6 +471,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reservations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceReservationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceReservationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -418,6 +487,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -429,6 +501,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all saleschannels.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceSaleschannelsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceSaleschannelsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -442,6 +517,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -455,6 +533,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an inventory.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceInventoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceInventoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -466,6 +547,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an item.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceItemRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceItemResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -477,6 +561,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -490,6 +577,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -501,6 +591,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a reservation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceReservationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceReservationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -514,6 +607,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -525,6 +621,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceSaleschannelRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceSaleschannelResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -538,6 +637,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceCollectionResponse"/> response envelope when completed.</returns>
@@ -549,6 +651,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an inventory.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceInventory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Inventory.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceInventoryResponse"/> response envelope when completed.</returns>
@@ -560,6 +665,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an item.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceItem identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Item.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceItemResponse"/> response envelope when completed.</returns>
@@ -571,6 +679,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceItemvariant identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceItemvariantResponse"/> response envelope when completed.</returns>
@@ -582,6 +693,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceLocationResponse"/> response envelope when completed.</returns>
@@ -593,6 +707,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a reservation.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceReservation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Reservation.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceReservationResponse"/> response envelope when completed.</returns>
@@ -604,6 +721,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a review.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceReview identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceReviewResponse"/> response envelope when completed.</returns>
@@ -615,6 +735,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceSaleschannel identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Saleschannel.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceSaleschannelResponse"/> response envelope when completed.</returns>
@@ -626,6 +749,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -639,6 +765,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an inventory.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceInventoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceInventoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -652,6 +781,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an item.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceItemRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceItemResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -663,6 +795,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -676,6 +811,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -687,6 +825,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a reservation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceReservationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceReservationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -700,6 +841,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -711,6 +855,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceSaleschannelRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceSaleschannelResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -738,6 +885,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
+        /// </remarks>
         /// <param name="commerceCollection">A collection of items/products/services.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -866,6 +1016,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an inventory.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
+        /// </remarks>
         /// <param name="commerceInventory">A <see cref="CommerceInventory"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -994,6 +1147,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an item.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
+        /// </remarks>
         /// <param name="commerceItem">A <see cref="CommerceItem"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1122,6 +1278,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
+        /// </remarks>
         /// <param name="commerceItemvariant">A <see cref="CommerceItemvariant"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1250,6 +1409,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
+        /// </remarks>
         /// <param name="commerceLocation">A <see cref="CommerceLocation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1378,6 +1540,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a reservation.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
+        /// </remarks>
         /// <param name="commerceReservation">A <see cref="CommerceReservation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1506,6 +1671,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a review.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
+        /// </remarks>
         /// <param name="commerceReview">A <see cref="CommerceReview"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1634,6 +1802,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
+        /// </remarks>
         /// <param name="commerceSaleschannel">A <see cref="CommerceSaleschannel"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1762,6 +1933,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a collection.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1884,6 +2058,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an inventory.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Inventory.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2006,6 +2183,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an item.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Item.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2128,6 +2308,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2250,6 +2433,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a location.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2372,6 +2558,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a reservation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Reservation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2494,6 +2683,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2616,6 +2808,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Saleschannel.</param>
         /// <param name="fields">Fields to return.</param>
@@ -2738,6 +2933,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all availabilities.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceAvailabilitiesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceAvailabilitiesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2845,6 +3043,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all collections.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceCollectionsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceCollectionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2952,6 +3153,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all inventories.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceInventoriesRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceInventoriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3059,6 +3263,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all items.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceItemsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceItemsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3164,6 +3371,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all itemvariants.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceItemvariantsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceItemvariantsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3271,6 +3481,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all locations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceLocationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceLocationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3378,6 +3591,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reservations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceReservationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceReservationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3485,6 +3701,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3590,6 +3809,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all saleschannels.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceSaleschannelsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceSaleschannelsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3697,6 +3919,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3810,6 +4035,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an inventory.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceInventoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceInventoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -3923,6 +4151,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an item.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceItemRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceItemResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4034,6 +4265,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4147,6 +4381,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4260,6 +4497,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a reservation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceReservationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceReservationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4373,6 +4613,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4484,6 +4727,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceSaleschannelRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceSaleschannelResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -4597,6 +4843,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a collection.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceCollection identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Collection.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceCollectionResponse"/> response envelope when completed.</returns>
@@ -4703,6 +4952,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an inventory.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceInventory identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Inventory.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceInventoryResponse"/> response envelope when completed.</returns>
@@ -4806,6 +5058,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an item.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceItem identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Item.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceItemResponse"/> response envelope when completed.</returns>
@@ -4909,6 +5164,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceItemvariant identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Itemvariant.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceItemvariantResponse"/> response envelope when completed.</returns>
@@ -5015,6 +5273,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a location.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceLocation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Location.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceLocationResponse"/> response envelope when completed.</returns>
@@ -5118,6 +5379,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a reservation.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceReservation identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Reservation.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceReservationResponse"/> response envelope when completed.</returns>
@@ -5224,6 +5488,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a review.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceReview identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceReviewResponse"/> response envelope when completed.</returns>
@@ -5327,6 +5594,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceSaleschannel identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Saleschannel.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceSaleschannelResponse"/> response envelope when completed.</returns>
@@ -5433,6 +5703,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceCollectionRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceCollectionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5546,6 +5819,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an inventory.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceInventoryRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceInventoryResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5659,6 +5935,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an item.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceItemRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceItemResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5770,6 +6049,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an itemvariant.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceItemvariantRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceItemvariantResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5883,6 +6165,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceLocationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceLocationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -5996,6 +6281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a reservation.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceReservationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceReservationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6109,6 +6397,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -6220,6 +6511,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a saleschannel.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceSaleschannelRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceSaleschannelResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

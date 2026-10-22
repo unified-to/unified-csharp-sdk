@@ -26,7 +26,7 @@
 
 ## CreateAtsCompany
 
-Create a company
+Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
 
 ### Example Usage
 
@@ -43,10 +43,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "ef467a9e-18cd-46a3-b2c5-cee9b8b531c1",
+        Id = "94374d0d-2d8f-4f88-881c-7c967fa66d31",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T04:15:33.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-01T08:25:38.428Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>"
@@ -76,7 +76,7 @@ var res = await sdk.Company.CreateAtsCompanyAsync(
 
 ## CreateCrmCompany
 
-Create a company
+Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
 
 ### Example Usage
 
@@ -122,7 +122,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
             },
         },
         Employees = 4177D,
-        Id = "8c00a300-3be6-4c52-9269-7ad0a8811c0b",
+        Id = "dd31cdf6-f76b-4330-aeab-420e2f0b6ff1",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -136,7 +136,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "4b089547-c718-46ef-bb40-98fc0c781fc8",
+                Id = "e3a12f4f-e1b5-4d55-aa69-5ddd51a15e5d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -157,7 +157,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T03:56:40.927Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.111Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -189,7 +189,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 
 ## CreateHrisCompany
 
-Create a company
+Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
 
 ### Example Usage
 
@@ -215,11 +215,11 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "152a6976-2ffe-471c-aca8-aa11b1474bb0",
+        Id = "c9afbbbe-7760-4b24-a0b3-5ae4ce2b6804",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-08T16:39:14.454Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-09T14:08:25.970Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -248,7 +248,7 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
 
 ## GetAtsCompany
 
-Retrieve a company
+Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -290,7 +290,7 @@ var res = await sdk.Company.GetAtsCompanyAsync(
 
 ## GetCrmCompany
 
-Retrieve a company
+Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -332,7 +332,7 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 
 ## GetHrisCompany
 
-Retrieve a company
+Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -374,7 +374,7 @@ var res = await sdk.Company.GetHrisCompanyAsync(
 
 ## ListAtsCompanies
 
-List all companies
+Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -415,7 +415,7 @@ var res = await sdk.Company.ListAtsCompaniesAsync(req);
 
 ## ListCrmCompanies
 
-List all companies
+Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -494,7 +494,7 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(connectionId: "<id>");
 
 ## ListHrisCompanies
 
-List all companies
+Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -535,7 +535,7 @@ var res = await sdk.Company.ListHrisCompaniesAsync(req);
 
 ## PatchAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -553,10 +553,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "238531de-7b06-4981-a7f5-6408e0f99a9c",
+        Id = "a768f245-2583-41fb-9b4c-0f8d8dc90a12",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T04:15:33.470Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-01T08:25:38.431Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -586,7 +586,7 @@ var res = await sdk.Company.PatchAtsCompanyAsync(req);
 
 ## PatchCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -633,7 +633,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "20b975ae-a20d-4b12-958d-35ceb1b8f52f",
+        Id = "a336f93e-4139-4ddb-8997-b241f5380661",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -647,7 +647,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "5f5357c5-bce0-4d29-a58f-624b31f33367",
+                Id = "426704ae-175c-4579-90a8-6344aae069ce",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -668,7 +668,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T03:56:40.942Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.131Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -700,7 +700,7 @@ var res = await sdk.Company.PatchCrmCompanyAsync(req);
 
 ## PatchHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -727,11 +727,11 @@ PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "5fe1130b-7395-45fc-85f5-30b9bf169838",
+        Id = "66e3b624-e8d4-41c7-8f63-1cfc01ea9361",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-08T16:39:14.469Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-09T14:08:25.985Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -760,7 +760,7 @@ var res = await sdk.Company.PatchHrisCompanyAsync(req);
 
 ## RemoveAtsCompany
 
-Remove a company
+Deletes the AtsCompany identified by `id`.
 
 ### Example Usage
 
@@ -800,7 +800,7 @@ var res = await sdk.Company.RemoveAtsCompanyAsync(
 
 ## RemoveCrmCompany
 
-Remove a company
+Deletes the CrmCompany identified by `id`.
 
 ### Example Usage
 
@@ -840,7 +840,7 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 
 ## RemoveHrisCompany
 
-Remove a company
+Deletes the HrisCompany identified by `id`.
 
 ### Example Usage
 
@@ -880,7 +880,7 @@ var res = await sdk.Company.RemoveHrisCompanyAsync(
 
 ## UpdateAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -898,10 +898,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "238531de-7b06-4981-a7f5-6408e0f99a9c",
+        Id = "a768f245-2583-41fb-9b4c-0f8d8dc90a12",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T04:15:33.470Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-01T08:25:38.431Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -931,7 +931,7 @@ var res = await sdk.Company.UpdateAtsCompanyAsync(req);
 
 ## UpdateCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -978,7 +978,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "20b975ae-a20d-4b12-958d-35ceb1b8f52f",
+        Id = "a336f93e-4139-4ddb-8997-b241f5380661",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -992,7 +992,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "5f5357c5-bce0-4d29-a58f-624b31f33367",
+                Id = "426704ae-175c-4579-90a8-6344aae069ce",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1013,7 +1013,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T03:56:40.942Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.131Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -1045,7 +1045,7 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(req);
 
 ## UpdateHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1072,11 +1072,11 @@ UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "5fe1130b-7395-45fc-85f5-30b9bf169838",
+        Id = "66e3b624-e8d4-41c7-8f63-1cfc01ea9361",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-08T16:39:14.469Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-09T14:08:25.985Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

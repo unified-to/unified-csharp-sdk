@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
+        /// </remarks>
         /// <param name="accountingContact">A <see cref="AccountingContact"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
+        /// </remarks>
         /// <param name="crmContact">A contact represents a person that optionally is associated with a deal and/or a company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
+        /// </remarks>
         /// <param name="ucContact">A contact represents a person that optionally is associated with a call.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -152,6 +173,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -163,6 +187,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -174,6 +201,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -185,6 +215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -196,6 +229,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -207,6 +243,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingContactResponse"/> response envelope when completed.</returns>
@@ -218,6 +257,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmContactResponse"/> response envelope when completed.</returns>
@@ -229,6 +271,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcContactResponse"/> response envelope when completed.</returns>
@@ -240,6 +285,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -253,6 +301,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -264,6 +315,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -289,6 +343,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
+        /// </remarks>
         /// <param name="accountingContact">A <see cref="AccountingContact"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -417,6 +474,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
+        /// </remarks>
         /// <param name="crmContact">A contact represents a person that optionally is associated with a deal and/or a company.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -545,6 +605,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact.
         /// </summary>
+        /// <remarks>
+        /// Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
+        /// </remarks>
         /// <param name="ucContact">A contact represents a person that optionally is associated with a call.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -673,6 +736,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -795,6 +861,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -917,6 +986,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a contact.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1039,6 +1111,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1146,6 +1221,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCrmContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCrmContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1251,6 +1329,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListUcContactsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListUcContactsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1356,6 +1437,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1469,6 +1553,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1580,6 +1667,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1691,6 +1781,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AccountingContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAccountingContactResponse"/> response envelope when completed.</returns>
@@ -1794,6 +1887,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CrmContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCrmContactResponse"/> response envelope when completed.</returns>
@@ -1897,6 +1993,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact.
         /// </summary>
+        /// <remarks>
+        /// Deletes the UcContact identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Contact.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveUcContactResponse"/> response envelope when completed.</returns>
@@ -2000,6 +2099,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAccountingContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountingContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2113,6 +2215,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCrmContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCrmContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2224,6 +2329,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact.
         /// </summary>
+        /// <remarks>
+        /// Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateUcContactRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUcContactResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

@@ -13,7 +13,7 @@
 
 ## CreateRepoBranch
 
-Create a branch
+Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
 
 ### Example Usage
 
@@ -31,11 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Branch.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "c926e36c-75e1-45ea-bc6b-10c90fc44df9",
+        Id = "8f71aa4a-1906-4a40-adae-b85bf1553a7c",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T08:04:47.427Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.296Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -64,7 +64,7 @@ var res = await sdk.Branch.CreateRepoBranchAsync(
 
 ## GetRepoBranch
 
-Retrieve a branch
+Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -106,7 +106,7 @@ var res = await sdk.Branch.GetRepoBranchAsync(
 
 ## ListRepoBranches
 
-List all branches
+Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -147,7 +147,7 @@ var res = await sdk.Branch.ListRepoBranchesAsync(req);
 
 ## PatchRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -166,11 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "47899b1c-0443-4524-b01d-a2542ed50ea5",
+        Id = "d87ec157-ea03-4f85-b520-b872b02d3147",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T08:04:47.428Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.297Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -199,7 +199,7 @@ var res = await sdk.Branch.PatchRepoBranchAsync(req);
 
 ## RemoveRepoBranch
 
-Remove a branch
+Deletes the RepoBranch identified by `id`.
 
 ### Example Usage
 
@@ -239,7 +239,7 @@ var res = await sdk.Branch.RemoveRepoBranchAsync(
 
 ## UpdateRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -258,11 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "47899b1c-0443-4524-b01d-a2542ed50ea5",
+        Id = "d87ec157-ea03-4f85-b520-b872b02d3147",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T08:04:47.428Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.297Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

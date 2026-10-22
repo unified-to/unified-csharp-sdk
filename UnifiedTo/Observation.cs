@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an observation.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
+        /// </remarks>
         /// <param name="healthcareObservation">A <see cref="HealthcareObservation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an observation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Observation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all observations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareObservationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareObservationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -92,6 +101,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an observation.
         /// </summary>
+        /// <remarks>
+        /// Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
+        /// </remarks>
         /// <param name="healthcareObservation">A <see cref="HealthcareObservation"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -220,6 +232,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an observation.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Observation.</param>
         /// <param name="fields">Fields to return.</param>
@@ -342,6 +357,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all observations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListHealthcareObservationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListHealthcareObservationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

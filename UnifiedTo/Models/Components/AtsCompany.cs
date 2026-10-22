@@ -32,6 +32,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AtsMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The company's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

@@ -10,7 +10,7 @@
 
 ## CreateAdsAsset
 
-Create an asset
+Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
 
 ### Example Usage
 
@@ -29,12 +29,12 @@ var res = await sdk.Asset.CreateAdsAssetAsync(
     adsAsset: new AdsAsset() {
         CreatedAt = System.DateTime.Parse("2020-03-27T20:14:38.603Z").ToUniversalTime(),
         Height = 400D,
-        Id = "0359a7cc-44b7-49e1-8158-5c18ca2a5559",
+        Id = "073dd353-3ed3-464b-aa3e-00440173ad1b",
         Metadata = new List<AdsMetadata>() {},
         MimeType = "IMAGE_PNG",
         Name = "Lockman - DuBuque",
         Type = AdsAssetType.Image,
-        UpdatedAt = System.DateTime.Parse("2022-03-25T04:44:02.174Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-25T11:17:28.447Z").ToUniversalTime(),
         Url = "https://informal-perfection.com/",
         Width = 600D,
     },
@@ -65,7 +65,7 @@ var res = await sdk.Asset.CreateAdsAssetAsync(
 
 ## GetAdsAsset
 
-Retrieve an asset
+Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -107,7 +107,7 @@ var res = await sdk.Asset.GetAdsAssetAsync(
 
 ## ListAdsAssets
 
-List all assets
+Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

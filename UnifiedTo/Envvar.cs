@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an envvar.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
+        /// </remarks>
         /// <param name="computeEnvvar">A <see cref="ComputeEnvvar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an envvar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all envvars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeEnvvarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeEnvvarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -76,6 +85,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -87,6 +99,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an envvar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeEnvvar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeEnvvarResponse"/> response envelope when completed.</returns>
@@ -98,6 +113,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -123,6 +141,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an envvar.
         /// </summary>
+        /// <remarks>
+        /// Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
+        /// </remarks>
         /// <param name="computeEnvvar">A <see cref="ComputeEnvvar"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -251,6 +272,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an envvar.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <param name="fields">Fields to return.</param>
@@ -373,6 +397,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all envvars.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListComputeEnvvarsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListComputeEnvvarsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -478,6 +505,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -589,6 +619,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an envvar.
         /// </summary>
+        /// <remarks>
+        /// Deletes the ComputeEnvvar identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Envvar.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveComputeEnvvarResponse"/> response envelope when completed.</returns>
@@ -692,6 +725,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an envvar.
         /// </summary>
+        /// <remarks>
+        /// Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateComputeEnvvarRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateComputeEnvvarResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

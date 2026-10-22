@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
+        /// </remarks>
         /// <param name="adsOrganization">A <see cref="AdsOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
+        /// </remarks>
         /// <param name="genaiOrganization">A <see cref="GenaiOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
+        /// </remarks>
         /// <param name="repoOrganization">A <see cref="RepoOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -122,6 +137,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -141,6 +159,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -160,6 +181,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -173,6 +197,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -184,6 +211,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -195,6 +225,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -206,6 +239,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -217,6 +253,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -228,6 +267,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -239,6 +281,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsOrganizationResponse"/> response envelope when completed.</returns>
@@ -250,6 +295,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiOrganizationResponse"/> response envelope when completed.</returns>
@@ -261,6 +309,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoOrganizationResponse"/> response envelope when completed.</returns>
@@ -272,6 +323,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -283,6 +337,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -296,6 +353,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -321,6 +381,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
+        /// </remarks>
         /// <param name="adsOrganization">A <see cref="AdsOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -449,6 +512,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
+        /// </remarks>
         /// <param name="genaiOrganization">A <see cref="GenaiOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -577,6 +643,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization.
         /// </summary>
+        /// <remarks>
+        /// Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
+        /// </remarks>
         /// <param name="repoOrganization">A <see cref="RepoOrganization"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -705,6 +774,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -827,6 +899,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -949,6 +1024,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1071,6 +1149,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <param name="fields">Fields to return.</param>
@@ -1193,6 +1274,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAccountingOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAccountingOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1300,6 +1384,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListAdsOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListAdsOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1405,6 +1492,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListGenaiOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListGenaiOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1512,6 +1602,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all organizations.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListRepoOrganizationsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRepoOrganizationsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1619,6 +1712,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1730,6 +1826,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1843,6 +1942,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1956,6 +2058,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the AdsOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveAdsOrganizationResponse"/> response envelope when completed.</returns>
@@ -2059,6 +2164,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the GenaiOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveGenaiOrganizationResponse"/> response envelope when completed.</returns>
@@ -2162,6 +2270,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove an organization.
         /// </summary>
+        /// <remarks>
+        /// Deletes the RepoOrganization identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Organization.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveRepoOrganizationResponse"/> response envelope when completed.</returns>
@@ -2265,6 +2376,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateAdsOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAdsOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2378,6 +2492,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateGenaiOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateGenaiOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -2491,6 +2608,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization.
         /// </summary>
+        /// <remarks>
+        /// Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateRepoOrganizationRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateRepoOrganizationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

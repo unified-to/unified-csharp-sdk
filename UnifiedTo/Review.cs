@@ -27,6 +27,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a review.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
+        /// </remarks>
         /// <param name="commerceReview">A <see cref="CommerceReview"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -46,6 +49,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -65,6 +71,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -84,6 +93,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -103,6 +115,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -114,6 +129,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -125,6 +143,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListSocialReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSocialReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -136,6 +157,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -147,6 +171,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchSocialReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchSocialReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -158,6 +185,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a review.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceReview identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceReviewResponse"/> response envelope when completed.</returns>
@@ -169,6 +199,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -180,6 +213,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateSocialReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateSocialReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -205,6 +241,9 @@ namespace UnifiedTo
         /// <summary>
         /// Create a review.
         /// </summary>
+        /// <remarks>
+        /// Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
+        /// </remarks>
         /// <param name="commerceReview">A <see cref="CommerceReview"/> parameter.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
@@ -333,6 +372,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -455,6 +497,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -577,6 +622,9 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a review.
         /// </summary>
+        /// <remarks>
+        /// Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <param name="fields">Fields to return.</param>
@@ -699,6 +747,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListCommerceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCommerceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -804,6 +855,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListPerformanceReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPerformanceReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -911,6 +965,9 @@ namespace UnifiedTo
         /// <summary>
         /// List all reviews.
         /// </summary>
+        /// <remarks>
+        /// Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
         /// <param name="request">A <see cref="ListSocialReviewsRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSocialReviewsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1016,6 +1073,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1127,6 +1187,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="PatchSocialReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchSocialReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1238,6 +1301,9 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a review.
         /// </summary>
+        /// <remarks>
+        /// Deletes the CommerceReview identified by `id`.
+        /// </remarks>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="id">ID of the Review.</param>
         /// <returns>An awaitable task that returns a <see cref="RemoveCommerceReviewResponse"/> response envelope when completed.</returns>
@@ -1341,6 +1407,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateCommerceReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCommerceReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
@@ -1452,6 +1521,9 @@ namespace UnifiedTo
         /// <summary>
         /// Update a review.
         /// </summary>
+        /// <remarks>
+        /// Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
+        /// </remarks>
         /// <param name="request">A <see cref="UpdateSocialReviewRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateSocialReviewResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>

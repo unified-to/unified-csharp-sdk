@@ -43,7 +43,7 @@
 
 ## CreateCdpActivation
 
-Create an activation
+Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
 
 ### Example Usage
 
@@ -85,7 +85,7 @@ var res = await sdk.Cdp.CreateCdpActivationAsync(
 
 ## CreateCdpDestination
 
-Create a destination
+Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
 
 ### Example Usage
 
@@ -127,7 +127,7 @@ var res = await sdk.Cdp.CreateCdpDestinationAsync(
 
 ## CreateCdpEvent
 
-Create an event
+Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
 
 ### Example Usage
 
@@ -169,7 +169,7 @@ var res = await sdk.Cdp.CreateCdpEventAsync(
 
 ## CreateCdpProfile
 
-Create a profile
+Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ var res = await sdk.Cdp.CreateCdpProfileAsync(
 
 ## CreateCdpSegment
 
-Create a segment
+Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
 
 ### Example Usage
 
@@ -253,7 +253,7 @@ var res = await sdk.Cdp.CreateCdpSegmentAsync(
 
 ## CreateCdpSource
 
-Create a source
+Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
 
 ### Example Usage
 
@@ -295,7 +295,7 @@ var res = await sdk.Cdp.CreateCdpSourceAsync(
 
 ## GetCdpActivation
 
-Retrieve an activation
+Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -337,7 +337,7 @@ var res = await sdk.Cdp.GetCdpActivationAsync(
 
 ## GetCdpDestination
 
-Retrieve a destination
+Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -379,7 +379,7 @@ var res = await sdk.Cdp.GetCdpDestinationAsync(
 
 ## GetCdpEvent
 
-Retrieve an event
+Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -421,7 +421,7 @@ var res = await sdk.Cdp.GetCdpEventAsync(
 
 ## GetCdpProfile
 
-Retrieve a profile
+Retrieves a single CdpProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -463,7 +463,7 @@ var res = await sdk.Cdp.GetCdpProfileAsync(
 
 ## GetCdpSegment
 
-Retrieve a segment
+Retrieves a single CdpSegment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -505,7 +505,7 @@ var res = await sdk.Cdp.GetCdpSegmentAsync(
 
 ## GetCdpSource
 
-Retrieve a source
+Retrieves a single CdpSource by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -547,7 +547,7 @@ var res = await sdk.Cdp.GetCdpSourceAsync(
 
 ## ListCdpActivations
 
-List all activations
+Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -588,7 +588,7 @@ var res = await sdk.Cdp.ListCdpActivationsAsync(req);
 
 ## ListCdpDestinations
 
-List all destinations
+Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -629,7 +629,7 @@ var res = await sdk.Cdp.ListCdpDestinationsAsync(req);
 
 ## ListCdpEvents
 
-List all events
+Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -670,7 +670,7 @@ var res = await sdk.Cdp.ListCdpEventsAsync(req);
 
 ## ListCdpProfiles
 
-List all profiles
+Returns a list of CdpProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -711,7 +711,7 @@ var res = await sdk.Cdp.ListCdpProfilesAsync(req);
 
 ## ListCdpSegments
 
-List all segments
+Returns a list of CdpSegments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -752,7 +752,7 @@ var res = await sdk.Cdp.ListCdpSegmentsAsync(req);
 
 ## ListCdpSources
 
-List all sources
+Returns a list of CdpSources. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -793,7 +793,7 @@ var res = await sdk.Cdp.ListCdpSourcesAsync(req);
 
 ## PatchCdpActivation
 
-Update an activation
+Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
 
 ### Example Usage
 
@@ -836,7 +836,7 @@ var res = await sdk.Cdp.PatchCdpActivationAsync(req);
 
 ## PatchCdpDestination
 
-Update a destination
+Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
 
 ### Example Usage
 
@@ -879,7 +879,7 @@ var res = await sdk.Cdp.PatchCdpDestinationAsync(req);
 
 ## PatchCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -922,7 +922,7 @@ var res = await sdk.Cdp.PatchCdpEventAsync(req);
 
 ## PatchCdpProfile
 
-Update a profile
+Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
 
 ### Example Usage
 
@@ -965,7 +965,7 @@ var res = await sdk.Cdp.PatchCdpProfileAsync(req);
 
 ## PatchCdpSegment
 
-Update a segment
+Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
 
 ### Example Usage
 
@@ -1008,7 +1008,7 @@ var res = await sdk.Cdp.PatchCdpSegmentAsync(req);
 
 ## PatchCdpSource
 
-Update a source
+Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
 
 ### Example Usage
 
@@ -1051,7 +1051,7 @@ var res = await sdk.Cdp.PatchCdpSourceAsync(req);
 
 ## RemoveCdpActivation
 
-Remove an activation
+Deletes the CdpActivation identified by `id`.
 
 ### Example Usage
 
@@ -1091,7 +1091,7 @@ var res = await sdk.Cdp.RemoveCdpActivationAsync(
 
 ## RemoveCdpDestination
 
-Remove a destination
+Deletes the CdpDestination identified by `id`.
 
 ### Example Usage
 
@@ -1131,7 +1131,7 @@ var res = await sdk.Cdp.RemoveCdpDestinationAsync(
 
 ## RemoveCdpEvent
 
-Remove an event
+Deletes the CdpEvent identified by `id`.
 
 ### Example Usage
 
@@ -1171,7 +1171,7 @@ var res = await sdk.Cdp.RemoveCdpEventAsync(
 
 ## RemoveCdpProfile
 
-Remove a profile
+Deletes the CdpProfile identified by `id`.
 
 ### Example Usage
 
@@ -1211,7 +1211,7 @@ var res = await sdk.Cdp.RemoveCdpProfileAsync(
 
 ## RemoveCdpSegment
 
-Remove a segment
+Deletes the CdpSegment identified by `id`.
 
 ### Example Usage
 
@@ -1251,7 +1251,7 @@ var res = await sdk.Cdp.RemoveCdpSegmentAsync(
 
 ## RemoveCdpSource
 
-Remove a source
+Deletes the CdpSource identified by `id`.
 
 ### Example Usage
 
@@ -1291,7 +1291,7 @@ var res = await sdk.Cdp.RemoveCdpSourceAsync(
 
 ## UpdateCdpActivation
 
-Update an activation
+Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
 
 ### Example Usage
 
@@ -1334,7 +1334,7 @@ var res = await sdk.Cdp.UpdateCdpActivationAsync(req);
 
 ## UpdateCdpDestination
 
-Update a destination
+Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
 
 ### Example Usage
 
@@ -1377,7 +1377,7 @@ var res = await sdk.Cdp.UpdateCdpDestinationAsync(req);
 
 ## UpdateCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1420,7 +1420,7 @@ var res = await sdk.Cdp.UpdateCdpEventAsync(req);
 
 ## UpdateCdpProfile
 
-Update a profile
+Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
 
 ### Example Usage
 
@@ -1463,7 +1463,7 @@ var res = await sdk.Cdp.UpdateCdpProfileAsync(req);
 
 ## UpdateCdpSegment
 
-Update a segment
+Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
 
 ### Example Usage
 
@@ -1506,7 +1506,7 @@ var res = await sdk.Cdp.UpdateCdpSegmentAsync(req);
 
 ## UpdateCdpSource
 
-Update a source
+Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
 
 ### Example Usage
 

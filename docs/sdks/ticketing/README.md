@@ -31,7 +31,7 @@
 
 ## CreateTicketingCategory
 
-Create a category
+Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
 
 ### Example Usage
 
@@ -50,11 +50,11 @@ var res = await sdk.Ticketing.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "bea4c1e5-83f1-4c91-b5f1-eeeb2852b53d",
+        Id = "ce9361d7-ecc0-4f5c-a0dc-1f0d65dd1f78",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.407Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T20:03:52.300Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -83,7 +83,7 @@ var res = await sdk.Ticketing.CreateTicketingCategoryAsync(
 
 ## CreateTicketingCustomer
 
-Create a customer
+Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
 
 ### Example Usage
 
@@ -107,7 +107,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "670ab99c-0cdb-45f0-acf7-7d58b1812baf",
+        Id = "71f5fc46-63ca-489e-a3af-be574066e213",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -128,7 +128,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.194Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T22:20:40.722Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -157,7 +157,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
 
 ## CreateTicketingNote
 
-Create a note
+Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
 
 ### Example Usage
 
@@ -176,9 +176,9 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "17918410-082d-4632-b70f-1fe026837c2b",
+        Id = "2872d89a-0ca7-4229-922f-a8b31ba3041b",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.888Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T22:23:48.715Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
 
 ## CreateTicketingTicket
 
-Create a ticket
+Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
 
 ### Example Usage
 
@@ -228,7 +228,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "11a00073-02ad-4647-ac25-66e79939f36e",
+        Id = "9bcf5729-039b-4074-a4df-239c28ca7ab4",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -237,7 +237,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:29:00.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:34:19.814Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     connectionId: "<id>"
@@ -267,7 +267,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
 
 ## GetTicketingCategory
 
-Retrieve a category
+Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -309,7 +309,7 @@ var res = await sdk.Ticketing.GetTicketingCategoryAsync(
 
 ## GetTicketingCustomer
 
-Retrieve a customer
+Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -351,7 +351,7 @@ var res = await sdk.Ticketing.GetTicketingCustomerAsync(
 
 ## GetTicketingNote
 
-Retrieve a note
+Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -393,7 +393,7 @@ var res = await sdk.Ticketing.GetTicketingNoteAsync(
 
 ## GetTicketingTicket
 
-Retrieve a ticket
+Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -435,7 +435,7 @@ var res = await sdk.Ticketing.GetTicketingTicketAsync(
 
 ## ListTicketingCategories
 
-List all categories
+Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ var res = await sdk.Ticketing.ListTicketingCategoriesAsync(req);
 
 ## ListTicketingCustomers
 
-List all customers
+Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -517,7 +517,7 @@ var res = await sdk.Ticketing.ListTicketingCustomersAsync(req);
 
 ## ListTicketingNotes
 
-List all notes
+Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -558,7 +558,7 @@ var res = await sdk.Ticketing.ListTicketingNotesAsync(req);
 
 ## ListTicketingTickets
 
-List all tickets
+Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -599,7 +599,7 @@ var res = await sdk.Ticketing.ListTicketingTicketsAsync(req);
 
 ## PatchTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -619,11 +619,11 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
+        Id = "60299d04-1e8a-4dde-be37-f32ee38fff95",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T20:03:52.311Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -652,7 +652,7 @@ var res = await sdk.Ticketing.PatchTicketingCategoryAsync(req);
 
 ## PatchTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -677,7 +677,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
+        Id = "95bd9d4b-4f32-4da7-af58-40c5f2f86375",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -698,7 +698,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T22:20:40.731Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -727,7 +727,7 @@ var res = await sdk.Ticketing.PatchTicketingCustomerAsync(req);
 
 ## PatchTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -747,9 +747,9 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
+        Id = "89311885-c3d1-40df-a868-f09bdc4d13cc",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T22:23:48.720Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -778,7 +778,7 @@ var res = await sdk.Ticketing.PatchTicketingNoteAsync(req);
 
 ## PatchTicketingTicket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -800,7 +800,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "b3ef7c37-5bde-491f-b33a-2cdfd5b21b32",
+        Id = "1693880a-c967-4273-84be-173758829fb7",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -809,7 +809,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:29:00.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:34:19.814Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",
@@ -839,7 +839,7 @@ var res = await sdk.Ticketing.PatchTicketingTicketAsync(req);
 
 ## RemoveTicketingCategory
 
-Remove a category
+Deletes the TicketingCategory identified by `id`.
 
 ### Example Usage
 
@@ -879,7 +879,7 @@ var res = await sdk.Ticketing.RemoveTicketingCategoryAsync(
 
 ## RemoveTicketingCustomer
 
-Remove a customer
+Deletes the TicketingCustomer identified by `id`.
 
 ### Example Usage
 
@@ -919,7 +919,7 @@ var res = await sdk.Ticketing.RemoveTicketingCustomerAsync(
 
 ## RemoveTicketingNote
 
-Remove a note
+Deletes the TicketingNote identified by `id`.
 
 ### Example Usage
 
@@ -959,7 +959,7 @@ var res = await sdk.Ticketing.RemoveTicketingNoteAsync(
 
 ## RemoveTicketingTicket
 
-Remove a ticket
+Deletes the TicketingTicket identified by `id`.
 
 ### Example Usage
 
@@ -999,7 +999,7 @@ var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
 
 ## UpdateTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -1019,11 +1019,11 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "01cafe70-8241-43d9-8bea-a205009a7697",
+        Id = "60299d04-1e8a-4dde-be37-f32ee38fff95",
         IsActive = true,
         Metadata = new List<TicketingMetadata>() {},
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-14T00:48:39.419Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-14T20:03:52.311Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1052,7 +1052,7 @@ var res = await sdk.Ticketing.UpdateTicketingCategoryAsync(req);
 
 ## UpdateTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -1077,7 +1077,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "502c8f96-a4e5-4396-bb55-01fa37d23b54",
+        Id = "95bd9d4b-4f32-4da7-af58-40c5f2f86375",
         Metadata = new List<TicketingMetadata>() {},
         Name = "Christian Windler",
         Tags = new List<string>() {
@@ -1098,7 +1098,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-04T02:11:35.206Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-04T22:20:40.731Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1127,7 +1127,7 @@ var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(req);
 
 ## UpdateTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -1147,9 +1147,9 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "5e7e7662-3552-4cd2-aa82-00b7419a1a49",
+        Id = "89311885-c3d1-40df-a868-f09bdc4d13cc",
         Metadata = new List<TicketingMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2024-09-29T06:55:05.894Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T22:23:48.720Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1178,7 +1178,7 @@ var res = await sdk.Ticketing.UpdateTicketingNoteAsync(req);
 
 ## UpdateTicketingTicket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -1200,7 +1200,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "b3ef7c37-5bde-491f-b33a-2cdfd5b21b32",
+        Id = "1693880a-c967-4273-84be-173758829fb7",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -1209,7 +1209,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:29:00.794Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:34:19.814Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",
