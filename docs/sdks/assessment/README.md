@@ -36,7 +36,7 @@ var res = await sdk.Assessment.CreateAssessmentOrderAsync(
     assessmentOrder: new AssessmentOrder() {
         ConnectionId = "<id>",
         CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
-        Id = "fc5bc621-f18c-4593-aa5d-2661567ac16f",
+        Id = "29e35238-07c9-4d25-9dd5-860b9ddfe556",
         Metadata = new List<AssessmentMetadata>() {},
         Parameters = new List<AssessmentParameterInput>() {},
         ProfileAddresses = new List<AssessmentAddress>() {},
@@ -63,7 +63,7 @@ var res = await sdk.Assessment.CreateAssessmentOrderAsync(
         ResponseUrl = "https://rowdy-fisherman.biz/",
         Status = AssessmentOrderStatus.Rejected,
         TargetUrl = "https://cautious-turret.info",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T02:24:12.768Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T09:25:24.411Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     connectionId: "<id>"
@@ -117,7 +117,7 @@ var res = await sdk.Assessment.CreateAssessmentPackageAsync(
         Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
         HasRedirectUrl = true,
         HasTargetUrl = false,
-        Id = "9d151d37-77fb-4cbc-8f9a-3109cbdc81bd",
+        Id = "99205637-2fb3-4927-a270-cf9d797d4c48",
         InfoUrl = "https://ugly-instance.biz/",
         IntegrationTypes = new List<string>() {
             "viridis",
@@ -132,7 +132,7 @@ var res = await sdk.Assessment.CreateAssessmentPackageAsync(
             "clamo",
         },
         Type = AssessmentPackageType.VideoInterview,
-        UpdatedAt = System.DateTime.Parse("2023-09-25T13:59:24.689Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-25T19:42:44.653Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -299,7 +299,7 @@ PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
         CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
-        Id = "bd18da58-002f-4f31-b006-c7c126009774",
+        Id = "78a2be66-a062-45c7-a0a1-202b964e2177",
         Metadata = new List<AssessmentMetadata>() {},
         Parameters = new List<AssessmentParameterInput>() {},
         ProfileAddresses = new List<AssessmentAddress>() {},
@@ -326,7 +326,7 @@ PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
         ResponseUrl = "https://rowdy-fisherman.biz/",
         Status = AssessmentOrderStatus.Rejected,
         TargetUrl = "https://cautious-turret.info",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T02:24:12.776Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T09:25:24.420Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     ConnectionId = "<id>",
@@ -380,7 +380,7 @@ var res = await sdk.Assessment.PatchAssessmentPackageAsync(
         Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
         HasRedirectUrl = true,
         HasTargetUrl = false,
-        Id = "39b93fe8-98ed-4c0d-bec3-d7b37f03803b",
+        Id = "085bc2a3-19ad-4029-a2ee-6b49f32b81a8",
         InfoUrl = "https://ugly-instance.biz/",
         IntegrationTypes = new List<string>() {
             "viridis",
@@ -395,7 +395,7 @@ var res = await sdk.Assessment.PatchAssessmentPackageAsync(
             "clamo",
         },
         Type = AssessmentPackageType.VideoInterview,
-        UpdatedAt = System.DateTime.Parse("2023-09-25T13:59:24.693Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-25T19:42:44.656Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"
@@ -484,7 +484,7 @@ UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
         CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
-        Id = "bd18da58-002f-4f31-b006-c7c126009774",
+        Id = "78a2be66-a062-45c7-a0a1-202b964e2177",
         Metadata = new List<AssessmentMetadata>() {},
         Parameters = new List<AssessmentParameterInput>() {},
         ProfileAddresses = new List<AssessmentAddress>() {},
@@ -511,7 +511,7 @@ UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
         ResponseUrl = "https://rowdy-fisherman.biz/",
         Status = AssessmentOrderStatus.Rejected,
         TargetUrl = "https://cautious-turret.info",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T02:24:12.776Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T09:25:24.420Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     ConnectionId = "<id>",
@@ -565,7 +565,7 @@ var res = await sdk.Assessment.UpdateAssessmentPackageAsync(
         Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
         HasRedirectUrl = true,
         HasTargetUrl = false,
-        Id = "39b93fe8-98ed-4c0d-bec3-d7b37f03803b",
+        Id = "085bc2a3-19ad-4029-a2ee-6b49f32b81a8",
         InfoUrl = "https://ugly-instance.biz/",
         IntegrationTypes = new List<string>() {
             "viridis",
@@ -580,7 +580,7 @@ var res = await sdk.Assessment.UpdateAssessmentPackageAsync(
             "clamo",
         },
         Type = AssessmentPackageType.VideoInterview,
-        UpdatedAt = System.DateTime.Parse("2023-09-25T13:59:24.693Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-25T19:42:44.656Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"

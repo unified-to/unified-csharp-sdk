@@ -31,11 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Branch.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "8f71aa4a-1906-4a40-adae-b85bf1553a7c",
+        Id = "0efe8517-c0f0-4bfe-b618-6613db85dd83",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.296Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T13:31:21.262Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,11 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "d87ec157-ea03-4f85-b520-b872b02d3147",
+        Id = "b856aed5-69da-483c-a9f4-16622735ecda",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.297Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T13:31:21.264Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -258,11 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "d87ec157-ea03-4f85-b520-b872b02d3147",
+        Id = "b856aed5-69da-483c-a9f4-16622735ecda",
         Metadata = new List<RepoMetadata>() {},
         Name = "transmitter-calculate",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-07T10:31:51.297Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-07T13:31:21.264Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

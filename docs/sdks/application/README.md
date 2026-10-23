@@ -31,10 +31,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Application.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.141Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-10-01T02:01:14.973Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.276Z").ToUniversalTime(),
-        Id = "c73ca526-7494-4fe0-8465-02851221825d",
+        HiredAt = System.DateTime.Parse("2026-05-14T11:42:47.511Z").ToUniversalTime(),
+        Id = "590bfa93-bc5b-45c0-8d5b-710c35d458df",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -43,7 +43,7 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "49124ee6-0d45-4725-b9dd-ab3493da2802",
+                Id = "ad0065d1-c9be-45d8-90b5-30720a9f72f3",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -54,12 +54,12 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.450Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-13T12:59:07.100Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.237Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-20T09:31:25.054Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -190,10 +190,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.155Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-10-01T02:01:14.997Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.294Z").ToUniversalTime(),
-        Id = "ea2b2f1d-34f2-4ab9-987c-3c73bac52513",
+        HiredAt = System.DateTime.Parse("2026-05-14T11:42:47.542Z").ToUniversalTime(),
+        Id = "06b8a64c-dac5-4046-9f93-22dd20a13efc",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -202,7 +202,7 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f347728d-ebb4-4974-94c5-61d27931ff96",
+                Id = "eb340a7f-3ea4-4850-89d9-cc00bbd7ef03",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -213,12 +213,12 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.471Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-13T12:59:07.137Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.258Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-20T09:31:25.091Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -306,10 +306,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-30T08:54:00.155Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-10-01T02:01:14.997Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-13T13:11:36.294Z").ToUniversalTime(),
-        Id = "ea2b2f1d-34f2-4ab9-987c-3c73bac52513",
+        HiredAt = System.DateTime.Parse("2026-05-14T11:42:47.542Z").ToUniversalTime(),
+        Id = "06b8a64c-dac5-4046-9f93-22dd20a13efc",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -318,7 +318,7 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f347728d-ebb4-4974-94c5-61d27931ff96",
+                Id = "eb340a7f-3ea4-4850-89d9-cc00bbd7ef03",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -329,12 +329,12 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-12T10:49:24.471Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-13T12:59:07.137Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-19T07:11:51.258Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-20T09:31:25.091Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

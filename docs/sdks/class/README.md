@@ -32,7 +32,7 @@ var res = await sdk.Class.CreateLmsClassAsync(
     lmsClass: new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "daedefa2-6412-46b6-8bdc-aaeeaa027247",
+        Id = "c6cc2cc0-f832-4c53-98c4-c8e78f676ffd",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -54,7 +54,7 @@ var res = await sdk.Class.CreateLmsClassAsync(
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.222Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-05T13:00:21.228Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -186,7 +186,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "4afb8174-d665-464c-b393-097e52580ca5",
+        Id = "9cfd3e53-b8c7-4689-9c70-b35e7fb15b48",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -208,7 +208,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.243Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-05T13:00:21.246Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -297,7 +297,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "4afb8174-d665-464c-b393-097e52580ca5",
+        Id = "9cfd3e53-b8c7-4689-9c70-b35e7fb15b48",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -319,7 +319,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-08-04T15:25:14.243Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-05T13:00:21.246Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

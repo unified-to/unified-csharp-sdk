@@ -42,17 +42,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "497fd9a7-bb5b-4f69-9a27-d165b32df801",
+        Id = "3e31ee84-5d84-4eeb-a36e-2eb84a69f7cb",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/497fd9a7-bb5b-4f69-9a27-d165b32df801.pdf",
+        LabelUrl = "https://labels.example.com/3e31ee84-5d84-4eeb-a36e-2eb84a69f7cb.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.025Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T15:40:10.081Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -99,7 +99,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingRateAsync(
     shippingRate: new ShippingRate() {
         Currency = "USD",
-        Id = "692b955b-49fc-40d4-8400-59b9c2a2cb2d",
+        Id = "a732d9f3-6e4f-4644-a8b4-de714f61b35c",
         Metadata = new List<ShippingMetadata>() {},
         Rates = new List<ShippingRateRate>() {
             new ShippingRateRate() {
@@ -162,7 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingShipmentAsync(
     shippingShipment: new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "be77e204-392a-4fa5-8dd1-bf1438fe6268",
+        Id = "a5a0461c-f37d-45a9-8659-c1cdd2daaf15",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -172,7 +172,7 @@ var res = await sdk.Shipping.CreateShippingShipmentAsync(
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.822Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T08:50:14.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -552,17 +552,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "30ef2873-699c-4444-b333-6081f7a58553",
+        Id = "2c7f7e8e-5fa9-498f-9da1-d8a5dfdcdf2b",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/30ef2873-699c-4444-b333-6081f7a58553.pdf",
+        LabelUrl = "https://labels.example.com/2c7f7e8e-5fa9-498f-9da1-d8a5dfdcdf2b.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.033Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T15:40:10.087Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -610,7 +610,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "f9bef9fd-b286-439c-9a1a-8bb7ab602aa7",
+        Id = "42da75cd-6846-4f6d-b411-3fece8b1c7f7",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -620,7 +620,7 @@ PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.827Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T08:50:14.926Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -748,17 +748,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "30ef2873-699c-4444-b333-6081f7a58553",
+        Id = "2c7f7e8e-5fa9-498f-9da1-d8a5dfdcdf2b",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
         LabelFormat = LabelFormat.Png,
-        LabelUrl = "https://labels.example.com/30ef2873-699c-4444-b333-6081f7a58553.pdf",
+        LabelUrl = "https://labels.example.com/2c7f7e8e-5fa9-498f-9da1-d8a5dfdcdf2b.pdf",
         Metadata = new List<ShippingMetadata>() {},
         ServiceCode = "Dzy",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "ZYV60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-29T05:57:22.033Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T15:40:10.087Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -806,7 +806,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "f9bef9fd-b286-439c-9a1a-8bb7ab602aa7",
+        Id = "42da75cd-6846-4f6d-b411-3fece8b1c7f7",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -816,7 +816,7 @@ UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.827Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T08:50:14.926Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

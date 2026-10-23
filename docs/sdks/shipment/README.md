@@ -31,7 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipment.CreateShippingShipmentAsync(
     shippingShipment: new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "be77e204-392a-4fa5-8dd1-bf1438fe6268",
+        Id = "a5a0461c-f37d-45a9-8659-c1cdd2daaf15",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -41,7 +41,7 @@ var res = await sdk.Shipment.CreateShippingShipmentAsync(
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.822Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T08:50:14.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -172,7 +172,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "f9bef9fd-b286-439c-9a1a-8bb7ab602aa7",
+        Id = "42da75cd-6846-4f6d-b411-3fece8b1c7f7",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -182,7 +182,7 @@ PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.827Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T08:50:14.926Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -270,7 +270,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "f9bef9fd-b286-439c-9a1a-8bb7ab602aa7",
+        Id = "42da75cd-6846-4f6d-b411-3fece8b1c7f7",
         IsReturn = false,
         Lineitems = new List<ShippingShipmentLineitem>() {},
         Metadata = new List<ShippingMetadata>() {},
@@ -280,7 +280,7 @@ UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
         ServiceCode = "OVERNIGHT",
         ShippedAt = System.DateTime.Parse("2022-09-12T07:26:48.479Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Delivered,
-        UpdatedAt = System.DateTime.Parse("2022-11-15T07:42:31.827Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-11-15T08:50:14.926Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

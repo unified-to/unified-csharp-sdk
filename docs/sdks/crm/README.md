@@ -90,7 +90,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
             },
         },
         Employees = 4177D,
-        Id = "dd31cdf6-f76b-4330-aeab-420e2f0b6ff1",
+        Id = "3032f628-0059-4490-80bb-8075c4226279",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -104,7 +104,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e3a12f4f-e1b5-4d55-aa69-5ddd51a15e5d",
+                Id = "a9cf31c7-c068-4aee-acdf-88df6447b8aa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -125,7 +125,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.111Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-04T15:46:36.305Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -192,7 +192,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
             },
         },
         FirstName = "Mohammad",
-        Id = "01d55dd9-c5fe-4dd3-a46d-196cb3533715",
+        Id = "3bf5daff-7901-46c9-ae65-a9167f68a5cb",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -206,7 +206,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "ca1fc40c-da2d-4226-8c04-d7767282ab81",
+                Id = "5552f030-7b82-4069-8163-b161bc30f478",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -226,7 +226,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.386Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T06:19:16.873Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -273,12 +273,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Crm.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.887Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.768Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T20:07:37.054Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T20:15:33.342Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "d5734b69-7092-4361-8f37-f9826abe82eb",
+        Id = "e6877e51-74de-497c-9cf9-d666aee54ec5",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -287,7 +287,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "63233597-c349-4bd3-a4ee-dc8d734ff423",
+                Id = "e88e7be7-1a9a-4e17-8b94-a4cdb7fe4f32",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -302,7 +302,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.012Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T15:52:13.203Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     connectionId: "<id>"
@@ -352,13 +352,13 @@ var res = await sdk.Crm.CreateCrmEventAsync(
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.598Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-12T10:46:16.254Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "539ad616-e6dc-4089-acf9-2d25041d5d7d",
+        Id = "8134b0cb-05c9-49ea-8aac-5d7aaf7cbff6",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.601Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-13T13:00:41.501Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -421,7 +421,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "d0ea7f22-d8c1-4515-bcf6-1ad4e2e75802",
+        Id = "2b612c25-c217-4bf6-8e57-12aa01103013",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -435,7 +435,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "51615d51-54f8-439f-9fdc-e14540f41363",
+                Id = "2d72f451-34e5-4362-9339-a4726511dc93",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -461,7 +461,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.308Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-18T01:41:28.207Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -510,7 +510,7 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "10591808-59c1-4e3a-a5d6-4e3342e22d0b",
+        Id = "9f2e0815-f4db-498e-873d-4f7eda1e09b8",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -520,13 +520,13 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "656770a4-f402-4d92-b17d-673ac784f505",
+                Id = "dbd9944d-9e47-491e-a6b4-a06416a00892",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.653Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T23:44:17.223Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.106Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-02T17:55:48.983Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1141,7 +1141,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "a336f93e-4139-4ddb-8997-b241f5380661",
+        Id = "b1f6b82e-1103-497f-b9f2-e7162a457ecd",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1155,7 +1155,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "426704ae-175c-4579-90a8-6344aae069ce",
+                Id = "115d651b-1849-49d5-898a-62c6839d9e1c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1176,7 +1176,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.131Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-04T15:46:36.329Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -1244,7 +1244,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "b3351907-6b1f-4ba6-b15e-46f54cdb4660",
+        Id = "ee13219d-a903-4de9-95d9-964306c07787",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -1258,7 +1258,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c725dffa-914c-4a67-abdd-be4eb9bfce9c",
+                Id = "2bc8ad37-b35d-4172-8c50-6f38f45eee40",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1278,7 +1278,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.387Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T06:19:16.874Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1326,12 +1326,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.891Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.781Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T20:07:37.059Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T20:15:33.358Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "e53edb19-8ac2-4eb3-a662-68df79aecaff",
+        Id = "ec35bd88-62d8-403f-972a-e66c2f4c8058",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -1340,7 +1340,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "332b0cd3-a961-4dc1-bd27-0e3afdaf8e72",
+                Id = "abd42f24-cf2b-434c-8e3b-205ea45900ac",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1355,7 +1355,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.020Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T15:52:13.213Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -1406,13 +1406,13 @@ PatchCrmEventRequest req = new PatchCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.625Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-12T10:46:16.289Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "606fdccd-fbf1-4444-b5a8-d3ab3cbd498a",
+        Id = "c9a2fc19-1957-42b7-a66e-bdec58b0a1ad",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-13T13:00:41.548Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1476,7 +1476,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "494568b4-675b-4841-8867-565fbce30a02",
+        Id = "5bd18c9a-df8f-4f94-a839-f07c1f2f04a8",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -1490,7 +1490,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "9adb865a-c20d-482f-9dca-da0e6e582ff8",
+                Id = "434e3fc6-e288-49ba-9e28-dcbf1f1c46b3",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1516,7 +1516,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.309Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-18T01:41:28.209Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1566,7 +1566,7 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "33ab3e86-cb90-496d-8f33-72c34af17e83",
+        Id = "6245abbd-c73d-47f7-987f-9061b6f09382",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -1576,13 +1576,13 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "bcf35b65-992d-4396-bbbc-f4ad0fc0c2d0",
+                Id = "574d883d-953e-4745-b0c3-0a08a2c0c4bf",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.659Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T23:44:17.233Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.113Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-02T17:55:48.993Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1898,7 +1898,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "a336f93e-4139-4ddb-8997-b241f5380661",
+        Id = "b1f6b82e-1103-497f-b9f2-e7162a457ecd",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1912,7 +1912,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "426704ae-175c-4579-90a8-6344aae069ce",
+                Id = "115d651b-1849-49d5-898a-62c6839d9e1c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1933,7 +1933,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-03T20:04:52.131Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-04T15:46:36.329Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -2001,7 +2001,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "b3351907-6b1f-4ba6-b15e-46f54cdb4660",
+        Id = "ee13219d-a903-4de9-95d9-964306c07787",
         ImageUrl = "https://avatars.githubusercontent.com/u/26803724",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -2015,7 +2015,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c725dffa-914c-4a67-abdd-be4eb9bfce9c",
+                Id = "2bc8ad37-b35d-4172-8c50-6f38f45eee40",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2035,7 +2035,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T05:39:31.387Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T06:19:16.874Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2083,12 +2083,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T14:39:07.891Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-09-01T02:58:23.781Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-10T20:07:37.059Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-01T20:15:33.358Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "e53edb19-8ac2-4eb3-a662-68df79aecaff",
+        Id = "ec35bd88-62d8-403f-972a-e66c2f4c8058",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -2097,7 +2097,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "332b0cd3-a961-4dc1-bd27-0e3afdaf8e72",
+                Id = "abd42f24-cf2b-434c-8e3b-205ea45900ac",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2112,7 +2112,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-12T05:40:30.020Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T15:52:13.213Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -2163,13 +2163,13 @@ UpdateCrmEventRequest req = new UpdateCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-11T16:12:26.625Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-12T10:46:16.289Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "606fdccd-fbf1-4444-b5a8-d3ab3cbd498a",
+        Id = "c9a2fc19-1957-42b7-a66e-bdec58b0a1ad",
         Metadata = new List<CrmMetadata>() {},
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-12T10:43:55.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-13T13:00:41.548Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2233,7 +2233,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "494568b4-675b-4841-8867-565fbce30a02",
+        Id = "5bd18c9a-df8f-4f94-a839-f07c1f2f04a8",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -2247,7 +2247,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "9adb865a-c20d-482f-9dca-da0e6e582ff8",
+                Id = "434e3fc6-e288-49ba-9e28-dcbf1f1c46b3",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2273,7 +2273,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T23:26:40.309Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-18T01:41:28.209Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2323,7 +2323,7 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "33ab3e86-cb90-496d-8f33-72c34af17e83",
+        Id = "6245abbd-c73d-47f7-987f-9061b6f09382",
         IsActive = true,
         Metadata = new List<CrmMetadata>() {},
         Name = "Small Steel Bacon",
@@ -2333,13 +2333,13 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "bcf35b65-992d-4396-bbbc-f4ad0fc0c2d0",
+                Id = "574d883d-953e-4745-b0c3-0a08a2c0c4bf",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-11T04:27:55.659Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-11T23:44:17.233Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-11-01T22:14:45.113Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-02T17:55:48.993Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
+        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -40,7 +40,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2751,7 +2751,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
+        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2764,7 +2764,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2795,7 +2795,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
+        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2808,7 +2808,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2888,7 +2888,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
+        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2901,7 +2901,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2946,7 +2946,7 @@ try
             Currency = "CAD",
             CustomerDefinedCode = "6170",
             Description = "Voluptatibus valde spoliatio.",
-            Id = "0621319f-7596-4c9f-bf98-66f918d133a9",
+            Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
             IsPayable = false,
             Metadata = new List<AccountingMetadata>() {},
             Name = "Auto Loan Account",
@@ -2959,7 +2959,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-            UpdatedAt = System.DateTime.Parse("2023-08-07T03:14:48.884Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );
