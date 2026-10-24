@@ -47,6 +47,20 @@ namespace UnifiedTo.Models.Requests
         Raw,
         [JsonProperty("conversation_identifier")]
         ConversationIdentifier,
+        [JsonProperty("status")]
+        Status,
+        [JsonProperty("answer_at")]
+        AnswerAt,
+        [JsonProperty("duration_seconds")]
+        DurationSeconds,
+        [JsonProperty("cost_amount")]
+        CostAmount,
+        [JsonProperty("currency")]
+        Currency,
+        [JsonProperty("parent_id")]
+        ParentId,
+        [JsonProperty("instructions")]
+        Instructions,
     }
 
     public static class ListUcCallsQueryParamFieldsExtension

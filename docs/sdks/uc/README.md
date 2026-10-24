@@ -4,6 +4,7 @@
 
 ### Available Operations
 
+* [CreateUcCall](#createuccall) - Create a call
 * [CreateUcComment](#createuccomment) - Create a comment
 * [CreateUcContact](#createuccontact) - Create a contact
 * [CreateUcRecording](#createucrecording) - Create a recording
@@ -19,15 +20,97 @@
 * [ListUcRecordings](#listucrecordings) - List all recordings
 * [ListUcScorecards](#listucscorecards) - List all scorecards
 * [ListUcScorecardtemplates](#listucscorecardtemplates) - List all scorecardtemplates
+* [PatchUcCall](#patchuccall) - Update a call
 * [PatchUcComment](#patchuccomment) - Update a comment
 * [PatchUcContact](#patchuccontact) - Update a contact
 * [PatchUcRecording](#patchucrecording) - Update a recording
 * [RemoveUcComment](#removeuccomment) - Remove a comment
 * [RemoveUcContact](#removeuccontact) - Remove a contact
 * [RemoveUcRecording](#removeucrecording) - Remove a recording
+* [UpdateUcCall](#updateuccall) - Update a call
 * [UpdateUcComment](#updateuccomment) - Update a comment
 * [UpdateUcContact](#updateuccontact) - Update a contact
 * [UpdateUcRecording](#updateucrecording) - Update a recording
+
+## CreateUcCall
+
+Creates a UcCall. Provide the unified UcCall fields in the request body; they are mapped to the provider's API. Returns the created UcCall.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createUcCall" method="post" path="/uc/{connection_id}/call" example="uc_call" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Uc.CreateUcCallAsync(
+    ucCall: new UcCall() {
+        AnswerAt = System.DateTime.Parse("2025-05-15T07:37:02.253Z").ToUniversalTime(),
+        Contacts = new List<UcContact>() {},
+        ConversationIdentifier = "085edbd2-3d92-4092-81ac-f87d135ddc04",
+        CostAmount = 1.564D,
+        CreatedAt = System.DateTime.Parse("2023-04-22T19:05:34.882Z").ToUniversalTime(),
+        Currency = "USD",
+        DurationSeconds = 2556D,
+        EndAt = System.DateTime.Parse("2024-05-30T23:10:59.811Z").ToUniversalTime(),
+        Id = "085edbd2-3d92-4092-81ac-f87d135ddc04",
+        IsPrivate = false,
+        Metadata = new List<UcMetadata>() {
+            new UcMetadata() {
+                ExtraData = UcMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = UcMetadataFormat.Price,
+                Id = "fb337f42-7980-422b-8573-5ebd3cdac692",
+                Namespace = "custom",
+                Slug = "custom_field",
+                Value = UcMetadataValue.CreateStr(
+                    "tui"
+                ),
+            },
+        },
+        StartAt = System.DateTime.Parse("2023-12-17T22:48:25.791Z").ToUniversalTime(),
+        Status = UcCallStatus.InProgress,
+        Telephone = new PropertyUcCallTelephone() {
+            Telephone = "(493) 534-0768",
+            Type = PropertyUcCallTelephoneType.Mobile,
+        },
+        Type = UcCallType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2023-08-03T14:04:16.016Z").ToUniversalTime(),
+        UserPhone = "819-894-3317 x163",
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `UcCall`                                                                                                                                         | [UcCall](../../Models/Components/UcCall.md)                                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateUcCallQueryParamFields](../../Models/Requests/CreateUcCallQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateUcCallResponse](../../Models/Requests/CreateUcCallResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateUcComment
 
@@ -49,9 +132,9 @@ var res = await sdk.Uc.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "55d23f96-c266-4b7d-909e-398409ce874a",
+        Id = "b8e1d3d0-6bd7-4c56-a9a1-27a85eaf7d94",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-10T06:08:40.486Z",
+        UpdatedAt = "2024-02-10T10:59:58.179Z",
     },
     connectionId: "<id>"
 );
@@ -106,7 +189,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "bc6b3207-fabb-4f19-96ef-ea0d20f87687",
+        Id = "2a82574d-fc19-4325-9ae1-6ffaed04cffe",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -125,7 +208,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-09T13:33:12.682Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-10T01:24:46.718Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -172,36 +255,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Uc.CreateUcRecordingAsync(
     ucRecording: new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "197b1d24-576b-4800-9b75-69197705d773",
+        ConversationIdentifier = "8eb66fad-9526-455a-8707-f819230fb91f",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-05T19:09:42.787Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-28T13:02:09.055Z").ToUniversalTime(),
-        Id = "197b1d24-576b-4800-9b75-69197705d773",
+        EndAt = System.DateTime.Parse("2024-05-06T03:10:51.496Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-29T06:46:46.972Z").ToUniversalTime(),
+        Id = "8eb66fad-9526-455a-8707-f819230fb91f",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-02T13:45:28.797Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-02T21:19:48.105Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-17T05:42:15.090Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-17T23:41:58.555Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-26T04:52:43.412Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-03T02:13:02.996Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-26T21:47:50.071Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-03T10:37:02.244Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-13T13:37:46.604Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-08-04T18:51:01.408Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-13T23:48:42.866Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-05T13:54:58.106Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
         Metadata = new List<UcMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-04-28T01:14:35.198Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-28T04:13:59.905Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-17T16:33:53.226Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-18T04:50:03.493Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },
@@ -728,6 +811,87 @@ var res = await sdk.Uc.ListUcScorecardtemplatesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchUcCall
+
+Updates the UcCall identified by `id`. Provide the unified UcCall fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchUcCall" method="patch" path="/uc/{connection_id}/call/{id}" example="uc_call" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchUcCallRequest req = new PatchUcCallRequest() {
+    UcCall = new UcCall() {
+        AnswerAt = System.DateTime.Parse("2025-05-15T07:37:02.284Z").ToUniversalTime(),
+        Contacts = new List<UcContact>() {},
+        ConversationIdentifier = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        CostAmount = 1.564D,
+        CreatedAt = System.DateTime.Parse("2023-04-22T19:05:34.882Z").ToUniversalTime(),
+        Currency = "USD",
+        DurationSeconds = 2556D,
+        EndAt = System.DateTime.Parse("2024-05-30T23:10:59.827Z").ToUniversalTime(),
+        Id = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        IsPrivate = false,
+        Metadata = new List<UcMetadata>() {
+            new UcMetadata() {
+                ExtraData = UcMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = UcMetadataFormat.Price,
+                Id = "b4f7ed1b-2634-4173-9152-2f806e9fecf2",
+                Namespace = "custom",
+                Slug = "custom_field",
+                Value = UcMetadataValue.CreateStr(
+                    "tui"
+                ),
+            },
+        },
+        StartAt = System.DateTime.Parse("2023-12-17T22:48:25.801Z").ToUniversalTime(),
+        Status = UcCallStatus.InProgress,
+        Telephone = new PropertyUcCallTelephone() {
+            Telephone = "(493) 534-0768",
+            Type = PropertyUcCallTelephoneType.Mobile,
+        },
+        Type = UcCallType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2023-08-03T14:04:16.020Z").ToUniversalTime(),
+        UserPhone = "819-894-3317 x163",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Uc.PatchUcCallAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `request`                                                         | [PatchUcCallRequest](../../Models/Requests/PatchUcCallRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+
+### Response
+
+**[PatchUcCallResponse](../../Models/Requests/PatchUcCallResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchUcComment
 
 Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
@@ -749,9 +913,9 @@ PatchUcCommentRequest req = new PatchUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "6f610482-64ae-448b-89c7-98e41dbb3033",
+        Id = "3a243e53-5d14-461d-b852-6365e7647755",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-10T06:08:40.490Z",
+        UpdatedAt = "2024-02-10T10:59:58.181Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -807,7 +971,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "56c4404e-d637-43f6-909b-4616439c2272",
+        Id = "b62c16f0-bb64-4d08-9110-8f80c0d9480d",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -826,7 +990,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-09T13:33:12.691Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-10T01:24:46.724Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -874,36 +1038,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "fce85fe4-9380-41bb-9ac3-f00d8580f477",
+        ConversationIdentifier = "c41fc96e-6c21-4fa0-b341-4193927c7def",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-05T19:09:42.800Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-28T13:02:09.084Z").ToUniversalTime(),
-        Id = "fce85fe4-9380-41bb-9ac3-f00d8580f477",
+        EndAt = System.DateTime.Parse("2024-05-06T03:10:51.511Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-29T06:46:47.004Z").ToUniversalTime(),
+        Id = "c41fc96e-6c21-4fa0-b341-4193927c7def",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-02T13:45:28.809Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-02T21:19:48.118Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-17T05:42:15.120Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-17T23:41:58.588Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-26T04:52:43.439Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-03T02:13:03.009Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-26T21:47:50.102Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-03T10:37:02.259Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-13T13:37:46.621Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-08-04T18:51:01.440Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-13T23:48:42.884Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-05T13:54:58.141Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
         Metadata = new List<UcMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-04-28T01:14:35.203Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-28T04:13:59.910Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-17T16:33:53.245Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-18T04:50:03.516Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },
@@ -1052,6 +1216,87 @@ var res = await sdk.Uc.RemoveUcRecordingAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## UpdateUcCall
+
+Updates the UcCall identified by `id`. Provide the unified UcCall fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateUcCall" method="put" path="/uc/{connection_id}/call/{id}" example="uc_call" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateUcCallRequest req = new UpdateUcCallRequest() {
+    UcCall = new UcCall() {
+        AnswerAt = System.DateTime.Parse("2025-05-15T07:37:02.284Z").ToUniversalTime(),
+        Contacts = new List<UcContact>() {},
+        ConversationIdentifier = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        CostAmount = 1.564D,
+        CreatedAt = System.DateTime.Parse("2023-04-22T19:05:34.882Z").ToUniversalTime(),
+        Currency = "USD",
+        DurationSeconds = 2556D,
+        EndAt = System.DateTime.Parse("2024-05-30T23:10:59.827Z").ToUniversalTime(),
+        Id = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        IsPrivate = false,
+        Metadata = new List<UcMetadata>() {
+            new UcMetadata() {
+                ExtraData = UcMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = UcMetadataFormat.Price,
+                Id = "b4f7ed1b-2634-4173-9152-2f806e9fecf2",
+                Namespace = "custom",
+                Slug = "custom_field",
+                Value = UcMetadataValue.CreateStr(
+                    "tui"
+                ),
+            },
+        },
+        StartAt = System.DateTime.Parse("2023-12-17T22:48:25.801Z").ToUniversalTime(),
+        Status = UcCallStatus.InProgress,
+        Telephone = new PropertyUcCallTelephone() {
+            Telephone = "(493) 534-0768",
+            Type = PropertyUcCallTelephoneType.Mobile,
+        },
+        Type = UcCallType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2023-08-03T14:04:16.020Z").ToUniversalTime(),
+        UserPhone = "819-894-3317 x163",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Uc.UpdateUcCallAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [UpdateUcCallRequest](../../Models/Requests/UpdateUcCallRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+
+### Response
+
+**[UpdateUcCallResponse](../../Models/Requests/UpdateUcCallResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## UpdateUcComment
 
 Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
@@ -1073,9 +1318,9 @@ UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "6f610482-64ae-448b-89c7-98e41dbb3033",
+        Id = "3a243e53-5d14-461d-b852-6365e7647755",
         Metadata = new List<UcMetadata>() {},
-        UpdatedAt = "2024-02-10T06:08:40.490Z",
+        UpdatedAt = "2024-02-10T10:59:58.181Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1131,7 +1376,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "56c4404e-d637-43f6-909b-4616439c2272",
+        Id = "b62c16f0-bb64-4d08-9110-8f80c0d9480d",
         LastName = "Rogahn",
         Metadata = new List<UcMetadata>() {},
         Name = "Luther Rogahn",
@@ -1150,7 +1395,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-12-09T13:33:12.691Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-10T01:24:46.724Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1198,36 +1443,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "fce85fe4-9380-41bb-9ac3-f00d8580f477",
+        ConversationIdentifier = "c41fc96e-6c21-4fa0-b341-4193927c7def",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-05-05T19:09:42.800Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-04-28T13:02:09.084Z").ToUniversalTime(),
-        Id = "fce85fe4-9380-41bb-9ac3-f00d8580f477",
+        EndAt = System.DateTime.Parse("2024-05-06T03:10:51.511Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-29T06:46:47.004Z").ToUniversalTime(),
+        Id = "c41fc96e-6c21-4fa0-b341-4193927c7def",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-04-02T13:45:28.809Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-04-02T21:19:48.118Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-05-17T05:42:15.120Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-17T23:41:58.588Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-02-26T04:52:43.439Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-06-03T02:13:03.009Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-26T21:47:50.102Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-06-03T10:37:02.259Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-10-13T13:37:46.621Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-08-04T18:51:01.440Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-13T23:48:42.884Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-08-05T13:54:58.141Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
         Metadata = new List<UcMetadata>() {},
-        StartAt = System.DateTime.Parse("2023-04-28T01:14:35.203Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-28T04:13:59.910Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-03-17T16:33:53.245Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-18T04:50:03.516Z").ToUniversalTime(),
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
     },

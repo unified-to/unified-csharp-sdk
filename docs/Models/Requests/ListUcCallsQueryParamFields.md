@@ -29,3 +29,10 @@ var value = ListUcCallsQueryParamFields.Id;
 | `Metadata`               | metadata                 |
 | `Raw`                    | raw                      |
 | `ConversationIdentifier` | conversation_identifier  |
+| `Status`                 | status                   |
+| `AnswerAt`               | answer_at                |
+| `DurationSeconds`        | duration_seconds         |
+| `CostAmount`             | cost_amount              |
+| `Currency`               | currency                 |
+| `ParentId`               | parent_id                |
+| `Instructions`           | instructions             |

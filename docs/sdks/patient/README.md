@@ -46,7 +46,7 @@ var res = await sdk.Patient.CreateHealthcarePatientAsync(
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "fa94674c-5122-4254-9bbb-7f721d352f9d",
+        Id = "9fb73473-2020-4c46-a3e0-c56f2589a6ad",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -66,7 +66,7 @@ var res = await sdk.Patient.CreateHealthcarePatientAsync(
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-24T17:38:09.880Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-25T12:32:09.140Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -213,7 +213,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "5dd5ea1d-9411-437a-894c-7320b433f851",
+        Id = "ce3a7577-ea4c-45f8-84ba-ec7716b90856",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -233,7 +233,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-24T17:38:09.912Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-25T12:32:09.166Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -297,7 +297,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "5dd5ea1d-9411-437a-894c-7320b433f851",
+        Id = "ce3a7577-ea4c-45f8-84ba-ec7716b90856",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -317,7 +317,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-24T17:38:09.912Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-25T12:32:09.166Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

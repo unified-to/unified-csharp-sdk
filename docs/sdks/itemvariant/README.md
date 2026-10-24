@@ -34,7 +34,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "d4ca3775-2ad3-488e-a6ba-c5992b04b11b",
+        Id = "479d0582-4a21-4eed-93da-9df5cd453d6e",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -43,10 +43,10 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "52407085-3f1d-4d80-b832-96c0d2ef131e",
+                Id = "dd3260a3-4e76-4409-a2a0-fb4e2fe9d76a",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "8a126028-4c9e-4374-b5d4-4dbe58940a6d",
+                        Id = "a0d870d1-0434-4690-85e2-25a4db55e6ac",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -67,7 +67,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8e3558f7-4f14-44f1-9660-942adb5f79f3",
+                Id = "be9806e2-b81f-4b39-ba02-4987ae2e7715",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -78,7 +78,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "b6120e1a-6908-4e07-b3a2-feba4d0f79f1",
+                Id = "b8a52bb4-97a3-4aa1-b200-885ecf3d8c96",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -86,7 +86,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
                 },
             },
             new CommerceItemOption() {
-                Id = "91e99028-7f53-4f39-933d-2bae5ed99b6a",
+                Id = "f367b538-2957-405a-9b22-0df3bb0a5645",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -109,7 +109,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-11T10:21:18.226Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-12T03:52:18.068Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -246,7 +246,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "9d1ccf95-4f8d-46e0-b49c-d58d0c0a602b",
+        Id = "6511ac2c-c336-4817-8a9c-ccbfb34c223c",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -255,10 +255,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "560fea92-30d1-4517-8f78-accd1d189bba",
+                Id = "c6b4c055-489f-4e5b-84ba-524acd34f752",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "8e89da16-52b0-40c6-8ff0-398c1af8866e",
+                        Id = "f4fd8ab7-2974-45fa-b5cb-f556405ba45f",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -279,7 +279,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "b956e476-a02b-4f27-9c8a-9b6d7bc80cb1",
+                Id = "37a06c50-12db-474f-a62a-dbc772fe917a",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -290,7 +290,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "9cd56099-2f5c-49c6-b9e4-b20a693ddf97",
+                Id = "032e1489-2912-43f4-afaf-763506c3d4a7",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -298,7 +298,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                 },
             },
             new CommerceItemOption() {
-                Id = "ddca54cf-da8e-4c92-96f0-885e60532218",
+                Id = "a368c328-36a5-4f38-a50f-03ff4c8c0304",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -321,7 +321,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-11T10:21:18.247Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-12T03:52:18.102Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,
@@ -415,7 +415,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Stylish Salad designed to make you stand out with little looks",
         Height = 54D,
-        Id = "9d1ccf95-4f8d-46e0-b49c-d58d0c0a602b",
+        Id = "6511ac2c-c336-4817-8a9c-ccbfb34c223c",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -424,10 +424,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Hic desipio thorax.",
                 Height = 961D,
-                Id = "560fea92-30d1-4517-8f78-accd1d189bba",
+                Id = "c6b4c055-489f-4e5b-84ba-524acd34f752",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "8e89da16-52b0-40c6-8ff0-398c1af8866e",
+                        Id = "f4fd8ab7-2974-45fa-b5cb-f556405ba45f",
                         Slug = "ubi",
                         Value = CommerceMetadataValue.CreateStr(
                             "textus"
@@ -448,7 +448,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "b956e476-a02b-4f27-9c8a-9b6d7bc80cb1",
+                Id = "37a06c50-12db-474f-a62a-dbc772fe917a",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -459,7 +459,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         Name = "Chair",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "9cd56099-2f5c-49c6-b9e4-b20a693ddf97",
+                Id = "032e1489-2912-43f4-afaf-763506c3d4a7",
                 Name = "Color",
                 Position = 1D,
                 Values = new List<string>() {
@@ -467,7 +467,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                 },
             },
             new CommerceItemOption() {
-                Id = "ddca54cf-da8e-4c92-96f0-885e60532218",
+                Id = "a368c328-36a5-4f38-a50f-03ff4c8c0304",
                 Name = "Size",
                 Position = 2D,
                 Values = new List<string>() {
@@ -490,7 +490,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             "deserunt",
         },
         TotalStock = 436D,
-        UpdatedAt = System.DateTime.Parse("2026-03-11T10:21:18.247Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-12T03:52:18.102Z").ToUniversalTime(),
         Weight = 46D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 40D,

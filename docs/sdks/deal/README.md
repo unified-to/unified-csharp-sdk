@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Deal.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T20:07:37.054Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-09-01T20:15:33.342Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-11T00:18:13.122Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-02T09:26:48.108Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "e6877e51-74de-497c-9cf9-d666aee54ec5",
+        Id = "9efaeee9-5d5f-43a1-9c29-048f4f4db637",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -45,7 +45,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e88e7be7-1a9a-4e17-8b94-a4cdb7fe4f32",
+                Id = "b45ec52a-4c7d-4803-982d-f2dccd65e413",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -60,7 +60,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-12T15:52:13.203Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T23:38:53.964Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     connectionId: "<id>"
@@ -192,12 +192,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T20:07:37.059Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-09-01T20:15:33.358Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-11T00:18:13.127Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-02T09:26:48.123Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "ec35bd88-62d8-403f-972a-e66c2f4c8058",
+        Id = "1aed5b3c-6f6a-4a7c-beb6-eac1bb31af36",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -206,7 +206,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "abd42f24-cf2b-434c-8e3b-205ea45900ac",
+                Id = "889d2735-0f1b-4b42-bf78-999f0bb88faf",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -221,7 +221,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-12T15:52:13.213Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T23:38:53.973Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -310,12 +310,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-10T20:07:37.059Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-09-01T20:15:33.358Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-11T00:18:13.127Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-09-02T09:26:48.123Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "USD",
         Description = "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-        Id = "ec35bd88-62d8-403f-972a-e66c2f4c8058",
+        Id = "1aed5b3c-6f6a-4a7c-beb6-eac1bb31af36",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -324,7 +324,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "abd42f24-cf2b-434c-8e3b-205ea45900ac",
+                Id = "889d2735-0f1b-4b42-bf78-999f0bb88faf",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -339,7 +339,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-12T15:52:13.213Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-12T23:38:53.973Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",

@@ -52,7 +52,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "fe474427-ce4e-428a-bab2-ba128167af7b",
+        Id = "164958b8-2467-456d-ad50-398f9688b584",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -63,10 +63,10 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "99ce32a4-79b2-4ea5-94da-572f661ace18",
+                Id = "e26d460b-dbb5-48d1-b68c-8f68705f2ea4",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "44a0efd3-bcf7-4b21-a70c-aab42371dd63",
+                        Id = "d82aa5bd-c643-4a3a-bf26-90763007290d",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -94,7 +94,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-21T10:32:55.900Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T17:28:16.076Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -153,7 +153,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "35b9294a-1c8e-48dc-aec2-1d2827eca211",
+        Id = "64cd9259-6dbe-4aac-9201-e66ddefa7e44",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -174,7 +174,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T20:07:27.497Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-22T03:29:23.146Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -565,7 +565,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "6aac1496-7f54-43bf-9cf5-04d43016c034",
+        Id = "5bf31e9f-42c2-41b5-b991-5281cf2cff79",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -576,10 +576,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "04f94005-c2b7-45c5-a899-d4c1b4e6a577",
+                Id = "b874d961-7fcc-48f3-885a-173ab141354c",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "16db4c03-4eb7-4f50-afed-21ada647fcca",
+                        Id = "aa387d23-e49a-43e2-84ad-6381f4ee3ba5",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -607,7 +607,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-21T10:32:55.910Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T17:28:16.085Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -667,7 +667,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "8abe5d8d-d74f-4a70-ac8d-1aa4c722cbd0",
+        Id = "ff17060a-1dd1-41a3-87ca-49a3a49fbf38",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -688,7 +688,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T20:07:27.506Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-22T03:29:23.156Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -827,7 +827,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "6aac1496-7f54-43bf-9cf5-04d43016c034",
+        Id = "5bf31e9f-42c2-41b5-b991-5281cf2cff79",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -838,10 +838,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "04f94005-c2b7-45c5-a899-d4c1b4e6a577",
+                Id = "b874d961-7fcc-48f3-885a-173ab141354c",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "16db4c03-4eb7-4f50-afed-21ada647fcca",
+                        Id = "aa387d23-e49a-43e2-84ad-6381f4ee3ba5",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -869,7 +869,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-21T10:32:55.910Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-21T17:28:16.085Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -929,7 +929,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "8abe5d8d-d74f-4a70-ac8d-1aa4c722cbd0",
+        Id = "ff17060a-1dd1-41a3-87ca-49a3a49fbf38",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -950,7 +950,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-21T20:07:27.506Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-22T03:29:23.156Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -189,6 +189,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions HrisEarningRead = new PropertyConnectionPermissions("hris_earning_read");
         public static readonly PropertyConnectionPermissions HrisEarningWrite = new PropertyConnectionPermissions("hris_earning_write");
         public static readonly PropertyConnectionPermissions UcCallRead = new PropertyConnectionPermissions("uc_call_read");
+        public static readonly PropertyConnectionPermissions UcCallWrite = new PropertyConnectionPermissions("uc_call_write");
         public static readonly PropertyConnectionPermissions UcContactRead = new PropertyConnectionPermissions("uc_contact_read");
         public static readonly PropertyConnectionPermissions UcContactWrite = new PropertyConnectionPermissions("uc_contact_write");
         public static readonly PropertyConnectionPermissions UcCommentRead = new PropertyConnectionPermissions("uc_comment_read");
@@ -589,6 +590,7 @@ namespace UnifiedTo.Models.Components
                 ["hris_earning_read"] = HrisEarningRead,
                 ["hris_earning_write"] = HrisEarningWrite,
                 ["uc_call_read"] = UcCallRead,
+                ["uc_call_write"] = UcCallWrite,
                 ["uc_contact_read"] = UcContactRead,
                 ["uc_contact_write"] = UcContactWrite,
                 ["uc_comment_read"] = UcCommentRead,

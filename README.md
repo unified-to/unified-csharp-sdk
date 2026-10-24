@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
+        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -40,7 +40,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -546,8 +546,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Call](docs/sdks/call/README.md)
 
+* [CreateUcCall](docs/sdks/call/README.md#createuccall) - Create a call
 * [GetUcCall](docs/sdks/call/README.md#getuccall) - Retrieve a call
 * [ListUcCalls](docs/sdks/call/README.md#listuccalls) - List all calls
+* [PatchUcCall](docs/sdks/call/README.md#patchuccall) - Update a call
+* [UpdateUcCall](docs/sdks/call/README.md#updateuccall) - Update a call
 
 ### [Campaign](docs/sdks/campaign/README.md)
 
@@ -2582,6 +2585,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Uc](docs/sdks/uc/README.md)
 
+* [CreateUcCall](docs/sdks/uc/README.md#createuccall) - Create a call
 * [CreateUcComment](docs/sdks/uc/README.md#createuccomment) - Create a comment
 * [CreateUcContact](docs/sdks/uc/README.md#createuccontact) - Create a contact
 * [CreateUcRecording](docs/sdks/uc/README.md#createucrecording) - Create a recording
@@ -2597,12 +2601,14 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListUcRecordings](docs/sdks/uc/README.md#listucrecordings) - List all recordings
 * [ListUcScorecards](docs/sdks/uc/README.md#listucscorecards) - List all scorecards
 * [ListUcScorecardtemplates](docs/sdks/uc/README.md#listucscorecardtemplates) - List all scorecardtemplates
+* [PatchUcCall](docs/sdks/uc/README.md#patchuccall) - Update a call
 * [PatchUcComment](docs/sdks/uc/README.md#patchuccomment) - Update a comment
 * [PatchUcContact](docs/sdks/uc/README.md#patchuccontact) - Update a contact
 * [PatchUcRecording](docs/sdks/uc/README.md#patchucrecording) - Update a recording
 * [RemoveUcComment](docs/sdks/uc/README.md#removeuccomment) - Remove a comment
 * [RemoveUcContact](docs/sdks/uc/README.md#removeuccontact) - Remove a contact
 * [RemoveUcRecording](docs/sdks/uc/README.md#removeucrecording) - Remove a recording
+* [UpdateUcCall](docs/sdks/uc/README.md#updateuccall) - Update a call
 * [UpdateUcComment](docs/sdks/uc/README.md#updateuccomment) - Update a comment
 * [UpdateUcContact](docs/sdks/uc/README.md#updateuccontact) - Update a contact
 * [UpdateUcRecording](docs/sdks/uc/README.md#updateucrecording) - Update a recording
@@ -2751,7 +2757,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
+        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2764,7 +2770,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2795,7 +2801,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
+        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2808,7 +2814,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2888,7 +2894,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
+        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2901,7 +2907,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2946,7 +2952,7 @@ try
             Currency = "CAD",
             CustomerDefinedCode = "6170",
             Description = "Voluptatibus valde spoliatio.",
-            Id = "5c0be866-f1b9-4ec7-8ff7-fc5cac02dd23",
+            Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
             IsPayable = false,
             Metadata = new List<AccountingMetadata>() {},
             Name = "Auto Loan Account",
@@ -2959,7 +2965,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-            UpdatedAt = System.DateTime.Parse("2023-08-07T09:57:17.563Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );

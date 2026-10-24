@@ -47,7 +47,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "2b612c25-c217-4bf6-8e57-12aa01103013",
+        Id = "024dcf1d-ca30-4efd-b057-5937632b7926",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -61,7 +61,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "2d72f451-34e5-4362-9339-a4726511dc93",
+                Id = "5410f027-fa4f-4274-ab39-8476d12c944a",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -87,7 +87,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-18T01:41:28.207Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-18T03:24:18.442Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -234,7 +234,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "5bd18c9a-df8f-4f94-a839-f07c1f2f04a8",
+        Id = "1f9d56ae-73b3-4c55-b679-f5ee0c80d2f4",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -248,7 +248,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "434e3fc6-e288-49ba-9e28-dcbf1f1c46b3",
+                Id = "99da3e5e-8c7e-44f0-89ec-7e53100be5e6",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -274,7 +274,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-18T01:41:28.209Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-18T03:24:18.444Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -378,7 +378,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "5bd18c9a-df8f-4f94-a839-f07c1f2f04a8",
+        Id = "1f9d56ae-73b3-4c55-b679-f5ee0c80d2f4",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -392,7 +392,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "434e3fc6-e288-49ba-9e28-dcbf1f1c46b3",
+                Id = "99da3e5e-8c7e-44f0-89ec-7e53100be5e6",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -418,7 +418,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Title = "International Factors Administrator",
-        UpdatedAt = System.DateTime.Parse("2020-05-18T01:41:28.209Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-18T03:24:18.444Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

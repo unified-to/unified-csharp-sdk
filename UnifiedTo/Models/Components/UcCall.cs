@@ -20,6 +20,12 @@ namespace UnifiedTo.Models.Components
     public class UcCall
     {
         /// <summary>
+        /// When the call was answered (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
+        [JsonProperty("answer_at")]
+        public DateTime? AnswerAt { get; set; }
+
+        /// <summary>
         /// The contact ID for call (reference to UcContact).
         /// </summary>
         [JsonProperty("contact_id")]
@@ -35,10 +41,28 @@ namespace UnifiedTo.Models.Components
         public string? ConversationIdentifier { get; set; }
 
         /// <summary>
+        /// What the integration charged for the call.
+        /// </summary>
+        [JsonProperty("cost_amount")]
+        public double? CostAmount { get; set; }
+
+        /// <summary>
         /// The date that this call object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// ISO 4217 currency of cost_amount.
+        /// </summary>
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
+        /// <summary>
+        /// Call length in seconds.
+        /// </summary>
+        [JsonProperty("duration_seconds")]
+        public double? DurationSeconds { get; set; }
 
         /// <summary>
         /// The end time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
@@ -52,11 +76,23 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Write-only: what the call does once answered (create/update only; never returned).
+        /// </summary>
+        [JsonProperty("instructions")]
+        public List<UcCallInstruction>? Instructions { get; set; }
+
         [JsonProperty("is_private")]
         public bool? IsPrivate { get; set; }
 
         [JsonProperty("metadata")]
         public List<UcMetadata>? Metadata { get; set; }
+
+        /// <summary>
+        /// The parent call (leg) that this call belongs to.
+        /// </summary>
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
 
         /// <summary>
         /// The raw data returned by the integration for this call.
@@ -69,6 +105,12 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
+
+        /// <summary>
+        /// The current or final status of the call.
+        /// </summary>
+        [JsonProperty("status")]
+        public UcCallStatus? Status { get; set; }
 
         /// <summary>
         /// The telephone number called.
