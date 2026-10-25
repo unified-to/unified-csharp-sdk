@@ -416,6 +416,18 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions HealthcareObservationWrite = new PropertyConnectionPermissions("healthcare_observation_write");
         public static readonly PropertyConnectionPermissions HealthcareImmunizationRead = new PropertyConnectionPermissions("healthcare_immunization_read");
         public static readonly PropertyConnectionPermissions HealthcareImmunizationWrite = new PropertyConnectionPermissions("healthcare_immunization_write");
+        public static readonly PropertyConnectionPermissions HealthcareDocumentRead = new PropertyConnectionPermissions("healthcare_document_read");
+        public static readonly PropertyConnectionPermissions HealthcareDocumentWrite = new PropertyConnectionPermissions("healthcare_document_write");
+        public static readonly PropertyConnectionPermissions HealthcareCoverageRead = new PropertyConnectionPermissions("healthcare_coverage_read");
+        public static readonly PropertyConnectionPermissions HealthcareCoverageWrite = new PropertyConnectionPermissions("healthcare_coverage_write");
+        public static readonly PropertyConnectionPermissions HealthcareProcedureRead = new PropertyConnectionPermissions("healthcare_procedure_read");
+        public static readonly PropertyConnectionPermissions HealthcareProcedureWrite = new PropertyConnectionPermissions("healthcare_procedure_write");
+        public static readonly PropertyConnectionPermissions HealthcareReportRead = new PropertyConnectionPermissions("healthcare_report_read");
+        public static readonly PropertyConnectionPermissions HealthcareReportWrite = new PropertyConnectionPermissions("healthcare_report_write");
+        public static readonly PropertyConnectionPermissions HealthcareCareplanRead = new PropertyConnectionPermissions("healthcare_careplan_read");
+        public static readonly PropertyConnectionPermissions HealthcareCareplanWrite = new PropertyConnectionPermissions("healthcare_careplan_write");
+        public static readonly PropertyConnectionPermissions HealthcareGoalRead = new PropertyConnectionPermissions("healthcare_goal_read");
+        public static readonly PropertyConnectionPermissions HealthcareGoalWrite = new PropertyConnectionPermissions("healthcare_goal_write");
 
         private static readonly Dictionary <string, PropertyConnectionPermissions> _knownValues =
             new Dictionary <string, PropertyConnectionPermissions> ()
@@ -816,7 +828,19 @@ namespace UnifiedTo.Models.Components
                 ["healthcare_observation_read"] = HealthcareObservationRead,
                 ["healthcare_observation_write"] = HealthcareObservationWrite,
                 ["healthcare_immunization_read"] = HealthcareImmunizationRead,
-                ["healthcare_immunization_write"] = HealthcareImmunizationWrite
+                ["healthcare_immunization_write"] = HealthcareImmunizationWrite,
+                ["healthcare_document_read"] = HealthcareDocumentRead,
+                ["healthcare_document_write"] = HealthcareDocumentWrite,
+                ["healthcare_coverage_read"] = HealthcareCoverageRead,
+                ["healthcare_coverage_write"] = HealthcareCoverageWrite,
+                ["healthcare_procedure_read"] = HealthcareProcedureRead,
+                ["healthcare_procedure_write"] = HealthcareProcedureWrite,
+                ["healthcare_report_read"] = HealthcareReportRead,
+                ["healthcare_report_write"] = HealthcareReportWrite,
+                ["healthcare_careplan_read"] = HealthcareCareplanRead,
+                ["healthcare_careplan_write"] = HealthcareCareplanWrite,
+                ["healthcare_goal_read"] = HealthcareGoalRead,
+                ["healthcare_goal_write"] = HealthcareGoalWrite
             };
 
         private static readonly ConcurrentDictionary<string, PropertyConnectionPermissions> _values =

@@ -28,5 +28,7 @@ var value = UpdateHealthcareAppointmentQueryParamFields.Id;
 | `Reasons`            | reasons              |
 | `CancellationReason` | cancellation_reason  |
 | `Notes`              | notes                |
+| `IsVirtual`          | is_virtual           |
+| `MeetingUrl`         | meeting_url          |
 | `Metadata`           | metadata             |
 | `Raw`                | raw                  |

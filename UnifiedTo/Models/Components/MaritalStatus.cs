@@ -16,17 +16,34 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Marital status of the patient.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class MaritalStatus : IEquatable<MaritalStatus>
     {
         public static readonly MaritalStatus Married = new MaritalStatus("MARRIED");
         public static readonly MaritalStatus Single = new MaritalStatus("SINGLE");
+        public static readonly MaritalStatus DomesticPartner = new MaritalStatus("DOMESTIC_PARTNER");
+        public static readonly MaritalStatus Separated = new MaritalStatus("SEPARATED");
+        public static readonly MaritalStatus Divorced = new MaritalStatus("DIVORCED");
+        public static readonly MaritalStatus Widowed = new MaritalStatus("WIDOWED");
+        public static readonly MaritalStatus Annulled = new MaritalStatus("ANNULLED");
+        public static readonly MaritalStatus Unknown = new MaritalStatus("UNKNOWN");
+        public static readonly MaritalStatus Other = new MaritalStatus("OTHER");
 
         private static readonly Dictionary <string, MaritalStatus> _knownValues =
             new Dictionary <string, MaritalStatus> ()
             {
                 ["MARRIED"] = Married,
-                ["SINGLE"] = Single
+                ["SINGLE"] = Single,
+                ["DOMESTIC_PARTNER"] = DomesticPartner,
+                ["SEPARATED"] = Separated,
+                ["DIVORCED"] = Divorced,
+                ["WIDOWED"] = Widowed,
+                ["ANNULLED"] = Annulled,
+                ["UNKNOWN"] = Unknown,
+                ["OTHER"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, MaritalStatus> _values =

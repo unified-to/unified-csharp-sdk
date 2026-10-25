@@ -1,5 +1,7 @@
 # MaritalStatus
 
+Marital status of the patient
+
 ## Example Usage
 
 ```csharp
@@ -14,7 +16,14 @@ var custom = MaritalStatus.Of("custom_value");
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Married` | MARRIED   |
-| `Single`  | SINGLE    |
+| Name              | Value             |
+| ----------------- | ----------------- |
+| `Married`         | MARRIED           |
+| `Single`          | SINGLE            |
+| `DomesticPartner` | DOMESTIC_PARTNER  |
+| `Separated`       | SEPARATED         |
+| `Divorced`        | DIVORCED          |
+| `Widowed`         | WIDOWED           |
+| `Annulled`        | ANNULLED          |
+| `Unknown`         | UNKNOWN           |
+| `Other`           | OTHER             |

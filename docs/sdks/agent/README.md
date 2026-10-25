@@ -31,11 +31,11 @@ var res = await sdk.Agent.CreateGenaiAgentAsync(
     genaiAgent: new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "4b700b4a-e215-4276-9285-9cd626b26740",
+        Id = "57de3093-9715-434d-a94f-8d5dba027e84",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-17T19:19:30.118Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-18T17:42:22.176Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,11 +166,11 @@ PatchGenaiAgentRequest req = new PatchGenaiAgentRequest() {
     GenaiAgent = new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "ad75c76d-0af3-4f42-9aab-c35ac3cc78ad",
+        Id = "92bfee4a-67a5-48da-90e6-1a07b716bef6",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-17T19:19:30.124Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-18T17:42:22.186Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -258,11 +258,11 @@ UpdateGenaiAgentRequest req = new UpdateGenaiAgentRequest() {
     GenaiAgent = new GenaiAgent() {
         CreatedAt = System.DateTime.Parse("2020-12-18T02:23:33.723Z").ToUniversalTime(),
         Description = "Assentator tero sequi.",
-        Id = "ad75c76d-0af3-4f42-9aab-c35ac3cc78ad",
+        Id = "92bfee4a-67a5-48da-90e6-1a07b716bef6",
         Instructions = "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
         IsActive = false,
         Name = "daughter with",
-        UpdatedAt = System.DateTime.Parse("2025-10-17T19:19:30.124Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-18T17:42:22.186Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

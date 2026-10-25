@@ -263,9 +263,15 @@ namespace UnifiedTo
 
         public IAppointment Appointment { get; }
 
+        public ICareplan Careplan { get; }
+
         public ICondition Condition { get; }
 
+        public ICoverage Coverage { get; }
+
         public IEncounter Encounter { get; }
+
+        public IGoal Goal { get; }
 
         public IImmunization Immunization { get; }
 
@@ -276,6 +282,8 @@ namespace UnifiedTo
         public IPatient Patient { get; }
 
         public IPractitioner Practitioner { get; }
+
+        public IProcedure Procedure { get; }
 
         public ISlot Slot { get; }
 
@@ -360,8 +368,6 @@ namespace UnifiedTo
         public ICycle Cycle { get; }
 
         public IFeedback Feedback { get; }
-
-        public IGoal Goal { get; }
 
         public IRepo Repo { get; }
 
@@ -935,13 +941,25 @@ namespace UnifiedTo
         /// </summary>
         public IAppointment Appointment { get; private set; }
         /// <summary>
+        /// The Careplan sub-SDK.
+        /// </summary>
+        public ICareplan Careplan { get; private set; }
+        /// <summary>
         /// The Condition sub-SDK.
         /// </summary>
         public ICondition Condition { get; private set; }
         /// <summary>
+        /// The Coverage sub-SDK.
+        /// </summary>
+        public ICoverage Coverage { get; private set; }
+        /// <summary>
         /// The Encounter sub-SDK.
         /// </summary>
         public IEncounter Encounter { get; private set; }
+        /// <summary>
+        /// The Goal sub-SDK.
+        /// </summary>
+        public IGoal Goal { get; private set; }
         /// <summary>
         /// The Immunization sub-SDK.
         /// </summary>
@@ -962,6 +980,10 @@ namespace UnifiedTo
         /// The Practitioner sub-SDK.
         /// </summary>
         public IPractitioner Practitioner { get; private set; }
+        /// <summary>
+        /// The Procedure sub-SDK.
+        /// </summary>
+        public IProcedure Procedure { get; private set; }
         /// <summary>
         /// The Slot sub-SDK.
         /// </summary>
@@ -1130,10 +1152,6 @@ namespace UnifiedTo
         /// The Feedback sub-SDK.
         /// </summary>
         public IFeedback Feedback { get; private set; }
-        /// <summary>
-        /// The Goal sub-SDK.
-        /// </summary>
-        public IGoal Goal { get; private set; }
         /// <summary>
         /// The Repo sub-SDK.
         /// </summary>
@@ -1550,9 +1568,15 @@ namespace UnifiedTo
 
             Appointment = new Appointment(SDKConfiguration);
 
+            Careplan = new Careplan(SDKConfiguration);
+
             Condition = new Condition(SDKConfiguration);
 
+            Coverage = new Coverage(SDKConfiguration);
+
             Encounter = new Encounter(SDKConfiguration);
+
+            Goal = new Goal(SDKConfiguration);
 
             Immunization = new Immunization(SDKConfiguration);
 
@@ -1563,6 +1587,8 @@ namespace UnifiedTo
             Patient = new Patient(SDKConfiguration);
 
             Practitioner = new Practitioner(SDKConfiguration);
+
+            Procedure = new Procedure(SDKConfiguration);
 
             Slot = new Slot(SDKConfiguration);
 
@@ -1647,8 +1673,6 @@ namespace UnifiedTo
             Cycle = new Cycle(SDKConfiguration);
 
             Feedback = new Feedback(SDKConfiguration);
-
-            Goal = new Goal(SDKConfiguration);
 
             Repo = new Repo(SDKConfiguration);
 
@@ -2035,9 +2059,15 @@ namespace UnifiedTo
 
             Appointment = new Appointment(SDKConfiguration);
 
+            Careplan = new Careplan(SDKConfiguration);
+
             Condition = new Condition(SDKConfiguration);
 
+            Coverage = new Coverage(SDKConfiguration);
+
             Encounter = new Encounter(SDKConfiguration);
+
+            Goal = new Goal(SDKConfiguration);
 
             Immunization = new Immunization(SDKConfiguration);
 
@@ -2048,6 +2078,8 @@ namespace UnifiedTo
             Patient = new Patient(SDKConfiguration);
 
             Practitioner = new Practitioner(SDKConfiguration);
+
+            Procedure = new Procedure(SDKConfiguration);
 
             Slot = new Slot(SDKConfiguration);
 
@@ -2132,8 +2164,6 @@ namespace UnifiedTo
             Cycle = new Cycle(SDKConfiguration);
 
             Feedback = new Feedback(SDKConfiguration);
-
-            Goal = new Goal(SDKConfiguration);
 
             Repo = new Repo(SDKConfiguration);
 

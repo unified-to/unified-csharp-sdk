@@ -66,12 +66,12 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "fc42b55d-a275-44b0-bd61-b50eb6e7d474",
+        Id = "2a227769-af95-436c-a214-818c1306eaba",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
         Locations = new List<HrisLocation>() {},
-        MaritalStatus = MaritalStatus.Married,
+        MaritalStatus = HrisEmployeeMaritalStatus.Married,
         Metadata = new List<HrisMetadata>() {
             new HrisMetadata() {
                 ExtraData = HrisMetadataExtraData.CreateMapOfAny(
@@ -80,7 +80,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "6a8caf14-4312-45dd-b13f-70549bd28d97",
+                Id = "93b4faab-a926-4c2a-a489-3d89154d1ca1",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -130,7 +130,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T12:18:18.114Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T15:30:33.352Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -296,12 +296,12 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "4afac15a-f232-4fc3-99c1-b0e4157bd4f9",
+        Id = "09c652f1-472a-4f89-b7a4-96a23720e7ec",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
         Locations = new List<HrisLocation>() {},
-        MaritalStatus = MaritalStatus.Married,
+        MaritalStatus = HrisEmployeeMaritalStatus.Married,
         Metadata = new List<HrisMetadata>() {
             new HrisMetadata() {
                 ExtraData = HrisMetadataExtraData.CreateMapOfAny(
@@ -310,7 +310,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "89a0b975-65c5-4a0a-8a70-337a5ded114a",
+                Id = "10a1987b-6d8d-4ec5-9a5d-d1317b61eada",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -360,7 +360,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T12:18:18.126Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T15:30:33.367Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -483,12 +483,12 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "4afac15a-f232-4fc3-99c1-b0e4157bd4f9",
+        Id = "09c652f1-472a-4f89-b7a4-96a23720e7ec",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
         Locations = new List<HrisLocation>() {},
-        MaritalStatus = MaritalStatus.Married,
+        MaritalStatus = HrisEmployeeMaritalStatus.Married,
         Metadata = new List<HrisMetadata>() {
             new HrisMetadata() {
                 ExtraData = HrisMetadataExtraData.CreateMapOfAny(
@@ -497,7 +497,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "89a0b975-65c5-4a0a-8a70-337a5ded114a",
+                Id = "10a1987b-6d8d-4ec5-9a5d-d1317b61eada",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -547,7 +547,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-19T12:18:18.126Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-19T15:30:33.367Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

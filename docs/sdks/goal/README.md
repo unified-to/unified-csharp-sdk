@@ -5,7 +5,9 @@
 ### Available Operations
 
 * [CreatePerformanceGoal](#createperformancegoal) - Create a goal
+* [GetHealthcareGoal](#gethealthcaregoal) - Retrieve a goal
 * [GetPerformanceGoal](#getperformancegoal) - Retrieve a goal
+* [ListHealthcareGoals](#listhealthcaregoals) - List all goals
 * [ListPerformanceGoals](#listperformancegoals) - List all goals
 * [PatchPerformanceGoal](#patchperformancegoal) - Update a goal
 * [RemovePerformanceGoal](#removeperformancegoal) - Remove a goal
@@ -32,14 +34,14 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
     performanceGoal: new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-08-01T12:31:37.658Z").ToUniversalTime(),
-        Id = "fb171be3-6956-422e-aaee-66aac027f77b",
+        DueAt = System.DateTime.Parse("2026-08-02T14:42:12.400Z").ToUniversalTime(),
+        Id = "088a633f-e025-4e97-8eb8-dab3c30e4503",
         Metadata = new List<PerformanceMetadata>() {},
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-06-06T13:40:49.297Z").ToUniversalTime(),
-                Id = "657d332e-ed1e-495d-aab6-f48fe98b6844",
+                DueAt = System.DateTime.Parse("2026-06-07T15:14:43.135Z").ToUniversalTime(),
+                Id = "f9e5d851-48ba-4888-8e44-3ec4bfbe1bc8",
                 IsCompleted = true,
                 Name = "Team-oriented secondary matrix",
                 TargetValue = 32D,
@@ -48,8 +50,8 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-11T05:38:30.919Z").ToUniversalTime(),
-                Id = "2d71c0fa-84f7-4eca-964c-e219879ac903",
+                DueAt = System.DateTime.Parse("2026-08-12T07:55:27.734Z").ToUniversalTime(),
+                Id = "b6a34a26-8735-4a07-9ff3-dd4e09850ca7",
                 IsCompleted = true,
                 Name = "Exclusive client-server conglomeration",
                 TargetValue = 32D,
@@ -58,8 +60,8 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Hic explicabo odit.",
-                DueAt = System.DateTime.Parse("2026-10-13T06:12:52.563Z").ToUniversalTime(),
-                Id = "f3f43aaa-8a2a-4f94-90c5-6c647be67311",
+                DueAt = System.DateTime.Parse("2026-10-14T09:11:08.462Z").ToUniversalTime(),
+                Id = "51e58d6e-e0dd-46c8-868d-1bd8994655a3",
                 IsCompleted = true,
                 Name = "Synchronised immersive success",
                 TargetValue = 32D,
@@ -68,10 +70,10 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-25T17:03:04.715Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-26T15:09:54.018Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-14T04:29:02.786Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-14T15:10:25.759Z").ToUniversalTime(),
         Weight = 5D,
     },
     connectionId: "<id>"
@@ -92,6 +94,48 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
 ### Response
 
 **[CreatePerformanceGoalResponse](../../Models/Requests/CreatePerformanceGoalResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHealthcareGoal
+
+Retrieves a single HealthcareGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareGoal" method="get" path="/healthcare/{connection_id}/goal/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Goal.GetHealthcareGoalAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Goal                                                                                                                                   |
+| `Fields`                                                                                                                                         | List<[GetHealthcareGoalQueryParamFields](../../Models/Requests/GetHealthcareGoalQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareGoalResponse](../../Models/Requests/GetHealthcareGoalResponse.md)**
 
 ### Errors
 
@@ -134,6 +178,47 @@ var res = await sdk.Goal.GetPerformanceGoalAsync(
 ### Response
 
 **[GetPerformanceGoalResponse](../../Models/Requests/GetPerformanceGoalResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHealthcareGoals
+
+Returns a list of HealthcareGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareGoals" method="get" path="/healthcare/{connection_id}/goal" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareGoalsRequest req = new ListHealthcareGoalsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Goal.ListHealthcareGoalsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListHealthcareGoalsRequest](../../Models/Requests/ListHealthcareGoalsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[ListHealthcareGoalsResponse](../../Models/Requests/ListHealthcareGoalsResponse.md)**
 
 ### Errors
 
@@ -204,14 +289,14 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
     PerformanceGoal = new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-08-01T12:31:37.685Z").ToUniversalTime(),
-        Id = "7328cb03-f2ea-4aa4-bc0f-3cbd878705d3",
+        DueAt = System.DateTime.Parse("2026-08-02T14:42:12.427Z").ToUniversalTime(),
+        Id = "06552868-9b9e-46f6-8193-9470fdad99f9",
         Metadata = new List<PerformanceMetadata>() {},
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-06-06T13:40:49.324Z").ToUniversalTime(),
-                Id = "569d3d6a-b164-46fe-9127-c6e029196acd",
+                DueAt = System.DateTime.Parse("2026-06-07T15:14:43.161Z").ToUniversalTime(),
+                Id = "43b69d12-b18d-4e55-ad0c-7e29db752296",
                 IsCompleted = true,
                 Name = "Team-oriented secondary matrix",
                 TargetValue = 32D,
@@ -220,8 +305,8 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-11T05:38:30.946Z").ToUniversalTime(),
-                Id = "af10dd8c-bdb3-4973-b44f-9f0b051c3cba",
+                DueAt = System.DateTime.Parse("2026-08-12T07:55:27.760Z").ToUniversalTime(),
+                Id = "de9d6727-2a15-4cc0-a0fc-f29ac790c22b",
                 IsCompleted = true,
                 Name = "Exclusive client-server conglomeration",
                 TargetValue = 32D,
@@ -230,8 +315,8 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Hic explicabo odit.",
-                DueAt = System.DateTime.Parse("2026-10-13T06:12:52.591Z").ToUniversalTime(),
-                Id = "e88cff56-28bf-419d-9bf7-3ae3bdc1545b",
+                DueAt = System.DateTime.Parse("2026-10-14T09:11:08.489Z").ToUniversalTime(),
+                Id = "7936ed50-84b9-46fd-81ea-72be6f0ae725",
                 IsCompleted = true,
                 Name = "Synchronised immersive success",
                 TargetValue = 32D,
@@ -240,10 +325,10 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-25T17:03:04.738Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-26T15:09:54.041Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-14T04:29:02.797Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-14T15:10:25.770Z").ToUniversalTime(),
         Weight = 5D,
     },
     ConnectionId = "<id>",
@@ -333,14 +418,14 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
     PerformanceGoal = new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-08-01T12:31:37.685Z").ToUniversalTime(),
-        Id = "7328cb03-f2ea-4aa4-bc0f-3cbd878705d3",
+        DueAt = System.DateTime.Parse("2026-08-02T14:42:12.427Z").ToUniversalTime(),
+        Id = "06552868-9b9e-46f6-8193-9470fdad99f9",
         Metadata = new List<PerformanceMetadata>() {},
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-06-06T13:40:49.324Z").ToUniversalTime(),
-                Id = "569d3d6a-b164-46fe-9127-c6e029196acd",
+                DueAt = System.DateTime.Parse("2026-06-07T15:14:43.161Z").ToUniversalTime(),
+                Id = "43b69d12-b18d-4e55-ad0c-7e29db752296",
                 IsCompleted = true,
                 Name = "Team-oriented secondary matrix",
                 TargetValue = 32D,
@@ -349,8 +434,8 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-11T05:38:30.946Z").ToUniversalTime(),
-                Id = "af10dd8c-bdb3-4973-b44f-9f0b051c3cba",
+                DueAt = System.DateTime.Parse("2026-08-12T07:55:27.760Z").ToUniversalTime(),
+                Id = "de9d6727-2a15-4cc0-a0fc-f29ac790c22b",
                 IsCompleted = true,
                 Name = "Exclusive client-server conglomeration",
                 TargetValue = 32D,
@@ -359,8 +444,8 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Hic explicabo odit.",
-                DueAt = System.DateTime.Parse("2026-10-13T06:12:52.591Z").ToUniversalTime(),
-                Id = "e88cff56-28bf-419d-9bf7-3ae3bdc1545b",
+                DueAt = System.DateTime.Parse("2026-10-14T09:11:08.489Z").ToUniversalTime(),
+                Id = "7936ed50-84b9-46fd-81ea-72be6f0ae725",
                 IsCompleted = true,
                 Name = "Synchronised immersive success",
                 TargetValue = 32D,
@@ -369,10 +454,10 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-25T17:03:04.738Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-26T15:09:54.041Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-14T04:29:02.797Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-14T15:10:25.770Z").ToUniversalTime(),
         Weight = 5D,
     },
     ConnectionId = "<id>",

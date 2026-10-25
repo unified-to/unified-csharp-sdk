@@ -31,10 +31,10 @@ var res = await sdk.Property.CreateAnalyticsPropertyAsync(
     analyticsProperty: new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "ddbcf540-dc54-4b9e-a5bf-73089636039a",
+        Id = "11c7c400-161f-4c45-9d7b-433b5ebc052f",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:46:10.328Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:54:02.282Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -165,10 +165,10 @@ PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "b84fbede-c48f-4921-ab91-c81e87911c64",
+        Id = "86ab0e59-b4aa-4d01-b133-a0c9f96075ff",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:46:10.328Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:54:02.282Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -256,10 +256,10 @@ UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "b84fbede-c48f-4921-ab91-c81e87911c64",
+        Id = "86ab0e59-b4aa-4d01-b133-a0c9f96075ff",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T20:46:10.328Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:54:02.282Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

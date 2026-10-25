@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
+        Id = "5ab39758-6367-4929-91c6-874f42075299",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -40,7 +40,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -576,6 +576,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveAtsCandidate](docs/sdks/candidate/README.md#removeatscandidate) - Remove a candidate
 * [UpdateAtsCandidate](docs/sdks/candidate/README.md#updateatscandidate) - Update a candidate
 
+### [Careplan](docs/sdks/careplan/README.md)
+
+* [GetHealthcareCareplan](docs/sdks/careplan/README.md#gethealthcarecareplan) - Retrieve a careplan
+* [ListHealthcareCareplans](docs/sdks/careplan/README.md#listhealthcarecareplans) - List all careplans
+
 ### [Carrier](docs/sdks/carrier/README.md)
 
 * [GetShippingCarrier](docs/sdks/carrier/README.md#getshippingcarrier) - Retrieve a carrier
@@ -909,6 +914,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveLmsCourse](docs/sdks/course/README.md#removelmscourse) - Remove a course
 * [UpdateLmsCourse](docs/sdks/course/README.md#updatelmscourse) - Update a course
 
+### [Coverage](docs/sdks/coverage/README.md)
+
+* [GetHealthcareCoverage](docs/sdks/coverage/README.md#gethealthcarecoverage) - Retrieve a coverage
+* [ListHealthcareCoverages](docs/sdks/coverage/README.md#listhealthcarecoverages) - List all coverages
+
 ### [Creative](docs/sdks/creative/README.md)
 
 * [CreateAdsCreative](docs/sdks/creative/README.md#createadscreative) - Create a creative
@@ -1060,12 +1070,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### [Document](docs/sdks/document/README.md)
 
 * [CreateAtsDocument](docs/sdks/document/README.md#createatsdocument) - Create a document
+* [CreateHealthcareDocument](docs/sdks/document/README.md#createhealthcaredocument) - Create a document
 * [CreateHrisDocument](docs/sdks/document/README.md#createhrisdocument) - Create a document
 * [CreateSigningDocument](docs/sdks/document/README.md#createsigningdocument) - Create a document
 * [GetAtsDocument](docs/sdks/document/README.md#getatsdocument) - Retrieve a document
+* [GetHealthcareDocument](docs/sdks/document/README.md#gethealthcaredocument) - Retrieve a document
 * [GetHrisDocument](docs/sdks/document/README.md#gethrisdocument) - Retrieve a document
 * [GetSigningDocument](docs/sdks/document/README.md#getsigningdocument) - Retrieve a document
 * [ListAtsDocuments](docs/sdks/document/README.md#listatsdocuments) - List all documents
+* [ListHealthcareDocuments](docs/sdks/document/README.md#listhealthcaredocuments) - List all documents
 * [ListHrisDocuments](docs/sdks/document/README.md#listhrisdocuments) - List all documents
 * [ListSigningDocuments](docs/sdks/document/README.md#listsigningdocuments) - List all documents
 * [PatchAtsDocument](docs/sdks/document/README.md#patchatsdocument) - Update a document
@@ -1258,7 +1271,9 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### [Goal](docs/sdks/goal/README.md)
 
 * [CreatePerformanceGoal](docs/sdks/goal/README.md#createperformancegoal) - Create a goal
+* [GetHealthcareGoal](docs/sdks/goal/README.md#gethealthcaregoal) - Retrieve a goal
 * [GetPerformanceGoal](docs/sdks/goal/README.md#getperformancegoal) - Retrieve a goal
+* [ListHealthcareGoals](docs/sdks/goal/README.md#listhealthcaregoals) - List all goals
 * [ListPerformanceGoals](docs/sdks/goal/README.md#listperformancegoals) - List all goals
 * [PatchPerformanceGoal](docs/sdks/goal/README.md#patchperformancegoal) - Update a goal
 * [RemovePerformanceGoal](docs/sdks/goal/README.md#removeperformancegoal) - Remove a goal
@@ -1295,29 +1310,42 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### [Healthcare](docs/sdks/healthcare/README.md)
 
 * [CreateHealthcareAppointment](docs/sdks/healthcare/README.md#createhealthcareappointment) - Create an appointment
+* [CreateHealthcareDocument](docs/sdks/healthcare/README.md#createhealthcaredocument) - Create a document
 * [CreateHealthcareObservation](docs/sdks/healthcare/README.md#createhealthcareobservation) - Create an observation
 * [CreateHealthcarePatient](docs/sdks/healthcare/README.md#createhealthcarepatient) - Create a patient
 * [GetHealthcareAllergy](docs/sdks/healthcare/README.md#gethealthcareallergy) - Retrieve an allergy
 * [GetHealthcareAppointment](docs/sdks/healthcare/README.md#gethealthcareappointment) - Retrieve an appointment
+* [GetHealthcareCareplan](docs/sdks/healthcare/README.md#gethealthcarecareplan) - Retrieve a careplan
 * [GetHealthcareCondition](docs/sdks/healthcare/README.md#gethealthcarecondition) - Retrieve a condition
+* [GetHealthcareCoverage](docs/sdks/healthcare/README.md#gethealthcarecoverage) - Retrieve a coverage
+* [GetHealthcareDocument](docs/sdks/healthcare/README.md#gethealthcaredocument) - Retrieve a document
 * [GetHealthcareEncounter](docs/sdks/healthcare/README.md#gethealthcareencounter) - Retrieve an encounter
+* [GetHealthcareGoal](docs/sdks/healthcare/README.md#gethealthcaregoal) - Retrieve a goal
 * [GetHealthcareImmunization](docs/sdks/healthcare/README.md#gethealthcareimmunization) - Retrieve an immunization
 * [GetHealthcareLocation](docs/sdks/healthcare/README.md#gethealthcarelocation) - Retrieve a location
 * [GetHealthcareMedication](docs/sdks/healthcare/README.md#gethealthcaremedication) - Retrieve a medication
 * [GetHealthcareObservation](docs/sdks/healthcare/README.md#gethealthcareobservation) - Retrieve an observation
 * [GetHealthcarePatient](docs/sdks/healthcare/README.md#gethealthcarepatient) - Retrieve a patient
 * [GetHealthcarePractitioner](docs/sdks/healthcare/README.md#gethealthcarepractitioner) - Retrieve a practitioner
+* [GetHealthcareProcedure](docs/sdks/healthcare/README.md#gethealthcareprocedure) - Retrieve a procedure
+* [GetHealthcareReport](docs/sdks/healthcare/README.md#gethealthcarereport) - Retrieve a report
 * [GetHealthcareSlot](docs/sdks/healthcare/README.md#gethealthcareslot) - Retrieve a slot
 * [ListHealthcareAllergies](docs/sdks/healthcare/README.md#listhealthcareallergies) - List all allergies
 * [ListHealthcareAppointments](docs/sdks/healthcare/README.md#listhealthcareappointments) - List all appointments
+* [ListHealthcareCareplans](docs/sdks/healthcare/README.md#listhealthcarecareplans) - List all careplans
 * [ListHealthcareConditions](docs/sdks/healthcare/README.md#listhealthcareconditions) - List all conditions
+* [ListHealthcareCoverages](docs/sdks/healthcare/README.md#listhealthcarecoverages) - List all coverages
+* [ListHealthcareDocuments](docs/sdks/healthcare/README.md#listhealthcaredocuments) - List all documents
 * [ListHealthcareEncounters](docs/sdks/healthcare/README.md#listhealthcareencounters) - List all encounters
+* [ListHealthcareGoals](docs/sdks/healthcare/README.md#listhealthcaregoals) - List all goals
 * [ListHealthcareImmunizations](docs/sdks/healthcare/README.md#listhealthcareimmunizations) - List all immunizations
 * [ListHealthcareLocations](docs/sdks/healthcare/README.md#listhealthcarelocations) - List all locations
 * [ListHealthcareMedications](docs/sdks/healthcare/README.md#listhealthcaremedications) - List all medications
 * [ListHealthcareObservations](docs/sdks/healthcare/README.md#listhealthcareobservations) - List all observations
 * [ListHealthcarePatients](docs/sdks/healthcare/README.md#listhealthcarepatients) - List all patients
 * [ListHealthcarePractitioners](docs/sdks/healthcare/README.md#listhealthcarepractitioners) - List all practitioners
+* [ListHealthcareProcedures](docs/sdks/healthcare/README.md#listhealthcareprocedures) - List all procedures
+* [ListHealthcareReports](docs/sdks/healthcare/README.md#listhealthcarereports) - List all reports
 * [ListHealthcareSlots](docs/sdks/healthcare/README.md#listhealthcareslots) - List all slots
 * [PatchHealthcareAppointment](docs/sdks/healthcare/README.md#patchhealthcareappointment) - Update an appointment
 * [PatchHealthcarePatient](docs/sdks/healthcare/README.md#patchhealthcarepatient) - Update a patient
@@ -2001,6 +2029,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetHealthcarePractitioner](docs/sdks/practitioner/README.md#gethealthcarepractitioner) - Retrieve a practitioner
 * [ListHealthcarePractitioners](docs/sdks/practitioner/README.md#listhealthcarepractitioners) - List all practitioners
 
+### [Procedure](docs/sdks/procedure/README.md)
+
+* [GetHealthcareProcedure](docs/sdks/procedure/README.md#gethealthcareprocedure) - Retrieve a procedure
+* [ListHealthcareProcedures](docs/sdks/procedure/README.md#listhealthcareprocedures) - List all procedures
+
 ### [Profile](docs/sdks/profile/README.md)
 
 * [CreateCdpProfile](docs/sdks/profile/README.md#createcdpprofile) - Create a profile
@@ -2155,8 +2188,10 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Report](docs/sdks/report/README.md)
 
+* [GetHealthcareReport](docs/sdks/report/README.md#gethealthcarereport) - Retrieve a report
 * [ListAdsReports](docs/sdks/report/README.md#listadsreports) - List all reports
 * [ListAnalyticsReports](docs/sdks/report/README.md#listanalyticsreports) - List all reports
+* [ListHealthcareReports](docs/sdks/report/README.md#listhealthcarereports) - List all reports
 * [ListMartechReports](docs/sdks/report/README.md#listmartechreports) - List all reports
 
 ### [Repository](docs/sdks/repository/README.md)
@@ -2757,7 +2792,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
+        Id = "5ab39758-6367-4929-91c6-874f42075299",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2770,7 +2805,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2801,7 +2836,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
+        Id = "5ab39758-6367-4929-91c6-874f42075299",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2814,7 +2849,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2894,7 +2929,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
+        Id = "5ab39758-6367-4929-91c6-874f42075299",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2907,7 +2942,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2952,7 +2987,7 @@ try
             Currency = "CAD",
             CustomerDefinedCode = "6170",
             Description = "Voluptatibus valde spoliatio.",
-            Id = "834f9bf6-e287-4fe6-8831-2e93690e9680",
+            Id = "5ab39758-6367-4929-91c6-874f42075299",
             IsPayable = false,
             Metadata = new List<AccountingMetadata>() {},
             Name = "Auto Loan Account",
@@ -2965,7 +3000,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-            UpdatedAt = System.DateTime.Parse("2023-08-07T15:04:20.415Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );

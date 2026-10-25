@@ -231,3 +231,9 @@ var custom = WebhookObjectType.Of("custom_value");
 | `HealthcareMedication`          | healthcare_medication           |
 | `HealthcareObservation`         | healthcare_observation          |
 | `HealthcareImmunization`        | healthcare_immunization         |
+| `HealthcareDocument`            | healthcare_document             |
+| `HealthcareCoverage`            | healthcare_coverage             |
+| `HealthcareProcedure`           | healthcare_procedure            |
+| `HealthcareReport`              | healthcare_report               |
+| `HealthcareCareplan`            | healthcare_careplan             |
+| `HealthcareGoal`                | healthcare_goal                 |

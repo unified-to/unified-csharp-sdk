@@ -37,7 +37,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        Id = "5704b227-fe82-401d-9872-4c2661257933",
+        Id = "f7dc65d9-63d4-440b-af40-6017a20985d9",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
@@ -97,7 +97,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Metadata = new List<LmsMetadata>() {},
         Name = "ut",
         ProviderName = "Bins LLC",
-        PublishedAt = System.DateTime.Parse("2022-09-04T03:34:17.273Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-09-04T11:59:22.656Z").ToUniversalTime(),
         ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
@@ -112,7 +112,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-05T02:48:36.078Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-05T11:36:39.163Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -249,7 +249,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        Id = "31fca9d0-c171-41fa-855b-79e18c890a09",
+        Id = "8653591e-e93a-4ba7-bb18-fad2ce986b54",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
@@ -309,7 +309,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "ut",
         ProviderName = "Bins LLC",
-        PublishedAt = System.DateTime.Parse("2022-09-04T03:34:17.284Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-09-04T11:59:22.663Z").ToUniversalTime(),
         ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
@@ -324,7 +324,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-05T02:48:36.089Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-05T11:36:39.169Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -418,7 +418,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Description = "Usque laboriosam ventosus adflicto.",
         Difficulty = "Beginner",
         DurationMinutes = 19D,
-        Id = "31fca9d0-c171-41fa-855b-79e18c890a09",
+        Id = "8653591e-e93a-4ba7-bb18-fad2ce986b54",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         Languages = new List<string>() {
@@ -478,7 +478,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Metadata = new List<LmsMetadata>() {},
         Name = "ut",
         ProviderName = "Bins LLC",
-        PublishedAt = System.DateTime.Parse("2022-09-04T03:34:17.284Z").ToUniversalTime(),
+        PublishedAt = System.DateTime.Parse("2022-09-04T11:59:22.663Z").ToUniversalTime(),
         ShortDescription = "Caritas.",
         Skills = new List<string>() {
             "trucido",
@@ -493,7 +493,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-05T02:48:36.089Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-05T11:36:39.169Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

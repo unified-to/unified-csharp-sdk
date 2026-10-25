@@ -45,6 +45,10 @@ namespace UnifiedTo.Models.Requests
         CancellationReason,
         [JsonProperty("notes")]
         Notes,
+        [JsonProperty("is_virtual")]
+        IsVirtual,
+        [JsonProperty("meeting_url")]
+        MeetingUrl,
         [JsonProperty("metadata")]
         Metadata,
         [JsonProperty("raw")]

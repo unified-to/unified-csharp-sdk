@@ -5,12 +5,15 @@
 ### Available Operations
 
 * [CreateAtsDocument](#createatsdocument) - Create a document
+* [CreateHealthcareDocument](#createhealthcaredocument) - Create a document
 * [CreateHrisDocument](#createhrisdocument) - Create a document
 * [CreateSigningDocument](#createsigningdocument) - Create a document
 * [GetAtsDocument](#getatsdocument) - Retrieve a document
+* [GetHealthcareDocument](#gethealthcaredocument) - Retrieve a document
 * [GetHrisDocument](#gethrisdocument) - Retrieve a document
 * [GetSigningDocument](#getsigningdocument) - Retrieve a document
 * [ListAtsDocuments](#listatsdocuments) - List all documents
+* [ListHealthcareDocuments](#listhealthcaredocuments) - List all documents
 * [ListHrisDocuments](#listhrisdocuments) - List all documents
 * [ListSigningDocuments](#listsigningdocuments) - List all documents
 * [PatchAtsDocument](#patchatsdocument) - Update a document
@@ -45,10 +48,10 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "b9f39797-10de-47a2-8c50-4a69de1e62bc",
+        Id = "211d09f6-6380-4978-bfcc-4c80b969889d",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T22:10:22.826Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-08T04:58:22.285Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -68,6 +71,69 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 ### Response
 
 **[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHealthcareDocument
+
+Creates a HealthcareDocument. Provide the unified HealthcareDocument fields in the request body; they are mapped to the provider's API. Returns the created HealthcareDocument.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createHealthcareDocument" method="post" path="/healthcare/{connection_id}/document" example="healthcare_document" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Document.CreateHealthcareDocumentAsync(
+    healthcareDocument: new HealthcareDocument() {
+        AuthoredAt = System.DateTime.Parse("2023-07-16T04:00:25.853Z").ToUniversalTime(),
+        Codes = new List<HealthcareCode>() {
+            new HealthcareCode() {
+                Code = "23671711",
+                Display = "History and physical",
+                System = "http://loinc.org",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-07-16T04:00:25.853Z").ToUniversalTime(),
+        DocumentUrl = "https://overcooked-yogurt.org",
+        Filename = "ugh_after.elc",
+        Id = "33da13d1-5445-4d98-b889-4d19c1403e2f",
+        Metadata = new List<HealthcareMetadata>() {},
+        MimeType = "application/pdf",
+        Name = "History and physical",
+        Status = HealthcareDocumentStatus.Superseded,
+        Type = HealthcareDocumentType.ConsultationNote,
+        UpdatedAt = System.DateTime.Parse("2024-12-28T12:55:01.188Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HealthcareDocument`                                                                                                                             | [HealthcareDocument](../../Models/Components/HealthcareDocument.md)                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateHealthcareDocumentQueryParamFields](../../Models/Requests/CreateHealthcareDocumentQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHealthcareDocumentResponse](../../Models/Requests/CreateHealthcareDocumentResponse.md)**
 
 ### Errors
 
@@ -97,10 +163,10 @@ var res = await sdk.Document.CreateHrisDocumentAsync(
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "6f713dce-7c58-4499-b1fa-d12e2dcc05b3",
+        Id = "142cba7c-18a3-47e2-8e34-1d966e00e807",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-13T16:54:16.409Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-14T13:01:08.493Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -149,12 +215,12 @@ var res = await sdk.Document.CreateSigningDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "541dc4f6-72ea-4c6f-9928-c11a82da2d1e",
+        Id = "f4518a20-cdec-4986-87b0-2316b6bde97f",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-30T02:35:24.197Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-30T08:19:37.994Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-05T04:44:50.116Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-06T02:13:59.098Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -216,6 +282,48 @@ var res = await sdk.Document.GetAtsDocumentAsync(
 ### Response
 
 **[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHealthcareDocument
+
+Retrieves a single HealthcareDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareDocument" method="get" path="/healthcare/{connection_id}/document/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Document.GetHealthcareDocumentAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Document                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetHealthcareDocumentQueryParamFields](../../Models/Requests/GetHealthcareDocumentQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareDocumentResponse](../../Models/Requests/GetHealthcareDocumentResponse.md)**
 
 ### Errors
 
@@ -348,6 +456,47 @@ var res = await sdk.Document.ListAtsDocumentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHealthcareDocuments
+
+Returns a list of HealthcareDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareDocuments" method="get" path="/healthcare/{connection_id}/document" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareDocumentsRequest req = new ListHealthcareDocumentsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Document.ListHealthcareDocumentsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListHealthcareDocumentsRequest](../../Models/Requests/ListHealthcareDocumentsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[ListHealthcareDocumentsResponse](../../Models/Requests/ListHealthcareDocumentsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisDocuments
 
 Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -453,10 +602,10 @@ PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "6a24dafd-39f3-4f0a-a38e-ab16992fecb8",
+        Id = "a8f58b89-76ff-40e0-95e1-e8682be34a39",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T22:10:22.830Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-08T04:58:22.288Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -506,10 +655,10 @@ PatchHrisDocumentRequest req = new PatchHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "8773d06e-6184-48a4-916e-829bcc4d963f",
+        Id = "519612bd-ec13-442b-8c6d-7ff11065358d",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-13T16:54:16.424Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-14T13:01:08.504Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -559,12 +708,12 @@ PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "276a405b-5d17-4e86-b748-601573e6e3bb",
+        Id = "d9739f15-b2f1-444a-abe5-c2994f075a61",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-30T02:35:24.200Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-30T08:19:38.000Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-05T04:44:50.127Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-06T02:13:59.119Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -734,10 +883,10 @@ UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "6a24dafd-39f3-4f0a-a38e-ab16992fecb8",
+        Id = "a8f58b89-76ff-40e0-95e1-e8682be34a39",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-07T22:10:22.830Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-08T04:58:22.288Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -787,10 +936,10 @@ UpdateHrisDocumentRequest req = new UpdateHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "8773d06e-6184-48a4-916e-829bcc4d963f",
+        Id = "519612bd-ec13-442b-8c6d-7ff11065358d",
         Metadata = new List<HrisMetadata>() {},
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-10-13T16:54:16.424Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-14T13:01:08.504Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -840,12 +989,12 @@ UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
         Description = "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
         ExpiresAt = System.DateTime.Parse("2021-06-04T01:21:34.949Z").ToUniversalTime(),
-        Id = "276a405b-5d17-4e86-b748-601573e6e3bb",
+        Id = "d9739f15-b2f1-444a-abe5-c2994f075a61",
         Metadata = new List<SigningMetadata>() {},
         Name = "Denesik Group NDA",
-        SentAt = System.DateTime.Parse("2022-06-30T02:35:24.200Z").ToUniversalTime(),
+        SentAt = System.DateTime.Parse("2022-06-30T08:19:38.000Z").ToUniversalTime(),
         Status = SigningDocumentStatus.Draft,
-        UpdatedAt = System.DateTime.Parse("2025-09-05T04:44:50.127Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-06T02:13:59.119Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

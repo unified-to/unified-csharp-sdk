@@ -32,6 +32,12 @@ namespace UnifiedTo.Models.Components
         public string? Birthdate { get; set; }
 
         /// <summary>
+        /// Emergency contacts, guardians and other contact persons for the patient.
+        /// </summary>
+        [JsonProperty("contacts")]
+        public List<HealthcarePatientContact>? Contacts { get; set; }
+
+        /// <summary>
         /// When the patient record was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
@@ -48,6 +54,12 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("emails")]
         public List<HealthcareEmail>? Emails { get; set; }
+
+        /// <summary>
+        /// Codings for the patient's ethnicity (e.g. CDC ethnicity codes).
+        /// </summary>
+        [JsonProperty("ethnicities")]
+        public List<HealthcareCode>? Ethnicities { get; set; }
 
         /// <summary>
         /// Given name of the patient.
@@ -98,6 +110,12 @@ namespace UnifiedTo.Models.Components
         public string? LastName { get; set; }
 
         /// <summary>
+        /// Marital status of the patient.
+        /// </summary>
+        [JsonProperty("marital_status")]
+        public MaritalStatus? MaritalStatus { get; set; }
+
+        /// <summary>
         /// Custom field values.
         /// </summary>
         [JsonProperty("metadata")]
@@ -114,6 +132,12 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("practitioner_ids")]
         public List<string>? PractitionerIds { get; set; }
+
+        /// <summary>
+        /// Codings for the patient's race (e.g. CDC race codes).
+        /// </summary>
+        [JsonProperty("races")]
+        public List<HealthcareCode>? Races { get; set; }
 
         /// <summary>
         /// Raw data from integration.

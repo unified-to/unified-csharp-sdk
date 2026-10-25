@@ -29,15 +29,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Call.CreateUcCallAsync(
     ucCall: new UcCall() {
-        AnswerAt = System.DateTime.Parse("2025-05-15T07:37:02.253Z").ToUniversalTime(),
+        AnswerAt = System.DateTime.Parse("2025-05-15T23:33:44.910Z").ToUniversalTime(),
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "085edbd2-3d92-4092-81ac-f87d135ddc04",
+        ConversationIdentifier = "c8a089e8-1076-4e45-8be7-c72136e39876",
         CostAmount = 1.564D,
         CreatedAt = System.DateTime.Parse("2023-04-22T19:05:34.882Z").ToUniversalTime(),
         Currency = "USD",
         DurationSeconds = 2556D,
-        EndAt = System.DateTime.Parse("2024-05-30T23:10:59.811Z").ToUniversalTime(),
-        Id = "085edbd2-3d92-4092-81ac-f87d135ddc04",
+        EndAt = System.DateTime.Parse("2024-05-31T07:44:09.172Z").ToUniversalTime(),
+        Id = "c8a089e8-1076-4e45-8be7-c72136e39876",
         IsPrivate = false,
         Metadata = new List<UcMetadata>() {
             new UcMetadata() {
@@ -47,7 +47,7 @@ var res = await sdk.Call.CreateUcCallAsync(
                     }
                 ),
                 Format = UcMetadataFormat.Price,
-                Id = "fb337f42-7980-422b-8573-5ebd3cdac692",
+                Id = "c82fc53f-244d-4aef-9e27-c17d3fe46f42",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = UcMetadataValue.CreateStr(
@@ -55,14 +55,14 @@ var res = await sdk.Call.CreateUcCallAsync(
                 ),
             },
         },
-        StartAt = System.DateTime.Parse("2023-12-17T22:48:25.791Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-12-18T03:52:04.398Z").ToUniversalTime(),
         Status = UcCallStatus.InProgress,
         Telephone = new PropertyUcCallTelephone() {
             Telephone = "(493) 534-0768",
             Type = PropertyUcCallTelephoneType.Mobile,
         },
         Type = UcCallType.Inbound,
-        UpdatedAt = System.DateTime.Parse("2023-08-03T14:04:16.016Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-03T16:14:46.528Z").ToUniversalTime(),
         UserPhone = "819-894-3317 x163",
     },
     connectionId: "<id>"
@@ -193,15 +193,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchUcCallRequest req = new PatchUcCallRequest() {
     UcCall = new UcCall() {
-        AnswerAt = System.DateTime.Parse("2025-05-15T07:37:02.284Z").ToUniversalTime(),
+        AnswerAt = System.DateTime.Parse("2025-05-15T23:33:44.947Z").ToUniversalTime(),
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        ConversationIdentifier = "3a7e819f-fd56-4cb2-b0c4-d519a0f4592b",
         CostAmount = 1.564D,
         CreatedAt = System.DateTime.Parse("2023-04-22T19:05:34.882Z").ToUniversalTime(),
         Currency = "USD",
         DurationSeconds = 2556D,
-        EndAt = System.DateTime.Parse("2024-05-30T23:10:59.827Z").ToUniversalTime(),
-        Id = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        EndAt = System.DateTime.Parse("2024-05-31T07:44:09.192Z").ToUniversalTime(),
+        Id = "3a7e819f-fd56-4cb2-b0c4-d519a0f4592b",
         IsPrivate = false,
         Metadata = new List<UcMetadata>() {
             new UcMetadata() {
@@ -211,7 +211,7 @@ PatchUcCallRequest req = new PatchUcCallRequest() {
                     }
                 ),
                 Format = UcMetadataFormat.Price,
-                Id = "b4f7ed1b-2634-4173-9152-2f806e9fecf2",
+                Id = "5918d33d-722c-4f44-825f-f4297d553d2b",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = UcMetadataValue.CreateStr(
@@ -219,14 +219,14 @@ PatchUcCallRequest req = new PatchUcCallRequest() {
                 ),
             },
         },
-        StartAt = System.DateTime.Parse("2023-12-17T22:48:25.801Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-12-18T03:52:04.410Z").ToUniversalTime(),
         Status = UcCallStatus.InProgress,
         Telephone = new PropertyUcCallTelephone() {
             Telephone = "(493) 534-0768",
             Type = PropertyUcCallTelephoneType.Mobile,
         },
         Type = UcCallType.Inbound,
-        UpdatedAt = System.DateTime.Parse("2023-08-03T14:04:16.020Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-03T16:14:46.533Z").ToUniversalTime(),
         UserPhone = "819-894-3317 x163",
     },
     ConnectionId = "<id>",
@@ -274,15 +274,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateUcCallRequest req = new UpdateUcCallRequest() {
     UcCall = new UcCall() {
-        AnswerAt = System.DateTime.Parse("2025-05-15T07:37:02.284Z").ToUniversalTime(),
+        AnswerAt = System.DateTime.Parse("2025-05-15T23:33:44.947Z").ToUniversalTime(),
         Contacts = new List<UcContact>() {},
-        ConversationIdentifier = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        ConversationIdentifier = "3a7e819f-fd56-4cb2-b0c4-d519a0f4592b",
         CostAmount = 1.564D,
         CreatedAt = System.DateTime.Parse("2023-04-22T19:05:34.882Z").ToUniversalTime(),
         Currency = "USD",
         DurationSeconds = 2556D,
-        EndAt = System.DateTime.Parse("2024-05-30T23:10:59.827Z").ToUniversalTime(),
-        Id = "1e462f3b-0ea0-4223-95b0-3fe50625c540",
+        EndAt = System.DateTime.Parse("2024-05-31T07:44:09.192Z").ToUniversalTime(),
+        Id = "3a7e819f-fd56-4cb2-b0c4-d519a0f4592b",
         IsPrivate = false,
         Metadata = new List<UcMetadata>() {
             new UcMetadata() {
@@ -292,7 +292,7 @@ UpdateUcCallRequest req = new UpdateUcCallRequest() {
                     }
                 ),
                 Format = UcMetadataFormat.Price,
-                Id = "b4f7ed1b-2634-4173-9152-2f806e9fecf2",
+                Id = "5918d33d-722c-4f44-825f-f4297d553d2b",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = UcMetadataValue.CreateStr(
@@ -300,14 +300,14 @@ UpdateUcCallRequest req = new UpdateUcCallRequest() {
                 ),
             },
         },
-        StartAt = System.DateTime.Parse("2023-12-17T22:48:25.801Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-12-18T03:52:04.410Z").ToUniversalTime(),
         Status = UcCallStatus.InProgress,
         Telephone = new PropertyUcCallTelephone() {
             Telephone = "(493) 534-0768",
             Type = PropertyUcCallTelephoneType.Mobile,
         },
         Type = UcCallType.Inbound,
-        UpdatedAt = System.DateTime.Parse("2023-08-03T14:04:16.020Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-03T16:14:46.533Z").ToUniversalTime(),
         UserPhone = "819-894-3317 x163",
     },
     ConnectionId = "<id>",

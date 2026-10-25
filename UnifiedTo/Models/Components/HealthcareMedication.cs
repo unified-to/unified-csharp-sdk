@@ -44,6 +44,18 @@ namespace UnifiedTo.Models.Components
         public string? Dosage { get; set; }
 
         /// <summary>
+        /// Amount of medication per dose.
+        /// </summary>
+        [JsonProperty("dose_number")]
+        public double? DoseNumber { get; set; }
+
+        /// <summary>
+        /// Unit of the dose amount (e.g. mg, tablet).
+        /// </summary>
+        [JsonProperty("dose_unit")]
+        public string? DoseUnit { get; set; }
+
+        /// <summary>
         /// The encounter in which the medication was ordered.
         /// </summary>
         [JsonProperty("encounter_id")]
@@ -102,6 +114,12 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("refill_count")]
         public double? RefillCount { get; set; }
+
+        /// <summary>
+        /// How the medication is taken (e.g. oral, intravenous).
+        /// </summary>
+        [JsonProperty("route")]
+        public string? Route { get; set; }
 
         /// <summary>
         /// When the patient should start taking the medication (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).

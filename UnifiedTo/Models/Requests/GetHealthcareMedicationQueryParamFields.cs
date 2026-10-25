@@ -45,6 +45,12 @@ namespace UnifiedTo.Models.Requests
         EndAt,
         [JsonProperty("notes")]
         Notes,
+        [JsonProperty("route")]
+        Route,
+        [JsonProperty("dose_number")]
+        DoseNumber,
+        [JsonProperty("dose_unit")]
+        DoseUnit,
         [JsonProperty("metadata")]
         Metadata,
         [JsonProperty("raw")]

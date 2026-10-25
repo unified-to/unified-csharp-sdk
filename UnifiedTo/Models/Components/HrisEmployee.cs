@@ -134,7 +134,7 @@ namespace UnifiedTo.Models.Components
         public string? ManagerId { get; set; }
 
         [JsonProperty("marital_status")]
-        public MaritalStatus? MaritalStatus { get; set; }
+        public HrisEmployeeMaritalStatus? MaritalStatus { get; set; }
 
         [JsonProperty("metadata")]
         public List<HrisMetadata>? Metadata { get; set; }

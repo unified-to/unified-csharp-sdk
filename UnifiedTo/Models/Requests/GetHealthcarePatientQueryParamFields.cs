@@ -49,6 +49,14 @@ namespace UnifiedTo.Models.Requests
         PractitionerIds,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("races")]
+        Races,
+        [JsonProperty("ethnicities")]
+        Ethnicities,
+        [JsonProperty("marital_status")]
+        MaritalStatus,
+        [JsonProperty("contacts")]
+        Contacts,
         [JsonProperty("metadata")]
         Metadata,
         [JsonProperty("raw")]

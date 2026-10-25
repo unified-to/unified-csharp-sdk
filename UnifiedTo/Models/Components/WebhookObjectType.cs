@@ -235,6 +235,12 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType HealthcareMedication = new WebhookObjectType("healthcare_medication");
         public static readonly WebhookObjectType HealthcareObservation = new WebhookObjectType("healthcare_observation");
         public static readonly WebhookObjectType HealthcareImmunization = new WebhookObjectType("healthcare_immunization");
+        public static readonly WebhookObjectType HealthcareDocument = new WebhookObjectType("healthcare_document");
+        public static readonly WebhookObjectType HealthcareCoverage = new WebhookObjectType("healthcare_coverage");
+        public static readonly WebhookObjectType HealthcareProcedure = new WebhookObjectType("healthcare_procedure");
+        public static readonly WebhookObjectType HealthcareReport = new WebhookObjectType("healthcare_report");
+        public static readonly WebhookObjectType HealthcareCareplan = new WebhookObjectType("healthcare_careplan");
+        public static readonly WebhookObjectType HealthcareGoal = new WebhookObjectType("healthcare_goal");
 
         private static readonly Dictionary <string, WebhookObjectType> _knownValues =
             new Dictionary <string, WebhookObjectType> ()
@@ -451,7 +457,13 @@ namespace UnifiedTo.Models.Components
                 ["healthcare_allergy"] = HealthcareAllergy,
                 ["healthcare_medication"] = HealthcareMedication,
                 ["healthcare_observation"] = HealthcareObservation,
-                ["healthcare_immunization"] = HealthcareImmunization
+                ["healthcare_immunization"] = HealthcareImmunization,
+                ["healthcare_document"] = HealthcareDocument,
+                ["healthcare_coverage"] = HealthcareCoverage,
+                ["healthcare_procedure"] = HealthcareProcedure,
+                ["healthcare_report"] = HealthcareReport,
+                ["healthcare_careplan"] = HealthcareCareplan,
+                ["healthcare_goal"] = HealthcareGoal
             };
 
         private static readonly ConcurrentDictionary<string, WebhookObjectType> _values =

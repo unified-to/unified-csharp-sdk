@@ -5,29 +5,42 @@
 ### Available Operations
 
 * [CreateHealthcareAppointment](#createhealthcareappointment) - Create an appointment
+* [CreateHealthcareDocument](#createhealthcaredocument) - Create a document
 * [CreateHealthcareObservation](#createhealthcareobservation) - Create an observation
 * [CreateHealthcarePatient](#createhealthcarepatient) - Create a patient
 * [GetHealthcareAllergy](#gethealthcareallergy) - Retrieve an allergy
 * [GetHealthcareAppointment](#gethealthcareappointment) - Retrieve an appointment
+* [GetHealthcareCareplan](#gethealthcarecareplan) - Retrieve a careplan
 * [GetHealthcareCondition](#gethealthcarecondition) - Retrieve a condition
+* [GetHealthcareCoverage](#gethealthcarecoverage) - Retrieve a coverage
+* [GetHealthcareDocument](#gethealthcaredocument) - Retrieve a document
 * [GetHealthcareEncounter](#gethealthcareencounter) - Retrieve an encounter
+* [GetHealthcareGoal](#gethealthcaregoal) - Retrieve a goal
 * [GetHealthcareImmunization](#gethealthcareimmunization) - Retrieve an immunization
 * [GetHealthcareLocation](#gethealthcarelocation) - Retrieve a location
 * [GetHealthcareMedication](#gethealthcaremedication) - Retrieve a medication
 * [GetHealthcareObservation](#gethealthcareobservation) - Retrieve an observation
 * [GetHealthcarePatient](#gethealthcarepatient) - Retrieve a patient
 * [GetHealthcarePractitioner](#gethealthcarepractitioner) - Retrieve a practitioner
+* [GetHealthcareProcedure](#gethealthcareprocedure) - Retrieve a procedure
+* [GetHealthcareReport](#gethealthcarereport) - Retrieve a report
 * [GetHealthcareSlot](#gethealthcareslot) - Retrieve a slot
 * [ListHealthcareAllergies](#listhealthcareallergies) - List all allergies
 * [ListHealthcareAppointments](#listhealthcareappointments) - List all appointments
+* [ListHealthcareCareplans](#listhealthcarecareplans) - List all careplans
 * [ListHealthcareConditions](#listhealthcareconditions) - List all conditions
+* [ListHealthcareCoverages](#listhealthcarecoverages) - List all coverages
+* [ListHealthcareDocuments](#listhealthcaredocuments) - List all documents
 * [ListHealthcareEncounters](#listhealthcareencounters) - List all encounters
+* [ListHealthcareGoals](#listhealthcaregoals) - List all goals
 * [ListHealthcareImmunizations](#listhealthcareimmunizations) - List all immunizations
 * [ListHealthcareLocations](#listhealthcarelocations) - List all locations
 * [ListHealthcareMedications](#listhealthcaremedications) - List all medications
 * [ListHealthcareObservations](#listhealthcareobservations) - List all observations
 * [ListHealthcarePatients](#listhealthcarepatients) - List all patients
 * [ListHealthcarePractitioners](#listhealthcarepractitioners) - List all practitioners
+* [ListHealthcareProcedures](#listhealthcareprocedures) - List all procedures
+* [ListHealthcareReports](#listhealthcarereports) - List all reports
 * [ListHealthcareSlots](#listhealthcareslots) - List all slots
 * [PatchHealthcareAppointment](#patchhealthcareappointment) - Update an appointment
 * [PatchHealthcarePatient](#patchhealthcarepatient) - Update a patient
@@ -57,27 +70,23 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "684730ea-a7fa-4868-9df4-3bdcf0844706",
+        Id = "5ec81150-e765-432b-a1a2-4fa790889c84",
+        IsVirtual = true,
+        MeetingUrl = "https://expensive-slipper.name/",
         Metadata = new List<HealthcareMetadata>() {},
+        Notes = "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
         PractitionerIds = new List<string>() {},
-        Reasons = new List<HealthcareCode>() {
-            new HealthcareCode() {
-                Code = "12762740",
-                Display = "cubicularis caput",
-                System = "http://snomed.info/sct",
-            },
-        },
         ServiceTypes = new List<HealthcareCode>() {
             new HealthcareCode() {
-                Code = "61128108",
-                Display = "Annual physical",
+                Code = "12762740",
+                Display = "New patient visit",
                 System = "http://snomed.info/sct",
             },
         },
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-21T13:17:18.542Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-26T02:53:37.517Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -97,6 +106,69 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
 ### Response
 
 **[CreateHealthcareAppointmentResponse](../../Models/Requests/CreateHealthcareAppointmentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHealthcareDocument
+
+Creates a HealthcareDocument. Provide the unified HealthcareDocument fields in the request body; they are mapped to the provider's API. Returns the created HealthcareDocument.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createHealthcareDocument" method="post" path="/healthcare/{connection_id}/document" example="healthcare_document" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.CreateHealthcareDocumentAsync(
+    healthcareDocument: new HealthcareDocument() {
+        AuthoredAt = System.DateTime.Parse("2023-07-16T04:00:25.853Z").ToUniversalTime(),
+        Codes = new List<HealthcareCode>() {
+            new HealthcareCode() {
+                Code = "23671711",
+                Display = "History and physical",
+                System = "http://loinc.org",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-07-16T04:00:25.853Z").ToUniversalTime(),
+        DocumentUrl = "https://overcooked-yogurt.org",
+        Filename = "ugh_after.elc",
+        Id = "33da13d1-5445-4d98-b889-4d19c1403e2f",
+        Metadata = new List<HealthcareMetadata>() {},
+        MimeType = "application/pdf",
+        Name = "History and physical",
+        Status = HealthcareDocumentStatus.Superseded,
+        Type = HealthcareDocumentType.ConsultationNote,
+        UpdatedAt = System.DateTime.Parse("2024-12-28T12:55:01.188Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HealthcareDocument`                                                                                                                             | [HealthcareDocument](../../Models/Components/HealthcareDocument.md)                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateHealthcareDocumentQueryParamFields](../../Models/Requests/CreateHealthcareDocumentQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHealthcareDocumentResponse](../../Models/Requests/CreateHealthcareDocumentResponse.md)**
 
 ### Errors
 
@@ -155,15 +227,15 @@ var res = await sdk.Healthcare.CreateHealthcareObservationAsync(
             },
         },
         CreatedAt = System.DateTime.Parse("2022-12-06T21:34:04.293Z").ToUniversalTime(),
-        Id = "41e8ef2c-0745-462e-8984-3f9bc7cfc694",
+        Id = "e87f617f-8a8f-4eeb-a038-c177203be7d6",
         Interpretation = Interpretation.CriticalHigh,
-        IssuedAt = System.DateTime.Parse("2025-05-13T05:22:58.293Z").ToUniversalTime(),
+        IssuedAt = System.DateTime.Parse("2025-05-13T22:21:51.596Z").ToUniversalTime(),
         Metadata = new List<HealthcareMetadata>() {},
         Name = "Blood pressure panel",
-        ObservedAt = System.DateTime.Parse("2025-01-21T17:30:46.306Z").ToUniversalTime(),
+        ObservedAt = System.DateTime.Parse("2025-01-22T08:21:46.711Z").ToUniversalTime(),
         Status = HealthcareObservationStatus.Corrected,
         Type = HealthcareObservationType.VitalSigns,
-        UpdatedAt = System.DateTime.Parse("2026-03-26T16:37:50.509Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-27T15:40:51.554Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -216,7 +288,20 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-14",
+        Birthdate = "2025-02-16",
+        Contacts = new List<HealthcarePatientContact>() {
+            new HealthcarePatientContact() {
+                Emails = new List<HealthcareEmail>() {},
+                Name = "Antonia Lebsack",
+                Relationship = "Spouse",
+                Telephones = new List<HealthcareTelephone>() {
+                    new HealthcareTelephone() {
+                        Telephone = "(695) 328-7029 x4412",
+                        Type = HealthcareTelephoneType.Mobile,
+                    },
+                },
+            },
+        },
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -226,7 +311,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "9fb73473-2020-4c46-a3e0-c56f2589a6ad",
+        Id = "c6cdd7e2-3430-4164-b27a-2a0bde1a9d02",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -246,7 +331,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-25T12:32:09.140Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-26T13:57:53.254Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -357,6 +442,48 @@ var res = await sdk.Healthcare.GetHealthcareAppointmentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHealthcareCareplan
+
+Retrieves a single HealthcareCareplan by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareCareplan" method="get" path="/healthcare/{connection_id}/careplan/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.GetHealthcareCareplanAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Careplan                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetHealthcareCareplanQueryParamFields](../../Models/Requests/GetHealthcareCareplanQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareCareplanResponse](../../Models/Requests/GetHealthcareCareplanResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetHealthcareCondition
 
 Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -399,6 +526,90 @@ var res = await sdk.Healthcare.GetHealthcareConditionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHealthcareCoverage
+
+Retrieves a single HealthcareCoverage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareCoverage" method="get" path="/healthcare/{connection_id}/coverage/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.GetHealthcareCoverageAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Coverage                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetHealthcareCoverageQueryParamFields](../../Models/Requests/GetHealthcareCoverageQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareCoverageResponse](../../Models/Requests/GetHealthcareCoverageResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHealthcareDocument
+
+Retrieves a single HealthcareDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareDocument" method="get" path="/healthcare/{connection_id}/document/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.GetHealthcareDocumentAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Document                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetHealthcareDocumentQueryParamFields](../../Models/Requests/GetHealthcareDocumentQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareDocumentResponse](../../Models/Requests/GetHealthcareDocumentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetHealthcareEncounter
 
 Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -434,6 +645,48 @@ var res = await sdk.Healthcare.GetHealthcareEncounterAsync(
 ### Response
 
 **[GetHealthcareEncounterResponse](../../Models/Requests/GetHealthcareEncounterResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHealthcareGoal
+
+Retrieves a single HealthcareGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareGoal" method="get" path="/healthcare/{connection_id}/goal/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.GetHealthcareGoalAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Goal                                                                                                                                   |
+| `Fields`                                                                                                                                         | List<[GetHealthcareGoalQueryParamFields](../../Models/Requests/GetHealthcareGoalQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareGoalResponse](../../Models/Requests/GetHealthcareGoalResponse.md)**
 
 ### Errors
 
@@ -693,6 +946,90 @@ var res = await sdk.Healthcare.GetHealthcarePractitionerAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHealthcareProcedure
+
+Retrieves a single HealthcareProcedure by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareProcedure" method="get" path="/healthcare/{connection_id}/procedure/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.GetHealthcareProcedureAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Procedure                                                                                                                              |
+| `Fields`                                                                                                                                         | List<[GetHealthcareProcedureQueryParamFields](../../Models/Requests/GetHealthcareProcedureQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareProcedureResponse](../../Models/Requests/GetHealthcareProcedureResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHealthcareReport
+
+Retrieves a single HealthcareReport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareReport" method="get" path="/healthcare/{connection_id}/report/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Healthcare.GetHealthcareReportAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Report                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHealthcareReportQueryParamFields](../../Models/Requests/GetHealthcareReportQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareReportResponse](../../Models/Requests/GetHealthcareReportResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetHealthcareSlot
 
 Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -817,6 +1154,47 @@ var res = await sdk.Healthcare.ListHealthcareAppointmentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHealthcareCareplans
+
+Returns a list of HealthcareCareplans. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareCareplans" method="get" path="/healthcare/{connection_id}/careplan" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareCareplansRequest req = new ListHealthcareCareplansRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Healthcare.ListHealthcareCareplansAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListHealthcareCareplansRequest](../../Models/Requests/ListHealthcareCareplansRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[ListHealthcareCareplansResponse](../../Models/Requests/ListHealthcareCareplansResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHealthcareConditions
 
 Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -858,6 +1236,88 @@ var res = await sdk.Healthcare.ListHealthcareConditionsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHealthcareCoverages
+
+Returns a list of HealthcareCoverages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareCoverages" method="get" path="/healthcare/{connection_id}/coverage" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareCoveragesRequest req = new ListHealthcareCoveragesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Healthcare.ListHealthcareCoveragesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListHealthcareCoveragesRequest](../../Models/Requests/ListHealthcareCoveragesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[ListHealthcareCoveragesResponse](../../Models/Requests/ListHealthcareCoveragesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHealthcareDocuments
+
+Returns a list of HealthcareDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareDocuments" method="get" path="/healthcare/{connection_id}/document" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareDocumentsRequest req = new ListHealthcareDocumentsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Healthcare.ListHealthcareDocumentsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListHealthcareDocumentsRequest](../../Models/Requests/ListHealthcareDocumentsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[ListHealthcareDocumentsResponse](../../Models/Requests/ListHealthcareDocumentsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHealthcareEncounters
 
 Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -892,6 +1352,47 @@ var res = await sdk.Healthcare.ListHealthcareEncountersAsync(req);
 ### Response
 
 **[ListHealthcareEncountersResponse](../../Models/Requests/ListHealthcareEncountersResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHealthcareGoals
+
+Returns a list of HealthcareGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareGoals" method="get" path="/healthcare/{connection_id}/goal" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareGoalsRequest req = new ListHealthcareGoalsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Healthcare.ListHealthcareGoalsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListHealthcareGoalsRequest](../../Models/Requests/ListHealthcareGoalsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[ListHealthcareGoalsResponse](../../Models/Requests/ListHealthcareGoalsResponse.md)**
 
 ### Errors
 
@@ -1145,6 +1646,88 @@ var res = await sdk.Healthcare.ListHealthcarePractitionersAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHealthcareProcedures
+
+Returns a list of HealthcareProcedures. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareProcedures" method="get" path="/healthcare/{connection_id}/procedure" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareProceduresRequest req = new ListHealthcareProceduresRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Healthcare.ListHealthcareProceduresAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListHealthcareProceduresRequest](../../Models/Requests/ListHealthcareProceduresRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[ListHealthcareProceduresResponse](../../Models/Requests/ListHealthcareProceduresResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHealthcareReports
+
+Returns a list of HealthcareReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareReports" method="get" path="/healthcare/{connection_id}/report" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareReportsRequest req = new ListHealthcareReportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Healthcare.ListHealthcareReportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListHealthcareReportsRequest](../../Models/Requests/ListHealthcareReportsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[ListHealthcareReportsResponse](../../Models/Requests/ListHealthcareReportsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHealthcareSlots
 
 Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -1209,27 +1792,23 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "86ecd2b0-d230-4276-9e69-ad4a4062d457",
+        Id = "61f595d9-31a1-4f08-8089-e7765e25ddd5",
+        IsVirtual = true,
+        MeetingUrl = "https://expensive-slipper.name/",
         Metadata = new List<HealthcareMetadata>() {},
+        Notes = "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
         PractitionerIds = new List<string>() {},
-        Reasons = new List<HealthcareCode>() {
-            new HealthcareCode() {
-                Code = "12762740",
-                Display = "cubicularis caput",
-                System = "http://snomed.info/sct",
-            },
-        },
         ServiceTypes = new List<HealthcareCode>() {
             new HealthcareCode() {
-                Code = "61128108",
-                Display = "Annual physical",
+                Code = "12762740",
+                Display = "New patient visit",
                 System = "http://snomed.info/sct",
             },
         },
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-21T13:17:18.559Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-26T02:53:37.533Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1283,7 +1862,20 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-14",
+        Birthdate = "2025-02-16",
+        Contacts = new List<HealthcarePatientContact>() {
+            new HealthcarePatientContact() {
+                Emails = new List<HealthcareEmail>() {},
+                Name = "Antonia Lebsack",
+                Relationship = "Spouse",
+                Telephones = new List<HealthcareTelephone>() {
+                    new HealthcareTelephone() {
+                        Telephone = "(695) 328-7029 x4412",
+                        Type = HealthcareTelephoneType.Mobile,
+                    },
+                },
+            },
+        },
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -1293,7 +1885,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "ce3a7577-ea4c-45f8-84ba-ec7716b90856",
+        Id = "868ec4c0-db6a-4f0b-a4f4-e518a64b51ea",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1313,7 +1905,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-25T12:32:09.166Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-26T13:57:53.287Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1403,27 +1995,23 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "86ecd2b0-d230-4276-9e69-ad4a4062d457",
+        Id = "61f595d9-31a1-4f08-8089-e7765e25ddd5",
+        IsVirtual = true,
+        MeetingUrl = "https://expensive-slipper.name/",
         Metadata = new List<HealthcareMetadata>() {},
+        Notes = "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
         PractitionerIds = new List<string>() {},
-        Reasons = new List<HealthcareCode>() {
-            new HealthcareCode() {
-                Code = "12762740",
-                Display = "cubicularis caput",
-                System = "http://snomed.info/sct",
-            },
-        },
         ServiceTypes = new List<HealthcareCode>() {
             new HealthcareCode() {
-                Code = "61128108",
-                Display = "Annual physical",
+                Code = "12762740",
+                Display = "New patient visit",
                 System = "http://snomed.info/sct",
             },
         },
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-21T13:17:18.559Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-26T02:53:37.533Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1477,7 +2065,20 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-14",
+        Birthdate = "2025-02-16",
+        Contacts = new List<HealthcarePatientContact>() {
+            new HealthcarePatientContact() {
+                Emails = new List<HealthcareEmail>() {},
+                Name = "Antonia Lebsack",
+                Relationship = "Spouse",
+                Telephones = new List<HealthcareTelephone>() {
+                    new HealthcareTelephone() {
+                        Telephone = "(695) 328-7029 x4412",
+                        Type = HealthcareTelephoneType.Mobile,
+                    },
+                },
+            },
+        },
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -1487,7 +2088,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "ce3a7577-ea4c-45f8-84ba-ec7716b90856",
+        Id = "868ec4c0-db6a-4f0b-a4f4-e518a64b51ea",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1507,7 +2108,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-25T12:32:09.166Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-26T13:57:53.287Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

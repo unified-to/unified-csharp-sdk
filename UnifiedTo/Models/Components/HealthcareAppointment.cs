@@ -50,10 +50,22 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
+        /// Whether the appointment is a telehealth/virtual visit.
+        /// </summary>
+        [JsonProperty("is_virtual")]
+        public bool? IsVirtual { get; set; }
+
+        /// <summary>
         /// Where the appointment takes place.
         /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
+
+        /// <summary>
+        /// Join link for a telehealth/virtual visit.
+        /// </summary>
+        [JsonProperty("meeting_url")]
+        public string? MeetingUrl { get; set; }
 
         /// <summary>
         /// Custom field values.
