@@ -145,7 +145,11 @@ namespace UnifiedTo
 
         public ILink Link { get; }
 
+        public ILocation Location { get; }
+
         public IRecording Recording { get; }
+
+        public IRoom Room { get; }
 
         public IWebinar Webinar { get; }
 
@@ -162,8 +166,6 @@ namespace UnifiedTo
         public ISource Source { get; }
 
         public IClubs Clubs { get; }
-
-        public ILocation Location { get; }
 
         public IMember Member { get; }
 
@@ -705,9 +707,17 @@ namespace UnifiedTo
         /// </summary>
         public ILink Link { get; private set; }
         /// <summary>
+        /// The Location sub-SDK.
+        /// </summary>
+        public ILocation Location { get; private set; }
+        /// <summary>
         /// The Recording sub-SDK.
         /// </summary>
         public IRecording Recording { get; private set; }
+        /// <summary>
+        /// The Room sub-SDK.
+        /// </summary>
+        public IRoom Room { get; private set; }
         /// <summary>
         /// The Webinar sub-SDK.
         /// </summary>
@@ -740,10 +750,6 @@ namespace UnifiedTo
         /// The Clubs sub-SDK.
         /// </summary>
         public IClubs Clubs { get; private set; }
-        /// <summary>
-        /// The Location sub-SDK.
-        /// </summary>
-        public ILocation Location { get; private set; }
         /// <summary>
         /// The Member sub-SDK.
         /// </summary>
@@ -1450,7 +1456,11 @@ namespace UnifiedTo
 
             Link = new Link(SDKConfiguration);
 
+            Location = new Location(SDKConfiguration);
+
             Recording = new Recording(SDKConfiguration);
+
+            Room = new Room(SDKConfiguration);
 
             Webinar = new Webinar(SDKConfiguration);
 
@@ -1467,8 +1477,6 @@ namespace UnifiedTo
             Source = new Source(SDKConfiguration);
 
             Clubs = new Clubs(SDKConfiguration);
-
-            Location = new Location(SDKConfiguration);
 
             Member = new Member(SDKConfiguration);
 
@@ -1941,7 +1949,11 @@ namespace UnifiedTo
 
             Link = new Link(SDKConfiguration);
 
+            Location = new Location(SDKConfiguration);
+
             Recording = new Recording(SDKConfiguration);
+
+            Room = new Room(SDKConfiguration);
 
             Webinar = new Webinar(SDKConfiguration);
 
@@ -1958,8 +1970,6 @@ namespace UnifiedTo
             Source = new Source(SDKConfiguration);
 
             Clubs = new Clubs(SDKConfiguration);
-
-            Location = new Location(SDKConfiguration);
 
             Member = new Member(SDKConfiguration);
 

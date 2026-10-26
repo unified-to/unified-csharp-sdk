@@ -31,7 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Creative.CreateAdsCreativeAsync(
     adsCreative: new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "5a04fdaa-179e-44cf-b203-997881ae614b",
+        Id = "c42957f8-c08a-40af-98d3-d32ae62175b1",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -40,7 +40,7 @@ var res = await sdk.Creative.CreateAdsCreativeAsync(
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-28T13:44:11.455Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-28T18:18:36.055Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -171,7 +171,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "2b63ad6a-2806-4b11-bdf5-5aea373af00c",
+        Id = "d0736e50-89b1-466a-adb7-e658e7882fcd",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -180,7 +180,7 @@ PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-28T13:44:11.460Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-28T18:18:36.063Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -268,7 +268,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {
         CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
-        Id = "2b63ad6a-2806-4b11-bdf5-5aea373af00c",
+        Id = "d0736e50-89b1-466a-adb7-e658e7882fcd",
         Labels = new List<string>() {
             "coma",
             "accedo",
@@ -277,7 +277,7 @@ UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
         Metadata = new List<AdsMetadata>() {},
         Name = "Brekke, Bradtke and Robel",
         Status = AdsCreativeStatus.Paused,
-        UpdatedAt = System.DateTime.Parse("2021-06-28T13:44:11.460Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-28T18:18:36.063Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

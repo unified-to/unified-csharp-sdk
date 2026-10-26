@@ -179,6 +179,28 @@ namespace UnifiedTo
         );
 
         /// <summary>
+        /// Retrieve a location.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Location.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetCalendarLocationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetCalendarLocationResponse> GetCalendarLocationAsync(
+            string connectionId,
+            string id,
+            List<GetCalendarLocationQueryParamFields>? fields = null,
+            string? raw = null
+        );
+
+        /// <summary>
         /// Retrieve a recording.
         /// </summary>
         /// <remarks>
@@ -197,6 +219,28 @@ namespace UnifiedTo
             string connectionId,
             string id,
             List<GetCalendarRecordingQueryParamFields>? fields = null,
+            string? raw = null
+        );
+
+        /// <summary>
+        /// Retrieve a room.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarRoom by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Room.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetCalendarRoomResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetCalendarRoomResponse> GetCalendarRoomAsync(
+            string connectionId,
+            string id,
+            List<GetCalendarRoomQueryParamFields>? fields = null,
             string? raw = null
         );
 
@@ -279,6 +323,20 @@ namespace UnifiedTo
         public  Task<ListCalendarLinksResponse> ListCalendarLinksAsync(ListCalendarLinksRequest request);
 
         /// <summary>
+        /// List all locations.
+        /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
+        /// <param name="request">A <see cref="ListCalendarLocationsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListCalendarLocationsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListCalendarLocationsResponse> ListCalendarLocationsAsync(ListCalendarLocationsRequest request);
+
+        /// <summary>
         /// List all recordings.
         /// </summary>
         /// <remarks>
@@ -291,6 +349,20 @@ namespace UnifiedTo
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<ListCalendarRecordingsResponse> ListCalendarRecordingsAsync(ListCalendarRecordingsRequest request);
+
+        /// <summary>
+        /// List all rooms.
+        /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarRooms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
+        /// <param name="request">A <see cref="ListCalendarRoomsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListCalendarRoomsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListCalendarRoomsResponse> ListCalendarRoomsAsync(ListCalendarRoomsRequest request);
 
         /// <summary>
         /// List all webinars.
@@ -1388,6 +1460,131 @@ namespace UnifiedTo
 
 
         /// <summary>
+        /// Retrieve a location.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Location.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetCalendarLocationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetCalendarLocationResponse> GetCalendarLocationAsync(
+            string connectionId,
+            string id,
+            List<GetCalendarLocationQueryParamFields>? fields = null,
+            string? raw = null
+        )
+        {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new GetCalendarLocationRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+                Raw = raw,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/location/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarLocation", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    CalendarLocation obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<CalendarLocation>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into CalendarLocation.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new GetCalendarLocationResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.CalendarLocation = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
         /// Retrieve a recording.
         /// </summary>
         /// <remarks>
@@ -1494,6 +1691,131 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.CalendarRecording = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Retrieve a room.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a single CalendarRoom by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+        /// </remarks>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Room.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetCalendarRoomResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetCalendarRoomResponse> GetCalendarRoomAsync(
+            string connectionId,
+            string id,
+            List<GetCalendarRoomQueryParamFields>? fields = null,
+            string? raw = null
+        )
+        {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new GetCalendarRoomRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+                Raw = raw,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/room/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarRoom", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    CalendarRoom obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<CalendarRoom>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into CalendarRoom.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new GetCalendarRoomResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.CalendarRoom = obj;
                     return response;
                 }
 
@@ -2072,6 +2394,116 @@ namespace UnifiedTo
 
 
         /// <summary>
+        /// List all locations.
+        /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
+        /// <param name="request">A <see cref="ListCalendarLocationsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListCalendarLocationsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListCalendarLocationsResponse> ListCalendarLocationsAsync(
+            ListCalendarLocationsRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/location", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarLocations", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<CalendarLocation> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<CalendarLocation>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<CalendarLocation>.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListCalendarLocationsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.CalendarLocations = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
         /// List all recordings.
         /// </summary>
         /// <remarks>
@@ -2163,6 +2595,114 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.CalendarRecordings = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// List all rooms.
+        /// </summary>
+        /// <remarks>
+        /// Returns a list of CalendarRooms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+        /// </remarks>
+        /// <param name="request">A <see cref="ListCalendarRoomsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListCalendarRoomsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListCalendarRoomsResponse> ListCalendarRoomsAsync(ListCalendarRoomsRequest request)
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/room", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarRooms", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<CalendarRoom> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<CalendarRoom>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<CalendarRoom>.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListCalendarRoomsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.CalendarRooms = obj;
                     return response;
                 }
 

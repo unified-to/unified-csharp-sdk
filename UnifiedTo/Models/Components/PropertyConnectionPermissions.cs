@@ -275,6 +275,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions CalendarRecordingWrite = new PropertyConnectionPermissions("calendar_recording_write");
         public static readonly PropertyConnectionPermissions CalendarWebinarRead = new PropertyConnectionPermissions("calendar_webinar_read");
         public static readonly PropertyConnectionPermissions CalendarWebinarWrite = new PropertyConnectionPermissions("calendar_webinar_write");
+        public static readonly PropertyConnectionPermissions CalendarRoomRead = new PropertyConnectionPermissions("calendar_room_read");
+        public static readonly PropertyConnectionPermissions CalendarLocationRead = new PropertyConnectionPermissions("calendar_location_read");
         public static readonly PropertyConnectionPermissions EnrichPersonRead = new PropertyConnectionPermissions("enrich_person_read");
         public static readonly PropertyConnectionPermissions EnrichCompanyRead = new PropertyConnectionPermissions("enrich_company_read");
         public static readonly PropertyConnectionPermissions AdsAdRead = new PropertyConnectionPermissions("ads_ad_read");
@@ -688,6 +690,8 @@ namespace UnifiedTo.Models.Components
                 ["calendar_recording_write"] = CalendarRecordingWrite,
                 ["calendar_webinar_read"] = CalendarWebinarRead,
                 ["calendar_webinar_write"] = CalendarWebinarWrite,
+                ["calendar_room_read"] = CalendarRoomRead,
+                ["calendar_location_read"] = CalendarLocationRead,
                 ["enrich_person_read"] = EnrichPersonRead,
                 ["enrich_company_read"] = EnrichCompanyRead,
                 ["ads_ad_read"] = AdsAdRead,

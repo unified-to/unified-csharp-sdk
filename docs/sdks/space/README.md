@@ -32,11 +32,11 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "080f9eaf-df6d-4cb1-b62f-6857809c3655",
+        Id = "af87ba29-66ed-41ff-875a-d136ebaeb78c",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2026-01-02T02:57:25.307Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T20:51:07.837Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -168,11 +168,11 @@ PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "4fbd46b1-d884-4e17-a95e-679ff7f3fa9e",
+        Id = "740ba1cc-e195-4054-ab89-020824b3e9db",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2026-01-02T02:57:25.316Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T20:51:07.848Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -261,11 +261,11 @@ UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
     KmsSpace = new KmsSpace() {
         CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
         Description = "Acer.",
-        Id = "4fbd46b1-d884-4e17-a95e-679ff7f3fa9e",
+        Id = "740ba1cc-e195-4054-ab89-020824b3e9db",
         IsActive = false,
         Metadata = new List<KmsPageMetadata>() {},
         Name = "into nor afore",
-        UpdatedAt = System.DateTime.Parse("2026-01-02T02:57:25.316Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-02T20:51:07.848Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

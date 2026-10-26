@@ -39,7 +39,7 @@ var res = await sdk.Package.CreateAssessmentPackageAsync(
         Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
         HasRedirectUrl = true,
         HasTargetUrl = false,
-        Id = "94658032-6d65-42c5-80bb-973669dc25ad",
+        Id = "2eea431d-dc9a-47c5-b9ba-7a4fb6cc7a97",
         InfoUrl = "https://ugly-instance.biz/",
         IntegrationTypes = new List<string>() {
             "viridis",
@@ -54,7 +54,7 @@ var res = await sdk.Package.CreateAssessmentPackageAsync(
             "clamo",
         },
         Type = AssessmentPackageType.VideoInterview,
-        UpdatedAt = System.DateTime.Parse("2023-09-26T05:57:05.624Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-26T10:49:20.861Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -266,7 +266,7 @@ var res = await sdk.Package.PatchAssessmentPackageAsync(
         Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
         HasRedirectUrl = true,
         HasTargetUrl = false,
-        Id = "558b65ec-faf7-43be-9350-cb83456e31f0",
+        Id = "2548a90f-fd48-42b5-901a-cd3757b1f92f",
         InfoUrl = "https://ugly-instance.biz/",
         IntegrationTypes = new List<string>() {
             "viridis",
@@ -281,7 +281,7 @@ var res = await sdk.Package.PatchAssessmentPackageAsync(
             "clamo",
         },
         Type = AssessmentPackageType.VideoInterview,
-        UpdatedAt = System.DateTime.Parse("2023-09-26T05:57:05.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-26T10:49:20.866Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"
@@ -374,7 +374,7 @@ var res = await sdk.Package.UpdateAssessmentPackageAsync(
         Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
         HasRedirectUrl = true,
         HasTargetUrl = false,
-        Id = "558b65ec-faf7-43be-9350-cb83456e31f0",
+        Id = "2548a90f-fd48-42b5-901a-cd3757b1f92f",
         InfoUrl = "https://ugly-instance.biz/",
         IntegrationTypes = new List<string>() {
             "viridis",
@@ -389,7 +389,7 @@ var res = await sdk.Package.UpdateAssessmentPackageAsync(
             "clamo",
         },
         Type = AssessmentPackageType.VideoInterview,
-        UpdatedAt = System.DateTime.Parse("2023-09-26T05:57:05.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-26T10:49:20.866Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"

@@ -6,10 +6,12 @@
 
 * [CreateCommerceLocation](#createcommercelocation) - Create a location
 * [CreateHrisLocation](#createhrislocation) - Create a location
+* [GetCalendarLocation](#getcalendarlocation) - Retrieve a location
 * [GetClubsLocation](#getclubslocation) - Retrieve a location
 * [GetCommerceLocation](#getcommercelocation) - Retrieve a location
 * [GetHealthcareLocation](#gethealthcarelocation) - Retrieve a location
 * [GetHrisLocation](#gethrislocation) - Retrieve a location
+* [ListCalendarLocations](#listcalendarlocations) - List all locations
 * [ListClubsLocations](#listclubslocations) - List all locations
 * [ListCommerceLocations](#listcommercelocations) - List all locations
 * [ListHealthcareLocations](#listhealthcarelocations) - List all locations
@@ -52,7 +54,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "a6e3dfe9-fd43-4439-bcc2-0a5201ec253b",
+        Id = "0932908f-4406-4ecb-b39d-ca225951a7d6",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -63,10 +65,10 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "d8d3669e-6880-4dd8-8489-a233eb5af736",
+                Id = "4767ee1a-7409-444a-b698-81c86d7900f4",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "96c67487-a31a-4166-bdb4-1888195b84a9",
+                        Id = "a14481ad-ee54-4601-8c85-0dc4e15e1b33",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -94,7 +96,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-22T02:47:05.510Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-22T10:30:30.935Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -153,7 +155,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "69495f3e-e3ac-43e4-92de-478a39f1af94",
+        Id = "ccbf89ee-be5f-40d8-8d98-5149ca960749",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -174,7 +176,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-22T13:23:59.690Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-22T21:37:05.478Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -194,6 +196,48 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 ### Response
 
 **[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetCalendarLocation
+
+Retrieves a single CalendarLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getCalendarLocation" method="get" path="/calendar/{connection_id}/location/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Location.GetCalendarLocationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetCalendarLocationQueryParamFields](../../Models/Requests/GetCalendarLocationQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetCalendarLocationResponse](../../Models/Requests/GetCalendarLocationResponse.md)**
 
 ### Errors
 
@@ -362,6 +406,47 @@ var res = await sdk.Location.GetHrisLocationAsync(
 ### Response
 
 **[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListCalendarLocations
+
+Returns a list of CalendarLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listCalendarLocations" method="get" path="/calendar/{connection_id}/location" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCalendarLocationsRequest req = new ListCalendarLocationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Location.ListCalendarLocationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListCalendarLocationsRequest](../../Models/Requests/ListCalendarLocationsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[ListCalendarLocationsResponse](../../Models/Requests/ListCalendarLocationsResponse.md)**
 
 ### Errors
 
@@ -565,7 +650,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "c382284b-0776-4342-8d34-d35a66736857",
+        Id = "14e2db8a-d1c6-423b-a7ae-a61e893ce0ea",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -576,10 +661,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "b16ccb34-a74b-43a8-98fd-4cd8889dc2d6",
+                Id = "78dce793-0d85-4fa0-9917-140234aa4676",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "9e5bcfbd-0ab3-4e49-97a5-15ad70b0b78d",
+                        Id = "0d26a923-6ecc-48f3-b455-85084c9163b0",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -607,7 +692,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-22T02:47:05.524Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-22T10:30:30.952Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -667,7 +752,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "924e7aea-06c5-4b4b-8b47-7849a57e7308",
+        Id = "f63c9861-ec5e-44cc-9015-d699551887b9",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -688,7 +773,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-22T13:23:59.702Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-22T21:37:05.488Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -827,7 +912,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "c382284b-0776-4342-8d34-d35a66736857",
+        Id = "14e2db8a-d1c6-423b-a7ae-a61e893ce0ea",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -838,10 +923,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "b16ccb34-a74b-43a8-98fd-4cd8889dc2d6",
+                Id = "78dce793-0d85-4fa0-9917-140234aa4676",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "9e5bcfbd-0ab3-4e49-97a5-15ad70b0b78d",
+                        Id = "0d26a923-6ecc-48f3-b455-85084c9163b0",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -869,7 +954,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-22T02:47:05.524Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-22T10:30:30.952Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -929,7 +1014,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MNT",
         Description = "Commemoro acervus.",
-        Id = "924e7aea-06c5-4b4b-8b47-7849a57e7308",
+        Id = "f63c9861-ec5e-44cc-9015-d699551887b9",
         IsActive = false,
         IsHq = true,
         LanguageLocale = "it",
@@ -950,7 +1035,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "Asia/Jerusalem",
-        UpdatedAt = System.DateTime.Parse("2023-06-22T13:23:59.702Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-22T21:37:05.488Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

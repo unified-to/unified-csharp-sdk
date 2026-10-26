@@ -67,6 +67,8 @@ namespace UnifiedTo.Models.Requests
         Metadata,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("room_ids")]
+        RoomIds,
     }
 
     public static class PatchCalendarEventQueryParamFieldsExtension

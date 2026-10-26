@@ -36,7 +36,7 @@ var res = await sdk.Patient.CreateHealthcarePatientAsync(
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-16",
+        Birthdate = "2025-02-17",
         Contacts = new List<HealthcarePatientContact>() {
             new HealthcarePatientContact() {
                 Emails = new List<HealthcareEmail>() {},
@@ -59,7 +59,7 @@ var res = await sdk.Patient.CreateHealthcarePatientAsync(
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "c6cdd7e2-3430-4164-b27a-2a0bde1a9d02",
+        Id = "774758a2-4129-44ac-b947-2d169c88cbae",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -79,7 +79,7 @@ var res = await sdk.Patient.CreateHealthcarePatientAsync(
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-26T13:57:53.254Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-27T11:03:11.021Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -216,7 +216,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-16",
+        Birthdate = "2025-02-17",
         Contacts = new List<HealthcarePatientContact>() {
             new HealthcarePatientContact() {
                 Emails = new List<HealthcareEmail>() {},
@@ -239,7 +239,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "868ec4c0-db6a-4f0b-a4f4-e518a64b51ea",
+        Id = "6d40c828-f460-4965-a034-e6272df41121",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -259,7 +259,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-26T13:57:53.287Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-27T11:03:11.116Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -313,7 +313,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
             PostalCode = "54031",
             Region = "Nebraska",
         },
-        Birthdate = "2025-02-16",
+        Birthdate = "2025-02-17",
         Contacts = new List<HealthcarePatientContact>() {
             new HealthcarePatientContact() {
                 Emails = new List<HealthcareEmail>() {},
@@ -336,7 +336,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "868ec4c0-db6a-4f0b-a4f4-e518a64b51ea",
+        Id = "6d40c828-f460-4965-a034-e6272df41121",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -356,7 +356,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-26T13:57:53.287Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-27T11:03:11.116Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -76,7 +76,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "bb98a3a5-f80a-4fa2-8d4b-fd8af04b83db",
+        Id = "f386e618-0f28-4a52-a1a0-6cff8f3eaab7",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -86,7 +86,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "0949435a-237b-4d35-b21e-a185d0a1de7b",
+                Id = "1df68bc4-bae3-46a4-9d2a-bce5a43de105",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -97,7 +97,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-07T17:43:09.912Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-08T13:15:39.784Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -144,10 +144,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-10-02T08:39:22.109Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-10-02T23:13:47.341Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-16T04:00:33.442Z").ToUniversalTime(),
-        Id = "d71f9df4-f8f1-476e-810f-6b84d801d9e8",
+        HiredAt = System.DateTime.Parse("2026-05-16T23:10:43.465Z").ToUniversalTime(),
+        Id = "1e03db79-ae42-4d7d-886a-81de81e58478",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -156,7 +156,7 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "d859e65b-b503-4302-91dd-b089469e7978",
+                Id = "3ed41e35-45f8-4fb1-9594-da121c722126",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -167,12 +167,12 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-15T11:47:54.123Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-16T10:04:04.936Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-22T08:37:49.890Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-23T07:02:23.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -269,7 +269,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "9684d90c-36d4-415d-98b4-72708bcf6ed9",
+        Id = "268168bf-0d7c-482a-bcf6-1c17e4ea2f79",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -284,7 +284,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "f5cb89f8-0c3a-4c72-83e6-4a6c432d6c79",
+                Id = "b4fb9acc-69f9-44fe-84cd-7e30faabbf52",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -313,7 +313,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-29T10:45:14.474Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T14:44:36.846Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     connectionId: "<id>"
@@ -360,10 +360,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "7ef89f54-9460-4c99-b3c3-25dbcdfeedff",
+        Id = "d7519b45-29ac-443d-a1bb-a270af610f56",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T22:37:04.474Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-02T02:56:54.352Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>"
@@ -413,10 +413,10 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "211d09f6-6380-4978-bfcc-4c80b969889d",
+        Id = "e219df61-e2ab-4209-9080-d6eb8ee28faf",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-08T04:58:22.285Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-08T10:36:42.545Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -464,13 +464,13 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "939e0ba9-87bc-43a9-bc24-a49707c38fbe",
+        Id = "2e1cd6c6-6c88-41fb-a221-71ceab50d20c",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-25T04:09:04.802Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-25T12:30:02.945Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -546,7 +546,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "d7627025-6047-447f-b44c-e8bfccf4ca07",
+        Id = "e4245513-b146-4851-a648-d8c621dfe854",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -557,7 +557,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "47a2d8fa-0b5f-4d27-b3c0-2571387cdbea",
+                Id = "7b1e8477-69ed-4df1-aac2-dc6cadb94c63",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -572,7 +572,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-11T10:24:54.525Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-12T06:23:43.171Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -586,14 +586,14 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-05T17:44:36.347Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-06T14:44:11.566Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "99c56cc6-145d-49ca-9097-674e4fa28241",
+                Id = "51b341e5-1b8d-4393-8ef4-0a3b7e38b024",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-09-01T03:10:54.574Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-09-02T00:39:30.040Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -603,7 +603,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "3f9f4298-6fc1-4b13-af93-867761833c0c",
+                Id = "b57cd233-0de9-462d-8f92-b743d7b87de5",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -616,7 +616,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "9e30b24d-a132-41fa-895a-39d69b1f9796",
+                Id = "49d81e3d-d14f-42cc-988a-8e5f540dee82",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -629,7 +629,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "dfc1118e-f325-48ef-b9cd-0f62a1905b89",
+                Id = "3c3c3710-2323-4b5a-bfef-bf9673c52ba4",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -647,7 +647,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-03-02T14:53:04.078Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-03T09:01:05.541Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -695,7 +695,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "497ec34a-90e1-4302-9e62-168012405474",
+        Id = "020ab8ae-93eb-452e-adab-7cb2a765105e",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -709,7 +709,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-06T16:00:42.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-06T22:12:29.876Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1505,7 +1505,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "f6e08afb-ea94-43bc-ac06-102c170ac74d",
+        Id = "3d004a33-ac1f-4c93-8914-21d6d74c9650",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -1515,7 +1515,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "cb4a1cb9-b532-492c-88d9-7d9cb9eec617",
+                Id = "0a802d5a-c854-42b8-9874-010ac328a7bb",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -1526,7 +1526,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-07T17:43:09.946Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-08T13:15:39.834Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1574,10 +1574,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-10-02T08:39:22.122Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-10-02T23:13:47.363Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-16T04:00:33.459Z").ToUniversalTime(),
-        Id = "766ffcc1-b00d-4dda-9c33-3dac2dc43c5f",
+        HiredAt = System.DateTime.Parse("2026-05-16T23:10:43.494Z").ToUniversalTime(),
+        Id = "345ebcf6-bcf3-4cb0-9d71-6bc3f662da2b",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -1586,7 +1586,7 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "1332104d-a459-40cf-a44e-381d163563eb",
+                Id = "1d90018b-5d0f-42db-a2c9-759c910a4820",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -1597,12 +1597,12 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-15T11:47:54.143Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-16T10:04:04.970Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-22T08:37:49.910Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-23T07:02:23.955Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1700,7 +1700,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "a70e858d-7ebf-4aeb-be2b-e70519655835",
+        Id = "f892bafa-397a-47cc-b4f5-538289c4514c",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -1715,7 +1715,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "01e9b4f0-3535-443b-a3c8-8d81c70972d9",
+                Id = "1f4a8890-f74f-481a-9ec9-585c2afe5e58",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -1744,7 +1744,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-29T10:45:14.482Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T14:44:36.856Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",
@@ -1792,10 +1792,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "af2e0bc2-fcca-43a5-a91d-ef6f11fb8326",
+        Id = "07dfdd87-990f-454f-98a2-8fba2e60b2b2",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T22:37:04.477Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-02T02:56:54.356Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -1846,10 +1846,10 @@ PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "a8f58b89-76ff-40e0-95e1-e8682be34a39",
+        Id = "6d0d8c2d-5101-4fc1-840a-be63099ac7a3",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-08T04:58:22.288Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-08T10:36:42.549Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1898,13 +1898,13 @@ PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "e516ac1e-e692-421c-a5db-d832f1f24719",
+        Id = "4902a16a-a402-4e8f-92d5-aa3ae76d535b",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-25T04:09:04.806Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-25T12:30:02.951Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1981,7 +1981,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "8df5c1f7-1d0b-408a-a543-3e36de36ddc6",
+        Id = "99739b8b-df50-424b-9fc0-c844a5a38e30",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -1992,7 +1992,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "1da760fd-ade0-4dac-b59c-c1bf9bc3b3c4",
+                Id = "41bf235e-6e8b-47c1-a100-658737e60200",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -2007,7 +2007,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-11T10:24:54.606Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-12T06:23:43.226Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -2021,14 +2021,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-05T17:44:36.432Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-06T14:44:11.623Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "62d2ccee-06b9-4213-a9bf-5f00feb4046e",
+                Id = "85d57ef1-b776-402a-bc91-c6382e359bf7",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-09-01T03:10:54.661Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-09-02T00:39:30.098Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -2038,7 +2038,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "7bb5ffba-639e-4327-b096-b896f0807297",
+                Id = "68228110-d273-4770-9b9d-15b899f5cd29",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -2051,7 +2051,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "1fe2df18-5bb5-4bbf-8d0c-02e5117220ae",
+                Id = "6bef41f6-890c-4845-93cf-f79507c71b33",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -2064,7 +2064,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "1eb4fb70-1da1-44f9-b060-f1ac014185f4",
+                Id = "bbe32f89-419b-413e-bbf1-d153700453c2",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -2082,7 +2082,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-03-02T14:53:04.151Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-03T09:01:05.591Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2131,7 +2131,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "867869d7-a2c5-4166-9fb4-9af88f93d0b8",
+        Id = "156ee9f7-93fc-4185-9d84-d8a6b284a3d7",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -2145,7 +2145,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-06T16:00:42.941Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-06T22:12:29.881Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2514,7 +2514,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "f6e08afb-ea94-43bc-ac06-102c170ac74d",
+        Id = "3d004a33-ac1f-4c93-8914-21d6d74c9650",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -2524,7 +2524,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "cb4a1cb9-b532-492c-88d9-7d9cb9eec617",
+                Id = "0a802d5a-c854-42b8-9874-010ac328a7bb",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -2535,7 +2535,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-07T17:43:09.946Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-08T13:15:39.834Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2583,10 +2583,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-10-02T08:39:22.122Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-10-02T23:13:47.363Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-16T04:00:33.459Z").ToUniversalTime(),
-        Id = "766ffcc1-b00d-4dda-9c33-3dac2dc43c5f",
+        HiredAt = System.DateTime.Parse("2026-05-16T23:10:43.494Z").ToUniversalTime(),
+        Id = "345ebcf6-bcf3-4cb0-9d71-6bc3f662da2b",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -2595,7 +2595,7 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "1332104d-a459-40cf-a44e-381d163563eb",
+                Id = "1d90018b-5d0f-42db-a2c9-759c910a4820",
                 Namespace = "application",
                 Slug = "stella",
                 Value = AtsMetadataValue.CreateStr(
@@ -2606,12 +2606,12 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-15T11:47:54.143Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-16T10:04:04.970Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-        UpdatedAt = System.DateTime.Parse("2026-10-22T08:37:49.910Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-23T07:02:23.955Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2709,7 +2709,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "a70e858d-7ebf-4aeb-be2b-e70519655835",
+        Id = "f892bafa-397a-47cc-b4f5-538289c4514c",
         ImageUrl = "https://avatars.githubusercontent.com/u/27464445",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -2724,7 +2724,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "01e9b4f0-3535-443b-a3c8-8d81c70972d9",
+                Id = "1f4a8890-f74f-481a-9ec9-585c2afe5e58",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -2753,7 +2753,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Customer Division Producer",
-        UpdatedAt = System.DateTime.Parse("2024-04-29T10:45:14.482Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-29T14:44:36.856Z").ToUniversalTime(),
         WebUrl = "https://fragrant-husband.net/",
     },
     ConnectionId = "<id>",
@@ -2801,10 +2801,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "af2e0bc2-fcca-43a5-a91d-ef6f11fb8326",
+        Id = "07dfdd87-990f-454f-98a2-8fba2e60b2b2",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-01T22:37:04.477Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-02T02:56:54.356Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -2855,10 +2855,10 @@ UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "lonzo_schowalter_resume.pdf",
-        Id = "a8f58b89-76ff-40e0-95e1-e8682be34a39",
+        Id = "6d0d8c2d-5101-4fc1-840a-be63099ac7a3",
         Metadata = new List<AtsMetadata>() {},
         Type = AtsDocumentType.CoverLetter,
-        UpdatedAt = System.DateTime.Parse("2022-12-08T04:58:22.288Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-08T10:36:42.549Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2907,13 +2907,13 @@ UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
         EndAt = System.DateTime.Parse("2021-12-08T06:33:19.583Z").ToUniversalTime(),
-        Id = "e516ac1e-e692-421c-a5db-d832f1f24719",
+        Id = "4902a16a-a402-4e8f-92d5-aa3ae76d535b",
         Location = "26596 Halle Trafficway",
         MeetingUrl = "https://immaculate-foodstuffs.biz",
         Metadata = new List<AtsMetadata>() {},
         StartAt = System.DateTime.Parse("2021-12-08T06:03:19.583Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2023-09-25T04:09:04.806Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-25T12:30:02.951Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2990,7 +2990,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Description = "Global",
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {},
-        Id = "8df5c1f7-1d0b-408a-a543-3e36de36ddc6",
+        Id = "99739b8b-df50-424b-9fc0-c844a5a38e30",
         Industry = "Handcrafted Bamboo Soap",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -3001,7 +3001,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "1da760fd-ade0-4dac-b59c-c1bf9bc3b3c4",
+                Id = "41bf235e-6e8b-47c1-a100-658737e60200",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -3016,7 +3016,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-11T10:24:54.606Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-12T06:23:43.226Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -3030,14 +3030,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Wisconsin",
                     RegionCode = "CO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-08-05T17:44:36.432Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-08-06T14:44:11.623Z").ToUniversalTime(),
                 Description = "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-                Id = "62d2ccee-06b9-4213-a9bf-5f00feb4046e",
+                Id = "85d57ef1-b776-402a-bc91-c6382e359bf7",
                 IsActive = false,
                 Location = "1725 Hessel Keys",
                 Name = "International Identity Manager",
                 PostingUrl = "https://obedient-yak.com",
-                UpdatedAt = System.DateTime.Parse("2026-09-01T03:10:54.661Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-09-02T00:39:30.098Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -3047,7 +3047,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Questions = new List<AtsJobQuestion>() {
             new AtsJobQuestion() {
                 Description = "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-                Id = "7bb5ffba-639e-4327-b096-b896f0807297",
+                Id = "68228110-d273-4770-9b9d-15b899f5cd29",
                 MaxLength = 117D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -3060,7 +3060,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "1fe2df18-5bb5-4bbf-8d0c-02e5117220ae",
+                Id = "6bef41f6-890c-4845-93cf-f79507c71b33",
                 MaxLength = 453D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -3073,7 +3073,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
             },
             new AtsJobQuestion() {
                 Description = "Taceo rem compello spectaculum mollitia arcus compello.",
-                Id = "1eb4fb70-1da1-44f9-b060-f1ac014185f4",
+                Id = "bbe32f89-419b-413e-bbf1-d153700453c2",
                 MaxLength = 66D,
                 MinLength = 1D,
                 Options = new List<string>() {
@@ -3091,7 +3091,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Crepusculum adsuesco vere.",
-        UpdatedAt = System.DateTime.Parse("2026-03-02T14:53:04.151Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-03T09:01:05.591Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3140,7 +3140,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "867869d7-a2c5-4166-9fb4-9af88f93d0b8",
+        Id = "156ee9f7-93fc-4185-9d84-d8a6b284a3d7",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -3154,7 +3154,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-06T16:00:42.941Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-06T22:12:29.881Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

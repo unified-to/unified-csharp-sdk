@@ -160,6 +160,8 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType CalendarLink = new WebhookObjectType("calendar_link");
         public static readonly WebhookObjectType CalendarRecording = new WebhookObjectType("calendar_recording");
         public static readonly WebhookObjectType CalendarWebinar = new WebhookObjectType("calendar_webinar");
+        public static readonly WebhookObjectType CalendarRoom = new WebhookObjectType("calendar_room");
+        public static readonly WebhookObjectType CalendarLocation = new WebhookObjectType("calendar_location");
         public static readonly WebhookObjectType AdsOrganization = new WebhookObjectType("ads_organization");
         public static readonly WebhookObjectType AdsAd = new WebhookObjectType("ads_ad");
         public static readonly WebhookObjectType AdsCampaign = new WebhookObjectType("ads_campaign");
@@ -383,6 +385,8 @@ namespace UnifiedTo.Models.Components
                 ["calendar_link"] = CalendarLink,
                 ["calendar_recording"] = CalendarRecording,
                 ["calendar_webinar"] = CalendarWebinar,
+                ["calendar_room"] = CalendarRoom,
+                ["calendar_location"] = CalendarLocation,
                 ["ads_organization"] = AdsOrganization,
                 ["ads_ad"] = AdsAd,
                 ["ads_campaign"] = AdsCampaign,

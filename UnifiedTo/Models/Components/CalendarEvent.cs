@@ -91,6 +91,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("recurring_event_id")]
         public string? RecurringEventId { get; set; }
 
+        /// <summary>
+        /// pointers to Calendar Rooms booked for this event.
+        /// </summary>
+        [JsonProperty("room_ids")]
+        public List<string>? RoomIds { get; set; }
+
         [JsonProperty("send_notifications")]
         public bool? SendNotifications { get; set; }
 

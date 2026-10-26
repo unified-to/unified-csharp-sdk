@@ -156,6 +156,8 @@ var custom = WebhookObjectType.Of("custom_value");
 | `CalendarLink`                  | calendar_link                   |
 | `CalendarRecording`             | calendar_recording              |
 | `CalendarWebinar`               | calendar_webinar                |
+| `CalendarRoom`                  | calendar_room                   |
+| `CalendarLocation`              | calendar_location               |
 | `AdsOrganization`               | ads_organization                |
 | `AdsAd`                         | ads_ad                          |
 | `AdsCampaign`                   | ads_campaign                    |

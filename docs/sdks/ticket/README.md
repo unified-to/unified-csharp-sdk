@@ -34,7 +34,7 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "4528f935-c0e2-4f4a-a9ba-f909b0dcb655",
+        Id = "e9c10c85-7c25-4f78-9c2c-c9cced3e0267",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -43,7 +43,7 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:52:25.953Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:57:57.409Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     connectionId: "<id>"
@@ -178,7 +178,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "e41acc59-4179-4178-967b-6f8464725e00",
+        Id = "1596c926-4a79-4b4a-ab1c-711ef63defd4",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -187,7 +187,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:52:25.953Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:57:57.409Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",
@@ -279,7 +279,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
         DueAt = System.DateTime.Parse("2021-07-07T17:39:49.813Z").ToUniversalTime(),
-        Id = "e41acc59-4179-4178-967b-6f8464725e00",
+        Id = "1596c926-4a79-4b4a-ab1c-711ef63defd4",
         Metadata = new List<TicketingMetadata>() {},
         Priority = "MEDIUM",
         Source = "email",
@@ -288,7 +288,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
         Tags = new List<string>() {
             "vilicus",
         },
-        UpdatedAt = System.DateTime.Parse("2021-07-03T18:52:25.953Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-07-03T18:57:57.409Z").ToUniversalTime(),
         Url = "https://similar-velocity.net/",
     },
     ConnectionId = "<id>",

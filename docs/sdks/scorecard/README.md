@@ -34,7 +34,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "497ec34a-90e1-4302-9e62-168012405474",
+        Id = "020ab8ae-93eb-452e-adab-7cb2a765105e",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -48,7 +48,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-06T16:00:42.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-06T22:12:29.876Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -263,7 +263,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "867869d7-a2c5-4166-9fb4-9af88f93d0b8",
+        Id = "156ee9f7-93fc-4185-9d84-d8a6b284a3d7",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -277,7 +277,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-06T16:00:42.941Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-06T22:12:29.881Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -366,7 +366,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "867869d7-a2c5-4166-9fb4-9af88f93d0b8",
+        Id = "156ee9f7-93fc-4185-9d84-d8a6b284a3d7",
         Metadata = new List<AtsMetadata>() {},
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
@@ -380,7 +380,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-06T16:00:42.941Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-06T22:12:29.881Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5ab39758-6367-4929-91c6-874f42075299",
+        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -40,7 +40,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -523,13 +523,17 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetCalendarCalendar](docs/sdks/calendar/README.md#getcalendarcalendar) - Retrieve a calendar
 * [GetCalendarEvent](docs/sdks/calendar/README.md#getcalendarevent) - Retrieve an event
 * [GetCalendarLink](docs/sdks/calendar/README.md#getcalendarlink) - Retrieve a link
+* [GetCalendarLocation](docs/sdks/calendar/README.md#getcalendarlocation) - Retrieve a location
 * [GetCalendarRecording](docs/sdks/calendar/README.md#getcalendarrecording) - Retrieve a recording
+* [GetCalendarRoom](docs/sdks/calendar/README.md#getcalendarroom) - Retrieve a room
 * [GetCalendarWebinar](docs/sdks/calendar/README.md#getcalendarwebinar) - Retrieve a webinar
 * [ListCalendarBusies](docs/sdks/calendar/README.md#listcalendarbusies) - List all busies
 * [ListCalendarCalendars](docs/sdks/calendar/README.md#listcalendarcalendars) - List all calendars
 * [ListCalendarEvents](docs/sdks/calendar/README.md#listcalendarevents) - List all events
 * [ListCalendarLinks](docs/sdks/calendar/README.md#listcalendarlinks) - List all links
+* [ListCalendarLocations](docs/sdks/calendar/README.md#listcalendarlocations) - List all locations
 * [ListCalendarRecordings](docs/sdks/calendar/README.md#listcalendarrecordings) - List all recordings
+* [ListCalendarRooms](docs/sdks/calendar/README.md#listcalendarrooms) - List all rooms
 * [ListCalendarWebinars](docs/sdks/calendar/README.md#listcalendarwebinars) - List all webinars
 * [PatchCalendarCalendar](docs/sdks/calendar/README.md#patchcalendarcalendar) - Update a calendar
 * [PatchCalendarEvent](docs/sdks/calendar/README.md#patchcalendarevent) - Update an event
@@ -1714,10 +1718,12 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 * [CreateCommerceLocation](docs/sdks/location/README.md#createcommercelocation) - Create a location
 * [CreateHrisLocation](docs/sdks/location/README.md#createhrislocation) - Create a location
+* [GetCalendarLocation](docs/sdks/location/README.md#getcalendarlocation) - Retrieve a location
 * [GetClubsLocation](docs/sdks/location/README.md#getclubslocation) - Retrieve a location
 * [GetCommerceLocation](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
 * [GetHealthcareLocation](docs/sdks/location/README.md#gethealthcarelocation) - Retrieve a location
 * [GetHrisLocation](docs/sdks/location/README.md#gethrislocation) - Retrieve a location
+* [ListCalendarLocations](docs/sdks/location/README.md#listcalendarlocations) - List all locations
 * [ListClubsLocations](docs/sdks/location/README.md#listclubslocations) - List all locations
 * [ListCommerceLocations](docs/sdks/location/README.md#listcommercelocations) - List all locations
 * [ListHealthcareLocations](docs/sdks/location/README.md#listhealthcarelocations) - List all locations
@@ -2235,6 +2241,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveCommerceReview](docs/sdks/review/README.md#removecommercereview) - Remove a review
 * [UpdateCommerceReview](docs/sdks/review/README.md#updatecommercereview) - Update a review
 * [UpdateSocialReview](docs/sdks/review/README.md#updatesocialreview) - Update a review
+
+### [Room](docs/sdks/room/README.md)
+
+* [GetCalendarRoom](docs/sdks/room/README.md#getcalendarroom) - Retrieve a room
+* [ListCalendarRooms](docs/sdks/room/README.md#listcalendarrooms) - List all rooms
 
 ### [Saleschannel](docs/sdks/saleschannel/README.md)
 
@@ -2792,7 +2803,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5ab39758-6367-4929-91c6-874f42075299",
+        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2805,7 +2816,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2836,7 +2847,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5ab39758-6367-4929-91c6-874f42075299",
+        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2849,7 +2860,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2929,7 +2940,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "5ab39758-6367-4929-91c6-874f42075299",
+        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2942,7 +2953,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2987,7 +2998,7 @@ try
             Currency = "CAD",
             CustomerDefinedCode = "6170",
             Description = "Voluptatibus valde spoliatio.",
-            Id = "5ab39758-6367-4929-91c6-874f42075299",
+            Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
             IsPayable = false,
             Metadata = new List<AccountingMetadata>() {},
             Name = "Auto Loan Account",
@@ -3000,7 +3011,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-            UpdatedAt = System.DateTime.Parse("2023-08-07T21:57:28.172Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );

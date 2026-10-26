@@ -72,6 +72,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
 
+        /// <summary>
+        /// The room ID to filter by. Returns the events that booked this room.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=room_id")]
+        public string? RoomId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 
