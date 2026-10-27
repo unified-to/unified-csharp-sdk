@@ -30,16 +30,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
     accountingExpensereport: new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-20T03:55:09.833Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-20T07:37:12.349Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "3e67ef0c-13c2-403f-afe6-2e1f233a1328",
+        Id = "0a9e04a3-9f5c-43b8-8104-636721a142b4",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "71df9439-35ba-4ca7-a685-1753001184a8",
+                Id = "aa1aba67-5221-443b-ae71-b8f9841959d0",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -47,7 +47,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "47dd8599-6b6b-4614-8cb8-e853238cd3b2",
+                Id = "de145d1f-215a-492a-970b-f8d2058836a2",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -56,7 +56,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "57ef7195-2630-4d75-8325-97c7024a923d",
+                Id = "0ceb1737-ecb1-4b13-b54b-d6ca2609053f",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -65,7 +65,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "2a0af2bd-a006-4d7a-b81a-cf3c253d72e8",
+                Id = "950a5c8b-69fb-4a8c-8543-b64b8993ef97",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -77,11 +77,11 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-20T03:55:09.833Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-20T07:37:12.349Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-20T03:55:09.833Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-20T07:37:12.349Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -211,16 +211,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-20T03:55:09.840Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-20T07:37:12.355Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "a98f02b4-2526-4134-a8da-782e1ab9b401",
+        Id = "66910835-0124-4ee9-8624-9c5c48f78e69",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "b8cebc77-5a9c-4ac8-ab5f-8606a4b1b9a6",
+                Id = "57ad51c2-9293-435a-ac92-d7c75e70171a",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -228,7 +228,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "da58f8fd-e055-4bbe-8447-693b4ebb0697",
+                Id = "39a143e2-18b5-495f-b10e-ec074697306e",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -237,7 +237,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "b3d10e39-cbf7-4390-8fd7-f7dc327f8b1b",
+                Id = "ca492e0b-64fa-47d7-a7f0-9b5f5c9a7f81",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -246,7 +246,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "aaa8182c-1a38-4375-bc30-9cc532961bd6",
+                Id = "d099bc02-c882-4245-af6b-3c42c512d338",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -258,11 +258,11 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-20T03:55:09.840Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-20T07:37:12.355Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-20T03:55:09.840Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-20T07:37:12.355Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -349,16 +349,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2021-04-20T03:55:09.840Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-04-20T07:37:12.355Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "GBP",
         ExternalNumber = "ER-31240",
-        Id = "a98f02b4-2526-4134-a8da-782e1ab9b401",
+        Id = "66910835-0124-4ee9-8624-9c5c48f78e69",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "b8cebc77-5a9c-4ac8-ab5f-8606a4b1b9a6",
+                Id = "57ad51c2-9293-435a-ac92-d7c75e70171a",
                 ItemName = "Conference ticket",
                 TaxAmount = 0D,
                 TotalAmount = 39.9D,
@@ -366,7 +366,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "da58f8fd-e055-4bbe-8447-693b4ebb0697",
+                Id = "39a143e2-18b5-495f-b10e-ec074697306e",
                 ItemName = "Flight",
                 Notes = "Soluta omnis dolor.",
                 TaxAmount = 0D,
@@ -375,7 +375,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "b3d10e39-cbf7-4390-8fd7-f7dc327f8b1b",
+                Id = "ca492e0b-64fa-47d7-a7f0-9b5f5c9a7f81",
                 ItemName = "Client dinner",
                 Notes = "Altus caveo capio.",
                 TaxAmount = 0D,
@@ -384,7 +384,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "aaa8182c-1a38-4375-bc30-9cc532961bd6",
+                Id = "d099bc02-c882-4245-af6b-3c42c512d338",
                 ItemName = "Flight",
                 TaxAmount = 0D,
                 TotalAmount = 445.27D,
@@ -396,11 +396,11 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
         Name = "Lolita Kunde - October expenses",
         PostedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         ReimbursedAmount = 908.46D,
-        ReimbursedAt = System.DateTime.Parse("2021-04-20T03:55:09.840Z").ToUniversalTime(),
+        ReimbursedAt = System.DateTime.Parse("2021-04-20T07:37:12.355Z").ToUniversalTime(),
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 908.46D,
-        UpdatedAt = System.DateTime.Parse("2021-04-20T03:55:09.840Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-20T07:37:12.355Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

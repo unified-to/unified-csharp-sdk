@@ -8,9 +8,11 @@
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [PatchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
+* [PatchUnifiedWebhookResume](#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 * [UpdateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
+* [UpdateUnifiedWebhookResume](#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [UpdateUnifiedWebhookTrigger](#updateunifiedwebhooktrigger) - Trigger webhook
 
 ## CreateUnifiedWebhook
@@ -173,6 +175,42 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchUnifiedWebhookResume
+
+Sets is_healthy back to true and restarts the webhook. Fix the cause first (hook_url, connection auth); the connection must be healthy. Virtual: continues from where it stopped. A webhook that went unhealthy mid-initial-sync before resume was available restarts its initial sync, so deleting and recreating it is safer. Native: re-subscribes if the provider subscription is missing or expired. Events received while the webhook was unhealthy are not re-sent. Webhook sync (beta): continues from the stored sync token. Page cursors are not stored yet, so a resume can re-send some records. Virtual and initial-sync webhooks that have been unhealthy for more than 7 days cannot be resumed, because resuming would re-send every change since then; delete and recreate them instead. MCP Events subscriptions cannot be resumed; they are managed by their MCP client.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedWebhookResume" method="patch" path="/unified/webhook/{id}/resume" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Webhook.PatchUnifiedWebhookResumeAsync(id: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
+
+### Response
+
+**[PatchUnifiedWebhookResumeResponse](../../Models/Requests/PatchUnifiedWebhookResumeResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchUnifiedWebhookTrigger
 
 Trigger webhook
@@ -282,6 +320,42 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
 ### Response
 
 **[UpdateUnifiedWebhookResponse](../../Models/Requests/UpdateUnifiedWebhookResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateUnifiedWebhookResume
+
+Sets is_healthy back to true and restarts the webhook. Fix the cause first (hook_url, connection auth); the connection must be healthy. Virtual: continues from where it stopped. A webhook that went unhealthy mid-initial-sync before resume was available restarts its initial sync, so deleting and recreating it is safer. Native: re-subscribes if the provider subscription is missing or expired. Events received while the webhook was unhealthy are not re-sent. Webhook sync (beta): continues from the stored sync token. Page cursors are not stored yet, so a resume can re-send some records. Virtual and initial-sync webhooks that have been unhealthy for more than 7 days cannot be resumed, because resuming would re-send every change since then; delete and recreate them instead. MCP Events subscriptions cannot be resumed; they are managed by their MCP client.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedWebhookResume" method="put" path="/unified/webhook/{id}/resume" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Webhook.UpdateUnifiedWebhookResumeAsync(id: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
+
+### Response
+
+**[UpdateUnifiedWebhookResumeResponse](../../Models/Requests/UpdateUnifiedWebhookResumeResponse.md)**
 
 ### Errors
 

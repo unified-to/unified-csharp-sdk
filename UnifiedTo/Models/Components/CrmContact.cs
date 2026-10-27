@@ -24,7 +24,7 @@ namespace UnifiedTo.Models.Components
         public PropertyCrmContactAddress? Address { get; set; }
 
         /// <summary>
-        /// The companyorganization name  of the contact.
+        /// The company/organization name  of the contact.
         /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }
@@ -56,6 +56,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<CrmEmail>? Emails { get; set; }
 
+        /// <summary>
+        /// The contact's first (given) name.
+        /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
@@ -68,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
 
+        /// <summary>
+        /// The contact's last (family) name.
+        /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 

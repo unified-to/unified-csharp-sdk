@@ -43,10 +43,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "d7519b45-29ac-443d-a1bb-a270af610f56",
+        Id = "90198f59-2ba0-4d20-b696-bb7fd141fb63",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-02T02:56:54.352Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-02T08:04:12.461Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>"
@@ -122,7 +122,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
             },
         },
         Employees = 4177D,
-        Id = "50d3fe52-b131-4583-97f1-e51c6edf337e",
+        Id = "3b09aa1f-d188-4d23-81e4-e942537cee3b",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -136,7 +136,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "3ec71c80-0dfd-49b0-9509-b272ae520fe3",
+                Id = "191e2e37-c49d-46e0-8034-3eb39ae98307",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -157,7 +157,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-06T19:47:05.546Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-07T15:36:48.279Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -215,11 +215,11 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "465b7cd3-27db-4337-b9e7-e74d8bc1a2d5",
+        Id = "bde9a526-fafe-4f43-8b7a-fed9f34a552f",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-13T13:37:04.617Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-14T16:01:14.227Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -553,10 +553,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "07dfdd87-990f-454f-98a2-8fba2e60b2b2",
+        Id = "256518c0-e41d-420d-b723-56bab4c92cee",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-02T02:56:54.356Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-02T08:04:12.465Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -633,7 +633,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "3dd5f697-c1ad-47d3-83ad-afc345b97279",
+        Id = "bbd86a31-ca08-4a36-a31e-f882be27bae1",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -647,7 +647,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "d850bae0-1840-4cc4-ad92-51b151b2e861",
+                Id = "7a5f5c93-1466-480c-a78c-8005554bb8e7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -668,7 +668,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-06T19:47:05.571Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-07T15:36:48.307Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -727,11 +727,11 @@ PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "b466ff9e-0d2c-44c7-b85c-e4e092958b3d",
+        Id = "40ee070e-da38-4df0-b77d-b28fc40b042f",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-13T13:37:04.646Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-14T16:01:14.247Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -898,10 +898,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "07dfdd87-990f-454f-98a2-8fba2e60b2b2",
+        Id = "256518c0-e41d-420d-b723-56bab4c92cee",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-882-360-2010",
-        UpdatedAt = System.DateTime.Parse("2020-10-02T02:56:54.356Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-10-02T08:04:12.465Z").ToUniversalTime(),
         WebsiteUrl = "https://www.gulgowskidibbert.com",
     },
     ConnectionId = "<id>",
@@ -978,7 +978,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Employees = 4177D,
-        Id = "3dd5f697-c1ad-47d3-83ad-afc345b97279",
+        Id = "bbd86a31-ca08-4a36-a31e-f882be27bae1",
         Industry = "Metrics",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -992,7 +992,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "d850bae0-1840-4cc4-ad92-51b151b2e861",
+                Id = "7a5f5c93-1466-480c-a78c-8005554bb8e7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1013,7 +1013,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Timezone = "Atlantic/Azores",
-        UpdatedAt = System.DateTime.Parse("2025-03-06T19:47:05.571Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-07T15:36:48.307Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://www.goodwinsons.com",
         },
@@ -1072,11 +1072,11 @@ UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
             RegionCode = "MO",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "b466ff9e-0d2c-44c7-b85c-e4e092958b3d",
+        Id = "40ee070e-da38-4df0-b77d-b28fc40b042f",
         LegalName = "Gottlieb Group LLC",
         Metadata = new List<HrisMetadata>() {},
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-13T13:37:04.646Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-14T16:01:14.247Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

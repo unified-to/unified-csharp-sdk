@@ -41,7 +41,7 @@ namespace UnifiedTo.Models.Components
         public string? Birthdate { get; set; }
 
         /// <summary>
-        /// The companyorganization name  of the person.
+        /// The company/organization name  of the person.
         /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }

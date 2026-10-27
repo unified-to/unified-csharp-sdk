@@ -16,7 +16,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
+        Id = "d6aa31fd-592d-4c12-a822-e270d2e77cd0",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -29,7 +29,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T10:25:15.568Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );

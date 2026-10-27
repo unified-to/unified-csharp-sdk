@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
+        Id = "d6aa31fd-592d-4c12-a822-e270d2e77cd0",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -40,7 +40,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T10:25:15.568Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2685,6 +2685,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListUnifiedWebhooks](docs/sdks/unified/README.md#listunifiedwebhooks) - Returns all registered webhooks
 * [PatchUnifiedConnection](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
 * [PatchUnifiedWebhook](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
+* [PatchUnifiedWebhookResume](docs/sdks/unified/README.md#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [PatchUnifiedWebhookTrigger](docs/sdks/unified/README.md#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedConnection](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
 * [RemoveUnifiedEnvironment](docs/sdks/unified/README.md#removeunifiedenvironment) - Remove an environment
@@ -2692,6 +2693,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveUnifiedWebhook](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 * [UpdateUnifiedConnection](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
 * [UpdateUnifiedWebhook](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription
+* [UpdateUnifiedWebhookResume](docs/sdks/unified/README.md#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [UpdateUnifiedWebhookTrigger](docs/sdks/unified/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 
 ### [Usage](docs/sdks/usage/README.md)
@@ -2751,9 +2753,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetUnifiedWebhook](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedWebhooks](docs/sdks/webhook/README.md#listunifiedwebhooks) - Returns all registered webhooks
 * [PatchUnifiedWebhook](docs/sdks/webhook/README.md#patchunifiedwebhook) - Update webhook subscription
+* [PatchUnifiedWebhookResume](docs/sdks/webhook/README.md#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [PatchUnifiedWebhookTrigger](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedWebhook](docs/sdks/webhook/README.md#removeunifiedwebhook) - Remove webhook subscription
 * [UpdateUnifiedWebhook](docs/sdks/webhook/README.md#updateunifiedwebhook) - Update webhook subscription
+* [UpdateUnifiedWebhookResume](docs/sdks/webhook/README.md#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [UpdateUnifiedWebhookTrigger](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 
 ### [Webinar](docs/sdks/webinar/README.md)
@@ -2803,7 +2807,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
+        Id = "d6aa31fd-592d-4c12-a822-e270d2e77cd0",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2816,7 +2820,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T10:25:15.568Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2847,7 +2851,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
+        Id = "d6aa31fd-592d-4c12-a822-e270d2e77cd0",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2860,7 +2864,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T10:25:15.568Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2940,7 +2944,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
+        Id = "d6aa31fd-592d-4c12-a822-e270d2e77cd0",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -2953,7 +2957,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T10:25:15.568Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2998,7 +3002,7 @@ try
             Currency = "CAD",
             CustomerDefinedCode = "6170",
             Description = "Voluptatibus valde spoliatio.",
-            Id = "c64d32d9-f338-4fde-a7b9-63526fb3c272",
+            Id = "d6aa31fd-592d-4c12-a822-e270d2e77cd0",
             IsPayable = false,
             Metadata = new List<AccountingMetadata>() {},
             Name = "Auto Loan Account",
@@ -3011,7 +3015,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-            UpdatedAt = System.DateTime.Parse("2023-08-08T03:40:04.119Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-08-08T10:25:15.568Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );
