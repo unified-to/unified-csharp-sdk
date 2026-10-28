@@ -32,7 +32,7 @@ var res = await sdk.Memory.CreateGenaiMemoryAsync(
     genaiMemory: new GenaiMemory() {
         Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
         CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
-        Id = "cbd1379a-610b-45df-a38b-d7dbfcbdfd49",
+        Id = "e63ef9cd-686b-4225-a823-a2c256d0d61c",
         Metadata = new List<GenaiMetadata>() {
             new GenaiMetadata() {
                 ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
@@ -51,7 +51,7 @@ var res = await sdk.Memory.CreateGenaiMemoryAsync(
         },
         Name = "sponte.md",
         Type = GenaiMemoryType.Memory,
-        UpdatedAt = System.DateTime.Parse("2023-04-27T17:06:02.519Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-04-28T00:20:27.275Z").ToUniversalTime(),
         UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>"
@@ -184,7 +184,7 @@ PatchGenaiMemoryRequest req = new PatchGenaiMemoryRequest() {
     GenaiMemory = new GenaiMemory() {
         Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
         CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
-        Id = "b0161451-492d-45e8-bed5-113b8cf50dc6",
+        Id = "db6c88eb-60a2-4d56-a433-48e66b8cb1e2",
         Metadata = new List<GenaiMetadata>() {
             new GenaiMetadata() {
                 ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
@@ -203,7 +203,7 @@ PatchGenaiMemoryRequest req = new PatchGenaiMemoryRequest() {
         },
         Name = "sponte.md",
         Type = GenaiMemoryType.Memory,
-        UpdatedAt = System.DateTime.Parse("2023-04-27T17:06:02.523Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-04-28T00:20:27.280Z").ToUniversalTime(),
         UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     ConnectionId = "<id>",
@@ -293,7 +293,7 @@ UpdateGenaiMemoryRequest req = new UpdateGenaiMemoryRequest() {
     GenaiMemory = new GenaiMemory() {
         Content = "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
         CreatedAt = System.DateTime.Parse("2021-10-22T04:14:41.668Z").ToUniversalTime(),
-        Id = "b0161451-492d-45e8-bed5-113b8cf50dc6",
+        Id = "db6c88eb-60a2-4d56-a433-48e66b8cb1e2",
         Metadata = new List<GenaiMetadata>() {
             new GenaiMetadata() {
                 ExtraData = GenaiMetadataExtraData.CreateMapOfAny(
@@ -312,7 +312,7 @@ UpdateGenaiMemoryRequest req = new UpdateGenaiMemoryRequest() {
         },
         Name = "sponte.md",
         Type = GenaiMemoryType.Memory,
-        UpdatedAt = System.DateTime.Parse("2023-04-27T17:06:02.523Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-04-28T00:20:27.280Z").ToUniversalTime(),
         UserIdentifier = "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     ConnectionId = "<id>",

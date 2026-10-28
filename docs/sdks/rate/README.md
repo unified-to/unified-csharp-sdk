@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Rate.CreateShippingRateAsync(
     shippingRate: new ShippingRate() {
         Currency = "USD",
-        Id = "885b0e87-5891-4b34-95b3-38a1b4fe2915",
+        Id = "3ed4aed4-f8d9-4d64-8bf7-7c2535107352",
         Metadata = new List<ShippingMetadata>() {},
         Rates = new List<ShippingRateRate>() {
             new ShippingRateRate() {

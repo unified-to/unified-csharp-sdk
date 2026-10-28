@@ -17,6 +17,10 @@ namespace UnifiedTo.Models.Requests
     {
         [JsonProperty("id")]
         Id,
+        [JsonProperty("created_at")]
+        CreatedAt,
+        [JsonProperty("updated_at")]
+        UpdatedAt,
         [JsonProperty("name")]
         Name,
         [JsonProperty("parent_id")]
@@ -25,16 +29,12 @@ namespace UnifiedTo.Models.Requests
         Type,
         [JsonProperty("address")]
         Address,
-        [JsonProperty("raw")]
-        Raw,
-        [JsonProperty("created_at")]
-        CreatedAt,
-        [JsonProperty("updated_at")]
-        UpdatedAt,
         [JsonProperty("timezone")]
         Timezone,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class ListCalendarLocationsQueryParamFieldsExtension

@@ -44,7 +44,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "00b98bec-ca5d-457d-bd29-91df104a6a60",
+        Id = "57f771a6-604a-4f0b-b62f-0a8ece686b99",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -52,10 +52,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "20ad2333-a476-448d-9be6-871f90a986b4",
+                Id = "f3ec78cc-8eeb-4351-9132-3e2d5f42cdb3",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "dd78698f-65ff-4af6-bca9-58efe689906c",
+                        Id = "4bb9f787-6108-448b-9d6a-ce258bfa80ab",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -70,10 +70,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "3ad77d22-5a2a-4534-b4f9-4a7ee2d53707",
+                Id = "fa9df9e3-f311-42b6-8150-f224881644df",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "28abaee7-9f94-4533-9eb6-2881e608274c",
+                        Id = "4fa165a4-bc50-4b16-aee4-2e5512fb323d",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -91,7 +91,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-26T08:40:28.825Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-27T04:35:15.671Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -397,7 +397,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "ae8addcb-960c-45cf-a634-975b1bb44e7f",
+        Id = "cabd5dca-7c8f-43c3-a712-e4a1f1f350db",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -405,10 +405,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "f7254c7c-788e-47fa-ba2d-df3a1f53aaa8",
+                Id = "33ff1b31-4a9a-410a-bce3-e37f82bde93a",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "08687a65-8fe8-4d2f-b4c5-340baf0d8d73",
+                        Id = "53d3fac7-f0f4-4258-bc0a-b770ac058a50",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -423,10 +423,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "e51e5e7f-2eb7-4373-868b-ffb3ec1a243d",
+                Id = "cff2a879-0a41-4f6a-b501-0bdd6d0d2dc9",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "5e4b6847-f1ed-459c-98c0-be8d2e1d9402",
+                        Id = "70320ddb-9f60-4499-b540-530b90dd85de",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -444,7 +444,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-26T08:40:28.858Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-27T04:35:15.717Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },
@@ -584,7 +584,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 66D,
-        Id = "ae8addcb-960c-45cf-a634-975b1bb44e7f",
+        Id = "cabd5dca-7c8f-43c3-a712-e4a1f1f350db",
         IsFeatured = false,
         IsPublic = true,
         IsVerified = false,
@@ -592,10 +592,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Desipio carpo sol laudantium colo.",
                 Height = 749D,
-                Id = "f7254c7c-788e-47fa-ba2d-df3a1f53aaa8",
+                Id = "33ff1b31-4a9a-410a-bce3-e37f82bde93a",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "08687a65-8fe8-4d2f-b4c5-340baf0d8d73",
+                        Id = "53d3fac7-f0f4-4258-bc0a-b770ac058a50",
                         Slug = "textor",
                         Value = CommerceMetadataValue.CreateStr(
                             "quos"
@@ -610,10 +610,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adopto teneo numquam.",
                 Height = 957D,
-                Id = "e51e5e7f-2eb7-4373-868b-ffb3ec1a243d",
+                Id = "cff2a879-0a41-4f6a-b501-0bdd6d0d2dc9",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "5e4b6847-f1ed-459c-98c0-be8d2e1d9402",
+                        Id = "70320ddb-9f60-4499-b540-530b90dd85de",
                         Slug = "bos",
                         Value = CommerceMetadataValue.CreateStr(
                             "casso"
@@ -631,7 +631,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 88D,
-        UpdatedAt = System.DateTime.Parse("2025-08-26T08:40:28.858Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-27T04:35:15.717Z").ToUniversalTime(),
         Url = "https://diligent-bandwidth.biz",
         VerifiedPurchase = true,
     },

@@ -65,10 +65,10 @@ namespace UnifiedTo.Models.Requests
         MatterId,
         [JsonProperty("metadata")]
         Metadata,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("room_ids")]
         RoomIds,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class GetCalendarEventQueryParamFieldsExtension

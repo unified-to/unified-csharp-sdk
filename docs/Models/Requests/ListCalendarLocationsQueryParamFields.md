@@ -14,12 +14,12 @@ var value = ListCalendarLocationsQueryParamFields.Id;
 | Name        | Value       |
 | ----------- | ----------- |
 | `Id`        | id          |
+| `CreatedAt` | created_at  |
+| `UpdatedAt` | updated_at  |
 | `Name`      | name        |
 | `ParentId`  | parent_id   |
 | `Type`      | type        |
 | `Address`   | address     |
-| `Raw`       | raw         |
-| `CreatedAt` | created_at  |
-| `UpdatedAt` | updated_at  |
 | `Timezone`  | timezone    |
 | `Metadata`  | metadata    |
+| `Raw`       | raw         |

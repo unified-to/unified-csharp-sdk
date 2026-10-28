@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "91ab0545-0d53-4094-84c1-44c95e1e6186",
+        Id = "3ddb8fb8-7d1e-4fcb-b723-b4ccab8a1ec9",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "8fd498e7-e106-4692-93fc-4ee2ba8048c4",
+                Id = "e8a1d9f2-c253-4279-8ee8-a04efb9f8d81",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -48,7 +48,7 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T07:11:30.914Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T07:21:58.609Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -179,12 +179,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "29eec270-4542-4915-9606-556c9ab2ade5",
+        Id = "457ce95e-c76a-4ae2-8396-a143d508d89a",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "16a276d0-87a0-4f68-bd80-312b1cc6b1e6",
+                Id = "3e6f2203-3da6-489e-970e-a95c1aa58afd",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -196,7 +196,7 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T07:11:30.914Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T07:21:58.609Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -284,12 +284,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "29eec270-4542-4915-9606-556c9ab2ade5",
+        Id = "457ce95e-c76a-4ae2-8396-a143d508d89a",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-                Id = "16a276d0-87a0-4f68-bd80-312b1cc6b1e6",
+                Id = "3e6f2203-3da6-489e-970e-a95c1aa58afd",
                 Name = "Shirt",
                 TotalAmount = 10184D,
                 UnitAmount = 536D,
@@ -301,7 +301,7 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
         TaxAmount = 0D,
         TotalAmount = 10184D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2019-10-14T07:11:30.914Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-10-14T07:21:58.609Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

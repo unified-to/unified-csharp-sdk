@@ -78,7 +78,7 @@ namespace UnifiedTo.Models.Requests
         public string? Subdomain { get; set; }
 
         /// <summary>
-        /// The URL where you want the user to be redirect to after a successful authorization.  The connection ID will be appended with (id=&lt;connectionId&gt;) to this URL, as will the state that was provided.
+        /// The URL where you want the user to be redirect to after a successful authorization.  The connection ID will be appended with (id=&lt;connectionId&gt;) to this URL, as will the state that was provided. When the workspace has trusted_domains configured, this host must be on that list.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=success_redirect")]
         public string? SuccessRedirect { get; set; }

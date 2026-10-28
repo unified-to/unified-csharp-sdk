@@ -17,24 +17,24 @@ namespace UnifiedTo.Models.Requests
     {
         [JsonProperty("id")]
         Id,
-        [JsonProperty("name")]
-        Name,
-        [JsonProperty("capacity")]
-        Capacity,
-        [JsonProperty("location_id")]
-        LocationId,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("created_at")]
         CreatedAt,
         [JsonProperty("updated_at")]
         UpdatedAt,
-        [JsonProperty("description")]
-        Description,
+        [JsonProperty("name")]
+        Name,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("capacity")]
+        Capacity,
+        [JsonProperty("location_id")]
+        LocationId,
+        [JsonProperty("description")]
+        Description,
         [JsonProperty("email")]
         Email,
+        [JsonProperty("raw")]
+        Raw,
         [JsonProperty("calendar_id")]
         CalendarId,
         [JsonProperty("floor")]
