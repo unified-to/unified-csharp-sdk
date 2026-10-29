@@ -66,7 +66,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "03d5600e-5ac9-44ce-ba2b-65530b750801",
+        Id = "b4e6c1d9-01ad-49f7-b6cf-4324d97b4bf2",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -80,7 +80,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "cd6d05ef-5ef4-4b12-8574-09d22ee7fba2",
+                Id = "6e7cd75f-5626-4243-ab3c-089dbd50f3ad",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -130,7 +130,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-20T00:08:49.538Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-20T01:57:43.280Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -296,7 +296,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "8da8e72e-89ce-46bd-8ad6-f50b850abc67",
+        Id = "691bfe1a-5d12-4044-b16e-6d2f769a0ab4",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -310,7 +310,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "2e4890e9-9048-456b-9e2a-6430997b9220",
+                Id = "a311d266-8876-42bf-8e0e-f5995e63dd66",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -360,7 +360,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-20T00:08:49.547Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-20T01:57:43.289Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -483,7 +483,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         Gender = HrisEmployeeGender.Male,
         HasMfa = true,
         HiredAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
-        Id = "8da8e72e-89ce-46bd-8ad6-f50b850abc67",
+        Id = "691bfe1a-5d12-4044-b16e-6d2f769a0ab4",
         ImageUrl = "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
         LanguageLocale = "in",
         LastName = "Prohaska",
@@ -497,7 +497,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "2e4890e9-9048-456b-9e2a-6430997b9220",
+                Id = "a311d266-8876-42bf-8e0e-f5995e63dd66",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -547,7 +547,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 9D,
         Timezone = "Europe/Ljubljana",
         Title = "District Branding Specialist",
-        UpdatedAt = System.DateTime.Parse("2020-07-20T00:08:49.547Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-07-20T01:57:43.289Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

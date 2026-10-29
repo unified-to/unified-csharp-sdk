@@ -40,7 +40,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "f930f1d5-df11-4a05-a62b-b977b4c9d393",
+        Id = "33a9bf9e-107e-4d48-b1ba-9c3a1cfae0bd",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -50,7 +50,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "1e238429-b483-4891-ba09-69859728306f",
+                Id = "85a11257-5aa0-41d5-88f2-fbf13a0fb126",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -61,7 +61,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-10T09:14:38.324Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-10T22:35:28.744Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -108,15 +108,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Activity.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-09T15:34:54.821Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-09T23:35:04.902Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "99be26c7-62dd-4dce-8e55-26dd43f5d550",
+        Id = "40d41553-da8a-4e00-92de-040d04583035",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T18:59:22.359Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-02-01T11:50:44.161Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T20:19:06.488Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-01T15:08:14.229Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -414,7 +414,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "ee98f207-90ba-4668-bfcf-daeb1e98450d",
+        Id = "f78eef48-f395-4757-bbf6-deb5b5ab7f1a",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -424,7 +424,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "964075b5-8fe9-4fe2-bc58-cdebeeeeb00d",
+                Id = "4fcc985b-af44-4ad4-abbb-ba6c8aa36b00",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -435,7 +435,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-10T09:14:38.348Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-10T22:35:28.778Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -483,15 +483,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-09T15:34:54.828Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-09T23:35:04.910Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "c2165e78-2589-43e6-9b4e-6ef0a63509b2",
+        Id = "6a0cabfa-8005-4c4f-a37a-589ca205b42d",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T18:59:22.360Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-02-01T11:50:44.163Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T20:19:06.489Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-01T15:08:14.233Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -620,7 +620,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
     AtsActivity = new AtsActivity() {
         CreatedAt = System.DateTime.Parse("2022-08-07T03:16:43.865Z").ToUniversalTime(),
         Description = "Sapiente.",
-        Id = "ee98f207-90ba-4668-bfcf-daeb1e98450d",
+        Id = "f78eef48-f395-4757-bbf6-deb5b5ab7f1a",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -630,7 +630,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "964075b5-8fe9-4fe2-bc58-cdebeeeeb00d",
+                Id = "4fcc985b-af44-4ad4-abbb-ba6c8aa36b00",
                 Namespace = "activity",
                 Slug = "cimentarius",
                 Value = AtsMetadataValue.CreateStr(
@@ -641,7 +641,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
         SubType = "TASK",
         Title = "Venio blandior aureus.",
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-04-10T09:14:38.348Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-04-10T22:35:28.778Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -689,15 +689,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2023-12-09T15:34:54.828Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2023-12-09T23:35:04.910Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "c2165e78-2589-43e6-9b4e-6ef0a63509b2",
+        Id = "6a0cabfa-8005-4c4f-a37a-589ca205b42d",
         IsCompleted = true,
         Metadata = new List<LmsMetadata>() {},
         ProgressPercentage = 100D,
-        StartedAt = System.DateTime.Parse("2021-04-25T18:59:22.360Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-02-01T11:50:44.163Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2021-04-25T20:19:06.489Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-01T15:08:14.233Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

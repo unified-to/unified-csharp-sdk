@@ -31,14 +31,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commit.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "8da008ee-d4cb-4d8e-85d8-c597d023632b",
+        Id = "18dbc1e7-115d-4b45-9679-14379b5a9ddd",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-06-03T12:16:26.782Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-03T19:19:19.622Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -169,14 +169,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "18db59c1-2dac-4a68-90d4-aa5d27f04552",
+        Id = "51b92514-8b6e-490b-9bf8-748bc4e567cd",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-06-03T12:16:26.788Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-03T19:19:19.629Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -264,14 +264,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "18db59c1-2dac-4a68-90d4-aa5d27f04552",
+        Id = "51b92514-8b6e-490b-9bf8-748bc4e567cd",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "quantify bluetooth bandwidth",
         Metadata = new List<RepoMetadata>() {},
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-06-03T12:16:26.788Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-03T19:19:19.629Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

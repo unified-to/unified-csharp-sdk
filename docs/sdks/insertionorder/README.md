@@ -31,11 +31,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
     adsInsertionorder: new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "c4ac9f08-3b3d-4004-abe8-704666dff68e",
+        Id = "3e1e43e7-92e4-4927-987b-71045618ed24",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T21:20:17.010Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T21:28:43.869Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,11 +166,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "c3bb9428-5aa6-465c-bb00-606b03f01d08",
+        Id = "b70e3b3d-88eb-4ed2-84ae-9ccbbc2de862",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T21:20:17.011Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T21:28:43.869Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -258,11 +258,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "c3bb9428-5aa6-465c-bb00-606b03f01d08",
+        Id = "b70e3b3d-88eb-4ed2-84ae-9ccbbc2de862",
         Metadata = new List<AdsMetadata>() {},
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T21:20:17.011Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T21:28:43.869Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

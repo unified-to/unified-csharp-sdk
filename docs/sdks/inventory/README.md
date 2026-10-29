@@ -31,9 +31,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 337D,
-        Id = "1e194137-adda-40e1-b791-c6a088fb6afb",
+        Id = "5617a56b-6e2c-45f1-8e02-32e2373bbd14",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-26T01:35:36.821Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-26T13:57:19.713Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -164,9 +164,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        Id = "883d8f07-51af-46bb-9636-e613c7edcbbf",
+        Id = "38435e5a-1cae-46da-a190-9704dcde1a7a",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-26T01:35:36.833Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-26T13:57:19.720Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -254,9 +254,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        Id = "883d8f07-51af-46bb-9636-e613c7edcbbf",
+        Id = "38435e5a-1cae-46da-a190-9704dcde1a7a",
         Metadata = new List<CommerceMetadata>() {},
-        UpdatedAt = System.DateTime.Parse("2025-11-26T01:35:36.833Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-26T13:57:19.720Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

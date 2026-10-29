@@ -32,7 +32,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     metadataMetadata: new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "e1c39ae4-6ed7-471d-98e2-f8fa16253acb",
+        Id = "2eb381b9-58f4-46fc-9c89-09063a442dfe",
         IsRequired = false,
         Name = "autem",
         ObjectType = "legal_expense",
@@ -42,7 +42,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-26T23:52:02.826Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-27T10:51:13.022Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -174,7 +174,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "8553b3d1-0048-4f3d-9e3e-702fee92e4d3",
+        Id = "db85e3e8-4006-4319-b3a8-a8cb4f96c1a7",
         IsRequired = false,
         Name = "autem",
         ObjectType = "legal_expense",
@@ -184,7 +184,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-26T23:52:02.834Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-27T10:51:13.030Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -273,7 +273,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "8553b3d1-0048-4f3d-9e3e-702fee92e4d3",
+        Id = "db85e3e8-4006-4319-b3a8-a8cb4f96c1a7",
         IsRequired = false,
         Name = "autem",
         ObjectType = "legal_expense",
@@ -283,7 +283,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-26T23:52:02.834Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-27T10:51:13.030Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

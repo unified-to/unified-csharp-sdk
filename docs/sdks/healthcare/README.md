@@ -70,7 +70,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "962f1a67-5bdb-478a-be1d-a2a158ab8d1a",
+        Id = "cb37fac4-78a7-4d57-b17c-d93333155f8b",
         IsVirtual = true,
         MeetingUrl = "https://expensive-slipper.name/",
         Metadata = new List<HealthcareMetadata>() {},
@@ -86,7 +86,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2026-09-29T02:17:02.572Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-29T17:17:01.478Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -143,13 +143,13 @@ var res = await sdk.Healthcare.CreateHealthcareDocumentAsync(
         CreatedAt = System.DateTime.Parse("2023-07-16T04:00:25.853Z").ToUniversalTime(),
         DocumentUrl = "https://overcooked-yogurt.org",
         Filename = "ugh_after.elc",
-        Id = "c7639ad5-be34-4795-b610-e2a033b5ac04",
+        Id = "f99fe2a4-1800-4b4e-a4d0-d272e660fade",
         Metadata = new List<HealthcareMetadata>() {},
         MimeType = "application/pdf",
         Name = "History and physical",
         Status = HealthcareDocumentStatus.Superseded,
         Type = HealthcareDocumentType.ConsultationNote,
-        UpdatedAt = System.DateTime.Parse("2024-12-29T21:20:14.353Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-12-30T04:08:56.761Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -227,15 +227,15 @@ var res = await sdk.Healthcare.CreateHealthcareObservationAsync(
             },
         },
         CreatedAt = System.DateTime.Parse("2022-12-06T21:34:04.293Z").ToUniversalTime(),
-        Id = "6bac4faf-4314-423c-8aa6-8eb16c169964",
+        Id = "7a72259e-e1b9-4336-9015-95b244b1a24c",
         Interpretation = Interpretation.CriticalHigh,
-        IssuedAt = System.DateTime.Parse("2025-05-15T20:08:34.212Z").ToUniversalTime(),
+        IssuedAt = System.DateTime.Parse("2025-05-16T05:45:40.608Z").ToUniversalTime(),
         Metadata = new List<HealthcareMetadata>() {},
         Name = "Blood pressure panel",
-        ObservedAt = System.DateTime.Parse("2025-01-24T00:23:44.796Z").ToUniversalTime(),
+        ObservedAt = System.DateTime.Parse("2025-01-24T08:48:25.200Z").ToUniversalTime(),
         Status = HealthcareObservationStatus.Corrected,
         Type = HealthcareObservationType.VitalSigns,
-        UpdatedAt = System.DateTime.Parse("2026-03-30T05:49:11.115Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-30T18:52:32.246Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -311,7 +311,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "d27e4111-7d29-4e69-83ce-7a7f26e52b3a",
+        Id = "dccfe73b-c7a5-4336-84ea-dda070e6b4ae",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -331,7 +331,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-29T10:30:56.799Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-30T00:55:08.091Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1792,7 +1792,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "e5a062aa-bb8d-43d6-a43d-d6c80ac0c712",
+        Id = "0e182ca8-d944-45a4-91eb-acba077a2310",
         IsVirtual = true,
         MeetingUrl = "https://expensive-slipper.name/",
         Metadata = new List<HealthcareMetadata>() {},
@@ -1808,7 +1808,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2026-09-29T02:17:02.599Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-29T17:17:01.499Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1885,7 +1885,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "1f80ca8b-1b86-4f5d-8c84-a716031e075e",
+        Id = "332904df-d467-4bf0-ae60-93b5d28e5a40",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1905,7 +1905,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-29T10:30:56.846Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-30T00:55:08.136Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1995,7 +1995,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "e5a062aa-bb8d-43d6-a43d-d6c80ac0c712",
+        Id = "0e182ca8-d944-45a4-91eb-acba077a2310",
         IsVirtual = true,
         MeetingUrl = "https://expensive-slipper.name/",
         Metadata = new List<HealthcareMetadata>() {},
@@ -2011,7 +2011,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2026-09-29T02:17:02.599Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-29T17:17:01.499Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2088,7 +2088,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "1f80ca8b-1b86-4f5d-8c84-a716031e075e",
+        Id = "332904df-d467-4bf0-ae60-93b5d28e5a40",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -2108,7 +2108,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-29T10:30:56.846Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-30T00:55:08.136Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

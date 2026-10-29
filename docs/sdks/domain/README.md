@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Domain.CreateComputeDomainAsync(
     computeDomain: new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "b2211d89-e0dd-451a-aa2a-3757b5786f46",
+        Id = "4bbcc607-8600-4291-973d-e334f965a366",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-07T15:27:36.089Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-08T00:13:25.663Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -167,12 +167,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeDomainRequest req = new PatchComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "31ef02d1-4184-459a-a546-874826d6980b",
+        Id = "afa43df1-12d4-429a-9d8e-26c8d7e39785",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-07T15:27:36.097Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-08T00:13:25.670Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -260,12 +260,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeDomainRequest req = new UpdateComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "31ef02d1-4184-459a-a546-874826d6980b",
+        Id = "afa43df1-12d4-429a-9d8e-26c8d7e39785",
         IsPrimary = false,
         Metadata = new List<ComputeMetadata>() {},
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-11-07T15:27:36.097Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-08T00:13:25.670Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

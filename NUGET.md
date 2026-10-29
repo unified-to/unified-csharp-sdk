@@ -23,7 +23,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c15a0c2b-20bc-4742-b152-5f36ffe9c489",
+        Id = "10d91247-ded1-4d1d-9568-80e29a471e72",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -36,7 +36,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T16:31:09.747Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T20:25:09.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -74,7 +74,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c15a0c2b-20bc-4742-b152-5f36ffe9c489",
+        Id = "10d91247-ded1-4d1d-9568-80e29a471e72",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -87,7 +87,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T16:31:09.747Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T20:25:09.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -132,7 +132,7 @@ try
             Currency = "CAD",
             CustomerDefinedCode = "6170",
             Description = "Voluptatibus valde spoliatio.",
-            Id = "c15a0c2b-20bc-4742-b152-5f36ffe9c489",
+            Id = "10d91247-ded1-4d1d-9568-80e29a471e72",
             IsPayable = false,
             Metadata = new List<AccountingMetadata>() {},
             Name = "Auto Loan Account",
@@ -145,7 +145,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-            UpdatedAt = System.DateTime.Parse("2023-08-08T16:31:09.747Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-08-08T20:25:09.921Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );
@@ -218,7 +218,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c15a0c2b-20bc-4742-b152-5f36ffe9c489",
+        Id = "10d91247-ded1-4d1d-9568-80e29a471e72",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -231,7 +231,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T16:31:09.747Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T20:25:09.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -262,7 +262,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "CAD",
         CustomerDefinedCode = "6170",
         Description = "Voluptatibus valde spoliatio.",
-        Id = "c15a0c2b-20bc-4742-b152-5f36ffe9c489",
+        Id = "10d91247-ded1-4d1d-9568-80e29a471e72",
         IsPayable = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Auto Loan Account",
@@ -275,7 +275,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.AccountsReceivable,
-        UpdatedAt = System.DateTime.Parse("2023-08-08T16:31:09.747Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-08T20:25:09.921Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
